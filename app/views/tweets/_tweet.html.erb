@@ -1,0 +1,21 @@
+<div id="tweet-<%= tweet.id %>" class="tweet">
+  <a href="/user/<%= tweet.user_name %>">
+    <img src="http://img.tweetimag.es/i/<%= tweet.user_name %>_b" alt="<%= tweet.user_name %>" />
+  </a>
+  <div class="content">
+    <div class="tweet-content">
+    <a href="http://twitter.com/<%= tweet.user_name %>"><%= tweet.user_name %></a>: <%= tweet.content %>
+    </div>
+    <div class="byline">
+		<% source = tweet.details["source"].to_s %>
+	      <a href="/tweet/<%= tweet.id %>"><%= time_ago_in_words(tweet.modified) %></a> verwijderd via <%= source.html_safe %>
+    </div>
+    <div class="clear">
+    </div>
+  </div>  <div class="actions">
+    <a href="{tweet.link_reply}"><img src="/images/reply.png" alt="reply" /></a>
+    <a href="{tweet.link_retweet}"><img src="/images/retweet.png" alt="retweet" /></a>
+  </div>
+  <div class="clear">
+  </div>
+</div>

@@ -1,0 +1,120 @@
+body {
+  background: white;
+  font-family: "Lucida Sans", "MS Trebuchet", sans-serif;
+  color: #D4D4D4;
+}
+
+#wrapper {
+	width: 960px;
+	margin: 0px auto;
+}
+
+a {
+  color: #0097EB;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+a img {
+  border: 0px none;
+}
+
+.clear {
+  clear: both;
+}
+
+.tweet {
+  border-bottom: 1px solid #d4d4d4;
+  clear: both;
+  color: #787878;
+  font-weight: bold;
+  line-height: 24px;
+  padding: 16px 0 16px 0;
+}
+
+.tweet img {
+  float: left;
+  margin: 0 8px 0 0;
+}
+
+.tweet .content {
+  float: left;
+  width: 720px;
+}
+
+.tweet .content .tweet-content {
+  min-height: 48px;
+}
+
+.tweet .byline {
+  color: #D4D4D4;  
+}
+
+.tweet .byline a {
+  color: #D4D4D4;  
+}
+
+.tweet .actions {
+  float: right;
+  margin: 12px 0 0 0;
+}
+
+.tweet .actions img {
+  margin: 0 0 0 8px;
+}
+
+#pager {
+  margin: 12px 0 12px 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+#footer {
+  margin: 16px 0 0 0;
+}
+
+#hdo {
+  float: right;
+}
+
+.flash {
+  color: #666666;
+  clear:both;
+  margin:20px 0 20px 0;
+  padding:10px;
+}
+
+.info {
+  background:none repeat scroll 0 0 #EBFFEE;
+  border:1px solid #BBE6B0;  
+}
+
+.error {
+  background: none repeat scroll 0 0 #ffdada;
+  border: 1px solid #eb0000; 
+}
+
+table.listing {
+  color: #666666;
+}
+
+form ol {
+  list-style-type: none;
+}
+
+form ol li {
+  margin: 0 0 8px 0;
+}
+
+form label {
+  display: block;
+  float: left;
+  width: 150px;
+}
+
+form input[type=text] {
+  width: 300px;
+}

@@ -2,13 +2,26 @@
 <html>
 <head>
   <title>Politwoops</title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag "style" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+	<div id="wrapper">
+		<div id="header">
+			<a href="/"><img src="/images/logo.png" alt="politwoops" /></a>
+		</div>
 
-<%= yield %>
+		<%= yield %>
 
+		<div id="footer">
+			<div id="hdo">
+				<a href="http://www.hackdeoverheid.nl/"><img src="/images/hackdeoverheid.png" alt="Een hackdeoverheid project"></a>
+			</div>
+			<div class="clear">
+			</div>
+		</div>
+
+	</div>
 </body>
 </html>
