@@ -1,0 +1,86 @@
+#!/usr/bin/env ruby
+
+# == Synopsis 
+#   The reverse_scaffold script executes a Rails scaffold based on an existing table.
+#
+#
+# == Usage 
+#   ruby script/reverse_scaffold table_name model_name
+#
+# 
+# == Examples
+#   ruby script/reverse_scaffold users user
+#
+#
+# == Options
+#   -h, --help          Displays help message
+#   -m. --model         Generates model only
+#   -r, --rspec         Generates rspec_scaffold
+#   -V, --verbose       Outputs the command but doesn't execute it
+#   -v, --version       
+#
+#
+# == Author
+#   Anthony Heukmes
+#   http://2dconcept.com
+#   http://github.com/ahe
+#
+#
+# == Copyright
+#   Copyright (c) 2009 Anthony Heukmes. Licensed under the MIT License
+
+require 'rdoc/usage'
+require 'optparse'
+require File.dirname(__FILE__) + '/../config/environment'
+
+def display_help
+  RDoc::usage
+  exit
+end
+
+def display_version
+  puts "Rails ActiveRecord Reverse Scaffold version #{SCRIPT_VERSION}"
+  exit
+end
+
+def configure_table_name(class_name, table_name)
+  model = <<-CODE
+class #{class_name} < ActiveRecord::Base
+  set_table_name '#{table_name}'
+end
+  CODE
+    
+  File.open(File.dirname(__FILE__) + "/../app/models/#{class_name.underscore}.rb", 'w+') {|f| f.write(model) }
+end
+
+SCRIPT_VERSION = 1.0
+command_name = 'scaffold'
+options = {}
+
+OptionParser.new do |opts|
+  opts.on('-h', '--help') { display_help }
+  opts.on('-m', '--model') { command_name = 'model' }
+  opts.on('-r', '--rspec') { command_name = 'rspec_scaffold' }
+  opts.on('-V', '--verbose') { options[:verbose] = true }
+  opts.on('-v', '--version') { display_version }  
+end.parse!
+
+display_help unless ARGV[0] && ARGV[1]
+
+table_name = ARGV[0]
+class_name = ARGV[1].camelize
+
+eval "class ::#{class_name} < ActiveRecord::Base; set_table_name '#{table_name}' end" 
+klass = eval "::#{class_name}" 
+
+reverse_scaffold = "rails generate #{command_name} #{class_name.underscore} --skip-migration "
+klass.columns.each do |col|
+  reverse_scaffold << col.name + ":" + col.type.to_s + " "
+end
+
+if options[:verbose]
+  puts reverse_scaffold
+else
+  system reverse_scaffold
+  configure_table_name(class_name, table_name) if ARGV[0].downcase != ARGV[1].underscore.pluralize
+end

@@ -9,10 +9,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: politwoops_development
+  database: politwoops
   pool: 5
-  username: root
-  password:
+  username: politwoops
+  password: politwoops
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -24,16 +24,16 @@ test:
   reconnect: false
   database: politwoops_test
   pool: 5
-  username: root
-  password:
+  username: politwoops
+  password: politwoops
   host: localhost
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: politwoops_production
+  database: politwoops
   pool: 5
-  username: root
-  password:
+  username: politwoops
+  password: politwoops
   host: localhost
