@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101219153930) do
+ActiveRecord::Schema.define(:version => 20101219164930) do
 
   create_table "politicians", :force => true do |t|
     t.string  "user_name",  :limit => 64, :null => false
@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(:version => 20101219153930) do
   add_index "politicians", ["user_name"], :name => "user_name"
 
   create_table "tweets", :force => true do |t|
-    t.string   "user_name", :limit => 64
+    t.string   "user_name",     :limit => 64
     t.string   "content"
-    t.boolean  "deleted",                 :default => false, :null => false
-    t.datetime "created",                                    :null => false
-    t.datetime "modified",                                   :null => false
+    t.boolean  "deleted",                     :default => false, :null => false
+    t.datetime "created",                                        :null => false
+    t.datetime "modified",                                       :null => false
     t.text     "tweet"
+    t.integer  "politician_id"
   end
 
   add_index "tweets", ["created"], :name => "created"
