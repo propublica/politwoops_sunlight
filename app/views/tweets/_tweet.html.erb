@@ -6,7 +6,7 @@
     <div class="tweet-content">
     <a href="http://twitter.com/<%= tweet.user_name %>"><%= tweet.user_name %></a>
 	<% if !tweet.politician.nil? %>
-	(<a href="/party/<%= tweet.politician.party %>"><%= tweet.politician.party %></a>)
+	(<a href="/party/<%= tweet.politician.party.name %>"><%= tweet.politician.party.name %></a>)
 	<% end %>
 	: <%= tweet.content %>
     </div>
