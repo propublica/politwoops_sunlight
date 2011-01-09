@@ -10,15 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101219164930) do
+ActiveRecord::Schema.define(:version => 20110109223854) do
+
+  create_table "parties", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "politicians", :force => true do |t|
     t.string  "user_name",  :limit => 64, :null => false
-    t.string  "party",      :limit => 64, :null => false
     t.integer "twitter_id",               :null => false
+    t.integer "party_id"
   end
 
-  add_index "politicians", ["party"], :name => "party"
   add_index "politicians", ["user_name"], :name => "user_name"
 
   create_table "tweets", :force => true do |t|
