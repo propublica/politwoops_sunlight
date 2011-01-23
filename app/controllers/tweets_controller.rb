@@ -3,9 +3,9 @@ class TweetsController < ApplicationController
   # GET /tweets.xml
   def index
     page_size = 10
-    @tweets = Tweet.where(:deleted => 1)
+    @tweets = Tweet.deleted
     
-    @tweets = @tweets.offset(params[:offset] * page_size) if params.has_key?(:offset)
+    @tweets = @tweets.offset(params[:offset].to_i * page_size) if params.has_key?(:offset)
     
     @tweets = @tweets.limit(page_size)
 

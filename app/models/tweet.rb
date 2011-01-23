@@ -3,6 +3,8 @@ class Tweet < ActiveRecord::Base
 
   default_scope :order => 'modified DESC'
   
+  scope :deleted, :conditions => {:deleted => 1}
+  
   def details
     JSON.parse(tweet)
   end  
