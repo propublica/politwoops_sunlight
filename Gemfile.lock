@@ -64,7 +64,10 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
+    twitter-text (1.3.1)
+      actionpack
     tzinfo (0.3.23)
+    will_paginate (3.0.pre2)
 
 PLATFORMS
   ruby
@@ -73,3 +76,5 @@ DEPENDENCIES
   json
   mysql2
   rails (= 3.0.3)
+  twitter-text
+  will_paginate (~> 3.0.pre2)

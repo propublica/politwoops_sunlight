@@ -8,7 +8,7 @@
 	<% if !tweet.politician.nil? %>
 	(<a href="/party/<%= tweet.politician.party.name %>"><%= tweet.politician.party.name %></a>)
 	<% end %>
-	: <%= tweet.content %>
+	: <%= auto_link(tweet.content) %>
     </div>
     <div class="byline">
 		<% source = tweet.details["source"].to_s %>

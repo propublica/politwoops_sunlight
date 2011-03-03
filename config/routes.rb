@@ -49,16 +49,14 @@ Politwoops::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => "tweets#index"
-
-  match "page/:offset" => "tweets#index"
   
   # See how all your routes lay out with "rake routes"
 
   match "tweet/:id" => "tweets#show"
   
-  match "user/:user_name(/:offset)" => "politicians#show"
+  match "user/:user_name" => "politicians#show"
   
-  match "party/:name(/:offset)" => "parties#show"
+  match "party/:name" => "parties#show"
   
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.

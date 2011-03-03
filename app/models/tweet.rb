@@ -5,6 +5,9 @@ class Tweet < ActiveRecord::Base
   
   scope :deleted, :conditions => {:deleted => 1}
   
+  cattr_reader :per_page
+  @@per_page = 10
+  
   def details
     JSON.parse(tweet)
   end  

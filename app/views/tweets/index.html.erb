@@ -1,3 +1,6 @@
 <% @tweets.each do |tweet| %>
 	<%= render tweet %>
 <% end %>
+<div id="pager">
+<%= will_paginate @tweets %>
+</div>

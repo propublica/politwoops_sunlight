@@ -2,13 +2,8 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.xml
   def index
-    page_size = 10
-    @tweets = Tweet.deleted
+    @tweets = Tweet.deleted.paginate(:page => params[:page], :per_page => Tweet.per_page)
     
-    @tweets = @tweets.offset(params[:offset].to_i * page_size) if params.has_key?(:offset)
-    
-    @tweets = @tweets.limit(page_size)
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @tweets }
