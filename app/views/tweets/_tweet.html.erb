@@ -16,9 +16,10 @@
     </div>
     <div class="clear">
     </div>
-  </div>  <div class="actions">
-    <a href="{tweet.link_reply}"><img src="/images/reply.png" alt="reply" /></a>
-    <a href="{tweet.link_retweet}"><img src="/images/retweet.png" alt="retweet" /></a>
+  </div>
+  <div class="actions">
+    <a href="http://twitter.com/share?text=<%= CGI.escape('@' + tweet.user_name + ' ') %>&url=http://politwoops.nl/tweet/<%= tweet.id %>&via=politwoops" target="_blank"><img src="/images/reply.png" alt="reply" /></a>
+    <a href="http://twitter.com/share?text=<%= CGI.escape('RT @' + tweet.user_name + ' ' + tweet.content) %>&url=http://politwoops.nl/tweet/<%= tweet.id %>&via=politwoops" target="_blank"><img src="/images/retweet.png" alt="retweet" /></a>
   </div>
   <div class="clear">
   </div>
