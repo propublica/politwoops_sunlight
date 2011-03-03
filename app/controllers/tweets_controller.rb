@@ -6,7 +6,10 @@ class TweetsController < ApplicationController
     
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @tweets }
+      format.xml  do
+        response.headers["Content-Type"] = "application/xml; charset=utf-8"
+        render
+      end
       format.json { render :json => @tweets }
     end
   end

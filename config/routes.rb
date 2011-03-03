@@ -50,13 +50,17 @@ Politwoops::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => "tweets#index"
   
+  match "feed/" => "tweets#index", :format => :xml
+  
   # See how all your routes lay out with "rake routes"
 
   match "tweet/:id" => "tweets#show"
   
   match "user/:user_name" => "politicians#show"
+  match "user/:user_name/feed/" => "politicians#show", :format => :xml
   
   match "party/:name" => "parties#show"
+  match "party/:name/feed/" => "parties#show", :format => :xml
   
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.

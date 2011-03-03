@@ -6,8 +6,11 @@ class PoliticiansController < ApplicationController
 
     respond_to do |format|
       format.html { render "tweets/index" }# show.html.erb
-      format.xml  { render :xml => @tweet }
-      format.json  { render :json => @tweet }
+      format.xml  do
+        response.headers["Content-Type"] = "application/xml; charset=utf-8"
+        render "tweets/index"
+      end
+      format.json  { render :json => @tweets }
     end
   end
 end
