@@ -101,6 +101,10 @@ table.listing {
   color: #666666;
 }
 
+form {
+  color: black;
+}
+
 form ol {
   list-style-type: none;
 }
