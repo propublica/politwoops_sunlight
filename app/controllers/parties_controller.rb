@@ -17,6 +17,15 @@ class PartiesController < ApplicationController
     @party = Party.find(params[:id])
   end
   
+  def index
+    @parties = Party.order(:name).all
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @parties }
+    end
+  end
+  
   # GET /party/cda
   # GET /party/cda.xml
   def show    
