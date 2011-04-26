@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
-  before_filter :require_no_user, :only => [:show]
   before_filter :require_user, :only => [:new, :create, :index, :edit, :update, :delete]
 
   # GET /groups
@@ -52,7 +51,7 @@ class GroupsController < ApplicationController
           @current_user.update_attributes(:group_id => @group[:id])
         end
         
-        format.html { redirect_to(@group, :notice => 'Group was successfully created.') }
+        format.html { redirect_to(groups_path, :notice => 'Group was successfully created.') }
         format.xml  { render :xml => @group, :status => :created, :location => @group }
       else
         format.html { render :action => "new" }
@@ -68,7 +67,7 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.update_attributes(params[:group])
-        format.html { redirect_to(@group, :notice => 'Group was successfully updated.') }
+        format.html { redirect_to(groups_path, :notice => 'Group was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

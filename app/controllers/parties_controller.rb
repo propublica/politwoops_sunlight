@@ -1,4 +1,6 @@
 class PartiesController < ApplicationController
+  before_filter :require_user, :only => [:new, :create, :index, :edit, :update, :delete]
+
   def new
     @party = Party.new
   end
@@ -6,8 +8,7 @@ class PartiesController < ApplicationController
   def create
     @party = Party.new(params[:party])
     if @party.save
-      flash[:notice] = "Politician added!"
-      redirect_back_or_default root_url
+      redirect_to(parties_path, :notice => "Party was successfully added!")
     else
       render :action => :new
     end
@@ -15,6 +16,22 @@ class PartiesController < ApplicationController
   
   def edit
     @party = Party.find(params[:id])
+  end
+
+  # PUT /politicians/1
+  # PUT /politicians/1.xml
+  def update
+    @party = Party.find(params[:id])
+
+    respond_to do |format|
+      if @party.update_attributes(params[:party])
+        format.html { redirect_to(parties_path, :notice => 'Party was successfully updated.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @politician.errors, :status => :unprocessable_entity }
+      end
+    end
   end
   
   def index
@@ -39,6 +56,18 @@ class PartiesController < ApplicationController
         render "tweets/index"
       end
       format.json  { render :json => @tweets }
+    end
+  end
+
+  # DELETE /party/1
+  # DELETE /party/1.xml
+  def destroy
+    @party = Party.find(params[:id])
+    @party.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(parties_url) }
+      format.xml  { head :ok }
     end
   end
 end

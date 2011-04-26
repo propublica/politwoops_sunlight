@@ -4,6 +4,9 @@ class PoliticiansController < ApplicationController
   end
   
   def create
+    # find the twitter user number
+    params[:politician][:twitter_id] = Twitter::user(params[:politician][:user_name]).id
+    
     @politician = Politician.new(params[:politician])
     if @politician.save
       flash[:notice] = "Politician added!"
@@ -15,6 +18,24 @@ class PoliticiansController < ApplicationController
   
   def edit
     @politician = Politician.find(params[:id])
+  end
+
+  # PUT /politicians/1
+  # PUT /politicians/1.xml
+  def update
+    @politician = Politician.find(params[:id])
+    # find the twitter user number
+    params[:politician][:twitter_id] = Twitter::user(params[:politician][:user_name]).id
+
+    respond_to do |format|
+      if @politician.update_attributes(params[:politician])
+        format.html { redirect_to(politicians_path, :notice => 'Politician was successfully updated.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @politician.errors, :status => :unprocessable_entity }
+      end
+    end
   end
 
   def index
@@ -38,6 +59,18 @@ class PoliticiansController < ApplicationController
         render "tweets/index"
       end
       format.json  { render :json => @tweets }
+    end
+  end
+
+  # DELETE /politicians/1
+  # DELETE /politicians/1.xml
+  def destroy
+    @politician = Politician.find(params[:id])
+    @politician.destroy
+
+    respond_to do |format|
+      format.html { redirect_to(polticians_url) }
+      format.xml  { head :ok }
     end
   end
 end

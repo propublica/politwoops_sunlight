@@ -15,6 +15,8 @@ gem "will_paginate", "~> 3.0.pre2"
 
 gem "authlogic"
 
+gem "twitter"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
