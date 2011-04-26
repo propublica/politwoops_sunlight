@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110424152528) do
+ActiveRecord::Schema.define(:version => 20110426105740) do
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.string   "full_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "parties", :force => true do |t|
     t.string   "name"
@@ -58,6 +65,8 @@ ActiveRecord::Schema.define(:version => 20110424152528) do
     t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "group_id"
+    t.integer  "is_admin"
   end
 
 end
