@@ -16,6 +16,15 @@ class PoliticiansController < ApplicationController
   def edit
     @politician = Politician.find(params[:id])
   end
+
+  def index
+    @politicians = Politician.order(:user_name).all
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @parties }
+    end
+  end
   
   # GET /politicians/FemkeHalsema
   # GET /politicians/GemkeHalsema.xml

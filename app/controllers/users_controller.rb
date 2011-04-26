@@ -24,6 +24,15 @@ class UsersController < ApplicationController
     @user = @current_user
   end
   
+  def index
+    @users = User.order(:login).all
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @users }
+    end
+  end
+  
   def update
     @user = @current_user # makes our views "cleaner" and more consistent
     if @user.update_attributes(params[:user])
