@@ -80,6 +80,24 @@ a img {
   float: right;
 }
 
+#notice {
+  color: #666666;
+  clear:both;
+  margin:20px 0 20px 0;
+  padding:10px;
+  background:none repeat scroll 0 0 #EBFFEE;
+  border:1px solid #BBE6B0;    
+}
+
+#alert, #error_explanation {
+  color: #666666;
+  clear:both;
+  margin:20px 0 20px 0;
+  padding:10px;
+  background: none repeat scroll 0 0 #ffdada;
+  border: 1px solid #eb0000;  
+}
+
 .flash {
   color: #666666;
   clear:both;

@@ -10,13 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110426105740) do
+ActiveRecord::Schema.define(:version => 20110426111259) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.string   "full_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "groups_politicians", :id => false, :force => true do |t|
+    t.integer "politician_id"
+    t.integer "group_id"
   end
 
   create_table "parties", :force => true do |t|
