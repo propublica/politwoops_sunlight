@@ -51,6 +51,7 @@ Politwoops::Application.routes.draw do
   resource :account, :controller => "users"
   resources :users
   resources :politicians
+  resources :parties
   resource :user_session
   
   root :to => "tweets#index"

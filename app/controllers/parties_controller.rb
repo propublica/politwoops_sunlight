@@ -1,4 +1,22 @@
 class PartiesController < ApplicationController
+  def new
+    @party = Party.new
+  end
+  
+  def create
+    @party = Party.new(params[:party])
+    if @party.save
+      flash[:notice] = "Politician added!"
+      redirect_back_or_default root_url
+    else
+      render :action => :new
+    end
+  end
+  
+  def edit
+    @party = Party.find(params[:id])
+  end
+  
   # GET /party/cda
   # GET /party/cda.xml
   def show    

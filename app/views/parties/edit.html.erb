@@ -1,0 +1,7 @@
+<h1>Edit party</h1>
+
+<% form_for @party, :url => parties_path do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => "form", :object => f %>
+  <%= f.submit "Update" %>
+<% end %>
