@@ -1,4 +1,22 @@
 class PoliticiansController < ApplicationController
+  def new
+    @politician = Politician.new
+  end
+  
+  def create
+    @politician = Politician.new(params[:politician])
+    if @politician.save
+      flash[:notice] = "Politician added!"
+      redirect_back_or_default root_url
+    else
+      render :action => :new
+    end
+  end
+  
+  def edit
+    @politician = Politician.find(params[:id])
+  end
+  
   # GET /politicians/FemkeHalsema
   # GET /politicians/GemkeHalsema.xml
   def show

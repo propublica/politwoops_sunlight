@@ -50,6 +50,7 @@ Politwoops::Application.routes.draw do
   # just remember to delete public/index.html.
   resource :account, :controller => "users"
   resources :users
+  resources :politicians
   resource :user_session
   
   root :to => "tweets#index"
