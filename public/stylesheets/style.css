@@ -1,7 +1,7 @@
 body {
   background: white;
   font-family: "Lucida Sans", "MS Trebuchet", sans-serif;
-  color: #D4D4D4;
+  color: black;
 }
 
 #wrapper {
@@ -117,10 +117,6 @@ a img {
 
 table.listing {
   color: #666666;
-}
-
-form {
-  color: black;
 }
 
 form ol {
