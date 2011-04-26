@@ -2,10 +2,10 @@
 <ul>
   <li><a href="/account/edit">Edit your account</a></li>
 <% if @user.group_id.nil? %>
-  <li><a href="/groups/add">Add your group</a></li>
+  <li><a href="/groups/new">Add your group</a></li>
 <% else %>
 <li><a href="/groups/<%= @user.group_id %>/edit">Edit your group</a></li>
 <% end %>
-<li><a href="/parties/add">Add a party</a></li>
-<li><a href="/politicians/add">Add a politician</a></li>
+<li><a href="/parties/new">Add a party</a></li>
+<li><a href="/politicians/new">Add a politician</a></li>
 </ul>

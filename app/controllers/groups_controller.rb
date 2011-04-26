@@ -1,4 +1,7 @@
 class GroupsController < ApplicationController
+  before_filter :require_no_user, :only => [:show]
+  before_filter :require_user, :only => [:new, :create, :index, :edit, :update, :delete]
+
   # GET /groups
   # GET /groups.xml
   def index
@@ -44,6 +47,11 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
+        # save the group id with the user
+        if @current_user.is_admin == 1
+          @current_user.update_attributes(:group_id => @group[:id])
+        end
+        
         format.html { redirect_to(@group, :notice => 'Group was successfully created.') }
         format.xml  { render :xml => @group, :status => :created, :location => @group }
       else
