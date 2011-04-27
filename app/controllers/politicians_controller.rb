@@ -1,6 +1,6 @@
 class PoliticiansController < ApplicationController
   before_filter :require_user, :only => [:new, :create, :edit, :update]
-  before_filter :require_admin_user, :only [:destroy]
+  before_filter :require_admin_user, :only => [:destroy]
 
   def new
     @politician = Politician.new

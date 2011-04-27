@@ -1,3 +1,5 @@
 <%= form.label :username %><br />
 <%= form.text_field :user_name %><br />
 <br />
+<%= form.label :party %><br />
+<%= collection_select(:politician, :party_id, Party.all, :id, :name) %>
