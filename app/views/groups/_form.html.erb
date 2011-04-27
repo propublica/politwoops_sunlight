@@ -19,7 +19,16 @@
     <%= f.label :full_name %><br />
     <%= f.text_field :full_name %>
   </div>
+  
+  <%= f.label :politicians %><br />
+  <% for politician in Politician.all %>
+  <div>
+    <%= check_box_tag "group[politician_ids][]", politician.id, @group.politicians.include?(politician) %>
+    <%= politician.user_name %>
+  </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
-  </div>
+  </div>  
 <% end %>

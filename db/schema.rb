@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110426111259) do
+ActiveRecord::Schema.define(:version => 20110427144440) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -19,10 +19,14 @@ ActiveRecord::Schema.define(:version => 20110426111259) do
     t.datetime "updated_at"
   end
 
+  add_index "groups", ["name"], :name => "index_groups_on_name"
+
   create_table "groups_politicians", :id => false, :force => true do |t|
     t.integer "politician_id"
     t.integer "group_id"
   end
+
+  add_index "groups_politicians", ["politician_id", "group_id"], :name => "index_groups_politicians_on_politician_id_and_group_id"
 
   create_table "parties", :force => true do |t|
     t.string   "name"
@@ -51,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20110426111259) do
   add_index "tweets", ["created"], :name => "created"
   add_index "tweets", ["deleted"], :name => "deleted"
   add_index "tweets", ["modified"], :name => "modified"
+  add_index "tweets", ["politician_id"], :name => "index_tweets_on_politician_id"
   add_index "tweets", ["user_name"], :name => "user_name"
 
   create_table "users", :force => true do |t|

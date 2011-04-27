@@ -2,7 +2,9 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.xml
   def index
-    @tweets = Tweet.deleted.paginate(:page => params[:page], :per_page => Tweet.per_page)
+    @group_name = params[:group_name] || @group_default_name
+    @politicians = Politician.joins(:groups).where({:groups => {:name => @group_name}}).all
+    @tweets = Tweet.deleted.where(:politician_id => @politicians).paginate(:page => params[:page], :per_page => Tweet.per_page)
     
     respond_to do |format|
       format.html # index.html.erb

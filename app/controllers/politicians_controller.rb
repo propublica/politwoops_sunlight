@@ -26,6 +26,8 @@ class PoliticiansController < ApplicationController
   # PUT /politicians/1
   # PUT /politicians/1.xml
   def update
+    params[:politician][:group_ids] ||= []
+    
     @politician = Politician.find(params[:id])
     # find the twitter user number
     params[:politician][:twitter_id] = Twitter::user(params[:politician][:user_name]).id
