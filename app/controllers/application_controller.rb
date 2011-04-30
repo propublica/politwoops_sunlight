@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_user_session, :current_user
 
+  protected
+  
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "politwoops" && password == "hackdeoverheid"
+    end
+  end
+    
   private
 
   def set_default_group
