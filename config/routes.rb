@@ -1,4 +1,6 @@
 Politwoops::Application.routes.draw do
+  resources :pages
+
   resources :groups
 
   # The priority is based upon order of creation:
@@ -72,6 +74,8 @@ Politwoops::Application.routes.draw do
   
   match "g/:group_name" => "tweets#index"
   match "g/:group_name/feed/" => "tweets#index", :format => :xml
+  
+  match "page/:page_slug" => "pages#show"
   
   match "login" => "user_sessions#new"
   match "logout" => "user_sessions#destroy"
