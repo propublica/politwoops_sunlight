@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110427144440) do
+ActiveRecord::Schema.define(:version => 20110430161500) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(:version => 20110427144440) do
   end
 
   add_index "groups_politicians", ["politician_id", "group_id"], :name => "index_groups_politicians_on_politician_id_and_group_id"
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "parties", :force => true do |t|
     t.string   "name"

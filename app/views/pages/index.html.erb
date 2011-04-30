@@ -15,7 +15,7 @@
     <td><%= page.title %></td>
     <td><%= page.slug %></td>
     <td><%= page.content %></td>
-    <td><%= link_to 'Show', page %></td>
+    <td><%= link_to 'Show', sprintf('/page/%s', page.slug) %></td>
     <td><%= link_to 'Edit', edit_page_path(page) %></td>
     <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

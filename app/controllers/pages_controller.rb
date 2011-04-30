@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_filter :require_admin_user, :except => [:show]
+  
   # GET /pages
   # GET /pages.xml
   def index
@@ -13,7 +15,7 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.xml
   def show
-    @page = Page.where(:slug => params[:page_slug])
+    @page = Page.where(:slug => params[:page_slug]).first
 
     respond_to do |format|
       format.html # show.html.erb
