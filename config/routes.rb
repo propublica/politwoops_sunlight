@@ -70,6 +70,9 @@ Politwoops::Application.routes.draw do
   match "party/:name" => "parties#show"
   match "party/:name/feed/" => "parties#show", :format => :xml
   
+  match "g/:group_name" => "tweets#index"
+  match "g/:group_name/feed/" => "tweets#index", :format => :xml
+  
   match "login" => "user_sessions#new"
   match "logout" => "user_sessions#destroy"
   
