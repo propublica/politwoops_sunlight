@@ -3,7 +3,7 @@ class Tweet < ActiveRecord::Base
 
   default_scope :order => 'modified DESC'
   
-  scope :deleted, :conditions => {:deleted => 1}
+  scope :deleted, :conditions => "deleted = 1 AND content IS NOT NULL"
   
   cattr_reader :per_page
   @@per_page = 10
