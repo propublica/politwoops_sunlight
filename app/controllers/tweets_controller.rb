@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
   # GET /tweets.xml
   def index
     @group_name = params[:group_name] || @group_default_name
-    @politicians = Politician.joins(:groups).where({:groups => {:name => @group_name}}).all
+    @politicians = Politician.joins(:groups).where({:groups => {:name => @group_name.sub(/^www\./i, '')}}).all
     @tweets = Tweet.deleted.where(:politician_id => @politicians).paginate(:page => params[:page], :per_page => Tweet.per_page)
     
     respond_to do |format|
