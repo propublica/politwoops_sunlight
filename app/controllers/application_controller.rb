@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_default_group
-    @group_default_name = request.host
+    @default_group = Group.where(:name => request.host.sub(/^www\./i, '')).first
   end
   
   def current_user_session

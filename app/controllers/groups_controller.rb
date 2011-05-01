@@ -48,7 +48,7 @@ class GroupsController < ApplicationController
     respond_to do |format|
       if @group.save
         # save the group id with the user
-        if @current_user.is_admin == 1
+        if @current_user.is_admin != 1
           @current_user.update_attributes(:group_id => @group[:id])
         end
         
