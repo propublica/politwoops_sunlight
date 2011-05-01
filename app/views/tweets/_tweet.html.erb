@@ -1,10 +1,10 @@
 <div id="tweet-<%= tweet.id %>" class="tweet">
-  <a href="/user/<%= tweet.user_name %>">
-    <img src="http://img.tweetimag.es/i/<%= tweet.user_name %>_b" alt="<%= tweet.user_name %>" />
+  <a href="/user/<%= tweet.politician.user_name %>">
+    <img src="http://img.tweetimag.es/i/<%= tweet.politician.user_name %>_b" alt="<%= tweet.politician.user_name %>" />
   </a>
   <div class="content">
     <div class="tweet-content">
-    <a href="http://twitter.com/<%= tweet.user_name %>"><%= tweet.user_name %></a>
+    <a href="http://twitter.com/<%= tweet.politician.user_name %>"><%= tweet.politician.user_name %></a>
 	<% if !tweet.politician.nil? %>
 	(<a href="/party/<%= tweet.politician.party.name %>"><%= tweet.politician.party.name %></a>)
 	<% end %>
@@ -12,7 +12,7 @@
     </div>
     <div class="byline">
 		<% source = tweet.details["source"].to_s %>
-	      <a href="/tweet/<%= tweet.id %>"><%= time_ago_in_words(tweet.modified) %></a> verwijderd via <%= source.html_safe %>
+	      <a href="/tweet/<%= tweet.id %>"><%= time_ago_in_words(tweet.modified) %></a> geleden verwijderd via <%= source.html_safe %>
     </div>
     <div class="clear">
     </div>

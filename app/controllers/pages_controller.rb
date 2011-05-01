@@ -15,7 +15,15 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.xml
   def show
-    @page = Page.where(:slug => params[:page_slug]).first
+    if params[:page_slug]
+      @page = Page.where(:slug => params[:page_slug]).first
+    else
+      @page = Page.find(params[:id])
+    end
+
+    if not @page
+      raise ActiveRecord::RecordNotFound.new  
+    end
 
     respond_to do |format|
       format.html # show.html.erb
