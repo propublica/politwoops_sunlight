@@ -20,8 +20,7 @@ class PoliticiansController < ApplicationController
     
     @politician = Politician.new(params[:politician])
     if @politician.save
-      flash[:notice] = "Politician added!"
-      redirect_back_or_default root_url
+      redirect_to (current_user.is_admin == 1) ? politicians_path : account_path, :notice => 'Politician added!'
     else
       render :action => :new
     end

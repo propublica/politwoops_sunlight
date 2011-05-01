@@ -52,7 +52,7 @@ class GroupsController < ApplicationController
           @current_user.update_attributes(:group_id => @group[:id])
         end
         
-        format.html { redirect_to(groups_path, :notice => 'Group was successfully created.') }
+        format.html { redirect_to((current_user.is_admin == 1) ? groups_path : account_path, :notice => 'Group was successfully created.') }
         format.xml  { render :xml => @group, :status => :created, :location => @group }
       else
         format.html { render :action => "new" }
@@ -68,7 +68,7 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.update_attributes(params[:group])
-        format.html { redirect_to(groups_path, :notice => 'Group was successfully updated.') }
+        format.html { redirect_to((current_user.is_admin == 1) ? groups_path : account_path, :notice => 'Group was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -84,7 +84,7 @@ class GroupsController < ApplicationController
     @group.destroy
 
     respond_to do |format|
-      format.html { redirect_to(groups_url) }
+      format.html { redirect_to((current_user.is_admin == 1) ? groups_path : account_path) }
       format.xml  { head :ok }
     end
   end
