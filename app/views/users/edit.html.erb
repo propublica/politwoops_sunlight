@@ -1,9 +1,7 @@
-<h1>Edit My Account</h1>
+<h1>Gegevens bijwerken</h1>
 
 <% form_for @user, :url => account_path do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form", :object => f %>
-  <%= f.submit "Update" %>
+  <%= f.submit "Bijwerken" %>
 <% end %>
-
-<br /><%= link_to "My Profile", account_path %>

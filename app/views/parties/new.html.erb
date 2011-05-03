@@ -1,7 +1,7 @@
-<h1>New party</h1>
+<h1>Nieuwe poltieke partij</h1>
 
 <% form_for @party, :url => parties_path do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form", :object => f %>
-  <%= f.submit "Add" %>
+  <%= f.submit "Voeg toe" %>
 <% end %>

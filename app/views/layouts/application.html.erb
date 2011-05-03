@@ -13,7 +13,7 @@
 		</div>
 
     <% if flash[:notice] %>
-        <div id="notice"><%= flash[:notice] %></div>
+        <div id="notice"><%=raw flash[:notice] %></div>
     <% end %>
     
 		<%= yield %>
@@ -28,8 +28,12 @@
 
 	</div>
 <%= render :partial => "layouts/analytics" %>
-<div class="footer">
-<a href="/login">login</a> (<%= @default_group.name %>)
+<div id="footer-menu">
+<% if current_user.nil? %>
+<a href="/login">inloggen</a>
+<% else %>
+<a href="/account">menu</a> | <a href="/logout">uitloggen</a>
+<% end %>
 </div>
 </body>
 </html>

@@ -76,6 +76,13 @@ a img {
   margin: 16px 0 0 0;
 }
 
+#footer-menu {
+	clear: both;
+	font-size: small;
+	width: 100%;
+	text-align: center;
+}
+
 #hdo {
   float: right;
 }
@@ -115,6 +122,12 @@ a img {
   border: 1px solid #eb0000; 
 }
 
+form .explanation {
+	color: #D4D4D4;
+	margin: 0px 0px 8px 0px;
+	width: 300px;
+}
+
 table.listing {
   color: #666666;
 }
@@ -133,6 +146,6 @@ form label {
   width: 150px;
 }
 
-form input[type=text] {
+form input[type=text], form input[type=password] {
   width: 300px;
 }

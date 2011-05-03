@@ -1,11 +1,12 @@
-<h1>Administration</h1>
+<h1>Menu</h1>
 <ul>
-  <li><a href="/account/edit">Edit your account</a></li>
+  <li><a href="/account/edit">Gegevens bijwerken</a></li>
 <% if @user.group_id.nil? %>
-  <li><a href="/groups/new">Add your group</a></li>
+  <li><a href="/groups/new">Maak jouw groep</a></li>
 <% else %>
-<li><a href="/groups/<%= @user.group_id %>/edit">Edit your group</a></li>
+<li><a href="/groups/<%= @user.group_id %>/edit">Bewerk jouw groep</a></li>
+<li><a href="/g/<%= @user.group.name %>" target="_blank">Bekijk jouw groep</a></li>
 <% end %>
-<li><a href="/parties/new">Add a party</a></li>
-<li><a href="/politicians/new">Add a politician</a></li>
+<li><a href="/parties/new">Voeg een politieke partij toe</a></li>
+<li><a href="/politicians/new">Voeg een politicus toe</a></li>
 </ul>

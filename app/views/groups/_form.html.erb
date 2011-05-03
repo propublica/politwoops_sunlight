@@ -12,22 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :naam %><br />
     <%= f.text_field :name %>
+	<p class="explanation">Een korte naam, zonder spaties</p>
   </div>
   <div class="field">
-    <%= f.label :full_name %><br />
+    <%= f.label 'Beschrijving' %><br />
     <%= f.text_field :full_name %>
+	<p class="explanation">Een  beschrijving van de groep</p>
   </div>
   
-  <%= f.label :politicians %><br />
-  <% for politician in Politician.all %>
+<% if !@group.id.nil? %>
+  <%= f.label 'Poltici:' %><br />
+	<p class="explanation">Vink poltici aan om ze aan de groep toe te voegen, of te verwijderen.</p>
+  <% for politician in Politician.order(:user_name).all %>
   <div>
     <%= check_box_tag "group[politician_ids][]", politician.id, @group.politicians.include?(politician) %>
     <%= politician.user_name %>
   </div>
   <% end %>
-
+<% end %>
   <div class="actions">
     <%= f.submit %>
   </div>  
