@@ -1,10 +1,10 @@
 <%= form.label 'Twitter naam' %><br />
 <%= form.text_field :user_name %><br />
 <p class="explanation">De twitter geruiker kan al in het systeem zitten. Klik dan op "Bewerk mijn groep" om de gebruiker aan je groep toe te voegen.</p>
+<p class="explanation">You can leave out the @ character</p>
 <br />
 <%= form.label 'Politieke partij' %><br />
 <%= collection_select(:politician, :party_id, Party.order(:name).all, :id, :name) %><br />
-
 <% if @current_user.is_admin == 1 %>
   <%= form.label :groups %><br />
   <% for group in Group.all %>
