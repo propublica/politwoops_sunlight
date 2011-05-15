@@ -57,6 +57,7 @@ Politwoops::Application.routes.draw do
   resources :politicians
   resources :parties
   resource :user_session
+  resources :twitter_lists
   
   root :to => "tweets#index"
   
@@ -64,6 +65,8 @@ Politwoops::Application.routes.draw do
   
   # See how all your routes lay out with "rake routes"
 
+  match "twitter_lists/:user_name/:list" => "twitter_lists#index"
+  
   match "tweet/:id" => "tweets#show"
   
   match "user/:user_name" => "politicians#show"
