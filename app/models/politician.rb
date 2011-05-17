@@ -6,4 +6,6 @@ class Politician < ActiveRecord::Base
   has_and_belongs_to_many :groups
   
   default_scope :order => 'user_name'
+
+  validates_uniqueness_of :user_name
 end
