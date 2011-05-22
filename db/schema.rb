@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110430161500) do
+ActiveRecord::Schema.define(:version => 20110519181701) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -49,6 +49,14 @@ ActiveRecord::Schema.define(:version => 20110430161500) do
   end
 
   add_index "politicians", ["user_name"], :name => "user_name"
+
+  create_table "statistics", :force => true do |t|
+    t.string   "what"
+    t.date     "when"
+    t.integer  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tweets", :force => true do |t|
     t.string   "user_name",     :limit => 64
