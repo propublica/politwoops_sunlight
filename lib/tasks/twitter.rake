@@ -6,7 +6,7 @@ namespace :twitter do
     puts ENV['TWITTER_LIST']
     next_cursor = -1
     params = {
-      :poltician_ids => []
+      :politician_ids => []
     }
     until next_cursor == 0
       m = Twitter.list_members(ENV['TWITTER_USER'], ENV['TWITTER_LIST'], :cursor => next_cursor)
