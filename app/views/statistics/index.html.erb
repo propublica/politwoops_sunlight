@@ -1,0 +1,29 @@
+<h2>Tweets</h2>
+<%
+tweet_counts = @tweet_statistics.map { |statistic| statistic.amount }
+tweets_img = Gchart.line(
+    :size => '600x400', 
+    :title => nil,
+    :bg => 'efefef',
+    :legend => ['tweets'],
+    :data => tweet_counts.reverse,
+    :axis_with_labels => ['x','y'],
+    :axis_labels => [["30 days ago", "today"], [0, tweet_counts.max]]
+)
+%>
+<img src="<%= tweets_img %>" />
+
+<h2>Deleted Tweets</h2>
+<%
+deleted_tweet_counts = @deleted_tweet_statistics.map { |statistic| statistic.amount }
+deleted_tweets_img = Gchart.line(
+    :size => '600x400', 
+    :title => nil,
+    :bg => 'efefef',
+    :legend => ['deleted tweets'],
+    :data => deleted_tweet_counts.reverse,
+    :axis_with_labels => ['x','y'],
+    :axis_labels => [["30 days ago", "today"], [0, deleted_tweet_counts.max]]
+)
+%>
+<img src="<%= deleted_tweets_img %>" />

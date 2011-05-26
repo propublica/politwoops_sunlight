@@ -63,6 +63,8 @@ Politwoops::Application.routes.draw do
   
   match "feed/" => "tweets#index", :format => :xml
   
+  match "statistics/" => "statistics#index"
+  
   # See how all your routes lay out with "rake routes"
 
   match "twitter_lists/:user_name/:list" => "twitter_lists#index"

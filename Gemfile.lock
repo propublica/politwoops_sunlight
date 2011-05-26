@@ -41,6 +41,7 @@ GEM
       rack (< 2, >= 1.1.0)
     faraday_middleware (0.6.3)
       faraday (~> 0.6.0)
+    googlecharts (1.6.7)
     hashie (1.0.0)
     i18n (0.5.0)
     json (1.4.6)
@@ -98,6 +99,7 @@ PLATFORMS
 
 DEPENDENCIES
   authlogic
+  googlecharts
   json
   mysql2
   rails (= 3.0.3)

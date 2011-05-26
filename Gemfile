@@ -17,6 +17,8 @@ gem "authlogic"
 
 gem "twitter"
 
+gem "googlecharts"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
