@@ -1,6 +1,6 @@
 <div id="tweet-<%= tweet.id %>" class="tweet">
   <a href="/user/<%= tweet.politician.user_name %>">
-    <img src="http://img.tweetimag.es/i/<%= tweet.politician.user_name %>_b" alt="<%= tweet.politician.user_name %>" />
+    <img src="http://img.tweetimag.es/i/<%= tweet.politician.user_name %>_b" alt="<%= tweet.politician.user_name %>" width"73" height="73" />
   </a>
   <div class="content">
     <div class="tweet-content">
@@ -18,8 +18,8 @@
     </div>
   </div>
   <div class="actions">
-    <a href="http://twitter.com/share?text=<%= CGI.escape('@' + tweet.user_name + ' ') %>&url=http://politwoops.nl/tweet/<%= tweet.id %>&via=politwoops" target="_blank"><img src="/images/reply.png" alt="reply" /></a>
-    <a href="http://twitter.com/share?text=<%= CGI.escape('RT @' + tweet.user_name + ' ' + tweet.content) %>&url=http://politwoops.nl/tweet/<%= tweet.id %>&via=politwoops" target="_blank"><img src="/images/retweet.png" alt="retweet" /></a>
+    <a href="http://twitter.com/share?text=<%= CGI.escape('@' + tweet.user_name + ' ') %>&url=http://politwoops.nl/tweet/<%= tweet.id %>&via=politwoops" class="reply" target="_blank">reply</a>
+    <a href="http://twitter.com/share?text=<%= CGI.escape('RT @' + tweet.user_name + ' ' + tweet.content) %>&url=http://politwoops.nl/tweet/<%= tweet.id %>&via=politwoops" class="retweet" target="_blank">retweet</a>
   </div>
   <div class="clear">
   </div>

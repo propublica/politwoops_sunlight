@@ -1,12 +1,9 @@
+/* generic styles */
+
 body {
   background: white;
-  font-family: "Lucida Sans", "MS Trebuchet", sans-serif;
   color: black;
-}
-
-#wrapper {
-	width: 960px;
-	margin: 0px auto;
+  font-family: "Lucida Sans", "MS Trebuchet", sans-serif;
 }
 
 a {
@@ -26,6 +23,31 @@ a img {
   clear: both;
 }
 
+/* wrapper */
+
+#wrapper {
+	margin: 0px auto;
+	width: 960px;
+}
+
+/* header */
+
+#header a {
+  background: url(/images/logo.png);
+  display: block;
+  height: 64px;
+  text-indent: -999999em;
+  width: 479px;
+}
+
+/* content */
+
+#content {
+  margin: 40px 0 40px 0;
+}
+
+/* tweets */
+
 .tweet {
   border-bottom: 1px solid #d4d4d4;
   clear: both;
@@ -37,7 +59,9 @@ a img {
 
 .tweet img {
   float: left;
+  height: 73px;
   margin: 0 8px 0 0;
+  width: 73px;
 }
 
 .tweet .content {
@@ -62,15 +86,32 @@ a img {
   margin: 12px 0 0 0;
 }
 
-.tweet .actions img {
+.tweet .actions a {
+  display: block;
+  float: left;
+  height: 48px;
   margin: 0 0 0 8px;
+  text-indent: -999999em;
+  width: 48px;
 }
 
+.tweet .actions .reply {
+  background: url(/images/reply.png);
+}
+
+.tweet .actions .retweet {
+  background: url(/images/retweet.png);  
+}
+
+/* pager */
+
 #pager {
-  margin: 12px 0 12px 0;
   font-size: 16px;
+  margin: 12px 0 12px 0;
   text-align: center;
 }
+
+/* footer */
 
 #footer {
   margin: 16px 0 0 0;
@@ -79,13 +120,23 @@ a img {
 #footer-menu {
 	clear: both;
 	font-size: small;
-	width: 100%;
 	text-align: center;
+	width: 100%;
 }
 
 #hdo {
   float: right;
 }
+
+#hdo a {
+  background: url(/images/hackdeoverheid.png);
+  display: block;
+  height: 35px;
+  text-indent: -999999em;
+  width: 329px;  
+}
+
+/* flash messages */
 
 #notice {
   color: #666666;
@@ -121,6 +172,8 @@ a img {
   background: none repeat scroll 0 0 #ffdada;
   border: 1px solid #eb0000; 
 }
+
+/* form stuff */
 
 form .explanation {
 	color: #D4D4D4;

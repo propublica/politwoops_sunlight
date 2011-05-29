@@ -10,25 +10,26 @@
 <body>
 	<div id="wrapper">
 		<div id="header">
-			<a href="/"><img src="/images/logo.png" alt="politwoops" /></a>
+			<a href="/">Politwoops</a>
 		</div>
 
     <% if flash[:notice] %>
         <div id="notice"><%=raw flash[:notice] %></div>
     <% end %>
     
+        <div id="content">
 		<%= yield %>
-
+        </div>
+        
 		<div id="footer">
 			<div id="hdo">
-				<a href="http://www.hackdeoverheid.nl/"><img src="/images/hackdeoverheid.png" alt="Een hackdeoverheid project"></a>
+				<a href="http://www.hackdeoverheid.nl/">Een hackdeoverheid project</a>
 			</div>
 			<div class="clear">
 			</div>
 		</div>
 
 	</div>
-<%= render :partial => "layouts/analytics" %>
 <div id="footer-menu">
 <% if current_user.nil? %>
 <a href="/login">inloggen</a>
@@ -36,5 +37,6 @@
 <a href="/account">menu</a> | <a href="/logout">uitloggen</a>
 <% end %>
 </div>
+<%= render :partial => "layouts/analytics" %>
 </body>
 </html>
