@@ -1,1 +1,4 @@
+<% content_for :title do %>
+    <%= @tweet.politician.user_name %> (<%= @tweet.politician.party.name %>)
+<% end %>
 <%= render @tweet %>

@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Politwoops</title>
+  <% if content_for?(:title) %>
+    <title><%= yield(:title) %> - Politwoops</title>
+  <% else %>
+    <title>Politwoops</title>
+  <% end %>
   <%= stylesheet_link_tag "style" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
