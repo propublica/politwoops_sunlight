@@ -20,10 +20,25 @@ deleted_tweets_img = Gchart.line(
     :size => '600x400', 
     :title => nil,
     :bg => 'efefef',
-    :legend => ['deleted tweets'],
+    :legend => ['tweets'],
     :data => deleted_tweet_counts.reverse,
     :axis_with_labels => ['x','y'],
     :axis_labels => [["30 days ago", "today"], [0, deleted_tweet_counts.max]]
 )
 %>
 <img src="<%= deleted_tweets_img %>" />
+
+<h2>Politicians</h2>
+<%
+politician_counts = @politician_statistics.map { |statistic| statistic.amount }
+politicians_img = Gchart.line(
+    :size => '600x400', 
+    :title => nil,
+    :bg => 'efefef',
+    :legend => ['politicians'],
+    :data => politician_counts.reverse,
+    :axis_with_labels => ['x','y'],
+    :axis_labels => [["{politician_counts.length} days ago", "today"], [0, politician_counts.max]]
+)
+%>
+<img src="<%= politicians_img %>" />

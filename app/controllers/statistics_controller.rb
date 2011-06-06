@@ -4,5 +4,6 @@ class StatisticsController < ApplicationController
   def index
     @tweet_statistics = Statistic.where(:what => 'tweets').order('`when` DESC').limit(30).all
     @deleted_tweet_statistics = Statistic.where(:what => 'tweets-deleted').order('`when` DESC').limit(30).all
+    @politician_statistics = Statistic.where(:what => 'politicians').order('`when` DESC').limit(30).all
   end
 end
