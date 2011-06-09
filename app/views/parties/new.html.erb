@@ -1,7 +1,7 @@
-<h1>Nieuwe politieke partij</h1>
+<h1><%=t :add_heading, :scope => [:politwoops, :parties] %></h1>
 
 <% form_for @party, :url => parties_path do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form", :object => f %>
-  <%= f.submit "Voeg toe" %>
+  <%= f.submit t(:create, :scope => [:helpers, :submit], :model => t(:model_name, :scope => [:politwoops, :parties])) %>
 <% end %>

@@ -1,7 +1,7 @@
-<h1>Edit party</h1>
+<h1><%=t :edit_heading, :scope => [:politwoops, :parties] %></h1>
 
 <% form_for @party do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form", :object => f %>
-  <%= f.submit "Update" %>
+  <%= f.submit t(:update, :scope => [:helpers, :submit], :model => t(:model_name, :scope => [:politwoops, :parties])) %>
 <% end %>

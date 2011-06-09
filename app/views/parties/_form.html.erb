@@ -1,3 +1,3 @@
-<%= form.label 'Naam van de partij' %><br />
+<%= form.label t(:name_label, :scope => [:politwoops, :parties]) %>:<br />
 <%= form.text_field :name %><br />
-<p class="explanation">Kort, zonder spaties</p>
+<p class="explanation"><%=t :name_explanation, :scope => [:politwoops, :parties] %></p>

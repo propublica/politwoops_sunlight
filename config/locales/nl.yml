@@ -199,12 +199,34 @@ nl:
       errors_explanation:
         one: "1 fout verhinderde het opslaan van deze groep:"
         other: "%{count} fouten verhinderden het opslaan van deze groep:"
-      name_label: "Naam :"
+      name_label: "Naam"
       name_explanation: "Een korte naam, zonder spaties"
-      description_label: "Beschrijving :"
+      description_label: "Beschrijving"
       description_explanation: "Een beschrijving van de groep"
-      politicians_label: "Politici :"
+      politicians_label: "Politici"
       politicians_explanation: "Vink poltici aan om ze aan de groep toe te voegen, of te verwijderen."
       add_heading: "Groep toevoegen"
       edit_heading: "Groep bewerken"
       index_heading: "Groepen"
+
+    pages:
+      errors_explanation:
+        one: "1 fout verhinderde het opslaan van deze pagina:"
+        other: "%{count} fouten verhinderden het opslaan van deze pagina:"
+      title_label: "Titel"
+      slug_label: "URL"
+      content_label: "Inhoud"
+      add_heading: "Pagina toevoegen"
+      edit_heading: "Pagina bewerken"
+      index_heading: "Pagina's"
+
+    parties:
+      errors_explanation:
+        one: "1 fout verhinderde het opslaan van deze politieke partij:"
+        other: "%{count} fouten verhinderden het opslaan van deze politieke partij:"
+      name_label: "Naam"
+      name_explanation: "Een korte naam, zonder spaties"
+      add_heading: "Politieke partij toevoegen"
+      edit_heading: "Politieke partij bewerken"
+      index_heading: "Politieke partijen"
+      model_name: "Politieke partij"

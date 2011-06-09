@@ -1,7 +1,7 @@
 <%= form_for(@page) do |f| %>
   <% if @page.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+      <h2><%=t :errors_explanation, :scope => [:politwoops, :pages], :count => @page.errors.count %>
 
       <ul>
       <% @page.errors.full_messages.each do |msg| %>
@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label t(:title_label, :scope => [:politwoops, :pages]) %>:<br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :slug %><br />
+    <%= f.label t(:slug_label, :scope => [:politwoops, :pages]) %>:<br />
     <%= f.text_field :slug %>
   </div>
   <div class="field">
-    <%= f.label :content %><br />
+    <%= f.label t(:content_label, :scope => [:politwoops, :pages]) %>:<br />
     <%= f.text_area :content %>
   </div>
   <div class="actions">
