@@ -16,7 +16,10 @@ class ApplicationController < ActionController::Base
   private
 
   def set_default_group
-    @default_group = Group.where(:name => request.host.sub(/^www\./i, '')).first
+    group_name = params.has_key?(:group_name) ? params[:group_name] : request.host.sub(/^www\./i, '')
+    @default_group = Group.where(:name => group_name).first
+    #set the language too
+    I18n.locale = @default_group.language
   end
   
   def current_user_session

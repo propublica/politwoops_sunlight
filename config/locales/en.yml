@@ -2,4 +2,12 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  politwoops:
+    login: "login"
+    logout: "logout"
+    menu: "menu"
+    hdo_project: "A hackdeoverheid project"
+    show: "Show"
+    edit: "Edit"
+    destroy: "Destroy"
+    sure: "Are you sure?"

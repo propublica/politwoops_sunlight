@@ -1,8 +1,7 @@
 <%= form_for(@group) do |f| %>
   <% if @group.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
-
+      <h2><%=t :errors_explanation, :scope => [:politwoops, :groups], :count => @group.errors.count %>
       <ul>
       <% @group.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -12,19 +11,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :naam %><br />
+    <%= f.label t(:name_label, :scope => [:politwoops, :groups]) %><br />
     <%= f.text_field :name %>
-	<p class="explanation">Een korte naam, zonder spaties</p>
+	<p class="explanation"><%=t :name_explanation, :scope => [:politwoops, :groups] %></p>
   </div>
   <div class="field">
-    <%= f.label 'Beschrijving' %><br />
+    <%= f.label t(:description_label, :scope => [:politwoops, :groups]) %><br />
     <%= f.text_field :full_name %>
-	<p class="explanation">Een  beschrijving van de groep</p>
+	<p class="explanation"><%=t :description_explanation, :scope => [:politwoops, :groups] %></p>
   </div>
   
 <% if !@group.id.nil? %>
-  <%= f.label 'Poltici:' %><br />
-	<p class="explanation">Vink poltici aan om ze aan de groep toe te voegen, of te verwijderen.</p>
+  <%= f.label t(:politicians_label, :scope => [:politwoops, :groups]) %><br />
+	<p class="explanation"><%=t :politicians_explanation, :scope => [:politwoops, :groups] %></p>
   <% for politician in Politician.order(:user_name).all %>
   <div>
     <%= check_box_tag "group[politician_ids][]", politician.id, @group.politicians.include?(politician) %>

@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110519181701) do
+ActiveRecord::Schema.define(:version => 20110608201341) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.string   "full_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "language",   :limit => 12, :default => "en"
   end
 
   add_index "groups", ["name"], :name => "index_groups_on_name"

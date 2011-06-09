@@ -1,9 +1,9 @@
-<h1>Listing groups</h1>
+<h1><%=t :index_heading, :scope => [:politwoops, :groups] %></h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Full name</th>
+    <th><%=t :name_label, :scope => [:politwoops, :groups] %></th>
+    <th><%=t :description_label, :scope => [:politwoops, :groups] %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,13 +13,13 @@
   <tr>
     <td><%= group.name %></td>
     <td><%= group.full_name %></td>
-    <td><%= link_to 'Show', sprintf('/g/%s', group.name) %></td>
-    <td><%= link_to 'Edit', edit_group_path(group) %></td>
-    <td><%= link_to 'Destroy', group, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to t(:show, :scope => [:politwoops]), sprintf('/g/%s', group.name) %></td>
+    <td><%= link_to t(:edit, :scope => [:politwoops]), edit_group_path(group) %></td>
+    <td><%= link_to t(:destroy, :scope => [:politwoops]), group, :confirm => t(:sure, :scope => [:politwoops]), :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Group', new_group_path %>
+<%= link_to t(:add_heading, :scope => [:politwoops, :groups]), new_group_path %>
