@@ -1,7 +1,7 @@
-<h1>Nieuwe politicus</h1>
+<h1><%=t :add_heading, :scope => [:politwoops, :politicians] %></h1>
 
 <% form_for @politician, :url => politicians_path do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form", :object => f %>
-  <%= f.submit "Voeg toe" %>
+  <%= f.submit t(:create, :scope => [:helpers, :submit], :model => t(:model_name, :scope => [:politwoops, :politicians])) %>
 <% end %>

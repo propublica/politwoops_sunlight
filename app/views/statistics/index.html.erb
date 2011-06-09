@@ -1,34 +1,34 @@
-<h2>Tweets</h2>
+<h2><%=t :tweets, :scope => [:politwoops, :statistics] %></h2>
 <%
 tweet_counts = @tweet_statistics.map { |statistic| statistic.amount }
 tweets_img = Gchart.line(
     :size => '600x400', 
     :title => nil,
     :bg => 'efefef',
-    :legend => ['tweets'],
+    :legend => [t(:tweets, :scope => [:politwoops, :statistics])],
     :data => tweet_counts.reverse,
     :axis_with_labels => ['x','y'],
-    :axis_labels => [["30 days ago", "today"], [0, tweet_counts.max]]
+    :axis_labels => [[t(:x_days, :scope => [:datetime, :distance_in_words], :count => 30), t(:today, :scope => [:politwoops, :statistics])], [0, tweet_counts.max]]
 )
 %>
 <img src="<%= tweets_img %>" />
 
-<h2>Deleted Tweets</h2>
+<h2><%=t :deleted_tweets, :scope => [:politwoops, :statistics] %></h2>
 <%
 deleted_tweet_counts = @deleted_tweet_statistics.map { |statistic| statistic.amount }
 deleted_tweets_img = Gchart.line(
     :size => '600x400', 
     :title => nil,
     :bg => 'efefef',
-    :legend => ['tweets'],
+    :legend => [t(:tweets, :scope => [:politwoops, :statistics])],
     :data => deleted_tweet_counts.reverse,
     :axis_with_labels => ['x','y'],
-    :axis_labels => [["30 days ago", "today"], [0, deleted_tweet_counts.max]]
+    :axis_labels => [[t(:x_days, :scope => [:datetime, :distance_in_words], :count => 30), t(:today, :scope => [:politwoops, :statistics])], [0, deleted_tweet_counts.max]]
 )
 %>
 <img src="<%= deleted_tweets_img %>" />
 
-<h2>Relative deleted Tweets</h2>
+<h2><%=t :percentage_deleted_tweets, :scope => [:politwoops, :statistics] %></h2>
 <%
 relative_deleted_tweet_counts = []
 @deleted_tweet_statistics.each_index { |x| relative_deleted_tweet_counts << (((@deleted_tweet_statistics[x].amount  * 1.0) / @tweet_statistics[x].amount) * 100) }
@@ -36,25 +36,25 @@ relative_deleted_tweets_img = Gchart.line(
     :size => '600x400', 
     :title => nil,
     :bg => 'efefef',
-    :legend => ['tweets'],
+    :legend => [t(:tweets, :scope => [:politwoops, :statistics])],
     :data => relative_deleted_tweet_counts.reverse,
     :axis_with_labels => ['x','y'],
-    :axis_labels => [["30 days ago", "today"], [0, relative_deleted_tweet_counts.max]]
+    :axis_labels => [[t(:x_days, :scope => [:datetime, :distance_in_words], :count => 30), t(:today, :scope => [:politwoops, :statistics])], [0, relative_deleted_tweet_counts.max]]
 )
 %>
 <img src="<%= relative_deleted_tweets_img %>" />
 
-<h2>Politicians</h2>
+<h2><%=t :politicians, :scope => [:politwoops, :statistics] %></h2>
 <%
 politician_counts = @politician_statistics.map { |statistic| statistic.amount }
 politicians_img = Gchart.line(
     :size => '600x400', 
     :title => nil,
     :bg => 'efefef',
-    :legend => ['politicians'],
+    :legend => [t(:politicians, :scope => [:politwoops, :statistics])],
     :data => politician_counts.reverse,
     :axis_with_labels => ['x','y'],
-    :axis_labels => [["#{politician_counts.length} days ago", "today"], [0, politician_counts.max]]
+    :axis_labels => [[t(:x_days, :scope => [:datetime, :distance_in_words], :count => politician_counts.length), t(:today, :scope => [:politwoops, :statistics])], [0, politician_counts.max]]
 )
 %>
 <img src="<%= politicians_img %>" />
