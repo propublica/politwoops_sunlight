@@ -2,5 +2,5 @@
 	<%= render tweet %>
 <% end %>
 <div id="pager">
-<%= will_paginate @tweets %>
+<%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :prev_label => t(:previous, :scope => [:politwoops]) %>
 </div>

@@ -195,7 +195,9 @@ nl:
     destroy: "Verwijderen"
     sure: "Weet je het zeker?"
     ago: "geleden"
-    
+    next: "Volgende"
+    previous: "Vorige"
+
     groups:
       errors_explanation:
         one: "1 fout verhinderde het opslaan van deze groep:"
@@ -251,3 +253,14 @@ nl:
       percentage_deleted_tweets: "Percentage verwijderde tweets"
       politicians: "Aantal politici"
       today: "vandaag"
+
+    tweets:
+      byline: "%{when} geverwijderd via %{what}"
+      reply: "reply"
+      retweet: "retweet"
+
+    user_sessions:
+      login_label: "login"
+      password_label: "wachtwoord"
+      remember_me_label: "onthou me"
+      login_action_label: "Inloggen"

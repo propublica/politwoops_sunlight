@@ -1,14 +1,14 @@
-<h1>Login</h1>
+<h1><%=t :login_action_label, :scope => [:politwoops, :user_sessions] %></h1>
 
 <%= form_for @user_session, :url => user_session_path do |f| %>
   <%= f.error_messages %>
-  <%= f.label :login %><br />
+  <%= f.label t(:login_label, :scope => [:politwoops, :user_sessions]) %><br />
   <%= f.text_field :login %><br />
   <br />
-  <%= f.label :password %><br />
+  <%= f.label t(:password_label, :scope => [:politwoops, :user_sessions]) %><br />
   <%= f.password_field :password %><br />
   <br />
-  <%= f.check_box :remember_me %><%= f.label 'Onthou me' %><br />
+  <%= f.check_box :remember_me %><%= f.label t(:remember_me_label, :scope => [:politwoops, :user_sessions]) %><br />
   <br />
-  <%= f.submit "Login" %>
+  <%= f.submit t(:login_action_label, :scope => [:politwoops, :user_sessions]) %>
 <% end %>

@@ -11,15 +11,16 @@
 	: <%= auto_link(tweet.content) %>
     </div>
     <div class="byline">
-		<% source = tweet.details["source"].to_s %>
-	      <a href="/tweet/<%= tweet.id %>"><%= time_ago_in_words(tweet.modified) %></a> geleden verwijderd via <%= source.html_safe %>
+		<% source = tweet.details["source"].to_s.html_safe %>
+		<% tweet_when = "<a href=\"/tweet/#{tweet.id}\">#{time_ago_in_words(tweet.modified)}</a>" %>
+	    <%= t(:byline, :scope => [:politwoops, :tweets], :when => tweet_when, :what => source).html_safe %>
     </div>
     <div class="clear">
     </div>
   </div>
   <div class="actions">
-    <a href="http://twitter.com/share?text=<%= CGI.escape('@' + tweet.user_name + ' ') %>&url=http://politwoops.nl/tweet/<%= tweet.id %>&via=politwoops" class="reply" target="_blank">reply</a>
-    <a href="http://twitter.com/share?text=<%= CGI.escape('RT @' + tweet.user_name + ' ' + tweet.content) %>&url=http://politwoops.nl/tweet/<%= tweet.id %>&via=politwoops" class="retweet" target="_blank">retweet</a>
+    <a href="http://twitter.com/share?text=<%= CGI.escape('@' + tweet.user_name + ' ') %>&url=http://politwoops.nl/tweet/<%= tweet.id %>&via=politwoops" class="reply" target="_blank"><%=t :reply, :scope => [:politwoops, :tweets] %></a>
+    <a href="http://twitter.com/share?text=<%= CGI.escape('RT @' + tweet.user_name + ' ' + tweet.content) %>&url=http://politwoops.nl/tweet/<%= tweet.id %>&via=politwoops" class="retweet" target="_blank"><%=t :retweet, :scope => [:politwoops, :tweets] %></a>
   </div>
   <div class="clear">
   </div>
