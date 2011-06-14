@@ -1,9 +1,9 @@
-<h1>Listing users</h1>
+<h1><%=t :index_heading, :scope => [:politwoops, :users] %></h1>
 
 <table>
   <tr>
-    <th>Login</th>
-    <th>Email</th>
+    <th><%=t :login_label, :scope => [:politwoops, :users] %></th>
+    <th><%=t :email_label, :scope => [:politwoops, :users] %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,13 +13,13 @@
   <tr>
     <td><%= user.login %></td>
     <td><%= user.email %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to t(:show, :scope => [:politwoops]), user %></td>
+    <td><%= link_to t(:edit, :scope => [:politwoops]), edit_user_path(user) %></td>
+    <td><%= link_to t(:destroy, :scope => [:politwoops]), user, :confirm => t(:sure, :scope => [:politwoops]), :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New user', new_user_path %>
+<%= link_to t(:add_heading, :scope => [:politwoops, :users]), new_user_path %>

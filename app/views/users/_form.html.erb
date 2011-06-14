@@ -1,11 +1,11 @@
-<%= form.label :login %><br />
+<%= form.label :login, t(:login_label, :scope => [:politwoops, :users]) %>:<br />
 <%= form.text_field :login %><br />
 <br />
-<%= form.label :email %><br />
+<%= form.label :email, t(:email_label, :scope => [:politwoops, :users]) %>:<br />
 <%= form.text_field :email %><br />
 <br />
-<%= form.label :password, form.object.new_record? ? nil : "Change password" %><br />
+<%= form.label :password, form.object.new_record? ? t(:password_label, :scope => [:politwoops, :users]) : t(:password_change_label, :scope => [:politwoops, :users]) %>:<br />
 <%= form.password_field :password %><br />
 <br />
-<%= form.label 'Password (herhaal)' %><br />
+<%= form.label :password_confirmation, t(:password_confirmation_label, :scope => [:politwoops, :users]) %>:<br />
 <%= form.password_field :password_confirmation %><br />

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      flash[:notice] = "Account geregistreerd!"
+      flash[:notice] = t(:success_create, :scope => [:politwoops, :users])
       redirect_back_or_default account_url
     else
       render :action => :new
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   def update
     @user = @current_user # makes our views "cleaner" and more consistent
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Account bijgewerkt!"
+      flash[:notice] = t(:success_update, :scope => [:politwoops, :users])
       redirect_to account_url
     else
       render :action => :edit

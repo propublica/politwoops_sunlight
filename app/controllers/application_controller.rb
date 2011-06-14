@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
   def require_user
     unless current_user
       store_location
-      flash[:notice] = "You must be logged in to access this page"
+      flash[:notice] = t(:require_user, :scope => [:politwoops, :users])
       redirect_to new_user_session_url
       return false
     end
@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
   def require_admin_user 
     unless current_user && (current_user.is_admin == 1)
       store_location 
-      flash[:notice] = "You must be an admin to access this page" 
+      flash[:notice] = t(:require_admin_user, :scope => [:politwoops, :users]) 
       redirect_to new_user_session_url
       return false 
     end 
@@ -53,7 +53,7 @@ class ApplicationController < ActionController::Base
   def require_no_user
     if current_user
       store_location
-      flash[:notice] = "You must be logged out to access this page"
+      flash[:notice] = t(:require_no_user, :scope => [:politwoops, :users])
       redirect_to account_url
       return false
     end
@@ -62,7 +62,7 @@ class ApplicationController < ActionController::Base
   def require_admin_or_no_user
     if current_user && (current_user.is_admin != 1)
       store_location
-      flash[:notice] = "You must be logged out to access this page"
+      flash[:notice] = t(:require_no_user, :scope => [:politwoops, :users])
       redirect_to account_url
       return false
     end

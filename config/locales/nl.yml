@@ -210,8 +210,11 @@ nl:
       politicians_explanation: "Vink poltici aan om ze aan de groep toe te voegen, of te verwijderen."
       add_heading: "Groep toevoegen"
       edit_heading: "Groep bewerken"
+      view_heading: "Groep bekijken"
       index_heading: "Groepen"
       model_name: "Groep"
+      success_create: "De groep is succesvol aangemaakt"
+      success_update: "De groep is succesvol opgeslagen"
 
     pages:
       errors_explanation:
@@ -224,6 +227,8 @@ nl:
       edit_heading: "Pagina bewerken"
       index_heading: "Pagina's"
       model_name: "Pagina"
+      success_create: "De pagina is succesvol aangemaakt"
+      success_update: "De pagina is succesvol opgeslagen"
 
     parties:
       errors_explanation:
@@ -235,6 +240,8 @@ nl:
       edit_heading: "Politieke partij bewerken"
       index_heading: "Politieke partijen"
       model_name: "Politieke partij"
+      success_create: "De politieke partij is succesvol aangemaakt"
+      success_update: "De politieke partij is succesvol opgeslagen"
 
     politicians:
       errors_explanation:
@@ -246,6 +253,8 @@ nl:
       edit_heading: "Politicus bewerken"
       index_heading: "Politici"
       model_name: "Politicus"
+      success_create: "De politicus is succesvol aangemaakt"
+      success_update: "De politicus is succesvol opgeslagen"
 
     statistics:
       tweets: "Tweets"
@@ -253,7 +262,8 @@ nl:
       percentage_deleted_tweets: "Percentage verwijderde tweets"
       politicians: "Aantal politici"
       today: "vandaag"
-
+      index_heading: "Statistieken"
+    
     tweets:
       byline: "%{when} geverwijderd via %{what}"
       reply: "reply"
@@ -264,3 +274,28 @@ nl:
       password_label: "wachtwoord"
       remember_me_label: "onthou me"
       login_action_label: "Inloggen"
+
+    user_sessions:
+      success_create: "Je bent binnen! Je kunt nu naar het <a href=\"/account\">menu</a> gaan."
+      success_destroy: "Je bent velig uitgelogd!"
+
+    users:
+      errors_explanation:
+        one: "1 fout verhinderde het opslaan van deze gebruiker:"
+        other: "%{count} fouten verhinderden het opslaan van deze gebruiker:"
+      login_label: "Login naam"
+      email_label: "E-mail adres"
+      password_label: "Wachtwoord"
+      password_change_label: "Wachtwoord"
+      password_confirmation_label: "Wachtwoord (x2)"
+      add_heading: "Registreren"
+      edit_heading: "Gebruiker bewerken"
+      index_heading: "Gebruikers"
+      menu_heading: "Menu"
+      model_name: "Gebruiker"
+      require_user: "Je moet ingelogd zijn om deze pagina te kunnen bekijken"
+      require_admin_user: "Je hebt niet genoeg rechten om deze pagina te kunnen bekijken"
+      require_no_user: "Je moet uitgelogd zijn om deze pagina te kunnen bekijken"
+      success_create: "De gebruiker is succesvol aangemaakt"
+      success_update: "De gebruiker is succesvol opgeslagen"
+      

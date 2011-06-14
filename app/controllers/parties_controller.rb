@@ -9,7 +9,7 @@ class PartiesController < ApplicationController
   def create
     @party = Party.new(params[:party])
     if @party.save
-      redirect_to((current_user.is_admin == 1) ? parties_path : account_path, :notice => "Party was successfully added!")
+      redirect_to((current_user.is_admin == 1) ? parties_path : account_path, :notice => t(:success_create, :scope => [:politwoops, :parties]))
     else
       render :action => :new
     end
@@ -26,7 +26,7 @@ class PartiesController < ApplicationController
 
     respond_to do |format|
       if @party.update_attributes(params[:party])
-        format.html { redirect_to((current_user.is_admin == 1) ? parties_path : account_path, :notice => 'Party was successfully updated.') }
+        format.html { redirect_to((current_user.is_admin == 1) ? parties_path : account_path, :notice => t(:success_update, :scope => [:politwoops, :parties])) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

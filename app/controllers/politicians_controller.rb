@@ -20,7 +20,7 @@ class PoliticiansController < ApplicationController
     
     @politician = Politician.new(params[:politician])
     if @politician.save
-      redirect_to (current_user.is_admin == 1) ? politicians_path : account_path, :notice => 'Politician added!'
+      redirect_to (current_user.is_admin == 1) ? politicians_path : account_path, :notice => t(:success_create, :scope => [:politwoops, :politicians])
     else
       render :action => :new
     end
@@ -41,7 +41,7 @@ class PoliticiansController < ApplicationController
 
     respond_to do |format|
       if @politician.update_attributes(params[:politician])
-        format.html { redirect_to(politicians_path, :notice => 'Politician was successfully updated.') }
+        format.html { redirect_to(politicians_path, :notice => t(:success_update, :scope => [:politwoops, :politicians])) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

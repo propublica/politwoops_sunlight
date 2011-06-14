@@ -12,7 +12,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       #flash[:notice] = "You're in! You can go to the <a href=\"/account\">menu</a> now."
-      flash[:notice] = "Je bent binnen! Je kunt nu naar het <a href=\"/account\">menu</a> gaan."
+      flash[:notice] = t(:success_create, :scope => [:politwoops, :user_sessions])
       redirect_back_or_default '/' # referer maybe? else account_url
     else
       render :action => :new
@@ -22,7 +22,7 @@ class UserSessionsController < ApplicationController
   def destroy
     current_user_session.destroy
     #flash[:notice] = "You're out!"
-    flash[:notice] = "Je bent velig uitgelogd!"
+    flash[:notice] = t(:success_destroy, :scope => [:politwoops, :user_sessions])
     redirect_back_or_default '/login' # new_user_session_url
   end
 end
