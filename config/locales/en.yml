@@ -11,3 +11,135 @@ en:
     edit: "Edit"
     destroy: "Destroy"
     sure: "Are you sure?"
+    ago: "ago"
+    next: "Next"
+    previous: "Previous"
+
+    groups:
+      errors_explanation:
+        one: "1 error prohibited saving this group:"
+        other: "%{count} errors prohibited saving this group:"
+      name_label: "Name"
+      name_explanation: "A short name, without spaces"
+      description_label: "Description"
+      description_explanation: "A description of the group"
+      politicians_label: "Politicians"
+      politicians_explanation: "Mark politicians to add or remove them from the group."
+      add_heading: "Add a group"
+      edit_heading: "Edit group"
+      view_heading: "View group"
+      index_heading: "Groups"
+      model_name: "Group"
+      success_create: "The group was successfully created"
+      success_update: "The group was successfully updated"
+
+    pages:
+      errors_explanation:
+        one: "1 error prohibited saving this page:"
+        other: "%{count} errors prohibited saving this page:"
+      title_label: "Title"
+      slug_label: "Slug"
+      content_label: "Contents"
+      add_heading: "Add a page"
+      edit_heading: "Edit page"
+      index_heading: "Pages"
+      model_name: "Page"
+      success_create: "The page was successfully created"
+      success_update: "The page was successfully updated"
+
+    parties:
+      errors_explanation:
+        one: "1 error prohibited saving this political party:"
+        other: "%{count} errors prohibited saving this political party:"
+      name_label: "Name"
+      name_explanation: "A short name, without spaces"
+      add_heading: "Add a political party"
+      edit_heading: "Edit political party"
+      index_heading: "Political parties"
+      model_name: "Political party"
+      success_create: "The political party was successfully created"
+      success_update: "The political party was successfully updated"
+
+    politicians:
+      errors_explanation:
+        one: "1 error prohibited saving this politician:"
+        other: "%{count} errors prohibited saving this politician:"
+      name_label: "Twitter name"
+      name_explanation: "The twitter user might already be in our system. Click 'Edit group' to add the user there."
+      add_heading: "Add a Politician"
+      edit_heading: "Edit politician"
+      index_heading: "Politicians"
+      model_name: "Politician"
+      success_create: "The politician was successfully created"
+      success_update: "The politician was successfully updated"
+
+    statistics:
+      tweets: "Tweets"
+      deleted_tweets: "Deleted tweets"
+      percentage_deleted_tweets: "Percentage deleted tweets"
+      politicians: "Number of politicians"
+      today: "today"
+      index_heading: "Statistics"
+
+    tweets:
+      byline: "Deleted %{when} ago via %{what}"
+      reply: "reply"
+      retweet: "retweet"
+
+    user_sessions:
+      login_label: "login"
+      password_label: "password"
+      remember_me_label: "remember be"
+      login_action_label: "Login"
+      success_create: "You're in! You can go to the <a href=\"/account\">menu</a> now."
+      success_destroy: "You were successfully logged out!"
+
+    users:
+      errors_explanation:
+        one: "1 error prohibited saving this user:"
+        other: "%{count} errors prohibited saving this user:"
+      login_label: "Login"
+      email_label: "Email address"
+      password_label: "Password"
+      password_change_label: "Password"
+      password_confirmation_label: "Password (x2)"
+      add_heading: "Register new user"
+      edit_heading: "Edit user"
+      index_heading: "Users"
+      menu_heading: "Menu"
+      model_name: "User"
+      require_user: "You must be logged in to view this page"
+      require_admin_user: "You do not have sufficient rights to view this page"
+      require_no_user: "You must be logged out to view this page"
+      success_create: "The user was successfully created"
+      success_update: "The user was successfully updated"
+
+  #activerecord:
+  #errors:
+  #  template:
+  #    header:
+  #      one: "1 fout zorgde er voor dat de %{model} niet opgeslagen kon worden"
+  #      other: "%{count} fouten zorgden er voor dat de %{model} niet opgeslagen kon worden"
+  #    body: "Er waren problemen met de volgende velden:"
+
+  authlogic:
+      error_messages:
+        login_blank: can not be blank
+        login_not_found: is not valid
+        login_invalid: "should use only letters, numbers, spaces, and .-_@ please."
+        consecutive_failed_logins_limit_exceeded: "Consecutive failed logins limit exceeded, account is disabled."
+        email_invalid: should look like an email address.
+        password_blank: can not be blank
+        password_invalid: is not valid
+        not_active: Your account is not active
+        not_confirmed: Your account is not confirmed
+        not_approved: Your account is not approved
+        no_authentication_details: You did not provide any details for authentication.
+      models:
+        user_session: UserSession
+      attributes:
+        user_session:
+          login: login
+          email: email
+          password: password
+          remember_me: remember me

@@ -265,7 +265,7 @@ nl:
       index_heading: "Statistieken"
     
     tweets:
-      byline: "%{when} geverwijderd via %{what}"
+      byline: "%{when} geleden verwijderd via %{what}"
       reply: "reply"
       retweet: "retweet"
 
@@ -274,8 +274,6 @@ nl:
       password_label: "wachtwoord"
       remember_me_label: "onthou me"
       login_action_label: "Inloggen"
-
-    user_sessions:
       success_create: "Je bent binnen! Je kunt nu naar het <a href=\"/account\">menu</a> gaan."
       success_destroy: "Je bent velig uitgelogd!"
 
@@ -298,4 +296,33 @@ nl:
       require_no_user: "Je moet uitgelogd zijn om deze pagina te kunnen bekijken"
       success_create: "De gebruiker is succesvol aangemaakt"
       success_update: "De gebruiker is succesvol opgeslagen"
-      
+
+  #activerecord:
+  errors:
+    template:
+      header:
+        one: "1 fout zorgde er voor dat de %{model} niet opgeslagen kon worden"
+        other: "%{count} fouten zorgden er voor dat de %{model} niet opgeslagen kon worden"
+      body: "Er waren problemen met de volgende velden:"
+          
+  authlogic:
+    error_messages:
+      login_blank: mag niet leeg zijn
+      login_not_found: is niet valide
+      login_invalid: "moet alleen bestaan uit letters, nummers, spaties .-_@ aub."
+      consecutive_failed_logins_limit_exceeded: "Te vaak achter elkaar ingelogd, account is op inactief gesteld."
+      email_invalid: moet een e-mail adres zijn
+      password_blank: mag niet leeg zijn
+      password_invalid: is niet valide
+      not_active: Uw account is inactief
+      not_confirmed: Uw account is nog niet bevestigd
+      not_approved: Uw account is nog niet goedgekeurd
+      no_authentication_details: Er waren geen gegevens voor authenticatie meegegeven
+    models:
+      user_session: UserSession
+    attributes:
+      user_session:
+        login: "login"
+        email: "e-mail adres"
+        password: "wachtwoord"
+        remember_me: "onthou me"
