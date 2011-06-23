@@ -31,7 +31,13 @@ deleted_tweets_img = Gchart.line(
 <h2><%=t :percentage_deleted_tweets, :scope => [:politwoops, :statistics] %></h2>
 <%
 relative_deleted_tweet_counts = []
-@deleted_tweet_statistics.each_index { |x| relative_deleted_tweet_counts << (@tweet_statistics[x].amount == 0) ? 0 : (((@deleted_tweet_statistics[x].amount  * 1.0) / @tweet_statistics[x].amount) * 100) }
+@deleted_tweet_statistics.each_index do |x|
+    if  @tweet_statistics[x].amount == 0
+        relative_deleted_tweet_counts << 0
+    else
+        relative_deleted_tweet_counts << (((@deleted_tweet_statistics[x].amount  * 1.0) / @tweet_statistics[x].amount) * 100)
+    end
+end
 relative_deleted_tweets_img = Gchart.line(
     :size => '600x400', 
     :title => nil,
