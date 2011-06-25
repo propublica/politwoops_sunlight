@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
   def index
     @group_name = params[:group_name] || @default_group.name
     @politicians = Politician.joins(:groups).where({:groups => {:name => @group_name}}).all
-    @tweets = Tweet.deleted.where(:politician_id => @politicians).paginate(:page => params[:page], :per_page => Tweet.per_page)
+    @tweets = Tweet.deleted.includes(:politician => [:party]).where(:politician_id => @politicians).paginate(:page => params[:page], :per_page => Tweet.per_page)
     
     respond_to do |format|
       format.html # index.html.erb
