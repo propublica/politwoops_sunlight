@@ -62,7 +62,8 @@ class PoliticiansController < ApplicationController
   # GET /politicians/FemkeHalsema
   # GET /politicians/GemkeHalsema.xml
   def show
-    @tweets = Tweet.deleted.includes(:politician => [:party]).where(:user_name => params[:user_name]).paginate(:page => params[:page], :per_page => Tweet.per_page)
+    @politician = Politician.where(:user_name => params[:user_name]).first
+    @tweets = Tweet.deleted.includes(:politician => [:party]).where(:politician_id => @politician.id).paginate(:page => params[:page], :per_page => Tweet.per_page)
 
     respond_to do |format|
       format.html { render "tweets/index" }# show.html.erb
