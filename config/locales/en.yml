@@ -89,7 +89,7 @@ en:
     user_sessions:
       login_label: "login"
       password_label: "password"
-      remember_me_label: "remember be"
+      remember_me_label: "remember me"
       login_action_label: "Login"
       success_create: "You're in! You can go to the <a href=\"/account\">menu</a> now."
       success_destroy: "You were successfully logged out!"
