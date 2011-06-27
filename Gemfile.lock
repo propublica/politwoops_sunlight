@@ -55,6 +55,7 @@ GEM
     multi_xml (0.2.2)
     multipart-post (1.1.0)
     mysql2 (0.2.6)
+    oauth (0.4.5)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -102,6 +103,7 @@ DEPENDENCIES
   googlecharts
   json
   mysql2
+  oauth
   rails (= 3.0.3)
   twitter
   twitter-text

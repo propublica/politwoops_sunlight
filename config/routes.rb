@@ -69,6 +69,8 @@ Politwoops::Application.routes.draw do
 
   match "twitter_lists/:user_name/:list" => "twitter_lists#index"
   
+  match "twitter_users/" => "twitter_users#index"
+  
   match "tweet/:id" => "tweets#show"
   
   match "user/:user_name" => "politicians#show"

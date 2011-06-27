@@ -24,6 +24,16 @@ class ApplicationController < ActionController::Base
     I18n.locale = @default_group.language
   end
   
+  def set_twitter
+    Twitter.configure do |config|
+      config.consumer_key       = 'f8Sgj9idhBH7mPRoYdFbxQ'
+      config.consumer_secret    = '11KcMSu13ZIL2UTh8gos9mve5cgWiysFYSqRW4jBQ'
+      config.oauth_token        = '260405786-7dd6mKfPdWiXPqczc3k3qYtFrJGHqC8Mo2HyJYp6'
+      config.oauth_token_secret = 'mWPfNcKCUSq6i6XVScqWg22OFN8h3PzfK8LxIRL6Y'
+    end
+    @twitter_client = Twitter::Client.new
+  end
+  
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
     @current_user_session = UserSession.find

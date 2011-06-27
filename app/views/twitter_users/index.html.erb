@@ -1,0 +1,14 @@
+<%= form_tag(twitter_users_path, :method => "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% 
+if @twitter_users.length > 0
+  @twitter_users.each do |twitter_user| %>
+    <%= render :partial => "twitter_user", :locals => { :twitter_user => twitter_user } %>
+<%
+  end
+end
+%>
