@@ -11,11 +11,13 @@
 	: <%= auto_link(twitter_user.description) %>
     </div>
     <div class="byline">
+      <%= auto_link(twitter_user.url) %>
     </div>
     <div class="clear">
     </div>
   </div>
   <div class="actions">
+    <a href="<%= new_politician_path %>">add</a>
   </div>
   <div class="clear">
   </div>

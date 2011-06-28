@@ -1,7 +1,4 @@
 Politwoops::Application.routes.draw do
-  resources :pages
-
-  resources :groups
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -52,14 +49,6 @@ Politwoops::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  resource :account, :controller => "users"
-  resources :users
-  resources :politicians
-  resources :parties
-  resource :user_session
-  resources :twitter_lists
-  
-  root :to => "tweets#index"
   
   match "feed/" => "tweets#index", :format => :xml
   
@@ -69,7 +58,7 @@ Politwoops::Application.routes.draw do
 
   match "twitter_lists/:user_name/:list" => "twitter_lists#index"
   
-  match "twitter_users/" => "twitter_users#index"
+  match "politicians/search" => "twitter_users#index"
   
   match "tweet/:id" => "tweets#show"
   
@@ -88,7 +77,18 @@ Politwoops::Application.routes.draw do
   match "logout" => "user_sessions#destroy"
   
   match "signup" => "users#new"
-  
+
+  resource :account, :controller => "users"
+  resources :users
+  resources :politicians
+  resources :parties
+  resource :user_session
+  resources :twitter_lists
+  resources :pages
+  resources :groups
+
+  root :to => "tweets#index"
+    
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
