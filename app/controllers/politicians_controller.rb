@@ -3,7 +3,7 @@ class PoliticiansController < ApplicationController
   before_filter :require_admin_user, :only => [:destroy]
 
   def new
-    @politician = Politician.new
+    @politician = Politician.new(params[:politician])
   end
   
   def create
