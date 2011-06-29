@@ -5,13 +5,15 @@
   <div class="content">
     <div class="tweet-content">
     <a href="http://twitter.com/<%= twitter_user.screen_name %>"><%= twitter_user.screen_name %></a>
-    <% if twitter_user.location and twitter_user.location != '' %>
-    (<%= twitter_user.location %>)
+    <% if twitter_user.name %>
+    <span class="real-name">(<%= link_to twitter_user.name, twitter_user.url %>)</a></span>
     <% end %>
 	: <%= auto_link(twitter_user.description) %>
     </div>
     <div class="byline">
-      <%= auto_link(twitter_user.url) %>
+      <% if twitter_user.location and twitter_user.location != '' %>
+      <%= twitter_user.location %>
+      <% end %>
     </div>
     <div class="clear">
     </div>

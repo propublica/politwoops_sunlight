@@ -103,6 +103,10 @@ a img {
   background: url(/images/retweet.png);  
 }
 
+.tweet .real-name, .tweet .real-name a {
+  color: #D4D4D4;
+}
+
 /* pager */
 
 #pager {
