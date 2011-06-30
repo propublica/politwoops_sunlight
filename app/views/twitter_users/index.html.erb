@@ -1,5 +1,5 @@
 <%= form_tag('/politicians/search', :method => "get") do %>
-  <%= label_tag(:q, "Search for:") %>
+  <%= label_tag(:q, "Search for twitter user:") %>
   <%= text_field_tag(:q, params[:q]) %>
   <%= submit_tag("Search") %>
 <% end %>

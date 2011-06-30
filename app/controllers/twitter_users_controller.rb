@@ -5,15 +5,24 @@ class TwitterUsersController < ApplicationController
   def index
     @twitter_users = []
     @politicians = {}
+    search_params = {
+      :per_page => 10,
+      :page => 1
+    }
     
     if params.has_key?(:q)
-      @twitter_users = @twitter_client.user_search(params[:q])
+      @twitter_users = @twitter_client.user_search(params[:q], search_params)
       @twitter_users.each do |twitter_user|
         @politicians[twitter_user.screen_name] = Politician.new({
           :user_name => twitter_user.screen_name,
           :twitter_id => twitter_user.id
         })
       end
+      @politicians_users = Politician.where(:user_name => @politicians.keys)
+      @politicians_users.each do |politician|
+        @politicians[politician.user_name] = politician
+      end
+      p @politicians
     end
     
     respond_to do |format|
