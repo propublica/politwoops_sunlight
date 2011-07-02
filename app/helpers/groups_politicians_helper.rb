@@ -1,0 +1,2 @@
+module GroupsPoliticiansHelper
+end

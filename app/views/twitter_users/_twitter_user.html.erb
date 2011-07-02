@@ -23,10 +23,10 @@
     if @politicians[twitter_user.screen_name].id.nil?
       add_politician_link = new_politician_path('politician[user_name]' => twitter_user.screen_name)
     else
-      add_politician_link = edit_politician_path(@politicians[twitter_user.screen_name])
+      add_politician_link = (current_user.is_admin == 1) ? edit_politician_path(@politicians[twitter_user.screen_name]) : '/groups/' + current_user.group_id.to_s + '/politicians/add/' + @politicians[twitter_user.screen_name].id.to_s
     end
     %>
-    <a href="<%= add_politician_link %>" class="button">add</a>
+    <a href="<%= add_politician_link %>" class="button"><add><%=t :add, :scope => [:politwoops] %></a>
   </div>
   <div class="clear">
   </div>

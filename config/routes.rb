@@ -56,6 +56,8 @@ Politwoops::Application.routes.draw do
   
   # See how all your routes lay out with "rake routes"
 
+  match "groups/:id/politicians/add/:politician_id" => "groups_politicians#update"
+  
   match "twitter_lists/:user_name/:list" => "twitter_lists#index"
   
   match "politicians/search" => "twitter_users#index"

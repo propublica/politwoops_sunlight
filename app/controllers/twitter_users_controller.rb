@@ -7,7 +7,7 @@ class TwitterUsersController < ApplicationController
     @politicians = {}
     search_params = {
       :per_page => 10,
-      :page => 1
+      :page => params.has_key?(:page) ? params[:page] : 1
     }
     
     if params.has_key?(:q)
@@ -22,7 +22,6 @@ class TwitterUsersController < ApplicationController
       @politicians_users.each do |politician|
         @politicians[politician.user_name] = politician
       end
-      p @politicians
     end
     
     respond_to do |format|

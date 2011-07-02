@@ -14,7 +14,9 @@ en:
     ago: "ago"
     next: "Next"
     previous: "Previous"
-
+    search: "Search"
+    add: "Add"
+    
     groups:
       errors_explanation:
         one: "1 error prohibited saving this group:"
@@ -33,6 +35,11 @@ en:
       success_create: "The group was successfully created"
       success_update: "The group was successfully updated"
 
+    groups_politicians:
+      search_label: "Search for twitter user"
+      success_update: "The politician was successfully added to the group"
+      no_users_found: "Sorry, we did not find anything. Try again."
+      
     pages:
       errors_explanation:
         one: "1 error prohibited saving this page:"

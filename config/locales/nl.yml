@@ -197,6 +197,8 @@ nl:
     ago: "geleden"
     next: "Volgende"
     previous: "Vorige"
+    search: "Zoeken"
+    add: "Voeg toe"
 
     groups:
       errors_explanation:
@@ -215,6 +217,11 @@ nl:
       model_name: "Groep"
       success_create: "De groep is succesvol aangemaakt"
       success_update: "De groep is succesvol opgeslagen"
+
+    groups_politicians:
+      search_label: "Zoek naar twitter gebruiker"
+      success_update: "De politicus was succesvol toegevoegd aan de groep"
+      no_users_found: "Sorry, we hebben niks gevonden. Probeer het opnieuw."
 
     pages:
       errors_explanation:
