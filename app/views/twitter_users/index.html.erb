@@ -4,15 +4,14 @@
   <%= submit_tag(t(:search, :scope => [:politwoops])) %>
 <% end %>
 
-<% 
-if @twitter_users.length > 0
+<%
+num_users = @twitter_users.length
+if params.has_key?(:q) and (num_users > 0)
   @twitter_users.each do |twitter_user| %>
     <%= render :partial => "twitter_user", :locals => { :twitter_user => twitter_user } %>
 <%
   end
-else
+elsif params.has_key?(:q)
 %>
   <%=t :no_users_found, :scope => [:politwoops, :groups_politicians] %>
-<%
-end
-%>
+<% end %>
