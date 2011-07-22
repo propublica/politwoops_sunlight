@@ -5,7 +5,7 @@ tweet_hourly_counts = {}
 @tweet_hourly_statistics.each { |statistic| tweet_hourly_counts[statistic['hour_of_day']] = statistic['num'] }
 tweets_hourly_values = []
 current_hour = DateTime.now.hour
-(0..23).to_a.each { |hour| tweets_hourly_values << tweet_hourly_counts[(current_hour + hour) % 24] }
+(0..23).to_a.each { |hour| tweets_hourly_values << tweet_hourly_counts[(current_hour - hour).abs] }
 tweets_img = Gchart.line(
     :size => '600x400', 
     :title => nil,
