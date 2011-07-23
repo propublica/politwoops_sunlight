@@ -3,7 +3,7 @@
 <p class="explanation"><%=t :name_explanation, :scope => [:politwoops, :politicians] %></p>
 <br />
 <%= form.label t(:model_name, :scope => [:politwoops, :parties]) %>:<br />
-<%= collection_select(:politician, :party_id, Party.order(:name).all, :id, :name) %><br />
+<%= collection_select(:politician, :party_id, Party.order(:name).all, :id, :name, {}, {:class => 'chzn-select'}) %><br />
 <% if @current_user.is_admin == 1 %>
   <%= form.label t(:index_heading, :scope => [:politwoops, :groups]) %>:<br />
   <% for group in Group.all %>
