@@ -9,6 +9,8 @@ gem 'mysql2', '0.2.6'
 
 gem 'json'
 
+gem 'beanstalk-client'
+
 gem 'twitter-text'
 
 gem "will_paginate", "~> 3.0.pre2"
