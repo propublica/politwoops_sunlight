@@ -1,4 +1,15 @@
 namespace :twitter do
+  desc 'Repost deleted tweets to twitter'
+  task :repost => :environment do
+    beanstalk = Beanstalk::Pool.new(BEANSTALKD_SERVERS)
+    beanstalk.watch('channelCounters')
+    loop do
+      job = beanstalk.reserve
+      # job.body
+      job.delete
+    end
+  end
+  
   desc 'Import a Twitter list'
   task :sync_list => :environment do
     puts "Getting lists for:"
