@@ -51,7 +51,7 @@ Politwoops::Application.routes.draw do
   # just remember to delete public/index.html.
 
   root :to => "tweets#index"
-  
+
   match "feed/" => "tweets#index", :format => :xml
   
   match "statistics/" => "statistics#index"
