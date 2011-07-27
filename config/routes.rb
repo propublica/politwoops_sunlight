@@ -49,6 +49,8 @@ Politwoops::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+
+  root :to => "tweets#index"
   
   match "feed/" => "tweets#index", :format => :xml
   
@@ -89,8 +91,6 @@ Politwoops::Application.routes.draw do
   resources :pages
   resources :groups
 
-  root :to => "tweets#index"
-    
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
