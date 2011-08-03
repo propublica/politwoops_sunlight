@@ -10,14 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110608201341) do
+ActiveRecord::Schema.define(:version => 20110724203034) do
+
+  create_table "domains", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.string   "full_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "language",   :limit => 12, :default => "en"
+    t.string   "language",        :limit => 12, :default => "en"
+    t.string   "consumer_key"
+    t.string   "consumer_secret"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
   end
 
   add_index "groups", ["name"], :name => "index_groups_on_name"

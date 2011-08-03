@@ -5,7 +5,25 @@ namespace :twitter do
     beanstalk.watch('channelCounters')
     loop do
       job = beanstalk.reserve
-      # job.body
+      tweet_id = JSON.parse(job.body)
+      tweet = Tweet.where(:id => tweet_id).includes(:politician => [:groups]).first
+      tweet.politician.groups.each do |group|
+        # skip group if no credentials are present
+        if (group.consumer_key.empty? || group.consumer_secret.empty? || group.oauth_token.empty? || group.oauth_secret.empty?)
+          next
+        end
+        
+        #connection to Twitter
+        Twitter.configure do |config|
+          config.consumer_key       = group.consumer_key
+          config.consumer_secret    = group.consumer_secret
+          config.oauth_token        = group.oauth_token
+          config.oauth_token_secret = group.oauth_secret
+        end
+        @twitter_client = Twitter::Client.new
+        
+        #stuff
+      end
       job.delete
     end
   end
