@@ -23,6 +23,8 @@ gem "twitter"
 
 gem "googlecharts"
 
+gem 'bitly'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

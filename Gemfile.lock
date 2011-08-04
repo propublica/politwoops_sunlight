@@ -33,7 +33,12 @@ GEM
     authlogic (2.1.6)
       activesupport
     beanstalk-client (1.1.0)
+    bitly (0.6.1)
+      crack (>= 0.1.4)
+      httparty (>= 0.5.2)
+      oauth2 (>= 0.1.1)
     builder (2.1.2)
+    crack (0.1.8)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     faraday (0.6.1)
@@ -44,6 +49,8 @@ GEM
       faraday (~> 0.6.0)
     googlecharts (1.6.7)
     hashie (1.0.0)
+    httparty (0.7.8)
+      crack (= 0.1.8)
     i18n (0.6.0)
     json (1.5.3)
     mail (2.2.19)
@@ -57,6 +64,9 @@ GEM
     multipart-post (1.1.2)
     mysql2 (0.2.6)
     oauth (0.4.5)
+    oauth2 (0.5.0)
+      faraday (< 0.8, >= 0.6.1)
+      multi_json (~> 1.0.0)
     polyglot (0.3.1)
     rack (1.2.3)
     rack-mount (0.6.14)
@@ -99,6 +109,7 @@ PLATFORMS
 DEPENDENCIES
   authlogic
   beanstalk-client
+  bitly
   googlecharts
   json
   mysql2 (= 0.2.6)

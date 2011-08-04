@@ -22,6 +22,11 @@ namespace :twitter do
         end
         @twitter_client = Twitter::Client.new
         
+        # bitly shortening
+        # FIXME: need domain stuff for this
+        bitly = Bitly.new($bitly_user, $bitly_api_key)
+        short_url = bitly.shorten(group.base_url + '/tweet/' + tweet_id.to_s)
+        
         #stuff
       end
       job.delete
