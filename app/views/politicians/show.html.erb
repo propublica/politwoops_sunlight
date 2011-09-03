@@ -1,0 +1,10 @@
+<% content_for :title do %>
+    <%= @latest_tweet.details['user']['name'] %> (<%= @politician.party.name %>)
+<% end %>
+<div id="bio">
+  <h1><%= @latest_tweet.details['user']['name'] %></h1>
+  <%= @latest_tweet.details['user']['description'] %>
+</div>
+<%=
+render :template => "tweets/index"
+%>

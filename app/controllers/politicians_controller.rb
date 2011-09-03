@@ -63,10 +63,14 @@ class PoliticiansController < ApplicationController
   # GET /politicians/GemkeHalsema.xml
   def show
     @politician = Politician.where(:user_name => params[:user_name]).first
+    
+    # need to get the latest tweet to get correct bio. could do with optimization :)
+    @latest_tweet = Tweet.where(:politician_id => @politician.id).first
+    
     @tweets = Tweet.deleted.includes(:politician => [:party]).where(:politician_id => @politician.id).paginate(:page => params[:page], :per_page => Tweet.per_page)
 
     respond_to do |format|
-      format.html { render "tweets/index" }# show.html.erb
+      format.html #{ render "tweets/index" }# show.html.erb
       format.xml  do
         response.headers["Content-Type"] = "application/xml; charset=utf-8"
         render "tweets/index"
