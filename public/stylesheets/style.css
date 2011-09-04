@@ -46,6 +46,16 @@ a img {
   margin: 40px 0 40px 0;
 }
 
+/* info (politician bios, group info) */
+
+#info {
+  color: #787878;
+  background: #d4d4d4;
+  padding: 8px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+
 /* tweets */
 
 .tweet {
