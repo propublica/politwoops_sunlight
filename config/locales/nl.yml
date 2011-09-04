@@ -303,6 +303,9 @@ nl:
       require_no_user: "Je moet uitgelogd zijn om deze pagina te kunnen bekijken"
       success_create: "De gebruiker is succesvol aangemaakt"
       success_update: "De gebruiker is succesvol opgeslagen"
+    
+    twitter:
+      retweet_notice: "Kijk! @%{politician} verwijderde een tweet! %{tweet_url}"
 
   #activerecord:
   errors:

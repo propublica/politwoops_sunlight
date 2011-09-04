@@ -120,7 +120,10 @@ en:
       require_no_user: "You must be logged out to view this page"
       success_create: "The user was successfully created"
       success_update: "The user was successfully updated"
-
+    
+    twitter:
+      retweet_notice: "Look! @%{politician} deleted a tweet! %{tweet_url}"
+  
   #activerecord:
   #errors:
   #  template:
