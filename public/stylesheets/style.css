@@ -162,6 +162,17 @@ a img {
   width: 329px;  
 }
 
+#netdem {
+  float: right;  
+}
+
+#netdem a {
+  background: url(http://netdem.nl/wp-content/themes/netwerkDemocratie/library/images/logo.gif);
+  display: block;
+  height: 108px;
+  text-indent: -999999em;
+  width: 199px;
+}
 /* flash messages */
 
 #notice {
