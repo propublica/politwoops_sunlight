@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110904103637) do
+ActiveRecord::Schema.define(:version => 20111011204649) do
 
   create_table "domains", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20110904103637) do
     t.string   "oauth_secret"
     t.string   "base_url",                      :default => "http://www.politwoops.nl"
     t.boolean  "hide",                          :default => false
+    t.text     "sponsor"
   end
 
   add_index "groups", ["name"], :name => "index_groups_on_name"
