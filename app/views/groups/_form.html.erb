@@ -20,6 +20,14 @@
     <%= f.text_field :full_name %>
 	<p class="explanation"><%=t :description_explanation, :scope => [:politwoops, :groups] %></p>
   </div>
+
+  <% if @current_user.is_admin == 1 %>
+  <div class="field">
+    <%= f.label t(:sponsor_label, :scope => [:politwoops, :groups]) %>:<br />
+    <%= f.text_area :sponsor %>
+	<p class="explanation"><%=t :sponsor_explanation, :scope => [:politwoops, :groups] %></p>
+  </div>
+  <% end %>
   
 <% if !@group.id.nil? %>
   <%= f.label t(:politicians_label, :scope => [:politwoops, :groups]) %>:<br />

@@ -210,6 +210,8 @@ nl:
       description_explanation: "Een beschrijving van de groep"
       politicians_label: "Politici"
       politicians_explanation: "Vink poltici aan om ze aan de groep toe te voegen, of te verwijderen."
+      sponsor_label: "Sponsor"
+      sponsor_explanation: "Wie sponsort deze groep? (als er een is)"
       add_heading: "Groep toevoegen"
       edit_heading: "Groep bewerken"
       view_heading: "Groep bekijken"

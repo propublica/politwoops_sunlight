@@ -27,6 +27,8 @@ en:
       description_explanation: "A description of the group"
       politicians_label: "Politicians"
       politicians_explanation: "Mark politicians to add or remove them from the group."
+      sponsor_label: "Sponsor"
+      sponsor_explanation: "Who is sponsoring this group? (if any)"
       add_heading: "Add a group"
       edit_heading: "Edit group"
       view_heading: "View group"
