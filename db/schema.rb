@@ -12,25 +12,13 @@
 
 ActiveRecord::Schema.define(:version => 20111011204649) do
 
-  create_table "domains", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.string   "full_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "language",        :limit => 12, :default => "en"
-    t.string   "consumer_key"
-    t.string   "consumer_secret"
-    t.string   "oauth_token"
-    t.string   "oauth_secret"
-    t.string   "base_url",                      :default => "http://www.politwoops.nl"
-    t.boolean  "hide",                          :default => false
+    t.string   "language",   :limit => 12, :default => "en"
+    t.boolean  "hide",                     :default => false
     t.text     "sponsor"
   end
 
