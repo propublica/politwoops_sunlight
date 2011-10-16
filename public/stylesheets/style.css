@@ -167,7 +167,7 @@ a img {
 }
 
 #netdem a {
-  background: url(http://netdem.nl/wp-content/themes/netwerkDemocratie/library/images/logo.gif);
+  background: url(/images/netdem.gif);
   display: block;
   height: 108px;
   text-indent: -999999em;

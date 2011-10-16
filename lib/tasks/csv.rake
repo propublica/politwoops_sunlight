@@ -58,10 +58,11 @@ namespace :csv do
      p twitter_user_local_ids
      
      twitter_user_ids = {}
-     new_twitter_users.each_slice(100) do |twitter_users|
-       Twitter::users(twitter_users).each { |user| twitter_user_ids[user.screen_name] = user.id }
+     new_twitter_users.each_slice(75) do |twitter_users|
+       # FIXME: lo/hicase of usernmes
+       Twitter::users(twitter_users).each { |user| twitter_user_ids[user.screen_name.downcase] = user.id }
        puts "."
-       sleep 10
+       sleep 1
      end
 
      num = 0
@@ -95,21 +96,17 @@ namespace :csv do
      group_ids = {}
      group_politician_ids.keys.each do |group_name|
        found_groups = Group.where(:name => group_name)
-       if found_groups.length == 0
-         num += 1
-         new_group = Group.new({
-           :name => group_name,
-           :language => 'nl',
-           :full_name => "De gemeenteraad van %s" % group_name,
-           :sponsor => 'Mede mogelijk gemaakt door politiekonline.nl en netwerk democratie',
-           :politician_ids => group_politician_ids[group_name]
-         })
-         p group_politician_ids[group_name]
-         new_group.save
-         group_ids[group_name] = new_group.id
-       else
-         group_ids[group_name] = found_groups[0].id
-       end
+       num += 1
+       new_group = Group.new({
+         :name => (found_groups.length > 0) ? group_name + "-1" : group_name,
+         :language => 'nl',
+         :full_name => "Verwijderde tweets van de gemeenteraad van %s" % group_name,
+         :sponsor => 'Mede mogelijk gemaakt door: <br /><a href="http://www.politiekonline.nl/"><img src="/images/politiek_online.gif" width="436" height="54" alt="politiek online" /></a><a href="http://www.netdem.nl/"><img src="/images/netdem_small.jpg" width="73" height="77" alt="netwerk democratie" /></a>',
+         :politician_ids => group_politician_ids[group_name]
+       })
+       p group_politician_ids[group_name]
+       new_group.save
+       group_ids[group_name] = new_group.id
      end
      puts "%d groups were added." % num     
   end
