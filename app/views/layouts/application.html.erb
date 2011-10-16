@@ -41,10 +41,17 @@
 	</div>
 <div id="footer-menu">
 <% if current_user.nil? %>
-<a href="/login"><%=t :login, :scope => [:politwoops] %></a>
+<a href="/login"><%=t :login, :scope => [:politwoops] %></a> |
 <% else %>
-<a href="/account"><%=t :menu, :scope => [:politwoops] %></a> | <a href="/logout"><%=t :logout, :scope => [:politwoops] %></a>
+<a href="/account"><%=t :menu, :scope => [:politwoops] %></a> | 
 <% end %>
+
+<%= link_to t(:index_heading, :scope => [:politwoops, :groups]).downcase, groups_path %>
+
+<% if !current_user.nil? %>
+| <a href="/logout"><%=t :logout, :scope => [:politwoops] %></a>
+<% end %>
+
 <!-- facebook like -->
 <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=195983330448516&amp;xfbml=1"></script><fb:like send="true" width="450" show_faces="true" font="lucida grande"></fb:like>
 </div>
