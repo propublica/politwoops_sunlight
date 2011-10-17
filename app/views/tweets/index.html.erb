@@ -3,9 +3,6 @@
   <h1>
   <%= @default_group.full_name %>
   </h1>
-  <% if @default_group.sponsor %>
-  <%= @default_group.sponsor.to_s.html_safe %>
-  <% end %>
 </div>
 <% end %>
 
@@ -15,3 +12,9 @@
 <div id="pager">
 <%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :prev_label => t(:previous, :scope => [:politwoops]) %>
 </div>
+
+<% if @default_group.sponsor %>
+<div id="sponsor">
+  <%= @default_group.sponsor.to_s.html_safe %>
+</div>
+<% end %>
