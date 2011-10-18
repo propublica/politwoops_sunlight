@@ -258,6 +258,7 @@ nl:
         other: "%{count} fouten verhinderden het opslaan van deze politicus:"
       name_label: "Twitter naam"
       name_explanation: "De twitter geruiker kan al in het systeem zitten. Klik dan op 'Bewerk mijn groep' om de gebruiker aan je groep toe te voegen."
+      status_label: "Is actief"
       add_heading: "Politicus toevoegen"
       edit_heading: "Politicus bewerken"
       index_heading: "Politici"

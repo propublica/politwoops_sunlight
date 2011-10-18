@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111011204649) do
+ActiveRecord::Schema.define(:version => 20111018204851) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -46,11 +46,13 @@ ActiveRecord::Schema.define(:version => 20111011204649) do
   end
 
   create_table "politicians", :force => true do |t|
-    t.string  "user_name",  :limit => 64, :null => false
-    t.integer "twitter_id",               :null => false
+    t.string  "user_name",  :limit => 64,                :null => false
+    t.integer "twitter_id",                              :null => false
     t.integer "party_id"
+    t.integer "status",                   :default => 1
   end
 
+  add_index "politicians", ["status"], :name => "index_politicians_on_status"
   add_index "politicians", ["user_name"], :name => "user_name"
 
   create_table "statistics", :force => true do |t|

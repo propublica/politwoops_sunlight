@@ -75,6 +75,7 @@ en:
         other: "%{count} errors prohibited saving this politician:"
       name_label: "Twitter name"
       name_explanation: "The twitter user might already be in our system. Click 'Edit group' to add the user there."
+      status_label: "Is active"
       add_heading: "Add a Politician"
       edit_heading: "Edit politician"
       index_heading: "Politicians"
