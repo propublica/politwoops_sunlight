@@ -232,6 +232,7 @@ nl:
       title_label: "Titel"
       slug_label: "URL"
       content_label: "Inhoud"
+      language_label: "Taal"
       add_heading: "Pagina toevoegen"
       edit_heading: "Pagina bewerken"
       index_heading: "Pagina's"

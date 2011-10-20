@@ -49,6 +49,7 @@ en:
       title_label: "Title"
       slug_label: "Slug"
       content_label: "Contents"
+      language_label: "Language"
       add_heading: "Add a page"
       edit_heading: "Edit page"
       index_heading: "Pages"

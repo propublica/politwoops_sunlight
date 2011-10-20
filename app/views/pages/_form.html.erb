@@ -16,6 +16,10 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label t(:language_label, :scope => [:politwoops, :pages]) %>:<br />
+    <%= select_tag(:language, options_for_select(I18n.available_locales.map { |loc| [loc, loc] })) %>
+  </div>
+  <div class="field">
     <%= f.label t(:slug_label, :scope => [:politwoops, :pages]) %>:<br />
     <%= f.text_field :slug %>
   </div>

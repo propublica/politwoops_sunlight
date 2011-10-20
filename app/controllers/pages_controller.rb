@@ -16,7 +16,7 @@ class PagesController < ApplicationController
   # GET /pages/1.xml
   def show
     if params[:page_slug]
-      @page = Page.where(:slug => params[:page_slug]).first
+      @page = Page.where(:slug => params[:page_slug], :language => I18n.locale).first
     else
       @page = Page.find(params[:id])
     end
