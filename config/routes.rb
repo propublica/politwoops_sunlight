@@ -74,7 +74,7 @@ Politwoops::Application.routes.draw do
   
   match "g/:group_name" => "tweets#index"
   match "g/:group_name/feed/" => "tweets#index", :format => :xml
-  
+  match "g/:group_name/all/" => "tweets#index", :see => :all
   match "page/:page_slug" => "pages#show"
   
   match "login" => "user_sessions#new"
