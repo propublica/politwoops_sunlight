@@ -46,7 +46,8 @@
 <a href="/account"><%=t :menu, :scope => [:politwoops] %></a> | 
 <% end %>
 
-<%= link_to t(:index_heading, :scope => [:politwoops, :groups]).downcase, groups_path %>
+<%= link_to t(:index_heading, :scope => [:politwoops, :groups]).downcase, groups_path %> |
+<%= link_to 'api', '/page/api' %>
 
 <% if !current_user.nil? %>
 | <a href="/logout"><%=t :logout, :scope => [:politwoops] %></a>
