@@ -8,6 +8,9 @@
 	<% if !tweet.politician.nil? %>
 	(<a href="/party/<%= tweet.politician.party.name %>"><%= tweet.politician.party.name %></a>)
 	<% end %>
+  <% if current_user && current_user.is_admin == 1 %>
+  (<%= link_to t(:edit, :scope => [:politwoops]), edit_politician_path(tweet.politician) %>)
+  <% end %>
 	: <%= auto_link(tweet.content) %>
     </div>
     <div class="byline">
