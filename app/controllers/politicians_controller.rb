@@ -55,7 +55,7 @@ class PoliticiansController < ApplicationController
     
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @parties }
+      format.json { render :json => @politicians }
     end
   end
   

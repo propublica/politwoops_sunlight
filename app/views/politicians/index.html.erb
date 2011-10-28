@@ -3,17 +3,21 @@
 <table>
   <tr>
     <th><%=t :name_label, :scope => [:politwoops, :politicians] %></th>
+    <% if @current_user && @current_user.is_admin == 1 %>
     <th></th>
     <th></th>
     <th></th>
+    <% end %>
   </tr>
 
 <% @politicians.each do |politician| %>
   <tr>
     <td><%= politician.user_name %></td>
+    <% if @current_user && @current_user.is_admin == 1 %>
     <td><%= link_to t(:show, :scope => [:politwoops]), sprintf('/user/%s', politician.user_name) %></td>
     <td><%= link_to t(:edit, :scope => [:politwoops]), edit_politician_path(politician) %></td>
     <td><%= link_to t(:destroy, :scope => [:politwoops]), politician, :confirm => t(:sure, :scope => [:politwoops]), :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
