@@ -11,4 +11,16 @@ class Tweet < ActiveRecord::Base
   def details
     JSON.parse(tweet)
   end  
+
+  def format
+    {
+      :created_at => created,
+      :updated_at => modified,
+      :id => id.to_s,
+      :politician_id => politician_id,
+      :details => details,
+      :content => content,
+      :user_name => user_name
+    }
+  end
 end
