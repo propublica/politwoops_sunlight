@@ -10,7 +10,7 @@ namespace :politicians do
       twitter_user = twitter_user.gsub(/^(http\:\/\/)?(www\.)?twitter\.com\/?(\/|\@)?/, '')
       twitter_user = twitter_user.gsub(/\/*$/, '')
       politician = Politician.where(:user_name => twitter_user).first
-      if politician.update_attributes(:party_id => row[party_row].to_i)
+      if politician && politician.update_attributes(:party_id => row[party_row].to_i)
         p twitter_user
       end
     end
