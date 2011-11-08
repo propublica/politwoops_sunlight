@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+Group.create!(
+  :name => "Main",
+  :language => "en",
+  :full_name => "Main group that everyone is in by default",
+  :hide => true,
+  :politician_ids => []
+)
