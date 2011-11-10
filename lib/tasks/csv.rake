@@ -3,11 +3,14 @@ namespace :csv do
   task :import => :environment do
     require 'csv'
     
+    # make separator configurable
+    separator = ENV['CSV_SEP'].present? ? ENV['CSV_SEP'] : ';'
+
     # parse CSV file into structure
     parties = {}
     politicians = {}
     groups = {}
-    CSV.open(ENV['CSV'], 'r', ';') do |row|
+    CSV.open(ENV['CSV'], 'r', ENV['CSV_SEP']) do |row|
        twitter_user = row[1].downcase
        twitter_user = twitter_user.gsub(/^(http\:\/\/)?(www\.)?twitter\.com\/?(\/|\@)?/, '')
        twitter_user = twitter_user.gsub(/\/*$/, '')
