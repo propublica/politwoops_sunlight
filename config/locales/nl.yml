@@ -186,6 +186,7 @@ nl:
         format: "%{attribute} %{message}"
 
   politwoops:
+    slogan: "Alle verwijderde tweets van politici" 
     login: "inloggen"
     logout: "uitloggen"
     menu: "menu"

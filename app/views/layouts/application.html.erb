@@ -4,7 +4,7 @@
   <% if content_for?(:title) %>
     <title><%= yield(:title) %> - Politwoops</title>
   <% else %>
-    <title>Politwoops</title>
+    <title>Politwoops - <%=t :slogan, :scope => [:politwoops] %></title>
   <% end %>
   <%= stylesheet_link_tag "style" %>
   <%= stylesheet_link_tag "/javascripts/chosen/chosen" %>
