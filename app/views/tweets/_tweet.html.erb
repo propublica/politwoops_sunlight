@@ -4,7 +4,7 @@
   </a>
   <div class="content">
     <div class="tweet-content">
-    <a href="http://twitter.com/<%= tweet.politician.user_name %>"><%= tweet.details['user']['name'] %></a>
+    <a href="/user/<%= tweet.politician.user_name %>"><%= tweet.details['user']['name'] %></a>
 	<% if !tweet.politician.nil? %>
 	(<a href="/party/<%= tweet.politician.party.name %>"><%= tweet.politician.party.name %></a>)
 	<% end %>
@@ -14,6 +14,7 @@
 	: <%= auto_link(tweet.content) %>
     </div>
     <div class="byline">
+        <a href="http://twitter.com/<%= tweet.politician.user_name %>" class="twitter"><%= tweet.details['user']['name'] %></a>
 		<% source = tweet.details["source"].to_s.html_safe %>
 		<% tweet_when = "<a href=\"/tweet/#{tweet.id}\">#{time_ago_in_words(tweet.modified)}</a>" %>
 	    <%= t(:byline, :scope => [:politwoops, :tweets], :when => tweet_when, :what => source).html_safe %>
