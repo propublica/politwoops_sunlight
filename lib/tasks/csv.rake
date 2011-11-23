@@ -98,18 +98,17 @@ namespace :csv do
      num = 0
      group_ids = {}
      group_politician_ids.keys.each do |group_name|
-       found_groups = Group.where(:name => group_name)
+       group = Group.find_or_initialize_by_name(group_name)
        num += 1
-       new_group = Group.new({
-         :name => (found_groups.length > 0) ? group_name + "-1" : group_name,
+       group.attributes = {
          :language => 'nl',
          :full_name => "Verwijderde tweets van de gemeenteraad van %s" % group_name,
          :sponsor => 'Mede mogelijk gemaakt door: <br /><a href="http://www.politiekonline.nl/"><img src="/images/politiek_online.gif" width="436" height="54" alt="politiek online" /></a><a href="http://www.netdem.nl/"><img src="/images/netdem_small.jpg" width="73" height="77" alt="netwerk democratie" /></a>',
          :politician_ids => group_politician_ids[group_name]
-       })
+       }
        p group_politician_ids[group_name]
-       new_group.save
-       group_ids[group_name] = new_group.id
+       group.save!
+       group_ids[group_name] = group.id
      end
      puts "%d groups were added." % num     
   end
