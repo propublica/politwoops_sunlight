@@ -84,11 +84,22 @@ a img {
 }
 
 .tweet .byline {
-  color: #D4D4D4;  
+  color: #D4D4D4;
+  line-height: 24px; 
 }
 
 .tweet .byline a {
   color: #D4D4D4;  
+}
+
+.tweet .byline a.twitter {
+	display: block;
+	float: left;
+	width: 16px;
+  height: 16px;
+  margin: 4px 8px 0 0;
+  text-indent: -999999em;
+  background: url(/images/bird_16_gray.png);
 }
 
 .tweet .actions {

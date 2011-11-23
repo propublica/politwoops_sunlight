@@ -49,6 +49,10 @@
 <%= link_to t(:index_heading, :scope => [:politwoops, :groups]).downcase, groups_path %> |
 <%= link_to 'api', '/page/api' %>
 
+<% if !current_user.nil? && current_user.is_admin == 1 %>
+| <a href="/statistics/"><%= t(:index_heading, :scope => [:politwoops, :statistics]).downcase %></a>
+<% end %>
+
 <% if !current_user.nil? %>
 | <a href="/logout"><%=t :logout, :scope => [:politwoops] %></a>
 <% end %>
