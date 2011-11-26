@@ -2,7 +2,7 @@ namespace :trends do
   desc 'Generate trends'
   task :generate => :environment do
     year = 2011
-    month = 9
+    month = 10
     tweets = Tweet.deleted.modified_in(year, month)
     
     # get top deleters
@@ -11,7 +11,8 @@ namespace :trends do
       users[tweet.user_name] = 0 unless users.has_key?(tweet.user_name)
       users[tweet.user_name] += 1 
     end
-    p users
+    sorted_users = users.sort { |x,y| y[1] <=> x[1] }
+    p sorted_users
     
     # get top deleted parties
     politicians = Politician.where(:user_name => users.keys).includes(:party)
@@ -20,7 +21,8 @@ namespace :trends do
       parties[politician.party.name] = 0 unless parties.has_key?(politician.party.name)
       parties[politician.party.name] += users[politician.user_name]
     end
-    p parties
+    sorted_parties = parties.sort { |x,y| y[1] <=> x[1] }
+    p sorted_parties
     
     # get time between posting and deleting
     total_time = 0
@@ -42,5 +44,19 @@ namespace :trends do
     p fastest_tweet
     p slowest_time
     p slowest_tweet
+    
+    # top days
+    days = {0 => 0, 1 => 0, 2 => 0, 3 => 0, 4 => 0, 5 => 0, 6 => 0}
+    tweets.each do |tweet|
+      days[tweet.details['created_at'].to_time.to_date.wday] += 1
+    end
+    p days
+    
+    word_frequencies = {}
+    tweets.each do |tweet|
+      words = tweet.content.split(/\W/).select { |w| w.length > 0 }
+      
+      p words
+    end
   end
 end
