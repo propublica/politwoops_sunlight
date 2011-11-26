@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  year: 
+  month: 
+  name: MyString
+  value: MyText
+
+two:
+  year: 
+  month: 
+  name: MyString
+  value: MyText
