@@ -67,7 +67,7 @@ a img {
   padding: 16px 0 16px 0;
 }
 
-.tweet img {
+.tweet .avatar {
   float: left;
   height: 73px;
   margin: 0 8px 0 0;
