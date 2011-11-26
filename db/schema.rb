@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111019152427) do
+ActiveRecord::Schema.define(:version => 20111126133258) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -66,6 +66,15 @@ ActiveRecord::Schema.define(:version => 20111019152427) do
     t.datetime "updated_at"
   end
 
+  create_table "trends", :force => true do |t|
+    t.integer  "year"
+    t.integer  "month"
+    t.string   "name"
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "tweets", :force => true do |t|
     t.string   "user_name",     :limit => 64
     t.string   "content"
@@ -76,6 +85,8 @@ ActiveRecord::Schema.define(:version => 20111019152427) do
     t.integer  "politician_id"
   end
 
+  add_index "tweets", ["content"], :name => "content"
+  add_index "tweets", ["content"], :name => "index_tweets_on_content"
   add_index "tweets", ["created"], :name => "created"
   add_index "tweets", ["deleted"], :name => "deleted"
   add_index "tweets", ["modified"], :name => "modified"
