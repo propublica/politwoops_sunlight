@@ -84,6 +84,8 @@ Politwoops::Application.routes.draw do
   
   match "signup" => "users#new"
 
+  match "trends/:year/:month" => "trends#index"
+
   resource :account, :controller => "users"
   resources :users
   resources :politicians

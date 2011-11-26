@@ -233,6 +233,13 @@ table.listing {
   color: #666666;
 }
 
+.trend {
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  padding: .2em .4em;
+  margin: 0 0 1em;
+}
+
 /* table stuff */
 
 /* courtesy of Blueprin CSS http://blueprintcss.org/ */
