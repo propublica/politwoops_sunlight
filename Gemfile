@@ -7,6 +7,8 @@ gem 'rails', '3.0.3'
 
 gem 'mysql2', '0.2.6'
 
+gem 'rake','0.9.2'
+
 gem 'json'
 
 gem 'twitter-text'
