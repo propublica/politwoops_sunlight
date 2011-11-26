@@ -13,6 +13,13 @@ namespace :trends do
     end
     sorted_users = users.sort { |x,y| y[1] <=> x[1] }
     p sorted_users
+    t = Trend.new({
+      :year => year,
+      :month => month,
+      :name => 'top_deleters',
+      :value => sorted_users.slice(0, 5)
+    })
+    t.save
     
     # get top deleted parties
     politicians = Politician.where(:user_name => users.keys).includes(:party)
@@ -23,6 +30,13 @@ namespace :trends do
     end
     sorted_parties = parties.sort { |x,y| y[1] <=> x[1] }
     p sorted_parties
+    t = Trend.new({
+      :year => year,
+      :month => month,
+      :name => 'top_party_deleters',
+      :value => sorted_parties.slice(0, 5)
+    })
+    t.save
     
     # get time between posting and deleting
     total_time = 0
@@ -44,6 +58,19 @@ namespace :trends do
     p fastest_tweet
     p slowest_time
     p slowest_tweet
+    t = Trend.new({
+      :year => year,
+      :month => month,
+      :name => 'delete_lag',
+      :value => {
+        :avg_time => avg_time,
+        #:slowest_time => slowest_time,
+        #:slowest_id => slowest_tweet.id.to_s
+        :fastest_time => fastest_time,
+        :fastest_tweet => fastest_tweet.id.to_s
+      }
+    })
+    t.save
     
     # top days
     days = {0 => 0, 1 => 0, 2 => 0, 3 => 0, 4 => 0, 5 => 0, 6 => 0}
@@ -51,12 +78,27 @@ namespace :trends do
       days[tweet.details['created_at'].to_time.to_date.wday] += 1
     end
     p days
+    t = Trend.new({
+      :year => year,
+      :month => month,
+      :name => 'days',
+      :value => days
+    })
+    t.save
     
-    word_frequencies = {}
+    word_frequencies = Hash.new(0)
     tweets.each do |tweet|
       words = tweet.content.split(/\W/).select { |w| w.length > 0 }
-      words.map { |w| words_frequenc}
-      p words
+      words.each { |w| word_frequencies[w] += 1 }
     end
+    p word_frequencies
+    sorted_words = word_frequencies.sort { |x,y| y[1] <=> x[1] }
+    t = Trend.new({
+      :year => year,
+      :month => month,
+      :name => 'words',
+      :value => sorted_words.slice(0, 50)
+    })
+    t.save
   end
 end
