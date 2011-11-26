@@ -55,7 +55,7 @@ namespace :trends do
     word_frequencies = {}
     tweets.each do |tweet|
       words = tweet.content.split(/\W/).select { |w| w.length > 0 }
-      
+      words.map { |w| words_frequenc}
       p words
     end
   end
