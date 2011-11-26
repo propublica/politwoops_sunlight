@@ -1,7 +1,6 @@
-<h1>Trends for <%= @month %> <%= @year %></h1> 
+<h1>Trends for <%= @month %> <%= @year %></h1>
 <% @trends.each do |trend| %>
-    <div class="trend">
-        <h2><%= trend.name %></h2>
-        <p><%= trend.value %></p>
+    <div id="<%=trend.name.gsub('_', '-') %>" class="trend">
+        <%= render :partial => trend.name, :locals => { :trend => trend } if trend.name == 'days' %>
     </div>
 <% end %>

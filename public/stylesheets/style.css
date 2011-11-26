@@ -237,7 +237,7 @@ table.listing {
   background-color: #e5e5e5;
   border-radius: 5px;
   padding: .2em .4em;
-  margin: 0 0 1em;
+  margin: 0 0.5em 1em 0;
 }
 
 /* table stuff */
