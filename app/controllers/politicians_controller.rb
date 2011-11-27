@@ -75,7 +75,7 @@ class PoliticiansController < ApplicationController
         response.headers["Content-Type"] = "application/xml; charset=utf-8"
         render "tweets/index"
       end
-      format.json  { render :json => @tweets }
+      format.json  { render :json => @tweets.map{ |tweet| tweet.format } }
     end
   end
 
