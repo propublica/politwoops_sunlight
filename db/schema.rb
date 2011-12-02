@@ -10,16 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111019152427) do
+ActiveRecord::Schema.define(:version => 20111126133258) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.string   "full_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "language",   :limit => 12, :default => "en"
-    t.boolean  "hide",                     :default => false
+    t.string   "language",        :limit => 12, :default => "en"
+    t.boolean  "hide",                          :default => false
     t.text     "sponsor"
+    t.string   "consumer_key"
+    t.string   "consumer_secret"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
+    t.string   "base_url",                      :default => "http://www.politwoops.nl"
   end
 
   add_index "groups", ["name"], :name => "index_groups_on_name"
@@ -66,6 +71,15 @@ ActiveRecord::Schema.define(:version => 20111019152427) do
     t.datetime "updated_at"
   end
 
+  create_table "trends", :force => true do |t|
+    t.integer  "year"
+    t.integer  "month"
+    t.string   "name"
+    t.text     "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "tweets", :force => true do |t|
     t.string   "user_name",     :limit => 64
     t.string   "content"
@@ -76,6 +90,8 @@ ActiveRecord::Schema.define(:version => 20111019152427) do
     t.integer  "politician_id"
   end
 
+  add_index "tweets", ["content"], :name => "content"
+  add_index "tweets", ["content"], :name => "index_tweets_on_content"
   add_index "tweets", ["created"], :name => "created"
   add_index "tweets", ["deleted"], :name => "deleted"
   add_index "tweets", ["modified"], :name => "modified"
