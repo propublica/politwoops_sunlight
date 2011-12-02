@@ -66,7 +66,7 @@ GEM
     mysql2 (0.2.6)
     oauth (0.4.5)
     oauth2 (0.5.0)
-      faraday (< 0.8, >= 0.6.1)
+      faraday (>= 0.6.1, < 0.8)
       multi_json (~> 1.0.0)
     polyglot (0.3.1)
     rack (1.2.3)
