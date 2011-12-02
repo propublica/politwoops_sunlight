@@ -1,4 +1,9 @@
 <h2><%= @page.title %></h2>
 <p>
-  <%= @page.content %>
+  <%= @page.content.html_safe %>
 </p>
+<% if current_user && current_user.is_admin == 1 %>
+<p>
+<%= link_to t(:edit, :scope => [:politwoops]), edit_page_path(@page) %>
+</p>
+<% end %>

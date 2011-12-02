@@ -10,27 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110904103637) do
-
-  create_table "domains", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20111019152427) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.string   "full_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "language",        :limit => 12, :default => "en"
-    t.string   "consumer_key"
-    t.string   "consumer_secret"
-    t.string   "oauth_token"
-    t.string   "oauth_secret"
-    t.string   "base_url",                      :default => "http://www.politwoops.nl"
-    t.boolean  "hide",                          :default => false
+    t.string   "language",   :limit => 12, :default => "en"
+    t.boolean  "hide",                     :default => false
+    t.text     "sponsor"
   end
 
   add_index "groups", ["name"], :name => "index_groups_on_name"
@@ -48,7 +37,10 @@ ActiveRecord::Schema.define(:version => 20110904103637) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "language"
   end
+
+  add_index "pages", ["language"], :name => "index_pages_on_language"
 
   create_table "parties", :force => true do |t|
     t.string   "name"
@@ -57,11 +49,13 @@ ActiveRecord::Schema.define(:version => 20110904103637) do
   end
 
   create_table "politicians", :force => true do |t|
-    t.string  "user_name",  :limit => 64, :null => false
-    t.integer "twitter_id",               :null => false
+    t.string  "user_name",  :limit => 64,                :null => false
+    t.integer "twitter_id",                              :null => false
     t.integer "party_id"
+    t.integer "status",                   :default => 1
   end
 
+  add_index "politicians", ["status"], :name => "index_politicians_on_status"
   add_index "politicians", ["user_name"], :name => "user_name"
 
   create_table "statistics", :force => true do |t|

@@ -4,7 +4,7 @@
   <% if content_for?(:title) %>
     <title><%= yield(:title) %> - Politwoops</title>
   <% else %>
-    <title>Politwoops</title>
+    <title>Politwoops - <%=t :slogan, :scope => [:politwoops] %></title>
   <% end %>
   <%= stylesheet_link_tag "style" %>
   <%= stylesheet_link_tag "/javascripts/chosen/chosen" %>
@@ -31,6 +31,9 @@
 			<div id="hdo">
 				<a href="http://www.hackdeoverheid.nl/"><%=t :hdo_project, :scope => [:politwoops] %></a>
 			</div>
+			<div id="netdem">
+			  <a href="http://www.netdem.nl/">Netwerk democratie</a>
+			</div>
 			<div class="clear">
 			</div>
 		</div>
@@ -38,10 +41,22 @@
 	</div>
 <div id="footer-menu">
 <% if current_user.nil? %>
-<a href="/login"><%=t :login, :scope => [:politwoops] %></a>
+<a href="/login"><%=t :login, :scope => [:politwoops] %></a> |
 <% else %>
-<a href="/account"><%=t :menu, :scope => [:politwoops] %></a> | <a href="/logout"><%=t :logout, :scope => [:politwoops] %></a>
+<a href="/account"><%=t :menu, :scope => [:politwoops] %></a> | 
 <% end %>
+
+<%= link_to t(:index_heading, :scope => [:politwoops, :groups]).downcase, groups_path %> |
+<%= link_to 'api', '/page/api' %>
+
+<% if !current_user.nil? && current_user.is_admin == 1 %>
+| <a href="/statistics/"><%= t(:index_heading, :scope => [:politwoops, :statistics]).downcase %></a>
+<% end %>
+
+<% if !current_user.nil? %>
+| <a href="/logout"><%=t :logout, :scope => [:politwoops] %></a>
+<% end %>
+
 <!-- facebook like -->
 <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=195983330448516&amp;xfbml=1"></script><fb:like send="true" width="450" show_faces="true" font="lucida grande"></fb:like>
 </div>

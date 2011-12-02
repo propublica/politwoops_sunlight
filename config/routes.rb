@@ -51,7 +51,9 @@ Politwoops::Application.routes.draw do
   # just remember to delete public/index.html.
 
   root :to => "tweets#index"
-
+  
+  match "index(.:format)" => "tweets#index"
+  
   match "feed/" => "tweets#index", :format => :xml
   
   match "statistics/" => "statistics#index"
@@ -74,7 +76,7 @@ Politwoops::Application.routes.draw do
   
   match "g/:group_name" => "tweets#index"
   match "g/:group_name/feed/" => "tweets#index", :format => :xml
-  
+  match "g/:group_name/all/" => "tweets#index", :see => :all
   match "page/:page_slug" => "pages#show"
   
   match "login" => "user_sessions#new"

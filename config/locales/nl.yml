@@ -186,6 +186,7 @@ nl:
         format: "%{attribute} %{message}"
 
   politwoops:
+    slogan: "Alle verwijderde tweets van politici" 
     login: "inloggen"
     logout: "uitloggen"
     menu: "menu"
@@ -210,6 +211,8 @@ nl:
       description_explanation: "Een beschrijving van de groep"
       politicians_label: "Politici"
       politicians_explanation: "Vink poltici aan om ze aan de groep toe te voegen, of te verwijderen."
+      sponsor_label: "Sponsor"
+      sponsor_explanation: "Wie sponsort deze groep? (als er een is)"
       add_heading: "Groep toevoegen"
       edit_heading: "Groep bewerken"
       view_heading: "Groep bekijken"
@@ -230,6 +233,7 @@ nl:
       title_label: "Titel"
       slug_label: "URL"
       content_label: "Inhoud"
+      language_label: "Taal"
       add_heading: "Pagina toevoegen"
       edit_heading: "Pagina bewerken"
       index_heading: "Pagina's"
@@ -256,6 +260,7 @@ nl:
         other: "%{count} fouten verhinderden het opslaan van deze politicus:"
       name_label: "Twitter naam"
       name_explanation: "De twitter geruiker kan al in het systeem zitten. Klik dan op 'Bewerk mijn groep' om de gebruiker aan je groep toe te voegen."
+      status_label: "Is actief"
       add_heading: "Politicus toevoegen"
       edit_heading: "Politicus bewerken"
       index_heading: "Politici"
