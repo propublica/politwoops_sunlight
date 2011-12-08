@@ -37,7 +37,12 @@ class PoliticiansController < ApplicationController
     
     @politician = Politician.find(params[:id])
     # find the twitter user number
-    params[:politician][:twitter_id] = Twitter::user(params[:politician][:user_name]).id
+    begin
+      params[:politician][:twitter_id] = Twitter::user(params[:politician][:user_name]).id      
+    rescue Twitter::NotFound => e
+      
+    end
+    
 
     respond_to do |format|
       if @politician.update_attributes(params[:politician])
