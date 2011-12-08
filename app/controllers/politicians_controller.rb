@@ -62,7 +62,12 @@ class PoliticiansController < ApplicationController
   # GET /politicians/FemkeHalsema
   # GET /politicians/GemkeHalsema.xml
   def show
-    @politician = Politician.where(:user_name => params[:user_name]).first
+    if current_user && (current_user.is_admin == 1)
+      @politician = Politician
+    else
+      @politician = Politician.active
+    end
+    @politician = @politician.where(:user_name => params[:user_name]).first
     
     # need to get the latest tweet to get correct bio. could do with optimization :)
     @latest_tweet = Tweet.where(:politician_id => @politician.id).first

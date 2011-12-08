@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
   # GET /tweets.xml
   def index
     @group_name = params[:group_name] || @default_group.name
-    @politicians = Politician.joins(:groups).where({:groups => {:name => @group_name}}).all
+    @politicians = Politician.active.joins(:groups).where({:groups => {:name => @group_name}}).all
     if params.has_key?(:see) && params[:see] == :all
       @tweets = Tweet
     else
