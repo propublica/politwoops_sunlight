@@ -26,8 +26,10 @@ class TweetsController < ApplicationController
   # GET /tweets/1
   # GET /tweets/1.xml
   def show
-    @tweet = Tweet.find(params[:id])
+    @tweet = Tweet.joins(:politician).find(params[:id])
 
+    not_found unless ((current_user && (current_user.is_admin == 1)) || (@tweet.politician.status == 1))
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @tweet }

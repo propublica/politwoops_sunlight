@@ -37,6 +37,10 @@ class ApplicationController < ActionController::Base
     @twitter_client = Twitter::Client.new
   end
   
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
+  
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
     @current_user_session = UserSession.find
