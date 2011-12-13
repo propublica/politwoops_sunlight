@@ -26,7 +26,7 @@ class TweetsController < ApplicationController
   # GET /tweets/1
   # GET /tweets/1.xml
   def show
-    @tweet = Tweet.joins(:politician).find(params[:id])
+    @tweet = Tweet.includes(:politician).find(params[:id])
 
     not_found unless ((current_user && (current_user.is_admin == 1)) || (@tweet.politician.status == 1))
     
