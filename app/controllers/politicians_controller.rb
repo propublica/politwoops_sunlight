@@ -77,7 +77,7 @@ class PoliticiansController < ApplicationController
     # need to get the latest tweet to get correct bio. could do with optimization :)
     @latest_tweet = Tweet.where(:politician_id => @politician.id).first
     
-    @tweets = Tweet.deleted.includes(:politician => [:party]).where(:politician_id => @politician.id).paginate(:page => params[:page], :per_page => Tweet.per_page)
+    @tweets = DeletedTweet.includes(:politician => [:party]).where(:politician_id => @politician.id).paginate(:page => params[:page], :per_page => Tweet.per_page)
 
     respond_to do |format|
       format.html #{ render "tweets/index" }# show.html.erb

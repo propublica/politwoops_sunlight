@@ -10,7 +10,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111126133258) do
+ActiveRecord::Schema.define(:version => 20111216163449) do
+
+  create_table "deleted_tweets", :force => true do |t|
+    t.string   "user_name",     :limit => 64
+    t.string   "content"
+    t.boolean  "deleted",                     :default => false, :null => false
+    t.datetime "created",                                        :null => false
+    t.datetime "modified",                                       :null => false
+    t.text     "tweet"
+    t.integer  "politician_id"
+  end
+
+  add_index "deleted_tweets", ["content"], :name => "content"
+  add_index "deleted_tweets", ["created"], :name => "created"
+  add_index "deleted_tweets", ["deleted"], :name => "deleted"
+  add_index "deleted_tweets", ["modified"], :name => "modified"
+  add_index "deleted_tweets", ["politician_id"], :name => "index_tweets_on_politician_id"
+  add_index "deleted_tweets", ["user_name"], :name => "user_name"
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -91,7 +108,6 @@ ActiveRecord::Schema.define(:version => 20111126133258) do
   end
 
   add_index "tweets", ["content"], :name => "content"
-  add_index "tweets", ["content"], :name => "index_tweets_on_content"
   add_index "tweets", ["created"], :name => "created"
   add_index "tweets", ["deleted"], :name => "deleted"
   add_index "tweets", ["modified"], :name => "modified"

@@ -7,7 +7,8 @@ class TweetsController < ApplicationController
     if params.has_key?(:see) && params[:see] == :all
       @tweets = Tweet
     else
-      @tweets = Tweet.deleted
+      p "Using dleeted tweets!"
+      @tweets = DeletedTweet
     end
     @tweets = @tweets.where(:politician_id => @politicians)
     tweet_count = 0 #@tweets.count
@@ -26,7 +27,7 @@ class TweetsController < ApplicationController
   # GET /tweets/1
   # GET /tweets/1.xml
   def show
-    @tweet = Tweet.includes(:politician).find(params[:id])
+    @tweet = DeletedTweet.includes(:politician).find(params[:id])
 
     not_found unless ((current_user && (current_user.is_admin == 1)) || (@tweet.politician.status == 1))
     
