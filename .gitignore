@@ -4,3 +4,4 @@
 /tmp/**/*
 /vendor/gems
 /*.csv
+*/.DS_Store
