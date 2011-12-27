@@ -8,4 +8,6 @@ class Group < ActiveRecord::Base
   default_scope :order => :name
   
   scope :visible, :conditions => "hide = 0"
+  scope :country, :conditions => "flag IS NOT NULL"
+  scope :domain, :conditions => "is_domain = 0"
 end

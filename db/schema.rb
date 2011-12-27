@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111216163449) do
+ActiveRecord::Schema.define(:version => 20111226135727) do
 
   create_table "deleted_tweets", :force => true do |t|
     t.string   "user_name",     :limit => 64
@@ -42,8 +42,12 @@ ActiveRecord::Schema.define(:version => 20111216163449) do
     t.string   "oauth_token"
     t.string   "oauth_secret"
     t.string   "base_url",                      :default => "http://www.politwoops.nl"
+    t.string   "flag"
+    t.boolean  "is_domain"
   end
 
+  add_index "groups", ["flag"], :name => "index_groups_on_flag"
+  add_index "groups", ["is_domain"], :name => "index_groups_on_is_domain"
   add_index "groups", ["name"], :name => "index_groups_on_name"
 
   create_table "groups_politicians", :id => false, :force => true do |t|
