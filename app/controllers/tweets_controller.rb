@@ -7,7 +7,6 @@ class TweetsController < ApplicationController
     if params.has_key?(:see) && params[:see] == :all
       @tweets = Tweet
     else
-      p "Using dleeted tweets!"
       @tweets = DeletedTweet
     end
     @tweets = @tweets.where(:politician_id => @politicians)

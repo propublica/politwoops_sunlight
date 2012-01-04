@@ -47,6 +47,7 @@
 <% end %>
 
 <%= link_to t(:index_heading, :scope => [:politwoops, :groups]).downcase, groups_path %> |
+<%= link_to t(:index_heading, :scope => [:politwoops, :countries]).downcase, countries_path %> |
 <%= link_to 'api', '/page/api' %>
 
 <% if !current_user.nil? && current_user.is_admin == 1 %>

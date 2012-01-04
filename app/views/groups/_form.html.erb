@@ -27,6 +27,15 @@
     <%= f.text_area :sponsor %>
 	<p class="explanation"><%=t :sponsor_explanation, :scope => [:politwoops, :groups] %></p>
   </div>
+  <div class="field">
+    <%= f.label t(:flag_label, :scope => [:politwoops, :groups]) %>:<br />
+    <%= select(:group, :flag, Dir.glob("public/images/flags/*.png").collect { |p| [File.basename(p, '.png'), File.basename(p, '.png')] }, {:include_blank => true}, :class => 'chzn-select' )%>
+  </div>  
+  <div class="field">
+    <%= f.label t(:base_url_label, :scope => [:politwoops, :groups]) %>:<br />
+    <%= f.text_field :base_url %><br />
+    <%= f.check_box :is_domain %><%= t(:domain_label, :scope => [:politwoops, :groups]) %>
+  </div>
   <% end %>
   
 <% if !@group.id.nil? %>

@@ -79,6 +79,8 @@ Politwoops::Application.routes.draw do
   match "g/:group_name/all/" => "tweets#index", :see => :all
   match "page/:page_slug" => "pages#show"
   
+  match "countries" => "countries#index"
+  
   match "login" => "user_sessions#new"
   match "logout" => "user_sessions#destroy"
   

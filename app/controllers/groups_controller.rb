@@ -6,9 +6,9 @@ class GroupsController < ApplicationController
   # GET /groups.xml
   def index
     if current_user && (current_user.is_admin != 1)
-      @groups = Group.all
+      @groups = Group.local.visible.all
     else
-      @groups = Group.visible
+      @groups = Group.local.all
     end
     
     respond_to do |format|

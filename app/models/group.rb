@@ -9,5 +9,6 @@ class Group < ActiveRecord::Base
   
   scope :visible, :conditions => "hide = 0"
   scope :country, :conditions => "flag IS NOT NULL"
+  scope :local, :conditions => "flag IS NULL"
   scope :domain, :conditions => "is_domain = 0"
 end

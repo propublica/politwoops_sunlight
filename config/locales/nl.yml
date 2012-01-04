@@ -213,6 +213,9 @@ nl:
       politicians_explanation: "Vink poltici aan om ze aan de groep toe te voegen, of te verwijderen."
       sponsor_label: "Sponsor"
       sponsor_explanation: "Wie sponsort deze groep? (als er een is)"
+      flag_label: "Land"
+      base_url_label: "Basis URL:"
+      domain_label: "Is een domein"
       add_heading: "Groep toevoegen"
       edit_heading: "Groep bewerken"
       view_heading: "Groep bekijken"
@@ -221,6 +224,9 @@ nl:
       success_create: "De groep is succesvol aangemaakt"
       success_update: "De groep is succesvol opgeslagen"
 
+    countries:
+      index_heading: "Internationale versies"
+      
     groups_politicians:
       search_label: "Zoek naar twitter gebruiker"
       success_update: "De politicus was succesvol toegevoegd aan de groep"
