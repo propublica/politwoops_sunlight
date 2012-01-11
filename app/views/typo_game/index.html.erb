@@ -9,6 +9,6 @@
 <h2>Deleted tweet</h2>
 <%= render 'typo_game/tweet', :tweet => @tweet %>
 <h2>First non-deleted tweet after deleted tweet</h2>
-<% @latest_tweets.each do |latest_tweet| %>
+<% @latest_tweets.reverse.each do |latest_tweet| %>
 <%= render 'typo_game/tweet', :tweet => latest_tweet %>
 <% end %>
