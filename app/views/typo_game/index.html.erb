@@ -5,6 +5,10 @@
     <li>The tweet is simply too long. These can be identified by the '...' at the end of a tweet</li>
     <li>There is something wrong with a link in the tweet</li>
 </ul>
-<p>If you think this is a typo, then please check 'Yes', otherwise click <a href="">reload</a> now!</p>
+<p>If you think this is a typo, then please check 'Yes', otherwise click 'No'!</p>
+<h2>Deleted tweet</h2>
 <%= render 'typo_game/tweet', :tweet => @tweet %>
-
+<h2>First non-deleted tweet after deleted tweet</h2>
+<% @latest_tweets.each do |latest_tweet| %>
+<%= render 'typo_game/tweet', :tweet => latest_tweet %>
+<% end %>

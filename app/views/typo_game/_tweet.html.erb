@@ -23,7 +23,10 @@
     </div>
   </div>
   <div class="actions">
-      <%= link_to t(:yes_label, :scope => [:politwoops]), "/game/typos/update/%s?deleted_tweet[typo_checked]=%s" % [tweet.id, 1], :class => "button" %>
+      <% if tweet[:deleted] %>
+      <%= link_to t(:yes_label, :scope => [:politwoops]), "/game/typos/update/%s?deleted_tweet[typo_checked]=%s" % [tweet.id, 1], :class => "button-small" %>
+      <%= link_to t(:no_label, :scope => [:politwoops]), "/game/typos/update/%s?deleted_tweet[typo_checked]=%s" % [tweet.id, 0], :class => "button-small" %>
+      <% end %>
   </div>
   <div class="clear">
   </div>
