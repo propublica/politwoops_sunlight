@@ -79,6 +79,9 @@ Politwoops::Application.routes.draw do
   match "g/:group_name/all/" => "tweets#index", :see => :all
   match "page/:page_slug" => "pages#show"
   
+  match "game/typos/" => "typo_game#index"
+  match "game/typos/update/:id" => "typo_game#update"
+  
   match "countries" => "countries#index"
   
   match "login" => "user_sessions#new"

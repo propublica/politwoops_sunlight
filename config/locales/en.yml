@@ -17,7 +17,9 @@ en:
     previous: "Previous"
     search: "Search"
     add: "Add"
-    
+    yes_label: "Yes"
+    no_label: "No"
+
     groups:
       errors_explanation:
         one: "1 error prohibited saving this group:"

@@ -6,3 +6,4 @@
 User-Agent: *
 Disallow: /login
 Disallow: /logout
+Disallow: /game

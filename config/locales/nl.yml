@@ -200,6 +200,8 @@ nl:
     previous: "Vorige"
     search: "Zoeken"
     add: "Voeg toe"
+    yes_label: "Ja"
+    no_label: "Nee"
 
     groups:
       errors_explanation:
