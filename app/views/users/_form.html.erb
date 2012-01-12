@@ -4,6 +4,12 @@
 <%= form.label :email, t(:email_label, :scope => [:politwoops, :users]) %>:<br />
 <%= form.text_field :email %><br />
 <br />
+<% if current_user && current_user.is_admin == 1 %>
+<div class="field">
+  <%= form.label t(:model_name, :scope => [:politwoops, :groups]) %>:<br />
+  <%= select(:user, :group_id, @groups.collect { |g| [g.name, g.id]}, {:include_blank => true}, :class => 'chzn-select' )%>
+</div>  
+<% end %>
 <%= form.label :password, form.object.new_record? ? t(:password_label, :scope => [:politwoops, :users]) : t(:password_change_label, :scope => [:politwoops, :users]) %>:<br />
 <%= form.password_field :password %><br />
 <br />

@@ -19,11 +19,20 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = @current_user
+    if current_user && current_user.is_admin == 1 && params[:id]
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
   end
 
   def edit
-    @user = @current_user
+    if current_user && current_user.is_admin == 1 && params[:id]
+      @user = User.find(params[:id])
+      @groups = Group.all
+    else
+      @user = current_user
+    end
   end
   
   def index
@@ -36,7 +45,12 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = @current_user # makes our views "cleaner" and more consistent
+    if current_user && current_user.is_admin == 1 && params[:id]
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
+
     if @user.update_attributes(params[:user])
       flash[:notice] = t(:success_update, :scope => [:politwoops, :users])
       redirect_to account_url
