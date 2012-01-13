@@ -3,6 +3,7 @@ module TweetsHelper
     # return tweet.content
     
     details = tweet.details
+    return tweet.content unless details.has_key?('entities')
     return tweet.content if details['entities'].empty?
 
     content = tweet.content
