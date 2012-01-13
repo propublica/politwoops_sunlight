@@ -11,7 +11,7 @@
   <% if current_user && current_user.is_admin == 1 %>
   (<%= link_to t(:edit, :scope => [:politwoops]), edit_politician_path(tweet.politician) %>)
   <% end %>
-	: <%= auto_link(tweet.content) %>
+	: <%= format_tweet(tweet).to_s.html_safe %>
     </div>
     <div class="byline">
         <a href="http://twitter.com/<%= tweet.politician.user_name %>" class="twitter"><%= tweet.details['user']['name'] %></a>
