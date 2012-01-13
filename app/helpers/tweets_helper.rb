@@ -3,8 +3,8 @@ module TweetsHelper
     # return tweet.content
     
     details = tweet.details
-    return tweet.content unless details.has_key?('entities')
-    return tweet.content if details['entities'].empty?
+    return auto_link(tweet.content) unless details.has_key?('entities')
+    return auto_link(tweet.content) if details['entities'].empty?
 
     content = tweet.content
     
