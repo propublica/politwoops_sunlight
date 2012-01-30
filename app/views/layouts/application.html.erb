@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
   <% if content_for?(:title) %>
@@ -14,19 +14,31 @@
   <link rel="icon" href="/images/favicon.png" type="image/png">
 </head>
 <body>
-	<div id="wrapper">
-		<div id="header">
-			<a href="/">Politwoops</a>
-		</div>
-
-    <% if flash[:notice] %>
-        <div id="notice"><%=raw flash[:notice] %></div>
-    <% end %>
-    
-        <div id="content">
-		<%= yield %>
+    <header>
+        <h1><a class="textReplace" href="/">Politwoops</a></h1>
+        <div id="socialMedia">
+          <!-- facebook like -->
+          <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=195983330448516&amp;xfbml=1"></script><fb:like send="true" width="200" show_faces="true" font="lucida grande"></fb:like>
         </div>
-        
+        <div class="clear"></div>
+    </header>
+    <div id="ltColumn">
+      <div class="module">
+        <p id="intro">Sure we all tweet things we don’t mean to share but now politicians have no way to hide them. <strong>Discover tweets that your politicians shared and then promptly deleted.</strong></p>
+      </div>
+      <div class="module">
+        <span class="tip">Us Edition produced by:</span>
+        <a id="sunlight" class="textReplace" href="http://sunlightfoundaiton.com">Sunlight Foundation</a>
+      </div>
+      <div class="module">
+        <span class="tip">Original code and concept provided by:</span>
+        <a id="otherOrg" class="textReplace" href="">Name of Organization</a>
+      </div>
+    </div>
+    <div id="rtColumn">
+        <%= yield %>
+    </div>
+    <div class="clear"></div>
 		<div id="footer">
 			<div id="hdo">
 				<a href="http://www.hackdeoverheid.nl/"><%=t :hdo_project, :scope => [:politwoops] %></a>
@@ -39,28 +51,7 @@
 		</div>
 
 	</div>
-<div id="footer-menu">
-<% if current_user.nil? %>
-<a href="/login"><%=t :login, :scope => [:politwoops] %></a> |
-<% else %>
-<a href="/account"><%=t :menu, :scope => [:politwoops] %></a> | 
-<% end %>
 
-<%= link_to t(:index_heading, :scope => [:politwoops, :groups]).downcase, groups_path %> |
-<%= link_to t(:index_heading, :scope => [:politwoops, :countries]).downcase, countries_path %> |
-<%= link_to 'api', '/page/api' %>
-
-<% if !current_user.nil? && current_user.is_admin == 1 %>
-| <a href="/statistics/"><%= t(:index_heading, :scope => [:politwoops, :statistics]).downcase %></a>
-<% end %>
-
-<% if !current_user.nil? %>
-| <a href="/logout"><%=t :logout, :scope => [:politwoops] %></a>
-<% end %>
-
-<!-- facebook like -->
-<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=195983330448516&amp;xfbml=1"></script><fb:like send="true" width="450" show_faces="true" font="lucida grande"></fb:like>
-</div>
 <%= render :partial => "layouts/analytics" %>
 </body>
 </html>

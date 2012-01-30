@@ -2,8 +2,8 @@
     <%= @latest_tweet.details['user']['name'] %> (<%= @politician.party.name %>)
 <% end %>
 <div id="info">
-  <h1><%= @latest_tweet.details['user']['name'] %></h1>
-  <%= @latest_tweet.details['user']['description'] %>
+  <h2 class="withTip"><%= @latest_tweet.details['user']['name'] %></h1>
+  <p class="tip"><%= @latest_tweet.details['user']['description'] %></p>
 </div>
 <%=
 render :template => "tweets/index"
