@@ -137,7 +137,7 @@ h1 a { background: url(/images/logo.jpg) top left no-repeat; height: 78px; width
 h2 { font-size: 130%; margin-bottom: 20px;}
 
 #sunlight { background: url(/images/logo_sunlight.png) top left no-repeat; height: 58px; }
-#otherOrg { background-color: black; height: 50px;}
+#otherOrg { font-size: 140%; color: #504C49;}
 
 #info { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #93908d;}
 
