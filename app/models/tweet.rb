@@ -1,5 +1,6 @@
 class Tweet < ActiveRecord::Base
   belongs_to :politician
+  has_many :tweet_images, :foreign_key => "tweet_id"
 
   default_scope :order => 'modified DESC'
   

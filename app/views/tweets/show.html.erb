@@ -1,4 +1,4 @@
 <% content_for :title do %>
     <%= @tweet.details['user']['name'] %> (<%= @tweet.politician.party.name %>)
 <% end %>
-<%= render @tweet %>
+<%= render @tweet, :locals => {:show_images => true} %>

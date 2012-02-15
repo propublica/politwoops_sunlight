@@ -21,6 +21,20 @@
 		<% tweet_when = "<a href=\"/tweet/#{tweet.id}\">#{time_ago_in_words(tweet.modified)}</a>" %>
 	    <%= t(:byline, :scope => [:politwoops, :tweets], :when => tweet_when, :what => source).html_safe %>
     </div>
+
+    <% if defined?(show_images) and show_images %>
+      <div class="images">
+        <% if tweet.tweet_images.any? %>
+          <h3>Screenshots of links in this tweet</h3>
+          <% tweet.tweet_images.each do |image| %>
+            <a href="<%= image.url %>" target="_blank">
+              <img src="<%= image.url %>" class="screenshot" />
+            </a>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+
     <div class="clear">
     </div>
   </div>

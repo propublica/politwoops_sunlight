@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120110123324) do
+ActiveRecord::Schema.define(:version => 20120215192438) do
 
   create_table "deleted_tweets", :force => true do |t|
     t.string   "user_name",     :limit => 64
@@ -23,11 +23,12 @@ ActiveRecord::Schema.define(:version => 20120110123324) do
     t.boolean  "typo_checked"
   end
 
-  add_index "deleted_tweets", ["content"], :name => "content"
+  add_index "deleted_tweets", ["content"], :name => "index_tweets_on_content"
   add_index "deleted_tweets", ["created"], :name => "created"
   add_index "deleted_tweets", ["deleted"], :name => "deleted"
   add_index "deleted_tweets", ["modified"], :name => "modified"
   add_index "deleted_tweets", ["politician_id"], :name => "index_tweets_on_politician_id"
+  add_index "deleted_tweets", ["typo_checked"], :name => "index_deleted_tweets_on_typo_checked"
   add_index "deleted_tweets", ["user_name"], :name => "user_name"
 
   create_table "groups", :force => true do |t|
@@ -93,11 +94,9 @@ ActiveRecord::Schema.define(:version => 20120110123324) do
     t.datetime "updated_at"
   end
 
-  create_table "trends", :force => true do |t|
-    t.integer  "year"
-    t.integer  "month"
-    t.string   "name"
-    t.text     "value"
+  create_table "tweet_images", :force => true do |t|
+    t.string   "url"
+    t.integer  "tweet_id",   :limit => 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -113,7 +112,7 @@ ActiveRecord::Schema.define(:version => 20120110123324) do
     t.boolean  "typo_checked",                :default => false
   end
 
-  add_index "tweets", ["content"], :name => "content"
+  add_index "tweets", ["content"], :name => "index_tweets_on_content"
   add_index "tweets", ["created"], :name => "created"
   add_index "tweets", ["deleted"], :name => "deleted"
   add_index "tweets", ["modified"], :name => "modified"

@@ -151,6 +151,15 @@ h2 { font-size: 130%; margin-bottom: 20px;}
 
 .tweet img { float: left; height: 73px; margin: 0 20px 0 0; width: 73px;}
 
+/** For Ali: CSS I added to deal with screenshots of links */
+.tweet .images h3 {margin-top: 30px; font-size: 120%;}
+.tweet .images img.screenshot {
+  float: left; width: 160px; height: 120px; 
+  margin: 20px 0; margin-right: 20px; border: 1px solid #336699; padding: 3px;
+
+}
+/** End of section */
+
 .tweet .content { float: left; width: 480px; }
 .tweet-content { margin-bottom: 8px;}
 
