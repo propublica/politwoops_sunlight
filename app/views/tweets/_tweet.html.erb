@@ -22,7 +22,7 @@
 	    <%= t(:byline, :scope => [:politwoops, :tweets], :when => tweet_when, :what => source).html_safe %>
     </div>
 
-    <% if defined?(show_images) and show_images %>
+    <% if params[:action] == 'show' %>
       <div class="images">
         <% if tweet.tweet_images.any? %>
           <h3>Screenshots of links in this tweet</h3>
