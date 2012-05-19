@@ -21,7 +21,11 @@
   		<% tweet_when = "<a href=\"/tweet/#{tweet.id}\">#{time_ago_in_words(tweet.modified)}</a>" %>
       <% delete_delay = ((tweet.modified - tweet.created) / 60).to_i %>
       <% 
-        delay = if delete_delay > 60
+        delay = if delete_delay > (60 * 24 * 7)
+          "after #{pluralize(delete_delay / (60 * 24 * 7), "week")}"
+        elsif delete_delay > (60 * 24)
+          "after #{pluralize(delete_delay / (60 * 24), "day")}"
+        elsif delete_delay > 60
           "after #{pluralize(delete_delay / 60, "hour")}"
         elsif delete_delay > 0
           "after #{pluralize delete_delay, "minute"}"
