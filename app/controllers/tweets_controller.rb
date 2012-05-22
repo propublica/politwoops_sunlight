@@ -14,7 +14,8 @@ class TweetsController < ApplicationController
 
     if params.has_key?(:q)
       # Rails prevents injection attacks by escaping things passed in with ?
-      @tweets = @tweets.where("content like ?", "%#{params[:q]}%")
+      query = "%#{params[:q]}%"
+      @tweets = @tweets.where("content like ? or deleted_tweets.user_name like ?", query, query)
     end
 
     @tweets = @tweets.includes(:politician => [:party]).paginate(:page => params[:page], :per_page => Tweet.per_page)
