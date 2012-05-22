@@ -19,17 +19,16 @@
 </head>
 <body>
   <header>
-    <h1><a class="textReplace" href="/">Politwoops</a></h1>
-    <div id="socialMedia">
-      
-      <form action="/" method="get">
-        <input type="search" placeholder="Search" name="q" value="<%= h params[:q] %>"/>
-      </form>
-
+    <form action="/" method="get" id="search">
+      <input type="search" placeholder="Search" name="q" value="<%= h params[:q] %>"/>
+    </form>
+    <h1><a class="textReplace clear" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
+    <div class="clear" id="socialMedia">
       <!-- facebook like -->
       <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=195983330448516&amp;xfbml=1"></script><fb:like send="true" width="200" show_faces="true" font="lucida grande"></fb:like>
     </div>
     <div class="clear"></div>
+    
   </header>
   <div id="ltColumn">
     <div class="module">
