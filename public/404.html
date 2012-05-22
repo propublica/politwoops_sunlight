@@ -4,23 +4,30 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <style type="text/css">
     body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
+    #container { width: 940px; padding: 0 10px; margin: 0 auto;}
+    .textReplace { text-indent: -9999em; display: block;}
+    h1 { height: 78px; width: 370px; float: left; margin-top: 40px; }
+    h1 a { background: url(../public/images/logo.jpg) top left no-repeat; height: 78px; width: 370px; }
+    header { margin: 10px 0 30px;
+    padding-bottom: 60px;
+    background: url(../public/images/bg_headerborder.png) center bottom no-repeat;
+    height: 110px;}
+    .clear { clear: both;}
+    #error404 { background: url(../public/images/error_img.jpg) center top no-repeat; height: 182px; margin-top: 50px;}
   </style>
 </head>
 
 <body>
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
+  <div id="container">
+      <header>
+        <h1><a class="textReplace" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
+      </header>  
+      <div id="error404" class="clear textReplace">
+        <h2>404 error</h2>
+        <p>Oops! Looks like you've landed on a page that no longer exists</p>
+      </div>  
+      <p>Go back to the <a href="/">home page</a> and try again.</p>
   </div>
 </body>
 </html>
