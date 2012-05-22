@@ -164,8 +164,8 @@ h2 { font-size: 130%; margin-bottom: 20px;}
 .tweet .content { float: left; width: 480px; }
 .tweet-content { margin-bottom: 8px;}
 
-.tweet .byline, .tweet .byline a { color: #8d8883; }
-
+.tweet .byline, .tweet .byline a { color: #8d8883;}
+.tweet .byline {font-size: 90%;}
 
 .tweet .byline a.twitter {
 	display: block;
