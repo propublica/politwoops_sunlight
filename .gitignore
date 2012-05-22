@@ -5,3 +5,4 @@
 /vendor/gems
 /*.csv
 */.DS_Store
+/unicorn.rb
