@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
 <head>
+  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+
   <% if content_for?(:title) %>
     <title><%= yield(:title) %> - Politwoops</title>
   <% else %>
@@ -14,35 +16,35 @@
   <link rel="icon" href="/images/favicon.png" type="image/png">
 </head>
 <body>
-    <header>
-        <h1><a class="textReplace" href="/">Politwoops</a></h1>
-        <div id="socialMedia">
-          <!-- facebook like -->
-          <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=195983330448516&amp;xfbml=1"></script><fb:like send="true" width="200" show_faces="true" font="lucida grande"></fb:like>
-        </div>
-        <div class="clear"></div>
-    </header>
-    <div id="ltColumn">
-      <div class="module">
-        <p id="intro">Sure we all tweet things we don’t mean to share but now politicians have no way to hide them. <strong>Discover tweets that your politicians shared and then promptly deleted.</strong></p>
-      </div>
-      <div class="module">
-        <span class="tip">Us Edition produced by:</span>
-        <a id="sunlight" class="textReplace" href="http://sunlightfoundaiton.com">Sunlight Foundation</a>
-      </div>
-      <div class="module">
-        <span class="tip">Original code and concept provided by:</span>
-        <span id="otherOrg">
-          <a href="http://openstate.eu/">Openstate Foundation</a>
-        </span>
-      </div>
-    </div>
-    <div id="rtColumn">
-        <%= yield %>
+  <header>
+    <h1><a class="textReplace" href="/">Politwoops</a></h1>
+    <div id="socialMedia">
+      <!-- facebook like -->
+      <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=195983330448516&amp;xfbml=1"></script><fb:like send="true" width="200" show_faces="true" font="lucida grande"></fb:like>
     </div>
     <div class="clear"></div>
-	</div>
+  </header>
+  <div id="ltColumn">
+    <div class="module">
+      <p id="intro">Sure we all tweet things we don’t mean to share but now politicians have no way to hide them. <strong>Discover tweets that your politicians shared and then promptly deleted.</strong></p>
+    </div>
+    <div class="module">
+      <span class="tip">Us Edition produced by:</span>
+      <a id="sunlight" class="textReplace" href="http://sunlightfoundaiton.com">Sunlight Foundation</a>
+    </div>
+    <div class="module">
+      <span class="tip">Original code and concept provided by:</span>
+      <span id="otherOrg">
+        <a href="http://openstate.eu/">Openstate Foundation</a>
+      </span>
+    </div>
+  </div>
+  <div id="rtColumn">
+    <%= yield %>
+  </div>
 
-<%= render :partial => "layouts/analytics" %>
+  <div class="clear"></div>
+	
+  <%= render :partial => "layouts/analytics" %>
 </body>
 </html>
