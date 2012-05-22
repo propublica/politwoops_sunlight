@@ -11,6 +11,12 @@ class TweetsController < ApplicationController
     end
     @tweets = @tweets.where(:politician_id => @politicians)
     tweet_count = 0 #@tweets.count
+
+    if params.has_key?(:q)
+      # Rails prevents injection attacks by escaping things passed in with ?
+      @tweets = @tweets.where("content like ?", "%#{params[:q]}%")
+    end
+
     @tweets = @tweets.includes(:politician => [:party]).paginate(:page => params[:page], :per_page => Tweet.per_page)
     
     respond_to do |format|
