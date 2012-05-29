@@ -314,4 +314,4 @@ table.listing {
 
 /** Social Media */
 iframe {margin: 0 0;}
-iframe.twitter-share-button {display: inline;}
+iframe.twitter-share-button {display: inline; vertical-align: text-bottom;}
