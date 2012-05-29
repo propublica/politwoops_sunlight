@@ -6,7 +6,7 @@
   <% if content_for?(:title) %>
     <title><%= yield(:title) %> - Politwoops</title>
   <% else %>
-    <title>Politwoops - <%=t :slogan, :scope => [:politwoops] %></title>
+    <title>Politwoops - <%= t :slogan, :scope => [:politwoops] %></title>
   <% end %>
 
   <%= stylesheet_link_tag "style" %>
@@ -16,21 +16,26 @@
 
   <%= csrf_meta_tag %>
   <link rel="icon" href="/images/favicon.png" type="image/png">
-
-  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-  <script type="text/javascript">stLight.options({publisher: "ur-d988ab79-8037-af82-55b4-80013b96f84c"}); </script>
 </head>
 <body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
   <header>
     <form action="/" method="get" id="search">
       <input type="search" placeholder="Search" name="q" value="<%= h params[:q] %>"/>
     </form>
     <h1><a class="textReplace clear" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
     <div class="clear" id="socialMedia">
-      <!-- facebook like -->
-      <!-- <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=195983330448516&amp;xfbml=1"></script><fb:like send="true" width="200" show_faces="true" font="lucida grande"></fb:like> -->
-      <span class='st_facebook_hcount' displayText='Facebook'></span>
-      <span class='st_twitter_hcount' displayText='Tweet'></span>
+      <div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="sunfoundation" data-hashtags="politwoops" data-dnt="true">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
     <div class="clear"></div>
     
