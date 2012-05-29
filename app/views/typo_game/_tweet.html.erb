@@ -1,6 +1,6 @@
 <div id="tweet-<%= tweet.id %>" class="tweet">
   <a href="/user/<%= tweet.politician.user_name %>">
-    <img src="http://twivatar.herokuapp.com/<%= tweet.politician.user_name %>/bigger" alt="<%= tweet.politician.user_name %>" width"73" height="73" />
+    <img src="<%= avatar_url tweet.politician.user_name %>" alt="<%= tweet.politician.user_name %>" width"73" height="73" />
   </a>
   <div class="content">
     <div class="tweet-content">

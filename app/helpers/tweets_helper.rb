@@ -10,4 +10,9 @@ module TweetsHelper
   def format_tweet(tweet)
     content = auto_link(format_user_name(format_hashtag(tweet.content)), :html => { :target => '_blank' })
   end
+
+  def avatar_url(username)
+    "http://img.tweetimag.es/i/#{username}_b"
+  end
+
 end
