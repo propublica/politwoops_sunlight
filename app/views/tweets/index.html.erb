@@ -1,4 +1,11 @@
-<% if !@default_group.hide %>
+<% content_for :feeds do %>
+  <% if @politician %>
+    <%= auto_discovery_link_tag :rss, politician_url(@politician.user_name, :format => :rss) %>
+  <% elsif @query %>
+    <%= auto_discovery_link_tag :rss, index_url(:format => :rss, :q => @query) %>
+  <% else %>
+    <%= auto_discovery_link_tag :rss, index_url(:format => :rss) %>
+  <% end %>
 <% end %>
 
 <% @tweets.each do |tweet| %>

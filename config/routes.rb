@@ -52,9 +52,7 @@ Politwoops::Application.routes.draw do
 
   root :to => "tweets#index"
   
-  match "index(.:format)" => "tweets#index"
-  
-  match "feed/" => "tweets#index", :format => :xml, :as => :root_feed
+  match "index(.:format)" => "tweets#index", :as => :index
   
   match "statistics/" => "statistics#index"
   
