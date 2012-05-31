@@ -44,4 +44,8 @@ module TweetsHelper
     end
   end
 
+  def rss_date(time)
+    time.strftime "%a, %d %b %Y %H:%M:%S %z"
+  end
+
 end

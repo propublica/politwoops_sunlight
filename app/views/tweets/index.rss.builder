@@ -18,6 +18,7 @@ xml.rss "version" => "2.0" do
         xml.title "@#{tweet.user_name} -- #{byline tweet, false}"
         xml.description tweet.content
         xml.link tweet_url(tweet)
+        xml.pubDate rss_date(tweet.modified)
       end
     end
   end
