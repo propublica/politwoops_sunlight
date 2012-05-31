@@ -103,6 +103,7 @@ en:
 
     tweets:
       byline: "Deleted %{when} ago %{delay}, originally posted via %{what}"
+      byline_text: "Deleted %{when} ago %{delay}"
       reply: "reply"
       retweet: "retweet"
 

@@ -1,13 +1,23 @@
 xml.rss "version" => "2.0" do
   xml.channel do
-    xml.title "Politwoops"
-    xml.description "Alle deleted tweets van politici"
-    xml.link root_url
+    if @politician
+      xml.title "Politwoops - Tweets by @#{@politician.user_name}"
+      xml.link politician_url(@politician.user_name)
+    elsif @query
+      xml.title "Politwoops - Tweets matching \"#{@query}\""
+      xml.link root_url(:q => @query)
+    else
+      xml.title "Politwoops"
+      xml.link root_url
+    end
+
+    xml.description t(:slogan, :scope => :politwoops)
+
     @tweets.each do |tweet|
       xml.item do
-        xml.title tweet.user_name + ': ' + tweet.content
-        xml.description tweet.user_name + ': ' + tweet.content
-        xml.link url_for :controller => 'tweets', :action => 'show', :id => tweet.id, :only_path => false
+        xml.title "@#{tweet.user_name} -- #{byline tweet, false}"
+        xml.description tweet.content
+        xml.link tweet_url(tweet)
       end
     end
   end

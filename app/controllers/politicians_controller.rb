@@ -80,7 +80,7 @@ class PoliticiansController < ApplicationController
     @tweets = DeletedTweet.includes(:politician => [:party]).where(:politician_id => @politician.id).paginate(:page => params[:page], :per_page => Tweet.per_page)
 
     respond_to do |format|
-      format.html #{ render "tweets/index" }# show.html.erb
+      format.html
       format.xml  do
         response.headers["Content-Type"] = "application/xml; charset=utf-8"
         render "tweets/index"

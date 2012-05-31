@@ -4,17 +4,20 @@ class TweetsController < ApplicationController
   def index
     @group_name = params[:group_name] || @default_group.name
     @politicians = Politician.active.joins(:groups).where({:groups => {:name => @group_name}}).all
+    
     if params.has_key?(:see) && params[:see] == :all
       @tweets = Tweet
     else
       @tweets = DeletedTweet
     end
+
     @tweets = @tweets.where(:politician_id => @politicians)
     tweet_count = 0 #@tweets.count
 
-    if params.has_key?(:q)
+    if params.has_key?(:q) and params[:q].present?
       # Rails prevents injection attacks by escaping things passed in with ?
-      query = "%#{params[:q]}%"
+      @query = params[:q]
+      query = "%#{@query}%"
       @tweets = @tweets.where("content like ? or deleted_tweets.user_name like ?", query, query)
     end
 

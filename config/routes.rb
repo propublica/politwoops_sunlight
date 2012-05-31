@@ -54,7 +54,7 @@ Politwoops::Application.routes.draw do
   
   match "index(.:format)" => "tweets#index"
   
-  match "feed/" => "tweets#index", :format => :xml
+  match "feed/" => "tweets#index", :format => :xml, :as => :root_feed
   
   match "statistics/" => "statistics#index"
   
@@ -66,10 +66,10 @@ Politwoops::Application.routes.draw do
   
   match "politicians/search" => "twitter_users#index"
   
-  match "tweet/:id" => "tweets#show"
+  match "tweet/:id" => "tweets#show", :as => :tweet
   
-  match "user/:user_name" => "politicians#show"
-  match "user/:user_name/feed/" => "politicians#show", :format => :xml
+  match "user/:user_name" => "politicians#show", :as => :politician
+  match "user/:user_name/feed/" => "politicians#show", :format => :xml, :as => :politician_feed
   
   match "party/:name" => "parties#show"
   match "party/:name/feed/" => "parties#show", :format => :xml
