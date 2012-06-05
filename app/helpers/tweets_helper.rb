@@ -12,7 +12,7 @@ module TweetsHelper
   end
 
   def avatar_url(username)
-    "http://img.tweetimag.es/i/#{username}_b"
+    "/images/default_profile_avatar.png"
   end
 
   def byline(tweet, html = true)
