@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120215192438) do
+ActiveRecord::Schema.define(:version => 20120622193838) do
 
   create_table "deleted_tweets", :force => true do |t|
     t.string   "user_name",     :limit => 64
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(:version => 20120215192438) do
     t.text     "tweet"
     t.integer  "politician_id"
     t.boolean  "typo_checked"
+    t.boolean  "approved"
   end
 
+  add_index "deleted_tweets", ["approved"], :name => "index_deleted_tweets_on_approved"
   add_index "deleted_tweets", ["content"], :name => "index_tweets_on_content"
   add_index "deleted_tweets", ["created"], :name => "created"
   add_index "deleted_tweets", ["deleted"], :name => "deleted"
@@ -110,8 +112,10 @@ ActiveRecord::Schema.define(:version => 20120215192438) do
     t.text     "tweet"
     t.integer  "politician_id"
     t.boolean  "typo_checked",                :default => false
+    t.boolean  "approved",                    :default => false
   end
 
+  add_index "tweets", ["approved"], :name => "index_tweets_on_approved"
   add_index "tweets", ["content"], :name => "index_tweets_on_content"
   add_index "tweets", ["created"], :name => "created"
   add_index "tweets", ["deleted"], :name => "deleted"

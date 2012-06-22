@@ -58,7 +58,8 @@ namespace :csv do
          twitter_user_local_ids[twitter_user] = found_politicians[0].id
        end
      end
-     p twitter_user_local_ids
+     # p twitter_user_local_ids
+     p new_twitter_users
      
      twitter_user_ids = {}
      new_twitter_users.each_slice(75) do |twitter_users|

@@ -21,6 +21,9 @@ class TweetsController < ApplicationController
       @tweets = @tweets.where("content like ? or deleted_tweets.user_name like ?", query, query)
     end
 
+    # only approved tweets
+    @tweets = @tweets.where(:approved => true)
+
     per_page = params[:per_page] ? params[:per_page].to_i : nil
     per_page ||= Tweet.per_page
     per_page = 200 if per_page > 200
