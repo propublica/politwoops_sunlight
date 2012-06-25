@@ -1,7 +1,10 @@
 class Admin::TweetsController < Admin::AdminController
+  before_filter :load_tweet, :only => :review
 
   # list either unreviewed
   def index
+    p params
+
     # boilerplate I don't fully understand
     @group_name = params[:group_name] || @default_group.name
     @politicians = Politician.active.joins(:groups).where({:groups => {:name => @group_name}}).all
@@ -20,6 +23,22 @@ class Admin::TweetsController < Admin::AdminController
 
   # approve or unapprove a tweet, mark it as reviewed either way
   def review
+    approved = (params[:commit] == "Approve")
+    @tweet.approved = approved
+    @tweet.reviewed = true
+    @tweet.save!
+
+    redirect_to params[:return_to]
+  end
+
+
+  # filters
+
+  def load_tweet
+    unless params[:id] and (@tweet = DeletedTweet.find(params[:id]))
+      render :nothing => true, :status => :not_found
+      return false
+    end
   end
 
 end

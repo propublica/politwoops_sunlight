@@ -5,6 +5,7 @@ Politwoops::Application.routes.draw do
     match "review" => "tweets#index", :reviewed => false, :approved => false, :as => "review"
     match "unapproved" => "tweets#index", :reviewed => true, :approved => false, :as => "unapproved"
     match "approved" => "tweets#index", :reviewed => true, :approved => true, :as => "approved"
+    match "review/:id" => "tweets#review", :via => [:post], :as => "review_tweet"
   end
 
   # Sample resource route within a namespace:
@@ -22,8 +23,6 @@ Politwoops::Application.routes.draw do
   match "index(.:format)" => "tweets#index", :as => :index
   
   match "statistics/" => "statistics#index"
-  
-  # See how all your routes lay out with "rake routes"
 
   match "groups/:id/politicians/add/:politician_id" => "groups_politicians#update"
   

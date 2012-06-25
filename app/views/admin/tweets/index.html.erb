@@ -15,7 +15,7 @@
 </ul>
 
 <% @tweets.each do |tweet| %>
-  <%= render :partial => "tweets/tweet", :object => tweet %>
+  <%= render :partial => "tweets/tweet", :object => tweet, :locals => {:admin => true} %>
 <% end %>
 
 <div id="pager">

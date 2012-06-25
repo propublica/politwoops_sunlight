@@ -7,3 +7,13 @@ ul.admin_nav li {
   font-size: 125%;
 }
 ul.admin_nav li a {text-decoration: underline;}
+
+div.admin.review {
+  margin: 10px 0 10px 0;
+}
+
+div.admin.review input {
+  padding: 5px 10px;
+  margin-right: 10px;
+  font-size: 110%;
+}

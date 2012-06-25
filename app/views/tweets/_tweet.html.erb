@@ -41,4 +41,24 @@
   </div>
   <div class="clear">
   </div>
+
+  <% if defined?(admin) and admin %>
+    <div class="admin review">
+      <% form_tag admin_review_tweet_path(tweet) do %>
+        <%= hidden_field_tag "return_to", request.path %>
+
+        <% if tweet.reviewed? %>
+          <% if tweet.approved? %>
+            <%= submit_tag "Unapprove" %>
+          <% else %>
+            <%= submit_tag "Approve" %>
+          <% end %>
+        <% else %>
+          <%= submit_tag "Unapprove" %>
+          <%= submit_tag "Approve" %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
 </div>
