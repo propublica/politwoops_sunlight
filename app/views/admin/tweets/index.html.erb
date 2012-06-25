@@ -1,0 +1,23 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "admin" %>
+<% end %>
+
+<ul class="admin_nav">
+  <li>
+    <%= link_to_unless_current "For Review", admin_review_path %>
+  </li>
+  <li>
+    <%= link_to_unless_current "Approved", admin_approved_path %>
+  </li>
+  <li>
+    <%= link_to_unless_current "Unapproved", admin_unapproved_path %>
+  </li>
+</ul>
+
+<% @tweets.each do |tweet| %>
+  <%= render :partial => "tweets/tweet", :object => tweet %>
+<% end %>
+
+<div id="pager">
+  <%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :prev_label => t(:previous, :scope => [:politwoops]) %>
+</div>

@@ -15,4 +15,10 @@ namespace :politicians do
       end
     end
   end
+
+  # task :reset => :environment do
+  #   group = Group.find 3
+  #   group.politician_ids = Politician.all.map {|p| p.id}
+  #   group.save!
+  # end
 end

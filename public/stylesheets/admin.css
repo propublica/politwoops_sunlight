@@ -1,0 +1,9 @@
+/** Additional admin styles */
+
+ul.admin_nav {margin-bottom: 30px;}
+ul.admin_nav li {
+  display: inline-block; 
+  margin-right: 20px;
+  font-size: 125%;
+}
+ul.admin_nav li a {text-decoration: underline;}
