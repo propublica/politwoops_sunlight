@@ -20,6 +20,10 @@ namespace :politicians do
     no_responses = []
     politicians = Politician
 
+    if ENV['where_blank'].present?
+      politicians = politicians.where :profile_image_url => nil
+    end
+
     if ENV['username']
       politicians = politicians.where :user_name => ENV['username']
     end
@@ -32,7 +36,7 @@ namespace :politicians do
       rescue HTTParty::RedirectionTooDeep => e
         image_url = e.response.header['Location']
         if image_url and image_url.strip.present?
-          puts "[#{politician.user_name}] #{politician.profile_image_url}"
+          puts "[#{politician.user_name}] #{image_url}"
           politician.profile_image_url = image_url
           politician.save!
         else
