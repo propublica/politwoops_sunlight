@@ -3,8 +3,6 @@ class Admin::TweetsController < Admin::AdminController
 
   # list either unreviewed
   def index
-    p params
-
     # boilerplate I don't fully understand
     @group_name = params[:group_name] || @default_group.name
     @politicians = Politician.active.joins(:groups).where({:groups => {:name => @group_name}}).all

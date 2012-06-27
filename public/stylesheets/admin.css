@@ -1,12 +1,28 @@
 /** Additional admin styles */
 
-ul.admin_nav {margin-bottom: 30px;}
-ul.admin_nav li {
+.admin {
+	position: relative;
+	height: 60px;
+	margin-top: -20px;
+}
+
+.admin ul.nav {
+	margin-bottom: 30px;
+	position: absolute; left: 0;
+}
+
+.admin ul.nav li {
   display: inline-block; 
   margin-right: 20px;
   font-size: 125%;
 }
-ul.admin_nav li a {text-decoration: underline;}
+.admin ul.nav li a {text-decoration: underline;}
+
+.admin div.details {
+	margin-bottom: 10px;
+	position: absolute; right: 0;
+	font-size: 90%;
+}
 
 div.admin.review {
   margin: 10px 0 10px 0;

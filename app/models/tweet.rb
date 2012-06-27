@@ -4,6 +4,7 @@ class Tweet < ActiveRecord::Base
 
   default_scope :order => 'modified DESC'
   
+  scope :latest, :order => 'created DESC'
   scope :deleted, :conditions => "deleted = 1 AND content IS NOT NULL"
   scope :with_content, :conditions => "content IS NOT NULL"
   scope :typo_unchecked, :conditions => "typo_checked IS NULL"
