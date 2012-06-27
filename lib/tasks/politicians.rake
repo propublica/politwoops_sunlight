@@ -17,13 +17,37 @@ namespace :politicians do
   end
 
   task :reset_avatars => :environment do
-    Politician.all.each do |politician|
-      last_tweet = Tweet.latest.where(:politician_id => politician.id).first
-      if last_tweet
-        politician.profile_image_url = last_tweet.details['user']['profile_image_url']
-        puts politician.profile_image_url
-        politician.save!
+    no_responses = []
+    politicians = Politician
+
+    if ENV['username']
+      politicians = politicians.where :user_name => ENV['username']
+    end
+
+    politicians.all.each do |politician|
+      url = "http://api.twitter.com/1/users/profile_image/#{politician.user_name}?size=bigger"
+
+      begin
+        res = HTTParty.get url, :no_follow => true
+      rescue HTTParty::RedirectionTooDeep => e
+        image_url = e.response.header['Location']
+        if image_url and image_url.strip.present?
+          puts "[#{politician.user_name}] #{politician.profile_image_url}"
+          politician.profile_image_url = image_url
+          politician.save!
+        else
+          no_responses << politician.user_name
+          puts "[#{politician.user_name}] No image URL, probably bad account"
+        end
+      else
+        "[#{politician.user_name}] NO RESPONSE??"
       end
+
+      sleep 1
+    end
+
+    no_responses.each do |name|
+      puts "Possible bad username: #{name}"
     end
   end
 end
