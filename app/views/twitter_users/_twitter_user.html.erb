@@ -1,6 +1,8 @@
 <div class="tweet">
   <a href="http://twitter.com/<%= twitter_user.screen_name %>">
-    <img src="<%= avatar_url twitter_user.screen_name %>" alt="<%= twitter_user.screen_name %>" width"73" height="73" />
+    <% if politician = @politicians[twitter_user.screen_name] %>
+      <img src="<%= avatar_url politician %>" alt="<%= twitter_user.screen_name %>" width"73" height="73" />
+    <% end %>
   </a>
   <div class="content">
     <div class="tweet-content">

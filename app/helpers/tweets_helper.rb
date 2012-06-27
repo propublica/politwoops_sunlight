@@ -11,8 +11,8 @@ module TweetsHelper
     content = auto_link(format_user_name(format_hashtag(tweet.content)), :html => { :target => '_blank' })
   end
 
-  def avatar_url(username)
-    "/images/default_profile_avatar.png"
+  def avatar_url(politician)
+    politician.profile_image_url
   end
 
   def byline(tweet, html = true)

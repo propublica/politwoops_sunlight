@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627204919) do
+ActiveRecord::Schema.define(:version => 20120627215649) do
 
   create_table "deleted_tweets", :force => true do |t|
     t.string   "user_name",     :limit => 64
@@ -81,10 +81,11 @@ ActiveRecord::Schema.define(:version => 20120627204919) do
   end
 
   create_table "politicians", :force => true do |t|
-    t.string  "user_name",  :limit => 64,                :null => false
-    t.integer "twitter_id",                              :null => false
+    t.string  "user_name",         :limit => 64,                :null => false
+    t.integer "twitter_id",                                     :null => false
     t.integer "party_id"
-    t.integer "status",                   :default => 1
+    t.integer "status",                          :default => 1
+    t.string  "profile_image_url"
   end
 
   add_index "politicians", ["status"], :name => "index_politicians_on_status"

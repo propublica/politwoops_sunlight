@@ -16,9 +16,14 @@ namespace :politicians do
     end
   end
 
-  # task :reset => :environment do
-  #   group = Group.find 3
-  #   group.politician_ids = Politician.all.map {|p| p.id}
-  #   group.save!
-  # end
+  task :reset_avatars => :environment do
+    Politician.all.each do |politician|
+      last_tweet = Tweet.latest.where(:politician_id => politician.id).first
+      if last_tweet
+        politician.profile_image_url = last_tweet.details['user']['profile_image_url']
+        puts politician.profile_image_url
+        politician.save!
+      end
+    end
+  end
 end
