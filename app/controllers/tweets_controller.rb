@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.xml
 
-  caches_action :index
+  # caches_action :index
 
   def index
     @group_name = params[:group_name] || @default_group.name

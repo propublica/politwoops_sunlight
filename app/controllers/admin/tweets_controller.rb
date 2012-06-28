@@ -41,7 +41,7 @@ class Admin::TweetsController < Admin::AdminController
 
     @tweet.save!
 
-    expire_action :controller => '/tweets', :action => :index
+    # expire_action :controller => '/tweets', :action => :index
 
     redirect_to params[:return_to]
   end
