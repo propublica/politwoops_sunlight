@@ -2,12 +2,12 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.xml
 
-  caches_page :index
+  caches_action :index
 
   def index
     @group_name = params[:group_name] || @default_group.name
     @politicians = Politician.active.joins(:groups).where({:groups => {:name => @group_name}}).all
-    
+
     if params.has_key?(:see) && params[:see] == :all
       @tweets = Tweet
     else
@@ -32,7 +32,7 @@ class TweetsController < ApplicationController
     per_page = 200 if per_page > 200
 
     @tweets = @tweets.includes(:politician => [:party]).paginate(:page => params[:page], :per_page => per_page)
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.rss  do
@@ -50,7 +50,7 @@ class TweetsController < ApplicationController
 
     not_found unless ((current_user && (current_user.is_admin == 1)) || (@tweet.politician.status == 1))
     not_found unless @tweet.approved?
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @tweet }

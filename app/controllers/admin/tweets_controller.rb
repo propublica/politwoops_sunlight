@@ -34,12 +34,14 @@ class Admin::TweetsController < Admin::AdminController
     @tweet.approved = approved
     @tweet.reviewed = true
     @tweet.reviewed_at = Time.now
-    
+
     if review_message.any?
       @tweet.review_message = review_message
     end
 
     @tweet.save!
+
+    expire_action :controller => '/tweets', :action => :index
 
     redirect_to params[:return_to]
   end
