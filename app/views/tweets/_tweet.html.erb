@@ -54,9 +54,27 @@
           <% else %>
             <%= submit_tag "Approve" %>
           <% end %>
+
+          <% if tweet.reviewed_at %>
+            <span class="reviewed_at">
+              Reviewed at <%= tweet.reviewed_at.strftime "%B %d, %Y at %I:%M %p" %>
+            </span>
+          <% end %>
+
+          <% if tweet.review_message.present? %>
+            <p class="review_message">
+              Review notes: <%= tweet.review_message %>
+            </p>
+          <% end %>
+
         <% else %>
           <%= submit_tag "Unapprove" %>
           <%= submit_tag "Approve" %>
+          <br/>
+          <label class="review_message">
+            A note about why (required if approving)
+          </label>
+          <textarea name="review_message" class="review_message"></textarea>
         <% end %>
       <% end %>
     </div>

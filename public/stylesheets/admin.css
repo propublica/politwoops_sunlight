@@ -1,24 +1,24 @@
 /** Additional admin styles */
 
-.admin {
+.admin_header {
 	position: relative;
 	height: 60px;
 	margin-top: -20px;
 }
 
-.admin ul.nav {
+.admin_header ul.nav {
 	margin-bottom: 30px;
 	position: absolute; left: 0;
 }
 
-.admin ul.nav li {
+.admin_header ul.nav li {
   display: inline-block; 
   margin-right: 20px;
   font-size: 125%;
 }
-.admin ul.nav li a {text-decoration: underline;}
+.admin_header ul.nav li a {text-decoration: underline;}
 
-.admin div.details {
+.admin_header div.details {
 	margin-bottom: 10px;
 	position: absolute; right: 0;
 	font-size: 90%;
@@ -32,4 +32,29 @@ div.admin.review input {
   padding: 5px 10px;
   margin-right: 10px;
   font-size: 110%;
+}
+
+div.admin.review span.reviewed_at {
+
+}
+
+div.admin.review p.review_message {
+	margin-top: 15px; margin-bottom: 0;
+}
+
+div.admin.review label.review_message {
+	display: block;
+	margin-top: 10px;
+}
+
+div.admin.review textarea.review_message {
+	display: block;
+	margin: 10px 0;
+	height: 50px; width: 80%;
+}
+
+div.admin_error {
+	margin-bottom: 40px;
+	padding: 5px 10px;
+	margin-top: -20px;
 }

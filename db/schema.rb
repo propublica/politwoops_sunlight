@@ -10,19 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627215649) do
+ActiveRecord::Schema.define(:version => 20120628014250) do
 
   create_table "deleted_tweets", :force => true do |t|
-    t.string   "user_name",     :limit => 64
+    t.string   "user_name",      :limit => 64
     t.string   "content"
-    t.boolean  "deleted",                     :default => false, :null => false
-    t.datetime "created",                                        :null => false
-    t.datetime "modified",                                       :null => false
+    t.boolean  "deleted",                      :default => false, :null => false
+    t.datetime "created",                                         :null => false
+    t.datetime "modified",                                        :null => false
     t.text     "tweet"
     t.integer  "politician_id"
     t.boolean  "typo_checked"
     t.boolean  "approved"
     t.boolean  "reviewed"
+    t.datetime "reviewed_at"
+    t.text     "review_message"
   end
 
   add_index "deleted_tweets", ["approved"], :name => "index_deleted_tweets_on_approved"
@@ -107,16 +109,18 @@ ActiveRecord::Schema.define(:version => 20120627215649) do
   end
 
   create_table "tweets", :force => true do |t|
-    t.string   "user_name",     :limit => 64
+    t.string   "user_name",      :limit => 64
     t.string   "content"
-    t.boolean  "deleted",                     :default => false, :null => false
-    t.datetime "created",                                        :null => false
-    t.datetime "modified",                                       :null => false
+    t.boolean  "deleted",                      :default => false, :null => false
+    t.datetime "created",                                         :null => false
+    t.datetime "modified",                                        :null => false
     t.text     "tweet"
     t.integer  "politician_id"
-    t.boolean  "typo_checked",                :default => false
-    t.boolean  "approved",                    :default => false
-    t.boolean  "reviewed",                    :default => false
+    t.boolean  "typo_checked",                 :default => false
+    t.boolean  "approved",                     :default => false
+    t.boolean  "reviewed",                     :default => false
+    t.datetime "reviewed_at"
+    t.text     "review_message"
   end
 
   add_index "tweets", ["approved"], :name => "index_tweets_on_approved"

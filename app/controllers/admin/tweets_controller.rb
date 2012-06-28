@@ -22,8 +22,23 @@ class Admin::TweetsController < Admin::AdminController
   # approve or unapprove a tweet, mark it as reviewed either way
   def review
     approved = (params[:commit] == "Approve")
+
+    review_message = (params[:review_message] || "").strip
+
+    if !@tweet.reviewed? and approved and review_message.blank?
+      flash[:review_message] = "You need to add a note about why you're approving this tweet."
+      redirect_to params[:return_to]
+      return false
+    end
+
     @tweet.approved = approved
     @tweet.reviewed = true
+    @tweet.reviewed_at = Time.now
+    
+    if review_message.any?
+      @tweet.review_message = review_message
+    end
+
     @tweet.save!
 
     redirect_to params[:return_to]

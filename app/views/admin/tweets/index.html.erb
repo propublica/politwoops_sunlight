@@ -2,7 +2,13 @@
   <%= stylesheet_link_tag "admin" %>
 <% end %>
 
-<div class="admin">
+<% if flash[:review_message] %>
+  <div class="admin_error error">
+    <%= flash[:review_message] %>
+  </div>
+<% end %>
+
+<div class="admin_header">
   <div class="details">
     Last tweet found <%= latest_tweet.created.strftime "%B %d, %Y at %I:%M %p" %>
     <br/>
