@@ -12,6 +12,11 @@ class Admin::TweetsController < Admin::AdminController
     # filter to relevant subset of deleted tweets
     @tweets = @tweets.where :reviewed => params[:reviewed], :approved => params[:approved]
 
+    # show unreviewed tweets oldest to newest
+    if !params[:reviewed]
+      @tweets = @tweets.reorder "modified ASC"
+    end
+
     per_page = params[:per_page] ? params[:per_page].to_i : nil
     per_page ||= Tweet.per_page
     per_page = 200 if per_page > 200
