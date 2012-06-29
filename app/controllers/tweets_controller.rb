@@ -2,7 +2,9 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.xml
 
-  caches_action :index, :if => proc { (params.keys - ['format', 'action', 'controller']).empty? }
+  caches_action :index, 
+    :expires_in => 30.minutes,
+    :if => proc { (params.keys - ['format', 'action', 'controller']).empty? }
 
   def index
     @group_name = params[:group_name] || @default_group.name
