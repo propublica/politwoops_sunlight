@@ -1,2 +1,5 @@
 :username: 
 :password: 
+
+# used for obfuscating the RSS URL
+:rss_secret:

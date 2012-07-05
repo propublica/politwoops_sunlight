@@ -6,6 +6,9 @@ xml.rss "version" => "2.0" do
     elsif @query
       xml.title "Politwoops - Tweets matching \"#{@query}\""
       xml.link root_url(:q => @query)
+    elsif @admin
+      xml.title "Politwoops - Unreviewed tweets"
+      xml.link root_url
     else
       xml.title "Politwoops"
       xml.link root_url

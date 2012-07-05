@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <title>Politwoops - <%= t :slogan, :scope => [:politwoops] %></title>
+ 
+  <%= stylesheet_link_tag "style" %>
+  <%= stylesheet_link_tag "admin" %>
+
+  <%= javascript_include_tag "jquery-1.7.1.min" %>
+  <%= javascript_include_tag "jquery.placehold-0.3.min" %>
+
+  <%= csrf_meta_tag %>
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+
+  <%= content_for :feeds %>
+</head>
+<body>
+  
+
+  <header>
+    <h1><a class="textReplace clear" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
+    <div class="clear"></div>
+  </header>
+
+  <div id="ltColumn">
+    <div class="module">
+      <h2>Politwoops Admin</h2>
+      <a href="/">Front page</a>
+    </div>
+  </div>
+
+  <div id="rtColumn">
+    <%= yield %>
+  </div>
+
+  <div class="clear"></div>
+</body>
+</html>

@@ -1,11 +1,15 @@
 class Admin::AdminController < ApplicationController
+  layout "admin"
+
   before_filter :admin_only
   
   protected
   
   def admin_only
-    authenticate_or_request_with_http_basic do |username, password|
-      username == credentials[:username] and password == credentials[:password]
+    unless params[:format] == "rss"
+      authenticate_or_request_with_http_basic do |username, password|
+        username == credentials[:username] and password == credentials[:password]
+      end
     end
   end
 
@@ -18,8 +22,13 @@ class Admin::AdminController < ApplicationController
   def latest_deleted_tweet
     @latest_deleted_tweet ||= DeletedTweet.latest.first
   end
-  
+
   def credentials
     @credentials ||= YAML.load_file "#{Rails.root}/config/admin.yml"
+  end
+
+  helper_method :current_admin_rss
+  def current_admin_rss
+    "#{request.url}/#{credentials[:rss_secret]}.rss"
   end
 end

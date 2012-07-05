@@ -22,6 +22,16 @@ class Admin::TweetsController < Admin::AdminController
     per_page = 200 if per_page > 200
 
     @tweets = @tweets.includes(:politician => [:party]).paginate(:page => params[:page], :per_page => per_page)
+    @admin = true
+
+    respond_to do |format|
+      format.html # admin/tweets/index.html.erb
+      format.rss do
+        response.headers["Content-Type"] = "application/rss+xml; charset=utf-8"
+        render "tweets/index"
+      end
+    end
+
   end
 
   # approve or unapprove a tweet, mark it as reviewed either way

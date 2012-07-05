@@ -1,5 +1,5 @@
-<% content_for :head do %>
-  <%= stylesheet_link_tag "admin" %>
+<% content_for :feeds do %>
+  <%= auto_discovery_link_tag :rss, current_admin_rss %>
 <% end %>
 
 <% if flash[:review_message] %>
