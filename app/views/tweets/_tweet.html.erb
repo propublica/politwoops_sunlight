@@ -57,13 +57,13 @@
 
           <% if tweet.reviewed_at %>
             <span class="reviewed_at">
-              Reviewed at <%= tweet.reviewed_at.strftime "%B %d, %Y at %I:%M %p" %>
+              Reviewed on <%= tweet.reviewed_at.strftime "%B %d, %Y at %I:%M %p" %>:
             </span>
           <% end %>
 
           <% if tweet.review_message.present? %>
             <p class="review_message">
-              Review notes: <%= tweet.review_message %>
+              <%= light_format tweet.review_message %>
             </p>
           <% end %>
 
