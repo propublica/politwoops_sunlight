@@ -130,6 +130,7 @@ header { margin: 10px 0 30px; padding-bottom: 60px; background: url(/images/bg_h
 
 h1 { height: 78px; width: 370px; float: left; margin-top: 40px;}
 h1 a { background: url(/images/logo.jpg) top left no-repeat; height: 78px; width: 370px; }
+header h2 {float: left; margin-top: 40px; width: 200px; margin-left: 20px;}
 #socialMedia { float: right; }
 #search { float: right;}
 #search input { -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; padding: 10px 40px 7px 7px; border: 3px solid #eceae3;}
