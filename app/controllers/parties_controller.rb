@@ -48,7 +48,7 @@ class PartiesController < ApplicationController
   # GET /party/cda.xml
   def show    
     @politicians = Party.where(:name => params[:name]).first.politicians.active.map {|politician| politician.id}
-    @tweets = DeletedTweet.includes(:politician => [:party]).where(:politician_id => @politicians).paginate(:page => params[:page], :per_page => Tweet.per_page)
+    @tweets = DeletedTweet.includes(:politician => [:party]).where(:politician_id => @politicians, :approved => true).paginate(:page => params[:page], :per_page => Tweet.per_page)
 
     respond_to do |format|
       format.html { render "tweets/index" }# show.html.erb
