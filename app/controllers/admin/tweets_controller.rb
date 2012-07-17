@@ -1,5 +1,5 @@
 class Admin::TweetsController < Admin::AdminController
-  before_filter :load_tweet, :only => :review
+  before_filter :load_tweet, :only => [:review, :message]
 
   # list either unreviewed
   def index
@@ -34,28 +34,31 @@ class Admin::TweetsController < Admin::AdminController
 
   end
 
+
   # approve or unapprove a tweet, mark it as reviewed either way
   def review
-    approved = (params[:commit] == "Approve")
-
+    
     review_message = (params[:review_message] || "").strip
 
-    if !@tweet.reviewed? and approved and review_message.blank?
-      flash[:review_message] = "You need to add a note about why you're approving this tweet."
-      redirect_to params[:return_to]
-      return false
-    end
+    if ["Approve", "Unapprove"].include?(params[:commit])
+      approved = (params[:commit] == "Approve")
 
-    @tweet.approved = approved
-    @tweet.reviewed = true
-    @tweet.reviewed_at = Time.now
+      if !@tweet.reviewed? and approved and review_message.blank?
+        flash[:review_message] = "You need to add a note about why you're approving this tweet."
+        redirect_to params[:return_to]
+        return false
+      end
+
+      @tweet.approved = approved
+      @tweet.reviewed = true
+      @tweet.reviewed_at = Time.now
+    end
 
     if review_message.any?
       @tweet.review_message = review_message
     end
 
     @tweet.save!
-
     expire_action :controller => '/tweets', :action => :index
 
     redirect_to params[:return_to]

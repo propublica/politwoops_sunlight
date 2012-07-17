@@ -46,28 +46,39 @@
   <div class="clear"></div>
 
   <% if defined?(admin) and admin %>
-    <div class="admin review">
+    <div class="admin review" data-id="<%= tweet.id %>">
       <% form_tag admin_review_tweet_path(tweet) do %>
         <%= hidden_field_tag "return_to", request.path %>
 
         <% if tweet.reviewed? %>
-          <% if tweet.approved? %>
-            <%= submit_tag "Unapprove" %>
-          <% else %>
-            <%= submit_tag "Approve" %>
-          <% end %>
+          <div class="review_controls">
+            <% if tweet.approved? %>
+              <%= submit_tag "Unapprove" %>
+            <% else %>
+              <%= submit_tag "Approve" %>
+            <% end %>
 
-          <% if tweet.reviewed_at %>
-            <span class="reviewed_at">
-              Reviewed on <%= tweet.reviewed_at.strftime "%B %d, %Y at %I:%M %p" %>:
-            </span>
-          <% end %>
+            <% if tweet.reviewed_at %>
+              <span class="reviewed_at">
+                Reviewed on <%= tweet.reviewed_at.strftime "%B %d, %Y at %I:%M %p" %>:
+              </span>
+            <% end %>
 
-          <% if tweet.review_message.present? %>
-            <p class="review_message">
-              <%= light_format tweet.review_message %>
-            </p>
-          <% end %>
+            <div class="review_message">
+              <% if tweet.review_message.present? %>
+                <%= light_format tweet.review_message %>
+              <% else %>
+                (No message entered.)
+              <% end %>
+            </div>
+            <a class="edit" href="#">Edit message</a>
+          </div>
+
+          <div class="edit_controls" style="display: none">
+            <textarea name="review_message" class="review_message edit"><%= tweet.review_message %></textarea>
+            <%= submit_tag "Update" %>
+            <a class="cancel" href="#">Cancel</a>
+          </div>
 
         <% else %>
           <%= submit_tag "Unapprove" %>
