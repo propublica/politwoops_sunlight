@@ -15,12 +15,12 @@ class Admin::AdminController < ApplicationController
 
   helper_method :latest_tweet
   def latest_tweet
-    @latest_tweet ||= Tweet.latest.first
+    @latest_tweet ||= Tweet.first
   end
 
   helper_method :latest_deleted_tweet
   def latest_deleted_tweet
-    @latest_deleted_tweet ||= DeletedTweet.latest.first
+    @latest_deleted_tweet ||= DeletedTweet.first
   end
 
   def credentials
