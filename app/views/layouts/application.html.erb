@@ -22,14 +22,39 @@
   <%= content_for :feeds %>
 </head>
 <body>
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    $(document).ready(function() {
+        var ua = new gigya.socialize.UserAction();
+        
+        /*
+         * Set these values as you would with Open Graph tags on the page.
+         * Delete what you don't need.
+         */
+        // ua.setLinkBack("http://sunlightfoundation.com/blog/2012/07/09/2day-in-opengov-792012/");
+        ua.addMediaItem({
+            type: 'image',
+            href: '<%= escape_javascript request.url %>',
+            src: 'http://politwoops.sunlightfoundation.com/images/logo.jpg'
+        });
+        
+        /*
+         * parameter docs at:
+         * http://developers.gigya.com/020_Client_API/020_Methods/socialize.showShareBarUI
+         */
+        var params = {
+            containerID: 'socialMedia',
+            iconsOnly: true,
+            layout: 'horizontal',
+            noButtonBorders: true,
+            shareButtons: 'twitter-tweet,facebook-send',
+            shortURLs: 'never',
+            showCounts: 'none',
+            userAction: ua
+        };
+        gigya.socialize.showShareBarUI(params);
+    });
+  </script>
+
 
   <header>
     <form action="/" method="get" id="search">
@@ -38,9 +63,8 @@
     <h1><a class="textReplace clear" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
     <h2><a id="sunlight" class="textReplace" href="http://sunlightfoundation.com">Sunlight Foundation</a></h2>
     <div class="clear" id="socialMedia">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-via="sunfoundation" data-hashtags="politwoops" data-dnt="true">Tweet</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      <div class="fb-like" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false"></div>
+      <script type="text/javascript" src="http://cdn.gigya.com/js/gigyaGAIntegration.js" ></script>
+<script src="http://cdn.gigya.com/js/socialize.js?apiKey=3_BLRB_2LlQJZDUW1wb9_ZOps-sOnnzA_e6xxNSwJBBGoB-SavmPAKHkaVVZPE5Kx8"></script>
     </div>
     <div class="clear"></div>
     
