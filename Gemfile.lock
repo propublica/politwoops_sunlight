@@ -47,6 +47,7 @@ GEM
       rack (>= 1.1.0, < 2)
     faraday_middleware (0.6.5)
       faraday (~> 0.6.0)
+    fastercsv (1.5.5)
     googlecharts (1.6.7)
     hashie (1.0.0)
     httparty (0.7.8)
@@ -116,6 +117,7 @@ DEPENDENCIES
   authlogic
   beanstalk-client
   bitly
+  fastercsv
   googlecharts
   json
   mysql2 (= 0.2.6)

@@ -25,6 +25,8 @@ gem "googlecharts"
 
 gem 'bitly'
 
+gem "fastercsv"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
