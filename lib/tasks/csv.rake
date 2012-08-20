@@ -4,7 +4,7 @@ namespace :csv do
     require 'csv'
     
     # make separator configurable
-    separator = ENV['CSV_SEP'].present? ? ENV['CSV_SEP'] : ';'
+    separator = ENV['CSV_SEP'].present? ? ENV['CSV_SEP'] : ','
 
     # parse CSV file into structure
     parties = {}
@@ -99,6 +99,7 @@ namespace :csv do
      num = 0
      group_ids = {}
      group_politician_ids.keys.each do |group_name|
+        puts "Group name: #{group_name}"
        group = Group.find_or_initialize_by_name(group_name)
        num += 1
        group.attributes = {
@@ -111,6 +112,6 @@ namespace :csv do
        group.save!
        group_ids[group_name] = group.id
      end
-     puts "%d groups were added." % num     
+     puts "%d groups were added or updated." % num     
   end
 end
