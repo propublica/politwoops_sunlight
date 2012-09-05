@@ -19,11 +19,7 @@ Politwoops::Application.routes.draw do
 
   # to remove:
 
-  match "statistics/" => "statistics#index"
   match "twitter_lists/:user_name/:list" => "twitter_lists#index"
   match "politicians/search" => "twitter_users#index"
-  match "game/typos/" => "typo_game#index"
-  match "game/typos/update/:id" => "typo_game#update"
-  
   resources :twitter_lists
 end
