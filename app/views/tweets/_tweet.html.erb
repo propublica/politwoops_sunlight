@@ -43,7 +43,7 @@
 
   <% if defined?(admin) and admin %>
     <div class="admin review" data-id="<%= tweet.id %>">
-      <% form_tag admin_review_tweet_path(tweet) do %>
+      <%= form_tag admin_review_tweet_path(tweet) do %>
         <%= hidden_field_tag "return_to", request.path %>
 
         <% if tweet.reviewed? %>
