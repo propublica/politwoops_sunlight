@@ -49,13 +49,8 @@ Politwoops::Application.routes.draw do
   match "login" => "user_sessions#new"
   match "logout" => "user_sessions#destroy"
   
-  match "signup" => "users#new"
-
-  resource :account, :controller => "users"
-  resources :users
   resources :politicians
   resources :parties
-  resource :user_session
   resources :twitter_lists
   resources :pages
 
