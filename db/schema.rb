@@ -37,34 +37,6 @@ ActiveRecord::Schema.define(:version => 20120628014250) do
   add_index "deleted_tweets", ["typo_checked"], :name => "index_deleted_tweets_on_typo_checked"
   add_index "deleted_tweets", ["user_name"], :name => "user_name"
 
-  create_table "groups", :force => true do |t|
-    t.string   "name"
-    t.string   "full_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "language",        :limit => 12, :default => "en"
-    t.boolean  "hide",                          :default => false
-    t.text     "sponsor"
-    t.string   "consumer_key"
-    t.string   "consumer_secret"
-    t.string   "oauth_token"
-    t.string   "oauth_secret"
-    t.string   "base_url",                      :default => "http://www.politwoops.nl"
-    t.string   "flag"
-    t.boolean  "is_domain"
-  end
-
-  add_index "groups", ["flag"], :name => "index_groups_on_flag"
-  add_index "groups", ["is_domain"], :name => "index_groups_on_is_domain"
-  add_index "groups", ["name"], :name => "index_groups_on_name"
-
-  create_table "groups_politicians", :id => false, :force => true do |t|
-    t.integer "politician_id"
-    t.integer "group_id"
-  end
-
-  add_index "groups_politicians", ["politician_id", "group_id"], :name => "index_groups_politicians_on_politician_id_and_group_id"
-
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.string   "slug"
@@ -150,7 +122,6 @@ ActiveRecord::Schema.define(:version => 20120628014250) do
     t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "group_id"
     t.integer  "is_admin"
   end
 
