@@ -9,7 +9,6 @@ namespace :csv do
     # parse CSV file into structure
     parties = {}
     politicians = {}
-    groups = {}
     CSV.open(ENV['CSV'], 'r', ENV['CSV_SEP']) do |row|
        twitter_user = row[1].downcase
        twitter_user = twitter_user.gsub(/^(http\:\/\/)?(www\.)?twitter\.com\/?(\/|\@)?/, '')
@@ -20,17 +19,13 @@ namespace :csv do
        #puts "%s - %s - %s" % [twitter_user, party, place]
        parties[party] = 0 if !parties.has_key?(party)
        parties[party] += 1
-       groups[place] = 0 if !groups.has_key?(place)
-       groups[place] += 1
        politicians[twitter_user] = {
          :user_name => twitter_user,
-         :party => party,
-         :group => place
+         :party => party
        }
      end
      #p politicians
      #p parties
-     #p groups
      
      party_ids = {}
      num = 0
@@ -70,10 +65,8 @@ namespace :csv do
      end
 
      num = 0
-     group_politician_ids = {}
      politicians.keys.each do |twitter_user|
        politician_info = politicians[twitter_user]
-       group_politician_ids[politician_info[:group]] = [] if !group_politician_ids.has_key?(politician_info[:group])
        if twitter_user_ids.has_key?(twitter_user)
          begin
            # FIXME: use Twitter::users in bulk?
@@ -85,40 +78,12 @@ namespace :csv do
              :party_id => party_ids[politician_info[:party]]
            })
            p.save
-           group_politician_ids[politician_info[:group]] << p.id
            num += 1
          rescue Twitter::NotFound => e
            puts "Twitter user %s not found !" % twitter_user
          end
-       elsif twitter_user_local_ids.has_key?(twitter_user)
-         group_politician_ids[politician_info[:group]] << twitter_user_local_ids[twitter_user]
        end
      end
      puts "%d politicians to be added." % num
-     
-     num = 0
-     group_ids = {}
-     group_politician_ids.keys.each do |group_name|
-       if group = Group.where(:name => group_name).first
-        puts "Updating existing group: #{group_name}"
-      else
-         puts "Creating new group: #{group_name}"
-         num += 1
-         group = Group.new(:name => group_name)
-         group.attributes = {
-           :language => 'nl',
-           :full_name => "Verwijderde tweets van de gemeenteraad van %s" % group_name,
-           :sponsor => 'Mede mogelijk gemaakt door: <br /><a href="http://www.politiekonline.nl/"><img src="/images/politiek_online.gif" width="436" height="54" alt="politiek online" /></a><a href="http://www.netdem.nl/"><img src="/images/netdem_small.jpg" width="73" height="77" alt="netwerk democratie" /></a>',
-         }
-      end
-
-      group.attributes = {
-        :politician_ids => group_politician_ids[group_name]
-      }
-
-      group.save!
-      group_ids[group_name] = group.id
-    end
-    puts "%d groups were added." % num
   end
 end

@@ -10,14 +10,6 @@ class PoliticiansController < ApplicationController
     # find the twitter user number
     params[:politician][:twitter_id] = Twitter::user(params[:politician][:user_name]).id
     
-    # always save to default groups (default + users) if not an admin
-    if (current_user.is_admin != 1)
-      params[:politician][:group_ids] = [@default_group.id]
-      unless current_user.group_id.nil?
-        params[:politician][:group_ids] << current_user.group_id
-      end
-    end
-    
     @politician = Politician.new(params[:politician])
     if @politician.save
       redirect_to (current_user.is_admin == 1) ? politicians_path : account_path, :notice => t(:success_create, :scope => [:politwoops, :politicians])
@@ -33,8 +25,6 @@ class PoliticiansController < ApplicationController
   # PUT /politicians/1
   # PUT /politicians/1.xml
   def update
-    params[:politician][:group_ids] ||= []
-    
     @politician = Politician.find(params[:id])
     # find the twitter user number
     begin

@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :set_default_group
-  
   helper_method :current_user_session, :current_user
 
   helper TweetsHelper
@@ -17,16 +15,11 @@ class ApplicationController < ActionController::Base
     
   private
 
-  def set_default_group
-    group_name = params.has_key?(:group_name) ? params[:group_name] : request.host.sub(/^www\./i, '')
-
-    # default to the first group named after the domain, or the first one overall if we must
-    @default_group = Group.where(:name => group_name).first || Group.first 
-    
-    #set the language too
-    # plus the backend
+  # needs to become more dynamic somehow
+  def set_locale
+    # not sure what this does
     I18n::Backend::Simple.send(:include, I18n::Backend::Flatten)
-    I18n.locale = @default_group.language
+    I18n.locale = "en"
   end
   
   def set_twitter

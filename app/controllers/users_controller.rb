@@ -29,7 +29,6 @@ class UsersController < ApplicationController
   def edit
     if current_user && current_user.is_admin == 1 && params[:id]
       @user = User.find(params[:id])
-      @groups = Group.all
     else
       @user = current_user
     end

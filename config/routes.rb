@@ -27,8 +27,6 @@ Politwoops::Application.routes.draw do
   
   match "statistics/" => "statistics#index"
 
-  match "groups/:id/politicians/add/:politician_id" => "groups_politicians#update"
-  
   match "twitter_lists/:user_name/:list" => "twitter_lists#index"
   
   match "politicians/search" => "twitter_users#index"
@@ -41,9 +39,6 @@ Politwoops::Application.routes.draw do
   match "party/:name" => "parties#show"
   match "party/:name/feed/" => "parties#show", :format => :xml
   
-  match "g/:group_name" => "tweets#index"
-  match "g/:group_name/feed/" => "tweets#index", :format => :xml
-  match "g/:group_name/all/" => "tweets#index", :see => :all
   match "page/:page_slug" => "pages#show"
   
   match "game/typos/" => "typo_game#index"
@@ -63,7 +58,6 @@ Politwoops::Application.routes.draw do
   resource :user_session
   resources :twitter_lists
   resources :pages
-  resources :groups
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
