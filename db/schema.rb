@@ -54,14 +54,6 @@ ActiveRecord::Schema.define(:version => 20120628014250) do
   add_index "politicians", ["status"], :name => "index_politicians_on_status"
   add_index "politicians", ["user_name"], :name => "user_name"
 
-  create_table "statistics", :force => true do |t|
-    t.string   "what"
-    t.date     "when"
-    t.integer  "amount"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "tweet_images", :force => true do |t|
     t.string   "url"
     t.integer  "tweet_id",   :limit => 8
