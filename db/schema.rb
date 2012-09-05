@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(:version => 20120628014250) do
     t.datetime "modified",                                        :null => false
     t.text     "tweet"
     t.integer  "politician_id"
-    t.boolean  "typo_checked"
     t.boolean  "approved"
     t.boolean  "reviewed"
     t.datetime "reviewed_at"
@@ -34,7 +33,6 @@ ActiveRecord::Schema.define(:version => 20120628014250) do
   add_index "deleted_tweets", ["modified"], :name => "modified"
   add_index "deleted_tweets", ["politician_id"], :name => "index_tweets_on_politician_id"
   add_index "deleted_tweets", ["reviewed"], :name => "index_deleted_tweets_on_reviewed"
-  add_index "deleted_tweets", ["typo_checked"], :name => "index_deleted_tweets_on_typo_checked"
   add_index "deleted_tweets", ["user_name"], :name => "user_name"
 
   create_table "parties", :force => true do |t|
@@ -69,7 +67,6 @@ ActiveRecord::Schema.define(:version => 20120628014250) do
     t.datetime "modified",                                        :null => false
     t.text     "tweet"
     t.integer  "politician_id"
-    t.boolean  "typo_checked",                 :default => false
     t.boolean  "approved",                     :default => false
     t.boolean  "reviewed",                     :default => false
     t.datetime "reviewed_at"
@@ -83,7 +80,6 @@ ActiveRecord::Schema.define(:version => 20120628014250) do
   add_index "tweets", ["modified"], :name => "modified"
   add_index "tweets", ["politician_id"], :name => "index_tweets_on_politician_id"
   add_index "tweets", ["reviewed"], :name => "index_tweets_on_reviewed"
-  add_index "tweets", ["typo_checked"], :name => "index_tweets_on_typo_checked"
   add_index "tweets", ["user_name"], :name => "user_name"
 
 end
