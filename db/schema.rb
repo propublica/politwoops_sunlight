@@ -37,17 +37,6 @@ ActiveRecord::Schema.define(:version => 20120628014250) do
   add_index "deleted_tweets", ["typo_checked"], :name => "index_deleted_tweets_on_typo_checked"
   add_index "deleted_tweets", ["user_name"], :name => "user_name"
 
-  create_table "pages", :force => true do |t|
-    t.string   "title"
-    t.string   "slug"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "language"
-  end
-
-  add_index "pages", ["language"], :name => "index_pages_on_language"
-
   create_table "parties", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"

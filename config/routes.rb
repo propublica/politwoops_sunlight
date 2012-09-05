@@ -39,8 +39,6 @@ Politwoops::Application.routes.draw do
   match "party/:name" => "parties#show"
   match "party/:name/feed/" => "parties#show", :format => :xml
   
-  match "page/:page_slug" => "pages#show"
-  
   match "game/typos/" => "typo_game#index"
   match "game/typos/update/:id" => "typo_game#update"
   
@@ -52,8 +50,7 @@ Politwoops::Application.routes.draw do
   resources :politicians
   resources :parties
   resources :twitter_lists
-  resources :pages
-
+  
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
