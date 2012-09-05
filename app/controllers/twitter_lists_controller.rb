@@ -1,5 +1,4 @@
 class TwitterListsController < ApplicationController
-  before_filter :require_user, :only => [:new, :create, :index]
 
   def index
     @twitter_list_members = Twitter.list_members(params[:user_name], params[:list])

@@ -5,20 +5,17 @@
   <div class="content">
     <div class="tweet-content">
       <div class="tweetTitle">
-      <a href="/user/<%= tweet.politician.user_name %>"><%= tweet.details['user']['name'] %></a>
-	    <% if !tweet.politician.nil? %>
-	      ( <a class="titleParty" href="/party/<%= tweet.politician.party.name %>"><%= tweet.politician.party.name %></a> )
-	    <% end %>
+        <a href="/user/<%= tweet.politician.user_name %>"><%= tweet.details['user']['name'] %></a>
+  	    <% if !tweet.politician.nil? %>
+  	      ( <a class="titleParty" href="/party/<%= tweet.politician.party.name %>"><%= tweet.politician.party.name %></a> )
+  	    <% end %>
 	    </div>
-        <% if current_user && current_user.is_admin == 1 %>
-        (<%= link_to t(:edit, :scope => [:politwoops]), edit_politician_path(tweet.politician) %>)
-      <% end %>
-	     <%= format_tweet(tweet).to_s.html_safe %>
+      <%= format_tweet(tweet).to_s.html_safe %>
     </div>
+
     <div class="byline">
       <%= byline tweet %>
     </div>
-
     
     <div class="images">
       <% if tweet.tweet_images.any? %>
@@ -31,7 +28,6 @@
       <% end %>
     </div>
     
-
     <div class="clear">
     </div>
   </div>
