@@ -1,6 +1,0 @@
-<%= form.label t(:name_label, :scope => [:politwoops, :politicians]) %>:<br />
-<%= form.text_field :user_name %><br />
-<p class="explanation"><%=t :name_explanation, :scope => [:politwoops, :politicians] %></p>
-<br />
-<%= form.label t(:model_name, :scope => [:politwoops, :parties]) %>:<br />
-<%= collection_select(:politician, :party_id, Party.order(:name).all, :id, :name, {}, {:class => 'chzn-select'}) %><br />
