@@ -1,0 +1,9 @@
+:admin:
+  :username: 
+  :password: 
+
+# used for obfuscating the RSS URL
+:rss_secret:
+
+# used to sign session cookies, pick anything long and secure
+:session_secret:
