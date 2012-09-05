@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628014250) do
+ActiveRecord::Schema.define(:version => 20120905195444) do
+
+  create_table "account_links", :force => true do |t|
+    t.integer "politician_id"
+    t.integer "linked_id"
+  end
+
+  create_table "account_types", :force => true do |t|
+    t.string "type"
+  end
 
   create_table "deleted_tweets", :force => true do |t|
     t.string   "user_name",      :limit => 64
@@ -65,6 +74,11 @@ ActiveRecord::Schema.define(:version => 20120628014250) do
 
   add_index "groups_politicians", ["politician_id", "group_id"], :name => "index_groups_politicians_on_politician_id_and_group_id"
 
+  create_table "offices", :force => true do |t|
+    t.string "title",        :null => false
+    t.string "abbreviation", :null => false
+  end
+
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.string   "slug"
@@ -88,6 +102,9 @@ ActiveRecord::Schema.define(:version => 20120628014250) do
     t.integer "party_id"
     t.integer "status",                          :default => 1
     t.string  "profile_image_url"
+    t.string  "state"
+    t.integer "account"
+    t.integer "office"
   end
 
   add_index "politicians", ["status"], :name => "index_politicians_on_status"

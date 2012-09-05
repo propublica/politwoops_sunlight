@@ -1,19 +1,51 @@
 namespace :politicians do
   desc 'Import A CSV file with twitter user plus party indications.'
   task :import_csv => :environment do
+
     require 'csv'
+
+    #expected format is Name (not used, placeholder ), Office, State, Twitter Username, Party, Account Type, Linked Twitter Accounts
     separator = ENV['CSV_SEPARATOR'] || ','
-    user_row = ENV['USER_ROW'].to_i || 0
-    party_row = ENV['PARTY_ROW'].to_i || 1
+    links = []
+
     CSV.open(ENV['CSV'], 'r', separator) do |row|
-      twitter_user = row[user_row].downcase
-      twitter_user = twitter_user.gsub(/^(http\:\/\/)?(www\.)?twitter\.com\/?(\/|\@)?/, '')
-      twitter_user = twitter_user.gsub(/\/*$/, '')
-      politician = Politician.where(:user_name => twitter_user).first
-      if politician && politician.update_attributes(:party_id => row[party_row].to_i)
-        p twitter_user
+    
+      #skip header row if it exists
+      if row[0] == 'Name' then
+        next
+      end 
+
+      twitter_user = row[3].downcase.strip
+      if row[1] then
+        office = Office.where(:title => row[1].downcase.strip)
       end
-    end
+       
+      state = row[2].upcase.strip
+      
+      if row[4] then 
+        party = Party.where(:name => row[4].strip)
+      end
+
+      if row[5] then 
+        account = AccountType.where(:type => row[5].downcase.strip)
+      end
+     
+      if row[6] then  
+        for l in row[6].split('|')
+          links.push([ twitter_user, l.downcase.strip ])
+        end
+      end
+
+      pol = Politician.where(:user_name => twitter_user).first_or_create(:locked => true)
+      pol.office = office
+      pol.state = state
+      pol.account = account
+      pol.party = party
+      pol.save()
+    end   
+
+    
+
   end
 
   task :reset_avatars => :environment do
