@@ -2,6 +2,7 @@ class PoliticiansController < ApplicationController
 
   def show
     @politician = Politician.active.where(:user_name => params[:user_name]).first
+    not_found unless @politician
     
     # need to get the latest tweet to get correct bio. could do with optimization :)
     @latest_tweet = Tweet.where(:politician_id => @politician.id).first
