@@ -16,10 +16,4 @@ Politwoops::Application.routes.draw do
 
     match "review/:id" => "tweets#review", :via => [:post], :as => "review_tweet"
   end
-
-  # to remove:
-
-  match "twitter_lists/:user_name/:list" => "twitter_lists#index"
-  match "politicians/search" => "twitter_users#index"
-  resources :twitter_lists
 end
