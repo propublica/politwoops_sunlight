@@ -3,9 +3,7 @@ class Admin::TweetsController < Admin::AdminController
 
   # list either unreviewed
   def index
-    # boilerplate I don't fully understand
-    @group_name = params[:group_name] || @default_group.name
-    @politicians = Politician.active.joins(:groups).where({:groups => {:name => @group_name}}).all
+    @politicians = Politician.active.all
 
     @tweets = DeletedTweet.where(:politician_id => @politicians)
 

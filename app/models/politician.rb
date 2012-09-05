@@ -6,10 +6,7 @@ class Politician < ActiveRecord::Base
   belongs_to :account_type
 
   has_many :tweets
-  
   has_many :deleted_tweets
-
-  has_and_belongs_to_many :groups
   
   default_scope :order => 'user_name'
 
