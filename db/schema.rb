@@ -10,15 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905195444) do
+ActiveRecord::Schema.define(:version => 20120906181703) do
 
   create_table "account_links", :force => true do |t|
-    t.integer "politician_id"
-    t.integer "linked_id"
+    t.integer  "politician_id"
+    t.integer  "link_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "account_types", :force => true do |t|
-    t.string "type"
+    t.string "name"
   end
 
   create_table "deleted_tweets", :force => true do |t|
@@ -61,6 +63,9 @@ ActiveRecord::Schema.define(:version => 20120905195444) do
     t.integer "party_id"
     t.integer "status",                          :default => 1
     t.string  "profile_image_url"
+    t.string  "state"
+    t.integer "account_type_id"
+    t.integer "office_id"
   end
 
   add_index "politicians", ["status"], :name => "index_politicians_on_status"

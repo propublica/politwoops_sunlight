@@ -91,10 +91,12 @@ namespace :politicians do
   task :import_csv => :environment do
 
     require 'csv'
-
+    require 'twitter'
+ 
     #expected format is Name (not used, placeholder ), Office, State, Twitter Username, Party, Account Type, Linked Twitter Accounts
     separator = ENV['CSV_SEPARATOR'] || ','
     links = []
+    usernames = {}
 
     CSV.open(ENV['CSV'], 'r', separator) do |row|
     
@@ -105,17 +107,17 @@ namespace :politicians do
 
       twitter_user = row[3].downcase.strip
       if row[1] then
-        office = Office.where(:title => row[1].downcase.strip)
+        office = Office.where(:title => row[1].downcase.strip).first
       end
        
       state = row[2].upcase.strip
       
       if row[4] then 
-        party = Party.where(:name => row[4].strip)
+        party = Party.where(:name => row[4].strip).first
       end
 
       if row[5] then 
-        account = AccountType.where(:type => row[5].downcase.strip)
+        account = AccountType.where(:name => row[5].downcase.strip).first
       end
      
       if row[6] then  
@@ -124,16 +126,47 @@ namespace :politicians do
         end
       end
 
-      pol = Politician.where(:user_name => twitter_user).first_or_create(:locked => true)
-      pol.office = office
-      pol.state = state
-      pol.account = account
-      pol.party = party
-      pol.save()
+      pol = { 'user_name' => twitter_user}  
+      pol['office'] = office || nil
+      pol['state'] = state
+      pol['account'] = account || nil
+      pol['party'] = party || nil
+      usernames[twitter_user] = pol
     end   
 
-    
+    twitter_users = Twitter::users(usernames.keys)
+    twitter_users.each do |tu| 
+#    usernames.keys.each do |name|
+#        pol = usernames[name]
+        pol = usernames[tu.screen_name.downcase]
+        pol['twitter_id'] = tu.id
+      
+#        newpol = Politician.where(:user_name => name).first 
+        newpol = Politician.where(:twitter_id => pol['twitter_id']).first_or_create()
+        newpol.user_name = pol['user_name']
+        newpol.office = pol['office']
+        newpol.state = pol['state']
+        if pol['account'] then
+          puts pol['account'].id
+        end
+        newpol.account_type = pol['account']
+        if newpol.account_type then
+            puts newpol.account_type.id
+        end
+        newpol.party = pol['party']
+        newpol.save()   
+        if newpol.account_type then
+            puts newpol.account_type.id
+        end
+        
+    end
 
+    #after all new users are entered, link them
+    links.each do |l|
+        p1 = Politician.where(:user_name => l[0]).first
+        p2 = Politician.where(:user_name => l[1]).first
+        p1.add_related_politician(p2)    
+    end
   end
 
   task :reset_avatars => :environment do
