@@ -109,8 +109,10 @@ namespace :politicians do
       if row[1] then
         office = Office.where(:title => row[1].downcase.strip).first
       end
-       
-      state = row[2].upcase.strip
+      
+      if row[2] then 
+        state = row[2].upcase.strip
+      end
       
       if row[4] then 
         party = Party.where(:name => row[4].strip).first
@@ -128,13 +130,14 @@ namespace :politicians do
 
       pol = { 'user_name' => twitter_user}  
       pol['office'] = office || nil
-      pol['state'] = state
+      pol['state'] = state || nil
       pol['account'] = account || nil
       pol['party'] = party || nil
       usernames[twitter_user] = pol
     end   
 
     twitter_users = Twitter::users(usernames.keys)
+    puts "twitter user length %s" % twitter_users.length
     twitter_users.each do |tu| 
 #    usernames.keys.each do |name|
 #        pol = usernames[name]
@@ -142,22 +145,12 @@ namespace :politicians do
         pol['twitter_id'] = tu.id
       
 #        newpol = Politician.where(:user_name => name).first 
-        newpol = Politician.where(:twitter_id => pol['twitter_id']).first_or_create()
-        newpol.user_name = pol['user_name']
+        newpol = Politician.where(:twitter_id => pol['twitter_id'], :user_name => pol['user_name']).first_or_create()
         newpol.office = pol['office']
         newpol.state = pol['state']
-        if pol['account'] then
-          puts pol['account'].id
-        end
         newpol.account_type = pol['account']
-        if newpol.account_type then
-            puts newpol.account_type.id
-        end
         newpol.party = pol['party']
         newpol.save()   
-        if newpol.account_type then
-            puts newpol.account_type.id
-        end
         
     end
 
