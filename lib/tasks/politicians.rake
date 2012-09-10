@@ -139,7 +139,7 @@ namespace :politicians do
     twitter_users = Twitter::users(usernames.keys)
     puts "twitter user length %s" % twitter_users.length
     twitter_users.each do |tu| 
-#    usernames.keys.each do |name|
+#    usernames.keys.each do |name|       
 #        pol = usernames[name]
         pol = usernames[tu.screen_name.downcase]
         pol['twitter_id'] = tu.id

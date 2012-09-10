@@ -1,0 +1,87 @@
+<style>
+#admin-politician ul li {margin: 10px; padding: 5px; width: 300px; }
+#admin-politician img { margin-top: -20px; }
+#admin-politician ul li span{float: right; }
+#admin-politician span#name {font-size: 1.2em; font-weight: bold;}
+#admin-politician ul li button { text-indent: 0; border: 1px solid; padding: 5px;  }
+</style>
+
+<form id="admin-politician" action="/admin/user/<%= @politician.id %>/save" method="POST">
+<input id="user_name_input" type="hidden" name="user_name" value="<%= @politician.user_name %>" />
+<ul>
+  <li> 
+    <img src="<%= @politician.profile_image_url %>" alt="<%= @politician.user_name %>" />
+    <span id="name"><%= @politician.user_name %> &nbsp;<em> <a href="#">edit</a></em></span>
+  </li>
+  <li>
+    Party:  <span>
+    <select name="party_id">
+    <% @parties.each do |party| %>
+        <option value="<%=party.id%>" 
+            <% if party == @politician.party then %> selected <% end %> > 
+            <%=party.name.upcase %>
+        </option>
+    <% end %>
+    </select>
+    </span>
+  </li>
+  <li> Status: <span>
+    <select name="status">
+    <% [1, 2, 3].each do |stat| %>
+        <option value="<%=stat%>" <% if stat == @politician.status %> selected <% end %> >
+            <%= stat %>
+        </option>
+    <% end %>
+    </select>
+    </span>
+  </li>
+
+  <li>
+    State: <span> <%=@politician.state %></span>
+  </li>
+ 
+  <li> Account Type: <span>
+    <select name="account_type_id">
+    <% @account_types.each do |at| %>
+        <option value="<%=at.id%>" <% if at == @politician.account_type %> selected <% end %> >
+            <%= at.name %>
+        </option>
+    <% end %>
+    </select>
+    </span>
+  </li>
+  <li> Office Held: <span>
+    <select name="office_id">
+    <% @offices.each do |office| %>
+        <option value="<%=office.id%>" <% if office == @politician.office %> selected <% end %> >
+            <%= office.title %>
+        </option>
+    <% end %>
+    </select>
+    </span>
+  </li>
+  <li>
+    <button type="submit" value="Save">Save</button>
+  </li>
+</ul>
+
+</form>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function(){
+    jQuery('#name em a').live('click', function(){
+        jQuery('#name').parent().append('<span id="name-input"><input value="' + jQuery("input#user_name_input").val() +'" /> &nbsp; <em><a href="#">done</a></em></span>');
+        jQuery('#name').remove();
+        return false;
+    });
+    jQuery('#name-input em a').live('click', function() {
+        var val = jQuery("#name-input input").val();
+        jQuery('input#user_name_input').val(val);
+        jQuery('#name-input').parent().append('<span id="name">' + val + ' &nbsp; <em><a href="#">edit</a></em></span>');
+        jQuery('#name-input').remove();
+        return false;
+    });
+});
+</script>
+
+
+

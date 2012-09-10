@@ -11,6 +11,10 @@ Politwoops::Application.routes.draw do
     match "review" => "tweets#index", :reviewed => false, :approved => false, :as => "review"
     match "unapproved" => "tweets#index", :reviewed => true, :approved => false, :as => "unapproved"
     match "approved" => "tweets#index", :reviewed => true, :approved => true, :as => "approved"
+
+    match "users" => "politicians#admin_list", :as => "admin_list"
+    match "user/:id" => "politicians#admin_user", :as => "admin_user"
+    match "user/:id/save" => "politicians#save_user", :as => "save_user"
     
     match "review/:rss_secret.rss" => "tweets#index", :reviewed => false, :approved => false, :as => "review_rss", :format => "rss"
 

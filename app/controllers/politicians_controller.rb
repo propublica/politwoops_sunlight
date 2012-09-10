@@ -17,4 +17,35 @@ class PoliticiansController < ApplicationController
       end
     end
   end
+
+  def admin_list
+    @politicians = Politician.all
+    respond_to do |format|
+      format.html { render } 
+    end
+  end
+
+  def admin_user
+    @politician = Politician.find(params[:id]) || raise("not found")
+    @parties = Party.all
+    @offices = Office.all
+    @account_types = AccountType.all
+    
+    respond_to do |format|
+      format.html { render }
+    end
+  end
+
+  def save_user
+    pol = Politician.find(params[:id]) || raise("not found")
+    pol.user_name = params[:user_name]
+    pol.party = Party.find(params[:party_id])
+    pol.status = params[:status]
+    pol.account_type = AccountType.find(params[:account_type_id])
+    pol.office = Office.find(params[:office_id])
+    pol.save()
+
+    redirect_to :back
+  end
+
 end
