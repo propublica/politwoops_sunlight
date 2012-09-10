@@ -42,6 +42,7 @@
  
   <li> Account Type: <span>
     <select name="account_type_id">
+    <option value="0"></option>
     <% @account_types.each do |at| %>
         <option value="<%=at.id%>" <% if at == @politician.account_type %> selected <% end %> >
             <%= at.name %>
@@ -52,6 +53,7 @@
   </li>
   <li> Office Held: <span>
     <select name="office_id">
+        <option value="0"></option>
     <% @offices.each do |office| %>
         <option value="<%=office.id%>" <% if office == @politician.office %> selected <% end %> >
             <%= office.title %>
