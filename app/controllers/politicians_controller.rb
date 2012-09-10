@@ -41,8 +41,16 @@ class PoliticiansController < ApplicationController
     pol.user_name = params[:user_name]
     pol.party = Party.find(params[:party_id])
     pol.status = params[:status]
-    pol.account_type = AccountType.find(params[:account_type_id])
-    pol.office = Office.find(params[:office_id])
+    if params[:account_type_id] == '0' then
+      pol.account_type = nil
+    else
+      pol.account_type = AccountType.find(params[:account_type_id])
+    end
+    if params[:office_id] == '0' then
+      pol.office = nil
+    else
+      pol.office = Office.find(params[:office_id])
+    end
     pol.save()
 
     redirect_to :back
