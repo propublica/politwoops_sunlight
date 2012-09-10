@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120906181703) do
+ActiveRecord::Schema.define(:version => 20120910213133) do
 
   create_table "account_links", :force => true do |t|
     t.integer  "politician_id"
@@ -66,6 +66,10 @@ ActiveRecord::Schema.define(:version => 20120906181703) do
     t.string  "state"
     t.integer "account_type_id"
     t.integer "office_id"
+    t.string  "first_name"
+    t.string  "middle_name"
+    t.string  "last_name"
+    t.string  "suffix"
   end
 
   add_index "politicians", ["status"], :name => "index_politicians_on_status"

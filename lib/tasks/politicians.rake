@@ -101,34 +101,54 @@ namespace :politicians do
     CSV.open(ENV['CSV'], 'r', separator) do |row|
     
       #skip header row if it exists
-      if row[0] == 'Name' then
+      if row[0] == 'First Name' then
         next
       end 
 
-      twitter_user = row[3].downcase.strip
+      twitter_user = row[6].downcase.strip
+      if row[4] then
+        office = Office.where(:title => row[4].downcase.strip).first
+      end
+
+      if row[0] then
+        first = row[0].strip
+      end
+    
       if row[1] then
-        office = Office.where(:title => row[1].downcase.strip).first
+        middle = row[1].strip
       end
-      
-      if row[2] then 
-        state = row[2].upcase.strip
+
+      if row[2] then
+        last = row[2].strip
       end
-      
-      if row[4] then 
-        party = Party.where(:name => row[4].strip).first
+    
+      if row[3] then
+        suffix = row[3].strip
       end
 
       if row[5] then 
-        account = AccountType.where(:name => row[5].downcase.strip).first
+        state = row[5].upcase.strip
+      end
+      
+      if row[7] then 
+        party = Party.where(:name => row[7].strip).first
+      end
+
+      if row[8] then 
+        account = AccountType.where(:name => row[8].downcase.strip).first
       end
      
-      if row[6] then  
-        for l in row[6].split('|')
+      if row[9] then  
+        for l in row[9].split('|')
           links.push([ twitter_user, l.downcase.strip ])
         end
       end
 
-      pol = { 'user_name' => twitter_user}  
+      pol = { 'user_name' => twitter_user} 
+      pol['first_name'] = first || nil
+      pol['middle_name'] = middle || nil
+      pol['last_name'] = last || nil
+      pol['suffix'] = suffix || nil
       pol['office'] = office || nil
       pol['state'] = state || nil
       pol['account'] = account || nil
@@ -146,6 +166,10 @@ namespace :politicians do
       
 #        newpol = Politician.where(:user_name => name).first 
         newpol = Politician.where(:twitter_id => pol['twitter_id'], :user_name => pol['user_name']).first_or_create()
+        newpol.first_name = pol['first_name']
+        newpol.middle_name = pol['middle_name']
+        newpol.last_name = pol['last_name']
+        newpol.suffix = pol['suffix']
         newpol.office = pol['office']
         newpol.state = pol['state']
         newpol.account_type = pol['account']
