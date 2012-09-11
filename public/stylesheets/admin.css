@@ -64,3 +64,24 @@ div.admin_error {
 	padding: 5px 10px;
 	margin-top: -20px;
 }
+
+#admin-politician ul li {margin: 10px; padding: 5px; width: 420px; }
+
+#admin-politician img { margin-top: -20px; }
+
+#admin-politician ul li span{float: right; }
+
+#admin-politician span#name {font-size: 1.2em; font-weight: bold;}
+
+#admin-politician ul li button { text-indent: 0; border: 1px solid; padding: 5px;  }
+
+#s_input { width:20px; }
+
+#mn_input { width: 30px; }
+
+#admin-politician #first_name, #admin-politician #middle_name, #admin-politician #last_name, #admin-politician #suffix { float: left; margin-left: 3px;margin-right: 3px}
+
+#admin-list { font-size: 1.2em;}
+
+#admin-list h1 {width: auto; display: block ; float:none; }
+

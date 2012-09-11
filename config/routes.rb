@@ -16,6 +16,11 @@ Politwoops::Application.routes.draw do
     match "user/:id" => "politicians#admin_user", :as => "admin_user"
     match "user/:id/save" => "politicians#save_user", :as => "save_user"
     
+
+    match "offices" => "offices#list", :as => "list_offices"   
+    match "offices/add" => "offices#add", :as => "add_office"
+    match "offices/save" => "offices#save", :as => "save_office"
+
     match "review/:rss_secret.rss" => "tweets#index", :reviewed => false, :approved => false, :as => "review_rss", :format => "rss"
 
     match "review/:id" => "tweets#review", :via => [:post], :as => "review_tweet"
