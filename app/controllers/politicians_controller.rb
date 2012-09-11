@@ -51,6 +51,18 @@ class PoliticiansController < ApplicationController
     else
       pol.office = Office.find(params[:office_id])
     end
+    if params[:first_name] != '' and params[:first_name].strip != ' ' then
+      pol.first_name = params[:first_name]
+    end
+    if params[:middle_name] != '' and params[:middle_name].strip != ' ' then
+      pol.middle_name = params[:middle_name]
+    end
+    if params[:last_name] != '' and params[:last_name].strip != ' ' then
+      pol.last_name = params[:last_name]
+    end
+    if params[:suffix] != '' and params[:suffix].strip != ' ' then
+      pol.suffix = params[:suffix]
+    end
     pol.save()
 
     redirect_to :back

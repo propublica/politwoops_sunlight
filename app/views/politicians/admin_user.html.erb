@@ -1,17 +1,28 @@
 <style>
-#admin-politician ul li {margin: 10px; padding: 5px; width: 300px; }
+#admin-politician ul li {margin: 10px; padding: 5px; width: 420px; }
 #admin-politician img { margin-top: -20px; }
 #admin-politician ul li span{float: right; }
 #admin-politician span#name {font-size: 1.2em; font-weight: bold;}
 #admin-politician ul li button { text-indent: 0; border: 1px solid; padding: 5px;  }
+#s_input { width:20px; }
+#mn_input { width: 30px; }
+#admin-politician #first_name, #admin-politician #middle_name, #admin-politician #last_name, #admin-politician #suffix { float: left; margin-left: 3px;margin-right: 3px}
 </style>
 
 <form id="admin-politician" action="/admin/user/<%= @politician.id %>/save" method="POST">
 <input id="user_name_input" type="hidden" name="user_name" value="<%= @politician.user_name %>" />
+<input id="first_name_input" type="hidden" name="first_name" value="<%= @politician.first_name %>" />
+<input id="middle_name_input" type="hidden" name="middle_name" value="<%= @politician.middle_name %>" />
+<input id="last_name_input" type="hidden" name="last_name" value="<%= @politician.last_name %>" />
+<input id="suffix_input" type="hidden" name="suffix" value="<%= @politician.suffix %>" />
 <ul>
   <li> 
     <img src="<%= @politician.profile_image_url %>" alt="<%= @politician.user_name %>" />
     <span id="name"><%= @politician.user_name %> &nbsp;<em> <a href="#">edit</a></em></span>
+  </li>
+  <li>
+    Display Name:<span id="display_name"> 
+    <span id="first_name"><%= @politician.first_name %></span><span id="middle_name"><%= @politician.middle_name %></span><span id="last_name"><%=@politician.last_name%></span><span id="suffix"><%=@politician.suffix%></span> <em><a href="#" id="edit_names">edit</a></em></span>
   </li>
   <li>
     Party:  <span>
@@ -27,7 +38,7 @@
   </li>
   <li> Status: <span>
     <select name="status">
-    <% [1, 2, 3].each do |stat| %>
+    <% [1, 2, 3, 4].each do |stat| %>
         <option value="<%=stat%>" <% if stat == @politician.status %> selected <% end %> >
             <%= stat %>
         </option>
@@ -68,20 +79,52 @@
 </ul>
 
 </form>
+<span><em> Status Key: <ul><li> 1 = Active, showing tweets</li><li> 2 = Collecting tweets, not showing</li><li> 3 = Not collecting or showing tweets</li><li> 4 = not collecting, but showing historical tweets</li></ul></em></span>
 <script type="text/javascript" charset="utf-8">
 jQuery(document).ready(function(){
+    //edit user name in place
     jQuery('#name em a').live('click', function(){
-        jQuery('#name').parent().append('<span id="name-input"><input value="' + jQuery("input#user_name_input").val() +'" /> &nbsp; <em><a href="#">done</a></em></span>');
+        jQuery('#name').parent().append('<span id="name_input"><input value="' + jQuery("input#user_name_input").val() +'" /> &nbsp; <em><a href="#">done</a></em></span>');
         jQuery('#name').remove();
         return false;
     });
-    jQuery('#name-input em a').live('click', function() {
-        var val = jQuery("#name-input input").val();
+    jQuery('#name_input em a').live('click', function() {
+        var val = jQuery("#name_input input").val();
         jQuery('input#user_name_input').val(val);
-        jQuery('#name-input').parent().append('<span id="name">' + val + ' &nbsp; <em><a href="#">edit</a></em></span>');
-        jQuery('#name-input').remove();
+        jQuery('#name_input').parent().append('<span id="name">' + val + ' &nbsp; <em><a href="#">edit</a></em></span>');
+        jQuery('#name_input').remove();
         return false;
     });
+
+    //edit display name in place
+    jQuery('#edit_names').live('click', function(){
+        jQuery('#display_name').append('<input id="fn_input" value="' + jQuery("input#first_name_input").val() +'" /> &nbsp;<input id="mn_input" value="' + jQuery("input#middle_name_input").val() + '" />&nbsp;<input id="ln_input" value="' + jQuery("input#last_name_input").val() + '" />&nbsp;<input id="s_input" value="' + jQuery("input#suffix_input").val() + '" />&nbsp; <em><a id="done_names"href="#">done</a></em></span>');
+
+        jQuery('#first_name').remove();
+        jQuery('#middle_name').remove();
+        jQuery('#last_name').remove();
+        jQuery('#suffix').remove();
+        jQuery('#edit_names').remove();
+        
+        return false;
+    });
+    jQuery('#done_names').live('click', function() {
+        
+        jQuery('input#first_name_input').val( jQuery("#fn_input").val() );
+        jQuery('input#middle_name_input').val( jQuery("#mn_input").val() );
+        jQuery('input#last_name_input').val( jQuery("#ln_input").val() );
+        jQuery('input#suffix_input').val( jQuery("#s_input").val() );
+        
+        jQuery("#display_name").append('<span id="first_name">' + jQuery("input#first_name_input").val() + '</span><span id="middle_name">'+ jQuery("input#middle_name_input").val() +'</span><span id="last_name">' + jQuery("input#last_name_input").val() + '</span><span id="suffix">'+ jQuery("input#suffix_input").val() +'</span><em><a id="edit_names" href="#">edit</a></em>');
+
+        jQuery('#fn_input').remove();
+        jQuery('#mn_input').remove();
+        jQuery('#ln_input').remove();
+        jQuery('#s_input').remove();
+        jQuery('#done_names').remove();
+        return false;
+    });
+
 });
 </script>
 
