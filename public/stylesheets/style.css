@@ -173,7 +173,7 @@ body {
 .form-inline li {
 	display: block;
 	float: left;
-	width: 170px;
+	width: 183px;
 	margin-right: 20px;
 }
 
@@ -187,7 +187,7 @@ form#filter{
 }
 label{
 	display: block;
-    width: 183px;
+    width: 100%;
     margin-bottom: 4px;
 }
 .styled-select select {
@@ -224,6 +224,17 @@ button{
 	-webkit-border-radius: 1px; 
 	border-radius: 1px; 
 }
+button:hover{
+	background: rgb(11,163,197); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(11,163,197,1) 0%, rgba(4,124,154,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(11,163,197,1)), color-stop(100%,rgba(4,124,154,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(11,163,197,1) 0%,rgba(4,124,154,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(11,163,197,1) 0%,rgba(4,124,154,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(11,163,197,1) 0%,rgba(4,124,154,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(11,163,197,1) 0%,rgba(4,124,154,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0ba3c5', endColorstr='#047c9a',GradientType=0 ); /* IE6-9 */
+
+}
 
 #filter button{
 	display: inline;
@@ -252,6 +263,7 @@ h1 a { background: url(/images/logo.png) top left no-repeat; height: 78px; width
 #socialMedia { 
 	float: right; 
 	margin-top: -20px;
+	width: 169px;
 }
 #search { 
 	float: right;
@@ -292,6 +304,8 @@ h1 a { background: url(/images/logo.png) top left no-repeat; height: 78px; width
 	display: block;
 	margin-top: -9px;
 	margin-left: 10px;
+	-webkit-box-shadow:  none;
+    box-shadow:  none;
 }
 #searchBtn:hover{
 	background: url(/images/search.png) left bottom no-repeat;
