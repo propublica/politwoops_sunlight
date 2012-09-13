@@ -166,6 +166,74 @@ body {
 
 
 
+
+/* forms */
+
+
+.form-inline li {
+	display: block;
+	float: left;
+	width: 170px;
+	margin-right: 20px;
+}
+
+form#filter{
+	margin-bottom: 26px;
+}
+.title{
+	background: url(/images/bg_filter.png) center bottom repeat-x;
+	padding-bottom: 1px;
+	margin-bottom: 23px;
+}
+label{
+	display: block;
+    width: 183px;
+    margin-bottom: 4px;
+}
+.styled-select select {
+   background: transparent !important;
+   width: 170px;
+   padding: 5px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   height: 25px;
+   	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	margin-top: -1px;
+}
+
+
+button{
+	background: rgb(15,173,192); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(15,173,192,1) 0%, rgba(6,135,151,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(15,173,192,1)), color-stop(100%,rgba(6,135,151,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(15,173,192,1) 0%,rgba(6,135,151,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(15,173,192,1) 0%,rgba(6,135,151,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(15,173,192,1) 0%,rgba(6,135,151,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(15,173,192,1) 0%,rgba(6,135,151,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0fadc0', endColorstr='#068797',GradientType=0 ); /* IE6-9 */
+	-webkit-box-shadow:  1px 1px 1px 0 rgba(2, 34, 38, .3);
+    box-shadow:  1px 1px 1px 0 rgba(2, 34, 38, .3);
+    text-indent: 0;
+    font-family: "museo-slab", georgia, serif; 
+    color: #aadde3;
+    padding: 4px 13px;
+    text-align: center;
+    -moz-border-radius: 1px; 
+	-webkit-border-radius: 1px; 
+	border-radius: 1px; 
+}
+
+#filter button{
+	display: inline;
+	clear: both;
+	margin-top: 26px;
+}
+
+
+
+
 /* header */
 header { 
 	background: url(/images/bg_header.png) 30px bottom no-repeat;
@@ -260,7 +328,7 @@ h1 a { background: url(/images/logo.png) top left no-repeat; height: 78px; width
 h2 {
 	font-family: "museo-slab", georgia, serif; 
 	font-size: 214%; 
-	margin-bottom: 45px;
+	margin-bottom: 23px;
 	font-weight: 700;
 	color: #063e5c;
 	text-shadow: 1px 1px 2px rgba(6,62,92,.3);
@@ -269,7 +337,7 @@ h2 {
 h3 {
 
 }
-h4 {
+h4, #filter label {
 	font-family: "museo-slab", georgia, serif; 
 	font-size: 100%; 
 	font-weight: 700;

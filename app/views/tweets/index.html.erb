@@ -1,7 +1,63 @@
-<h2>
-	Recent Politwoops
-</h2>
+<div class="title">
+	<h2>
+		Recent Politwoops
+	</h2>
 
+	<form action="" method="" id="filter" class="form-inline">
+	    <ul>
+	    	<li class="styled-select">
+	    		<label for="id_slot">State:</label>
+				<select name="slot" id="id_slot">
+					<option value="" selected="selected">---------</option>
+					<option value="5">data</option>
+					<option value="11">events</option>
+					<option value="10">getting involved</option>
+					<option value="4">grants</option>
+					<option value="2">job openings</option>
+					<option value="3">journalism and reporting</option>
+					<option value="1">policy initiatives</option>
+					<option value="6">press and communications</option>
+					<option value="8">something else</option>
+					<option value="7">Sunlight Labs</option>
+				</select>
+			</li>
+			<li class="styled-select">
+	    		<label for="id_slot">Party:</label>
+				<select name="slot" id="id_slot" class="styled-select">
+					<option value="" selected="selected">---------</option>
+					<option value="5">data</option>
+					<option value="11">events</option>
+					<option value="10">getting involved</option>
+					<option value="4">grants</option>
+					<option value="2">job openings</option>
+					<option value="3">journalism and reporting</option>
+					<option value="1">policy initiatives</option>
+					<option value="6">press and communications</option>
+					<option value="8">something else</option>
+					<option value="7">Sunlight Labs</option>
+				</select>
+			</li>
+			<li class="styled-select">
+	    		<label for="id_slot">Position:</label>
+				<select name="slot" id="id_slot" class="styled-select">
+					<option value="" selected="selected">---------</option>
+					<option value="5">data</option>
+					<option value="11">events</option>
+					<option value="10">getting involved</option>
+					<option value="4">grants</option>
+					<option value="2">job openings</option>
+					<option value="3">journalism and reporting</option>
+					<option value="1">policy initiatives</option>
+					<option value="6">press and communications</option>
+					<option value="8">something else</option>
+					<option value="7">Sunlight Labs</option>
+				</select>
+			</li>
+	    <button type="submit" class="btn">Filter</button>
+		</ul>
+	</form>
+
+</div>
 <% content_for :feeds do %>
   <% if @politician %>
     <%= auto_discovery_link_tag :rss, politician_url(@politician.user_name, :format => :rss) %>
