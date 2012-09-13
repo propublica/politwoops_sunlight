@@ -1,3 +1,7 @@
+<h2>
+	Recent Politwoops
+</h2>
+
 <% content_for :feeds do %>
   <% if @politician %>
     <%= auto_discovery_link_tag :rss, politician_url(@politician.user_name, :format => :rss) %>
