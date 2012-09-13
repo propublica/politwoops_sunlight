@@ -17,9 +17,33 @@ class Admin::PoliticiansController < Admin::AdminController
     end
   end
 
+  def new_user
+    @parties = Party.all
+    @offices = Office.all
+    @account_types = AccountType.all
+
+    respond_to do |format|
+      format.html { render }
+    end
+  end
+
+  def get_twitter_id
+    require 'twitter'
+    t = Twitter.user(params[:screen_name])
+    @twitter_id = t.id
+    respond_to do |format|
+        format.json { render }
+    end
+  end 
+
   def save_user
-    pol = Politician.find(params[:id]) || raise("not found")
-    pol.user_name = params[:user_name]
+    if params[:id] == '0' then
+      #it's a new add
+      pol = Politician.new(:twitter_id => params[:twitter_id], :user_name => params[:user_name])
+    else
+      pol = Politician.find(params[:id]) || raise("not found")
+      pol.user_name = params[:user_name]
+    end
     pol.party = Party.find(params[:party_id])
     pol.status = params[:status]
     if params[:account_type_id] == '0' then

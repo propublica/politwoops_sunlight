@@ -1,8 +1,6 @@
-<link href="/stylesheets/admin.css" media="screen" rel="stylesheet" type="text/css" />
-
 <div id="admin-list">
-<h1>List of Twoopsters</h1>
-<ul>
+<h3>List of Twoopsters &nbsp;<span style="font-size:.8em;"><em>(<a href="/admin/users/new">add new</a>)</em></span></h3>
+<ul style="margin: 20px;">
 <% @politicians.each do |pol| %>
   <li>
     <a href="/admin/user/<%=pol.id%>"><%=pol.user_name %></a>

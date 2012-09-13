@@ -75,13 +75,18 @@ div.admin_error {
 
 #admin-politician ul li button { text-indent: 0; border: 1px solid; padding: 5px;  }
 
-#s_input { width:20px; }
-
-#mn_input { width: 30px; }
+#s_input, #suffix_input { width:20px; }
+#state { width: 20px ;}
+#mn_input, #middle_name_input { width: 30px; }
 
 #admin-politician #first_name, #admin-politician #middle_name, #admin-politician #last_name, #admin-politician #suffix { float: left; margin-left: 3px;margin-right: 3px}
+
+#admin-politician #first_name_input, #admin-politician #middle_name_input, #admin-politician #last_name_input, #admin-politician #suffix_input { float: left; margin-left: 3px;margin-right: 3px}
 
 #admin-list { font-size: 1.2em;}
 
 #admin-list h1 {width: auto; display: block ; float:none; }
 
+input { margin: 15px 0; }
+
+span.error { display: block;  }
