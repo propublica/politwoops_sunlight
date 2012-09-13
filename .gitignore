@@ -7,4 +7,4 @@
 */.DS_Store
 /unicorn.rb
 /config/admin.yml
-/config/database.yml
+/config/config.yml

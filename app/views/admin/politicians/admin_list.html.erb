@@ -1,0 +1,13 @@
+<link href="/stylesheets/admin.css" media="screen" rel="stylesheet" type="text/css" />
+
+<div id="admin-list">
+<h1>List of Twoopsters</h1>
+<ul>
+<% @politicians.each do |pol| %>
+  <li>
+    <a href="/admin/user/<%=pol.id%>"><%=pol.user_name %></a>
+  </li>
+<% end %>
+</ul>
+</div>
+
