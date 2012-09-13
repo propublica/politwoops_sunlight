@@ -1,0 +1,96 @@
+<h3>Add a New Politician</h3>
+<form id="admin-politician" action="/admin/user/0/save" method="POST">
+<input type="hidden" name="twitter_id" id="twitter_id" value="" />
+<ul>
+  <li>User Name:
+    <input id="user_name_input" name="user_name" value="" style="float:right;"/>
+  </li>
+  <li>
+    Display Name (first, mid, last, suffix):<br />
+    <span style="float:right;"> 
+    <input id="first_name_input"  name="first_name" value="" />
+    <input id="middle_name_input" name="middle_name" value="" />
+    <input id="last_name_input"  name="last_name" value="" />
+    <input id="suffix_input" name="suffix" value="" />
+    </span>
+  </li>
+  <li>
+    Party:  <span>
+    <select name="party_id">
+    <% @parties.each do |party| %>
+        <option value="<%=party.id%>"> 
+            <%=party.name.upcase %>
+        </option>
+    <% end %>
+    </select>
+    </span>
+  </li>
+  <li> Status: <span>
+    <select name="status">
+    <% [1, 2, 3, 4].each do |stat| %>
+        <option value="<%=stat%>" >
+            <%= stat %>
+        </option>
+    <% end %>
+    </select>
+    </span>
+  </li>
+
+  <li>
+    State: <input type="text" id="state" name="state" style="float:right;">
+  </li>
+ 
+  <li> Account Type: <span>
+    <select name="account_type_id">
+    <option value="0"></option>
+    <% @account_types.each do |at| %>
+        <option value="<%=at.id%>">
+            <%= at.name %>
+        </option>
+    <% end %>
+    </select>
+    </span>
+  </li>
+  <li> Office Held: <span>
+    <select name="office_id">
+        <option value="0"></option>
+    <% @offices.each do |office| %>
+        <option value="<%=office.id%>">
+            <%= office.title %>
+        </option>
+    <% end %>
+    </select>
+    </span>
+  </li>
+  <li>
+    <button type="submit" value="Save">Save</button>
+  </li>
+</ul>
+
+</form>
+<span><em> Status Key: <ul><li> 1 = Active, showing tweets</li><li> 2 = Collecting tweets, not showing</li><li> 3 = Not collecting or showing tweets</li><li> 4 = not collecting, but showing historical tweets</li></ul></em></span>
+
+<script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/hmac-sha1.js"></script>
+<script type="text/javascript" charset="utf-8">
+    jQuery("#user_name_input").change(function(){
+        var screen_name = jQuery(this).val();
+        jQuery.ajax({
+            url: '/admin/users/get-twitter-id/'+ screen_name + '.json', 
+            dataType: 'json',
+            success: function(data){
+                      jQuery('span.error').remove();
+                      console.log(data['twitter_id']);
+                      jQuery("#twitter_id").val(data['twitter_id']);
+                      },
+            error: function(jq, textStatus, errorThrown){
+                      jQuery("h3").append('<span class="error">No such user</span>');
+                      console.log(errorThrown); 
+                      console.log(textStatus);
+                     },
+        
+            });
+
+    });
+
+
+</script>
