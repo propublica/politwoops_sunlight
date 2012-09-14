@@ -116,6 +116,7 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 body {
 	margin: 0 auto;
 	background: url(/images/sfapp_bg.jpg) center 48px repeat-x;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
 }
 .sf-header {
 	background: url(/images/sfapp_bg_header.jpg) center bottom repeat-x;
@@ -382,8 +383,6 @@ nav ul li:last-child{
 }
 #otherOrg { font-size: 140%; color: #504C49;}
 
-#info { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #93908d;}
-
 
 
 
@@ -594,9 +593,80 @@ iframe.twitter-share-button {display: inline; vertical-align: text-bottom;}
 }
 
 
+.accountList {
+	display: block;
+}
+.accountList li{
+	display: block;
+	float: left;
+	width: auto;
+}
+.accountList .accountHandle{
+	padding: 4px 15px 3px 15px;
+	height: 36px;
+	display: table-cell;
+	vertical-align: middle;
+
+}
+.accountList .active .accountHandle {
+	background: rgb(248,242,214); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(248,242,214,1) 1%, rgba(254,253,248,1) 50%, rgba(253,252,238,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(248,242,214,1)), color-stop(50%,rgba(254,253,248,1)), color-stop(100%,rgba(253,252,238,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(248,242,214,1) 1%,rgba(254,253,248,1) 50%,rgba(253,252,238,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(248,242,214,1) 1%,rgba(254,253,248,1) 50%,rgba(253,252,238,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(248,242,214,1) 1%,rgba(254,253,248,1) 50%,rgba(253,252,238,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(248,242,214,1) 1%,rgba(254,253,248,1) 50%,rgba(253,252,238,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f2d6', endColorstr='#fdfcee',GradientType=0 ); /* IE6-9 */
+	border-top: 2px solid #dcd8b3;
+	border-right: 1px solid #dcd8b3;
+	border-left: 1px solid #dcd8b3;
+	display: table-cell;
+	padding: 3px 3px 0 3px;
+	height: 35px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	font-family: "museo-slab", georgia, serif; 
+	font-size: 100%; 
+	font-weight: 700;
+	color: #c9a706;
+
+}
+.accountList .active .accountHandle span{
+	border-top: 1px dotted #dec758;
+	border-right: 1px dotted #dec758;
+	border-left: 1px dotted #dec758;
+	line-height: 1.5em;
+	padding-left: 10px;
+	padding-right: 10px;
+	display: table-cell;
+	vertical-align: middle;
+	height: 32px;
+}
+
+.aboutAccount{
+	background: #fdfcee;
+	border-bottom: 1px solid #dcd8b3;
+	border-top: 2px solid #dcd8b3;
+	padding: 3px;
+	z-index: -1;
+	width: 100%;
+	margin-top: 56px;
+}
+.aboutAccount p{
+	margin: 0;
+	padding: 15px;
+	border-top: 1px dotted #dec758;
+	border-bottom: 1px dotted #dec758;
+	color: #8a8079;
+}
 
 
 
+
+
+
+
+/*  footer  */
 
 footer{
 	background-color: #FAFAF7;
