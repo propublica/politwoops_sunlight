@@ -18,4 +18,12 @@ class PoliticiansController < ApplicationController
     end
   end
 
+  def all 
+    #get all politicians that we're showing
+    @politicians = Politician.where(:status => [1, 4])
+    respond_to do |format|
+      format.html {render}
+    end
+  end
+
 end 
