@@ -116,6 +116,7 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 body {
 	margin: 0 auto;
 	background: url(/images/sfapp_bg.jpg) center 48px repeat-x;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
 }
 .sf-header {
 	background: url(/images/sfapp_bg_header.jpg) center bottom repeat-x;
@@ -593,17 +594,18 @@ iframe.twitter-share-button {display: inline; vertical-align: text-bottom;}
 
 
 .accountList {
-	position: relative;
+	display: block;
 }
 .accountList li{
-	display: inline;
+	display: block;
+	float: left;
+	width: auto;
 }
 .accountList .accountHandle{
-	width: auto;
-	float: left;
-	display: block;
-	padding: 6px 5px 4px 5px;
-	height: 30px;
+	padding: 4px 15px 3px 15px;
+	height: 36px;
+	display: table-cell;
+	vertical-align: middle;
 
 }
 .accountList .active .accountHandle {
@@ -615,36 +617,47 @@ iframe.twitter-share-button {display: inline; vertical-align: text-bottom;}
 	background: -ms-linear-gradient(top, rgba(248,242,214,1) 1%,rgba(254,253,248,1) 50%,rgba(253,252,238,1) 100%); /* IE10+ */
 	background: linear-gradient(to bottom, rgba(248,242,214,1) 1%,rgba(254,253,248,1) 50%,rgba(253,252,238,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f2d6', endColorstr='#fdfcee',GradientType=0 ); /* IE6-9 */
-	border-top: 1px solid #dcd8b3;
+	border-top: 2px solid #dcd8b3;
 	border-right: 1px solid #dcd8b3;
 	border-left: 1px solid #dcd8b3;
+	display: table-cell;
+	padding: 3px 3px 0 3px;
+	height: 35px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	font-family: "museo-slab", georgia, serif; 
+	font-size: 100%; 
+	font-weight: 700;
+	color: #c9a706;
 
 }
 .accountList .active .accountHandle span{
-	border-top: 2px dotted #dec758;
-	border-right: 2px dotted #dec758;
-	border-left: 2px dotted #dec758;
+	border-top: 1px dotted #dec758;
+	border-right: 1px dotted #dec758;
+	border-left: 1px dotted #dec758;
 	line-height: 1.5em;
 	padding-left: 10px;
 	padding-right: 10px;
-	width: auto;
 	display: table-cell;
-	height: 6px;
 	vertical-align: middle;
+	height: 32px;
 }
 
 .aboutAccount{
-	position: absolute;
 	background: #fdfcee;
 	border-bottom: 1px solid #dcd8b3;
-	border-right: 1px solid #dcd8b3;
-	border-left: 1px solid #dcd8b3;
-	top: 30px;
-	padding: 20px 5px 5px;
-
+	border-top: 2px solid #dcd8b3;
+	padding: 3px;
+	z-index: -1;
+	width: 100%;
+	margin-top: 56px;
 }
 .aboutAccount p{
-
+	margin: 0;
+	padding: 15px;
+	border-top: 1px dotted #dec758;
+	border-bottom: 1px dotted #dec758;
+	color: #8a8079;
 }
 
 
