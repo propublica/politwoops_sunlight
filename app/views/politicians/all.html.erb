@@ -1,0 +1,29 @@
+<% @politicians.each do |pol|%>
+  <div>
+    
+    <img src="<%= pol.profile_image_url %>" />    
+
+    <a href="/user/<%= pol.user_name %>/">Link</a>
+
+    <%= pol.user_name %>  &nbsp;
+    <% if pol.party %> <%= pol.party.name.upcase %> <% end %>  &nbsp;
+    
+    <% if pol.status ==  4 %><em>inactive</em> <% end %>&nbsp;
+
+    <% if pol.state %> <%= pol.state.upcase %> <% end %> &nbsp;
+
+    <% if pol.office %><%= pol.office.title %> <% end %> &nbsp;
+    
+
+    <%= pol.first_name %> &nbsp;
+    <%= pol.middle_name %>  &nbsp;
+    <%= pol.last_name %>  &nbsp;
+    <%= pol.suffix %> &nbsp;
+    
+
+  </div>
+<% end %>
+
+
+
+

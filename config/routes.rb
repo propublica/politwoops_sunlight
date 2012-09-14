@@ -5,7 +5,9 @@ Politwoops::Application.routes.draw do
   match "index(.:format)" => "tweets#index", :as => :index
   match "tweet/:id" => "tweets#show", :as => :tweet
   match "user/:user_name" => "politicians#show", :as => :politician
+  match "users/" => "politicians#all", :as => :all_politicians
   match "party/:name" => "parties#show", :as => :party
+    
 
   namespace :admin do
     match "review" => "tweets#index", :reviewed => false, :approved => false, :as => "review"
