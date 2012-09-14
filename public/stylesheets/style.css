@@ -382,8 +382,6 @@ nav ul li:last-child{
 }
 #otherOrg { font-size: 140%; color: #504C49;}
 
-#info { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #93908d;}
-
 
 
 
@@ -594,9 +592,68 @@ iframe.twitter-share-button {display: inline; vertical-align: text-bottom;}
 }
 
 
+.accountList {
+	position: relative;
+}
+.accountList li{
+	display: inline;
+}
+.accountList .accountHandle{
+	width: auto;
+	float: left;
+	display: block;
+	padding: 6px 5px 4px 5px;
+	height: 30px;
+
+}
+.accountList .active .accountHandle {
+	background: rgb(248,242,214); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(248,242,214,1) 1%, rgba(254,253,248,1) 50%, rgba(253,252,238,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(248,242,214,1)), color-stop(50%,rgba(254,253,248,1)), color-stop(100%,rgba(253,252,238,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(248,242,214,1) 1%,rgba(254,253,248,1) 50%,rgba(253,252,238,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(248,242,214,1) 1%,rgba(254,253,248,1) 50%,rgba(253,252,238,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(248,242,214,1) 1%,rgba(254,253,248,1) 50%,rgba(253,252,238,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(248,242,214,1) 1%,rgba(254,253,248,1) 50%,rgba(253,252,238,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f2d6', endColorstr='#fdfcee',GradientType=0 ); /* IE6-9 */
+	border-top: 1px solid #dcd8b3;
+	border-right: 1px solid #dcd8b3;
+	border-left: 1px solid #dcd8b3;
+
+}
+.accountList .active .accountHandle span{
+	border-top: 2px dotted #dec758;
+	border-right: 2px dotted #dec758;
+	border-left: 2px dotted #dec758;
+	line-height: 1.5em;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: auto;
+	display: table-cell;
+	height: 6px;
+	vertical-align: middle;
+}
+
+.aboutAccount{
+	position: absolute;
+	background: #fdfcee;
+	border-bottom: 1px solid #dcd8b3;
+	border-right: 1px solid #dcd8b3;
+	border-left: 1px solid #dcd8b3;
+	top: 30px;
+	padding: 20px 5px 5px;
+
+}
+.aboutAccount p{
+
+}
 
 
 
+
+
+
+
+/*  footer  */
 
 footer{
 	background-color: #FAFAF7;

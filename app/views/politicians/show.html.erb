@@ -5,6 +5,23 @@
 <div id="info">
   <h2 class="withTip"><%= @latest_tweet.details['user']['name'] %></h1>
   <p class="tip"><%= @latest_tweet.details['user']['description'] %></p>
+  <ul class="accountList">
+  	<li>
+  		<a class="accountHandle" href="">All Tweets</a>
+  	</li>
+  	<li class="active">
+  		<a class="accountHandle" href=""><span>@MichelleBachmann</span></a>
+  		<div class="aboutAccount">
+  			<p>
+  				Official Twitter account of U.S. Senator Patty Murray (D-WA) | Tweets come from staff unless signed “-PM” by Senator Murray. | RT≠endorsement   <a href="">twitter page</a>
+  			</p>
+  		</div>
+  	</li>
+  	<li>
+  		<a class="accountHandle" href="">@TeamBachmann</a>
+  	</li>
+  </ul>
+  <div class="clear"></div>
 </div>
 
 <%= render :template => "tweets/index" %>
