@@ -7,13 +7,8 @@ class TweetsController < ApplicationController
     :if => proc { (params.keys - ['format', 'action', 'controller']).empty? }
 
   def index
-
-    @states_list = Politician.all(:select => "DISTINCT(state)")
-    @states = []
-    @states_list.each do |sl|
-      if sl.state != nil 
-        @states.push(sl.state)
-      end
+    @states = Politician.where("state IS NOT NULL").all(:select => "DISTINCT(state)").map do |row|
+      row.state
     end
     @states = @states.sort
 
@@ -24,16 +19,16 @@ class TweetsController < ApplicationController
 
     #check for filters
     @filters = {'state' => nil, 'party' => nil, 'office' => nil  }
-    if params.has_key?(:state) && params[:state] != ""
+    unless params.fetch('state', '').empty?
         @politicians = @politicians.where(:state => params[:state])
         @filters['state'] = params[:state]
     end
-    if params.has_key?(:party) && params[:party] != ""
+    unless params.fetch('party', '').empty?
         party = Party.where(:name => params[:party])[0]
         @politicians = @politicians.where(:party_id => party)
         @filters['party'] = party.name
     end
-    if params.has_key?(:office) && params[:office] != ""
+    unless params.fetch('office', '').empty?
         @politicians = @politicians.where(:office_id => params[:office])
         @filters['office'] = params[:office]
     end
