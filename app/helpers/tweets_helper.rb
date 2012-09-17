@@ -34,7 +34,7 @@ module TweetsHelper
     end
 
     if html
-      tweet_when = "<a href=\"/tweet/#{tweet.id}\">#{tweet_when}</a>"
+      tweet_when = "<a class=\"linkUnderline\" href=\"/tweet/#{tweet.id}\">#{tweet_when}</a>"
       source = tweet.details["source"].to_s.html_safe
       byline = "<a href=\"http://twitter.com/#{tweet.politician.user_name}\" class=\"twitter\">#{tweet.details['user']['name']}</a>".html_safe
       byline += t(:byline, :scope => [:politwoops, :tweets], :when => tweet_when, :what => source, :delay => delay).html_safe

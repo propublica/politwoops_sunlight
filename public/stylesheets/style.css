@@ -117,6 +117,7 @@ body {
 	margin: 0 auto;
 	background: url(/images/sfapp_bg.jpg) center 48px repeat-x;
 	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	color: #625953;
 }
 .sf-header {
 	background: url(/images/sfapp_bg_header.jpg) center bottom repeat-x;
@@ -393,13 +394,27 @@ nav ul li:last-child{
 
 .tweet { border-bottom: 1px solid #e2e0de; padding-bottom: 23px; margin-bottom: 23px;}
 
-.tweetTitle { font-weight: bold; font-size: 115%; margin-bottom: 5px;}
-.tweetTitle a:link, .tweetTitle a:active, .tweetTitle a:visited { text-decoration: none; color: #504c49;}
-.tweetTitle a:hover { color: #0084B4; text-decoration: underline;}
-
+.tweetTitle { font-weight: bold; font-size: 128%; margin-bottom: 5px;}
+h4.tweetTitle{
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+}
+.tweetTitle a:link, .tweetTitle a:active, .tweetTitle a:visited { text-decoration: none; color: #068797;}
+.tweetTitle a:hover { color: #063E5C; text-decoration: underline;}
+.tweetTitle span{
+	font-size: 72%;
+	font-color: #8D8883;
+}
 .tweet img { float: left; height: 73px; margin: 0 20px 0 0; width: 73px; border: 1px solid #bfc8c0; padding: 4px;}
 
-
+.tweetTitle a.linkUnderline:link, .tweetTitle a.linkUnderline:visited, a.linkUnderline:link, a.linkUnderline:visited  { 
+	border-bottom: 1px dotted #5ca8b1;
+	font-weight: normal;
+	color: #8D8883;
+}
+.tweetTitle a.linkUnderline:active, a.linkUnderline:active, .tweetTitle a.linkUnderline:hover, a.linkUnderline:hover{
+	text-decoration: none;
+	color: #063E5C;
+}
 
 
 
@@ -421,7 +436,7 @@ nav ul li:last-child{
 .tweet .content { float: left; width: 480px; }
 .tweet-content { margin-bottom: 8px;}
 
-.tweet .byline, .tweet .byline a { color: #8d8883;}
+.tweet .byline, .tweet .byline { color: #8d8883;}
 .tweet .byline {font-size: 90%;}
 
 .tweet .byline a.twitter {
@@ -436,9 +451,9 @@ nav ul li:last-child{
 
 .tweet .actions { float: right; }
 .reply, .retweet { height: 47px; width: 59px;}
-.reply { background: url(/images/btn_reply.jpg) center top no-repeat ; }
+.reply { background: url(/images/btn_reply.jpg) center top no-repeat ; border-bottom: 1px dashed #DEC758;}
 .reply:hover { background: url(/images/btn_reply.jpg) center bottom no-repeat ; }
-.retweet { background: url(/images/btn_retweet.jpg) center top no-repeat; margin-top: 5px;}
+.retweet { background: url(/images/btn_retweet.jpg) center top no-repeat;}
 .retweet:hover { background: url(/images/btn_retweet.jpg) center bottom no-repeat; }
 
 .titleParty { text-transform: uppercase;}
