@@ -1,10 +1,9 @@
 <div class="title">
-	<!-- SHOW ONLY ON HOMEPAGE
 	<h2>
 		Recent Politwoops
 	</h2>
 
-	<form action="/" method="POST" id="filter" class="form-inline">
+	<form action="/" method="GET" id="filter" class="form-inline">
 	    <ul>
 	    	<li class="styled-select">
 	    		<label for="state">State:</label>
@@ -40,7 +39,6 @@
 	    <button type="submit" class="btn">Filter</button>
 		</ul>
 	</form>
-	!-->
 </div>
 <% content_for :feeds do %>
   <% if @politician %>
@@ -52,10 +50,14 @@
   <% end %>
 <% end %>
 
-<% @tweets.each do |tweet| %>
-	<%= render :partial => "tweets/tweet", :locals => {:tweet => tweet} %>
-<% end %>
+<% if @tweets.empty? %>
+  No results for the filter options you selected.
+<% else %>
+  <% @tweets.each do |tweet| %>
+    <%= render :partial => "tweets/tweet", :locals => {:tweet => tweet} %>
+  <% end %>
 
-<div id="pager">
-  <%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :prev_label => t(:previous, :scope => [:politwoops]) %>
-</div>
+  <div id="pager">
+    <%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :prev_label => t(:previous, :scope => [:politwoops]) %>
+  </div>
+<% end %>
