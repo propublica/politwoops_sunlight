@@ -535,6 +535,13 @@ h4.tweetTitle{
   -moz-border-radius: 5px;
 }
 
+.numResults {
+	margin-top: 20px;
+}
+
+.numResults li{
+	display: inline;
+}
 
 
 

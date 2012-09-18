@@ -59,5 +59,23 @@
 
   <div id="pager">
     <%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :prev_label => t(:previous, :scope => [:politwoops]) %>
+  	
+  	<div class="numResults">
+  		<h4>Results per page</h4>
+  		<ul>
+	  		<li>
+	  			<a href="">20</a>
+	  		</li>
+	  		<li>
+	  			<a href="">50</a>
+	  		</li>
+	  		<li>
+	  			<a href="">100</a>
+	  		</li>
+	  		<li>
+	  			<a href="">200</a>
+	  		</li>
+	  	</ul>
+  	</div>
   </div>
 <% end %>
