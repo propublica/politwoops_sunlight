@@ -455,6 +455,18 @@ h4.tweetTitle{
 
 .tweet .content { float: left; width: 480px; }
 .tweet-content { margin-bottom: 8px;}
+.tweet .inactiveMess{
+	margin-bottom: 8px;
+	color: #8D8883;
+	font-size: 90%;
+	font-style: italic;
+	margin-top: -3px;
+	background: #FDFCEE;
+	border-top: 1px dotted #E7D26E;
+	border-bottom: 1px dotted #E7D26E;
+	padding: 0 4px;
+}
+
 
 .tweet .byline, .tweet .byline { color: #8d8883;}
 .tweet .byline {font-size: 90%;}
@@ -680,6 +692,7 @@ iframe.twitter-share-button {display: inline; vertical-align: text-bottom;}
 	z-index: -1;
 	width: 100%;
 	margin-top: 56px;
+	margin-bottom: 23px;
 }
 .aboutAccount p{
 	margin: 0;

@@ -18,6 +18,10 @@
   	    <% end %>
   	    <span><a class="accountHandle linkUnderline" href="/user/<%= tweet.politician.user_name %>">@<%= tweet.politician.user_name %></a></span>
 	    </h4>
+	    <% if tweet.politician.status ==  4 %>
+        <div class="inactiveMess">This account is no longer active. <a href="http://sunlightfoundation.com/blog/2012/05/30/announcing-politwoops/">Find out why.</a></div> 
+        <% end %>
+
       <%= format_tweet(tweet).to_s.html_safe %>
     </div>
 
