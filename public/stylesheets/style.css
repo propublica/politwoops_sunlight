@@ -828,7 +828,64 @@ footer .tip {
 
 
 
+table.politicians td, table.politicians td img{
+	vertical-align: middle;
+}
+table.politicians{
+}
+table.politicians img{
+	width: 73px;
+	height: 73px;
+	border: 1px solid #bfc8c0; 
+	padding: 4px;
+}
+table.politicians td.name span{
+	width: 185px;
+}
+table.politicians td.state span{
+	width: 116px;
+}
+table.politicians td.office span{
+	width: 138px;
+}
+table.politicians td.party span{
 	line-height: 1.1em;
 }
+table.politicians td.party em{
+	font-size: 85%;
+	display: block;
+	font-family: Georgia, serif;
+	color: #8A8079;
+	font-style: italic;
+}
+table.politicians .img{
+	width: 73px;
+	padding-right: 0;
+	padding-left: 12px;
+}
+table.politicians tr.even{
+	background: #f8fcfa;
+}
+table.politicians tr{
+	border-bottom: 1px solid #d7e4dc;
+}
+table.politicians td{
+	padding: 12px 0;
+	text-align: left;
+}
+table.politicians td span {
+	border-right: 1px solid #d7e4dd;
+	height: 73px;
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 12px;
+}
+table.politicians td:last-child span, table.politicians .img{
+	border: 0;
+}
+table.politicians a{
+	font-weight: bold;
+}
+
 
 
