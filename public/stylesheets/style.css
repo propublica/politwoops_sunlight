@@ -859,6 +859,7 @@ footer .tip {
 }
 
 
+/*-- Politician Table --*/
 
 
 
@@ -920,4 +921,63 @@ table.politicians td:last-child span, table.politicians .img{
 table.politicians a{
 	font-weight: bold;
 }
+
+
+
+
+
+/*-- Screenshot overlay --*/
+
+.black_overlay{
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #5b6162;
+	z-index:1001;
+	-moz-opacity: 0.1;
+	opacity:.10;
+	filter: alpha(opacity=10);
+}
+.white_content {
+	display: none;
+	position: absolute;
+	top: 25%;
+	left: 0;
+	width: 100%;
+	padding: 16px 0 16px 0;
+	background-color: none;
+	z-index:1002;
+	overflow: auto;
+	font-size: 14px;
+	text-align: center;
+}
+.white_content .close{
+    background: url('/images/close.png') right top no-repeat;
+    text-indent: -9999em;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.white_content .close:hover{
+    background: url('/images/close.png') right bottom no-repeat;
+}
+.white_content img{
+	width: auto;
+	height: auto;
+	border: 3px solid #F4FAF5;
+	padding: 2px;
+	margin-right: 0;
+	vertical-align: top;
+}
+.white_content span{
+	position: relative;
+
+}
+
 
