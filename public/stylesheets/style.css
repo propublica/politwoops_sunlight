@@ -483,10 +483,10 @@ h4.tweetTitle{
 
 .tweet .actions { float: right; }
 .reply, .retweet { height: 47px; width: 59px;}
-.reply { background: url(/images/btn_reply.jpg) center top no-repeat ; border-bottom: 1px dashed #DEC758;}
-.reply:hover { background: url(/images/btn_reply.jpg) center bottom no-repeat ; }
-.retweet { background: url(/images/btn_retweet.jpg) center top no-repeat;}
-.retweet:hover { background: url(/images/btn_retweet.jpg) center bottom no-repeat; }
+.reply { background: url(/images/btn_reply.png) center top no-repeat ; border-bottom: 1px dashed #DEC758;}
+.reply:hover { background: url(/images/btn_reply.png) center bottom no-repeat ; }
+.retweet { background: url(/images/btn_retweet.png) center top no-repeat;}
+.retweet:hover { background: url(/images/btn_retweet.png) center bottom no-repeat; }
 
 .titleParty { text-transform: uppercase;}
 
