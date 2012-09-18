@@ -404,7 +404,27 @@ h4.tweetTitle{
 	font-size: 72%;
 	font-color: #8D8883;
 }
-.tweet img { float: left; height: 73px; margin: 0 20px 0 0; width: 73px; border: 1px solid #bfc8c0; padding: 4px;}
+.tweet img {height: 73px; margin: 0 20px 0 0; width: 73px; border: 1px solid #bfc8c0; padding: 4px;}
+.contentLeft{
+	float: left;
+}
+.policount{
+	width: 83px;
+	font-size: 71.4%;
+	color: #8a8079;
+	line-height: 1.3em;
+	text-align: center;
+}
+.policount em{
+	font-weight: bold;
+	font-style: normal;
+}
+.policount .number{
+	font-size: 210%;
+	color: #e7d26e;
+	line-height: 1.2em;
+	font-weight: 500;
+}
 
 .tweetTitle a.linkUnderline:link, .tweetTitle a.linkUnderline:visited, a.linkUnderline:link, a.linkUnderline:visited  { 
 	border-bottom: 1px dotted #5ca8b1;
@@ -817,7 +837,6 @@ footer .tip {
 	background-color: #BA5300;
 	background-color: #BA5300 9;
 }
-<<<<<<< HEAD
 
 
 
@@ -882,7 +901,3 @@ table.politicians a{
 	font-weight: bold;
 }
 
-
-
-=======
->>>>>>> 32eb8f2f25aade57c486cfa4d1fe9ad69db24df1
