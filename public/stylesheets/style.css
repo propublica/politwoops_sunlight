@@ -421,7 +421,7 @@ h4.tweetTitle{
 /** For Ali: CSS I added to deal with screenshots of links */
 .tweet .images h3 {margin-top: 30px; font-size: 120%;}
 .tweet .images img.screenshot {
-  float: left; width: 160px; height: 120px; 
+  float: left; max-width: 160px; max-height: 120px; width: auto; height: auto;
   margin: 20px 0; margin-right: 20px; border: 1px solid #336699; padding: 3px;
 
 }
@@ -563,12 +563,6 @@ table.listing {
 /** Social Media */
 iframe {margin: 0 0;}
 iframe.twitter-share-button {display: inline; vertical-align: text-bottom;}
-
-
-
-
-
-
 
 /* footer */
 
@@ -823,6 +817,7 @@ footer .tip {
 	background-color: #BA5300;
 	background-color: #BA5300 9;
 }
+<<<<<<< HEAD
 
 
 
@@ -889,3 +884,5 @@ table.politicians a{
 
 
 
+=======
+>>>>>>> 32eb8f2f25aade57c486cfa4d1fe9ad69db24df1

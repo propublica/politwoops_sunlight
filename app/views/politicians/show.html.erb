@@ -23,4 +23,10 @@
 	<div class="clear"></div>
 </div>
 
-<%= render :template => "tweets/index" %>
+<% @tweets.each do |tweet| %>
+	<%= render :partial => "tweets/tweet", :locals => {:tweet => tweet} %>
+<% end %>
+
+<div id="pager">
+  <%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :prev_label => t(:previous, :scope => [:politwoops]) %>
+</div>
