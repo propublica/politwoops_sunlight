@@ -1,28 +1,169 @@
-<% @politicians.each do |pol|%>
-  <div>
-    
-    <img src="<%= pol.profile_image_url %>" />    
+	<h2>
+		Recent Politwoops
+	</h2>
 
-    <a href="/user/<%= pol.user_name %>/">Link</a>
+	<!-- Same HTML/CSS as homepage filtering, but needs fixed for politician index
 
-    <%= pol.user_name %>  &nbsp;
-    <% if pol.party %> <%= pol.party.name.upcase %> <% end %>  &nbsp;
-    
-    <% if pol.status ==  4 %><em>inactive</em> <% end %>&nbsp;
+	!-->
 
-    <% if pol.state %> <%= pol.state.upcase %> <% end %> &nbsp;
+	<form action="" method="" id="filter" class="form-inline">
+	    <ul>
+	    	<li class="styled-select">
+	    		<label for="id_slot">State:</label>
+				<select name="slot" id="id_slot">
+					<option value="" selected="selected">---------</option>
+					<option value="5">data</option>
+					<option value="11">events</option>
+					<option value="10">getting involved</option>
+					<option value="4">grants</option>
+					<option value="2">job openings</option>
+					<option value="3">journalism and reporting</option>
+					<option value="1">policy initiatives</option>
+					<option value="6">press and communications</option>
+					<option value="8">something else</option>
+					<option value="7">Sunlight Labs</option>
+				</select>
+			</li>
+			<li class="styled-select">
+	    		<label for="id_slot">Party:</label>
+				<select name="slot" id="id_slot" class="styled-select">
+					<option value="" selected="selected">---------</option>
+					<option value="5">data</option>
+					<option value="11">events</option>
+					<option value="10">getting involved</option>
+					<option value="4">grants</option>
+					<option value="2">job openings</option>
+					<option value="3">journalism and reporting</option>
+					<option value="1">policy initiatives</option>
+					<option value="6">press and communications</option>
+					<option value="8">something else</option>
+					<option value="7">Sunlight Labs</option>
+				</select>
+			</li>
+			<li class="styled-select">
+	    		<label for="id_slot">Position:</label>
+				<select name="slot" id="id_slot" class="styled-select">
+					<option value="" selected="selected">---------</option>
+					<option value="5">data</option>
+					<option value="11">events</option>
+					<option value="10">getting involved</option>
+					<option value="4">grants</option>
+					<option value="2">job openings</option>
+					<option value="3">journalism and reporting</option>
+					<option value="1">policy initiatives</option>
+					<option value="6">press and communications</option>
+					<option value="8">something else</option>
+					<option value="7">Sunlight Labs</option>
+				</select>
+			</li>
+	    <button type="submit" class="btn">Filter</button>
+		</ul>
+	</form>
 
-    <% if pol.office %><%= pol.office.title %> <% end %> &nbsp;
-    
 
-    <%= pol.first_name %> &nbsp;
-    <%= pol.middle_name %>  &nbsp;
-    <%= pol.last_name %>  &nbsp;
-    <%= pol.suffix %> &nbsp;
-    
 
-  </div>
-<% end %>
+
+
+	<table class="politicians">
+		<tbody>
+		<tr class="odd">
+			<td class="img">
+				<img src="" />    
+			</td>
+			<td class="name">
+				<span>
+					<a href="">
+						Caitlin Anne Weber
+					</a>
+				</span>
+			</td>
+			<td class="state">
+				<span>
+				American Samoa
+				</span>
+			</td>
+			<td class="office">
+				<span>
+				All the things
+				</span>
+			</td>
+			<td class="party">
+				<span>
+				Dem
+				<em>inactive</em>
+				</span>
+			</td>
+		</tr>
+		<tr class="even">
+			<td class="img">
+				<img src="" />    
+			</td>
+			<td class="name">
+				<span>
+					<a href="">
+						Caitlin Anne Weber
+					</a>
+				</span>
+			</td>
+			<td class="state">
+				<span>
+				American Samoa
+				</span>
+			</td>
+			<td class="office">
+				<span>
+				All the things
+				</span>
+			</td>
+			<td class="party">
+				<span>
+				Dem
+				<em>inactive</em>
+				</span>
+			</td>
+		</tr>
+		<% @politicians.each do |pol|%>
+		<tr>
+			<td class="img">
+				<img src="<%= pol.profile_image_url %>" />    
+			</td>
+			<td class="name">
+				<span>
+				<a href="/user/<%= pol.user_name %>/">
+					<%= pol.first_name %>
+					<%= pol.middle_name %>
+					<%= pol.last_name %>
+					<%= pol.suffix %>
+				</a>
+				</span>
+			</td>
+			<td class="state">
+				<span>
+				<% if pol.state %> <%= pol.state.upcase %> <% end %>
+				</span>
+			</td>
+			<td class="office">
+				<span>
+				<% if pol.office %><%= pol.office.title %> <% end %>
+				</span>
+			</td>
+
+			<!-- 
+			<td>
+				<%= pol.user_name %>
+			</td>
+			-->
+
+			<td class="party">
+				<span>
+				<% if pol.party %> <%= pol.party.name.upcase %> <% end %>
+				<% if pol.status ==  4 %><em>inactive</em> <% end %>
+				</span>
+			</td>
+		</tr>
+		<% end %>
+		<tbody>
+	</table>
 
 
 
