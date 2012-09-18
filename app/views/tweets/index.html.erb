@@ -3,42 +3,8 @@
 		Recent Politwoops
 	</h2>
 
-	<form action="/" method="GET" id="filter" class="form-inline">
-	    <ul>
-	    	<li class="styled-select">
-	    		<label for="state">State:</label>
-				<select name="state" id="state_filter">
-					<option value="">---------</option>
-                    <% @states.each do |st| %>
-                        <% if st != '' and st != ' ' and st %>
-    					  <option value="<%= st %>" <% if @filters['state'] == st %> selected <% end %> ><%= st %></option>
-                        <% end %>
-                    <% end %>
-				</select>
-			</li>
-			<li class="styled-select">
-	    		<label for="party">Party:</label>
-				<select name="party" id="party_select" class="styled-select">
-					<option value="" >---------</option>
-                    <% @parties.each do |par| %>
-        				<option value="<%=par.name%>" <% if @filters['party'] == par.name %> selected <% end %>><%=par.display_name%></option>
-                    <% end %>
-				</select>
-			</li>
-			<li class="styled-select">
-	    		<label for="office">Position:</label>
-				<select name="office" id="office_select" class="styled-select">
-					<option value="">---------</option>
-                    <% @offices.each do |off| %>
-    					<option value="<%= off.id %>" <%if @filters['office'].to_f == off.id %> selected <% end %>>
-                            <%=off.title %> 
-                        </option>
-                    <% end %>
-				</select>
-			</li>
-	    <button type="submit" class="btn">Filter</button>
-		</ul>
-	</form>
+  <%= render :template => "shared/filterform" %>
+
 </div>
 <% content_for :feeds do %>
   <% if @politician %>
