@@ -34,29 +34,12 @@
       <% if tweet.tweet_images.any? %>
         <h3>Screenshots of links in this tweet</h3>
         <% tweet.tweet_images.each do |image| %>
-          <a href="<%= image.url %>" target="_blank">
+          <a href="<%= image.url %>" target="_blank" class="screenshot cboxElement">
             <img src="<%= image.url %>" class="screenshot" />
           </a>
         <% end %>
       <% end %>
     </div>
-
-	<!-- KAITLIN!!! Added this section for overlaying the images instead of shooting out to target="blank" DOn't know how to get it working though. Same thing as is used here: http://upwardly.us/locations/12420/?compareto=47894&occ=17-2021 
-
-
-    <div id="light" class="white_content" style="display: inline; ">
-			<span>
-				<img src="/images/charlie.jpg" class="screenshot full" />
-				<a class="close" href="#">Close</a>
-			</span>
-
-	</div>
-	<div id="fade" class="black_overlay" style="display: block; ">
-	</div>
-    <div class="clear">
-    </div>
-
-    !-->
 
 
   </div>

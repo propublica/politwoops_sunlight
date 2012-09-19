@@ -11,12 +11,15 @@
 	<title>Politwoops - <%= t :slogan, :scope => [:politwoops] %></title>
 	<% end %>
 
+	<%= stylesheet_link_tag "colorbox" %>
+
 	<%= stylesheet_link_tag "style" %>
 
 	<%= content_for :head %>
 
 	<%= javascript_include_tag "jquery-1.7.1.min" %>
 	<%= javascript_include_tag "jquery.placehold-0.3.min" %>
+	<%= javascript_include_tag "jquery.colorbox-min" %>
 
 	<%= csrf_meta_tag %>
 	<link rel="icon" href="/images/favicon.png" type="image/png">
@@ -61,6 +64,20 @@
             userAction: ua
         };
         gigya.socialize.showShareBarUI(params);
+
+        $("a.screenshot").each(function(idx, a){
+            $(a).colorbox({
+                rel: 'screenshot' + idx,
+                opacity: 0.7,
+                maxWidth: '90%',
+                close: 'Close'
+            });
+        });
+        $(document).bind('cbox_complete', function(event){
+            $("img.cboxPhoto").click(function(event){
+                window.open($(this).attr('src'));
+            });
+        });
     });
   </script>
 
