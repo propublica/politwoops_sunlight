@@ -262,10 +262,35 @@ h1 {
 	margin-top: 70px;
 }
 h1 a { background: url(/images/logo.png) top left no-repeat; height: 78px; width: 370px; }
+nav {
+	position: relative;
+}
+nav ul{
+	position: absolute;
+	top: 0;
+	right: 135px;
+	margin-top: 14px;
+}	
+nav ul li{
+	display: inline;
+	padding-right: 20px;
+	margin-right: 20px;
+	border-right: 1px solid #068797;
+	font-weight: bold;
+}
+nav ul li:last-child{
+	border-right: 0;
+	padding-right: 0;
+	margin-right: 0;
+}
 #socialMedia { 
-	float: right; 
-	margin-top: -20px;
-	width: 169px;
+	position: absolute;
+	width: 115px;
+	top: 15px;
+	right: 0;
+}
+.gig-bar-container{
+
 }
 #search { 
 	float: right;
@@ -358,24 +383,6 @@ h4, #filter label {
 	font-size: 100%; 
 	font-weight: 700;
 	color: #063e5c;
-}
-nav {
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin-top: 14px;
-}	
-nav ul li{
-	display: inline;
-	padding-right: 20px;
-	margin-right: 20px;
-	border-right: 1px solid #068797;
-	font-weight: bold;
-}
-nav ul li:last-child{
-	border-right: 0;
-	padding-right: 0;
-	margin-right: 0;
 }
 .twoopsters{
 	margin-top: -103px;
