@@ -48,9 +48,12 @@ class PoliticiansController < ApplicationController
     end
   end
 
+  before_filter :enable_filter_form
   def all 
+    @filter_action = "/users"
+
     #get all politicians that we're showing
-    @politicians = Politician.where(:status => [1, 4])
+    @politicians = @politicians.where(:status => [1, 4])
     respond_to do |format|
       format.html {render}
     end
