@@ -27,30 +27,7 @@
 	<%= render :partial => "tweets/tweet", :locals => {:tweet => tweet} %>
 <% end %>
 
-<div id="pager">
-  <%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :prev_label => t(:previous, :scope => [:politwoops]) %>
-
-  	<!-- KAITLIN!!! For selecting the number of tweets shown. This should appear on all tweet result pages. !-->
-
-  	<div class="numResults">
-  		<h4>Results per page</h4>
-  		<ul>
-	  		<li>
-	  			<a href="">20</a>
-	  		</li>
-	  		<li>
-	  			<a href="">50</a>
-	  		</li>
-	  		<li>
-	  			<a href="">100</a>
-	  		</li>
-	  		<li>
-	  			<a href="">200</a>
-	  		</li>
-	  	</ul>
-  	</div>
-  
-</div>
+<%= render :template => "shared/pager" %>
 
 <%= render :template => "shared/screenshotbox" %>
 

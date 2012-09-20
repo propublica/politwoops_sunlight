@@ -2,6 +2,8 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.xml
 
+  include ApplicationHelper
+
   caches_action :index, 
     :expires_in => 30.minutes,
     :if => proc { (params.keys - ['format', 'action', 'controller']).empty? }
@@ -30,11 +32,11 @@ class TweetsController < ApplicationController
     # only approved tweets
     @tweets = @tweets.where(:approved => true)
 
-    per_page = params[:per_page] ? params[:per_page].to_i : nil
-    per_page ||= Tweet.per_page
-    per_page = 200 if per_page > 200
+    @per_page_options = [20, 50, 100, 200]
+    @per_page = closest_value((params.fetch :per_page, 0).to_i, @per_page_options)
+    @page = [params[:page].to_i, 1].max
 
-    @tweets = @tweets.includes(:politician => [:party]).paginate(:page => params[:page], :per_page => per_page)
+    @tweets = @tweets.includes(:politician => [:party]).paginate(:page => params[:page], :per_page => @per_page)
 
     respond_to do |format|
       format.html # index.html.erb
