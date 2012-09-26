@@ -27,12 +27,12 @@ class Politician < ActiveRecord::Base
   
   def get_related_politicians()
     pol_list = []
-    pols = AccountLink.where("politician_id = ? or link_id = ?", self, self )
+    pols = AccountLink.where("politician_id = ? or link_id = ?", self.id, self.id )
     pols.each do |p|
-      if p.link != self and  not pol_list.include?(p.link) then
-        pol_list.push(p.link)
-      elsif p.politician != self and not pol_list.include?(p.politician) then
-        pol_list.push(p.politician)
+      if p.link_id != self.id and  not pol_list.include?(p.link_id) then
+        pol_list.push(p.link_id)
+      elsif p.politician_id != self.id and not pol_list.include?(p.politician_id) then
+        pol_list.push(p.politician_id)
       end
     end
     return pol_list

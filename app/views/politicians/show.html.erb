@@ -1,31 +1,58 @@
 <% content_for :title do %>
-  <% if @latest_tweet %><%= @latest_tweet.details['user']['name'] %> <% end %>(<%= @politician.party.name.upcase %>)
+	<%= @politician.office.title %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)
 <% end %>
 
 <div id="info">
-	<h2><% if @latest_tweet %> <%= @latest_tweet.details['user']['name'] %> <% end %></h2>
+	<h2><%= @politician.office.title %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)</h2>
 	<ul class="accountList">
-		<li>
-			<a class="accountHandle" href="">All Tweets</a>
+		<li id="all-label" class="active">
+			<a class="accountHandle" href="#"><span>All Tweets</span></a>
 		</li>
-		<li class="active">
-			<a class="accountHandle" href=""><span>@<%= @politician.user_name %></span></a>
+        <% @accounts.each do |acc| %>
+		<li id="<%= acc.user_name %>-label">
+			<a class="accountHandle" href="#"><span>@<%= acc.user_name %></span></a>
 		</li>
-		<li>
-			<a class="accountHandle" href="">@AnotherAccount</a>
-		</li>
+        <% end %>
 	</ul>
-	<div class="aboutAccount">
-		<p>
-			<% if @latest_tweet %> <%= @latest_tweet.details['user']['description'] %> <% end %><a href="">twitter page</a>
+    <div class="aboutAccount" id="all"><p></p></div>
+    <% @accounts.each do |acc| %>
+	<div class="aboutAccount" id="<%= acc.user_name %>" style="display:none;">
+		<p> 
+			<% if @tweet_map[acc.user_name][0] %> <%= @tweet_map[acc.user_name][0].details['user']['description'] %> <% end %><a href="http://twitter.com/<%=acc.user_name%>">twitter page</a>  
 		</p>
 	</div>
-	<div class="clear"></div>
+    <% end %>
+    <div class="clear"></div>
+</div>
+<div id="all-container" class="tweet-content-container">
+    <% @all_tweets.each do |at| %>
+        <%= render :partial => "tweets/tweet", :locals => {:tweet => at} %>
+    <% end %>
 </div>
 
-<% @tweets.each do |tweet| %>
-	<%= render :partial => "tweets/tweet", :locals => {:tweet => tweet} %>
+<% @accounts.each do |acc| %>
+    <div style="display:none;" class="tweet-content-container" id="<%= acc.user_name %>-container">
+        <% @tweet_map[acc.user_name].each do |tw| %>
+            <%= render :partial => "tweets/tweet", :locals => {:tweet => tw} %>
+        <% end %>
+    </div>
 <% end %>
+
+<script type="text/javascript">
+    jQuery('a.accountHandle span').click(function(){
+       jQuery('ul.accountList li').removeClass('active');
+       jQuery(this).parents('li').addClass('active');
+
+       jQuery('.aboutAccount').hide();
+       jQuery('div#info div#' + jQuery(this).parents('li').attr('id').replace('-label', '')).show();
+
+       jQuery('.tweet-content-container').hide();
+       jQuery('#' + jQuery(this).parents('li').attr('id').replace('-label', '-container')).show();
+       return false;
+    
+    });
+
+</script>
 
 <%= render :template => "shared/pager" %>
 

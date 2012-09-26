@@ -17,6 +17,18 @@ class PoliticiansController < ApplicationController
 
     @politicians = Politician.active
 
+    @related = @politician.get_related_politicians() #get ids of related accounts
+    @accounts = Politician.where(:id => @related.push(@politician.id))
+
+    @all_tweets = DeletedTweet.where(:politician_id => @related.push(@politician.id), :approved =>true).paginate(:page => params[:page], :per_page => @per_page)  
+
+    @tweet_map = {} 
+    @accounts.each do |ac|
+        @tweet_map[ac.user_name] = DeletedTweet.where(:politician_id => ac, :approved => true).paginate(:page => params[:page], :per_page => @per_page)
+    end
+
+    @tweet_map['all'] = @all_tweets
+
     respond_to do |format|
       format.html { render } # politicians/show
       format.rss  do
