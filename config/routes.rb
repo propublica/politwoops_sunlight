@@ -10,6 +10,10 @@ Politwoops::Application.routes.draw do
     
 
   namespace :admin do
+    match "status" => "system#status"
+    match "restart" => "system#restart"
+    match "report" => "system#report"
+
     match "review" => "tweets#index", :reviewed => false, :approved => false, :as => "review"
     match "unapproved" => "tweets#index", :reviewed => true, :approved => false, :as => "unapproved"
     match "approved" => "tweets#index", :reviewed => true, :approved => true, :as => "approved"

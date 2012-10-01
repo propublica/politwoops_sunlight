@@ -6,7 +6,11 @@ class Admin::AdminController < ApplicationController
   protected
   
   def admin_only
-    unless params[:format] == "rss"
+    status_json = request.url == url_for(:action => 'status', :format => 'json')
+    from_monitoring_host = configuration[:monitoring_hosts].include? request.remote_host
+    monitoring_request = status_json and from_monitoring_host
+
+    unless params[:format] == "rss" or monitoring_request
       authenticate_or_request_with_http_basic do |username, password|
         username == configuration[:admin][:username] and password == configuration[:admin][:password]
       end

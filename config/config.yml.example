@@ -7,3 +7,16 @@
 
 # used to sign session cookies, pick anything long and secure
 :session_secret:
+
+# These settings should mirror those set in the twitter
+# client configuration.
+:heartbeat_interval: 30
+:heartbeats_directory: /otherwise/empty/directory/
+:heartbeats_expected:
+  - tweets-client.py
+  - politwoops-worker.py
+  - screenshot-worker.py
+# Monitoring hosts are allowed to query /admin/status.json
+# without authentication.
+:monitoring_hosts:
+  - localhost

@@ -1,0 +1,36 @@
+<% flash.each do |k,v| %>
+    <div class="admin_<%= k %> <%= k %>">
+        <%= v %>
+    </div>
+<% end %>
+
+<% link_to("Refresh", :action => 'status', :controller => 'admin/system') %>
+
+<div>
+    Last tweet seen <%= relative_time @last_tweet.created %>.
+</div>
+
+<ul id="worker-list">
+    <% @worker_statuses.each do |status| %>
+        <li>
+        <form
+            action="<%= url_for :action => (status[:status] == 'dead') ? 'report' : 'restart' %>"
+            method="POST">
+            <%= csrf_meta_tag %>
+            <input type="hidden" name="worker" value="<%= status[:worker] %>">
+
+            <% if status[:status] == "running" %>
+                <button class="worker-restart" style="display: inline">Restart</button>
+            <% elsif status[:status] == "restarting" %>
+                <button disabled="disabled" class="disabled" style="display: inline">Restarting</button>
+            <% else %>
+                <button disabled="disabled" class="disabled" style="display: inline">Dead</button>
+            <% end %>
+            <span class="worker-name"><%= status[:worker] %></span>
+            <% if status[:last_seen] == 'stale' %>
+                <span class="worker-last-seen" style="">(last seen @ <%= status[:last_seen] %>)</span>
+            <% end %>
+        </form>
+        </li>
+    <% end %>
+</ul>

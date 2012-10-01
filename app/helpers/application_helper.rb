@@ -33,5 +33,24 @@ module ApplicationHelper
     return list.min { |a,b| (a-value).abs <=> (b-value).abs }
   end
 
+  def relative_time(start_time)
+    diff_seconds = Time.now - start_time
+    case diff_seconds
+    when 0 .. 59
+      "#{diff_seconds} seconds ago"
+    when 60 .. (3600-1)
+      minutes = (diff_seconds/60).round
+      "#{minutes} minutes ago"
+    when 3600 .. (3600*24-1)
+      hours = (diff_seconds/3600).round
+      "#{hours} hours ago"
+    when (3600*24) .. (3600*24*30) 
+      days = (diff_seconds/(3600*24)).round
+      "#{days} days ago"
+    else
+      start_time.strftime("%m/%d/%Y")
+    end
+  end
+
 end
 
