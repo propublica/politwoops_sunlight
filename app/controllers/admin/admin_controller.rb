@@ -6,7 +6,9 @@ class Admin::AdminController < ApplicationController
   protected
   
   def admin_only
-    status_json = request.url == url_for(:action => 'status', :format => 'json')
+    status_json = request.url == url_for(:action => 'status',
+                                         :controller => 'system',
+                                         :format => 'json')
     from_monitoring_host = configuration[:monitoring_hosts].include? request.remote_ip
     monitoring_request = (status_json and from_monitoring_host)
 
