@@ -4,8 +4,9 @@
 
 <ul style="margin-top:20px;">
 <% @offices.each do |o| %>
-    <li>
+    <li><a href="/admin/offices/<%=o.id%>">
     <%= o.title %> (<%= o.abbreviation %>)
+        </a>
     </li>
 <% end %>
 </ul>

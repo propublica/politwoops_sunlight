@@ -28,6 +28,7 @@ Politwoops::Application.routes.draw do
     match "offices/add" => "offices#add", :as => "add_office"
     match "offices/save" => "offices#save", :as => "save_office"
 
+    match "offices/:id" => "offices#edit", :as => "edit_office"
     match "review/:rss_secret.rss" => "tweets#index", :reviewed => false, :approved => false, :as => "review_rss", :format => "rss"
 
     match "review/:id" => "tweets#review", :via => [:post], :as => "review_tweet"
