@@ -32,7 +32,7 @@ class Admin::SystemController < Admin::AdminController
       }
     end
 
-    @last_tweet = Tweet.order(:created).last
+    @last_tweet = Tweet.order("modified DESC").first
 
     respond_to do |format|
       format.html { render :template => "admin/system/status" }
