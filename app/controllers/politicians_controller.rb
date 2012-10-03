@@ -40,10 +40,16 @@ class PoliticiansController < ApplicationController
 
   before_filter :enable_filter_form
   def all 
+    
+    @per_page_options = [20, 50, 100, 200]
+    @per_page = closest_value((params.fetch :per_page, 0).to_i, @per_page_options)
+    @page = [params[:page].to_i, 1].max
+    
     @filter_action = "/users"
 
     #get all politicians that we're showing
-    @politicians = @politicians.where(:status => [1, 4])
+    @politicians = @politicians.where(:status => [1, 4]).paginate(:page => params[:page], :per_page => @per_page)
+
     respond_to do |format|
       format.html {render}
     end
