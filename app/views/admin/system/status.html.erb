@@ -7,7 +7,7 @@
 <% link_to("Refresh", :action => 'status', :controller => 'admin/system') %>
 
 <div>
-    Last tweet seen <%= relative_time @last_tweet.created %>.
+    Last tweet seen <%= time_ago_in_words( @last_tweet.created ) %> ago.
 </div>
 
 <ul id="worker-list">
