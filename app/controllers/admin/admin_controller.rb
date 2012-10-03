@@ -10,10 +10,10 @@ class Admin::AdminController < ApplicationController
     status_json_path = url_for(:action => 'status',
                                :controller => 'system',
                                :format => 'json',
-                               :path_only => true)
+                               :only_path => true)
     status_json = request_url.path == status_json_path
 
-    ip = request.env['HTTP_X_FORWARDED_FOR'] or request.remote_ip
+    ip = (request.env['HTTP_X_FORWARDED_FOR'] or request.remote_ip)
     from_monitoring_host = configuration[:monitoring_hosts].include? ip
     monitoring_request = (status_json and from_monitoring_host)
 
