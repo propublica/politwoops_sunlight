@@ -6,10 +6,15 @@ class Admin::AdminController < ApplicationController
   protected
   
   def admin_only
-    status_json = request.url == url_for(:action => 'status',
-                                         :controller => 'system',
-                                         :format => 'json')
-    from_monitoring_host = configuration[:monitoring_hosts].include? request.remote_ip
+    request_url = URI.parse(request.url)
+    status_json_path = url_for(:action => 'status',
+                               :controller => 'system',
+                               :format => 'json',
+                               :path_only => true)
+    status_json = request_url.path == status_json_path
+
+    ip = request.env['HTTP_X_FORWARDED_FOR'] or request.remote_ip
+    from_monitoring_host = configuration[:monitoring_hosts].include? ip
     monitoring_request = (status_json and from_monitoring_host)
 
     unless (params[:format] == "rss" or monitoring_request)
