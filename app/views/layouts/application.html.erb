@@ -1,15 +1,16 @@
 <!doctype html>
 <html>
 <head>
-	<script type="text/javascript" src="//use.typekit.net/utl6xyx.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-
-	<% if content_for?(:title) %>
+        <% if content_for?(:title) %>
 	<title><%= yield(:title) %> - Politwoops</title>
 	<% else %>
 	<title>Politwoops - <%= t :slogan, :scope => [:politwoops] %></title>
 	<% end %>
+	<script type="text/javascript" src="//use.typekit.net/utl6xyx.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+
+	
 
 	<%= stylesheet_link_tag "colorbox" %>
 
@@ -37,7 +38,7 @@
   <script>
     $(document).ready(function() {
         var ua = new gigya.socialize.UserAction();
-        
+        ua.setTitle($('title').text());
         /*
          * Set these values as you would with Open Graph tags on the page.
          * Delete what you don't need.
@@ -112,7 +113,7 @@
 			<img class="twoopsters" src="/images/twoopsters.png">
 			<div class="module">
 				<p id="intro">
-					<strong>Sure</strong>, we all tweet things we don't <span class="strikethrough">men</span> mean to share, but now politicians have no way to hide them. <strong>Discover tweets that your politicians shared and then promptly deleted.</strong>
+					<strong>Sure</strong>, we all tweet things we don't <span class="strikethrough">men</span> mean to share, but now politicians have no way to hide them. <strong>Discover tweets that your politicians shared and then deleted.</strong>
 				</p>
 				<p id="terms">
 				To meet the <a href="https://dev.twitter.com/terms/api-terms">Twitter API Terms of Service</a>, all deleted tweets shown here since June 22, 2012 have been reviewed and approved by the Sunlight Foundation.

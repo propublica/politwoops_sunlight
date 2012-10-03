@@ -1,9 +1,9 @@
 <% content_for :title do %>
-	<%= @politician.office.title %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)
+<%= @politician.office.title %><%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)
 <% end %>
 
 <div id="info">
-	<h2><%= @politician.office.title %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)</h2>
+	<h2><%= @politician.office.abbreviation %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)</h2>
 	<ul class="accountList">
 		<li id="all-label" class="active">
 			<a class="accountHandle" href="#"><span>All Tweets</span></a>
