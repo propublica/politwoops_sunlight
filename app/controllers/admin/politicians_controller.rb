@@ -68,6 +68,10 @@ class Admin::PoliticiansController < Admin::AdminController
     if params[:suffix] != '' and params[:suffix].strip != ' ' then
       pol.suffix = params[:suffix]
     end
+    if params[:state] != '' and params[:state].strip != ' ' then
+      pol.state = params[:state]
+    end
+
     pol.save()
 
     redirect_to :back

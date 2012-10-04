@@ -53,8 +53,9 @@ class TweetsController < ApplicationController
   def show
     @tweet = DeletedTweet.includes(:politician).find(params[:id])
 
-    not_found unless @tweet.politician.status == 1
-    not_found unless @tweet.approved?
+    if @tweet.politician.status != 1 and @tweet.politician.status != 4 and not @tweet.approved 
+      not_found
+    end	
 
     respond_to do |format|
       format.html # show.html.erb
