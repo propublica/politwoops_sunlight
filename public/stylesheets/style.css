@@ -360,12 +360,13 @@ nav ul li:last-child{
 	text-decoration: line-through;
 	color: #7e7a75;
 }
-#terms{
+div.caveat p, #terms{
 	font-family: Georgia, serif;
 	color: #8a8079;
 	font-style: italic;
 	line-height: 1.6em;
 }
+div.caveat p {margin-bottom: 2em; }
 h2 {
 	font-family: "museo-slab", georgia, serif; 
 	font-size: 214%; 
