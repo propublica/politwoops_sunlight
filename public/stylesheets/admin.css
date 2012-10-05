@@ -90,3 +90,6 @@ div.admin_error {
 input { margin: 15px 0; }
 
 span.error { display: block;  }
+#admin-politician input { margin: 0}
+input.related { width: 250px; }
+input.state { width: 30px;} 
