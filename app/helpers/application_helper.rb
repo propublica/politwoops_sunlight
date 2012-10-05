@@ -33,6 +33,28 @@ module ApplicationHelper
     return list.min { |a,b| (a-value).abs <=> (b-value).abs }
   end
 
+  MINUTE = 60
+  HOUR = MINUTE * 60
+  DAY = HOUR * 24
+  WEEK = DAY * 7
+  def duration_abbrev(seconds)
+
+      (weeks, seconds) = seconds.divmod WEEK
+      (days, seconds) = seconds.divmod DAY
+      (hours, seconds) = seconds.divmod HOUR
+      (minutes, seconds) = seconds.divmod MINUTE
+      seconds = seconds.floor
+
+       clauses = [
+           ("#{weeks}w" if weeks > 0),
+           ("#{days}d" if days > 0),
+           ("#{hours}h" if hours > 0),
+           ("#{minutes}m" if minutes > 0),
+           ("#{seconds}s" if seconds > 0)
+       ]
+       clauses.join('')
+  end
+
   def relative_time(start_time)
     diff_seconds = Time.now - start_time
     case diff_seconds

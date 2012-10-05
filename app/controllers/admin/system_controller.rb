@@ -1,4 +1,5 @@
 class Admin::SystemController < Admin::AdminController
+  include ApplicationHelper
 
   def status
     # Checks heartbeat files found in the configuration.
@@ -12,12 +13,22 @@ class Admin::SystemController < Admin::AdminController
     @worker_statuses = expected_heartbeats.map do |w|
       path = File.join(configuration[:heartbeats_directory], w)
       exists = File.exists? path
+      traceback = nil
+      started = nil
       if exists 
+        begin
+          heartbeat_contents = File.new(path).read()
+          meta = JSON.parse(heartbeat_contents)
+          started = Time.parse(meta.fetch('started'))
+        rescue JSON::ParserError => e
+          traceback = heartbeat_contents
+        end
+
         mtime = File.mtime(path)
         ago = (Time.now - mtime).floor
         if ago < 0:
           status = 'restarting'
-        elsif ago <= configuration[:heartbeat_interval]
+        elsif ago <= (configuration[:heartbeat_interval] * 1.10) # Allow 10% error
           status = 'running'
         else
           status = 'dead'
@@ -28,7 +39,10 @@ class Admin::SystemController < Admin::AdminController
       {
         :worker => w,
         :status => status,
-        :last_seen => ago.nil? ? nil : mtime.to_s
+        :last_seen => ago.nil? ? nil : mtime.strftime("%Y-%m-%dT%H:%M:%S%z"),
+        :started => started.nil? ? nil : started.strftime("%Y-%m-%dT%H:%M:%S%z"),
+        :uptime => (status == 'running') ? duration_abbrev(mtime - started).to_s : nil,
+        :traceback => started.nil? ? traceback : nil
       }
     end
 
