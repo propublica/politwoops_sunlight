@@ -7,7 +7,6 @@ Politwoops::Application.routes.draw do
   match "user/:user_name" => "politicians#show", :as => :politician
   match "users/" => "politicians#all", :as => :all_politicians
   match "party/:name" => "parties#show", :as => :party
-  match "/404" => "errors#not_found"    
 
   namespace :admin do
     match "status" => "system#status"
@@ -33,4 +32,8 @@ Politwoops::Application.routes.draw do
 
     match "review/:id" => "tweets#review", :via => [:post], :as => "review_tweet"
   end
+  
+  match "404", :to => "errors#not_found"    
+  match "*anything", :to => "errors#not_found"    
+
 end
