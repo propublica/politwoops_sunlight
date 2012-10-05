@@ -14,7 +14,7 @@ class Admin::SystemController < Admin::AdminController
       exists = File.exists? path
       if exists 
         mtime = File.mtime(path)
-        ago = Time.now - mtime
+        ago = (Time.now - mtime).floor
         if ago < 0:
           status = 'restarting'
         elsif ago <= configuration[:heartbeat_interval]

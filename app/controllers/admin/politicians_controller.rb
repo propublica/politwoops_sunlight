@@ -11,7 +11,8 @@ class Admin::PoliticiansController < Admin::AdminController
     @parties = Party.all
     @offices = Office.all
     @account_types = AccountType.all
-    
+    @related = Politician.where(:id=> @politician.get_related_politicians())
+ 
     respond_to do |format|
       format.html { render }
     end
@@ -68,7 +69,24 @@ class Admin::PoliticiansController < Admin::AdminController
     if params[:suffix] != '' and params[:suffix].strip != ' ' then
       pol.suffix = params[:suffix]
     end
+    if params[:state] != '' and params[:state].strip != ' ' then
+      pol.state = params[:state]
+    end
+    
     pol.save()
+
+    if params[:related] != '' then
+      names = params[:related].split(',')
+      names.each do |uname|
+        begin
+          namepol = Politician.where(:user_name => uname.strip).first
+          pol.add_related_politician(namepol)
+        rescue
+          next
+        end
+      end
+    end
+
 
     redirect_to :back
   end
