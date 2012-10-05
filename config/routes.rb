@@ -7,7 +7,7 @@ Politwoops::Application.routes.draw do
   match "user/:user_name" => "politicians#show", :as => :politician
   match "users/" => "politicians#all", :as => :all_politicians
   match "party/:name" => "parties#show", :as => :party
-    
+  match "/404" => "errors#not_found"    
 
   namespace :admin do
     match "status" => "system#status"

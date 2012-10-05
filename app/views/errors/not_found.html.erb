@@ -1,0 +1,113 @@
+<style type="text/css">
+body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
+#container { width: 940px; padding: 0 10px; margin: 0 auto;}
+.textReplace { text-indent: -9999em; display: block;}
+h1 { height: 78px; width: 370px; float: left; margin-top: 40px; }
+h1 a { background: url(/images/logo.jpg) top left no-repeat; height: 78px; width: 370px; }
+header { margin: 10px 0 30px;
+padding-bottom: 60px;
+background: url(/images/bg_headerborder.png) center bottom no-repeat;
+height: 110px;}
+.clear { clear: both;}
+#error404 { background: url(/images/error_img.jpg) center top no-repeat; height: 182px; margin-top: 50px;}
+
+.crackBox a.cowButton{
+    display: block;
+    float: right;
+    height: 54px;
+    position: relative;
+    right: 144px;
+    top: 165px;
+    width: 332px;
+}
+
+@-moz-keyframes bubble {
+        0% { background-position: 0px 0px; }
+        100% {background-position: -9960px 0px;}
+}
+
+@-ms-keyframes bubble {
+        0% { background-position: 0px 0px; }
+        100% {background-position: -9960px 0px;}
+}
+
+@-webkit-keyframes bubble {
+        0% { background-position: 0px 0px; }
+        100% {background-position: -9960px 0px;}
+}
+
+
+a.cowButton #bubble {
+    background-image: url(/images/404_logo.png);
+    display: block;
+    margin-left: -65px;
+    margin-top: -48px;
+    height: 100px;
+    width: 332px;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-origin: padding-box;
+    background-position: -9960px 0px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+
+   
+    -webkit-animation-fill-mode: forwards;
+       -moz-animation-fill-mode: forwards;
+        -ms-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation: bubble 1s steps(30, end) 1;
+       -moz-animation: bubble 1s steps(30, end) 1;
+        -ms-animation: bubble 1s steps(30, end) 1;
+
+/*
+    animation-name: bubble;
+        animation-duration: .4s;
+        animation-timing-function: steps(18, end), ease;
+        animation-delay: 3s;
+        animation-iteration-count: 1, 1;
+        animation-direction: normal, normal;
+        animation-fill-mode: forwards;
+        -moz-animation-name: bubble;
+        -moz-animation-duration: .4s;
+        -moz-animation-timing-function: steps(18, end), ease;
+        -moz-animation-delay: 3s;
+        -moz-animation-iteration-count: 1, 1;
+        -moz-animation-direction: normal, normal;
+        -moz-animation-fill-mode: forwards;
+        -webkit-animation-name: bubble;
+        -webkit-animation-duration: .4s;
+        -webkit-animation-timing-function: steps(18, end), ease;
+        -webkit-animation-delay: 3s;
+        -webkit-animation-iteration-count: 1, 1;
+        -webkit-animation-direction: normal, normal;
+        -webkit-animation-fill-mode: forwards;
+
+        */
+}
+
+</style>
+
+
+<% content_for :body_class do %> class="404" <% end %>
+
+
+<!-- This file lives in public/404.html -->
+<div id="container">
+
+        <header>
+                <h1><a class="textReplace" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
+        </header>  
+        <div id="error404" class="clear textReplace">
+                <h2>404 error</h2>
+                <p>Oops! Looks like you've landed on a page that no longer exists</p>
+        </div>  
+        <p>Go back to the <a href="/">home page</a> and try again.</p>
+</div>
+<div class="crackBox">
+        <a class="cowButton" href="">
+                        <div id="bubble"></div>
+        </a>
+</div>
+
