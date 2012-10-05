@@ -1,16 +1,40 @@
 <style type="text/css">
-body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-#container { width: 940px; padding: 0 10px; margin: 0 auto;}
-.textReplace { text-indent: -9999em; display: block;}
-h1 { height: 78px; width: 370px; float: left; margin-top: 40px; }
-h1 a { background: url(/images/logo.jpg) top left no-repeat; height: 78px; width: 370px; }
-header { margin: 10px 0 30px;
-padding-bottom: 60px;
-background: url(/images/bg_headerborder.png) center bottom no-repeat;
-height: 110px;}
-.clear { clear: both;}
-#error404 { background: url(/images/error_img.jpg) center top no-repeat; height: 182px; margin-top: 50px;}
+h1 { display: none;}
 
+.clear { clear: both;}
+.daisies {
+    background: url(/images/twoopsiedaisies.png) 20px top no-repeat;
+    padding-left: 155px;
+    margin-top: 60px;
+}
+.daisies h3{
+	width: 100%;
+	border-bottom: 1px dotted #d6dcdc;
+	line-height: 2.5em;
+}
+.daisies h2{
+	width: 100%;
+	border-top: 1px dotted #ffffff;
+	line-height: 2.5em;
+	margin-bottom: 0;
+}
+.daisies p{
+	font-size: 128%;
+	line-height: 1.6em;
+	font-family: "museo-slab", georgia, serif;
+	font-weight: 300;
+	color: #403D39;
+	margin-top: -15px;
+}
+
+#rtColumn{
+	position: relative;
+}
+.crackBox{
+	position: absolute;
+	left: -33px;
+	top: -309px;
+}
 .crackBox a.cowButton{
     display: block;
     float: right;
@@ -20,6 +44,8 @@ height: 110px;}
     top: 165px;
     width: 332px;
 }
+
+
 
 @-moz-keyframes bubble {
         0% { background-position: 0px 0px; }
@@ -84,30 +110,27 @@ a.cowButton #bubble {
         -webkit-animation-direction: normal, normal;
         -webkit-animation-fill-mode: forwards;
 
-        */
+*/
 }
 
 </style>
 
 
-<% content_for :body_class do %> class="404" <% end %>
+<% content_for :body_class do %> class="error404" <% end %>
 
 
 <!-- This file lives in public/404.html -->
-<div id="container">
-
-        <header>
-                <h1><a class="textReplace" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
-        </header>  
-        <div id="error404" class="clear textReplace">
-                <h2>404 error</h2>
-                <p>Oops! Looks like you've landed on a page that no longer exists</p>
-        </div>  
-        <p>Go back to the <a href="/">home page</a> and try again.</p>
-</div>
 <div class="crackBox">
         <a class="cowButton" href="">
-                        <div id="bubble"></div>
+        	<h1 id="bubble"></h1>
         </a>
 </div>
+
+<div class="daisies">
+    <h3>404 error</h3>
+    <h2>Twoopsie Daisies!</h2>
+    <p>Looks like you've landed on a page that no longer exists</p>
+    <p>Go back to the <a href="/">home page</a> and try again.</p>
+</div>  
+
 
