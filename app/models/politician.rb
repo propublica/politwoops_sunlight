@@ -11,7 +11,7 @@ class Politician < ActiveRecord::Base
   has_many :account_links
   has_many :links, :through => :account_links 
    
-  default_scope :order => 'user_name'
+  #default_scope :order => 'user_name'
 
   scope :active, :conditions => ["status = 1 OR status = 4"]
   
