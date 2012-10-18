@@ -78,11 +78,15 @@ class Admin::PoliticiansController < Admin::AdminController
     if params[:related] then
       names = params[:related].split(',')
       names.each do |uname|
-        begin
-          namepol = Politician.where(:user_name => uname.strip).first
-          pol.add_related_politician(namepol)
-        rescue
-          next
+      if uname.length > 0 and uname != ' ' and uname.strip != '' then
+          begin
+            namepol = Politician.where(:user_name => uname.strip).first
+            if namepol then
+              pol.add_related_politician(namepol)
+            end
+          rescue
+            next
+          end
         end
       end
     end

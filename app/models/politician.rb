@@ -18,9 +18,11 @@ class Politician < ActiveRecord::Base
   validates_uniqueness_of :user_name
 
   def add_related_politician(related)
-    unless AccountLink.where(:politician_id => related, :link_id => self).length > 0
-      al = AccountLink.where(:politician_id => self, :link_id => related).first_or_create()
-      al.save()
+    if related != nil then
+      unless AccountLink.where(:politician_id => related, :link_id => self).length > 0
+        al = AccountLink.where(:politician_id => self, :link_id => related).first_or_create()
+        al.save()
+      end
     end
 
   end
