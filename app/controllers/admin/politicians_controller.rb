@@ -75,7 +75,7 @@ class Admin::PoliticiansController < Admin::AdminController
     
     pol.save()
 
-    if params[:related] != '' then
+    if params[:related] then
       names = params[:related].split(',')
       names.each do |uname|
         begin

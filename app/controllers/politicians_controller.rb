@@ -48,7 +48,7 @@ class PoliticiansController < ApplicationController
     @filter_action = "/users"
 
     #get all politicians that we're showing
-    @politicians = @politicians.where(:status => [1, 4]).paginate(:page => params[:page], :per_page => @per_page)
+    @politicians = @politicians.unscoped.order('last_name').where(:status => [1, 4]).paginate(:page => params[:page], :per_page => @per_page)
 
     respond_to do |format|
       format.html {render}
