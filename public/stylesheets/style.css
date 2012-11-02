@@ -807,7 +807,7 @@ footer .tip {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 }
-.btn-sunlight {
+button.btn-sunlight {
 	border: 3px solid #E9E8E3;
 	font-family: "Georgia", "Times New Roman", "Times", serif;
 	font-style: normal;
@@ -847,7 +847,7 @@ footer .tip {
 	margin-top: -8px;
 }
 
-.btn-sunlight:hover {
+button.btn-sunlight:hover {
 	color: #333;
 	text-decoration: none;
 	background-color: #E6E6E6;
@@ -858,11 +858,11 @@ footer .tip {
 	-o-transition: background-position .1s linear;
 	transition: background-position .1s linear;
 }
-.btn-sunlight:hover, .btn-sunlight:active, .btn-sunlight.active, .btn-sunlight.disabled, .btn-sunlight[disabled] {
+button.btn-sunlight:hover, button.btn-sunlight:active, button.btn-sunlight.active, button.btn-sunlight.disabled, button.btn-sunlight[disabled] {
 	color: #FDFCFB;
 	background-color: #BA5300;
 }
-.btn-sunlight:active, .btn-sunlight.active {
+button.btn-sunlight:active, button.btn-sunlight.active {
 	background-color: #BA5300;
 	background-color: #BA5300 9;
 }
