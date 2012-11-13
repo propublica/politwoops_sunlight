@@ -6,11 +6,11 @@
 
 <% link_to("Refresh", :action => 'status', :controller => 'admin/system') %>
 
-<div>
+<div class="clear">
     Last tweet seen <%= time_ago_in_words( @last_tweet.created ) %> ago.
 </div>
 
-<ul id="worker-list">
+<ul id="worker-list" class="clear">
     <% @worker_statuses.each do |status| %>
         <li>
         <form
@@ -34,3 +34,20 @@
         </li>
     <% end %>
 </ul>
+
+<table id="queue-list" class="clear">
+    <thead>
+        <tr>
+            <th>Queue</th>
+            <th>Pending Jobs</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @queue_stats.each do |stats| %>
+        <tr>
+            <td><%= stats[0] %></td>
+            <td class="numeric"><%= stats[1].nil? ? 0 : stats[1]['current-waiting'] %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>

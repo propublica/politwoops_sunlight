@@ -48,9 +48,17 @@ class Admin::SystemController < Admin::AdminController
 
     @last_tweet = Tweet.order("modified DESC").first
 
+    @queue_stats = []
+    queues = configuration.fetch(:beanstalk_queues, nil)
+    if queues
+      beanstalk = Beanstalk::Pool.new(['localhost:11300'])
+      tubes = beanstalk.list_tubes.map {|k,v| v} .flatten
+      @queue_stats = queues.map {|q| [ q, (q.in? tubes or nil and beanstalk.stats_tube(q)) ] }
+    end
+
     respond_to do |format|
       format.html { render :template => "admin/system/status" }
-      format.json { render :json => { :workers => @worker_statuses, :last_tweet => @last_tweet.format } }
+      format.json { render :json => { :workers => @worker_statuses, :last_tweet => @last_tweet.format, :queue_stats => @queue_stats } }
     end
   end
 
