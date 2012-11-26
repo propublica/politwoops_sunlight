@@ -16,7 +16,7 @@
   	    <span><a class="accountHandle linkUnderline" href="/user/<%= tweet.politician.user_name %>">@<%= tweet.politician.user_name %></a></span>
 	    </h4>
 	    <% if tweet.politician.status ==  4 %>
-        <div class="inactiveMess">This account is no longer active.</div> 
+        <div class="inactiveMess">The original account is no longer active.</div> 
         <% end %>
 
       <%= format_tweet(tweet).to_s.html_safe %>
