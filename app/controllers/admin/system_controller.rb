@@ -46,7 +46,7 @@ class Admin::SystemController < Admin::AdminController
       }
     end
 
-    @last_tweet = Tweet.order("modified DESC").first
+    @last_tweet = Tweet.with_content.order("modified DESC").first
 
     @queue_stats = []
     queues = configuration.fetch(:beanstalk_queues, nil)
