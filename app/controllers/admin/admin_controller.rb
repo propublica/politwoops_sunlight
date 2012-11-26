@@ -13,8 +13,10 @@ class Admin::AdminController < ApplicationController
                                :only_path => true)
     status_json = request_url.path == status_json_path
 
-    ip = (request.env['HTTP_X_FORWARDED_FOR'] or request.remote_ip)
-    from_monitoring_host = configuration[:monitoring_hosts].include? ip
+    ips = (request.env['HTTP_X_FORWARDED_FOR'] or request.remote_ip).split(',')
+    ips = Set::new ips
+    monitoring_ips = Set::new configuration[:monitoring_hosts]
+    from_monitoring_host = (ips.intersection(monitoring_ips).size > 0)
     monitoring_request = (status_json and from_monitoring_host)
 
     unless (params[:format] == "rss" or monitoring_request)
