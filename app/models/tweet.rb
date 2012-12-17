@@ -23,7 +23,7 @@ class Tweet < ActiveRecord::Base
     {
       :created_at => created,
       :updated_at => modified,
-      :id => id.to_s,
+      :id => (id and id.to_s),
       :politician_id => politician_id,
       :details => details,
       :content => content,

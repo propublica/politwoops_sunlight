@@ -93,3 +93,8 @@ span.error { display: block;  }
 #admin-politician input { margin: 0}
 input.related { width: 250px; }
 input.state { width: 30px;} 
+
+table#queue-list { margin-top: 30px; }
+table#queue-list tr td:first-child { padding-right: 1em; }
+td.numeric { text-align: right; }
+

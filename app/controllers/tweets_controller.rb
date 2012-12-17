@@ -38,7 +38,7 @@ class TweetsController < ApplicationController
     @per_page = closest_value((params.fetch :per_page, 0).to_i, @per_page_options)
     @page = [params[:page].to_i, 1].max
 
-    @tweets = @tweets.includes(:politician => [:party]).paginate(:page => params[:page], :per_page => @per_page)
+    @tweets = @tweets.includes(:tweet_images, :politician => [:party]).paginate(:page => params[:page], :per_page => @per_page)
 
     respond_to do |format|
       format.html # index.html.erb
