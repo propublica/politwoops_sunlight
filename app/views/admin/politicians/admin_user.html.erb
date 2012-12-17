@@ -66,7 +66,8 @@
   <li>
   Related accounts:<span>
   <input class="related" type="text" name="related" value="<% @related.each do |r| %><%=r.user_name%>,<% end %> " /></span>
-  <li>
+  </li>
+  <li>This user has <strong><em><%= @unmoderated %> </em></strong> unmoderated tweets. (Unapprove? <input name="unapprove_all" type="checkbox" style="vertical-align:middle;" />)</li>
   <li>
     <button type="submit" value="Save">Save</button>
   </li>

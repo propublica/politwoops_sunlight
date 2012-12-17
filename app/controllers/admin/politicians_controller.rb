@@ -12,6 +12,8 @@ class Admin::PoliticiansController < Admin::AdminController
     @offices = Office.all
     @account_types = AccountType.all
     @related = Politician.where(:id=> @politician.get_related_politicians())
+    
+    @unmoderated = DeletedTweet.where(:reviewed=>false, :politician_id => @politician).length
  
     respond_to do |format|
       format.html { render }
@@ -74,6 +76,18 @@ class Admin::PoliticiansController < Admin::AdminController
     end
     
     pol.save()
+
+    if params[:unapprove_all] and params[:unapprove_all] == 'on' then
+        unmod = DeletedTweet.where(:reviewed=>false, :politician_id => pol)
+        unmod.each do |utweet|
+            utweet.approved = 0
+            utweet.review_message = "Bulk unapproved in admin"
+            utweet.reviewed = 1
+            utweet.reviewed_at = Time.now 
+            utweet.save()
+
+        end
+    end
 
     if params[:related] then
       names = params[:related].split(',')
