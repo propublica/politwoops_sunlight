@@ -268,7 +268,7 @@ nav {
 nav ul{
 	position: absolute;
 	top: 0;
-	right: 135px;
+	right: 195px;
 	margin-top: 14px;
 }	
 nav ul li{
@@ -285,7 +285,7 @@ nav ul li:last-child{
 }
 #socialMedia { 
 	position: absolute;
-	width: 115px;
+	width: 180px;
 	top: 15px;
 	right: 0;
 }

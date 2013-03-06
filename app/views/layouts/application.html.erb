@@ -41,24 +41,24 @@
   </div>
   <script>
     $(document).ready(function() {
-        var ua = new gigya.socialize.UserAction();
-        ua.setTitle($('title').text());
+        /*var ua = new gigya.socialize.UserAction();
+        ua.setTitle($('title').text());*/
         /*
          * Set these values as you would with Open Graph tags on the page.
          * Delete what you don't need.
          */
         // ua.setLinkBack("http://sunlightfoundation.com/blog/2012/07/09/2day-in-opengov-792012/");
-        ua.addMediaItem({
+     /*   ua.addMediaItem({
             type: 'image',
             href: '<%= escape_javascript request.url %>',
             src: 'http://politwoops.sunlightfoundation.com/images/logo.jpg'
         });
-        
+    */    
         /*
          * parameter docs at:
          * http://developers.gigya.com/020_Client_API/020_Methods/socialize.showShareBarUI
          */
-        var params = {
+  /*      var params = {
             containerID: 'socialMedia',
             iconsOnly: true,
             layout: 'horizontal',
@@ -69,7 +69,7 @@
             userAction: ua
         };
         gigya.socialize.showShareBarUI(params);
-
+*/
         $("a.screenshot").each(function(idx, a){
             $(a).colorbox({
                 rel: 'screenshot' + idx,
@@ -101,8 +101,9 @@
 					</li> 
 				</ul>
 				<div id="socialMedia" style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; visibility: visible;">
-					<script type="text/javascript" src="http://cdn.gigya.com/js/gigyaGAIntegration.js" ></script>
-					<script src="http://cdn.gigya.com/js/socialize.js?apiKey=3_BLRB_2LlQJZDUW1wb9_ZOps-sOnnzA_e6xxNSwJBBGoB-SavmPAKHkaVVZPE5Kx8"></script>
+                                        <div class="share-buttons" data-socialite="auto" data-services="twitter-tweet, facebook-like" data-options="linkback="<%= escape_javascript request.url %>" data-facebook-like-options="width=100&amp;colorscheme=light&amp;show-faces=false&amp;layout=button_count">
+                                        </div> 
+
 				</div>
 			</nav>
 			<h1><a class="textReplace clear" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
@@ -154,7 +155,7 @@
                 </div>
             </div>
         </footer>
-
+        <script type="text/javascript" src="https://s3.amazonaws.com/assets.sunlightfoundation.com/social/scripts/simple-socialite-pack.min.js"></script>
 	<%= render :partial => "layouts/analytics" %>
 	</body>
 </html>

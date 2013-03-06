@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'mysql2', '0.3.11'
 
-gem 'httparty' # used for syncing Twitter avatars
+gem 'httparty', '~> 0.10.0' # used for syncing Twitter avatars
 
 # interacting with Twitter
 gem "twitter"
