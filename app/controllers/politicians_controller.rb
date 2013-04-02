@@ -2,7 +2,9 @@ class PoliticiansController < ApplicationController
 
   include ApplicationHelper
 
-  caches_action :show
+  caches_action :show,
+    :expires_in => 5.minutes,
+    :if => proc { (params.keys - ['format', 'action', 'controller']).empty? }
 
   def show
     @per_page_options = [20, 50]
