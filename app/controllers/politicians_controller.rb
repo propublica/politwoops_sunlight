@@ -2,6 +2,8 @@ class PoliticiansController < ApplicationController
 
   include ApplicationHelper
 
+  caches_action :show
+
   def show
     @per_page_options = [20, 50]
     @per_page = closest_value((params.fetch :per_page, 0).to_i, @per_page_options)
