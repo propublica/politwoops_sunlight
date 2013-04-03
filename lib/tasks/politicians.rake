@@ -93,97 +93,83 @@ namespace :politicians do
     require 'csv'
     require 'twitter'
  
-    #expected format is Name (not used, placeholder ), Office, State, Twitter Username, Party, Account Type, Linked Twitter Accounts
     separator = ENV['CSV_SEPARATOR'] || ','
+    csv_file=ENV['CSV'] || 'egytweeps.csv'
     links = []
     usernames = {}
 
-    CSV.open(ENV['CSV'], 'r', separator) do |row|
-    
-      #skip header row if it exists
-      if row[0] == 'First Name' then
-        next
-      end 
+    #Expected:
+    # serial, twitter_handler, image_url, position, party_name, suffix, first_name, middle_name, last_name, twitter_url
+    # example:
+    #1,ElBaradei,https://si0.twimg.com/profile_images/2323143814/w8adhyx5nomw2rj2yp2u.jpeg,مؤسس,الدستور,
+    #د.,محمد,,البرادعي,https://twitter.com/ElBaradei
 
-      twitter_user = row[6].downcase.strip
-      if row[4] then
-        office = Office.where(:title => row[4].downcase.strip).first
-      end
 
-      if row[0] then
-        first = row[0].strip
-      end
-    
-      if row[1] then
-        middle = row[1].strip
-      end
+    puts "Reading CSV Files #{csv_file}"
 
-      if row[2] then
-        last = row[2].strip
-      end
-    
-      if row[3] then
-        suffix = row[3].strip
-      end
-
-      if row[5] then 
-        state = row[5].upcase.strip
-      end
+    CSV.open(csv_file, 'r', separator) do |row|
       
-      if row[7] then 
-        party = Party.where(:name => row[7].strip).first
-      end
+      serial, twitter_user, image_url, office_title, party_name, suffix, first_name, middle_name, last_name, twitter_url = row
+      next if serial.to_i.zero? or twitter_user.blank?
 
-      if row[8] then 
-        account = AccountType.where(:name => row[8].downcase.strip).first
-      end
-     
-      if row[9] then  
-        for l in row[9].split('|')
-          links.push([ twitter_user, l.downcase.strip ])
+      #Cleaning
+      [serial, twitter_user, image_url, office_title, party_name, suffix, 
+        first_name, middle_name, last_name, twitter_url].each do |x|
+          x.strip! unless x.nil?
         end
-      end
 
       pol = { 'user_name' => twitter_user} 
-      pol['first_name'] = first || nil
-      pol['middle_name'] = middle || nil
-      pol['last_name'] = last || nil
-      pol['suffix'] = suffix || nil
-      pol['office'] = office || nil
-      pol['state'] = state || nil
-      pol['account'] = account || nil
-      pol['party'] = party || nil
-      usernames[twitter_user] = pol
-    end   
+
+      pol.merge!({
+          'image_url'=>image_url,
+          'suffix'=>suffix,
+          'first_name'=>first_name,
+          'middle_name'=>middle_name,
+          'last_name'=>last_name,
+          'twitter_url' => twitter_url ,
+          'office_title'=> office_title,
+          'party_name'=>party_name
+        })
+      
+      usernames[twitter_user.downcase] = pol
+      print "."
+    end   # Ending CSV Parsing
 
     twitter_users = Twitter::users(usernames.keys)
-    puts "twitter user length %s" % twitter_users.length
+    puts "\ntwitter user length %s, processing tweeps data" % twitter_users.length
     twitter_users.each do |tu| 
-#    usernames.keys.each do |name|       
-#        pol = usernames[name]
         pol = usernames[tu.screen_name.downcase]
         pol['twitter_id'] = tu.id
+
+        office = nil
+        office_title = pol['office_title']
+        office = Office.find_or_create_by_title(office_title, {:abbreviation=>office_title}) unless office_title.blank?
+
+        party=nil
+        party_name = pol['party_name']
+        party=Party.find_or_create_by_name(party_name, :display_name=>party_name) unless party_name.blank?
       
-#        newpol = Politician.where(:user_name => name).first 
         newpol = Politician.where(:twitter_id => pol['twitter_id'], :user_name => pol['user_name']).first_or_create()
         newpol.first_name = pol['first_name']
         newpol.middle_name = pol['middle_name']
         newpol.last_name = pol['last_name']
         newpol.suffix = pol['suffix']
-        newpol.office = pol['office']
+        newpol.profile_image_url = pol['image_url']
+        newpol.office = office
         newpol.state = pol['state']
         newpol.account_type = pol['account']
-        newpol.party = pol['party']
+        newpol.party = party
         newpol.save()   
-        
+        print '.'
     end
-
-    #after all new users are entered, link them
-    links.each do |l|
-        p1 = Politician.where(:user_name => l[0]).first
-        p2 = Politician.where(:user_name => l[1]).first
-        p1.add_related_politician(p2)    
-    end
+    # #after all new users are entered, link them
+    # #no longer used with the new format
+    # links.each do |l|
+    #     p1 = Politician.where(:user_name => l[0]).first
+    #     p2 = Politician.where(:user_name => l[1]).first
+    #     p1.add_related_politician(p2)    
+    # end
+    puts "\nDone"
   end
 
   task :reset_avatars => :environment do
