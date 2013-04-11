@@ -27,9 +27,17 @@
   </li>
   <li> Status: <span>
     <select name="status">
-    <% [1, 2, 3, 4].each do |stat| %>
+
+    <% 
+      status = { 1 => 'Active, showing tweets',
+           2 => 'Collecting tweets, not showing',
+           3 => 'Not collecting or showing tweets',
+           4 => 'not collecting, but showing historical tweets',
+         }
+    %>
+    <% status.each do |stat,desc| %>
         <option value="<%=stat%>" >
-            <%= stat %>
+            <%= desc %>
         </option>
     <% end %>
     </select>
