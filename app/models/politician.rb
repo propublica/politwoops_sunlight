@@ -17,6 +17,10 @@ class Politician < ActiveRecord::Base
   
   validates_uniqueness_of :user_name
 
+  validates :party, :presence => true
+  validates :office, :presence => true
+  validates :account_type, :presence => true
+
   def add_related_politician(related)
     unless AccountLink.where(:politician_id => related, :link_id => self).length > 0
       al = AccountLink.where(:politician_id => self, :link_id => related).first_or_create()
