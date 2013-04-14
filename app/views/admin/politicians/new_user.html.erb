@@ -2,12 +2,12 @@
 
 <form id="admin-politician" action="/admin/user/0/save" method="POST">
 
-<% if !@pol.nil? && @pol.errors.any? %>
+<% if !@politician.nil? && @politician.errors.any? %>
   <div id="errorExplanation">
-    <h2><%= pluralize(@pol.errors.count, "error") %> prohibited
-        this post from being saved:</h2>
+    <h2><%= pluralize(@politician.errors.count, "error") %> prohibited
+        this politician from being saved:</h2>
     <ul>
-    <% @pol.errors.full_messages.each do |msg| %>
+    <% @politician.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>
@@ -17,22 +17,22 @@
 <input type="hidden" name="twitter_id" id="twitter_id" value="" />
 <ul>
   <li>User Name:
-    <input id="user_name_input" name="user_name" value="<%= @pol['user_name'] %>" style="float:right;"/>
+    <input id="user_name_input" name="user_name" value="<%= @politician['user_name'] %>" style="float:right;"/>
   </li>
   <li>
     Display Name (first, mid, last, suffix):<br />
     <span style="float:right;"> 
-    <input id="first_name_input"  name="first_name" value="<%= @pol['first_name'] %>" />
-    <input id="middle_name_input" name="middle_name" value="<%= @pol['middle_name'] %>" />
-    <input id="last_name_input"  name="last_name" value="<%= @pol['last_name'] %>" />
-    <input id="suffix_input" name="suffix" value="<%= @pol['suffix'] %>" />
+    <input id="first_name_input"  name="first_name" value="<%= @politician.first_name %>" />
+    <input id="middle_name_input" name="middle_name" value="<%= @politician.middle_name %>" />
+    <input id="last_name_input"  name="last_name" value="<%= @politician.last_name %>" />
+    <input id="suffix_input" name="suffix" value="<%= @politician.suffix %>" />
     </span>
   </li>
   <li>
     Party:  <span>
     <select name="party_id">
     <% @parties.each do |party| %>
-        <option value="<%=party.id%>" <% if party.id == @pol['party_id']%> SELECTED <% end %> > 
+        <option value="<%=party.id%>" <% if party.id == @politician.party_id%> SELECTED <% end %> > 
             <%=party.name.upcase %>
         </option>
     <% end %>
@@ -50,7 +50,7 @@
          }
     %>
     <% status.each do |stat,desc| %>
-        <option value="<%=stat%>" <% if stat == @pol['party_id']%> SELECTED <% end %> >
+        <option value="<%=stat%>" <% if stat == @politician.party_id %> SELECTED <% end %> >
             <%= desc %>
         </option>
     <% end %>
@@ -59,7 +59,7 @@
   </li>
 
   <li>
-    State: <input type="text" id="state" name="state" style="float:right;">
+    State: <input type="text" id="state" name="state" value=<%= @politician.state %> style="float:right;">
   </li>
  
   <li> Account Type: <span>
@@ -95,6 +95,7 @@
 <script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/hmac-sha1.js"></script>
 <script type="text/javascript" charset="utf-8">
     jQuery("#user_name_input").change(function(){
+        alert('changed');
         var screen_name = jQuery(this).val();
         jQuery.ajax({
             url: '/admin/users/get-twitter-id/'+ screen_name + '.json', 
@@ -113,6 +114,5 @@
             });
 
     });
-
 
 </script>
