@@ -48,18 +48,25 @@ class Admin::PoliticiansController < Admin::AdminController
       @politician.user_name = params[:user_name]
     end
 
-    @politician.party = Party.find(params[:party_id])
+    if params[:party_id] == '0'
+      @politician.party = nil
+    else
+      @politician.party = Party.find(params[:party_id])
+    end
+
     @politician.status = params[:status]
     if params[:account_type_id] == '0' then
       @politician.account_type = nil
     else
       @politician.account_type = AccountType.find(params[:account_type_id])
     end
+    
     if params[:office_id] == '0' then
       @politician.office = nil
     else
       @politician.office = Office.find(params[:office_id])
     end
+    
     if params[:first_name] != '' and params[:first_name].strip != ' ' then
       @politician.first_name = params[:first_name]
     end
@@ -71,9 +78,6 @@ class Admin::PoliticiansController < Admin::AdminController
     end
     if params[:suffix] != '' and params[:suffix].strip != ' ' then
       @politician.suffix = params[:suffix]
-    end
-    if params[:state] != '' and params[:state].strip != ' ' then
-      @politician.state = params[:state]
     end
     
     if @politician.save

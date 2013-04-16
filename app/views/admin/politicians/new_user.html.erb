@@ -31,8 +31,9 @@
   <li>
     Party:  <span>
     <select name="party_id">
+        <option value="0"></option>
     <% @parties.each do |party| %>
-        <option value="<%=party.id%>" <% if party.id == @politician.party_id%> SELECTED <% end %> > 
+        <option value="<%=party.id%>" >
             <%=party.name.upcase %>
         </option>
     <% end %>
@@ -41,7 +42,6 @@
   </li>
   <li> Status: <span>
     <select name="status">
-
     <% 
       status = { 1 => 'Active, showing tweets',
            2 => 'Collecting tweets, not showing',
@@ -56,10 +56,6 @@
     <% end %>
     </select>
     </span>
-  </li>
-
-  <li>
-    State: <input type="text" id="state" name="state" value="<%= @politician.state %>" style="float:right;">
   </li>
  
   <li> Account Type: <span>
@@ -90,12 +86,9 @@
 </ul>
 </form>
 
-<span><em> Status Key: <ul><li> 1 = Active, showing tweets</li><li> 2 = Collecting tweets, not showing</li><li> 3 = Not collecting or showing tweets</li><li> 4 = not collecting, but showing historical tweets</li></ul></em></span>
-
 <script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/hmac-sha1.js"></script>
 <script type="text/javascript" charset="utf-8">
     jQuery("#user_name_input").change(function(){
-        alert('changed');
         var screen_name = jQuery(this).val();
         jQuery.ajax({
             url: '/admin/users/get-twitter-id/'+ screen_name + '.json', 

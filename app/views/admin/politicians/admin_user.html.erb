@@ -32,9 +32,10 @@
   <li>
     Party:  <span>
     <select name="party_id">
+      <option value="0">
     <% @parties.each do |party| %>
         <option value="<%=party.id%>" 
-            <% if party.id == @politician.party.id then %> selected <% end %> > 
+            <% if party != nil and party.id == @politician.party_id %> selected <% end %> > 
             <%=party.name.upcase %>
         </option>
     <% end %>
@@ -58,10 +59,6 @@
       <% end %>
     </select>
     </span>
-  </li>
-
-  <li>
-    State: <span><input class="state" type="text" name="state" value="<%=@politician.state %>" /></span>
   </li>
  
   <li> Account Type: <span>
@@ -88,7 +85,8 @@
   </li>
   <li>
   Related accounts:<span>
-  <input class="related" type="text" name="related" value="<% @related.each do |r| %><%=r.user_name%>,<% end %> " /></span>
+  <input class="related" type="text" name="related" value="<% @related.each do |r| %><%=r.user_name%>,
+  <% end %> " /></span>
   <li>
   <li>
     <button type="submit" value="Save">Save</button>
