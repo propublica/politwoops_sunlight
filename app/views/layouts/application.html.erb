@@ -10,8 +10,6 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
 
-	
-
 	<%= stylesheet_link_tag "colorbox" %>
 
 	<%= stylesheet_link_tag "style" %>
@@ -28,13 +26,6 @@
 	<%= content_for :feeds %>
 </head>
 <body<%if content_for?(:body_class) %> <%= yield(:body_class) %> <% end %>>
-  <div class="sf-header">
-      <div class="container">
-          
-          <a class="sf-logo" href="http://www.sunlightfoundation.com">Sunlight Foundation</a>
-          
-      </div>
-  </div>
   <script>
     $(document).ready(function() {
         var ua = new gigya.socialize.UserAction();
@@ -84,72 +75,47 @@
 
 	<div class="container">
 		<header>
-			<nav>
-				<ul>
-					<li>
-						<a href="/users">Politicians</a>
-					</li>
-					<li>
-						<a href="http://sunlightfoundation.com/blog/2012/05/30/announcing-politwoops/">More information</a>
-					</li>
-					<li>
-						<a href="mailto:twoops@sunlightfoundation.com">Contact us</a>
-					</li> 
-				</ul>
-				<div id="socialMedia" style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; visibility: visible;">
-					<script type="text/javascript" src="http://cdn.gigya.com/js/gigyaGAIntegration.js" ></script>
-					<script src="http://cdn.gigya.com/js/socialize.js?apiKey=3_BLRB_2LlQJZDUW1wb9_ZOps-sOnnzA_e6xxNSwJBBGoB-SavmPAKHkaVVZPE5Kx8"></script>
-				</div>
-			</nav>
 			<h1><a class="textReplace clear" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
 			<form action="/" method="get" id="search">
 				<input type="search" placeholder="Search" name="q" value="<%= h params[:q] %>"/>
 				<button class="textReplace" id="searchBtn">search</button>
 			</form>
+            <div id="socialMedia" style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; visibility: visible;">
+                <script type="text/javascript" src="http://cdn.gigya.com/js/gigyaGAIntegration.js" ></script>
+                <script src="http://cdn.gigya.com/js/socialize.js?apiKey=3_BLRB_2LlQJZDUW1wb9_ZOps-sOnnzA_e6xxNSwJBBGoB-SavmPAKHkaVVZPE5Kx8"></script>
+            </div>
 			<div class="clear"></div>
 
 		</header>
-		<div id="ltColumn">
-			<img class="twoopsters" src="/images/twoopsters.png">
-			<div class="module">
-				<p id="intro">
-					<strong>Sure</strong>, we all tweet things we don't <span class="strikethrough">men</span> mean to share, but now politicians have no way to hide them. <strong>Discover tweets that your politicians shared and then deleted.</strong>
-				</p>
-				<p id="terms">
-				To meet the <a href="https://dev.twitter.com/terms/api-terms">Twitter API Terms of Service</a>, all deleted tweets shown here since June 22, 2012 have been reviewed and approved by the Sunlight Foundation.
-				</p>
-			</div>
-			<div class="module">
-				<h4>Original Dutch version:</h4>
-				<a href="http://politwoops.nl">Politwoops.nl</a>
-			</div>
-		</div>
-
-		<div id="rtColumn">
+		<div id="container">
 			<%= yield %>
 		</div>
 
 		<div class="clear"></div>
 	</div>
 
-	<footer>
+    <div id="footerWrapper">
+	   <footer>
             <div class="container">
-                <div class="signup">
-                    <h4>Like this Project and Want to Discover Others Like It?</h4>
-                    <span class="tip">Join the Sunlight Foundation's open government community to learn more</span>
-                    <form action="/subscribe/" method="post" id="sfapp-subscribe-form" class="form-inline">
-                        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="y42oYsUK2EGBAkFj265Bv8Q4BqDCNS8S"></div>
-                        <input type="text" name="email" placeholder="your email address">
-                        <input type="text" name="zipcode" placeholder="your zip code">
-                        <button type="submit" class="btn btn-sunlight">Sign Up</button>
-                    </form>
-                </div>
-                <div class="span6 terms">
-                    <p>Our <a href="http://sunlightfoundation.com/legal/privacy/">privacy policy</a> details how personally identifiable information that is collected on our web sites is handled. Read our <a href="http://sunlightfoundation.com/legal/terms/">terms of service</a>.</p>
-                    <p>This work by <a href="http://sunlightfoundation.com">Sunlight Foundation</a>, unless <a href="http://sunlightfoundation.com/colophon/">otherwise noted</a>, is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 United States License</a>.</p>
-                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="/users">Politicians</a>
+                        </li>
+                        <li>
+                            <a href="http://sunlightfoundation.com/blog/2012/05/30/announcing-politwoops/">More information</a>
+                        </li>
+                        <li>
+                            <a href="mailto:twoops@sunlightfoundation.com">Contact us</a>
+                        </li> 
+                    </ul>   
+                </nav>
+                <p style="text-align:center">
+                © 2013              eSpace Technologies. All Rights Reserved.
+                </p>
             </div>
         </footer>
+    </div>
 
 	<%= render :partial => "layouts/analytics" %>
 	</body>

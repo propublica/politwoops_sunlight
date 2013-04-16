@@ -154,8 +154,10 @@ body {
 	position: relative;
 }
 #rtColumn { 
+	/*
 	width: 672px; 
 	float: left;
+	*/
 	padding-left: 26px;
 }
 
@@ -266,10 +268,11 @@ nav {
 	position: relative;
 }
 nav ul{
-	position: absolute;
+	/*position: absolute;
 	top: 0;
 	right: 135px;
-	margin-top: 14px;
+	margin-top: 14px;*/
+	text-align: center;
 }	
 nav ul li{
 	display: inline;
@@ -731,7 +734,7 @@ footer{
 	border-top: 1px solid #ECE9E9;
 	margin-top: 70px;
 	padding-top: 50px;
-	min-height: 220px;
+	/*min-height: 220px;*/
 	color: #9F9A97;
 	font-size: 13px;
 }
@@ -998,4 +1001,8 @@ table.politicians a{
 }
 #worker-list button{
   width: 85px;
+}
+
+#footerWrapper {
+	/*background: url('http://assets-sfcom.s3.amazonaws.com/img/bg_footerWrap.jpg') top center repeat-x;*/
 }
