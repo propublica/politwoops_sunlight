@@ -250,7 +250,7 @@ button:hover{
 /* header */
 header { 
 	background: url(/images/bg_header.png) 30px bottom no-repeat;
-	height: 209px;
+	height: 150px;
 	margin-bottom: 54px;
 	position: relative;
 }
@@ -259,7 +259,7 @@ h1 {
 	height: 78px; 
 	width: 370px; 
 	float: left;
-	margin-top: 70px;
+	margin-top: 55px;
 }
 h1 a { background: url(/images/logo.png) top left no-repeat; height: 78px; width: 370px; }
 nav {
@@ -298,7 +298,7 @@ nav ul li:last-child{
 	background: url(/images/bg_search.png) left top no-repeat;
 	padding-top: 8px;
 	padding-left: 8px;
-	margin-top: 90px;
+	margin-top: 65px;
 	height: 42px;
 }
 #search input[type=search] { 
