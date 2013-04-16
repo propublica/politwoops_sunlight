@@ -41,7 +41,7 @@ class Admin::SystemController < Admin::AdminController
         :status => status,
         :last_seen => ago.nil? ? nil : mtime.strftime("%Y-%m-%dT%H:%M:%S%z"),
         :started => started.nil? ? nil : started.strftime("%Y-%m-%dT%H:%M:%S%z"),
-        :uptime => (status == 'running') ? duration_abbrev(mtime - started).to_s : nil,
+        :uptime => (status == 'running' && started != nil) ? duration_abbrev(mtime - started).to_s : nil,
         :traceback => started.nil? ? traceback : nil
       }
     end
