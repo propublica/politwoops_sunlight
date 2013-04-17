@@ -31,8 +31,10 @@ class Admin::PoliticiansController < Admin::AdminController
 
   def get_twitter_id
     require 'twitter'
-    t = Twitter.user(params[:screen_name])
-    @twitter_id = t.id
+    user = Twitter.user(params[:screen_name])
+    @twitter_id = user.id
+    @org_profile_image = user.profile_image_url(:original)
+    @profile_image = user.profile_image_url(:normal)
     respond_to do |format|
         format.json { render }
     end
@@ -80,6 +82,10 @@ class Admin::PoliticiansController < Admin::AdminController
       @politician.suffix = params[:suffix]
     end
     
+    if params[:profile_image] != '' and params[:profile_image].strip != ' ' then
+      @politician.profile_image_url = params[:profile_image]
+    end
+
     if @politician.save
       redirect_to("/admin/users")
     else

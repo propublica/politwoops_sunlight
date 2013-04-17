@@ -15,6 +15,11 @@
 <% end %>
 
 <input type="hidden" name="twitter_id" id="twitter_id" value="" />
+<input type="hidden" name="profile_image" id="profile_image_input" value="" />
+
+<div style="margin-top: 35px;">
+  <img id= "profile_image" src ="">
+</div>
 <ul>
   <li>User Name:
     <input id="user_name_input" name="user_name" value="<%= @politician['user_name'] %>" style="float:right;"/>
@@ -86,7 +91,7 @@
 </ul>
 </form>
 
-<script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/hmac-sha1.js"></script>
+<script type="text/javascript" src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/hmac-sha1.js"></script>
 <script type="text/javascript" charset="utf-8">
     jQuery("#user_name_input").change(function(){
         var screen_name = jQuery(this).val();
@@ -96,16 +101,17 @@
             success: function(data){
                       jQuery('span.error').remove();
                       console.log(data['twitter_id']);
+                      console.log(data['profile_image']);
+                      console.log(data);
                       jQuery("#twitter_id").val(data['twitter_id']);
+                      jQuery("#profile_image_input").val(data['org_profile_image']);
+                      jQuery("#profile_image").attr("src",data['profile_image']);
                       },
             error: function(jq, textStatus, errorThrown){
                       jQuery("h3").append('<span class="error">No such user</span>');
                       console.log(errorThrown); 
                       console.log(textStatus);
                      },
-        
             });
-
     });
-
 </script>

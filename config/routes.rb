@@ -13,6 +13,7 @@ Politwoops::Application.routes.draw do
     root :to => "tweets#index", :reviewed => false, :approved => false, :as => "review"
     match "status" => "system#status"
     match "restart" => "system#restart"
+    match "start" => "system#start"
     match "report" => "system#report"
 
     match "review" => "tweets#index", :reviewed => false, :approved => false, :as => "review"
