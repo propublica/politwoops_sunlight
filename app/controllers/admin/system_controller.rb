@@ -36,6 +36,13 @@ class Admin::SystemController < Admin::AdminController
       else
         status = 'dead'
       end
+      
+      if status == 'dead'
+        if worker_checker(w)
+          status == 'running'
+        end
+      end
+
       {
         :worker => w,
         :status => status,
@@ -87,5 +94,45 @@ class Admin::SystemController < Admin::AdminController
     flash[:error] = "Problem reported, thanks."
     return redirect_to :action => "status"
   end
-end
 
+  def start
+    if params[:worker].empty?
+      flash[:error] = "Worker restarting"
+      return redirect_to :action => "status"
+    end
+    if worker_checker(params[:worker])
+      flash[:error] = "Worker already started"
+      return redirect_to :action => "status"
+    end
+
+
+    cmd = ''
+    
+    if configuration[:python_ve_directory] != nil &&  configuration[:python_ve_directory] != ''
+      cmd += '. ' + configuration[:python_ve_directory] + 'bin/activate &&'
+    end
+    
+    cmd +=  'cd ' + configuration[:workers_directory] + ' && ' + configuration[:python_path] + ' ' + configuration[:workers_directory] + 'bin/' + params[:worker] + ' --output ' + configuration[:workers_log_directory] + params[:worker] + '.log &'
+    #puts('-------------------------------')
+    #puts(cmd)
+    #puts('-------------------------------')
+    #res = %x[ #{cmd} ]
+    res = system(cmd)
+    puts(res)
+
+    return redirect_to :action => "status"
+  end
+
+  def worker_checker(worker)
+    checker = 'ps aux | grep ' + worker
+    excuter = %x[ #{checker} ]
+
+    search_for = '/bin/' + worker
+    if excuter.include? search_for
+      return true
+    else
+      return false
+    end
+  end
+
+end
