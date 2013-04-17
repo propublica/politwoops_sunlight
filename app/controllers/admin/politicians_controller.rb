@@ -82,7 +82,7 @@ class Admin::PoliticiansController < Admin::AdminController
       @politician.suffix = params[:suffix]
     end
     
-    if params[:profile_image] != '' and params[:profile_image].strip != ' ' then
+    if params[:profile_image] != nil and params[:profile_image] != '' and params[:profile_image].strip != ' ' then
       @politician.profile_image_url = params[:profile_image]
     end
 
