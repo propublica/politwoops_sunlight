@@ -1,17 +1,18 @@
 :admin:
-  :username: 
-  :password: 
+:admin:
+  :username: admin
+  :password: admin
 
 # used for obfuscating the RSS URL
-:rss_secret:
+:rss_secret: 26a7e19a8a331a0c6a1e0484edfb4d6d384d3542
 
 # used to sign session cookies, pick anything long and secure
-:session_secret:
+:session_secret: 69ea73b1b98cea36235d4a2524e2cc21dfc64445
 
 # These settings should mirror those set in the twitter
 # client configuration.
 :heartbeat_interval: 30
-:heartbeats_directory: /otherwise/empty/directory/
+:heartbeats_directory: /vagrant/politwoops/heartbeats/
 :heartbeats_expected:
   - tweets-client.py
   - politwoops-worker.py
@@ -20,3 +21,7 @@
 # without authentication.
 :monitoring_hosts:
   - localhost
+:workers_directory: /vagrant/politwoops/politwoops-tweet-collector/
+:workers_log_directory: /var/log/politwoops/
+:python_path: PYTHONPATH=$PYTHONPATH:`pwd`/lib
+:python_ve_directory: /vagrant/politwoops/politwoops-tweet-collector/ENV/
