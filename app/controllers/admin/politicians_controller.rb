@@ -35,6 +35,25 @@ class Admin::PoliticiansController < Admin::AdminController
     @twitter_id = user.id
     @org_profile_image = user.profile_image_url(:original)
     @profile_image = user.profile_image_url(:normal)
+    
+    names_list = user.name.split
+
+    if names_list.length >=3
+      @fname = names_list[0]
+      @mname = names_list[1]
+      @lname = names_list[2]
+    elsif names_list.length >=2
+      @fname = names_list[0]
+      @lname = names_list[1]
+    elsif names_list.length >=1
+      @fname = names_list[0]
+    end  
+
+    puts(@twitter_id)
+    puts(@org_profile_image)
+    puts(@profile_image)
+
+
     respond_to do |format|
         format.json { render }
     end
