@@ -412,7 +412,7 @@ h4.tweetTitle{
 	font-size: 72%;
 	font-color: #8D8883;
 }
-.tweet img {height: 73px; margin: 0 20px 0 0; width: 73px; border: 1px solid #bfc8c0; padding: 4px;}
+.tweet img {height: 73px; margin: 0 0 0 20px; width: 73px; border: 1px solid #bfc8c0; padding: 4px;}
 .contentLeft{
 	float: right;
 }
@@ -1003,3 +1003,4 @@ table.politicians a{
 #footerWrapper {
 	/*background: url('http://assets-sfcom.s3.amazonaws.com/img/bg_footerWrap.jpg') top center repeat-x;*/
 }
+
