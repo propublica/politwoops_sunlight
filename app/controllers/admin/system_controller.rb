@@ -96,7 +96,7 @@ class Admin::SystemController < Admin::AdminController
   end
 
   def start
-    if params[:worker].empty?
+    if params[:worker].nil? or params[:worker].empty?
       flash[:error] = "Worker restarting"
       return redirect_to :action => "status"
     end
@@ -105,33 +105,36 @@ class Admin::SystemController < Admin::AdminController
       return redirect_to :action => "status"
     end
 
-
     cmd = ''
     
     if configuration[:python_ve_directory] != nil &&  configuration[:python_ve_directory] != ''
-      cmd += '. ' + configuration[:python_ve_directory] + 'bin/activate &&'
+      cmd += '. ' + configuration[:python_ve_directory] + 'bin/activate && '
     end
-    
-    cmd +=  'cd ' + configuration[:workers_directory] + ' && ' + configuration[:python_path] + ' ' + configuration[:workers_directory] + 'bin/' + params[:worker] + ' --output ' + configuration[:workers_log_directory] + params[:worker] + '.log &'
-    #puts('-------------------------------')
-    #puts(cmd)
-    #puts('-------------------------------')
-    #res = %x[ #{cmd} ]
-    res = system(cmd)
-    puts(res)
+  cmd +=  'cd ' + configuration[:workers_directory] + ' && '  
+  puts params[:worker]  
+  if params[:worker] == 'tweets-client.py'
+    cmd += '. ' + 'bin/check'
+    #cmd += configuration[:python_path] + ' bin/' + params[:worker] + ' --restart --output ' + configuration[:workers_log_directory] + params[:worker] + '.log >>' + configuration[:workers_log_directory] + params[:worker] +'.err 2>&1 & '
+  elsif params[:worker] == 'politwoops-worker.py'
+    cmd += '. ' +  'bin/check-worker'
+  else  
+    cmd += configuration[:python_path] + ' bin/' + params[:worker] + ' --output ' + configuration[:workers_log_directory] + params[:worker] + '.log &'
+  end
+
+  #res = %x[ #{cmd} ]
+  res = system(cmd)
+  puts(res)
 
     return redirect_to :action => "status"
   end
 
   def worker_checker(worker)
-    checker = 'ps aux | grep ' + worker
-    excuter = %x[ #{checker} ]
-
-    search_for = '/bin/' + worker
-    if excuter.include? search_for
-      return true
-    else
+    checker = 'pgrep -f ' + worker
+    res = %x[ #{checker} ]
+    if res.nil? or res.length <= 0 or res == 0
       return false
+    else
+      return true
     end
   end
 
