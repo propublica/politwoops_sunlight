@@ -175,7 +175,7 @@ body {
 .form-inline li {
 	display: block;
 	float: right;
-	width: 250px;
+	width: 240px;
 	margin-left: 10px;
 }
 
@@ -193,16 +193,17 @@ label{
     margin-bottom: 4px;
 }
 .styled-select select {
-   background: transparent !important;
+   background: #fff;
    width: 170px;
-   padding: 5px;
+   padding: 3px 5px;
    font-size: 16px;
    border: 1px solid #ccc;
    height: 25px;
    	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
-	margin-top: -1px;
+	border-radius:4px;
+	box-shadow: 0 3px 3px #eee inset;
 }
 
 
@@ -219,12 +220,12 @@ button{
     box-shadow:  1px 1px 1px 0 rgba(2, 34, 38, .3);
     text-indent: 0;
     font-family: "museo-slab", georgia, serif; 
-    color: #aadde3;
-    padding: 4px 13px;
+    color: #fff;
+    padding: 7px 13px;
     text-align: center;
-    -moz-border-radius: 1px; 
-	-webkit-border-radius: 1px; 
-	border-radius: 1px; 
+    -moz-border-radius: 4px; 
+	-webkit-border-radius: 4px; 
+	border-radius: 4px; 
 }
 button:hover{
 	background: rgb(11,163,197); /* Old browsers */
@@ -241,7 +242,7 @@ button:hover{
 #filter button{
 	display: inline;
 	clear: both;
-	margin-top: 4px;
+	/*margin-top: 4px;*/
 }
 
 
@@ -306,23 +307,17 @@ nav ul li:last-child{
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
-	-moz-border-radius: 1px; 
-	-webkit-border-radius: 1px; 
-	border-radius: 1px; 
-	border: 1px solid #c4cc93;
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px; 
+	border-radius: 4px;
+	border: 1px solid #ddd;
 	padding: 10px 7px 7px 7px; 
 	margin-top: 0px;
 	float: right;
 	display: block;
 	width: 238px;
-	background: rgb(253,255,254); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(253,255,254,1) 0%, rgba(239,248,246,1) 88%, rgba(223,239,235,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, right top, right bottom, color-stop(0%,rgba(253,255,254,1)), color-stop(88%,rgba(239,248,246,1)), color-stop(100%,rgba(223,239,235,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(253,255,254,1) 0%,rgba(239,248,246,1) 88%,rgba(223,239,235,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(253,255,254,1) 0%,rgba(239,248,246,1) 88%,rgba(223,239,235,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(253,255,254,1) 0%,rgba(239,248,246,1) 88%,rgba(223,239,235,1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom, rgba(253,255,254,1) 0%,rgba(239,248,246,1) 88%,rgba(223,239,235,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfffe', endColorstr='#dfefeb',GradientType=0 ); /* IE6-9 */
+	background: #fff; 
+  box-shadow: 0 3px 3px #eee inset;
 }
 
 #searchBtn{
@@ -374,7 +369,7 @@ h2 {
 	font-size: 214%; 
 	margin-bottom: 23px;
 	font-weight: 700;
-	color: #063e5c;
+	color: #000;
 	text-shadow: 1px 1px 2px rgba(6,62,92,.3);
     filter: dropshadow(color=#063e5c, offx=1, offy=1);
 }
@@ -385,7 +380,7 @@ h4, #filter label {
 	font-family: "museo-slab", georgia, serif; 
 	font-size: 100%; 
 	font-weight: 700;
-	color: #063e5c;
+	color: #444;
 	display:inline-block;
 	width:auto;
 	margin-left:10px;
@@ -409,7 +404,7 @@ h4, #filter label {
 
 .tweetTitle { font-weight: bold; font-size: 128%; margin-bottom: 5px;}
 h4.tweetTitle{
-	font-family: "helvetica neue", helvetica, arial, sans-serif; display:block;
+	font-family: "helvetica neue", helvetica, arial, sans-serif; display:block; font-size:16px;
 }
 .tweetTitle a:link, .tweetTitle a:active, .tweetTitle a:visited { text-decoration: none; color: #08c;}
 .tweetTitle a:hover { color: #063E5C; text-decoration: underline;}
@@ -467,7 +462,7 @@ h4.tweetTitle{
 /** End of section */
 
 .tweet .content { float: right; width: 600px; }
-.tweet-content { margin-bottom: 8px;}
+.tweet-content { margin-bottom: 8px; font-size:18px;}
 .tweet .inactiveMess{
 	margin-bottom: 8px;
 	color: #8D8883;
