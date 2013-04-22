@@ -53,7 +53,7 @@ table { border-collapse:collapse; border-spacing:0; }
 hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
 input, select { vertical-align:middle; }
 
-body { color: #504c49; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 22px; font-size: 16px; } 
+body { color: #504c49; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 22px; font-size: 14px; } 
 select, input, textarea, button { font: 99% sans-serif; }
 button.disabled { opacity: 0.3; filter: alpha(opacity=30); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"; }
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
@@ -64,7 +64,7 @@ html { overflow-y: scroll; }
 iframe { display: block; margin: 10px 0; }
 
 a:hover, a:active { outline: none; }
-a, a:active, a:visited { color: #068797; text-decoration: none;}
+a, a:active, a:visited { color:#08c; text-decoration: none;}
 a:hover { color: #063e5c; text-decoration: underline;}
 
 nav ul, nav li { margin: 0; } 
@@ -115,7 +115,7 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 
 body {
 	margin: 0 auto;
-	background: url(/images/sfapp_bg.jpg) center 48px repeat-x;
+	background: /*url(/images/sfapp_bg.jpg) center top repeat-x;*/
 	font-family: "helvetica neue", helvetica, arial, sans-serif;
 	color: #625953;
 }
@@ -249,8 +249,8 @@ button:hover{
 
 /* header */
 header { 
-	background: url(/images/bg_header.png) 30px bottom no-repeat;
-	height: 150px;
+	/*background: url(/images/bg_header.png) 30px bottom no-repeat;*/
+	height: 80px;
 	margin-bottom: 54px;
 	position: relative;
 }
@@ -259,7 +259,7 @@ h1 {
 	height: 78px; 
 	width: 370px; 
 	float: right;
-	margin-top: 55px;
+	margin-top: 10px;
 }
 h1 a { background: url(/images/logo.png) top right no-repeat; height: 78px; width: 370px; }
 nav {
@@ -276,7 +276,7 @@ nav ul li{
 	display: inline;
 	padding-left: 20px;
 	margin-left: 20px;
-	border-left: 1px solid #068797;
+	border-left: 1px solid #999;
 	font-weight: bold;
 }
 nav ul li:last-child{
@@ -287,18 +287,18 @@ nav ul li:last-child{
 #socialMedia { 
 	position: absolute;
 	width: 115px;
-	top: 15px;
-	left: 0;
+	top: 65px;
+	left: 197px;
 }
 .gig-bar-container{
 
 }
 #search { 
 	float: left;
-	background: url(/images/bg_search.png) right top no-repeat;
+	/*background: url(/images/bg_search.png) right top no-repeat;*/
 	padding-top: 8px;
 	padding-right: 8px;
-	margin-top: 65px;
+	margin-top: 10px;
 	height: 42px;
 }
 #search input[type=search] { 
@@ -411,7 +411,7 @@ h4, #filter label {
 h4.tweetTitle{
 	font-family: "helvetica neue", helvetica, arial, sans-serif; display:block;
 }
-.tweetTitle a:link, .tweetTitle a:active, .tweetTitle a:visited { text-decoration: none; color: #068797;}
+.tweetTitle a:link, .tweetTitle a:active, .tweetTitle a:visited { text-decoration: none; color: #08c;}
 .tweetTitle a:hover { color: #063E5C; text-decoration: underline;}
 .tweetTitle span{
 	font-size: 72%;
@@ -735,7 +735,7 @@ footer{
 	background-color: #FAFAF7;
 	border-top: 1px solid #ECE9E9;
 	margin-top: 70px;
-	padding-top: 50px;
+	padding-top: 20px;
 	/*min-height: 220px;*/
 	color: #9F9A97;
 	font-size: 13px;
@@ -770,7 +770,7 @@ footer h4 {
 	margin: 0 0 9px;
 }
 footer a:hover, footer a:active { outline: none; }
-footer a, footer a:active, footer a:visited { color: #c9a706; }
+footer a, footer a:active, footer a:visited { color: #666; }
 footer a:hover { color: #827b78; }
 footer .tip {
 	color: #9F9A97;
