@@ -41,10 +41,5 @@ module Politwoops
     config.filter_parameters += [:password, :password_confirmation]
     config.exceptions_app = self.routes
 
-    # before_filter :set_user_language
-
-  #  private def set_user_language
-  #      I18n.locale = 'ar'
-  #  end
   end
 end

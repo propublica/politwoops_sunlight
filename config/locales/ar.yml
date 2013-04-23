@@ -5,7 +5,7 @@ ar:
   politwoops:
     form:
         filter: "بحث"
-    slogan: "التغريدات المحذوفة من الشخصيات السياسيين" 
+    slogan: "التغريدات المحذوفة من الشخصيات السياسية" 
     login: "تسجيل الدخول"
     logout: "تجيل الخروج"
     menu: "القائمة"
@@ -106,6 +106,7 @@ ar:
     tweets:
       byline: "مسحت منذ %{when} مضت %{delay}, نشرت مسبقأ عبر %{what}"
       byline_text: "مسحت منذ %{when} مضت %{delay}"
+      
       reply: "رد"
       retweet: "إعادة تغريد"
 
@@ -169,3 +170,45 @@ ar:
           email: "البريد الأكتروني"
           password: "اسم المستخدم"
           remember_me: "تذكرني"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "ساعة واحدة"
+        other: "%{count} ساعة"
+      x_days:
+        one: "يوم واحدة"
+        other: "%{count} يوم"
+      half_a_minute: 'نصف دقيقة'
+      less_than_x_seconds:
+        zero: 'اقل من ثانية'
+        one: 'ثانية واحدة'
+        other: '{{count}} ثانية'
+      x_seconds:
+        one: 'ثانية واحدة'
+        other: '{{count}} ثانية'
+      less_than_x_minutes:
+        zero: 'اقل من دقيقة'
+        one: 'دقيقة واحدة'
+        other: '{{count}} دقائق'
+      x_minutes:
+        one: 'دقيقة واحدة'
+        other: '{{count}} دقائق'
+      after_x_minutes:
+        one: "بعد دقيقة"
+        other: "{{count}} دقائق"
+      after_x_minute:
+        one: "بعد دقيقة"
+        other: "{{count}} دقائق"
+      about_x_months:
+        one: 'منذ شهر واحد'
+        other: '{{count}} شهور'
+      x_months:
+        one: 'شهر واحد'
+        other: '{{count}} شهور'
+      about_x_years:
+        one: 'منذ سنة'
+        other: '{{count}} سنوات'
+      over_x_years:
+        one: 'اكثر من سنة'
+        other: '{{count}} سنوات'
+      
