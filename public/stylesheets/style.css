@@ -53,7 +53,7 @@ table { border-collapse:collapse; border-spacing:0; }
 hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
 input, select { vertical-align:middle; }
 
-body { color: #504c49; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 22px; font-size: 14px; } 
+body { color: #333; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; line-height: 22px; font-size: 14px; } 
 select, input, textarea, button { font: 99% sans-serif; }
 button.disabled { opacity: 0.3; filter: alpha(opacity=30); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"; }
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
@@ -64,7 +64,7 @@ html { overflow-y: scroll; }
 iframe { display: block; margin: 10px 0; }
 
 a:hover, a:active { outline: none; }
-a, a:active, a:visited { color:#08c; text-decoration: none;}
+a, a:active, a:visited { color:#4083A9; text-decoration: none;}
 a:hover { color: #063e5c; text-decoration: underline;}
 
 nav ul, nav li { margin: 0; } 
@@ -112,12 +112,13 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 
 
 /* generic styles */
-
+html{ background:url(/images/noise-f1.gif);}
 body {
 	margin: 0 auto;
-	background: /*url(/images/sfapp_bg.jpg) center top repeat-x;*/
+	background: url(/images/header-bg.png) center top repeat-x;
 	font-family: "helvetica neue", helvetica, arial, sans-serif;
-	color: #625953;
+	color: #333;
+	line-height:1.6em;
 }
 .sf-header {
 	background: url(/images/sfapp_bg_header.jpg) center bottom repeat-x;
@@ -138,6 +139,7 @@ body {
 	margin-right: auto;
 	width: 940px;
 }
+#container{ padding:30px;	background:#fff; border-radius: 4px; box-shadow: 0 0 5px #ddd;}
 
 .textReplace { 
 	text-indent: -9999em; 
@@ -175,7 +177,7 @@ body {
 .form-inline li {
 	display: block;
 	float: right;
-	width: 240px;
+	width: 255px;
 	margin-left: 10px;
 }
 
@@ -406,13 +408,13 @@ h4, #filter label {
 h4.tweetTitle{
 	font-family: "helvetica neue", helvetica, arial, sans-serif; display:block; font-size:16px;
 }
-.tweetTitle a:link, .tweetTitle a:active, .tweetTitle a:visited { text-decoration: none; color: #08c;}
+.tweetTitle a:link, .tweetTitle a:active, .tweetTitle a:visited { text-decoration: none; color: #4083A9;}
 .tweetTitle a:hover { color: #063E5C; text-decoration: underline;}
 .tweetTitle span{
 	font-size: 72%;
 	font-color: #8D8883;
 }
-.tweet img {height: 73px; margin: 0 0 0 20px; width: 73px; border: 1px solid #bfc8c0; padding: 4px;}
+.tweet img {height: 73px; margin: 0 0 0 20px; width: 73px; border: 1px solid #ddd; padding: 4px; border-radius:4px; 	box-shadow: 0 0 2px #ddd;}
 .contentLeft{
 	float: right;
 }
@@ -507,7 +509,7 @@ h4.tweetTitle{
 
 #pager {
   font-size: 95%;
-  margin: 20px 0 50px 0;
+  margin: 20px 0 0;
   text-align: center;
 }
 
@@ -727,9 +729,9 @@ iframe.twitter-share-button {display: inline; vertical-align: text-bottom;}
 /*  footer  */
 
 footer{
-	background-color: #FAFAF7;
-	border-top: 1px solid #ECE9E9;
-	margin-top: 70px;
+	/*background-color: #FAFAF7;
+	border-top: 1px solid #ECE9E9;*/
+	margin-top: 20px;
 	padding-top: 20px;
 	/*min-height: 220px;*/
 	color: #9F9A97;
@@ -880,8 +882,10 @@ table.politicians{
 table.politicians img{
 	width: 73px;
 	height: 73px;
-	border: 1px solid #bfc8c0; 
+	border: 1px solid #ddd; 
 	padding: 4px;
+	border-radius: 4px;
+	box-shadow: 0 0 2px #ddd;
 }
 table.politicians td.name span{
 	width: 185px;
