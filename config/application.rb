@@ -29,7 +29,7 @@ module Politwoops
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = :ar
 
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
@@ -40,5 +40,11 @@ module Politwoops
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password, :password_confirmation]
     config.exceptions_app = self.routes
+
+    # before_filter :set_user_language
+
+  #  private def set_user_language
+  #      I18n.locale = 'ar'
+  #  end
   end
 end

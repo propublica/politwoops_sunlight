@@ -1,7 +1,7 @@
   <form action="<%= @filter_action %>" method="GET" id="filter" class="form-inline">
 	    <ul>
 			<li class="styled-select">
-	    		<label for="party">Party:</label>
+	    		<label for="party"><%= t 'politwoops.parties.name_label' %> :</label>
 				<select name="party" id="party_select" class="styled-select">
 					<option value="" >---------</option>
                     <% @parties.each do |par| %>
@@ -9,7 +9,6 @@
                     <% end %>
 				</select>
 			</li>
-	    <button type="submit" class="btn">Filter</button>
+	    <button type="submit" class="btn"><%= t 'politwoops.form.filter' %></button>
 		</ul>
 	</form>
-

@@ -9,7 +9,6 @@ Politwoops::Application.routes.draw do
   match "party/:name" => "parties#show", :as => :party
 
   namespace :admin do
-    #root :to => 'welcome#index'
     root :to => "tweets#index", :reviewed => false, :approved => false, :as => "review"
     match "status" => "system#status"
     match "restart" => "system#restart"
