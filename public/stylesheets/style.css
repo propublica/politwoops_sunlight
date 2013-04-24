@@ -151,26 +151,31 @@ body {
 	color: #9a948d; 
 	width: 216px; 
 	float: right; 
-	padding-left: 26px; 
-	background: url(/images/bg_sidebar.png) top left repeat-y; 
+	/*padding-left: 26px; */
+	/*background: url(/images/bg_sidebar.png) top left repeat-y; */
 	padding-bottom: 80px;
 	position: relative;
 }
 #rtColumn { 
-	width: 672px; 
+	width: 670px; 
 	float: right;
-	padding-right: 26px;
+  padding:20px;
+	background:#fff;
+	box-shadow: 0 0 5px #ddd;
+	border-radius:4px;
+	min-height:400px;
 }
 
 .module { 
-	margin-bottom: 50px;
+	margin-bottom: 50px; margin-top:10px;
 }
 
+.module li{ margin-bottom:1px;}
+.module li a{ display:block;  background:#e5e5e5; text-decoration:none;padding:5px 10px;}
+.module li a:hover{ background:#ddd; }
 
-
-
-
-
+#admin-list li{ padding:5px 10px; }
+#admin-list li:nth-child(2n+1){ background:#f7f7f7; margin:5px 0; }
 
 /* forms */
 
@@ -987,3 +992,5 @@ table.politicians a{
 	/*background: url('http://assets-sfcom.s3.amazonaws.com/img/bg_footerWrap.jpg') top center repeat-x;*/
 }
 
+
+#rtColumn .tweet .content{ width:560px;}
