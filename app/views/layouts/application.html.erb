@@ -77,8 +77,8 @@
 		<header>
 			<h1><a class="textReplace clear" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
 			<form action="/" method="get" id="search">
-				<input type="search" placeholder="Search" name="q" value="<%= h params[:q] %>"/>
-				<button class="textReplace" id="searchBtn">search</button>
+				<input type="search" placeholder="  <%= t('politwoops.form.search') %>" name="q" value="<%= h params[:q] %>"/>
+				<button class="textReplace" id="searchBtn"><%= t('politwoops.form.filter') %></button>
 			</form>
             <div id="socialMedia" style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; visibility: visible;">
                 <script type="text/javascript" src="http://cdn.gigya.com/js/gigyaGAIntegration.js" ></script>
