@@ -2,9 +2,17 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ar:
+  will_paginate:
+    previous_label: "السابق"
+    next_label: "التالي"
+    page_gap: " ... "
+    results_per_page: "عدد النتائج في الصفحة"
   politwoops:
     form:
         filter: "بحث"
+    contact_menu:
+        more_information: "المزيد من المعلومات"
+        contact_us: "اتصل بنا"
     slogan: "التغريدات المحذوفة من الشخصيات السياسية" 
     login: "تسجيل الدخول"
     logout: "تجيل الخروج"
@@ -21,6 +29,8 @@ ar:
     add: "إضافة"
     yes_label: "نعم"
     no_label: "لا"
+    #call_for_contributers: "This is an incomplete list. If you think we're missing someone, please email us with their Name, State, Political Party, Office they hold or are seeking and, of course, Twitter handle. Thanks!"
+    call_for_contributers: "هذه قائمة جزئية. لو لديك شخصيات سياسية غير موجودة في هذه القائمة من فضلك ارسلها لنا علي <a href=\"mailto:twoops@sunlightfoundation.com\">بريدنا الألكتروني</a>, من فضلك قم بإرسال الأسم كاملا والأنتماء السياسي (حزب، حركة، جماعة) ومنصبه في في هذا الأنتماء وبالطبع حسابه علي شبكة التواصل الأجتماعي تويتر!"
 
     groups:
       errors_explanation:
@@ -69,7 +79,7 @@ ar:
       success_update: "لقد تم تعديل الصفحة بنجاح"
 
     parties:
-      name_label: "اسم الحزب"
+      name_label: "اسم الأنتماء السياسي"
       errors_explanation:
         one: "حدث خطأ اثناء تسجيل الحزب"
         other: "%{count} اخطاء حدثت اثناء تسجيل الحزب:"
