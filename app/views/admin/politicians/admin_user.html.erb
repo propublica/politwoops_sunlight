@@ -1,25 +1,41 @@
 
-<form id="admin-politician" action="/admin/user/<%= @politician.id %>/save" method="POST">
+<form name="admin-politician" id="admin-politician" action="/admin/user/<%= @politician.id %>/save" method="POST" >
+  <% if !@politician.nil? && @politician.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@politician.errors.count, "error") %> prohibited
+        this politician from being saved:</h2>
+    <ul>
+    <% @politician.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <input id="user_name_input" type="hidden" name="user_name" value="<%= @politician.user_name %>" />
 <input id="first_name_input" type="hidden" name="first_name" value="<%= @politician.first_name %>" />
 <input id="middle_name_input" type="hidden" name="middle_name" value="<%= @politician.middle_name %>" />
 <input id="last_name_input" type="hidden" name="last_name" value="<%= @politician.last_name %>" />
 <input id="suffix_input" type="hidden" name="suffix" value="<%= @politician.suffix %>" />
 <ul>
+  
   <li> 
     <img src="<%= @politician.profile_image_url %>" alt="<%= @politician.user_name %>" />
     <span id="name"><%= @politician.user_name %> &nbsp;<em> <a href="#">edit</a></em></span>
   </li>
+  
   <li>
     Display Name:<span id="display_name"> 
     <span id="first_name"><%= @politician.first_name %></span><span id="middle_name"><%= @politician.middle_name %></span><span id="last_name"><%=@politician.last_name%></span><span id="suffix"><%=@politician.suffix%></span> <em><a href="#" id="edit_names">edit</a></em></span>
   </li>
+  
   <li>
     Party:  <span>
     <select name="party_id">
+      <option value="0">
     <% @parties.each do |party| %>
         <option value="<%=party.id%>" 
-            <% if party == @politician.party then %> selected <% end %> > 
+            <% if party != nil and party.id == @politician.party_id %> selected <% end %> > 
             <%=party.name.upcase %>
         </option>
     <% end %>
@@ -28,17 +44,21 @@
   </li>
   <li> Status: <span>
     <select name="status">
-    <% [1, 2, 3, 4].each do |stat| %>
-        <option value="<%=stat%>" <% if stat == @politician.status %> selected <% end %> >
-            <%= stat %>
-        </option>
-    <% end %>
+
+      <% 
+        status = { 1 => 'Active, showing tweets',
+             2 => 'Collecting tweets, not showing',
+             3 => 'Not collecting or showing tweets',
+             4 => 'not collecting, but showing historical tweets',
+           }
+      %>
+      <% status.each do |stat,desc| %>
+          <option value="<%=stat%>" <% if stat == @politician.party_id%> SELECTED <% end %> >
+              <%= desc %>
+          </option>
+      <% end %>
     </select>
     </span>
-  </li>
-
-  <li>
-    State: <span><input class="state" type="text" name="state" value="<%=@politician.state %>" /></span>
   </li>
  
   <li> Account Type: <span>
@@ -65,7 +85,8 @@
   </li>
   <li>
   Related accounts:<span>
-  <input class="related" type="text" name="related" value="<% @related.each do |r| %><%=r.user_name%>,<% end %> " /></span>
+  <input class="related" type="text" name="related" value="<% @related.each do |r| %><%=r.user_name%>,
+  <% end %> " /></span>
   <li>
   <li>
     <button type="submit" value="Save">Save</button>
@@ -73,12 +94,11 @@
 </ul>
 
 </form>
-<span><em> Status Key: <ul><li> 1 = Active, showing tweets</li><li> 2 = Collecting tweets, not showing</li><li> 3 = Not collecting or showing tweets</li><li> 4 = not collecting, but showing historical tweets</li></ul></em></span>
 <script type="text/javascript" charset="utf-8">
 jQuery(document).ready(function(){
     //edit user name in place
     jQuery('#name em a').live('click', function(){
-        jQuery('#name').parent().append('<span id="name_input"><input value="' + jQuery("input#user_name_input").val() +'" /> &nbsp; <em><a href="#">done</a></em></span>');
+        jQuery('#name').parent().append('<span id="name_input"><input value="' + jQuery("input#user_name_input").val() +'" name="user_name" /> &nbsp; <em><a href="#">done</a></em></span>');
         jQuery('#name').remove();
         return false;
     });
@@ -121,6 +141,3 @@ jQuery(document).ready(function(){
 
 });
 </script>
-
-
-

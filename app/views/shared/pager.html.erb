@@ -2,7 +2,7 @@
   <%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :prev_label => t(:previous, :scope => [:politwoops]) %>
 
   	<div class="numResults">
-  		<h4>Results per page</h4>
+  		<h4><%= t('will_paginate.results_per_page') %></h4>
   		<ul>
         <% @per_page_options.each do |opt| %>
         <li>

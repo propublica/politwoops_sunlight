@@ -9,8 +9,10 @@ Politwoops::Application.routes.draw do
   match "party/:name" => "parties#show", :as => :party
 
   namespace :admin do
+    root :to => "tweets#index", :reviewed => false, :approved => false, :as => "review"
     match "status" => "system#status"
     match "restart" => "system#restart"
+    match "start" => "system#start"
     match "report" => "system#report"
 
     match "review" => "tweets#index", :reviewed => false, :approved => false, :as => "review"
@@ -22,6 +24,11 @@ Politwoops::Application.routes.draw do
     match "user/:id/save" => "politicians#save_user", :as => "save_user"
     match "users/new" => "politicians#new_user", :as => "new_user"
     match "users/get-twitter-id/:screen_name" => "politicians#get_twitter_id", :as => "get_twitter_id"
+
+    match "parties" => "parties#list", :as => "list_parties"   
+    match "parties/add" => "parties#add", :as => "add_party"
+    match "parties/save" => "parties#save", :as => "save_party"
+    match "parties/:id" => "parties#edit", :as => "edit_party"
 
     match "offices" => "offices#list", :as => "list_offices"   
     match "offices/add" => "offices#add", :as => "add_office"

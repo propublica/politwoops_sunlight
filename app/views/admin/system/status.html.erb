@@ -14,7 +14,7 @@
     <% @worker_statuses.each do |status| %>
         <li>
         <form
-            action="<%= url_for :action => (status[:status] == 'dead') ? 'report' : 'restart' %>"
+            action="<%= url_for :action => (status[:status] == 'dead') ? 'start' : 'restart' %>"
             method="POST">
             <%= csrf_meta_tag %>
             <input type="hidden" name="worker" value="<%= status[:worker] %>">
@@ -24,7 +24,8 @@
             <% elsif status[:status] == "restarting" %>
                 <button disabled="disabled" class="disabled" style="display: inline">Restarting</button>
             <% else %>
-                <button disabled="disabled" class="disabled" style="display: inline">Dead</button>
+                <button class="worker-restart" style="display: inline">Start</button>
+                
             <% end %>
             <span class="worker-name"><%= status[:worker] %></span>
             <% if status[:last_seen] == 'stale' %>

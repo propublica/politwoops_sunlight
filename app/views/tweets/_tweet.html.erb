@@ -12,8 +12,13 @@
   <div class="content">
     <div class="tweet-content">
       <h4 class="tweetTitle">
-        <a href="/user/<%= tweet.politician.user_name %>"><%= tweet.details['user']['name'] %> (<%= tweet.politician.party.name.upcase %>)</a> 
-  	    <span><a class="accountHandle linkUnderline" href="/user/<%= tweet.politician.user_name %>">@<%= tweet.politician.user_name %></a></span>
+        <a href="/user/<%= tweet.politician.user_name %>"><%= tweet.details['user']['name'] %> </a>
+        
+        <% if !tweet.politician.party.nil? %>
+          (<a href="?party=<%= tweet.politician.party.name%>" ><%= tweet.politician.party.name.upcase %></a>)
+        <% end %>
+  	    
+        <span><a class="accountHandle linkUnderline" href="/user/<%= tweet.politician.user_name %>">@<%= tweet.politician.user_name %></a></span>
 	    </h4>
 	    <% if tweet.politician.status ==  4 %>
         <div class="inactiveMess">This account is no longer active.</div> 
@@ -36,7 +41,6 @@
         <% end %>
       <% end %>
     </div>
-
 
   </div>
   

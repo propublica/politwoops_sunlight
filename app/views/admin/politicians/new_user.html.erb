@@ -1,24 +1,44 @@
 <h3>Add a New Politician</h3>
+
 <form id="admin-politician" action="/admin/user/0/save" method="POST">
+
+<% if !@politician.nil? && @politician.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@politician.errors.count, "error") %> prohibited
+        this politician from being saved:</h2>
+    <ul>
+    <% @politician.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <input type="hidden" name="twitter_id" id="twitter_id" value="" />
+<input type="hidden" name="profile_image" id="profile_image_input" value="" />
+
+<div style="margin-top: 35px;">
+  <img id= "profile_image" src ="">
+</div>
 <ul>
   <li>User Name:
-    <input id="user_name_input" name="user_name" value="" style="float:right;"/>
+    <input id="user_name_input" name="user_name" value="<%= @politician['user_name'] %>" />
   </li>
   <li>
     Display Name (first, mid, last, suffix):<br />
-    <span style="float:right;"> 
-    <input id="first_name_input"  name="first_name" value="" />
-    <input id="middle_name_input" name="middle_name" value="" />
-    <input id="last_name_input"  name="last_name" value="" />
-    <input id="suffix_input" name="suffix" value="" />
+    <span> 
+    <input id="first_name_input"  name="first_name" value="<%= @politician.first_name %>" />
+    <input id="middle_name_input" name="middle_name" value="<%= @politician.middle_name %>" />
+    <input id="last_name_input"  name="last_name" value="<%= @politician.last_name %>" />
+    <input id="suffix_input" name="suffix" value="<%= @politician.suffix %>" />
     </span>
   </li>
   <li>
     Party:  <span>
     <select name="party_id">
+        <option value="0"></option>
     <% @parties.each do |party| %>
-        <option value="<%=party.id%>"> 
+        <option value="<%=party.id%>" >
             <%=party.name.upcase %>
         </option>
     <% end %>
@@ -27,17 +47,20 @@
   </li>
   <li> Status: <span>
     <select name="status">
-    <% [1, 2, 3, 4].each do |stat| %>
-        <option value="<%=stat%>" >
-            <%= stat %>
+    <% 
+      status = { 1 => 'Active, showing tweets',
+           2 => 'Collecting tweets, not showing',
+           3 => 'Not collecting or showing tweets',
+           4 => 'not collecting, but showing historical tweets',
+         }
+    %>
+    <% status.each do |stat,desc| %>
+        <option value="<%=stat%>" <% if stat == @politician.party_id %> SELECTED <% end %> >
+            <%= desc %>
         </option>
     <% end %>
     </select>
     </span>
-  </li>
-
-  <li>
-    State: <input type="text" id="state" name="state" style="float:right;">
   </li>
  
   <li> Account Type: <span>
@@ -63,14 +86,12 @@
     </span>
   </li>
   <li>
-    <button type="submit" value="Save">Save</button>
+     <button type="submit" value="Save">Save</button>
   </li>
 </ul>
-
 </form>
-<span><em> Status Key: <ul><li> 1 = Active, showing tweets</li><li> 2 = Collecting tweets, not showing</li><li> 3 = Not collecting or showing tweets</li><li> 4 = not collecting, but showing historical tweets</li></ul></em></span>
 
-<script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/hmac-sha1.js"></script>
+<script type="text/javascript" src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/hmac-sha1.js"></script>
 <script type="text/javascript" charset="utf-8">
     jQuery("#user_name_input").change(function(){
         var screen_name = jQuery(this).val();
@@ -79,18 +100,20 @@
             dataType: 'json',
             success: function(data){
                       jQuery('span.error').remove();
-                      console.log(data['twitter_id']);
+                      console.log(data);
                       jQuery("#twitter_id").val(data['twitter_id']);
+                      jQuery("#profile_image_input").val(data['org_profile_image']);
+                      jQuery("#profile_image").attr("src",data['profile_image']);
+                      
+                      jQuery("#first_name_input").val(data['first_name']);
+                      jQuery("#middle_name_input").val(data['middle_name']);
+                      jQuery("#last_name_input").val(data['last_name']);
                       },
             error: function(jq, textStatus, errorThrown){
                       jQuery("h3").append('<span class="error">No such user</span>');
                       console.log(errorThrown); 
                       console.log(textStatus);
                      },
-        
             });
-
     });
-
-
 </script>

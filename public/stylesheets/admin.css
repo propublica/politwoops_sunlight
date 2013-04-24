@@ -2,25 +2,24 @@
 
 .admin_header {
 	position: relative;
-	height: 70px;
-	margin-top: -20px;
+	height: 50px;
 }
 
 .admin_header ul.nav {
 	margin-bottom: 30px;
-	position: absolute; left: 0;
+	position: absolute; right: 0;
 }
 
 .admin_header ul.nav li {
   display: inline-block; 
-  margin-right: 20px;
+  margin-left: 20px;
   font-size: 125%;
 }
 .admin_header ul.nav li a {text-decoration: underline;}
 
 .admin_header div.details {
 	margin-bottom: 10px;
-	position: absolute; right: 0;
+	position: absolute; left: 0;
 	font-size: 90%;
 }
 
@@ -30,7 +29,7 @@ div.admin.review {
 
 div.admin.review input {
   padding: 5px 10px;
-  margin-right: 10px;
+  margin-left: 10px;
   font-size: 110%;
 }
 
@@ -65,23 +64,23 @@ div.admin_error {
 	margin-top: -20px;
 }
 
-#admin-politician ul li {margin: 10px; padding: 5px; width: 420px; }
+#admin-politician ul li {margin: 10px; padding: 5px; width: 520px; }
 
 #admin-politician img { margin-top: -20px; }
 
-#admin-politician ul li span{float: right; }
+#admin-politician ul li span{/*float: left; */}
 
 #admin-politician span#name {font-size: 1.2em; font-weight: bold;}
 
-#admin-politician ul li button { text-indent: 0; border: 1px solid; padding: 5px;  }
+#admin-politician ul li button { text-indent: 0;  padding: 5px;  }
 
 #s_input, #suffix_input { width:20px; }
 #state { width: 20px ;}
 #mn_input, #middle_name_input { width: 30px; }
 
-#admin-politician #first_name, #admin-politician #middle_name, #admin-politician #last_name, #admin-politician #suffix { float: left; margin-left: 3px;margin-right: 3px}
+#admin-politician #first_name, #admin-politician #middle_name, #admin-politician #last_name, #admin-politician #suffix { float: right; margin-right: 3px;margin-left: 3px}
 
-#admin-politician #first_name_input, #admin-politician #middle_name_input, #admin-politician #last_name_input, #admin-politician #suffix_input { float: left; margin-left: 3px;margin-right: 3px}
+#admin-politician #first_name_input, #admin-politician #middle_name_input, #admin-politician #last_name_input, #admin-politician #suffix_input {  margin-right: 3px;margin-left: 3px}
 
 #admin-list { font-size: 1.2em;}
 
@@ -90,6 +89,6 @@ div.admin_error {
 input { margin: 15px 0; }
 
 span.error { display: block;  }
-#admin-politician input { margin: 0}
+#admin-politician input, #admin-politician select{ margin: 0; border: 1px solid #ccc;border-radius: 4px;  box-shadow: 0 3px 3px #eee inset;  margin: 0;  padding: 7px;}
 input.related { width: 250px; }
 input.state { width: 30px;} 

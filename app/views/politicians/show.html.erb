@@ -1,9 +1,29 @@
 <% content_for :title do %>
-<%= @politician.office.title %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)
+
+  <% if @politician.office != nil %>
+    <%= @politician.office.title %>
+  <% end %>
+
+  <%= @politician.first_name %>
+  <%=@politician.last_name %>
+
+  <% if @politician.party != nil %>
+      (<%= @politician.party.name.upcase %>)
+  <% end %>
 <% end %>
 
 <div id="info">
-	<h2><%= @politician.office.abbreviation %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)</h2>
+	<h2>
+    <% if @politician.office != nil %>
+      <%= @politician.office.abbreviation %>
+    <% end %>
+
+    <%= @politician.first_name %> <%=@politician.last_name %> 
+
+    <% if @politician.party != nil %>
+       (<%= @politician.party.name.upcase %>)
+    <% end %>
+  </h2>
 	<ul class="accountList">
 		<li id="all-label" class="active">
 			<a class="accountHandle" href="#"><span>All Tweets</span></a>

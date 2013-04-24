@@ -9,3 +9,4 @@
 /config/admin.yml
 /config/config.yml
 .*.swp
+config/database.yml

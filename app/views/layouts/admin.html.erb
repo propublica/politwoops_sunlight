@@ -15,54 +15,24 @@
   <%= content_for :feeds %>
 </head>
 <body>
-  <div class="sf-header">
-      <div class="container">
-          
-          <a class="sf-logo" href="http://www.sunlightfoundation.com">Sunlight Foundation</a>
-          
-      </div>
-  </div>
   <div class="container">
 		<header>
-			<nav>
-				<ul>
-					<li>
-                    <a href="<%= url_for :all_politicians %>">Politicians</a>
-					</li>
-					<li>
-						<a href="http://sunlightfoundation.com/blog/2012/05/30/announcing-politwoops/">More information</a>
-					</li>
-					<li>
-						<a href="mailto:twoops@sunlightfoundation.com">Contact us</a>
-					</li>
-					<li class="clear" id="socialMedia">
-						<script type="text/javascript" src="http://cdn.gigya.com/js/gigyaGAIntegration.js" ></script>
-						<script src="http://cdn.gigya.com/js/socialize.js?apiKey=3_BLRB_2LlQJZDUW1wb9_ZOps-sOnnzA_e6xxNSwJBBGoB-SavmPAKHkaVVZPE5Kx8"></script>
-					</li>
-				</ul>
-			</nav>
+			
 			<h1><a class="textReplace clear" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
-			<form action="/" method="get" id="search">
-				<input type="search" placeholder="Search" name="q" value="<%= h params[:q] %>"/>
-				<button class="textReplace" id="searchBtn">search</button>
-			</form>
 			<div class="clear"></div>
 
 		</header>
 		<div id="ltColumn">
-			<img class="twoopsters" src="/images/twoopsters.png">
 			<div class="module">
- 
-                <h2>Politwoops Admin</h2>
-                <ul>
-                <li> <a href="/">Front page</a></li>
-                <li><a href="/admin/review/">Review Twoops</a></li>
-                <li><a href="/admin/users/">User Admin</a></li>
-                <li><a href="/admin/offices/">Office Admin</a></li>
-                <li><a href="/admin/status/">System Status</a></li>
-                </ul>
-            </div>
-        </div>
+        <ul>
+          <li><a href="/admin/review/">Review Twoops</a></li>
+          <li><a href="/admin/users/">List Users</a></li>
+          <li><a href="/admin/parties/">List Parties</a></li>
+          <li><a href="/admin/offices/">List Offices</a></li>
+          <li><a href="/admin/status/">System Status</a></li>
+        </ul>
+      </div>
+    </div>
 
   <div id="rtColumn">
     <%= yield %>
@@ -72,20 +42,20 @@
 </div>
 	<footer>
             <div class="container">
-                <div class="signup">
-                    <h4>Like this Project and Want to Discover Others Like It?</h4>
-                    <span class="tip">Join the Sunlight Foundation's open government community to learn more</span>
-                    <form action="/subscribe/" method="post" id="sfapp-subscribe-form" class="form-inline">
-                        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="y42oYsUK2EGBAkFj265Bv8Q4BqDCNS8S"></div>
-                        <input type="text" name="email" placeholder="your email address">
-                        <input type="text" name="zipcode" placeholder="your zip code">
-                        <button type="submit" class="btn btn-sunlight">Sign Up</button>
-                    </form>
-                </div>
-                <div class="span6 terms">
-                    <p>Our <a href="http://sunlightfoundation.com/legal/privacy/">privacy policy</a> details how personally identifiable information that is collected on our web sites is handled. Read our <a href="http://sunlightfoundation.com/legal/terms/">terms of service</a>.</p>
-                    <p>This work by <a href="http://sunlightfoundation.com">Sunlight Foundation</a>, unless <a href="http://sunlightfoundation.com/colophon/">otherwise noted</a>, is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 United States License</a>.</p>
-                </div>
+               <nav>
+        <ul>
+          <li>
+            <a href="http://sunlightfoundation.com/blog/2012/05/30/announcing-politwoops/">More information</a>
+          </li>
+          <li>
+            <a href="mailto:twoops@sunlightfoundation.com">Contact us</a>
+          </li>
+          <li class="clear" id="socialMedia">
+            <script type="text/javascript" src="http://cdn.gigya.com/js/gigyaGAIntegration.js" ></script>
+            <script src="http://cdn.gigya.com/js/socialize.js?apiKey=3_BLRB_2LlQJZDUW1wb9_ZOps-sOnnzA_e6xxNSwJBBGoB-SavmPAKHkaVVZPE5Kx8"></script>
+          </li>
+        </ul>
+      </nav>
             </div>
         </footer>
 

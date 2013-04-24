@@ -1,0 +1,227 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ar:
+  will_paginate:
+    previous_label: "السابق"
+    next_label: "التالي"
+    page_gap: " ... "
+    results_per_page: "عدد النتائج في الصفحة"
+  politwoops:
+    form:
+        filter: "بحث"
+        search: "بحث"
+    contact_menu:
+        more_information: "المزيد من المعلومات"
+        contact_us: "اتصل بنا"
+    slogan: "التغريدات المحذوفة من الشخصيات السياسية" 
+    login: "تسجيل الدخول"
+    logout: "تجيل الخروج"
+    menu: "القائمة"
+    hdo_project: "A hackdeoverheid project"
+    show: "عرض"
+    edit: "تعديل"
+    destroy: "إلغاء"
+    sure: "هل انت متأكد؟"
+    ago: "مضت"
+    next: "التالي"
+    previous: "السابق"
+    search: "بحث"
+    add: "إضافة"
+    yes_label: "نعم"
+    no_label: "لا"
+    #call_for_contributers: "This is an incomplete list. If you think we're missing someone, please email us with their Name, State, Political Party, Office they hold or are seeking and, of course, Twitter handle. Thanks!"
+    call_for_contributers: "هذه قائمة جزئية. لو لديك شخصيات سياسية غير موجودة في هذه القائمة من فضلك ارسلها لنا علي <a href=\"mailto:twoops@sunlightfoundation.com\">بريدنا الألكتروني</a>, من فضلك قم بإرسال الأسم كاملا والأنتماء السياسي (حزب، حركة، جماعة) ومنصبه في في هذا الأنتماء وبالطبع حسابه علي شبكة التواصل الأجتماعي تويتر!"
+
+    groups:
+      errors_explanation:
+        one: "حدث خطأ واحد اثناء حفظ هذه البيانات"
+        other: "%{count} أخطاء اثناء حفظ هذه البيانات:"
+      name_label: "الأسم"
+      name_explanation: "اسم قصير بدون مسافات"
+      description_label: "الوصف"
+      description_explanation: "وصف هذه البيانات"
+      politicians_label: "سياسيين"
+      politicians_explanation: " قم بإلأشارة امام الساسيين لوضعهم او حذفهم من المجموعة  "
+      sponsor_label: "راعي"
+      sponsor_explanation: "من هو راعي هذه المجموعة ؟ (اذا وجد)"
+      flag_label: "البلد"
+      base_url_label: "النطاق الرئيسي"
+      domain_label: "نطاق"
+      add_heading: "إضافة مجموعة"
+      edit_heading: "تعديل مجموعة"
+      view_heading: "عرض محموعة"
+      index_heading: "مجموعة"
+      model_name: "مجموعة"
+      success_create: "لقد تم انئاء المجموعة بنجاح"
+      success_update: "لقد تم  تعديل المجموعة بنجاح"
+
+    countries:
+      index_heading: "المواقع الدولية"
+
+    groups_politicians:
+      search_label: "بحث عن مستخدم علي تويتر"
+      success_update: "لقد تم إضافة السياسي للمجموعة بنجاح"
+      no_users_found: "عفوا لو نجد مستخدم بهذا الأسم، حاول مرة اخري"
+      
+    pages:
+      errors_explanation:
+        one: "1 حدث خطأ اثناء حفظ هذة الصفحة:"
+        other: "%{count} اخطاء حدثت اثناء حفظ هذه الصفحة:"
+      title_label: "العنوان"
+      slug_label: "Slug"
+      content_label: "المحتوي"
+      language_label: "اللغة"
+      add_heading: "إضفة صفحة"
+      edit_heading: "تعديل صفحة"
+      index_heading: "صفحات"
+      model_name: "صفحة"
+      success_create: "لقد تم انشاء الصفحة بنجاح"
+      success_update: "لقد تم تعديل الصفحة بنجاح"
+
+    parties:
+      name_label: "اسم الأنتماء السياسي"
+      errors_explanation:
+        one: "حدث خطأ اثناء تسجيل الحزب"
+        other: "%{count} اخطاء حدثت اثناء تسجيل الحزب:"
+      name_explanation: "اسم قصير بدون مسافات"
+      add_heading: "إضافة حزب"
+      edit_heading: "تعديل حزب"
+      index_heading: "الأحزاب"
+      model_name: "حزب لم يتم الموافقة علي حسابك بعد"
+      success_create: "تم انشاء الحزب بنجاح"
+      success_update: "تم تعديل الحزب بنجاح"
+
+    politicians:
+      politicians_we_follow: "الشخصيات السياسية"
+      errors_explanation:
+        one: "حدث خطأ في تسجيل الشخصية:"
+        other: "%{count} اخطاء حدثت اثناء تسجيل الشخصية:"
+      name_label: "اسم مستخدم تويتر"
+      name_explanation: "هذه الشخصية موجودة مسبقا."
+      status_label: "نشط"
+      add_heading: "اضافة شخصية"
+      edit_heading: "تعديل شخصية"
+      index_heading: "شخصيات سياسية"
+      model_name: "شخصية"
+      success_create: "تم تسجيل الشخصية بنجاح"
+      success_update: "تم تعديل الشخصية بنجاح"
+
+
+    statistics:
+      tweets: "تغريدات"
+      deleted_tweets: "التغريدات الممسوحة"
+      percentage_deleted_tweets: "نسبة التغريدات الممسوحة"
+      politicians: "عدد الشخصيات"
+      today: "اليوم"
+      index_heading: "الإحصائيات"
+
+    tweets:
+      byline: "مسحت منذ %{when} مضت %{delay}, نشرت مسبقأ عبر %{what}"
+      byline_text: "مسحت منذ %{when} مضت %{delay}"
+      
+      reply: "رد"
+      retweet: "إعادة تغريد"
+
+    user_sessions:
+      login_label: "تسجيل دخول"
+      password_label: "كلمة المرور"
+      remember_me_label: "تذكرني"
+      login_action_label: "تسجيل الدخول"
+      success_create: "تم تسجيل دخولك بنجاح يمكنك الذهاب إلي <a href=\"/account\">القائمة</a> الأن."
+      success_destroy: "لقد تم تسجيل خروجك بنجاح!"
+
+    users:
+      errors_explanation:
+        one: "حدث خطأ اثناء تسجيل هذا المستخدم:"
+        other: "%{count} خطأ اثناء تسجيل هذا المستخدم:"
+      login_label: "تسجيل الدخول"
+      email_label: "البريد الألكتروني"
+      password_label: "كلمة المرور"
+      password_change_label: "كلمة المرور"
+      password_confirmation_label: "كلمة المرور مرة اخري (x2)"
+      add_heading: "تسجيل مستخدم جديد"
+      edit_heading: "تعديل المستخدم"
+      index_heading: "المستخدميين"
+      menu_heading: "القائمة"
+      model_name: "مستخدم"
+      require_user: "لابد ان  تسجل الدخول لتستطيع دخول هذه الصفحة"
+      require_admin_user: "غير مسموح لك رؤية هذه الصفحة"
+      require_no_user: "لابد ان تسجل الخروج لرؤية هذه الصفحة"
+      success_create: "لقد تم انشاء المستخدم بنجاح"
+      success_update: "لقد تم تعديل المستخدم بنجاح"
+    
+    twitter:
+      retweet_notice: "انظر! @%{politician} مسح تغريدة! %{tweet_url}"
+  
+  #activerecord:
+  #errors:
+  #  template:
+  #    header:
+  #      one: "1 fout zorgde er voor dat de %{model} niet opgeslagen kon worden"
+  #      other: "%{count} fouten zorgden er voor dat de %{model} niet opgeslagen kon worden"
+  #    body: "Er waren problemen met de volgende velden:"
+
+  authlogic:
+      error_messages:
+        login_blank: "لايكمن ان يكون فارغ"
+        login_not_found: "غير مسموح"
+        login_invalid: "لابد من استخدام حروف, ارقام, مسافات, و .-_@ من فضلك."
+        consecutive_failed_logins_limit_exceeded: "لقد استنزفت محاولات الدخول المسموحة, لقد تم وقف الحساب."
+        email_invalid: "لابد ان يكون علي صيغة بريد الكتروني"
+        password_blank: "لايمكن ان يكون فارغأ"
+        password_invalid: "غير مسوح به"
+        not_active: "حسابك غير مفعل"
+        not_confirmed: "لم يتم الموافقة علي حسابك بعد"
+        not_approved: "لم يتم الموافقة علي حسابك بعد"
+        no_authentication_details: "لم يتم ادخال بيانات الدخول"
+      models:
+        user_session: UserSession
+      attributes:
+        user_session:
+          login: "تسجيل الدخول"
+          email: "البريد الأكتروني"
+          password: "اسم المستخدم"
+          remember_me: "تذكرني"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "ساعة واحدة"
+        other: "%{count} ساعة"
+      x_days:
+        one: "يوم واحدة"
+        other: "%{count} يوم"
+      half_a_minute: 'نصف دقيقة'
+      less_than_x_seconds:
+        zero: 'اقل من ثانية'
+        one: 'ثانية واحدة'
+        other: '{{count}} ثانية'
+      x_seconds:
+        one: 'ثانية واحدة'
+        other: '{{count}} ثانية'
+      less_than_x_minutes:
+        zero: 'اقل من دقيقة'
+        one: 'دقيقة واحدة'
+        other: '{{count}} دقائق'
+      x_minutes:
+        one: 'دقيقة واحدة'
+        other: '{{count}} دقائق'
+      after_x_minutes:
+        one: "بعد دقيقة"
+        other: "{{count}} دقائق"
+      after_x_minute:
+        one: "بعد دقيقة"
+        other: "{{count}} دقائق"
+      about_x_months:
+        one: 'منذ شهر واحد'
+        other: '{{count}} شهور'
+      x_months:
+        one: 'شهر واحد'
+        other: '{{count}} شهور'
+      about_x_years:
+        one: 'منذ سنة'
+        other: '{{count}} سنوات'
+      over_x_years:
+        one: 'اكثر من سنة'
+        other: '{{count}} سنوات'
+      

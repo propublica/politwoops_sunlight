@@ -1,0 +1,14 @@
+<h3>Edit Party</h3>
+
+<form id="admin-politician" action="/admin/parties/save" method="POST">
+<input type="hidden" name="obj_id" value="<%= @party.id %>"
+<ul>
+<li>
+    Party Name: <input type="text" name="name" value="<%= @party.name %>" />
+</li>
+<li>
+    Party display name: <input type="text" name="display_name" value="<%= @party.display_name %>" />
+</li>
+</ul>
+<button type="submit" value="Save">Save</button>
+</form>
