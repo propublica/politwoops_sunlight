@@ -10,6 +10,7 @@ ar:
   politwoops:
     form:
         filter: "بحث"
+        search: "بحث"
     contact_menu:
         more_information: "المزيد من المعلومات"
         contact_us: "اتصل بنا"
