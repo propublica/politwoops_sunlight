@@ -353,9 +353,8 @@ nav ul li:last-child{
 	color: #7e7a75;
 }
 div.caveat p, #terms{
-	font-family: Georgia, serif;
+	font-size:11px;
 	color: #8a8079;
-	font-style: italic;
 	line-height: 1.6em;
 }
 div.caveat p {margin-bottom: 2em; }
