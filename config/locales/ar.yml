@@ -92,6 +92,7 @@ ar:
       success_update: "تم تعديل الحزب بنجاح"
 
     politicians:
+      politicians_we_follow: "الشخصيات السياسية"
       errors_explanation:
         one: "حدث خطأ في تسجيل الشخصية:"
         other: "%{count} اخطاء حدثت اثناء تسجيل الشخصية:"
@@ -104,6 +105,7 @@ ar:
       model_name: "شخصية"
       success_create: "تم تسجيل الشخصية بنجاح"
       success_update: "تم تعديل الشخصية بنجاح"
+
 
     statistics:
       tweets: "تغريدات"
