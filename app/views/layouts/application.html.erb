@@ -2,9 +2,9 @@
 <html>
 <head>
         <% if content_for?(:title) %>
-	<title><%= yield(:title) %> - Politwoops</title>
+	<title><%= yield(:title) %> - <%= t :site_name, :scope => [:politwoops] %></title>
 	<% else %>
-	<title>Politwoops - <%= t :slogan, :scope => [:politwoops] %></title>
+	<title><%= t :site_name, :scope => [:politwoops] %> - <%= t :slogan, :scope => [:politwoops] %></title>
 	<% end %>
 	<script type="text/javascript" src="//use.typekit.net/utl6xyx.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -25,37 +25,37 @@
 
 	<%= content_for :feeds %>
 </head>
-<body<%if content_for?(:body_class) %> <%= yield(:body_class) %> <% end %>>
+<body <%if content_for?(:body_class) %> <%= yield(:body_class) %> <% end %>>
   <script>
     $(document).ready(function() {
-        var ua = new gigya.socialize.UserAction();
-        ua.setTitle($('title').text());
+        //var ua = new gigya.socialize.UserAction();
+        //ua.setTitle($('title').text());
         /*
          * Set these values as you would with Open Graph tags on the page.
          * Delete what you don't need.
          */
         // ua.setLinkBack("http://sunlightfoundation.com/blog/2012/07/09/2day-in-opengov-792012/");
-        ua.addMediaItem({
+       /* ua.addMediaItem({
             type: 'image',
             href: '<%= escape_javascript request.url %>',
             src: 'http://politwoops.sunlightfoundation.com/images/logo.jpg'
-        });
+        });*/
         
         /*
          * parameter docs at:
          * http://developers.gigya.com/020_Client_API/020_Methods/socialize.showShareBarUI
          */
-        var params = {
+       /* var params = {
             containerID: 'socialMedia',
             iconsOnly: true,
             layout: 'horizontal',
             noButtonBorders: true,
             shareButtons: 'twitter,facebook',
-            shortURLs: 'never',
+            shortURLs: 'whenRequired',
             showCounts: 'right',
             userAction: ua
         };
-        gigya.socialize.showShareBarUI(params);
+        gigya.socialize.showShareBarUI(params);*/
 
         $("a.screenshot").each(function(idx, a){
             $(a).colorbox({
@@ -75,15 +75,16 @@
 
 	<div class="container">
 		<header>
-			<h1><a class="textReplace clear" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
+			<h1>
+                <a class="textReplace clear" href="/">
+                    <%= t :site_name, :scope => [:politwoops] %>
+                    <small><%= t :slogan, :scope => [:politwoops] %></small>
+                </a>
+            </h1>
 			<form action="/" method="get" id="search">
 				<input type="search" placeholder="  <%= t('politwoops.form.search') %>" name="q" value="<%= h params[:q] %>"/>
 				<button class="textReplace" id="searchBtn"><%= t('politwoops.form.filter') %></button>
 			</form>
-            <div id="socialMedia" style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; visibility: visible;">
-                <script type="text/javascript" src="http://cdn.gigya.com/js/gigyaGAIntegration.js" ></script>
-                <script src="http://cdn.gigya.com/js/socialize.js?apiKey=3_BLRB_2LlQJZDUW1wb9_ZOps-sOnnzA_e6xxNSwJBBGoB-SavmPAKHkaVVZPE5Kx8"></script>
-            </div>
 			<div class="clear"></div>
 
 		</header>
@@ -99,12 +100,12 @@
             <div class="container">
                 <nav>
                     <ul>
-                        <li>
+                        <!--<li>
                             <a href="/users"><%= t('politwoops.groups.politicians_label')%></a>
-                        </li>
-                        <li>
+                        </li>-->
+                        <!-- <li>
                             <a href="http://sunlightfoundation.com/blog/2012/05/30/announcing-politwoops/"><%= t('politwoops.contact_menu.more_information') %></a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="mailto:twoops@sunlightfoundation.com"><%= t('politwoops.contact_menu.contact_us') %></a>
                         </li> 

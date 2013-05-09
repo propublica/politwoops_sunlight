@@ -18,7 +18,9 @@ module TweetsHelper
   def byline(tweet, html = true)
     tweet_when = time_ago_in_words tweet.modified
     delete_delay = (tweet.modified - tweet.created).to_i
-    
+
+    delay_ = time_ago_in_words (Time.now + delete_delay)
+
     delay = if delete_delay > (60 * 60 * 24 * 7)
       "after #{pluralize(delete_delay / (60 * 60 * 24 * 7), "week")}"
     elsif delete_delay > (60 * 60 * 24)
@@ -28,19 +30,20 @@ module TweetsHelper
     elsif delete_delay > 60
       "after #{pluralize(delete_delay / 60, "minute")}"
     elsif delete_delay > 1
-      "after #{pluralize delete_delay, "second"}"
+      "after #{pluralize(delete_delay, "second")}"
     else
-      "immediately"
+      t "immediately",  :scope => [:politwoops, :tweets]
     end
-
+    delay = ''
+    
     if html
       tweet_when = "<a class=\"linkUnderline\" href=\"/tweet/#{tweet.id}\">#{tweet_when}</a>"
       source = tweet.details["source"].to_s.html_safe
       byline = "<a href=\"http://twitter.com/#{tweet.politician.user_name}\" class=\"twitter\">#{tweet.details['user']['name']}</a>".html_safe
-      byline += t(:byline, :scope => [:politwoops, :tweets], :when => tweet_when, :what => source, :delay => delay).html_safe
+      byline += t(:byline,:scope => [:politwoops, :tweets], :when => tweet_when, :what => source, :delay => delay).html_safe
       byline
     else
-      t :byline_text, :scope => [:politwoops, :tweets], :when => tweet_when, :delay => delay
+      t (:byline_text, :scope => [:politwoops, :tweets], :when => tweet_when, :delay => delay).html_safe
     end
   end
 

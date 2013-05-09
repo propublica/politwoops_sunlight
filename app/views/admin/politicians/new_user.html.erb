@@ -1,4 +1,4 @@
-<h3>Add a New Politician</h3>
+<h3><%= t :add_a_new_politician, :scope => [:politwoops,:admin] %></h3>
 
 <form id="admin-politician" action="/admin/user/0/save" method="POST">
 
@@ -21,11 +21,11 @@
   <img id= "profile_image" src ="">
 </div>
 <ul>
-  <li>User Name:
+  <li><%= t :user_name, :scope => [:politwoops,:admin] %>:
     <input id="user_name_input" name="user_name" value="<%= @politician['user_name'] %>" />
   </li>
   <li>
-    Display Name (first, mid, last, suffix):<br />
+    <%= t :display_name, :scope => [:politwoops,:admin] %> (<%= t :first_name, :scope => [:politwoops,:admin] %>, <%= t :middle_name, :scope => [:politwoops,:admin] %>, <%= t :last_name, :scope => [:politwoops,:admin] %>, <%= t :suffix, :scope => [:politwoops,:admin] %>):<br />
     <span> 
     <input id="first_name_input"  name="first_name" value="<%= @politician.first_name %>" />
     <input id="middle_name_input" name="middle_name" value="<%= @politician.middle_name %>" />
@@ -34,7 +34,7 @@
     </span>
   </li>
   <li>
-    Party:  <span>
+    <%= t :party, :scope => [:politwoops,:admin] %>:  <span>
     <select name="party_id">
         <option value="0"></option>
     <% @parties.each do |party| %>
@@ -45,7 +45,7 @@
     </select>
     </span>
   </li>
-  <li> Status: <span>
+  <li> <%= t :status, :scope => [:politwoops,:admin] %>: <span>
     <select name="status">
     <% 
       status = { 1 => 'Active, showing tweets',
@@ -63,7 +63,7 @@
     </span>
   </li>
  
-  <li> Account Type: <span>
+  <li> <%= t :account_type, :scope => [:politwoops,:admin] %>: <span>
     <select name="account_type_id">
     <option value="0"></option>
     <% @account_types.each do |at| %>
@@ -74,7 +74,7 @@
     </select>
     </span>
   </li>
-  <li> Office Held: <span>
+  <li> <%= t :office_held, :scope => [:politwoops,:admin] %>: <span>
     <select name="office_id">
         <option value="0"></option>
     <% @offices.each do |office| %>
@@ -86,7 +86,7 @@
     </span>
   </li>
   <li>
-     <button type="submit" value="Save">Save</button>
+     <button type="submit" value="Save"><%= t :save, :scope => [:politwoops,:form] %></button>
   </li>
 </ul>
 </form>

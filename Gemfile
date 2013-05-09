@@ -24,3 +24,7 @@ gem "fastercsv"
 group :development do
   gem 'unicorn'
 end
+
+# url shortener
+gem "httpi", "~> 2.0.2"
+gem "curb"

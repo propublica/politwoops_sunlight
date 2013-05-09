@@ -111,7 +111,6 @@ class Admin::SystemController < Admin::AdminController
       cmd += '. ' + configuration[:python_ve_directory] + 'bin/activate && '
     end
   cmd +=  'cd ' + configuration[:workers_directory] + ' && '  
-  puts params[:worker]  
   if params[:worker] == 'tweets-client.py'
     cmd += '. ' + 'bin/check'
     #cmd += configuration[:python_path] + ' bin/' + params[:worker] + ' --restart --output ' + configuration[:workers_log_directory] + params[:worker] + '.log >>' + configuration[:workers_log_directory] + params[:worker] +'.err 2>&1 & '
@@ -123,7 +122,6 @@ class Admin::SystemController < Admin::AdminController
 
   #res = %x[ #{cmd} ]
   res = system(cmd)
-  puts(res)
 
     return redirect_to :action => "status"
   end

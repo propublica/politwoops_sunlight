@@ -26,7 +26,7 @@ class TweetsController < ApplicationController
       # Rails prevents injection attacks by escaping things passed in with ?
       @query = params[:q]
       query = "%#{@query}%"
-      @tweets = @tweets.where("content like ? or deleted_tweets.user_name like ?", query, query)
+      @tweets = @tweets.joins(:politician).where("content like ? or deleted_tweets.user_name like ? or politicians.first_name like ? or politicians.middle_name like ? or politicians.last_name like ?", query, query, query, query, query)
     end
 
     # only approved tweets
@@ -62,5 +62,35 @@ class TweetsController < ApplicationController
       format.xml  { render :xml => @tweet }
       format.json  { render :json => @tweet.format }
     end
+  end
+
+  def shorten_url
+    require 'httpi'
+    require 'curb'
+    require 'json'
+
+    url = URI.escape("https://www.googleapis.com/urlshortener/v1/url")
+     
+    HTTPI.adapter = :curb
+    req = HTTPI::Request.new
+    req.url = url
+
+    req.body = {"longUrl"=>params[:url]}.to_json
+
+    req.headers = {"Accept" => "application/json", "Content-Type" => "application/json"}
+
+    req.auth.gssnegotiate
+    resp = HTTPI.post req do |http|
+      http.use_ssl
+    end
+    @short_url = ""
+    if resp.code == 200
+      @short_url =  JSON.parse(resp.body)['id']
+    end
+
+    respond_to do |format|
+        format.json { render }
+    end
+
   end
 end

@@ -1,5 +1,5 @@
 <div id="admin-list">
-<h3>List of Twoopsters &nbsp;<span style="font-size:.8em;"><em>(<a href="/admin/users/new">add new</a>)</em></span></h3>
+<h3><%= t :list_of_twoopsters, :scope => [:politwoops,:admin] %> &nbsp;<span style="font-size:.8em;"><em>(<a href="/admin/users/new"><%= t :add_new, :scope => [:politwoops,:form] %></a>)</em></span></h3>
 <ul style="margin: 20px;">
 <% @politicians.each do |pol| %>
   <li>

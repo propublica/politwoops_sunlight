@@ -6,11 +6,11 @@
   <%= render :template => "shared/filterform" %>
 
 </div>
-<div class="caveat">
+<!-- <div class="caveat">
   <p>
     <%= t('politwoops.call_for_contributers').html_safe %>
   </p>
-</div>
+</div> -->
 
 <% content_for :feeds do %>
   <% if @politician %>
@@ -23,7 +23,7 @@
 <% end %>
 
 <% if @tweets.empty? %>
-  No results for the filter options you selected.
+  <%= t 'politwoops.no_result' %>
 <% else %>
   <% @tweets.each do |tweet| %>
     <%= render :partial => "tweets/tweet", :locals => {:tweet => tweet} %>

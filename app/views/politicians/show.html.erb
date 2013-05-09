@@ -38,7 +38,7 @@
     <% @accounts.each do |acc| %>
 	<div class="aboutAccount" id="<%= acc.user_name %>" style="display:none;">
 		<p> 
-			<% if @tweet_map[acc.user_name][0] %> <%= @tweet_map[acc.user_name][0].details['user']['description'] %> <% end %><a href="http://twitter.com/<%=acc.user_name%>">twitter page</a>  
+			<% if @tweet_map[acc.user_name][0] %> <%= @tweet_map[acc.user_name][0].details['user']['description'] %> <% end %><a href="http://twitter.com/<%=acc.user_name%>"><%= t :twitter_page, :scope => [:politwoops] %></a>  
 		</p>
 	</div>
     <% end %>

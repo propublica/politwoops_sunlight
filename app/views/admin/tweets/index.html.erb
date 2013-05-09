@@ -11,13 +11,13 @@
 <div class="admin_header">
   <ul class="nav">
     <li>
-      <%= link_to_unless_current "For Review", admin_review_path %>
+      <%= link_to_unless_current t(:for_review, :scope => [:politwoops,:admin]), admin_review_path %>
     </li>
     <li>
-      <%= link_to_unless_current "Approved", admin_approved_path %>
+      <%= link_to_unless_current t(:approved, :scope => [:politwoops,:admin]), admin_approved_path %>
     </li>
     <li>
-      <%= link_to_unless_current "Unapproved", admin_unapproved_path %>
+      <%= link_to_unless_current t(:unapproved, :scope => [:politwoops,:admin]), admin_unapproved_path %>
     </li>
   </ul>
 </div>

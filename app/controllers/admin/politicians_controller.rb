@@ -47,12 +47,7 @@ class Admin::PoliticiansController < Admin::AdminController
       @lname = names_list[1]
     elsif names_list.length >=1
       @fname = names_list[0]
-    end  
-
-    puts(@twitter_id)
-    puts(@org_profile_image)
-    puts(@profile_image)
-
+    end
 
     respond_to do |format|
         format.json { render }

@@ -10,3 +10,4 @@
 /config/config.yml
 .*.swp
 config/database.yml
+.rvmrc

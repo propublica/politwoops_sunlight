@@ -7,6 +7,7 @@ Politwoops::Application.routes.draw do
   match "user/:user_name" => "politicians#show", :as => :politician
   match "users/" => "politicians#all", :as => :all_politicians
   match "party/:name" => "parties#show", :as => :party
+  match "tweets/shorten_url" => "tweets#shorten_url"
 
   namespace :admin do
     root :to => "tweets#index", :reviewed => false, :approved => false, :as => "review"
