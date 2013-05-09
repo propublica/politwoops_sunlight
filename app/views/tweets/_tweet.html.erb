@@ -33,7 +33,7 @@
     
     <div class="images">
       <% if tweet.tweet_images.any? %>
-        <h3><%= t :screenshots_of_links_in_this_tweet, :scope => [:politwoops,:tweetes] %></h3>
+        <h3><%= t :screenshots_of_links_in_this_tweet, :scope => [:politwoops,:tweets] %></h3>
         <% tweet.tweet_images.each do |image| %>
           <a href="<%= image.url %>" target="_blank" class="screenshot cboxElement">
             <img src="<%= image.url %>" class="screenshot" />

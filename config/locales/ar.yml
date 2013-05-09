@@ -52,10 +52,11 @@ ar:
                 one: 'اكثر من سنة'
                 other: "{{count}} سنوات"
     politwoops:
-        review_twoops:"مراجعة التغريدات الممسوحة"
+        review_twoops: "مراجعة التغريدات الممسوحة"
         twitter_page: "الصفحة الشخصية علي تويتر"
         title: ""
         no_result: "لا توجد نتائج للبحث"
+        site_name: "أد كلمتك"
         form:
             filter: "بحث"
             search: "بحث"
@@ -199,8 +200,6 @@ ar:
       
         reply: "رد"
         retweet: "إعادة تغريد"
-
-            
 
     user_sessions:
       login_label: "تسجيل دخول"
