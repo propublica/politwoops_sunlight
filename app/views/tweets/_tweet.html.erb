@@ -94,7 +94,7 @@
           <%= submit_tag t(:approve, :scope => [:politwoops,:admin]) %>
           <br/>
           <label class="review_message">
-            A note about why (required if approving)
+            <%= t(:approving_note, :scope => [:politwoops,:admin])  %>
           </label>
           <textarea name="review_message" class="review_message"></textarea>
         <% end %>
