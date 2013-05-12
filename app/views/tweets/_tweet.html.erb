@@ -62,9 +62,9 @@
         <% if tweet.reviewed? %>
           <div class="review_controls">
             <% if tweet.approved? %>
-              <%= submit_tag "Unapprove" %>
+              <%= submit_tag t(:unapprove, :scope => [:politwoops,:admin]) %>
             <% else %>
-              <%= submit_tag "Approve" %>
+              <%= submit_tag t(:approve, :scope => [:politwoops,:admin]) %>
             <% end %>
 
             <% if tweet.reviewed_at %>
@@ -90,8 +90,8 @@
           </div>
 
         <% else %>
-          <%= submit_tag "Unapprove" %>
-          <%= submit_tag "Approve" %>
+          <%= submit_tag t(:unapprove, :scope => [:politwoops,:admin]) %>
+          <%= submit_tag t(:approve, :scope => [:politwoops,:admin]) %>
           <br/>
           <label class="review_message">
             A note about why (required if approving)

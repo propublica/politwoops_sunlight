@@ -1,15 +1,15 @@
-<h3>Edit Office</h3>
+<h3><%= t :office_edit, :scope => [:politwoops,:admin] %></h3>
 
 <form id="admin-politician" action="/admin/offices/save" method="POST">
 <input type="hidden" name="obj_id" value="<%= @office.id %>"
 <ul>
 <li>
-    Office Title: <input type="text" name="title" value="<%= @office.title %>" />
+     <%= t :office_title, :scope => [:politwoops,:admin] %>: <input type="text" name="title" value="<%= @office.title %>" />
 </li>
 <li>
-    Abbreviation: <input type="text" name="abbreviation" value="<%= @office.abbreviation %>" />
+     <%= t :office_abbreviation, :scope => [:politwoops,:admin] %>: <input type="text" name="abbreviation" value="<%= @office.abbreviation %>" />
 </li>
-<li><button type="submit" value="Save">Save</button></li>
+<button type="submit" value="Save"><%= t :save, :scope => [:politwoops,:form] %></button>
 </ul>
 
 </form>

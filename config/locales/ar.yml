@@ -73,6 +73,9 @@ ar:
             for_review: "للمراجعة"
             approved: "التغريدات التي تمت المواقة عليها "
             unapproved: "التغريدات المرفوضة"
+            approve: "موافقة"
+            unapprove: "رفض"
+            
             list_of_twoopsters: "قائمة الشخصيات السياسية"
             add_a_new_politician: "اضف شخصية سياسية جديدة"
             user_name: "اسم السياسي علي تويتر"
@@ -86,6 +89,16 @@ ar:
             account_type: "نوع الحساب"
             office_held: "المكتب السياسي"
             related_accounts: "الحسابات المشابهة"
+            list_of_parties: "قائمة الأنتمائات السياسية"
+            list_of_offices: "قائمة المكاتب السياسية"
+            party_name: "اسم الأنتماء السياسي"
+            party_display_name: "اسم الأنتماء السياسي المعروض"
+            party_add_new: "إضافة إنتماء سياسي"
+            party_edit: "تعديل انتماء سياسي"
+            office_add_new: "إضافة مكتب سياسي"
+            office_edit: "تعديل مكتب سياسي"
+            office_title: "اسم المكتب السياسي"
+            office_abbreviation: "اختصار المكتب السياسي"
 
         contact_menu:
             more_information: "المزيد من المعلومات"

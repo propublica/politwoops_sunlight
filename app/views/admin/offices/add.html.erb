@@ -1,14 +1,14 @@
-<h3>Add an Office Type</h3>
+<h3><%= t :office_add_new, :scope => [:politwoops,:admin] %></h3>
 
 <form id="admin-politician" action="/admin/offices/save" method="POST">
 <ul>
 <li>
-    Office Title: <input type="text" name="title" />
+     <%= t :office_title, :scope => [:politwoops,:admin] %>: <input type="text" name="title" />
 </li>
 <li>
-    Abbreviation: <input type="text" name="abbreviation" />
+    <%= t :office_abbreviation, :scope => [:politwoops,:admin] %>: <input type="text" name="abbreviation" />
 </li>
-<li><button type="submit" value="Save">Save</button></li>
+<li><button type="submit" value="Save"> <%= t :save, :scope => [:politwoops,:form] %></button></li>
 </ul>
 
 </form>

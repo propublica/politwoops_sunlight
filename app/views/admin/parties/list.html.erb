@@ -1,6 +1,6 @@
 <div id="admin-list">
 <link href="/stylesheets/admin.css" media="screen" rel="stylesheet" type="text/css" />
-<h3>List of Parties&nbsp; <span style="font-size: .8em;"><em><a href="/admin/parties/add/">Add One &raquo;</a></em></span></h3>
+<h3><%= t :list_of_parties, :scope => [:politwoops,:admin] %>&nbsp; <span style="font-size: .8em;"><em><a href="/admin/parties/add/"><%= t :add_new, :scope => [:politwoops,:form] %> &raquo;</a></em></span></h3>
 
 <ul style="margin-top:20px;">
 <% @parties.each do |p| %>

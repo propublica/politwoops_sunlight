@@ -1,14 +1,14 @@
-<h3>Add a Party</h3>
+<h3><%= t :party_add_new, :scope => [:politwoops,:admin] %></h3>
 
 <form id="admin-politician" action="/admin/parties/save" method="POST">
 <ul>
 <li>
-    Party name: <input type="text" name="name" />
+    <%= t :party_name, :scope => [:politwoops,:admin] %>: <input type="text" name="name" />
 </li>
 <li>
-    Party display name: <input type="text" name="display_name" />
+    <%= t :party_display_name, :scope => [:politwoops,:admin] %>: <input type="text" name="display_name" />
 </li>
-<li><button type="submit" value="Save">Save</button></li>
+<li><button type="submit" value="Save"> <%= t :save, :scope => [:politwoops,:form] %></button></li>
 </ul>
 
 </form>

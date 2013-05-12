@@ -41,7 +41,7 @@
       <option value="0">
     <% @parties.each do |party| %>
         <option value="<%=party.id%>" 
-            <% if party != nil and party.id == @politician.party_id %> selected <% end %> > 
+            <% if party != nil and party.id == @politician.party_id %> SELECTED <% end %> > 
             <%=party.name.upcase %>
         </option>
     <% end %>
@@ -59,7 +59,7 @@
            }
       %>
       <% status.each do |stat,desc| %>
-          <option value="<%=stat%>" <% if stat == @politician.party_id%> SELECTED <% end %> >
+          <option value="<%=stat%>" <% if stat == @politician.status %> SELECTED <% end %> >
               <%= desc %>
           </option>
       <% end %>
