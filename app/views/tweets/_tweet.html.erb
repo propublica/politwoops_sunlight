@@ -62,13 +62,13 @@
           page_number = params[:page]
         end
       %>
-      <%= form_tag admin_review_tweet_path(tweet) + '?page='+ page_number do %>
-        <%= hidden_field_tag "return_to", request.path %>
+      <%= form_tag admin_review_tweet_path(tweet) do %>
+        <%= hidden_field_tag "return_to", (request.path + '?page='+ page_number) %>
 
         <% if tweet.reviewed? %>
           <div class="review_controls">
             <% if tweet.approved? %>
-              <%= submit_tag t(:unapprove, :scope => [:politwoops,:admin]) %>
+              <%= submit_tag  t(:unapprove, :scope => [:politwoops,:admin]) %>
             <% else %>
               <%= submit_tag t(:approve, :scope => [:politwoops,:admin]) %>
             <% end %>
