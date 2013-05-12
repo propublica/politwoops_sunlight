@@ -38,8 +38,8 @@ class Admin::TweetsController < Admin::AdminController
     
     review_message = (params[:review_message] || "").strip
 
-    if ["Approve", "Unapprove"].include?(params[:commit])
-      approved = (params[:commit] == "Approve")
+    if [t(:approve, :scope => [:politwoops,:admin]), t(:unapprove, :scope => [:politwoops,:admin])].include?(params[:commit])
+      approved = (params[:commit] == t(:approve, :scope => [:politwoops,:admin]))
 
       if !@tweet.reviewed? and approved and review_message.blank?
         flash[:review_message] = "You need to add a note about why you're approving this tweet."
