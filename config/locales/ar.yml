@@ -122,7 +122,7 @@ ar:
         yes_label: "نعم"
         no_label: "لا"
         #call_for_contributers: "This is an incomplete list. If you think we're missing someone, please email us with their Name, State, Political Party, Office they hold or are seeking and, of course, Twitter handle. Thanks!"
-        call_for_contributers: "هذه قائمة جزئية. لو لديك شخصيات سياسية غير موجودة في هذه القائمة من فضلك ارسلها لنا علي <a href=\"mailto:twoops@sunlightfoundation.com\">بريدنا الألكتروني</a>, من فضلك قم بإرسال الأسم كاملا والأنتماء السياسي (حزب، حركة، جماعة) ومنصبه في في هذا الأنتماء وبالطبع حسابه علي شبكة التواصل الأجتماعي تويتر!"
+        call_for_contributers: "هذه قائمة جزئية. لو لديك شخصيات سياسية غير موجودة في هذه القائمة من فضلك ارسلها لنا علي <a href=\"mailto:info@kelmetak.com\">بريدنا الألكتروني</a>, من فضلك قم بإرسال الأسم كاملا والأنتماء السياسي (حزب، حركة، جماعة) ومنصبه في في هذا الأنتماء وبالطبع حسابه علي شبكة التواصل الأجتماعي تويتر!"
 
         groups:
             errors_explanation:
