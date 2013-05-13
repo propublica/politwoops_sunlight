@@ -2,8 +2,6 @@
 <form name="admin-politician" id="admin-politician" action="/admin/user/<%= @politician.id %>/save" method="POST" >
   <% if !@politician.nil? && @politician.errors.any? %>
   <div id="errorExplanation">
-    <h2><%= pluralize(@politician.errors.count, "error") %> prohibited
-        this politician from being saved:</h2>
     <ul>
     <% @politician.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
