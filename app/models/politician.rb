@@ -1,4 +1,6 @@
 class Politician < ActiveRecord::Base
+  include ActiveModel::Validations
+
   belongs_to :party
 
   belongs_to :office
@@ -16,6 +18,7 @@ class Politician < ActiveRecord::Base
   scope :active, :conditions => ["status = 1 OR status = 4"]
   
   validates_uniqueness_of :user_name
+  validates_presence_of :user_name
 
   def add_related_politician(related)
     unless AccountLink.where(:politician_id => related, :link_id => self).length > 0

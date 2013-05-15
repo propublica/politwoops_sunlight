@@ -1,4 +1,7 @@
 class Office < ActiveRecord::Base
-  has_many :politicians
-  default_scope :order => 'title ASC'
+	include ActiveModel::Validations
+	
+	has_many :politicians
+	default_scope :order => 'title ASC'
+	validates_presence_of :title
 end

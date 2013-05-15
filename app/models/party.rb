@@ -1,3 +1,7 @@
 class Party < ActiveRecord::Base
-  has_many :politicians
+	include ActiveModel::Validations
+	
+	has_many :politicians
+	default_scope :order => 'name ASC'
+	validates_presence_of :name
 end

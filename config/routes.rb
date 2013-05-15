@@ -25,6 +25,7 @@ Politwoops::Application.routes.draw do
     match "user/:id/save" => "politicians#save_user", :as => "save_user"
     match "users/new" => "politicians#new_user", :as => "new_user"
     match "users/get-twitter-id/:screen_name" => "politicians#get_twitter_id", :as => "get_twitter_id"
+    match "user/:id/disable" => "politicians#disable", :as => "disable"
 
     match "parties" => "parties#list", :as => "list_parties"   
     match "parties/add" => "parties#add", :as => "add_party"

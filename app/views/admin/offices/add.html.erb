@@ -1,6 +1,16 @@
 <h3><%= t :office_add_new, :scope => [:politwoops,:admin] %></h3>
 
 <form id="admin-politician" action="/admin/offices/save" method="POST">
+	<% if !@office.nil? && @office.errors.any? %>
+		  <div id="errorExplanation">
+		    <ul>
+		    <% @office.errors.full_messages.each do |msg| %>
+		      <li><%= msg %></li>
+		    <% end %>
+		    </ul>
+		  </div>
+	<% end %>
+
 <ul>
 <li>
      <%= t :office_title, :scope => [:politwoops,:admin] %>: <input type="text" name="title" />

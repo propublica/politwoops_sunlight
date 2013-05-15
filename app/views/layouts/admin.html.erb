@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>Politwoops - <%= t :slogan, :scope => [:politwoops] %></title>
+  <title><%= t :site_name, :scope => [:politwoops] %> - <%= t :slogan, :scope => [:politwoops] %></title>
  
   <%= stylesheet_link_tag "style" %>
   <%= stylesheet_link_tag "admin" %>
@@ -18,7 +18,7 @@
   <div class="container">
 		<header>
 			
-			<h1><a class="textReplace clear" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
+			<h1><a class="textReplace clear" href="/"><%= t :site_name, :scope => [:politwoops] %> - <small>Deleted Tweets from Politicians</small></a></h1>
 			<div class="clear"></div>
 
 		</header>

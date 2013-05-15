@@ -56,7 +56,7 @@ table { border-collapse:collapse; border-spacing:0; }
 hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
 input, select { vertical-align:middle; }
 
-body { color: #333; font-family: Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif; line-height:1.7em; font-size: 13px; } 
+body { color: #333; font-family: Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif; line-height:1.7em; font-size: 13px;} 
 select, input, textarea, button { font: 99% sans-serif; }
 button.disabled { opacity: 0.3; filter: alpha(opacity=30); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"; }
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
@@ -140,7 +140,7 @@ body {
 	margin-right: auto;
 	width: 940px;
 }
-#container{ padding:30px;	background:#fff; border-radius: 4px; box-shadow: 0 0 5px #ddd;}
+#container{ padding:30px;	background:#fff; border-radius: 4px; box-shadow: 0 0 5px #ddd;min-height: 400px;}
 
 .textReplace { 
 	text-indent: -9999em; 
@@ -386,14 +386,10 @@ h4, #filter label {
 #otherOrg { font-size: 140%; color: #504C49;}
 
 
-
-
-
-
-
 /* tweets */
 
-.tweet { border-bottom: 1px dashed #ddd; padding-bottom: 23px; margin-bottom: 23px;}
+.tweet { border-bottom: 1px dashed #ddd; margin-bottom: 10px;padding-bottom: 10px;}
+/* padding-bottom: 23px; margin-bottom: 23px;*/
 
 .tweetTitle { font-weight: bold; font-size: 128%; margin-bottom: 5px;}
 h4.tweetTitle{

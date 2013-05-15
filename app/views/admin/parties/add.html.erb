@@ -1,6 +1,17 @@
 <h3><%= t :party_add_new, :scope => [:politwoops,:admin] %></h3>
 
 <form id="admin-politician" action="/admin/parties/save" method="POST">
+
+<% if !@party.nil? && @party.errors.any? %>
+  <div id="errorExplanation">
+    <ul>
+    <% @party.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <ul>
 <li>
     <%= t :party_name, :scope => [:politwoops,:admin] %>: <input type="text" name="name" />

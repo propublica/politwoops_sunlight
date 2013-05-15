@@ -15,15 +15,19 @@ class Admin::OfficesController < Admin::AdminController
 
   def save
     if params[:obj_id] then
-      office = Office.find(params[:obj_id].to_i)
-      office.title = params[:title]
-      office.abbreviation = params[:abbreviation]
+      @office = Office.find(params[:obj_id].to_i)
+      @office.title = params[:title]
+      @office.abbreviation = params[:abbreviation]
     else
-      office = Office.new(:title => params[:title], :abbreviation => params[:abbreviation])       
+      @office = Office.new(:title => params[:title], :abbreviation => params[:abbreviation])       
     end
-    office.save()
-    redirect_to "/admin/offices/" 
     
+
+    if @office.save
+      redirect_to "/admin/offices/" 
+    else
+      render 'add'
+    end
   end
 
   def edit

@@ -12,13 +12,15 @@
   <div class="content">
     <div class="tweet-content">
       <h4 class="tweetTitle">
-        <a href="/user/<%= tweet.politician.user_name %>"><%= tweet.details['user']['name'] %> </a>
-        
-        <% if !tweet.politician.party.nil? %>
-          (<a href="?party=<%= tweet.politician.party.name%>" ><%= tweet.politician.party.name.upcase %></a>)
-        <% end %>
+        <span style="float:right;">
+          <a href="/user/<%= tweet.politician.user_name %>"><%= tweet.details['user']['name'] %> </a>
+          
+          <% if !tweet.politician.party.nil? %>
+            (<a href="?party=<%= tweet.politician.party.name%>" ><%= tweet.politician.party.name.upcase %></a>)
+          <% end %>
+        </span>
   	    
-        <span><a class="accountHandle linkUnderline" href="/user/<%= tweet.politician.user_name %>">@<%= tweet.politician.user_name %></a></span>
+        <span> <a class="accountHandle linkUnderline" href="/user/<%= tweet.politician.user_name %>">@<%= tweet.politician.user_name %></a></span>
 	    </h4>
 	    <% if tweet.politician.status ==  4 %>
         <div class="inactiveMess">This account is no longer active.</div> 
@@ -75,7 +77,7 @@
 
             <% if tweet.reviewed_at %>
               <span class="reviewed_at">
-                Reviewed on <%= tweet.reviewed_at.strftime "%B %d, %Y at %I:%M %p" %>:
+                 <%= t :reviewed_on, :scope => [:politwoops,:form] %> : <%= tweet.reviewed_at.strftime "%B %d, %Y at %I:%M %p" %>
               </span>
             <% end %>
 
@@ -83,10 +85,10 @@
               <% if tweet.review_message.present? %>
                 <%= light_format tweet.review_message %>
               <% else %>
-                (No message entered.)
+                (<%= t :no_message_entered, :scope => [:politwoops,:form] %>).
               <% end %>
             </div>
-            <a class="edit" href="#">Edit message</a>
+            <a class="edit" href="#"><%= t :edit_message, :scope => [:politwoops,:form] %></a>
           </div>
 
           <div class="edit_controls" style="display: none">
@@ -98,6 +100,7 @@
         <% else %>
           <%= submit_tag t(:unapprove, :scope => [:politwoops,:admin]) %>
           <%= submit_tag t(:approve, :scope => [:politwoops,:admin]) %>
+          <a href="/admin/user/<%= tweet.politician.id %>/disable"><%= t(:remove_user_with_all_his_tweets, :scope => [:politwoops,:admin]) %></a>
           <br/>
           <label class="review_message">
             <%= t(:approving_note, :scope => [:politwoops,:admin])  %>

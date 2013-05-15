@@ -9,6 +9,15 @@ ar:
                     attributes:
                         user_name:
                             taken: "موجود مسبقا"
+                            blank: "لابد من وجوده"
+                party:
+                    attributes:
+                        name:
+                            blank: "لابد من وجوده"
+                office:
+                    attributes:
+                        title:
+                            blank: "لابد من وجوده"
     will_paginate:
         previous_label: "السابق"
         next_label: "التالي"
@@ -26,38 +35,38 @@ ar:
             less_than_x_seconds:
                 zero: 'اقل من ثانية'
                 one: 'ثانية واحدة'
-                other: "{{count}} ثانية"
+                other: "%{count} ثانية"
             x_seconds:
                 one: 'ثانية واحدة'
-                other: "{{count}} ثانية"
+                other: "%{count} ثانية"
             less_than_x_minutes:
                 zero: "اقل من دقيقة"
                 one: "دقيقة واحدة"
-                other: "{{count}} دقائق"
+                other: "%{count} دقائق"
             x_minutes:
                 one: "دقيقة واحدة"
-                other: "{{count}} دقائق"      
+                other: "%{count} دقائق"      
             after_x_minutes:
                 one: "بعد دقيقة"
-                other: "{{count}} دقائق"
+                other: "%{count} دقائق"
             after_x_minute:
                 one: "بعد دقيقة"
-                other: "{{count}} دقائق"
+                other: "%{count} دقائق"
             after_1_minute:
                 one: "بعد دقيقة"
-                other: "{{count}} دقائق"      
+                other: "%{count} دقائق"      
             about_x_months:
                 one: 'منذ شهر واحد'
-                other: "{{count}} شهور"
+                other: "%{count} شهور"
             x_months:
                 one: 'شهر واحد'
-                other: "{{count}} شهور"
+                other: "%{count} شهور"
             about_x_years:
                 one: 'منذ سنة'
-                other: "{{count}} سنوات"
+                other: "%{count} سنوات"
             over_x_years:
                 one: 'اكثر من سنة'
-                other: "{{count}} سنوات"
+                other: "%{count} سنوات"
     politwoops:
         review_twoops: "مراجعة التغريدات الممسوحة"
         twitter_page: "الصفحة الشخصية علي تويتر"
@@ -70,6 +79,9 @@ ar:
             add_new: "اضف"
             save: "حفظ"
             edit: "تعديل"
+            reviewed_on: "تمت مراجعتها في"
+            no_message_entered: "لا توجد تعليقات"
+            edit_message: "تغير التعليق"
             
         admin:
             review_twoops: "مراجعة التغريدات الممسوحة"
@@ -78,10 +90,11 @@ ar:
             list_offices: "قائمة المكاتب"
             system_status: "حالة النظام"
             for_review: "للمراجعة"
-            approved: "التغريدات التي تمت المواقة عليها "
+            approved: "التغريدات التي تمت الموافقة عليها "
             unapproved: "التغريدات المرفوضة"
             approve: "موافقة"
             unapprove: "رفض"
+            remove_user_with_all_his_tweets: "حذف الحساب بكل تغريداته"
             
             list_of_twoopsters: "قائمة الشخصيات السياسية"
             add_a_new_politician: "اضف شخصية سياسية جديدة"

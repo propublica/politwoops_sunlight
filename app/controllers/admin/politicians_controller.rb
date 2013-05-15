@@ -53,7 +53,18 @@ class Admin::PoliticiansController < Admin::AdminController
         format.json { render }
     end
   end
-
+  
+  def disable 
+    @politician = Politician.find(params[:id])
+    @politician.status = 3
+    @politician.save
+    if params[:page]
+      redirect_to "/admin/review/?page=" + params[:page]
+    else
+      redirect_to "/admin/review/"
+    end 
+  end
+  
   def save_user
 
     if params[:id] == '0' then
