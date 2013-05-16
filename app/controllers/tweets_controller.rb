@@ -25,8 +25,9 @@ class TweetsController < ApplicationController
     if params.has_key?(:q) and params[:q].present?
       # Rails prevents injection attacks by escaping things passed in with ?
       @query = params[:q]
+      @query.strip!
       query = "%#{@query}%"
-      @tweets = @tweets.joins(:politician).where("content like ? or deleted_tweets.user_name like ? or politicians.first_name like ? or politicians.middle_name like ? or politicians.last_name like ?", query, query, query, query, query)
+      @tweets = @tweets.joins(:politician).where("content like ? or deleted_tweets.user_name like ? or concat_ws(' ', politicians.first_name, politicians.middle_name ,politicians.last_name) like ?", query, query, query)
     end
 
     # only approved tweets

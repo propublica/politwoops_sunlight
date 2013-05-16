@@ -110,7 +110,6 @@ class Admin::PoliticiansController < Admin::AdminController
     if params[:profile_image] != nil and params[:profile_image] != '' and params[:profile_image].strip != ' ' then
       @politician.profile_image_url = params[:profile_image]
     end
-
     if @politician.save
       redirect_to("/admin/users")
     else

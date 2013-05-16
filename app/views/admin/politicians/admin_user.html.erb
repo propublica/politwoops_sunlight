@@ -1,6 +1,7 @@
 
 <form name="admin-politician" id="admin-politician" action="/admin/user/<%= @politician.id %>/save" method="POST" >
-  <% if !@politician.nil? && @politician.errors.any? %>
+
+<% if !@politician.nil? && @politician.errors.any? %>
   <div id="errorExplanation">
     <ul>
     <% @politician.errors.full_messages.each do |msg| %>
