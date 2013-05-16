@@ -27,7 +27,10 @@ class TweetsController < ApplicationController
       @query = params[:q]
       @query.strip!
       query = "%#{@query}%"
-      @tweets = @tweets.joins(:politician).where("content like ? or deleted_tweets.user_name like ? or concat_ws(' ', politicians.first_name, politicians.middle_name ,politicians.last_name) like ?", query, query, query)
+      puts (query) 
+      @tweets = @tweets.joins(:politician).where(
+        "content like ? or deleted_tweets.user_name like ? or concat_ws(' ', politicians.first_name, politicians.middle_name ,politicians.last_name) like ? or concat_ws(' ', politicians.first_name, politicians.middle_name) like ? or concat_ws(' ', politicians.first_name, politicians.last_name) like ?
+        or concat_ws(' ', politicians.middle_name, politicians.last_name) like ?", query, query, query, query, query, query)
     end
 
     # only approved tweets
