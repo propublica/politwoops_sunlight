@@ -17,7 +17,7 @@ class Politician < ActiveRecord::Base
 
   scope :active, :conditions => ["status = 1 OR status = 4"]
   
-  validates_uniqueness_of :user_name
+  validates_uniqueness_of :user_name, :case_sensitive => false
   validates_presence_of :user_name
 
   def add_related_politician(related)
