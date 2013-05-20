@@ -55,6 +55,8 @@ class Admin::SystemController < Admin::AdminController
 
     @last_tweet = Tweet.order("modified DESC").first
 
+    puts @last_tweet.inspect
+
     respond_to do |format|
       format.html { render :template => "admin/system/status" }
       format.json { render :json => { :workers => @worker_statuses, :last_tweet => @last_tweet.format } }

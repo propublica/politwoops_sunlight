@@ -19,7 +19,7 @@ module TweetsHelper
     tweet_when = time_ago_in_words tweet.modified
     delete_delay = (tweet.modified - tweet.created).to_i
 
-    delay_ = time_ago_in_words (Time.now + delete_delay)
+    delay_ = time_ago_in_words(Time.now + delete_delay)
 
     delay = if delete_delay > (60 * 60 * 24 * 7)
       "after #{pluralize(delete_delay / (60 * 60 * 24 * 7), "week")}"
@@ -43,7 +43,7 @@ module TweetsHelper
       byline += t(:byline,:scope => [:politwoops, :tweets], :when => tweet_when, :what => source, :delay => delay).html_safe
       byline
     else
-      t (:byline_text, :scope => [:politwoops, :tweets], :when => tweet_when, :delay => delay).html_safe
+      t(:byline_text, :scope => [:politwoops, :tweets], :when => tweet_when, :delay => delay).html_safe
     end
   end
 

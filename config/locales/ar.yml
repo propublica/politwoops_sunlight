@@ -3,6 +3,17 @@
 
 ar:
     activerecord:
+        models:
+
+            politician: "اسم السياسي الموجود علي تويتر"
+        attributes:
+            politician:
+                user_name: "اسم السياسي علي تويتر"
+            party:
+                name: "اسم الإنتماء السياسي"
+            office:
+                title: "اسم المكتب السياسي"    
+            
         errors:
             models:
                 politician:
@@ -85,9 +96,9 @@ ar:
             
         admin:
             review_twoops: "مراجعة التغريدات الممسوحة"
-            list_users: "قائمة السياسيين"
+            list_users: "قائمة الشخصيات السياسية"
             list_parties: "قائمة الأنتمائات السياسية"
-            list_offices: "قائمة المكاتب"
+            list_offices: "قائمة المكاتب السياسية"
             system_status: "حالة النظام"
             for_review: "للمراجعة"
             approved: "التغريدات التي تمت الموافقة عليها "
@@ -95,6 +106,8 @@ ar:
             approve: "موافقة"
             unapprove: "رفض"
             remove_user_with_all_his_tweets: "حذف الحساب بكل تغريداته"
+            last_tweet_seen: "أخر تغريدة كانت منذ"
+            ago: "مضت"
             
             list_of_twoopsters: "قائمة الشخصيات السياسية"
             add_a_new_politician: "اضف شخصية سياسية جديدة"
