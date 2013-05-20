@@ -9,7 +9,11 @@
 
 <div>
     <%= t :last_tweet_seen, :scope => [:politwoops, :admin] %> <%= time_ago_in_words( @last_tweet.created ) %> <%= t :ago, :scope => [:politwoops, :admin] %>.
+    <br/>
+    <%= Time.zone %>
+    <br/>
     <%= @last_tweet.created %>
+    <br/>
     <%= Time.now %>
 </div>
 
