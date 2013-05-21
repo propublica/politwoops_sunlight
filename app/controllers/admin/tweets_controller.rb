@@ -3,7 +3,11 @@ class Admin::TweetsController < Admin::AdminController
 
   # list either unreviewed
   def index
-    @politicians = Politician.active.all
+    if params[:politician_id]
+      @politicians = Politician.find(params[:politician_id])
+    else
+      @politicians = Politician.active.all
+    end
 
     @tweets = DeletedTweet.where(:politician_id => @politicians)
 

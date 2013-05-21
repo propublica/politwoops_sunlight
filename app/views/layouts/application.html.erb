@@ -26,6 +26,18 @@
 	<%= content_for :feeds %>
 </head>
 <body <%if content_for?(:body_class) %> <%= yield(:body_class) %> <% end %>>
+  
+    <!-- Facebook like button -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=337697893023041";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <!--End of Facebook like button -->
+
   <script>
     $(document).ready(function() {
         //var ua = new gigya.socialize.UserAction();
@@ -81,12 +93,20 @@
                     <small><%= t :slogan, :scope => [:politwoops] %></small>
                 </a>
             </h1>
-			<form action="/" method="get" id="search">
+			<div style="float:left">
+            <form action="/" method="get" id="search">
 				<input type="search" placeholder="  <%= t('politwoops.form.search') %>" name="q" value="<%= h params[:q] %>"/>
 				<button class="textReplace" id="searchBtn"><%= t('politwoops.form.filter') %></button>
 			</form>
-			<div class="clear"></div>
+			<div class="clear"></div>            
+                <div class="fb-like" data-href="http://2ad.kelmetak.com" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+                <a href="https://twitter.com/share?url=http://2ad.kelmetak.com" class="twitter-share-button" data-lang="en">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>  
+            <div class="clear"></div>
+            
 
+            
 		</header>
 		<div id="container">
 			<%= yield %>
@@ -112,7 +132,7 @@
                     </ul>   
                 </nav>
                 <p style="text-align:center">
-                © 2013              eSpace Technologies. All Rights Reserved.
+                © 2013 eSpace Technologies. All Rights Reserved.
                 </p>
             </div>
         </footer>
