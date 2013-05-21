@@ -97,7 +97,7 @@ ar:
         admin:
             review_twoops: "مراجعة التغريدات الممسوحة"
             list_users: "قائمة الشخصيات السياسية"
-            list_parties: "قائمة الأنتمائات السياسية"
+            list_parties: "قائمة الإنتمائات السياسية"
             list_offices: "قائمة المكاتب السياسية"
             system_status: "حالة النظام"
             for_review: "للمراجعة"
@@ -108,6 +108,7 @@ ar:
             remove_user_with_all_his_tweets: "حذف الحساب بكل تغريداته"
             last_tweet_seen: "أخر تغريدة كانت منذ"
             ago: "مضت"
+            note_is_missing: "لابد من اضافة سبب في حالة الموافقة على اضافة التغريدة"
             
             list_of_twoopsters: "قائمة الشخصيات السياسية"
             add_a_new_politician: "اضف شخصية سياسية جديدة"
@@ -117,15 +118,15 @@ ar:
             middle_name: "اسم الأب"
             last_name: "اسم العائلة"
             suffix: "اللقب"
-            party: "الأنتماء السياسي"
+            party: "الإنتماء السياسي"
             status: "الحالة"
             account_type: "نوع الحساب"
             office_held: "المكتب السياسي"
             related_accounts: "الحسابات المشابهة"
-            list_of_parties: "قائمة الأنتمائات السياسية"
+            list_of_parties: "قائمة الإنتمائات السياسية"
             list_of_offices: "قائمة المكاتب السياسية"
-            party_name: "اسم الأنتماء السياسي"
-            party_display_name: "اسم الأنتماء السياسي المعروض"
+            party_name: "اسم الإنتماء السياسي"
+            party_display_name: "اسم الإنتماء السياسي المعروض"
             party_add_new: "إضافة إنتماء سياسي"
             party_edit: "تعديل انتماء سياسي"
             office_add_new: "إضافة مكتب سياسي"
@@ -155,7 +156,7 @@ ar:
         yes_label: "نعم"
         no_label: "لا"
         #call_for_contributers: "This is an incomplete list. If you think we're missing someone, please email us with their Name, State, Political Party, Office they hold or are seeking and, of course, Twitter handle. Thanks!"
-        call_for_contributers: "هذه قائمة جزئية. لو لديك شخصيات سياسية غير موجودة في هذه القائمة من فضلك ارسلها لنا علي <a href=\"mailto:info@kelmetak.com\">بريدنا الألكتروني</a>, من فضلك قم بإرسال الأسم كاملا والأنتماء السياسي (حزب، حركة، جماعة) ومنصبه في في هذا الأنتماء وبالطبع حسابه علي شبكة التواصل الأجتماعي تويتر!"
+        call_for_contributers: "هذه قائمة جزئية. لو لديك شخصيات سياسية غير موجودة في هذه القائمة من فضلك ارسلها لنا علي <a href=\"mailto:info@kelmetak.com\">بريدنا الألكتروني</a>, من فضلك قم بإرسال الأسم كاملا والإنتماء السياسي (حزب، حركة، جماعة) ومنصبه في في هذا الإنتماء وبالطبع حسابه علي شبكة التواصل الأجتماعي تويتر!"
 
         groups:
             errors_explanation:
@@ -205,7 +206,7 @@ ar:
             success_update: "لقد تم تعديل الصفحة بنجاح"
 
         parties:
-            name_label: "اسم الأنتماء السياسي"
+            name_label: "اسم الإنتماء السياسي"
             errors_explanation:
                 one: "حدث خطأ اثناء تسجيل الحزب"
                 other: "%{count} اخطاء حدثت اثناء تسجيل الحزب:"
