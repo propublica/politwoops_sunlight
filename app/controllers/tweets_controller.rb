@@ -73,7 +73,7 @@ class TweetsController < ApplicationController
     require 'curb'
     require 'json'
 
-    url = URI.escape("https://www.googleapis.com/urlshortener/v1/url")
+    url = URI.escape("https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyDM4W_kppvT1Spi0GlK2soVDs2srjffmic")
      
     HTTPI.adapter = :curb
     req = HTTPI::Request.new
@@ -91,7 +91,7 @@ class TweetsController < ApplicationController
     if resp.code == 200
       @short_url =  JSON.parse(resp.body)['id']
     end
-    
+
     Rails.logger.warn "the whole reponse #{resp.body}"
     Rails.logger.warn "The shor URL is --> #{@short_url}"
 
