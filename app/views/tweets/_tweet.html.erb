@@ -125,11 +125,15 @@
                       replay_url = "http://twitter.com/share?text=<%= CGI.escape('@' + tweet.user_name + ' ') %>&url=" + data['url'] + "&via=2adkelmetak";
 
                       jQuery('#replay_<%= tweet.id %>').attr("href", replay_url);
+                      
+                      console.log(data['url']);
+                      console.log(jQuery('#replay_<%= tweet.id %>').attr("href"));
 
                       retweet_url = "http://twitter.com/share?text=<%= CGI.escape('RT @' + tweet.user_name + ' ' + tweet.content) %>&url=" + data['url'] + "&via=2adkelmetak";
 
                       jQuery('#retweet_<%= tweet.id %>').attr("href", retweet_url);
-
+                      
+                      console.log(jQuery('#retweet_<%= tweet.id %>').attr("href"));
                       },
             error: function(jq, textStatus, errorThrown){
                       console.log(errorThrown); 

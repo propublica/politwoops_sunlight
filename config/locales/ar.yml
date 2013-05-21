@@ -19,16 +19,16 @@ ar:
                 politician:
                     attributes:
                         user_name:
-                            taken: "موجود مسبقا"
-                            blank: "لابد من وجوده"
+                            taken: "موجود بالفعل"
+                            blank: "من الحقول المطلوبة"
                 party:
                     attributes:
                         name:
-                            blank: "لابد من وجوده"
+                            blank: "من الحقول المطلوبة"
                 office:
                     attributes:
                         title:
-                            blank: "لابد من وجوده"
+                            blank: "من الحقول المطلوبة"
     will_paginate:
         previous_label: "السابق"
         next_label: "التالي"

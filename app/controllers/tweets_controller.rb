@@ -91,6 +91,8 @@ class TweetsController < ApplicationController
     if resp.code == 200
       @short_url =  JSON.parse(resp.body)['id']
     end
+    puts "the whole reponse #{resp.body}"
+    puts "The shor URL is --> #{@short_url}"
 
     respond_to do |format|
         format.json { render }

@@ -111,7 +111,6 @@ class Admin::PoliticiansController < Admin::AdminController
       @politician.profile_image_url = params[:profile_image]
     end
 
-    puts @politician.inspect
     if @politician.save
       redirect_to("/admin/users")
     else
