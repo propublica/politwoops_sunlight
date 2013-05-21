@@ -73,31 +73,47 @@ class TweetsController < ApplicationController
     require 'curb'
     require 'json'
 
-    url = URI.escape("https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyDM4W_kppvT1Spi0GlK2soVDs2srjffmic")
-     
-    HTTPI.adapter = :curb
-    req = HTTPI::Request.new
-    req.url = url
-
-    req.body = {"longUrl"=>params[:url]}.to_json
-
-    req.headers = {"Accept" => "application/json", "Content-Type" => "application/json"}
-
-    req.auth.gssnegotiate
-    resp = HTTPI.post req do |http|
-      http.use_ssl
-    end
     @short_url = ""
-    if resp.code == 200
-      @short_url =  JSON.parse(resp.body)['id']
-    end
 
-    Rails.logger.warn "the whole reponse #{resp.body}"
-    Rails.logger.warn "The shor URL is --> #{@short_url}"
+    @tweet = DeletedTweet.find(params[:id]) || raise("not found")
+    
+    if !@tweet.short_url.nil? and !@tweet.short_url.empty?
+      @short_url = @tweet.short_url
+    else
+      url = URI.escape("https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyDM4W_kppvT1Spi0GlK2soVDs2srjffmic")
+
+      HTTPI.adapter = :curb
+      req = HTTPI::Request.new
+      req.url = url
+
+      req.body = {"longUrl"=>params[:url]}.to_json
+
+      req.headers = {"Accept" => "application/json", "Content-Type" => "application/json"}
+
+      req.auth.gssnegotiate
+      resp = HTTPI.post req do |http|
+        http.use_ssl
+      end
+     
+      if resp.code == 200
+        @short_url =  JSON.parse(resp.body)['id']
+      end
+
+      if @short_url.empty?
+        @short_url = params[:url]
+      else
+        @tweet.short_url = @short_url
+        @tweet.save
+      end
+
+      Rails.logger.warn "the whole reponse #{resp.body}"
+      Rails.logger.warn "The shor URL is --> #{@short_url}"
+
+    end
 
     respond_to do |format|
         format.json { render }
-    end
+    end    
 
   end
 end
