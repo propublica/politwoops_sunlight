@@ -241,7 +241,7 @@ ar:
             today: "اليوم"
         index_heading: "الإحصائيات"
         tweets:
-            byline: "مسحت منذ %{when} مضت %{delay}, عبر %{what}"
+            byline: "حذفت منذ %{when} مضت %{delay}, عبر %{what}"
             byline_text: "حذفت منذ %{when} مضت %{delay}"
             immediately: "حالا"
             screenshots_of_links_in_this_tweet: "صوة من الصفحة المشار إليها في التغريدة"

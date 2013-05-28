@@ -91,4 +91,4 @@ input { margin: 15px 0; }
 span.error { display: block;  }
 #admin-politician input, #admin-politician select{ margin: 0; border: 1px solid #ccc;border-radius: 4px;  box-shadow: 0 3px 3px #eee inset;  margin: 0;  padding: 7px;}
 input.related { width: 250px; }
-input.state { width: 30px;} 
+input.state { width: 30px;}
