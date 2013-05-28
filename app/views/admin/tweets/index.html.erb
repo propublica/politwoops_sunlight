@@ -9,8 +9,8 @@
 <% end %>
 
 <div class="admin_header">
-  <ul class="nav">
-    <li>
+  <ul class="nav nav-tabs">
+    <li class="active">
       <%= link_to_unless_current t(:for_review, :scope => [:politwoops,:admin]), admin_review_path %>
     </li>
     <li>
@@ -21,6 +21,22 @@
     </li>
   </ul>
 </div>
+    <div>
+      <form>
+      <select name = "politician_id" id="pol_select">
+          <% for @politican in @all_politicians %>
+            <option value="<%= @politican.id %>" <% if @politican.id == params[:politician_id] %> SELECTED <%end%> > 
+              <%= "#{@politican.first_name} #{@politican.middle_name} #{@politican.last_name} - @#{@politican.user_name}" %>
+              <% if !@politican.party.nil? %>
+                <%=" -- #{@politican.party.name}"%>
+              <% end %>
+            </option>
+          <% end %>
+      </select>
+      <button style="display: inline-block;" type="submit"><%=t(:search, :scope => [:politwoops,:form])%></button>
+    </form>
+    </div>
+  </br>
 
 <% @tweets.each do |tweet| %>
   <%= render :partial => "tweets/tweet", :object => tweet, :locals => {:admin => true} %>

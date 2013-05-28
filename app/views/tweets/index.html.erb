@@ -25,6 +25,11 @@
 <% if @tweets.empty? %>
   <%= t 'politwoops.no_result' %>
 <% else %>
+  
+  <div class="tweets_count">
+    <%= t(:number_of_deleted_tweets, :scope => [:politwoops,:tweets]) %> <span><%= @tweets.total_entries %></span>
+  </div>
+
   <% @tweets.each do |tweet| %>
     <%= render :partial => "tweets/tweet", :locals => {:tweet => tweet} %>
   <% end %>

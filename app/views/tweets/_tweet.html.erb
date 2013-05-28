@@ -13,7 +13,13 @@
     <div class="tweet-content">
       <h4 class="tweetTitle">
         <span style="float:right;">
-          <a href="/user/<%= tweet.politician.user_name %>"> <%= "#{tweet.politician.first_name} #{tweet.politician.middle_name} #{tweet.politician.last_name}" %> </a>
+          <a href=
+            <% if !(defined?(admin) and admin) %>
+            "/user/<%= tweet.politician.user_name %>"
+            <% else %>
+            "?politician_id=<%= tweet.politician.id %>"
+            <% end %>
+          > <%= "#{tweet.politician.first_name} #{tweet.politician.middle_name} #{tweet.politician.last_name}" %> </a>
 
           <!-- <%= tweet.details['user']['name'] %> -->
           

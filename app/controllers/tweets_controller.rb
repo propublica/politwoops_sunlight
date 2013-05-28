@@ -20,7 +20,7 @@ class TweetsController < ApplicationController
     end
 
     @tweets = @tweets.where(:politician_id => @politicians)
-    tweet_count = 0 #@tweets.count
+    @tweets_count = 0 #@tweets.count
 
     if params.has_key?(:q) and params[:q].present?
       # Rails prevents injection attacks by escaping things passed in with ?
@@ -29,8 +29,11 @@ class TweetsController < ApplicationController
       query = "%#{@query}%"
       puts (query) 
       @tweets = @tweets.joins(:politician).where(
-        "content like ? or deleted_tweets.user_name like ? or concat_ws(' ', politicians.first_name, politicians.middle_name ,politicians.last_name) like ? or concat_ws(' ', politicians.first_name, politicians.middle_name) like ? or concat_ws(' ', politicians.first_name, politicians.last_name) like ?
-        or concat_ws(' ', politicians.middle_name, politicians.last_name) like ?", query, query, query, query, query, query)
+        "content like ? or deleted_tweets.user_name like ? or concat_ws(' ', 
+          politicians.first_name, politicians.middle_name ,politicians.last_name) like ? 
+          or concat_ws(' ', politicians.first_name, politicians.middle_name) like ? 
+          or concat_ws(' ', politicians.first_name, politicians.last_name) like ?
+          or concat_ws(' ', politicians.middle_name, politicians.last_name) like ?", query, query, query, query, query, query)
     end
 
     # only approved tweets
@@ -48,7 +51,7 @@ class TweetsController < ApplicationController
         response.headers["Content-Type"] = "application/rss+xml; charset=utf-8"
         render
       end
-      format.json { render :json => {:meta => {:count => tweet_count}, :tweets => @tweets.map{|tweet| tweet.format } } }
+      format.json { render :json => {:meta => {:count => @tweets_count}, :tweets => @tweets.map{|tweet| tweet.format } } }
     end
   end
 

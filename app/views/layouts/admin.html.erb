@@ -5,14 +5,20 @@
  
   <%= stylesheet_link_tag "style" %>
   <%= stylesheet_link_tag "admin" %>
+  <%= stylesheet_link_tag "select2" %>
 
   <%= javascript_include_tag "jquery-1.7.1.min" %>
   <%= javascript_include_tag "jquery.placehold-0.3.min" %>
+  <%= javascript_include_tag "select2" %>
+  <%= javascript_include_tag "select2_locale_ar" %>
 
   <%= csrf_meta_tag %>
   <link rel="icon" href="/images/favicon.png" type="image/png">
 
   <%= content_for :feeds %>
+  <script>
+        $(document).ready(function() { $("#pol_select").select2(); });
+    </script>
 </head>
 <body>
   <div class="container">

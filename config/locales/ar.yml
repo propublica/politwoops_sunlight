@@ -79,7 +79,7 @@ ar:
                 one: 'اكثر من سنة'
                 other: "%{count} سنوات"
     politwoops:
-        review_twoops: "مراجعة التغريدات الممسوحة"
+        review_twoops: "مراجعة التغريدات المحذوفة"
         twitter_page: "الصفحة الشخصية علي تويتر"
         title: ""
         no_result: "لا توجد نتائج للبحث"
@@ -95,7 +95,7 @@ ar:
             edit_message: "تغير التعليق"
             
         admin:
-            review_twoops: "مراجعة التغريدات الممسوحة"
+            review_twoops: "مراجعة التغريدات المحذوفة"
             list_users: "قائمة الشخصيات السياسية"
             list_parties: "قائمة الإنتمائات السياسية"
             list_offices: "قائمة المكاتب السياسية"
@@ -235,16 +235,33 @@ ar:
 
         statistics:
             tweets: "تغريدات"
-            deleted_tweets: "التغريدات الممسوحة"
-            percentage_deleted_tweets: "نسبة التغريدات الممسوحة"
+            deleted_tweets: "التغريدات المحذوفة"
+            percentage_deleted_tweets: "نسبة التغريدات المحذوفة"
             politicians: "عدد الشخصيات"
             today: "اليوم"
         index_heading: "الإحصائيات"
         tweets:
-            byline: "مسحت منذ %{when} مضت %{delay}, نشرت مسبقأ عبر %{what}"
-            byline_text: "مسحت منذ %{when} مضت %{delay}"
+            byline: "مسحت منذ %{when} مضت %{delay}, عبر %{what}"
+            byline_text: "حذفت منذ %{when} مضت %{delay}"
             immediately: "حالا"
             screenshots_of_links_in_this_tweet: "صوة من الصفحة المشار إليها في التغريدة"
+            number_of_deleted_tweets: "عدد التغريدات المحذوفة"
+            after: "بعد"
+            from_publishing_it: "من نشرها"
+            second: "ثانية"
+            seconds: "ثواني"
+            minute: "دقيقة"
+            minutes: "دقائق"
+            hour: "ساعة"
+            hours: "ساعة"
+            day: "يوم"
+            days: "يوم"
+            week: "اسبوع"
+            weeks: "اسبوع"
+            month: "شهر"
+            months: "شهور"
+            year: "سنة"
+            years: "سنوات"
       
         reply: "رد"
         retweet: "إعادة تغريد"

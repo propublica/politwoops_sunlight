@@ -21,20 +21,23 @@ module TweetsHelper
 
     delay_ = time_ago_in_words(Time.now + delete_delay)
 
-    delay = if delete_delay > (60 * 60 * 24 * 7)
-      "after #{pluralize(delete_delay / (60 * 60 * 24 * 7), "week")}"
+    delay = t("after", :scope => [:politwoops, :tweets]) + ' '
+
+    delay += if delete_delay > (60 * 60 * 24 * 7)
+       "#{delete_delay / (60 * 60 * 24 * 7)}" + ' ' + t("week", :scope => [:politwoops, :tweets])
     elsif delete_delay > (60 * 60 * 24)
-      "after #{pluralize(delete_delay / (60 * 60 * 24), "day")}"
+      "#{delete_delay / (60 * 60 * 24)}" + ' ' + t("day",:scope => [:politwoops, :tweets])
     elsif delete_delay > (60 * 60)
-      "after #{pluralize(delete_delay / (60 * 60), "hour")}"
+      "#{delete_delay / (60 * 60)}" + ' ' + t("hour",:scope => [:politwoops, :tweets])
     elsif delete_delay > 60
-      "after #{pluralize(delete_delay / 60, "minute")}"
+      "#{delete_delay / 60}" + ' ' + t("minute", :scope => [:politwoops, :tweets])
     elsif delete_delay > 1
-      "after #{pluralize(delete_delay, "second")}"
+      "#{delete_delay}" + ' ' + t("second",:scope => [:politwoops, :tweets])
     else
-      t "immediately",  :scope => [:politwoops, :tweets]
+      t "immediately", :scope => [:politwoops, :tweets]
     end
-    delay = ''
+
+    delay += ' ' + t("from_publishing_it", :scope => [:politwoops, :tweets])
     
     if html
       tweet_when = "<a class=\"linkUnderline\" href=\"/tweet/#{tweet.id}\">#{tweet_when}</a>"

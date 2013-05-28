@@ -9,6 +9,8 @@ class Admin::TweetsController < Admin::AdminController
       @politicians = Politician.active.all
     end
 
+    @all_politicians = Politician.active.all
+
     @tweets = DeletedTweet.where(:politician_id => @politicians)
 
     # filter to relevant subset of deleted tweets
