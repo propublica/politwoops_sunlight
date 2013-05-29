@@ -18,7 +18,7 @@ class Admin::TweetsController < Admin::AdminController
 
     # show unreviewed tweets oldest to newest
     if !params[:reviewed]
-      @tweets = @tweets.reorder "modified ASC"
+      @tweets = @tweets.reorder "modified DESC"
     end
 
     per_page = params[:per_page] ? params[:per_page].to_i : nil
@@ -35,9 +35,28 @@ class Admin::TweetsController < Admin::AdminController
         render "tweets/index"
       end
     end
-
   end
 
+  def reject
+    ids = params[:ids]
+    ids_list = ids.split(',')
+    
+    for id in ids_list
+      @tweet = Tweet.find(id)
+      @deleted_tweet = DeletedTweet.find(id)
+      @deleted_tweet.reviewed = true
+      @tweet.approved = false
+      @tweet.reviewed = true
+      @tweet.reviewed_at = Time.now
+      if @tweet.save! and @deleted_tweet.save!
+
+      else
+        flash[:review_message] = t "note_is_missing",:scope => [:politwoops,:admin]
+      end
+    end
+
+    redirect_to '/admin/review'
+  end
 
   # approve or unapprove a tweet, mark it as reviewed either way
   def review
@@ -69,9 +88,7 @@ class Admin::TweetsController < Admin::AdminController
     redirect_to params[:return_to]
   end
 
-
   # filters
-
   def load_tweet
     unless params[:id] and (@tweet = DeletedTweet.find(params[:id]))
       render :nothing => true, :status => :not_found

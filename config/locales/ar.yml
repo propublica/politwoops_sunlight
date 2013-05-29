@@ -134,6 +134,7 @@ ar:
             office_title: "اسم المكتب السياسي"
             office_abbreviation: "اختصار المكتب السياسي"
             approving_note: "سبب الرفض أو الموافقة، هذا الحقل لابد من إدخاله في حالة الموافقة"
+            reject_all_selected: "رفض جميع التغريدات المختارة"
 
         contact_menu:
             more_information: "المزيد من المعلومات"

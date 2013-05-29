@@ -42,6 +42,8 @@
   <%= render :partial => "tweets/tweet", :object => tweet, :locals => {:admin => true} %>
 <% end %>
 
+<button value="<%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %>" onclick="reject_all_selected()" > <%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %> </button>
+
 <div id="pager">
   <%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :prev_label => t(:previous, :scope => [:politwoops]) %>
 </div>
@@ -55,4 +57,22 @@
       return false;
     });
   });
+
+$(function() {
+    $("a.edit, a.cancel").click(function() {
+      var container = $(this).parents("div.admin.review");
+      container.find("div.review_controls").toggle();
+      container.find("div.edit_controls").toggle();
+      return false;
+    });
+  });
+  function reject_all_selected(){
+    $rejected = ''
+    $('.selected_tweets').each(function(i, obj) {
+        if ($(this).is(':checked')) {
+          $rejected += $(this).val() + ',';
+        }
+    });
+    window.location = '/admin/reject?ids=' + $rejected
+  }
 </script>

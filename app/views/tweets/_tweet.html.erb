@@ -1,6 +1,7 @@
 <div id="tweet-<%= tweet.id %>" class="tweet">
 	<div class="contentLeft">	
-		<a href="/user/<%= tweet.politician.user_name %>">
+		<input type="checkbox" class="selected_tweets" value="<%= tweet.id %>">
+    <a href="/user/<%= tweet.politician.user_name %>">
 			<img src="<%= avatar_url tweet.politician %>" alt="<%= tweet.politician.user_name %>" width"73" height="73" />
 		</a>
 		<div class="policount"><!--
@@ -73,7 +74,7 @@
         end
       %>
       <%= form_tag admin_review_tweet_path(tweet) do %>
-        <%= hidden_field_tag "return_to", (request.path + '?page='+ page_number) %>
+        <%= hidden_field_tag "return_to", (request.path + '?page='+ page_number + "&politician_id=#{params[:politician_id]}") %>
 
         <% if tweet.reviewed? %>
           <div class="review_controls">
@@ -108,7 +109,7 @@
         <% else %>
           <a href="/admin/user/<%= tweet.politician.id %>/disable"><%= t(:remove_user_with_all_his_tweets, :scope => [:politwoops,:admin]) %></a>
           <label class="review_message">
-            <%= t(:approving_note, :scope => [:politwoops,:admin])  %>
+            <%= t(:approving_note, :scope => [:politwoops,:admin]) %>
           </label>
           <textarea name="review_message" class="review_message"></textarea>
           <%= submit_tag t(:unapprove, :scope => [:politwoops,:admin]) %>
