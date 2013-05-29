@@ -3,7 +3,7 @@ class Admin::TweetsController < Admin::AdminController
 
   # list either unreviewed
   def index
-    if params[:politician_id]
+    if params[:politician_id] and !params[:politician_id].blank?
       @politicians = Politician.find(params[:politician_id])
     else
       @politicians = Politician.active.all
@@ -66,7 +66,13 @@ class Admin::TweetsController < Admin::AdminController
     if [t(:approve, :scope => [:politwoops,:admin]), t(:unapprove, :scope => [:politwoops,:admin])].include?(params[:commit])
       approved = (params[:commit] == t(:approve, :scope => [:politwoops,:admin]))
 
-      if !@tweet.reviewed? and approved and review_message.blank?
+      puts '--------------------'
+      puts @tweet.reviewed
+      puts approved
+      puts review_message
+      puts '======================'
+
+      if approved and review_message.blank?
         flash[:review_message] = t "note_is_missing",:scope => [:politwoops,:admin]
         #t "You need to add a note about why you're approving this tweet."
         redirect_to params[:return_to]

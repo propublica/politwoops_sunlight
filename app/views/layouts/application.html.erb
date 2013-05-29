@@ -40,35 +40,6 @@
 
   <script>
     $(document).ready(function() {
-        //var ua = new gigya.socialize.UserAction();
-        //ua.setTitle($('title').text());
-        /*
-         * Set these values as you would with Open Graph tags on the page.
-         * Delete what you don't need.
-         */
-        // ua.setLinkBack("http://sunlightfoundation.com/blog/2012/07/09/2day-in-opengov-792012/");
-       /* ua.addMediaItem({
-            type: 'image',
-            href: '<%= escape_javascript request.url %>',
-            src: 'http://politwoops.sunlightfoundation.com/images/logo.jpg'
-        });*/
-        
-        /*
-         * parameter docs at:
-         * http://developers.gigya.com/020_Client_API/020_Methods/socialize.showShareBarUI
-         */
-       /* var params = {
-            containerID: 'socialMedia',
-            iconsOnly: true,
-            layout: 'horizontal',
-            noButtonBorders: true,
-            shareButtons: 'twitter,facebook',
-            shortURLs: 'whenRequired',
-            showCounts: 'right',
-            userAction: ua
-        };
-        gigya.socialize.showShareBarUI(params);*/
-
         $("a.screenshot").each(function(idx, a){
             $(a).colorbox({
                 rel: 'screenshot' + idx,
@@ -120,12 +91,12 @@
             <div class="container">
                 <nav>
                     <ul>
-                        <!--<li>
-                            <a href="/users"><%= t('politwoops.groups.politicians_label')%></a>
-                        </li>-->
-                        <!-- <li>
-                            <a href="http://sunlightfoundation.com/blog/2012/05/30/announcing-politwoops/"><%= t('politwoops.contact_menu.more_information') %></a>
-                        </li> -->
+                        <li>
+                            <a href="/users/suggest"><%= t('politwoops.groups.politicians_label')%></a>
+                        </li>
+                        <li>
+                            <a href="/about"><%= t('politwoops.contact_menu.more_information') %></a>
+                        </li>
                         <li>
                             <a href="mailto:info@kelmetak.com"><%= t('politwoops.contact_menu.contact_us') %></a>
                         </li> 

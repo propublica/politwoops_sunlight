@@ -1,6 +1,8 @@
 <div id="tweet-<%= tweet.id %>" class="tweet">
 	<div class="contentLeft">	
-		<input type="checkbox" class="selected_tweets" value="<%= tweet.id %>">
+    <% if !tweet.reviewed or tweet.approved %>
+      <input type="checkbox" id="" class="selected_tweets" value="<%= tweet.id %>">
+    <% end %>
     <a href="/user/<%= tweet.politician.user_name %>">
 			<img src="<%= avatar_url tweet.politician %>" alt="<%= tweet.politician.user_name %>" width"73" height="73" />
 		</a>
@@ -81,7 +83,10 @@
             <% if tweet.approved? %>
               <%= submit_tag  t(:unapprove, :scope => [:politwoops,:admin]) %>
             <% else %>
-              <%= submit_tag t(:approve, :scope => [:politwoops,:admin]) %>
+              <%= form_tag admin_review_tweet_path(tweet) do %>
+                  <textarea name="review_message" class="review_message"></textarea>
+                  <%= submit_tag t(:approve, :scope => [:politwoops,:admin]) %>
+              <% end %>
             <% end %>
 
             <% if tweet.reviewed_at %>
@@ -97,7 +102,7 @@
                 (<%= t :no_message_entered, :scope => [:politwoops,:form] %>).
               <% end %>
             </div>
-            <a class="edit" href="#"><%= t :edit_message, :scope => [:politwoops,:form] %></a>
+            <!--<a class="edit" href="#"><%= t :edit_message, :scope => [:politwoops,:form] %></a>-->
           </div>
 
           <div class="edit_controls" style="display: none">
