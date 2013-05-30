@@ -244,7 +244,7 @@ ar:
         tweets:
             byline: "حذفت منذ %{when} مضت %{delay}, عبر %{what}"
             byline_text: "حذفت منذ %{when} مضت %{delay}"
-            immediately: "حالا"
+            immediately: "علي الفور"
             screenshots_of_links_in_this_tweet: "صوة من الصفحة المشار إليها في التغريدة"
             number_of_deleted_tweets: "عدد التغريدات المحذوفة"
             after: "بعد"

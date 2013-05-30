@@ -19,25 +19,27 @@ module TweetsHelper
     tweet_when = time_ago_in_words tweet.modified
     delete_delay = (tweet.modified - tweet.created).to_i
 
-    delay_ = time_ago_in_words(Time.now + delete_delay)
-
-    delay = t("after", :scope => [:politwoops, :tweets]) + ' '
-
-    delay += if delete_delay > (60 * 60 * 24 * 7)
-       "#{delete_delay / (60 * 60 * 24 * 7)}" + ' ' + t("week", :scope => [:politwoops, :tweets])
-    elsif delete_delay > (60 * 60 * 24)
-      "#{delete_delay / (60 * 60 * 24)}" + ' ' + t("day",:scope => [:politwoops, :tweets])
-    elsif delete_delay > (60 * 60)
-      "#{delete_delay / (60 * 60)}" + ' ' + t("hour",:scope => [:politwoops, :tweets])
-    elsif delete_delay > 60
-      "#{delete_delay / 60}" + ' ' + t("minute", :scope => [:politwoops, :tweets])
-    elsif delete_delay > 1
-      "#{delete_delay}" + ' ' + t("second",:scope => [:politwoops, :tweets])
+    if delete_delay <= 1
+      delay = t("after", :scope => [:politwoops, :tweets]) + ' '
+      delay = ''
+      delay += if delete_delay > (60 * 60 * 24 * 7)
+         "#{delete_delay / (60 * 60 * 24 * 7)}" + ' ' + t("week", :scope => [:politwoops, :tweets])
+      elsif delete_delay > (60 * 60 * 24)
+        "#{delete_delay / (60 * 60 * 24)}" + ' ' + t("day",:scope => [:politwoops, :tweets])
+      elsif delete_delay > (60 * 60)
+        "#{delete_delay / (60 * 60)}" + ' ' + t("hour",:scope => [:politwoops, :tweets])
+      elsif delete_delay > 60
+        "#{delete_delay / 60}" + ' ' + t("minute", :scope => [:politwoops, :tweets])
+      elsif delete_delay > 1
+        "#{delete_delay}" + ' ' + t("second",:scope => [:politwoops, :tweets])
+      else
+        ""
+      end
+      
+      delay += ' ' + t("from_publishing_it", :scope => [:politwoops, :tweets])
     else
-      t "immediately", :scope => [:politwoops, :tweets]
+      delay = t("immediately", :scope => [:politwoops, :tweets])
     end
-
-    delay += ' ' + t("from_publishing_it", :scope => [:politwoops, :tweets])
     
     if html
       tweet_when = "<a class=\"linkUnderline\" href=\"/tweet/#{tweet.id}\">#{tweet_when}</a>"
