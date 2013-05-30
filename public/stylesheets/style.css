@@ -115,10 +115,12 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 
 
 /* generic styles */
-html{ background:url(/images/noise-f1.gif);}
+html{ 
+	/*background:url(/images/noise-f1.gif);*/
+}
 body {
 	margin: 0 auto;
-	background: url(/images/header-bg.png) center top repeat-x;
+	/**background: url(/images/header-bg.png) center top repeat-x;**/
 	color: #333;
 }
 .sf-header {
@@ -257,7 +259,7 @@ h1 {
 	float: right;
 	margin-top: 10px;
 }
-h1 a { background: url(/images/logo.png) top right no-repeat; height: 78px; width: 370px; }
+h1 a { background: url(/images/logo.png) top right no-repeat; height: 90px; width: 600px; }
 nav {
 	position: relative;
 }
