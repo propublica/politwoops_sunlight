@@ -1,6 +1,6 @@
 <div id="tweet-<%= tweet.id %>" class="tweet">
 	<div class="contentLeft">	
-    <% if !tweet.reviewed or tweet.approved %>
+    <% if !tweet.reviewed or (tweet.approved and defined?(admin) and admin) %>
       <input type="checkbox" id="" class="selected_tweets" value="<%= tweet.id %>">
     <% end %>
     <a href="/user/<%= tweet.politician.user_name %>">
