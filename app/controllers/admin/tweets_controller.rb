@@ -72,7 +72,7 @@ class Admin::TweetsController < Admin::AdminController
       puts review_message
       puts '======================'
 
-      if approved and review_message.blank?
+      if approved and review_message  .blank?
         flash[:review_message] = t "note_is_missing",:scope => [:politwoops,:admin]
         #t "You need to add a note about why you're approving this tweet."
         redirect_to params[:return_to]

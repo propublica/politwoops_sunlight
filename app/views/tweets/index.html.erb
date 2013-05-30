@@ -1,17 +1,17 @@
-<div class="title">
+<!--<div class="title">
 	<h2>
     <%= t 'politwoops.slogan' %>
 	</h2>
 
-  <%= render :template => "shared/filterform" %>
+   %= render :template => "shared/filterform" %>
 
 </div>
-<!-- <div class="caveat">
+ <div class="caveat">
   <p>
     <%= t('politwoops.call_for_contributers').html_safe %>
   </p>
-</div> -->
-
+</div>
+-->
 <% content_for :feeds do %>
   <% if @politician %>
     <%= auto_discovery_link_tag :rss, politician_url(@politician.user_name, :format => :rss) %>
