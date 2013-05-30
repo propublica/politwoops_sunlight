@@ -19,6 +19,10 @@ class TweetsController < ApplicationController
       @tweets = DeletedTweet
     end
 
+    if params[:politician_id] and !params[:politician_id].blank?
+      @politicians = Politician.find(params[:politician_id])
+    end
+
     @tweets = @tweets.where(:politician_id => @politicians)
     @tweets_count = 0 #@tweets.count
 
@@ -44,7 +48,7 @@ class TweetsController < ApplicationController
     @page = [params[:page].to_i, 1].max
 
     @tweets = @tweets.includes(:politician => [:party]).paginate(:page => params[:page], :per_page => @per_page)
-
+    @all_politicians = Politician.active.all
     respond_to do |format|
       format.html # index.html.erb
       format.rss  do

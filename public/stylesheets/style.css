@@ -181,12 +181,16 @@ body {
 
 /* forms */
 
+.form-inline {
+	display: inline-block;
+	float: right;
+	margin-left: 10px;
+}
 
 .form-inline li {
-	display: block;
+	display: inline-block;
 	float: right;
-	width: 350px;
-	margin-left: 10px;
+	margin-left: 8px;
 }
 
 form#filter{
@@ -991,3 +995,12 @@ table.politicians a{
 
 
 #rtColumn .tweet .content{ width:560px;}
+
+
+.select2-results {
+	margin: 4px 4px 4px 4px;
+}
+.select2-container .select2-choice div {
+	right: auto;
+    left:-1px;
+}

@@ -79,6 +79,7 @@ ar:
                 one: 'اكثر من سنة'
                 other: "%{count} سنوات"
     politwoops:
+        about: "عن أد كلمتك"
         review_twoops: "مراجعة التغريدات المحذوفة"
         twitter_page: "الصفحة الشخصية علي تويتر"
         title: ""
@@ -225,6 +226,7 @@ ar:
                 one: "حدث خطأ في تسجيل الشخصية:"
                 other: "%{count} اخطاء حدثت اثناء تسجيل الشخصية:"
             name_label: "اسم مستخدم تويتر"
+            name_select_label: "اسم السياسي"
             name_explanation: "هذه الشخصية موجودة مسبقا."
             status_label: "نشط"
             add_heading: "اضافة شخصية"

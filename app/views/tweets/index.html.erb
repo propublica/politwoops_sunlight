@@ -3,7 +3,7 @@
     <%= t 'politwoops.slogan' %>
 	</h2>
 
-   %= render :template => "shared/filterform" %>
+   
 
 </div>
  <div class="caveat">
@@ -12,6 +12,9 @@
   </p>
 </div>
 -->
+
+<%= render :template => "shared/filterform" %>
+
 <% content_for :feeds do %>
   <% if @politician %>
     <%= auto_discovery_link_tag :rss, politician_url(@politician.user_name, :format => :rss) %>
@@ -26,9 +29,9 @@
   <%= t 'politwoops.no_result' %>
 <% else %>
   
-  <div class="tweets_count">
+  <h2 class="tweets_count">
     <%= t(:number_of_deleted_tweets, :scope => [:politwoops,:tweets]) %> <span><%= @tweets.total_entries %></span>
-  </div>
+  </h2>
 
   <% @tweets.each do |tweet| %>
     <%= render :partial => "tweets/tweet", :locals => {:tweet => tweet} %>

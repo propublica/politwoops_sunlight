@@ -12,18 +12,22 @@
 
 	<%= stylesheet_link_tag "colorbox" %>
 
+    <%= stylesheet_link_tag "select2" %>
 	<%= stylesheet_link_tag "style" %>
-
+    
 	<%= content_for :head %>
 
 	<%= javascript_include_tag "jquery-1.7.1.min" %>
 	<%= javascript_include_tag "jquery.placehold-0.3.min" %>
 	<%= javascript_include_tag "jquery.colorbox-min" %>
+    <%= javascript_include_tag "select2" %>
+    <%= javascript_include_tag "select2_locale_ar" %>
 
 	<%= csrf_meta_tag %>
 	<link rel="icon" href="/images/favicon.png" type="image/png">
 
 	<%= content_for :feeds %>
+
 </head>
 <body <%if content_for?(:body_class) %> <%= yield(:body_class) %> <% end %>>
   
@@ -37,6 +41,26 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     <!--End of Facebook like button -->
+
+    <!-- Select2 -->
+    <script>
+        $(document).ready(function() { 
+            $("#pol_select").select2({
+                placeholder: "<%= t 'politwoops.politicians.name_select_label' %>",
+                allowClear: true
+            });
+            $("#party_select").select2({
+                placeholder: "<%= t 'politwoops.parties.name_label' %>",
+                allowClear: true
+            });
+            $("#e2").select2({
+                placeholder: "Select a State",
+                allowClear: true
+            });
+        });
+
+    </script>
+    <!-- End of Select2 -->
 
   <script>
     $(document).ready(function() {

@@ -25,7 +25,7 @@
       <form>
       <select name = "politician_id" id="pol_select">
           <% for @politican in @all_politicians %>
-            <option value="<%= @politican.id %>" <% if @politican.id == params[:politician_id] %> SELECTED <%end%> > 
+            <option value="<%= @politican.id %>" <% if @politican.id.to_s == params[:politician_id] %> SELECTED <%end%> > 
               <%= "#{@politican.first_name} #{@politican.middle_name} #{@politican.last_name} - @#{@politican.user_name}" %>
               <% if !@politican.party.nil? %>
                 <%=" -- #{@politican.party.name}"%>

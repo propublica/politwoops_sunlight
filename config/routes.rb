@@ -43,6 +43,8 @@ Politwoops::Application.routes.draw do
     match "review/:id" => "tweets#review", :via => [:post], :as => "review_tweet"
   end
   
+  
+  match "about", :to=> "static#about"
   match "404", :to => "errors#not_found"    
   match "*anything", :to => "errors#not_found"    
 
