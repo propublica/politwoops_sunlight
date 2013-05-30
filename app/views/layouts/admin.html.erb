@@ -2,10 +2,11 @@
 <html>
 <head>
   <title><%= t :site_name, :scope => [:politwoops] %> - <%= t :slogan, :scope => [:politwoops] %></title>
- 
+  
+  <%= stylesheet_link_tag "select2" %>
   <%= stylesheet_link_tag "style" %>
   <%= stylesheet_link_tag "admin" %>
-  <%= stylesheet_link_tag "select2" %>
+  
 
   <%= javascript_include_tag "jquery-1.7.1.min" %>
   <%= javascript_include_tag "jquery.placehold-0.3.min" %>
