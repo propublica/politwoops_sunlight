@@ -75,7 +75,8 @@ class Admin::PoliticiansController < Admin::AdminController
       pol.state = params[:state]
     end
     
-    pol.save()
+    pol.save!
+    pol.reset_avatar
 
     if params[:unapprove_all] and params[:unapprove_all] == 'on' then
         unmod = DeletedTweet.where(:reviewed=>false, :politician_id => pol)

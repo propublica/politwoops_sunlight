@@ -186,6 +186,7 @@ namespace :politicians do
     end
   end
 
+  desc "Updates profile images for politicians."
   task :reset_avatars => :environment do
     no_responses = []
     politicians = Politician
@@ -199,24 +200,12 @@ namespace :politicians do
     end
 
     politicians.all.each do |politician|
-      url = "http://api.twitter.com/1/users/profile_image/#{politician.user_name}?size=bigger"
-
-      begin
-        res = HTTParty.get url, :no_follow => true
-      rescue HTTParty::RedirectionTooDeep => e
-        image_url = e.response.header['Location']
-        if image_url and image_url.strip.present?
-          puts "[#{politician.user_name}] #{image_url}"
-          politician.profile_image_url = image_url
-          politician.save!
-        else
-          no_responses << politician.user_name
-          puts "[#{politician.user_name}] No image URL, probably bad account"
-        end
+      updated, error = politician.reset_avatar
+      if updated == true
+        puts "[#{politician.user_name}] #{politician.profile_image_url}"
       else
-        "[#{politician.user_name}] NO RESPONSE??"
+        puts "[#{politician.user_name}] #{error}"
       end
-
       sleep 1
     end
 
