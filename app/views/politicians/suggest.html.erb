@@ -1,0 +1,118 @@
+<h3><%= t :suggest_new_politician, :scope => [:politwoops,:admin] %></h3>
+<hr/>
+
+<h3><%= t :your_details, :scope => [:politwoops,:admin] %></h3>
+<form id="politician" action="/users/send_suggestion" method="POST">
+  <% if !@politician.nil? && @politician.errors.any? %>
+    <div id="errorExplanation">
+      <ul>
+      <% @politician.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% if !@user_error.nil? %>
+    <div id="errorExplanation">
+      <%= @user_error %>
+    </div>
+  <% end %>
+
+<label for="name"><%= t :name, :scope => [:politwoops,:admin] %>:</label><input id="name"  name="name" value="" />
+<label for="email"><%= t :email, :scope => [:politwoops,:admin] %>:</label><input id="email" name="email" value="" />
+
+<input type="hidden" name="twitter_id" id="twitter_id" value="" />
+<input type="hidden" name="profile_image" id="profile_image_input" value="" />
+<hr/>
+<h3><%= t :politician_details, :scope => [:politwoops,:admin] %></h3>
+<div style="margin-top: 35px;">
+  <img id= "profile_image" src ="">
+</div>
+
+<ul>
+  <li><%= t :user_name, :scope => [:politwoops,:admin] %>:
+    <input id="user_name_input" name="user_name" value="<%= @politician['user_name'] %>" />
+    <img id = "loading_img" width="20" style="display:none;" src="/images/loading.gif">
+  </li>
+  <li>
+    <%= t :display_name, :scope => [:politwoops,:admin] %> (<%= t :first_name, :scope => [:politwoops,:admin] %>, <%= t :middle_name, :scope => [:politwoops,:admin] %>, <%= t :last_name, :scope => [:politwoops,:admin] %>, <%= t :suffix, :scope => [:politwoops,:admin] %>):<br />
+    <span>
+      <input id="first_name_input"  name="first_name" value="<%= @politician.first_name %>" />
+      <input id="middle_name_input" name="middle_name" value="<%= @politician.middle_name %>" />
+      <input id="last_name_input"  name="last_name" value="<%= @politician.last_name %>" />
+      <input id="suffix_input" name="suffix" value="<%= @politician.suffix %>" />
+    </span>
+  </li>
+  <li>
+    <%= t :party, :scope => [:politwoops,:admin] %>:  <span>
+    <select name="party_id">
+        <option value="0"></option>
+    <% @parties.each do |party| %>
+        <option value="<%=party.id%>" >
+            <%=party.name.upcase %>
+        </option>
+    <% end %>
+    </select>
+    </span>
+  </li>
+
+  <li>
+     <button type="submit" value="suggest"><%= t :suggest, :scope => [:politwoops,:form] %></button>
+  </li>
+</ul>
+</form>
+
+<script type="text/javascript" src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/hmac-sha1.js"></script>
+<script type="text/javascript" charset="utf-8">
+    
+    function startLoading() {
+      jQuery("#loading_img").show();
+    }
+
+    function finishLoading() {
+      jQuery("#loading_img").hide();
+    }
+
+    jQuery("#user_name_input").change(function(){
+        var screen_name = jQuery(this).val();
+        startLoading();
+        jQuery.ajax({
+            url: '/users/get-twitter-id/'+ screen_name + '.json', 
+            dataType: 'json',
+            success: function(data){
+                      jQuery('span.error').remove();
+                      console.log(data);
+                      jQuery("#twitter_id").val(data['twitter_id']);
+                      jQuery("#profile_image_input").val(data['org_profile_image']);
+                      jQuery("#profile_image").attr("src",data['profile_image']);
+                      
+                      jQuery("#first_name_input").val(data['first_name']);
+                      jQuery("#middle_name_input").val(data['middle_name']);
+                      jQuery("#last_name_input").val(data['last_name']);
+                      finishLoading();
+                      },
+            error: function(jq, textStatus, errorThrown){
+                      jQuery("#errorExplanation").html('<br/><span class="error"><%= t (:no_such_user, :scope => [:politwoops,:error]) %></span>');
+                      console.log(errorThrown); 
+                      console.log(textStatus);
+                      finishLoading();
+                     },
+            });
+    });
+    jQuery('#user_name_input').live("keypress", function(e) {
+            /* ENTER PRESSED*/
+            if (e.keyCode == 13) {
+                /* FOCUS ELEMENT */
+                var inputs = $(this).parents("form").eq(0).find(":input");
+                var idx = inputs.index(this);
+
+                if (idx == inputs.length - 1) {
+                    inputs[0].select()
+                } else {
+                    inputs[idx + 1].focus(); //  handles submit buttons
+                    inputs[idx + 1].select();
+                }
+                return false;
+            }
+        });
+</script>

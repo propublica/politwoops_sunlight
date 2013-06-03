@@ -1004,3 +1004,23 @@ table.politicians a{
 	right: auto;
     left:-1px;
 }
+
+
+#politician ul li {margin: 10px; padding: 5px; width: 520px; }
+
+#politician img { margin-top: -20px; }
+
+#politician ul li span{/*float: left; */}
+
+#politician span#name {font-size: 1.2em; font-weight: bold;}
+
+#politician ul li button { text-indent: 0;  padding: 5px;  }
+
+#s_input, #suffix_input { width:20px; }
+#state { width: 20px ;}
+#mn_input, #middle_name_input { width: 30px; }
+
+#politician #first_name, #politician #middle_name, #politician #last_name, #politician #suffix { float: right; margin-right: 3px;margin-left: 3px}
+
+#politician #first_name_input, #politician #middle_name_input, #politician #last_name_input, #politician #suffix_input {  margin-right: 3px;margin-left: 3px}
+#politician input, #politician select{ margin: 0; border: 1px solid #ccc;border-radius: 4px;  box-shadow: 0 3px 3px #eee inset;  margin: 0;  padding: 7px;}

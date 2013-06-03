@@ -55,4 +55,79 @@ class PoliticiansController < ApplicationController
     end
   end
 
+  def get_twitter_id
+    require 'twitter'
+    user = Twitter.user(params[:screen_name])
+    @twitter_id = user.id
+    @org_profile_image = user.profile_image_url(:original)
+    @profile_image = user.profile_image_url(:normal)
+    
+    names_list = user.name.split
+
+    if names_list.length >=3
+      @fname = names_list[0]
+      @mname = names_list[1]
+      @lname = names_list[2]
+    elsif names_list.length >=2
+      @fname = names_list[0]
+      @lname = names_list[1]
+    elsif names_list.length >=1
+      @fname = names_list[0]
+    end
+
+    respond_to do |format|
+        format.json { render }
+    end
+  end
+
+  def suggest
+    @parties = Party.all
+    @politician = Politician.new()
+
+    respond_to do |format|
+      format.html { render }
+    end
+  end
+
+  def send_suggestion
+    @politician = Politician.new(:twitter_id => params[:twitter_id], :user_name => params[:user_name])
+    if params[:party_id] == '0'
+      @politician.party = nil
+    else
+      @politician.party = Party.find(params[:party_id])
+    end
+    if params[:first_name] != '' and params[:first_name].strip != ' ' then
+      @politician.first_name = params[:first_name]
+    end
+    if params[:middle_name] != '' and params[:middle_name].strip != ' ' then
+      @politician.middle_name = params[:middle_name]
+    end
+    if params[:last_name] != '' and params[:last_name].strip != ' ' then
+      @politician.last_name = params[:last_name]
+    end
+    if params[:suffix] != '' and params[:suffix].strip != ' ' then
+      @politician.suffix = params[:suffix]
+    end
+    
+    if params[:profile_image] != nil and params[:profile_image] != '' and params[:profile_image].strip != ' ' then
+      @politician.profile_image_url = params[:profile_image]
+    end
+
+    name = params[:name]
+    email = params[:email]
+
+    if @politician.valid? and !name.empty? and (email =~ /@/)
+      UserMailer.deliver_suggest_politician(@politician, name, email)
+      redirect_to("/")
+    elsif @politician.valid?
+      @user_error = t(:user_error, :scope =>[:politwoops, :error])
+      @parties = Party.all
+      render 'suggest'
+    else
+      @parties = Party.all
+      render 'suggest'
+    end
+
+  end
+
 end 

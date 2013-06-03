@@ -23,5 +23,24 @@ Politwoops::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   config.site_url = "http://beta.2ad.kelmetak.com"
+
+  config.action_mailer.raise_delivery_errors = true
+
+  # set delivery method to :smtp, :sendmail or :test
+  #config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :sendmail
+
+  # these options are only needed if you choose smtp delivery
+  """
+  config.action_mailer.smtp_settings = {
+    :address        => 'smtp.example.com',
+    :port           => 25,
+    :domain         => 'beta.2ad.kelmetak.com',
+    :authentication => :login,
+    :user_name      => 'www',
+    :password       => 'secret'
+  }
+  """
+
 end
 

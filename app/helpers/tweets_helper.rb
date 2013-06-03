@@ -19,9 +19,8 @@ module TweetsHelper
     tweet_when = time_ago_in_words tweet.modified
     delete_delay = (tweet.modified - tweet.created).to_i
 
-    if delete_delay <= 1
+    if delete_delay > 1
       delay = t("after", :scope => [:politwoops, :tweets]) + ' '
-      delay = ''
       delay += if delete_delay > (60 * 60 * 24 * 7)
          "#{delete_delay / (60 * 60 * 24 * 7)}" + ' ' + t("week", :scope => [:politwoops, :tweets])
       elsif delete_delay > (60 * 60 * 24)
