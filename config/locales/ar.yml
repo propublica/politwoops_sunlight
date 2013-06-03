@@ -255,8 +255,8 @@ ar:
             today: "اﻟﻴﻮﻡ"
         index_heading: "اﻹﺣﺼﺎﺋﻴﺎﺕ"
         tweets:
-            byline: "ﺣﺬﻓﺖ ﻣﻨﺬ %{when} ﻣﻀﺖ %{delay}, ﻋﺒﺮ %{what}"
-            byline_text: "ﺣﺬﻓﺖ ﻣﻨﺬ %{when} ﻣﻀﺖ %{delay}"
+            byline: "ﺣﺬﻓﺖ ﻣﻨﺬ %{when} ، %{delay}, ﻋﺒﺮ %{what}"
+            byline_text: "ﺣﺬﻓﺖ ﻣﻨﺬ %{when}، %{delay}"
             immediately: "ﻋﻠﻲ اﻟﻔﻮﺭ"
             screenshots_of_links_in_this_tweet: "ﺻﻮﺓ ﻣﻦ اﻟﺼﻔﺤﺔ اﻟﻤﺸﺎﺭ ﺇﻟﻴﻬﺎ ﻓﻲ اﻟﺘﻐﺮﻳﺪﺓ"
             number_of_deleted_tweets: "ﻋﺪﺩ اﻟﺘﻐﺮﻳﺪاﺕ اﻟﻤﺤﺬﻭﻓﺔ"
