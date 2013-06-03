@@ -82,6 +82,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12)
       json (~> 1.4)
+    rmagick (2.13.2)
     simple_oauth (0.1.9)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -119,6 +120,7 @@ DEPENDENCIES
   oauth
   rails (= 3.2.11)
   rails_autolink
+  rmagick (~> 2.0)
   system_timer (~> 1.2.4)
   twitter
   twitter-text

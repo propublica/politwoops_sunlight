@@ -18,6 +18,8 @@ gem "rails_autolink" # auto_link function
 gem "system_timer", "~> 1.2.4"
 gem "beanstalk-client"
 
+gem "rmagick", "~> 2.0"
+
 # remove this and switch to built-in CSV class when the app is upgraded to Ruby 1.9
 gem "fastercsv"
 

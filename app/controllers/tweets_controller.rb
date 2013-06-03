@@ -2,11 +2,14 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.xml
 
+  require 'RMagick'
   include ApplicationHelper
 
   caches_action :index, 
     :expires_in => 30.minutes,
     :if => proc { (params.keys - ['format', 'action', 'controller']).empty? }
+
+  caches_action :thumbnail
 
   before_filter :enable_filter_form
 
@@ -65,4 +68,26 @@ class TweetsController < ApplicationController
       format.json  { render :json => @tweet.format }
     end
   end
+
+  def thumbnail
+    image = TweetImage.find(params[:id])
+    if not image
+      not_found
+    end
+
+    resp = HTTParty.get(image.url)
+    img = Magick::Image.from_blob(resp.body)
+    layer0 = img[0]
+    aspect_ratio = layer0.columns.to_f / layer0.rows.to_f
+    if aspect_ratio > 1.0
+      new_width = 150
+      new_height = layer0.rows.to_f / aspect_ratio
+    else
+      new_width = layer0.columns.to_f / aspect_ratio
+      new_height = 150
+    end
+    thumb = layer0.resize_to_fit(new_width, new_height)
+    send_data(thumb.to_blob, :disposition => 'inline', :type => resp.headers.fetch('content-type', 'image/png'))
+  end
+
 end
