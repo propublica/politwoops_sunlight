@@ -27,6 +27,7 @@
 
 <% if @tweets.empty? %>
   <%= t 'politwoops.no_result' %>
+  <a href="/users/suggest"><%= t('politwoops.groups.suggest_politicians_label')%></a>
 <% else %>
   
   <h2 class="tweets_count">
