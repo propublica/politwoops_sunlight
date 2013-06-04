@@ -108,16 +108,12 @@ class PoliticiansController < ApplicationController
     if params[:suffix] != '' and params[:suffix].strip != ' ' then
       @politician.suffix = params[:suffix]
     end
-    
-    if params[:profile_image] != nil and params[:profile_image] != '' and params[:profile_image].strip != ' ' then
-      @politician.profile_image_url = params[:profile_image]
-    end
 
     name = params[:name]
     email = params[:email]
 
     if @politician.valid? and !name.empty? and (email =~ /@/)
-      UserMailer.deliver_suggest_politician(@politician, name, email)
+      UserMailer.suggest_politician(@politician, name, email).deliver
       redirect_to("/")
     elsif @politician.valid?
       @user_error = t(:user_error, :scope =>[:politwoops, :error])

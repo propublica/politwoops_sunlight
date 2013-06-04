@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p>
+    	<span>
+    		New politician suggestion from
+    	</span>
+    	<br/>
+    	<span>
+    		<%= @name %> (<%= @email %>)
+    	</span>
+    </p>
+
+    <p>
+    	<h2>
+    		Polititician Details
+    	</h2>
+    	<br/>
+    	<span>
+    		Twitter handel: <%= @politician.user_name %>
+    		<br/>
+    		Name: <%= @politician.first_name %> <%= @politician.middle_name %> <%= @politician.last_name %>
+    		<br/>
+    		<% if !@politician.party.nil? %> Party:  <%= @politician.party.name %> <% end %>
+    		<br/>
+    	</span>
+    </p>
+  </body>
+</html>
