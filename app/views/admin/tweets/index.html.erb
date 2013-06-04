@@ -24,6 +24,7 @@
     <div style="text-align:center;">
       <form>
       <select name = "politician_id" id="pol_select">
+          <option></option>
           <% for @politican in @all_politicians %>
             <option value="<%= @politican.id %>" <% if @politican.id.to_s == params[:politician_id] %> SELECTED <%end%> > 
               <%= "#{@politican.first_name} #{@politican.middle_name} #{@politican.last_name} - @#{@politican.user_name}" %>
@@ -37,7 +38,8 @@
     </form>
     </div>
   </br>
-
+<button value="<%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %>" onclick="reject_all_selected()" > <%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %> </button>
+<hr/>
 <% @tweets.each do |tweet| %>
   <%= render :partial => "tweets/tweet", :object => tweet, :locals => {:admin => true} %>
 <% end %>

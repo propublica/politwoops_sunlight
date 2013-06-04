@@ -17,7 +17,11 @@
 
   <%= content_for :feeds %>
   <script>
-        $(document).ready(function() { $("#pol_select").select2(); });
+        $(document).ready(function() { $("#pol_select").select2({
+                placeholder: "<%= t 'politwoops.politicians.name_select_label' %>",
+                allowClear: true
+            }
+          ); });
   </script>
 </head>
 <body>
