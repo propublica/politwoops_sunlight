@@ -1,8 +1,6 @@
 configuration = YAML.load_file "#{Rails.root}/config/config.yml"
-SitemapGenerator::Sitemap.default_host = configuration[:sitemap_default_url]
-SitemapGenerator::Sitemap.include_root = false
-
-SitemapGenerator::Sitemap.create do
+SitemapGenerator::Sitemap.create(:default_host => configuration[:sitemap_default_url],
+                                 :include_root => false) do
   most_recent_twoop = DeletedTweet.order(:modified).first
   if most_recent_twoop
     add '/',
