@@ -1,3 +1,5 @@
+:sitemap_default_url: 'http://host.com'
+
 :admin:
   :username: 
   :password: 

@@ -4,6 +4,7 @@ gem 'rails', '3.2.11'
 gem 'mysql2', '0.3.11'
 
 gem 'httparty', '~> 0.10.0' # used for syncing Twitter avatars
+gem 'sitemap_generator', '~> 4.0'
 
 # interacting with Twitter
 gem "twitter"
@@ -25,5 +26,6 @@ gem "fastercsv"
 
 # allows the app to be run with "bundle exec unicorn" in development
 group :development do
+  gem 'awesome_print'
   gem 'unicorn'
 end
