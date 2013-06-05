@@ -87,7 +87,11 @@ class TweetsController < ApplicationController
       new_height = 150
     end
     thumb = layer0.resize_to_fit(new_width, new_height)
-    send_data(thumb.to_blob, :disposition => 'inline', :type => resp.headers.fetch('content-type', 'image/png'))
+    filename = File.basename(URI.parse(image.url))
+    send_data(thumb.to_blob,
+              :disposition => 'inline',
+              :type => resp.headers.fetch('content-type', 'application/octet-stream'),
+              :filename => filename)
   end
 
 end
