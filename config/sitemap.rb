@@ -4,16 +4,21 @@ SitemapGenerator::Sitemap.create(:default_host => configuration[:sitemap_default
   most_recent_twoop = DeletedTweet.order(:modified).first
   if most_recent_twoop
     add '/',
+        :host => configuration[:sitemap_default_url],
         :changefreq => 'hourly',
         :priority => 1
   else
     add '/',
+        :host => configuration[:sitemap_default_url],
         :changefreq => 'hourly',
         :lastmod => most_recent_twoop.modified,
         :priority => 1
   end
 
-  add '/users', :changefreq => 'weekly', :priority => 1
+  add '/users',
+      :host => configuration[:sitemap_default_url],
+      :changefreq => 'weekly',
+      :priority => 1
 
   Politician.all.each do |pol|
     add url_for(:host => configuration[:sitemap_default_url],
