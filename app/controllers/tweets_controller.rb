@@ -70,7 +70,21 @@ class TweetsController < ApplicationController
   end
 
   def thumbnail
-    image = TweetImage.find(params[:id])
+    tweet = Tweet.find(params[:tweet_id])
+    if not tweet
+      not_found
+    end
+
+    images = tweet.tweet_images.all
+    if not images
+      not_found
+    end
+
+    filename = "#{params[:basename]}.#{params[:format]}"
+    image = images.select do |img|
+      img.filename == filename
+    end .first
+
     if not image
       not_found
     end
@@ -87,7 +101,6 @@ class TweetsController < ApplicationController
       new_height = 150
     end
     thumb = layer0.resize_to_fit(new_width, new_height)
-    filename = File.basename(URI.parse(image.url).path)
     send_data(thumb.to_blob,
               :disposition => 'inline',
               :type => resp.headers.fetch('content-type', 'application/octet-stream'),
