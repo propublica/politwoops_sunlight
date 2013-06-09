@@ -1,5 +1,16 @@
 @font-face {font-family: "GESS Medium";font-style: normal;font-weight: normal; src: url('../fonts/GE_SS_Two_Medium.otf');}
-
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
 
 /*  HTML5 ✰ Boilerplate  */
 html{ direction:rtl;}
@@ -56,7 +67,7 @@ table { border-collapse:collapse; border-spacing:0; }
 hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
 input, select { vertical-align:middle; }
 
-body { color: #333; font-family: Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif; line-height:1.7em; font-size: 13px;} 
+body {  font-family: Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif; line-height:1.7em; font-size: 13px;} 
 select, input, textarea, button { font: 99% sans-serif; }
 button.disabled { opacity: 0.3; filter: alpha(opacity=30); -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"; }
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
@@ -120,8 +131,8 @@ html{
 }
 body {
 	margin: 0 auto;
-	/**background: url(/images/header-bg.png) center top repeat-x;**/
-	color: #333;
+	background:url(../images/body_bg.png) top repeat-x; 
+	color: #000;
 }
 .sf-header {
 	background: url(/images/sfapp_bg_header.jpg) center bottom repeat-x;
@@ -138,11 +149,9 @@ body {
 }
 
 .container {
-	margin-left: auto;
-	margin-right: auto;
-	width: 940px;
+	width: 100%;
 }
-#container{ padding:30px;	background:#fff; border-radius: 4px; box-shadow: 0 0 5px #ddd;min-height: 400px;}
+#container{  margin: 0 0 20px; background:#fff; min-height: 400px; border-radius:4px;}
 
 .textReplace { 
 	text-indent: -9999em; 
@@ -194,7 +203,7 @@ body {
 }
 
 form#filter{
-	margin-bottom: 26px;
+	/*margin-bottom: 26px;*/
 }
 .title{
 	/*background: url(/images/bg_filter.png) center bottom repeat-x;*/
@@ -250,18 +259,19 @@ button:hover{
 
 
 /* header */
+
 header { 
-	/*background: url(/images/bg_header.png) 30px bottom no-repeat;*/
-	height: 80px;
-	margin-bottom: 54px;
+	height: 100px;
+	margin: 0 auto;
 	position: relative;
+	width:940px;
 }
 
 h1 { 
 	height: 78px; 
 	width: 370px; 
 	float: right;
-	margin-top: 10px;
+	margin-top: 0;
 }
 h1 a { background: url(/images/logo.png) top right no-repeat; height: 90px; width: 600px; }
 nav {
@@ -297,8 +307,6 @@ nav ul li:last-child{
 
 }
 #search { 
-	float: left;
-	/*background: url(/images/bg_search.png) right top no-repeat;*/
 	padding-top: 5px;
 	padding-right: px;
 	margin-top: 10px;
@@ -405,9 +413,9 @@ h4.tweetTitle{
 .tweetTitle a:hover { color: #063E5C; text-decoration: underline;}
 .tweetTitle span{
 	font-size: 72%;
-	font-color: #8D8883;
+	font-color: #777;
 }
-.tweet img {height: 73px; margin: 0 0 0 20px; width: 73px; border: 1px solid #ddd; padding: 4px; border-radius:4px; 	box-shadow: 0 0 2px #ddd;}
+.tweet img {height: 73px; margin: 0 0 0 20px; width: 73px; border: 1px solid #ccc; padding: 4px; border-radius:100px;}
 .contentLeft{
 	float: right;
 }
@@ -432,7 +440,7 @@ h4.tweetTitle{
 .tweetTitle a.linkUnderline:link, .tweetTitle a.linkUnderline:visited, a.linkUnderline:link, a.linkUnderline:visited  { 
 	border-bottom: 1px dotted #5ca8b1;
 	font-weight: normal;
-	color: #8D8883;
+	color: #777;
 }
 .tweetTitle a.linkUnderline:active, a.linkUnderline:active, .tweetTitle a.linkUnderline:hover, a.linkUnderline:hover{
 	text-decoration: none;
@@ -460,7 +468,7 @@ h4.tweetTitle{
 .tweet-content { margin-bottom: 8px; font-size:18px;}
 .tweet .inactiveMess{
 	margin-bottom: 8px;
-	color: #8D8883;
+	color: #777;
 	font-size: 90%;
 	font-style: italic;
 	margin-top: -3px;
@@ -471,7 +479,7 @@ h4.tweetTitle{
 }
 
 
-.tweet .byline, .tweet .byline { color: #8d8883;}
+.tweet .byline, .tweet .byline { color: #777;}
 .tweet .byline {font-size: 90%;}
 
 .tweet .byline a.twitter {
@@ -714,11 +722,9 @@ iframe.twitter-share-button {display: inline; vertical-align: text-bottom;}
 /*  footer  */
 
 footer{
-	/*background-color: #FAFAF7;
-	border-top: 1px solid #ECE9E9;*/
+	text-align: center;
 	margin-top: 20px;
 	padding-top: 20px;
-	/*min-height: 220px;*/
 	color: #9F9A97;
 	font-size: 13px;
 }
@@ -990,7 +996,9 @@ table.politicians a{
 }
 
 #footerWrapper {
-	/*background: url('http://assets-sfcom.s3.amazonaws.com/img/bg_footerWrap.jpg') top center repeat-x;*/
+	text-align: center;
+	background:#e5e5e5;
+	padding-bottom:10px;
 }
 
 
@@ -1024,3 +1032,8 @@ table.politicians a{
 
 #politician #first_name_input, #politician #middle_name_input, #politician #last_name_input, #politician #suffix_input {  margin-right: 3px;margin-left: 3px}
 #politician input, #politician select{ margin: 0; border: 1px solid #ccc;border-radius: 4px;  box-shadow: 0 3px 3px #eee inset;  margin: 0;  padding: 7px;}
+
+.service{ float:left;} 
+.filters-wrapper{ padding: 20px; background: #eee; border-radius:4px;}
+.filters{width:940px; margin:0 auto; }
+.content{ width:940px; margin:20px auto;}

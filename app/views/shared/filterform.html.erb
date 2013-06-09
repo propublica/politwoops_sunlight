@@ -1,43 +1,44 @@
-<div style="text-align:center;margin:">
-	<form action="<%= @filter_action %>" method="GET" id="filter" class="form-inline">
-	    <ul>
-			<li class="styled-select">
-	    		<!--<label for="party"><%= t 'politwoops.parties.name_label' %> :</label>-->
-				<select name="party" id="party_select" class="styled-select">
-					<option></option>
-                    <% @parties.each do |par| %>
-        				<option value="<%=par.name%>" <% if @filters['party'] == par.name %> selected <% end %>><%=par.display_name%></option>
-                    <% end %>
-				</select>
-			</li>
-	    <li><button type="submit" class="btn"><%= t 'politwoops.form.filter' %></button></li>
-		</ul>
-	</form>
-	<form action="<%= @filter_action %>" method="GET" class="form-inline" id="filter">
-		<ul>
-			<li>
-				<!--<label for="party"><%= t 'politwoops.politicians.name_select_label' %> :</label>-->
-				<select name = "politician_id" id="pol_select">
-				  <option></option>
-				  <% for @politican in @all_politicians %>
-				    <option value="<%= @politican.id %>"
-				    	<% if @politican.id.to_s == params[:politician_id] %> selected <% end %>
-				    	> 
-				      <%= "#{@politican.first_name} #{@politican.middle_name} #{@politican.last_name} - @#{@politican.user_name}" %>
-				      <% if !@politican.party.nil? %>
-				        <%=" -- #{@politican.party.name}"%>
-				      <% end %>
-				    </option>
-				  <% end %>
-				</select>
-			</li>
-		
-			<li>
-				<button style="display: inline-block;" type="submit">
-					<%=t(:search, :scope => [:politwoops,:form])%>
-				</button>
-			</li>
-		</ul>
-    </form>
+<div class="filters-wrapper clearfix">
+	<div class="filters">
+		<form action="<%= @filter_action %>" method="GET" id="filter" class="form-inline">
+		    <ul>
+				<li class="styled-select">
+		    		<!--<label for="party"><%= t 'politwoops.parties.name_label' %> :</label>-->
+					<select name="party" id="party_select" class="styled-select">
+						<option></option>
+	                    <% @parties.each do |par| %>
+	        				<option value="<%=par.name%>" <% if @filters['party'] == par.name %> selected <% end %>><%=par.display_name%></option>
+	                    <% end %>
+					</select>
+				</li>
+		    <li><button type="submit" class="btn"><%= t 'politwoops.form.filter' %></button></li>
+			</ul>
+		</form>
+		<form action="<%= @filter_action %>" method="GET" class="form-inline" id="filter">
+			<ul>
+				<li>
+					<!--<label for="party"><%= t 'politwoops.politicians.name_select_label' %> :</label>-->
+					<select name = "politician_id" id="pol_select">
+					  <option></option>
+					  <% for @politican in @all_politicians %>
+					    <option value="<%= @politican.id %>"
+					    	<% if @politican.id.to_s == params[:politician_id] %> selected <% end %>
+					    	> 
+					      <%= "#{@politican.first_name} #{@politican.middle_name} #{@politican.last_name} - @#{@politican.user_name}" %>
+					      <% if !@politican.party.nil? %>
+					        <%=" -- #{@politican.party.name}"%>
+					      <% end %>
+					    </option>
+					  <% end %>
+					</select>
+				</li>
+			
+				<li>
+					<button style="display: inline-block;" type="submit">
+						<%=t(:search, :scope => [:politwoops,:form])%>
+					</button>
+				</li>
+			</ul>
+	    </form>
+    </div>
 </div>
-<div class="clear"></div>

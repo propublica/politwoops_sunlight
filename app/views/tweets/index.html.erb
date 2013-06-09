@@ -14,7 +14,7 @@
 -->
 
 <%= render :template => "shared/filterform" %>
-
+<div class="content">
 <% content_for :feeds do %>
   <% if @politician %>
     <%= auto_discovery_link_tag :rss, politician_url(@politician.user_name, :format => :rss) %>
@@ -42,3 +42,4 @@
 
   <%= render :template => "shared/screenshotbox" %>
 <% end %>
+</div>
