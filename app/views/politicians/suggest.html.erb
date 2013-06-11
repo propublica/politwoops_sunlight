@@ -1,8 +1,6 @@
 <h2><%= t :suggest_new_politician, :scope => [:politwoops,:admin] %></h2  >
-<hr/>
 
-<h3><%= t :your_details, :scope => [:politwoops,:admin] %></h3>
-<form id="politician" action="/users/send_suggestion" method="POST">
+<form id="politician" action="/users/send_suggestion" method="POST" class="form-style">
   <% if !@politician.nil? && @politician.errors.any? %>
     <div id="errorExplanation">
       <ul>
@@ -17,15 +15,20 @@
       <%= @user_error %>
     </div>
   <% end %>
-
-<label for="name"><%= t :name, :scope => [:politwoops,:admin] %>:</label><input id="name"  name="name" value="" />
-<label for="email"><%= t :email, :scope => [:politwoops,:admin] %>:</label><input id="email" name="email" value="" />
-
+<h3><%= t :your_details, :scope => [:politwoops,:admin] %></h3>
+<div>
+  <label for="name"><%= t :name, :scope => [:politwoops,:admin] %>:</label>
+  <input id="name"  name="name" value="" />
+</div>
+<div>
+  <label for="email"><%= t :email, :scope => [:politwoops,:admin] %>:</label>
+  <input id="email" name="email" value="" />
+</div>
 <input type="hidden" name="twitter_id" id="twitter_id" value="" />
 <input type="hidden" name="profile_image" id="profile_image_input" value="" />
-<hr/>
+<br><br>
 <h3><%= t :politician_details, :scope => [:politwoops,:admin] %></h3>
-<div style="margin-top: 35px;">
+<div>
   <img id= "profile_image" src ="">
 </div>
 

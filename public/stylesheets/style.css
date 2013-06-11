@@ -131,7 +131,7 @@ html{
 }
 body {
 	margin: 0 auto;
-	background:url(../images/body_bg.png) top repeat-x; 
+	background:#f2f2f2 url(../images/body_bg.png) center -10px  repeat-x; 
 	color: #000;
 }
 .sf-header {
@@ -233,16 +233,18 @@ label{
 
 button{
 	background: #4e91b7;
-	-webkit-box-shadow:  1px 1px 1px 0 rgba(2, 34, 38, .3);
-    box-shadow:  1px 1px 1px 0 rgba(2, 34, 38, .3);
+	/*-webkit-box-shadow:  1px 1px 1px 0 rgba(2, 34, 38, .3);
+    box-shadow:  0 1px 1px 0 rgba(2, 34, 38, .3);*/
     text-indent: 0;
     color: #fff;
-    padding: 7px 13px;
+    padding: 6px 13px;
     text-align: center;
     -moz-border-radius: 4px; 
 	-webkit-border-radius: 4px; 
 	border-radius: 4px; 
-	font-size:15px;
+	font-size:13px;
+	font-family: "GESS Medium",georgia,serif;
+	line-height: 15px;
 }
 button:hover{
 	background: #3e81a7;
@@ -261,7 +263,7 @@ button:hover{
 /* header */
 
 header { 
-	height: 100px;
+	height: 90px;
 	margin: 0 auto;
 	position: relative;
 	width:940px;
@@ -273,7 +275,7 @@ h1 {
 	float: right;
 	margin-top: 0;
 }
-h1 a { background: url(/images/logo.png) top right no-repeat; height: 90px; width: 600px; }
+h1 a { background: url(/images/logo.png) top right no-repeat; height: 60px; width: 500px; margin-top: 15px; }
 nav {
 	position: relative;
 }
@@ -307,9 +309,8 @@ nav ul li:last-child{
 
 }
 #search { 
-	padding-top: 5px;
+	padding-top: 10px;
 	padding-right: px;
-	margin-top: 10px;
 	height: 42px;
 }
 #search input[type=search] { 
@@ -320,25 +321,26 @@ nav ul li:last-child{
 	-moz-border-radius: 4px; 
 	-webkit-border-radius: 4px; 
 	border-radius: 4px;
-	border: 1px solid #ddd;
-	padding: 10px 7px 7px 7px; 
+	border: none;
+	padding: 7px; 
 	margin-top: 0px;
 	float: right;
 	display: block;
-	width: 238px;
-	background: #fff; 
-  box-shadow: 0 3px 3px #eee inset;
+	width: 230px;
+	background: #f7f7f7; 
+  font-family: tahoma;
 }
 
 #searchBtn{
 	background: url(/images/search.png) top center no-repeat;
-	width: 32px;
-	height: 32px;
+	width: 24px;
+	height: 24px;
 	float: right;
 	display: block;
-	margin-right: 10px;
+	margin-right: 5px;
 	-webkit-box-shadow:  none;
     box-shadow:  none;
+    margin-top: 3px;
 }
 #searchBtn:hover{
 	background: url(/images/search.png) center bottom no-repeat;
@@ -378,10 +380,13 @@ h2 {
 	margin-bottom: 23px;
 	font-weight: 700;
 	color: #000;
-	text-shadow: 1px 1px 2px rgba(6,62,92,.3);
-    filter: dropshadow(color=#063e5c, offx=1, offy=1);
+	/*text-shadow: 1px 1px 2px rgba(6,62,92,.3);
+    filter: dropshadow(color=#063e5c, offx=1, offy=1);*/
 }
 h3 {
+	font-family: "GESS Medium", georgia, serif; 
+	font-size: 18px; 
+	margin-bottom:10px;
 
 }
 h4, #filter label {
@@ -402,7 +407,7 @@ h4, #filter label {
 
 /* tweets */
 
-.tweet { border-bottom: 1px dashed #ddd; margin-bottom: 10px;padding-bottom: 10px;}
+.tweet { background: #fff; border: 1px solid #ddd; border-bottom: 3px solid #ddd; margin-bottom: 10px; padding: 20px; border-radius: 4px;}
 /* padding-bottom: 23px; margin-bottom: 23px;*/
 
 .tweetTitle { font-weight: bold; font-size: 128%; margin-bottom: 5px;}
@@ -415,7 +420,7 @@ h4.tweetTitle{
 	font-size: 72%;
 	font-color: #777;
 }
-.tweet img {height: 73px; margin: 0 0 0 20px; width: 73px; border: 1px solid #ccc; padding: 4px; border-radius:100px;}
+.tweet img {height: 80px; margin: 0 0 0 20px; width: 80px; border-radius:80px;}
 .contentLeft{
 	float: right;
 }
@@ -465,7 +470,7 @@ h4.tweetTitle{
 /** End of section */
 
 .tweet .content { float: right; width: 620px; }
-.tweet-content { margin-bottom: 8px; font-size:18px;}
+.tweet-content { margin-bottom: 8px; font-size:17px;}
 .tweet .inactiveMess{
 	margin-bottom: 8px;
 	color: #777;
@@ -997,8 +1002,9 @@ table.politicians a{
 
 #footerWrapper {
 	text-align: center;
-	background:#e5e5e5;
+	background:#ddd;
 	padding-bottom:10px;
+	border-top: 1px solid #fff;
 }
 
 
@@ -1034,6 +1040,8 @@ table.politicians a{
 #politician input, #politician select{ margin: 0; border: 1px solid #ccc;border-radius: 4px;  box-shadow: 0 3px 3px #eee inset;  margin: 0;  padding: 7px;}
 
 .service{ float:left;} 
-.filters-wrapper{ padding: 20px; background: #eee; border-radius:4px;}
+.filters-wrapper{ padding: 20px; background: #ddd; border-radius:10px; border:1px solid #ccc; margin-bottom:30px;}
 .filters{width:940px; margin:0 auto; }
-.content{ width:940px; margin:20px auto;}
+.main-content{ width:940px; margin:20px auto; min-height: 600px;}
+
+.form-style{ padding: 20px; background: #fff; border: 1px solid #ddd; border-radius: 4px;}

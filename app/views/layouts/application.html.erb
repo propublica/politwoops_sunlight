@@ -22,7 +22,7 @@
 	<%= javascript_include_tag "jquery.colorbox-min" %>
     <%= javascript_include_tag "select2" %>
     <%= javascript_include_tag "select2_locale_ar" %>
-
+    <%= javascript_include_tag "html5shiv" %>
 	<%= csrf_meta_tag %>
 	<link rel="icon" href="/images/favicon.png" type="image/png">
 
@@ -101,7 +101,9 @@
 		</header>
   
 		<div id="container clearfix">
-            <div class="content">
+            <div class="social"></div>
+
+            <div class="main-content">
 			 <%= yield %>
             </div>
 		</div>
