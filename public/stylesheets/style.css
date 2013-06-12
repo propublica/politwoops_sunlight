@@ -312,6 +312,7 @@ nav ul li:last-child{
 	padding-top: 10px;
 	padding-right: px;
 	height: 42px;
+	padding-bottom:5px;
 }
 #search input[type=search] { 
 	-webkit-appearance: textfield;
@@ -327,23 +328,26 @@ nav ul li:last-child{
 	float: right;
 	display: block;
 	width: 230px;
-	background: #f7f7f7; 
+	background: #3e81a7; 
   font-family: tahoma;
+	color:#fff;
+	border-top:1px solid rgba( 0,0,0, 0.2);
+	border-bottom:1px solid rgba( 255,255,255, 0.2);
 }
 
 #searchBtn{
 	background: url(/images/search.png) top center no-repeat;
-	width: 24px;
-	height: 24px;
+	width: 26px;
+	height: 26px;
 	float: right;
 	display: block;
 	margin-right: 5px;
 	-webkit-box-shadow:  none;
     box-shadow:  none;
-    margin-top: 3px;
+    margin-top: 1px;
 }
 #searchBtn:hover{
-	background: url(/images/search.png) center bottom no-repeat;
+	/*background: url(/images/search.png) center bottom no-repeat;*/
 
 }
 
