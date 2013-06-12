@@ -275,7 +275,7 @@ h1 {
 	float: right;
 	margin-top: 0;
 }
-h1 a { background: url(/images/logo.png) top right no-repeat; height: 60px; width: 500px; margin-top: 15px; }
+h1 a { background: url(/images/logo.png) top right no-repeat; height: 70px; width: 500px; margin-top: 10px; }
 nav {
 	position: relative;
 }
