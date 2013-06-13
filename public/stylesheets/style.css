@@ -328,7 +328,7 @@ nav ul li:last-child{
 	margin-right:5px;
 	float: right;
 	display: block;
-	width: 220px;
+	width: 200px;
 	background: none; 
   font-family: tahoma;
 	color:#fff;
@@ -1044,7 +1044,7 @@ table.politicians a{
 #politician #first_name_input, #politician #middle_name_input, #politician #last_name_input, #politician #suffix_input {  margin-right: 3px;margin-left: 3px}
 #politician input, #politician select{ margin: 0; border: 1px solid #ccc;border-radius: 4px;  box-shadow: 0 3px 3px #eee inset;  margin: 0;  padding: 7px;}
 
-.service{ float:left; width:280px; } 
+.service{ float:left; width:260px; } 
 .filters-wrapper{ padding: 20px; background: #ddd; border-radius:10px; border:1px solid #ccc; margin-bottom:30px;}
 .filters{width:940px; margin:0 auto; }
 .main-content{ width:940px; margin:20px auto; min-height: 600px;}
