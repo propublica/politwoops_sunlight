@@ -41,26 +41,13 @@ class Politician < ActiveRecord::Base
   end
 
   def reset_avatar
-    url = "http://api.twitter.com/1/users/profile_image/#{self.user_name}?size=bigger"
-
-    updated = false
-    error = nil
-
     begin
-      HTTParty.get url, :no_follow => true
-    rescue HTTParty::RedirectionTooDeep => e
-      image_url = e.response.header['Location']
-      if image_url and image_url.strip.present?
-        self.profile_image_url = image_url
-        self.save!
-        updated = true
-      else
-        error = "No image URL, probably bad account"
-      end
-    else
-      error = "No response from Twitter. Try again later."
+      twitter_user = Twitter.user(user_name)
+      self.profile_image_url = twitter_user.profile_image_url
+      self.save!
+      return [true, nil]
+    rescue Twitter::Error::NotFound
+      return [false, "No such user name: #{user_name}"]
     end
-
-    [updated, error]
   end
 end
