@@ -10,6 +10,12 @@
 # used to sign session cookies, pick anything long and secure
 :session_secret:
 
+:twitter:
+    :consumer_key:
+    :consumer_secret:
+    :access_token:
+    :access_token_secret:
+
 # These settings should mirror those set in the twitter
 # client configuration.
 :heartbeat_interval: 30
