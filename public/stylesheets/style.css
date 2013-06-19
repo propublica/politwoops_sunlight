@@ -315,25 +315,18 @@ nav ul li:last-child{
 	background:url(../images/search-bg.png) no-repeat;
 }
 #search input[type=search] { 
-	/*-webkit-appearance: textfield;
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
-	-moz-border-radius: 4px; 
-	-webkit-border-radius: 4px; 
-	border-radius: 4px;*/
-	border: none;
-	padding: 7px; 
-	margin-top: 0px;
-	margin-right:5px;
+
+	border:0 none;
+	padding: 6px; 
+	margin-top: 1px;
+	margin-right:11px;
 	float: right;
 	display: block;
-	width: 200px;
-	background: none; 
+	width: 189px;
+	background: #3e81a7; 
   font-family: tahoma;
 	color:#fff;
-	/*border-top:1px solid rgba( 0,0,0, 0.2);
-	border-bottom:1px solid rgba( 255,255,255, 0.2);*/
+
 }
 
 #searchBtn{
