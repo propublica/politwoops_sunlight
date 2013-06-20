@@ -1,4 +1,4 @@
-@font-face {font-family: "GESS Medium";font-style: normal;font-weight: normal; src: url('../fonts/GE_SS_Two_Medium.otf');}
+@font-face {font-family: "GESS Medium";font-style: normal;font-weight: normal; src: url('/fonts/GE_SS_Two_Medium.otf');}
 .clearfix {
   *zoom: 1;
 }
@@ -290,7 +290,7 @@ nav ul li{
 	display: inline;
 	padding-left: 20px;
 	margin-left: 20px;
-	border-left: 1px solid #999;
+	/*border-left: 1px solid #999;*/
 	font-weight: bold;
 }
 nav ul li:last-child{
@@ -1045,3 +1045,5 @@ table.politicians a{
 .form-style{ padding: 20px; background: #fff; border: 1px solid #ddd; border-radius: 4px;}
 
 .social{ direction: ltr;}
+
+.no-result{padding:20px; border:1px solid #ddd; background: #fff; border-bottom: 3px solid #ddd; border-radius: 4px; font-size: 17px;}
