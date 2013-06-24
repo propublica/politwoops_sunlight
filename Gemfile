@@ -6,7 +6,7 @@ gem 'mysql2', '0.3.11'
 gem 'httparty' # used for syncing Twitter avatars
 
 # interacting with Twitter
-gem "twitter"
+gem "twitter", "~> 4.8.1"
 gem "oauth"
 
 gem "json" # parsing raw Twitter JSON response

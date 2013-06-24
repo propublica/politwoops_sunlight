@@ -56,7 +56,7 @@ class PoliticiansController < ApplicationController
   end
 
   def get_twitter_id
-    require 'twitter'
+    #require 'twitter'
     user = Twitter.user(params[:screen_name])
     @twitter_id = user.id
     @org_profile_image = user.profile_image_url(:original)

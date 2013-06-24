@@ -49,6 +49,14 @@ Politwoops::Application.configure do
 
   config.site_url = "http://2ad.kelmetak.com"
 
+  Twitter.configure do |config|
+    config.consumer_key = "QvgsE04ezOWk2RWRnW3xMw"
+    config.consumer_secret = "LqnM3b2Y0pfANYvOiGO1PvTDtapZEkVKMMUAoTYzjM"
+    config.oauth_token = "1285655682-Gs0RtxzSgUnDi46x54seDld5Bd75kyz4SBoFQrQ"
+    config.oauth_token_secret = "rXyA7NPgR4mLz3PXm94gT6y1TNZzUJlKKDSwZZfvuw"
+  end
+
+
   config.action_mailer.raise_delivery_errors = true
 
   # set delivery method to :smtp, :sendmail or :test

@@ -30,13 +30,18 @@ class Admin::PoliticiansController < Admin::AdminController
   end
 
   def get_twitter_id
-    require 'twitter'
+    #require 'twitter'
     user = Twitter.user(params[:screen_name])
-    @twitter_id = user.id
-    @org_profile_image = user.profile_image_url(:original)
-    @profile_image = user.profile_image_url(:normal)
     
-    names_list = user.name.split
+    @twitter_id = user.id
+    @twitter_id.inspect
+    @org_profile_image = user.profile_image_url(:original)
+    @org_profile_image.inspect
+    @profile_image = user.profile_image_url(:normal)
+    @profile_image.inspect
+    
+    names_list = [] 
+    names_list = user.name.split if !user.name.nil? and !user.name.empty?
 
     if names_list.length >=3
       @fname = names_list[0]
