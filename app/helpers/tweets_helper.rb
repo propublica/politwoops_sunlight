@@ -17,11 +17,13 @@ module TweetsHelper
 
   def byline(tweet, html = true)
     if (Time.now - tweet.modified).to_i > (60 * 60 * 24 * 365)
+      tweet_time = tweet.modified.strftime("%l:%H %p")
       tweet_date = tweet.modified.strftime("%d %b %y") # 03 Jun 12
-      tweet_when = "<a class=""linkUnderline"" href=""/tweet/#{tweet.id}"">#{tweet_date}</a>"
+      tweet_when = "at <a class=""linkUnderline"" href=""/tweet/#{tweet.id}"">#{tweet_time} on #{tweet_date}</a>"
     elsif (Time.now - tweet.modified).to_i > (60 * 60 * 24)
+      tweet_time = tweet.modified.strftime("%l:%H %p")
       tweet_date = tweet.modified.strftime("%d %b") # 03 Jun
-      tweet_when = "<a class=""linkUnderline"" href=""/tweet/#{tweet.id}"">#{tweet_date}</a>"
+      tweet_when = "at <a class=""linkUnderline"" href=""/tweet/#{tweet.id}"">#{tweet_time} on #{tweet_date}</a>"
     else
       since_tweet = time_ago_in_words tweet.modified
       tweet_when = "<a class=""linkUnderline"" href=""/tweet/#{tweet.id}"">#{since_tweet}</a> ago"
