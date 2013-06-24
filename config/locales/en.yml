@@ -102,8 +102,8 @@ en:
       index_heading: "Statistics"
 
     tweets:
-      byline: "Deleted %{when} ago %{delay}, originally posted via %{what}"
-      byline_text: "Deleted %{when} ago %{delay}"
+      byline: "Deleted %{delay} on %{when}, originally posted via %{what}"
+      byline_text: "Deleted %{delay} on %{when}"
       reply: "reply"
       retweet: "retweet"
 

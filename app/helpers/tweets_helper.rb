@@ -16,7 +16,16 @@ module TweetsHelper
   end
 
   def byline(tweet, html = true)
-    tweet_when = time_ago_in_words tweet.modified
+    if (Time.now - tweet.modified).to_i > (60 * 60 * 24 * 365)
+      tweet_date = tweet.modified.strftime("%d %b %y") # 03 Jun 12
+      tweet_when = "<a class=""linkUnderline"" href=""/tweet/#{tweet.id}"">#{tweet_date}</a>"
+    elsif (Time.now - tweet.modified).to_i > (60 * 60 * 24)
+      tweet_date = tweet.modified.strftime("%d %b") # 03 Jun
+      tweet_when = "<a class=""linkUnderline"" href=""/tweet/#{tweet.id}"">#{tweet_date}</a>"
+    else
+      since_tweet = time_ago_in_words tweet.modified
+      tweet_when = "<a class=""linkUnderline"" href=""/tweet/#{tweet.id}"">#{since_tweet}</a> ago"
+    end
     delete_delay = (tweet.modified - tweet.created).to_i
     
     delay = if delete_delay > (60 * 60 * 24 * 7)
@@ -34,10 +43,13 @@ module TweetsHelper
     end
 
     if html
-      tweet_when = "<a class=\"linkUnderline\" href=\"/tweet/#{tweet.id}\">#{tweet_when}</a>"
       source = tweet.details["source"].to_s.html_safe
       byline = "<a href=\"http://twitter.com/#{tweet.politician.user_name}\" class=\"twitter\">#{tweet.details['user']['name']}</a>".html_safe
-      byline += t(:byline, :scope => [:politwoops, :tweets], :when => tweet_when, :what => source, :delay => delay).html_safe
+      byline += t(:byline,
+                  :scope => [:politwoops, :tweets],
+                  :when => tweet_when,
+                  :what => source,
+                  :delay => delay).html_safe
       byline
     else
       t :byline_text, :scope => [:politwoops, :tweets], :when => tweet_when, :delay => delay
