@@ -1,136 +1,34 @@
-<style type="text/css">
-h1 { display: none;}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The page you were looking for doesn't exist (404)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <style type="text/css">
+    html{ direction:rtl;}
+        body { background-color: #eee; color: #000;  font-family: arial, sans-serif; }
+    div.dialog {
+      width: 600px;
+      padding: 20px;
+            background: #fff url(/images/404.gif) 20px 60px no-repeat;
+      margin: 4em auto 0 auto;
+      border: 1px solid #ddd;
+            border-bottom:3px solid #ddd;
+            border-radius:4px;
+            min-height:200px;
+    }
+    h1, h2 {  line-height: 1.5em; margin:0; padding:0; }
+        h1{ font-size:30px; color:#C00; }
+        h2{ font-size:24px; color:#000; }
+        a{ color:#4083a9; text-decoration:none;}
+        a:hover{ color: #069;}
+  </style>
+</head>
 
-.clear { clear: both;}
-.daisies {
-    background: url(/images/twoopsiedaisies.png) 20px top no-repeat;
-    padding-left: 155px;
-    margin-top: 60px;
-}
-.daisies h3{
-	width: 100%;
-	border-bottom: 1px dotted #d6dcdc;
-	line-height: 2.5em;
-}
-.daisies h2{
-	width: 100%;
-	border-top: 1px dotted #ffffff;
-	line-height: 2.5em;
-	margin-bottom: 0;
-}
-.daisies p{
-	font-size: 128%;
-	line-height: 1.6em;
-	font-family: "museo-slab", georgia, serif;
-	font-weight: 300;
-	color: #403D39;
-	margin-top: -15px;
-}
-
-#rtColumn{
-	position: relative;
-}
-.crackBox{
-	position: absolute;
-	left: -33px;
-	top: -309px;
-}
-.crackBox a.cowButton{
-    display: block;
-    float: right;
-    height: 54px;
-    position: relative;
-    right: 144px;
-    top: 165px;
-    width: 332px;
-}
-
-
-
-@-moz-keyframes bubble {
-        0% { background-position: 0px 0px; }
-        100% {background-position: -9960px 0px;}
-}
-
-@-ms-keyframes bubble {
-        0% { background-position: 0px 0px; }
-        100% {background-position: -9960px 0px;}
-}
-
-@-webkit-keyframes bubble {
-        0% { background-position: 0px 0px; }
-        100% {background-position: -9960px 0px;}
-}
-
-
-a.cowButton #bubble {
-    background-image: url(/images/404_logo.png);
-    display: block;
-    margin-left: -65px;
-    margin-top: -48px;
-    height: 100px;
-    width: 332px;
-    background-attachment: scroll;
-    background-clip: border-box;
-    background-color: transparent;
-    background-origin: padding-box;
-    background-position: -9960px 0px;
-    background-repeat: no-repeat;
-    background-size: auto auto;
-
-   
-    -webkit-animation-fill-mode: forwards;
-       -moz-animation-fill-mode: forwards;
-        -ms-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-    -webkit-animation: bubble 1s steps(30, end) 1;
-       -moz-animation: bubble 1s steps(30, end) 1;
-        -ms-animation: bubble 1s steps(30, end) 1;
-
-/*
-    animation-name: bubble;
-        animation-duration: .4s;
-        animation-timing-function: steps(18, end), ease;
-        animation-delay: 3s;
-        animation-iteration-count: 1, 1;
-        animation-direction: normal, normal;
-        animation-fill-mode: forwards;
-        -moz-animation-name: bubble;
-        -moz-animation-duration: .4s;
-        -moz-animation-timing-function: steps(18, end), ease;
-        -moz-animation-delay: 3s;
-        -moz-animation-iteration-count: 1, 1;
-        -moz-animation-direction: normal, normal;
-        -moz-animation-fill-mode: forwards;
-        -webkit-animation-name: bubble;
-        -webkit-animation-duration: .4s;
-        -webkit-animation-timing-function: steps(18, end), ease;
-        -webkit-animation-delay: 3s;
-        -webkit-animation-iteration-count: 1, 1;
-        -webkit-animation-direction: normal, normal;
-        -webkit-animation-fill-mode: forwards;
-
-*/
-}
-
-</style>
-
-
-<% content_for :body_class do %> class="error404" <% end %>
-
-
-<!-- This file lives in public/404.html -->
-<div class="crackBox">
-        <a class="cowButton" href="/">
-        	<h1 id="bubble" class="twoopsAlternateLogo textReplace">Politwoops</h1>
-        </a>
-</div>
-
-<div class="daisies">
-    <h3>404 error</h3>
-    <h2>Twoopsie Daisies!</h2>
-    <p>Looks like you've landed on a page that no longer exists</p>
-    <p>Go back to the <a href="/">home page</a> and try again.</p>
-</div>  
-
-
+<body>
+  <!-- This file lives in public/404.html -->
+  <div class="dialog">
+    <h1>معذرة  .. الصفحة التى تبحث عنها غير موجودة!</h1>
+    <h2>اذهب الي <a href="#">الصفحة الرئيسية </a></h2>
+  </div>
+</body>
+</html>
