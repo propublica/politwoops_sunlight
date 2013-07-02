@@ -28,7 +28,7 @@
   <!-- This file lives in public/404.html -->
   <div class="dialog">
     <h1>معذرة  .. الصفحة التى تبحث عنها غير موجودة!</h1>
-    <h2>اذهب الي <a href="#">الصفحة الرئيسية </a></h2>
+    <h2>اذهب الي <a href="<%= "#{request.protocol}#{request.host_with_port}" %>">الصفحة الرئيسية </a></h2>
   </div>
 </body>
 </html>
