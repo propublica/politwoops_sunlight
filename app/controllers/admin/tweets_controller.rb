@@ -44,12 +44,17 @@ class Admin::TweetsController < Admin::AdminController
     for id in ids_list
       @tweet = Tweet.find(id)
       @deleted_tweet = DeletedTweet.find(id)
+      
       @deleted_tweet.reviewed = true
-      @tweet.approved = false
+      @deleted_tweet.approved = false
+      @deleted_tweet.reviewed_at =  Time.now
+      
       @tweet.reviewed = true
+      @tweet.approved = false
       @tweet.reviewed_at = Time.now
+      
       if @tweet.save! and @deleted_tweet.save!
-
+        flash[:review_message] = t "rejected",:scope => [:politwoops,:admin]
       else
         flash[:review_message] = t "note_is_missing",:scope => [:politwoops,:admin]
       end
@@ -65,12 +70,6 @@ class Admin::TweetsController < Admin::AdminController
 
     if [t(:approve, :scope => [:politwoops,:admin]), t(:unapprove, :scope => [:politwoops,:admin])].include?(params[:commit])
       approved = (params[:commit] == t(:approve, :scope => [:politwoops,:admin]))
-
-      puts '--------------------'
-      puts @tweet.reviewed
-      puts approved
-      puts review_message
-      puts '======================'
 
       if approved and review_message  .blank?
         flash[:review_message] = t "note_is_missing",:scope => [:politwoops,:admin]
