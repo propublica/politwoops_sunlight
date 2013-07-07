@@ -3,15 +3,18 @@
 <ul style="margin: 20px;">
 <% @politicians.each do |pol| %>
   <li>
-    <a href="/admin/user/<%=pol.id%>"><%=pol.user_name %>  | <%=pol.first_name %> <%=pol.middle_name %> <%=pol.last_name %> </a>
+    <span><a href="/admin/user/<%=pol.id%>"> <%=pol.first_name %> <%=pol.middle_name %> <%=pol.last_name %> </a> </span>
     <br/>
-    
+
+    <span> <%=pol.user_name %> </span> 
+    <br/>
+   <span> 
     <%= unless pol.party.nil? 
     	pol.party.name 
     	end 
 	%>
+	</span>
   </li>
 <% end %>
 </ul>
 </div>
-
