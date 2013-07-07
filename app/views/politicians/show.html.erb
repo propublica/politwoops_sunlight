@@ -24,55 +24,26 @@
        (<%= @politician.party.name.upcase %>)
     <% end %>
   </h2>
-	<ul class="accountList">
-		<li id="all-label" class="active">
-			<a class="accountHandle" href="#"><span>All Tweets</span></a>
-		</li>
-        <% @accounts.each do |acc| %>
-		<li id="<%= acc.user_name %>-label">
-			<a class="accountHandle" href="#"><span>@<%= acc.user_name %></span></a>
-		</li>
-        <% end %>
-	</ul>
-    <div class="aboutAccount" id="all"><p></p></div>
-    <% @accounts.each do |acc| %>
-	<div class="aboutAccount" id="<%= acc.user_name %>" style="display:none;">
+	
+  <div class="aboutAccount" id="<%= @politician[:user_name] %>">
 		<p> 
-			<% if @tweet_map[acc.user_name][0] %> <%= @tweet_map[acc.user_name][0].details['user']['description'] %> <% end %><a href="http://twitter.com/<%=acc.user_name%>"><%= t :twitter_page, :scope => [:politwoops] %></a>  
+			<% if @tweets[0] %> <%= @tweets[0].details['user']['description'] %> <% end %><a href="http://twitter.com/<%=@politician[:user_name]%>"><%= t :twitter_page, :scope => [:politwoops] %></a>  
 		</p>
 	</div>
-    <% end %>
+
     <div class="clear"></div>
 </div>
 <div id="all-container" class="tweet-content-container">
-    <% @all_tweets.each do |at| %>
+    <% @tweets.each do |at| %>
         <%= render :partial => "tweets/tweet", :locals => {:tweet => at} %>
     <% end %>
 </div>
 
-<% @accounts.each do |acc| %>
-    <div style="display:none;" class="tweet-content-container" id="<%= acc.user_name %>-container">
-        <% @tweet_map[acc.user_name].each do |tw| %>
-            <%= render :partial => "tweets/tweet", :locals => {:tweet => tw} %>
-        <% end %>
-    </div>
-<% end %>
-
-<script type="text/javascript">
-    jQuery('a.accountHandle span').click(function(){
-       jQuery('ul.accountList li').removeClass('active');
-       jQuery(this).parents('li').addClass('active');
-
-       jQuery('.aboutAccount').hide();
-       jQuery('div#info div#' + jQuery(this).parents('li').attr('id').replace('-label', '')).show();
-
-       jQuery('.tweet-content-container').hide();
-       jQuery('#' + jQuery(this).parents('li').attr('id').replace('-label', '-container')).show();
-       return false;
-    
-    });
-
-</script>
+<div style="display:none;" class="tweet-content-container" id="<%= @politician[:user_name] %>-container">
+    <% @tweets.each do |tw| %>
+        <%= render :partial => "tweets/tweet", :locals => {:tweet => tw} %>
+    <% end %>
+</div>
 
 <%= render :template => "shared/pager" %>
 
