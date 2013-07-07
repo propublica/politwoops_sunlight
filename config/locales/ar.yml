@@ -5,10 +5,10 @@ ar:
     activerecord:
         models:
 
-            politician: "اﺳﻢ اﻟﺴﻴﺎﺳﻲ اﻟﻤﻮﺟﻮﺩ ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
+            politician: "حساب اﻟﺴﻴﺎﺳﻲ اﻟﻤﻮﺟﻮﺩ ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
         attributes:
             politician:
-                user_name: "اﺳﻢ اﻟﺴﻴﺎﺳﻲ ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
+                user_name: "حساب اﻟﺴﻴﺎﺳﻲ ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
             party:
                 name: "اﺳﻢ اﻹﻧﺘﻤﺎء اﻟﺴﻴﺎﺳﻲ"
             office:
