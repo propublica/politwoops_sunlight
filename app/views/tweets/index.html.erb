@@ -3,8 +3,6 @@
     <%= t 'politwoops.slogan' %>
 	</h2>
 
-   
-
 </div>
  <div class="caveat">
   <p>
@@ -13,7 +11,7 @@
 </div>
 -->
 
-<%= render :template => "shared/filterform" %>
+<!--<%= render :template => "shared/filterform" %>-->
 <div class="content">
 <% content_for :feeds do %>
   <% if @politician %>
@@ -28,7 +26,7 @@
 <% if @tweets.empty? %>
   <div class="no-result">
     <%= t 'politwoops.no_result' %>
-    <a href="/users/suggest"><%= t('politwoops.groups.suggest_politicians_label')%></a>
+    <!--<a href="/users/suggest"><%= t('politwoops.groups.suggest_politicians_label')%></a>-->
   </div>
 <% else %>
   

@@ -3,7 +3,6 @@
 		<form action="<%= @filter_action %>" method="GET" id="filter" class="form-inline">
 		    <ul>
 				<li class="styled-select">
-		    		<!--<label for="party"><%= t 'politwoops.parties.name_label' %> :</label>-->
 					<select name="party" id="party_select" class="styled-select">
 						<option></option>
 	                    <% @parties.each do |par| %>
@@ -17,7 +16,6 @@
 		<form action="<%= @filter_action %>" method="GET" class="form-inline" id="filter">
 			<ul>
 				<li>
-					<!--<label for="party"><%= t 'politwoops.politicians.name_select_label' %> :</label>-->
 					<select name = "politician_id" id="pol_select">
 					  <option></option>
 					  <% for @politican in @all_politicians %>
