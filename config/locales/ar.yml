@@ -182,7 +182,7 @@ ar:
             office_edit: "ﺗﻌﺪﻳﻞ ﻣﻜﺘﺐ ﺳﻴﺎﺳﻲ"
             office_title: "اﺳﻢ اﻟﻤﻜﺘﺐ اﻟﺴﻴﺎﺳﻲ"
             office_abbreviation: "اﺧﺘﺼﺎﺭ اﻟﻤﻜﺘﺐ اﻟﺴﻴﺎﺳﻲ"
-            approving_note: "ﺳﺒﺐ اﻟﺮﻓﺾ ﺃﻭ اﻟﻤﻮاﻓﻘﺔ، ﻫﺬا اﻟﺤﻘﻞ ﻻﺑﺪ ﻣﻦ ﺇﺩﺧﺎﻟﻪ ﻓﻲ ﺣﺎﻟﺔ اﻟﻤﻮاﻓﻘﺔ"
+            approving_note: "ﺳﺒﺐ اﻟﺮﻓﺾ ﺃﻭ اﻟﻤﻮاﻓﻘﺔ"
             reject_all_selected: "ﺭﻓﺾ ﺟﻤﻴﻊ اﻟﺘﻐﺮﻳﺪاﺕ اﻟﻤﺨﺘﺎﺭﺓ"
             name: "اسمك "
             email: "بريدك الإلكتروني"

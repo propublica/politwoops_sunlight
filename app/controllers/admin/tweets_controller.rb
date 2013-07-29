@@ -71,12 +71,12 @@ class Admin::TweetsController < Admin::AdminController
     if [t(:approve, :scope => [:politwoops,:admin]), t(:unapprove, :scope => [:politwoops,:admin])].include?(params[:commit])
       approved = (params[:commit] == t(:approve, :scope => [:politwoops,:admin]))
 
-      if approved and review_message  .blank?
-        flash[:review_message] = t "note_is_missing",:scope => [:politwoops,:admin]
-        #t "You need to add a note about why you're approving this tweet."
-        redirect_to params[:return_to]
-        return false
-      end
+      # if approved and review_message.blank?
+      #   flash[:review_message] = t "note_is_missing",:scope => [:politwoops,:admin]
+      #   #t "You need to add a note about why you're approving this tweet."
+      #   redirect_to params[:return_to]
+      #   return false
+      # end
 
       @tweet.approved = approved
       @tweet.reviewed = true
