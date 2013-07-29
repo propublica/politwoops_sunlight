@@ -52,6 +52,7 @@ class Admin::TweetsController < Admin::AdminController
       @tweet.reviewed = true
       @tweet.approved = false
       @tweet.reviewed_at = Time.now
+      @tweet.reviewed_by = current_admin
       
       if @tweet.save! and @deleted_tweet.save!
         flash[:review_message] = t "rejected",:scope => [:politwoops,:admin]
@@ -86,7 +87,9 @@ class Admin::TweetsController < Admin::AdminController
     if review_message.any?
       @tweet.review_message = review_message
     end
-
+    
+    @tweet.reviewed_by = current_admin
+    
     @tweet.save!
     expire_action :controller => '/tweets', :action => :index
 

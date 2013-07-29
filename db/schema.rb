@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130728113303) do
+ActiveRecord::Schema.define(:version => 20130729145412) do
 
   create_table "account_links", :force => true do |t|
     t.integer  "politician_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20130728113303) do
     t.datetime "reviewed_at"
     t.text     "review_message"
     t.string   "short_url"
+    t.integer  "reviewed_by_id"
   end
 
   add_index "deleted_tweets", ["approved"], :name => "index_deleted_tweets_on_approved"
