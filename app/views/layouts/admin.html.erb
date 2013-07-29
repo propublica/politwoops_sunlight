@@ -40,6 +40,10 @@
           <li><a href="/admin/parties/"><%= t :list_parties, :scope => [:politwoops,:admin] %></a></li>
           <li><a href="/admin/offices/"><%= t :list_offices, :scope => [:politwoops,:admin] %></a></li>
           <li><a href="/admin/status/"><%= t :system_status, :scope => [:politwoops,:admin] %></a></li>
+          <li><a href="<%= admin_administrators_path %>"><%= t :administrators, :scope => [:administrators,:admin] %></a></li>
+          <% if current_admin %>
+          <li><a href="#"><%= current_admin.username %></a></li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -73,6 +77,7 @@
                 </p>
             </div>
         </footer>
-
+    <%= yield :javascripts %>
+    
 </body>
 </html>

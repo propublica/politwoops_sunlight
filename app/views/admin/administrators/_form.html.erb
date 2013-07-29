@@ -1,0 +1,30 @@
+<%= form_for(@admin_administrator) do |f| %>
+  <% if @admin_administrator.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @admin_administrator.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <ul>
+    <li>
+      <%= f.label :email %>: <%= f.text_field :email %>
+    </li>
+    <li>
+      <%= f.label :username %>: <%= f.text_field :username %>
+    </li>
+    <li>
+      <%= f.label :password %>: <%= f.password_field :password %>
+    </li>
+    <li>
+      <%= f.label :password_confirmation %>: <%= f.password_field :password_confirmation %>
+    </li>
+    
+    <li>
+       <button type="submit" value="Save"><%= t :save, :scope => [:administrators,:form] %></button>
+    </li>
+  </ul>
+<% end %>

@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+admins = {"admin" => {:pass => "pass", :mail => "admin@politwoops.com"}}
+admins.each do |username, val|
+  admin = Admin::Administrator.find_or_initialize_by_username(username)
+  admin.password = val[:pass]
+  admin.password_confirmation = val[:pass]
+  admin.email = val[:mail]
+  admin.save!
+end

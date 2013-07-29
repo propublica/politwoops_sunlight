@@ -1,0 +1,16 @@
+<div id="admin-list">
+  <h3><%= t :list_of_administrators, :scope => [:administrators,:admin] %> &nbsp;<span style="font-size:.8em;"><em>(<a href="<%= new_admin_administrator_path %>"><%= t :add_new, :scope => [:politwoops,:form] %></a>)</em></span></h3>
+  <ul style="margin: 20px;">
+    <% @admin_administrators.each do |admin_administrator| %>
+      <li>
+        <span><%= admin_administrator.username %></span><br/>
+        <span><%= admin_administrator.email %></span><br/>
+        <span><%= link_to 'Edit', edit_admin_administrator_path(admin_administrator) %> <% if @admin_administrators.size > 1 %> - <%= link_to 'Destroy', admin_administrator, :method => :delete, :data => { :confirm => 'Are you sure?' } %> <% end %></span><br/>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'rails' %>
+<% end %>

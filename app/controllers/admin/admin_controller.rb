@@ -18,28 +18,52 @@ class Admin::AdminController < ApplicationController
     monitoring_request = (status_json and from_monitoring_host)
 
     unless (params[:format] == "rss" or monitoring_request)
-      authenticate_or_request_with_http_basic do |username, password|
-        username == configuration[:admin][:username] and password == configuration[:admin][:password]
-      end
+      authenticate_admin
+      # authenticate_or_request_with_http_basic do |username, password|
+      #   username == configuration[:admin][:username] and password == configuration[:admin][:password]
+      # end
     end
   end
 
-  helper_method :latest_tweet
+  helper_method :latest_tweet, :latest_deleted_tweet, :current_admin, :current_admin_rss
+  
   def latest_tweet
     @latest_tweet ||= Tweet.first
   end
-
-  helper_method :latest_deleted_tweet
+  
   def latest_deleted_tweet
     @latest_deleted_tweet ||= DeletedTweet.first
   end
 
+  def current_admin
+    @current_admin ||= session[:current_admin_id] ? Admin::Administrator.find(session[:current_admin_id]) : nil
+  end
+  
   def configuration
     @configuration ||= YAML.load_file "#{Rails.root}/config/config.yml"
   end
-
-  helper_method :current_admin_rss
+  
   def current_admin_rss
     "#{request.url}/#{configuration[:rss_secret]}.rss"
   end
+  
+  #######
+  private
+  #######
+    
+  def authenticate_admin
+    authenticate_or_request_with_http_basic("Application") do |username, password|
+      admin = Admin::Administrator.authenticate(username, password)
+      
+      if admin.nil?
+        session[:current_admin_id] = nil
+        render :text => "", :status => :unauthorized
+        return false
+      end
+      session[:current_admin_id] = admin.id if admin
+      
+      return true
+    end
+  end
+    
 end

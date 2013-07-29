@@ -1,5 +1,5 @@
 Politwoops::Application.routes.draw do
-
+  
   root :to => "tweets#index"
   
   match "index(.:format)" => "tweets#index", :as => :index
@@ -13,6 +13,7 @@ Politwoops::Application.routes.draw do
   match "tweets/shorten_url" => "tweets#shorten_url"
 
   namespace :admin do
+    resources :administrators
     root :to => "tweets#index", :reviewed => false, :approved => false, :as => "review"
     match "status" => "system#status"
     match "restart" => "system#restart"

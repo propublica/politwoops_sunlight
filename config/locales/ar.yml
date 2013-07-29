@@ -4,8 +4,8 @@
 ar:
     activerecord:
         models:
-
             politician: "حساب اﻟﺴﻴﺎﺳﻲ اﻟﻤﻮﺟﻮﺩ ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
+            administrator: "مسئول"
         attributes:
             politician:
                 user_name: "حساب اﻟﺴﻴﺎﺳﻲ ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
@@ -13,8 +13,35 @@ ar:
                 name: "اﺳﻢ اﻹﻧﺘﻤﺎء اﻟﺴﻴﺎﺳﻲ"
             office:
                 title: "اﺳﻢ اﻟﻤﻜﺘﺐ اﻟﺴﻴﺎﺳﻲ"    
+            admin/administrator:
+                email: "البريد الإلكتروني"
+                username: "اسم الدخول"
+                password: "كلمة المرور"
+                password_confirmation: "تأكيد كلمة المرور"
             
         errors:
+            messages:
+              record_invalid: غير صحيح
+              inclusion: "ليس خيارا مقبولا"
+              exclusion: "محجوز"
+              invalid: "غير معرف أو محدد"
+              confirmation: "لا تتوافق مع التأكيد"
+              accepted: "يجب أن تقبل"
+              empty: "فارغ، يرجى ملء الحقل"
+              blank: "فارغ، يرجى ملء الحقل"
+              too_long: "أطول من اللازم (الحد الأقصى هو %{count})"
+              too_short: "أقصر من اللازم (الحد الأدنى هو %{count})"
+              wrong_length: "بطول غير مناسب (يجب أن يكون %{count})"
+              taken: "غير متوفر (مستخدم)"
+              not_a_number: "ليس رقما"
+              greater_than: "يجب أن يكون أكبر من %{count}"
+              greater_than_or_equal_to: "يجب أن يكون أكبر من أو يساوي %{count}"
+              equal_to: "يجب أن يساوي %{count}"
+              less_than: "يجب أن يكون أصغر من %{count}"
+              less_than_or_equal_to: "يجب أن يكون أصغر من أو يساوي %{count}"
+              odd: "يجب أن يكون فردي"
+              even: "يجب أن يكون زوجي"
+            
             models:
                 politician:
                     attributes:
@@ -78,6 +105,25 @@ ar:
             over_x_years:
                 one: 'اﻛﺜﺮ ﻣﻦ ﺳﻨﺔ'
                 other: "%{count} ﺳﻨﻮاﺕ"
+    
+    administrators:
+        about: "مسئولين ا لنظام"
+        form:
+            filter: "ﺑﺤﺚ"
+            search: "ﺑﺤﺚ"
+            add_new: "اﺿﻒ"
+            save: "ﺣﻔﻆ"
+            send: "ارسال"
+            edit: "ﺗﻌﺪﻳﻞ"
+            
+        admin:
+            administrators: "المسئولين"
+            add_a_new_administrator: "اضف مسئول"
+            edit_administrator: "تعديل بيانات مسئول"
+            list_of_administrators: "قائمة المسئولين"
+            logout: "خروج"
+            
+            
     politwoops:
         about: "ﻋﻦ ﺃﺩ ﻛﻠﻤﺘﻚ"
         review_twoops: "ﻣﺮاﺟﻌﺔ اﻟﺘﻐﺮﻳﺪاﺕ اﻟﻤﺤﺬﻭﻓﺔ"
@@ -112,7 +158,6 @@ ar:
             last_tweet_seen: "ﺃﺧﺮ ﺗﻐﺮﻳﺪﺓ ﻛﺎﻧﺖ ﻣﻨﺬ"
             ago: "ﻣﻀﺖ"
             note_is_missing: "ﻻﺑﺪ ﻣﻦ اﺿﺎﻓﺔ ﺳﺒﺐ ﻓﻲ ﺣﺎﻟﺔ اﻟﻤﻮاﻓﻘﺔ ﻋﻠﻰ اﺿﺎﻓﺔ اﻟﺘﻐﺮﻳﺪﺓ"
-            
             list_of_twoopsters: "ﻗﺎﺋﻤﺔ اﻟﺸﺨﺼﻴﺎﺕ اﻟﺴﻴﺎﺳﻴﺔ"
             add_a_new_politician: "اﺿﻒ ﺷﺨﺼﻴﺔ ﺳﻴﺎﺳﻴﺔ ﺟﺪﻳﺪﺓ"
             suggest_new_politician: "اقترح سياسين"
