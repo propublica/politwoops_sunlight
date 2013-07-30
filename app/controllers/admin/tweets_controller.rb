@@ -42,20 +42,15 @@ class Admin::TweetsController < Admin::AdminController
     ids_list = ids.split(',')
     
     for id in ids_list
-      @tweet = Tweet.find(id)
       @deleted_tweet = DeletedTweet.find(id)
       
       @deleted_tweet.reviewed = true
       @deleted_tweet.approved = false
       @deleted_tweet.reviewed_at =  Time.now
+      @deleted_tweet.reviewed_by = current_admin
       
-      @tweet.reviewed = true
-      @tweet.approved = false
-      @tweet.reviewed_at = Time.now
-      @tweet.reviewed_by = current_admin
-      
-      if @tweet.save! and @deleted_tweet.save!
-        flash[:review_message] = t "rejected",:scope => [:politwoops,:admin]
+      if @deleted_tweet.save!
+        flash[:success_message] = t "rejected",:scope => [:politwoops,:admin]
       else
         flash[:review_message] = t "note_is_missing",:scope => [:politwoops,:admin]
       end
@@ -64,6 +59,28 @@ class Admin::TweetsController < Admin::AdminController
     redirect_to '/admin/review'
   end
 
+  def approve
+    ids = params[:ids]
+    ids_list = ids.split(',')
+    
+    for id in ids_list
+      @deleted_tweet = DeletedTweet.find(id)
+      
+      @deleted_tweet.reviewed = true
+      @deleted_tweet.approved = true
+      @deleted_tweet.reviewed_at =  Time.now
+      @deleted_tweet.reviewed_by = current_admin
+      
+      if @deleted_tweet.save!
+        flash[:success_message] = t "approved",:scope => [:politwoops,:admin]
+      else
+        flash[:review_message] = t "note_is_missing",:scope => [:politwoops,:admin]
+      end
+    end
+
+    redirect_to '/admin/review'
+  end
+  
   # approve or unapprove a tweet, mark it as reviewed either way
   def review
     

@@ -8,6 +8,12 @@
   </div>
 <% end %>
 
+<% if flash[:success_message] %>
+  <div class="admin_error info">
+    <%= flash[:success_message] %>
+  </div>
+<% end %>
+
 <div class="admin_header">
   <ul class="nav nav-tabs">
     <li class="active">
@@ -38,13 +44,23 @@
     </form>
     </div>
   </br>
-<button value="<%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %>" onclick="reject_all_selected()" > <%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %> </button>
+  
+  <div>
+    <button style="float: right;margin-left: 10px;" value="<%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %>" onclick="reject_all_selected()" > <%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %> </button>
+    <button style="float: right;margin-left: 10px;" value="<%= t(:approve_all_selected, :scope => [:politwoops,:admin]) %>" onclick="approve_all_selected()" > <%= t(:approve_all_selected, :scope => [:politwoops,:admin]) %> </button>
+    <div style="clear: both;"></div>    
+  </div>
+
 <hr/>
 <% @tweets.each do |tweet| %>
   <%= render :partial => "tweets/tweet", :object => tweet, :locals => {:admin => true} %>
 <% end %>
 
-<button value="<%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %>" onclick="reject_all_selected()" > <%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %> </button>
+  <div>
+    <button style="float: right;margin-left: 10px;" value="<%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %>" onclick="reject_all_selected()" > <%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %> </button>
+    <button style="float: right;margin-left: 10px;" value="<%= t(:approve_all_selected, :scope => [:politwoops,:admin]) %>" onclick="approve_all_selected()" > <%= t(:approve_all_selected, :scope => [:politwoops,:admin]) %> </button>
+    <div style="clear: both;"></div>    
+  </div>
 
 <div id="pager">
   <%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :prev_label => t(:previous, :scope => [:politwoops]) %>
@@ -77,4 +93,14 @@ $(function() {
     });
     window.location = '/admin/reject?ids=' + $rejected
   }
+  function approve_all_selected(){
+    $approved = ''
+    $('.selected_tweets').each(function(i, obj) {
+        if ($(this).is(':checked')) {
+          $approved += $(this).val() + ',';
+        }
+    });
+    window.location = '/admin/approve?ids=' + $approved
+  }
+  
 </script>
