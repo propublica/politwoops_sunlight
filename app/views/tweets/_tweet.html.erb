@@ -88,10 +88,13 @@
                   <%= submit_tag t(:approve, :scope => [:politwoops,:admin]) %>
               <% end %>
             <% end %>
-
+            
             <% if tweet.reviewed_at %>
               <span class="reviewed_at">
                  <%= t :reviewed_on, :scope => [:politwoops,:form] %> : <%= tweet.reviewed_at.strftime "%B %d, %Y at %I:%M %p" %>
+                 <% if tweet.reviewed_by %>
+                 &nbsp; <%= t :reviewed_by, :scope => [:politwoops,:form] %> : <%= tweet.reviewed_by.username %>
+                 <% end %>
               </span>
             <% end %>
 

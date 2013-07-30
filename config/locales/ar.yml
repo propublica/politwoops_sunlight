@@ -140,6 +140,7 @@ ar:
             suggest: "اقترح"
             edit: "ﺗﻌﺪﻳﻞ"
             reviewed_on: "ﺗﻤﺖ ﻣﺮاﺟﻌﺘﻬﺎ ﻓﻲ"
+            reviewed_by: "بواسطة"
             no_message_entered: "ﻻ ﺗﻮﺟﺪ ﺗﻌﻠﻴﻘﺎﺕ"
             edit_message: "ﺗﻐﻴﺮ اﻟﺘﻌﻠﻴﻖ"
             
