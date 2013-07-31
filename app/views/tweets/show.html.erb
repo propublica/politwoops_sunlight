@@ -1,5 +1,11 @@
 <% content_for :title do %>
-    Deleted tweet from <%= @tweet.details['user']['name'] %>
+التغريدة اﻟﻤﺤﺬﻭﻓﺔ ﻣﻦ  <%= @tweet.details['user']['name'] %>
+<% end %>
+<% content_for :description do %>
+التغريدة اﻟﻤﺤﺬﻭﻓﺔ ﻣﻦ  <%= @tweet.details['user']['name'] %>
+<% end %>
+<% content_for :meta_image do %>
+<%= avatar_url @tweet.politician %>
 <% end %>
 
 <%= render :partial => "tweets/tweet", :locals => {:tweet => @tweet} %>

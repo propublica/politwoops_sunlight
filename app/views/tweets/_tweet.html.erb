@@ -62,6 +62,16 @@
       <input type='hidden' id='long_url_<%= tweet.id %>' value='http://2ad.kelmetak.com/tweet/<%= tweet.id %>'>
       <a id='replay_<%= tweet.id %>' href="" class="reply textReplace" target="_blank"><%=t :reply, :scope => [:politwoops, :tweets] %></a>
       <a id='retweet_<%= tweet.id %>' href="" class="retweet textReplace" target="_blank"><%=t :retweet, :scope => [:politwoops, :tweets] %></a>
+      <a id='fb_share_<%= tweet.id %>' href="#" class="retweet textReplace"
+        onclick="
+          window.open(
+            'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('<%= url_for(:only_path => false) %>tweet/<%= tweet.id %>'),
+            'facebook-share-dialog', 
+            'width=626,height=436'); 
+          return false;">
+        Share on Facebook
+      </a>
+
     </div>
   <% end %>
   
