@@ -496,11 +496,13 @@ h4.tweetTitle{
 }
 
 .tweet .actions { float: left; margin-top:35px; }
-.reply, .retweet { height: 48px; width: 48px;}
+.reply, .retweet, .fb_share { height: 48px; width: 48px;}
 .reply { background: url(/images/reply.png) center top no-repeat ;}
 .reply:hover { background: url(/images/reply.png) center bottom no-repeat ; }
 .retweet { background: url(/images/retweet.png) center top no-repeat;}
 .retweet:hover { background: url(/images/retweet.png) center bottom no-repeat; }
+.fb_share { background: url(/images/fb_share.png) center top no-repeat;}
+.fb_share:hover { background: url(/images/fb_share.png) center bottom no-repeat; }
 
 .titleParty { text-transform: uppercase;}
 
