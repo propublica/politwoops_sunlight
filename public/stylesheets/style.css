@@ -182,7 +182,7 @@ body {
 }
 
 .module li{ margin-bottom:1px;}
-.module li a{ display:block;  background:#e5e5e5; text-decoration:none;padding:5px 10px;}
+.module li a, .module li span{ display:block;  background:#e5e5e5; text-decoration:none;padding:5px 10px;}
 .module li a:hover{ background:#ddd; }
 
 #admin-list li{ padding:5px 10px; }

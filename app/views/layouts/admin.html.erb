@@ -42,7 +42,7 @@
           <li><a href="/admin/status/"><%= t :system_status, :scope => [:politwoops,:admin] %></a></li>
           <li><a href="<%= admin_administrators_path %>"><%= t :administrators, :scope => [:administrators,:admin] %></a></li>
           <% if current_admin %>
-          <li><a href="#"><%= current_admin.username %></a></li>
+          <li><span><%= current_admin.username %></span></li>
           <% end %>
         </ul>
       </div>
