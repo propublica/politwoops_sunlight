@@ -142,7 +142,7 @@
     jQuery(document).ready(function(){
         var long_url = jQuery('#long_url_<%= tweet.id %>').val();
         jQuery.ajax({
-            url: 'tweets/shorten_url?id=<%= tweet.id %>&url='+ long_url, 
+            url: '/tweets/shorten_url?id=<%= tweet.id %>&url='+ long_url, 
             dataType: 'json',
             success: function(data){
                       console.log(data);
