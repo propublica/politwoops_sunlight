@@ -1046,6 +1046,6 @@ table.politicians a{
 
 .form-style{ padding: 20px; background: #fff; border: 1px solid #ddd; border-radius: 4px;}
 
-.social{ direction: ltr;}
+.social{ /*direction: ltr;*/ text-align: left;}
 
 .no-result{padding:20px; border:1px solid #ddd; background: #fff; border-bottom: 3px solid #ddd; border-radius: 4px; font-size: 17px;}
