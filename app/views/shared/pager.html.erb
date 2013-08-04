@@ -1,16 +1,17 @@
 <div id="pager">
   <%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :prev_label => t(:previous, :scope => [:politwoops]) %>
 
-  	<div class="numResults">
-  		<h4><%= t('will_paginate.results_per_page') %></h4>
-  		<ul>
-        <% @per_page_options.each do |opt| %>
-        <li>
-        <a <% if @per_page == opt %>class="per_page_selected" <% end %>href="<%= url_with_params :URI, { "per_page" => opt, "page" => (@per_page * (@page - 1) / opt).floor + 1 } %>"><%= opt %></a>
-        </li>
-        <% end %>
-	  	</ul>
-  	</div>
-  
+  <% if @tweets.size > 19 %>
+	<div class="numResults">
+		<h4><%= t('will_paginate.results_per_page') %></h4>
+		<ul>
+      <% @per_page_options.each do |opt| %>
+      <li>
+      <a <% if @per_page == opt %>class="per_page_selected" <% end %>href="<%= url_with_params :URI, { "per_page" => opt, "page" => (@per_page * (@page - 1) / opt).floor + 1 } %>"><%= opt %></a>
+      </li>
+      <% end %>
+  	</ul>
+	</div>
+  <% end %>
 </div>
 
