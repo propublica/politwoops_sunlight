@@ -1,7 +1,10 @@
 <div class="title">
-    <h2>
-        <%= t(:about, :scope => [:politwoops]) %>
-    </h2>
+    <h2><%= t(:about_site_title, :scope => [:politwoops, :about]) %></h2>
+    <p><%= t(:about_site_content, :scope => [:politwoops, :about]) %></p>
+    <h2><%= t(:how_it_works_title, :scope=>[:politwoops, :about]) %></h2>
+    <p><%= t(:how_it_works_content, :scope => [:politwoops, :about]) %></p>
+    <h2><%= t(:credits_title, :scope=>[:politwoops, :about]) %></h2>
+    <p><%= t(:credits_content, :scope => [:politwoops, :about]) %></p>
 </div>
 
 <% content_for :body_class do %> class="about" <% end %>
