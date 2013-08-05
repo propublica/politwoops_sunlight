@@ -104,3 +104,32 @@ $(function() {
   }
   
 </script>
+<script>
+jQuery(document).ready(function(){
+  $('.approve_tweet_submit').live("click", function(){
+    frm = $(this).closest('.review_tweet_form');
+    action_type= "<%= t(:approve, :scope => [:politwoops,:admin]) %>";
+    ajaxFormCall(frm, action_type)
+    return false;
+  })
+  
+  $('.unapprove_tweet_submit').live("click", function(){
+    frm = $(this).closest('.review_tweet_form');
+    action_type= "<%= t(:unapprove, :scope => [:politwoops,:admin]) %>";
+    ajaxFormCall(frm, action_type)
+    return false;
+  })
+});
+
+function ajaxFormCall(frm, action_type){
+  $("#loading_img").show();
+  $.ajax({
+    type: frm.attr("method"),
+    url: frm.attr("action") + ".js",
+    data: frm.serialize() + "&commit=" + action_type ,
+    complete: function(data){
+      $("#loading_img").hide();
+    }
+  });
+}
+</script>
