@@ -61,19 +61,14 @@ Politwoops::Application.configure do
 
   # set delivery method to :smtp, :sendmail or :test
   #config.action_mailer.delivery_method = :smtp
-  config.action_mailer.delivery_method = :sendmail
-
-  # these options are only needed if you choose smtp delivery
-  """
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address        => 'smtp.example.com',
-    :port           => 25,
-    :domain         => 'beta.2ad.kelmetak.com',
-    :authentication => :login,
-    :user_name      => 'www',
-    :password       => 'secret'
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => '2ad.kelmetak.com',
+    :user_name            => '2ad.kelmetak@gmail.com',
+    :password             => 'a@D.K3lM3t@K',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  
   }
-  """
-
-  
 end
