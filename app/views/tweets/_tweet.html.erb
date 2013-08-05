@@ -85,7 +85,7 @@
           page_number = params[:page]
         end
       %>
-      <%= form_tag admin_review_tweet_path(tweet) do %>
+      <%= form_tag admin_review_tweet_path(tweet), :class => "review_tweet_form" do %>
         <%= hidden_field_tag "return_to", (request.path + '?page='+ page_number + "&politician_id=#{params[:politician_id]}") %>
 
         <% if tweet.reviewed? %>
@@ -130,8 +130,8 @@
             <%= t(:approving_note, :scope => [:politwoops,:admin]) %>
           </label>
           <textarea name="review_message" class="review_message"></textarea>
-          <%= submit_tag t(:unapprove, :scope => [:politwoops,:admin]) %>
-          <%= submit_tag t(:approve, :scope => [:politwoops,:admin]) %>
+          <%= submit_tag t(:unapprove, :scope => [:politwoops,:admin]), :class => "unapprove_tweet_submit" %>
+          <%= submit_tag t(:approve, :scope => [:politwoops,:admin]), :class => "approve_tweet_submit" %>
         <% end %>
       <% end %>
     </div>

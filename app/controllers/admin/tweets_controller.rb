@@ -109,8 +109,14 @@ class Admin::TweetsController < Admin::AdminController
     
     @tweet.save!
     expire_action :controller => '/tweets', :action => :index
-
-    redirect_to params[:return_to]
+    
+    
+    respond_to do |format|
+      format.html do 
+        redirect_to params[:return_to]
+      end
+      format.js
+    end
   end
 
   # filters
