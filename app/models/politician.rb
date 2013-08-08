@@ -43,7 +43,7 @@ class Politician < ActiveRecord::Base
   def reset_avatar
     begin
       twitter_user = Twitter.user(user_name)
-      self.profile_image_url = twitter_user.profile_image_url
+      self.profile_image_url = twitter_user.profile_image_url(:bigger)
       self.save!
       return [true, nil]
     rescue Twitter::Error::NotFound
