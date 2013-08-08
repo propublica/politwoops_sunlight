@@ -46,6 +46,8 @@ class Politician < ActiveRecord::Base
       self.profile_image_url = twitter_user.profile_image_url(:bigger)
       self.save!
       return [true, nil]
+    rescue Twitter::Error::Forbidden => e
+      return [false, e.to_s]
     rescue Twitter::Error::NotFound
       return [false, "No such user name: #{user_name}"]
     end

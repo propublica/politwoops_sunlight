@@ -188,7 +188,6 @@ namespace :politicians do
 
   desc "Updates profile images for politicians."
   task :reset_avatars => :environment do
-    no_responses = []
     politicians = Politician
 
     if ENV['where_blank'].present?
@@ -207,10 +206,6 @@ namespace :politicians do
         puts "[#{politician.user_name}] #{error}"
       end
       sleep 1
-    end
-
-    no_responses.each do |name|
-      puts "Possible bad username: #{name}"
     end
   end
 end
