@@ -198,14 +198,22 @@ namespace :politicians do
       politicians = politicians.where :user_name => ENV['username']
     end
 
+    delay = 2.to_f
     politicians.all.each do |politician|
-      updated, error = politician.reset_avatar
-      if updated == true
-        puts "[#{politician.user_name}] #{politician.profile_image_url}"
-      else
-        puts "[#{politician.user_name}] #{error}"
+      begin
+        updated, error = politician.reset_avatar
+        if updated == true
+          puts "[#{politician.user_name}] #{politician.profile_image_url}"
+        else
+          puts "[#{politician.user_name}] #{error}"
+          delay = [15, delay * 1.5].min
+          puts "Delay increased to #{delay} seconds."
+        end
+      rescue Twitter::Error::TooManyRequests => error
+        sleep error.rate_limit.reset_in + 1
+        retry
       end
-      sleep 1
+      sleep delay
     end
   end
 end
