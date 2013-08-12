@@ -61,6 +61,30 @@ ar:
         next_label: "اﻟﺘﺎﻟﻲ"
         page_gap: " ... "
         results_per_page: "ﻋﺪﺩ اﻟﻨﺘﺎﺋﺞ ﻓﻲ اﻟﺼﻔﺤﺔ"
+    
+    date:
+        formats:
+            default: "%d-%m-%Y" 
+            short: "%b %d" 
+            long: "%d %B, %Y" 
+    
+    time:
+        formats:
+            default: "%a %b %d %H:%M:%S %Z %Y"
+            short: "%b %d %I:%M %p"
+            long: "%Y-%m-%d %I:%M %p"
+            only_second: "%S"
+            styled: "<span class=\"day\">%a، %d</span> <span class=\"month\">%B</span> <span class=\"year\">%Y</span>"
+      
+        datetime:
+            formats:
+                efault: "%Y-%m-%dT%H:%M:%S%Z"
+          
+        am: 'ص'
+        pm: 'م'
+        time_ago: "منذ %{duration}"
+    
+      
     datetime:
         distance_in_words:
             about_x_hours:

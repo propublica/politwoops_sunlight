@@ -1,6 +1,11 @@
 <% if next_tweets.any? %>
-  <% next_tweets.each do |next_tweet| %>
-  <li><%= format_tweet(next_tweet).to_s.html_safe %></li>
+  <% next_tweets.reverse.each do |next_tweet| %>
+  <li>
+    <%= format_tweet(next_tweet).to_s.html_safe %>
+    <div class="byline">
+      <%= l(next_tweet.created, :format => :long ) %>
+    </div>
+  </li>
   <br />
   <% end %>
 <% else %>

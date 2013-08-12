@@ -88,7 +88,7 @@
       
       <a href="#" class="next_tweets"><%= t(:next_tweets, :scope => [:politwoops,:admin]) %></a>
       <div class="next_tweets_list" style="display: none">
-        <h4><%= t(:next_tweets, :scope => [:politwoops,:admin]) %></h4>
+        <a href="#" class="next_tweets_title" ><h4><%= t(:next_tweets, :scope => [:politwoops,:admin]) %></h4></a>
         <ul></ul>
       </div>
       <%= form_tag admin_review_tweet_path(tweet), :class => "review_tweet_form" do %>

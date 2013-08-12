@@ -2,6 +2,8 @@
   <%= auto_discovery_link_tag :rss, current_admin_rss %>
 <% end %>
 
+<img id = "loading_img" class="loading_img_center" width="20" style="display:none;" src="/images/loading2.gif">
+
 <% if flash[:review_message] %>
   <div class="admin_error error">
     <%= flash[:review_message] %>
@@ -117,6 +119,13 @@ jQuery(document).ready(function(){
     frm = $(this).closest('.review_tweet_form');
     action_type= "<%= t(:unapprove, :scope => [:politwoops,:admin]) %>";
     ajaxFormCall(frm, action_type)
+    return false;
+  })
+  
+  $('.next_tweets_title').live("click", function(){
+    tweet_id = $(this).closest('.tweet').attr("id");
+    $('#' + tweet_id + ' .next_tweets_list').hide("slow");
+    $('#' + tweet_id + ' .next_tweets').show();
     return false;
   })
   
