@@ -8,7 +8,7 @@ module TweetsHelper
   end
   
   def format_tweet(tweet)
-    content = auto_link(format_user_name(format_hashtag(tweet.content)), :html => { :target => '_blank' })
+    content = auto_link(format_user_name(format_hashtag(tweet.content)), :html => { :target => '_blank' }) if tweet.content
   end
 
   def avatar_url(politician)

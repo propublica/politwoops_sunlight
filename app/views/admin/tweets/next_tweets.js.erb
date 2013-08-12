@@ -1,0 +1,4 @@
+$('#tweet-<%= @tweet.id%> .next_tweets').hide();
+$('#tweet-<%= @tweet.id%> .next_tweets_list ul').html("<%= escape_javascript(render :partial => "next_tweets", :locals => {:next_tweets => @next_tweets}) %>");
+$('#tweet-<%= @tweet.id%> .next_tweets_list').toggle("slow");
+

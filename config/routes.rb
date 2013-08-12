@@ -25,6 +25,7 @@ Politwoops::Application.routes.draw do
     match "approved" => "tweets#index", :reviewed => true, :approved => true, :as => "approved"
     match "reject" => "tweets#reject", :as => "reject"
     match "approve" => "tweets#approve", :as => "approve"
+    match "tweets/:id/next_tweets" => "tweets#next_tweets", :as => "next_tweets"
 
     match "users" => "politicians#admin_list", :as => "admin_list"
     match "user/:id" => "politicians#admin_user", :as => "admin_user"

@@ -119,6 +119,22 @@ jQuery(document).ready(function(){
     ajaxFormCall(frm, action_type)
     return false;
   })
+  
+  $('.next_tweets').live("click", function(){
+    $("#loading_img").show();
+    tweet_id = $(this).closest('.tweet').attr("id");
+    tweet_id = tweet_id.split('-')[1];
+    
+    $.ajax({
+      type: 'get',
+      url: "/admin/tweets/" + tweet_id + "/next_tweets" + ".js",
+      //data: frm.serialize() + "&commit=" + action_type ,
+      complete: function(data){
+        $("#loading_img").hide();
+      }
+    });
+    return false;
+  })
 });
 
 function ajaxFormCall(frm, action_type){

@@ -1,0 +1,8 @@
+<% if next_tweets.any? %>
+  <% next_tweets.each do |next_tweet| %>
+  <li><%= format_tweet(next_tweet).to_s.html_safe %></li>
+  <br />
+  <% end %>
+<% else %>
+<h5>لا يوجد</h5>
+<% end %>

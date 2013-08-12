@@ -1,5 +1,5 @@
 class Admin::TweetsController < Admin::AdminController
-  before_filter :load_tweet, :only => [:review, :message]
+  before_filter :load_tweet, :only => [:review, :message, :next_tweets]
 
   # list either unreviewed
   def index
@@ -118,7 +118,14 @@ class Admin::TweetsController < Admin::AdminController
       format.js
     end
   end
-
+  
+  def next_tweets
+    @next_tweets = Tweet.where(["id > ? and politician_id = ? ", @tweet.id, @tweet.politician_id]).order(:id).limit(2)
+    
+    respond_to do |format|
+      format.js
+    end
+  end
   # filters
   def load_tweet
     unless params[:id] and (@tweet = DeletedTweet.find(params[:id]))

@@ -85,6 +85,12 @@
           page_number = params[:page]
         end
       %>
+      
+      <a href="#" class="next_tweets"><%= t(:next_tweets, :scope => [:politwoops,:admin]) %></a>
+      <div class="next_tweets_list" style="display: none">
+        <h4><%= t(:next_tweets, :scope => [:politwoops,:admin]) %></h4>
+        <ul></ul>
+      </div>
       <%= form_tag admin_review_tweet_path(tweet), :class => "review_tweet_form" do %>
         <%= hidden_field_tag "return_to", (request.path + '?page='+ page_number + "&politician_id=#{params[:politician_id]}") %>
 
