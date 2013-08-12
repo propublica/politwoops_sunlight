@@ -93,7 +93,7 @@ $(function() {
           $rejected += $(this).val() + ',';
         }
     });
-    window.location = '/admin/reject?ids=' + $rejected
+    window.location = '/admin/reject?page=<%= params[:page] || 1 %>&ids=' + $rejected
   }
   function approve_all_selected(){
     $approved = ''
@@ -102,7 +102,7 @@ $(function() {
           $approved += $(this).val() + ',';
         }
     });
-    window.location = '/admin/approve?ids=' + $approved
+    window.location = '/admin/approve?page=<%= params[:page] || 1 %>&ids=' + $approved
   }
   
 </script>
