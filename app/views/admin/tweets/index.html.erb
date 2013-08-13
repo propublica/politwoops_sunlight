@@ -47,7 +47,9 @@
     </div>
   </br>
   
-  <div>
+  <div>    
+    <button class="select_all" style="float: right;margin-left: 10px;" value="<%= t(:select_all, :scope => [:politwoops,:admin]) %>" onclick="select_all()" > <%= t(:select_all, :scope => [:politwoops,:admin]) %> </button>
+    <button class="un_select_all" style="float: right;margin-left: 10px; display: none;" value="<%= t(:un_select_all, :scope => [:politwoops,:admin]) %>" onclick="un_select_all()" > <%= t(:un_select_all, :scope => [:politwoops,:admin]) %> </button>
     <button style="float: right;margin-left: 10px;" value="<%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %>" onclick="reject_all_selected()" > <%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %> </button>
     <button style="float: right;margin-left: 10px;" value="<%= t(:approve_all_selected, :scope => [:politwoops,:admin]) %>" onclick="approve_all_selected()" > <%= t(:approve_all_selected, :scope => [:politwoops,:admin]) %> </button>
     <div style="clear: both;"></div>    
@@ -59,6 +61,8 @@
 <% end %>
 
   <div>
+    <button class="select_all" style="float: right;margin-left: 10px;" value="<%= t(:select_all, :scope => [:politwoops,:admin]) %>" onclick="select_all()" > <%= t(:select_all, :scope => [:politwoops,:admin]) %> </button>
+    <button class="un_select_all" style="float: right;margin-left: 10px; display: none;" value="<%= t(:un_select_all, :scope => [:politwoops,:admin]) %>" onclick="un_select_all()" > <%= t(:un_select_all, :scope => [:politwoops,:admin]) %> </button>
     <button style="float: right;margin-left: 10px;" value="<%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %>" onclick="reject_all_selected()" > <%= t(:reject_all_selected, :scope => [:politwoops,:admin]) %> </button>
     <button style="float: right;margin-left: 10px;" value="<%= t(:approve_all_selected, :scope => [:politwoops,:admin]) %>" onclick="approve_all_selected()" > <%= t(:approve_all_selected, :scope => [:politwoops,:admin]) %> </button>
     <div style="clear: both;"></div>    
@@ -86,6 +90,24 @@ $(function() {
       return false;
     });
   });
+  function select_all(){
+    $rejected = ''
+    $('.selected_tweets').each(function(i, obj) {
+      $(this).attr("checked", true);
+    });
+    $(".select_all").hide()
+    $(".un_select_all").show();
+    return false;
+  }
+  function un_select_all(){
+    $rejected = ''
+    $('.selected_tweets').each(function(i, obj) {
+      $(this).attr("checked", false);
+    });
+    $(".un_select_all").hide()
+    $(".select_all").show();
+    return false;
+  }
   function reject_all_selected(){
     $rejected = ''
     $('.selected_tweets').each(function(i, obj) {
