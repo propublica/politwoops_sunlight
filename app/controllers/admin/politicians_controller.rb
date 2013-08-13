@@ -1,6 +1,9 @@
 class Admin::PoliticiansController < Admin::AdminController 
+  
   def admin_list
     @politicians = Politician.all
+    @not_reviewed_tweets_count = DeletedTweet.where(:reviewed=>false).count(:group=>:politician_id)
+    
     respond_to do |format|
       format.html { render } 
     end

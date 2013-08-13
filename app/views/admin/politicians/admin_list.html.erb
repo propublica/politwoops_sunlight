@@ -1,19 +1,31 @@
 <div id="admin-list">
 <h3><%= t :list_of_twoopsters, :scope => [:politwoops,:admin] %> &nbsp;<span style="font-size:.8em;"><em>(<a href="/admin/users/new"><%= t :add_new, :scope => [:politwoops,:form] %></a>)</em></span></h3>
+<div>
+رتب بـ : <%= link_to "الأسم", "?sort_by=name", :style => params[:sort_by] != "waiting_review" ? "font-weight: bold; text-decoration: underline;" : "" %>  - <%= link_to "تغريدات فى انتظار المراجعة", "?sort_by=waiting_review",  :style => params[:sort_by] == "waiting_review" ? "font-weight: bold; text-decoration: underline;" : "" %>
+</div>
+
 <ul style="margin: 20px;">
+
+<%
+if params[:sort_by] == "waiting_review"
+@politicians = @politicians.sort{|a, b| @not_reviewed_tweets_count[b.id].to_i <=> @not_reviewed_tweets_count[a.id].to_i}
+end 
+%>
+
 <% @politicians.each do |pol| %>
   <li>
-    <span><a href="/admin/user/<%=pol.id%>"> <%=pol.first_name %> <%=pol.middle_name %> <%=pol.last_name %> </a> </span>
+    <span>
+      <a href="/admin/user/<%=pol.id%>"> <%=pol.first_name %> <%=pol.middle_name %> <%=pol.last_name %> </a>
+    </span>
+    <% if @not_reviewed_tweets_count[pol.id] %>
+    <span style="float: left;">
+    <%= link_to @not_reviewed_tweets_count[pol.id] , "/admin?politician_id=#{pol.id}", :title => "تغريدات فى انتظار المراجعة", :target => "_blank" %>
+    </span>
+    <% end %>
     <br/>
-
-    <span> <%=pol.user_name %> </span> 
-    <br/>
-   <span> 
-    <%= unless pol.party.nil? 
-    	pol.party.name 
-    	end 
-	%>
-	</span>
+    
+    <span> <%=pol.user_name %> </span> <br/>
+    <span><%= pol.party.name unless pol.party.nil? %></span>
   </li>
 <% end %>
 </ul>
