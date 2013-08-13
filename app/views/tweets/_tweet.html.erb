@@ -144,6 +144,14 @@
   <% end %>
 
 </div>
+<% if tweet.short_url %>
+<script type="text/javascript" charset="utf-8">
+replay_url = "http://twitter.com/share?text=<%= CGI.escape('@' + tweet.user_name + ' ') %>&url=<%= tweet.short_url %>&via=2adkelmetak";
+jQuery('#replay_<%= tweet.id %>').attr("href", replay_url);
+retweet_url = "http://twitter.com/share?text=<%= CGI.escape('RT @' + tweet.user_name + ' ' + truncate(tweet.content, :length => 75)) %>&url=<%= tweet.short_url %>&via=2adkelmetak";
+jQuery('#retweet_<%= tweet.id %>').attr("href", retweet_url);
+</script>
+<% else %>
 <script type="text/javascript" charset="utf-8">
     jQuery(document).ready(function(){
         var long_url = jQuery('#long_url_<%= tweet.id %>').val();
@@ -167,3 +175,4 @@
             });
     });
 </script>
+<% end %>
