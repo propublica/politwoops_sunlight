@@ -1,3 +1,4 @@
+<img id = "loading_img" class="loading_img_center" width="20" style="display:none;" src="/images/loading2.gif">
 
 <form name="admin-politician" id="admin-politician" action="/admin/user/<%= @politician.id %>/save" method="POST" >
 
@@ -16,10 +17,14 @@
 <input id="middle_name_input" type="hidden" name="middle_name" value="<%= @politician.middle_name %>" />
 <input id="last_name_input" type="hidden" name="last_name" value="<%= @politician.last_name %>" />
 <input id="suffix_input" type="hidden" name="suffix" value="<%= @politician.suffix %>" />
+<input id="profile_image_input" type="hidden" name="profile_image" value="<%= @politician.profile_image_url %>" />
+
 <ul>
   
   <li> 
-    <img src="<%= @politician.profile_image_url %>" alt="<%= @politician.user_name %>" />
+    <img id= "profile_image" src="<%= @politician.profile_image_url %>" alt="<%= @politician.user_name %>" />
+    <br/>
+    <%= link_to "Update Image", "#", :id => "update_image_link" %>
     <br/>
     <span id="name"><%= @politician.user_name %> &nbsp;<em> <!--<a href="#"><%= t :edit, :scope => [:politwoops,:form] %></a>--></em></span>
   </li>
@@ -143,6 +148,34 @@ jQuery(document).ready(function(){
         jQuery('#done_names').remove();
         return false;
     });
+    
+    $("#update_image_link").live("click", function(){
+      $("#loading_img").show();
+      var screen_name = $("#user_name_input").val();
+      var old_image_url = $("#profile_image_input").val();
+      
+      jQuery.ajax({
+        url: '/admin/users/get-twitter-id/'+ screen_name + '.json', 
+        dataType: 'json',
+        success: function(data){
+          if(old_image_url == data['org_profile_image']){
+            alert("No updates.");
+          }else{
+            jQuery("#profile_image_input").val(data['org_profile_image']);
+            jQuery("#profile_image").attr("src",data['org_profile_image']);
+          }
+        },
+        error: function(jq, textStatus, errorThrown){
+          console.log(errorThrown); 
+          console.log(textStatus);
+        },
+        complete: function(jq, textStatus, errorThrown){
+          $("#loading_img").hide();
+        }
+      });
+      
+      return false;
+    });
 
 });
-</script>
+</script> 
