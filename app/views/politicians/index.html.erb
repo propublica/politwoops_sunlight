@@ -1,0 +1,7 @@
+<h2><%= t :list_politicians, :scope => [:politwoops,:admin] %> (<%= @politicians.size %>)</h2>
+<ul>
+<% @politicians.each do |politician| %>
+  
+  <li class="box-alignment"><%= render :partial => "politician", :locals => {:politician => politician} %></li>
+<%end%>
+</ul>

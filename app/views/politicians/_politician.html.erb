@@ -1,0 +1,30 @@
+<div class="tweet small">
+  <div class="contentLeft"> 
+    <a href="/user/<%= politician.user_name %>">
+      <img src="<%= avatar_url politician %>" alt="<%= politician.user_name %>" width"73" height="73" />
+    </a>
+    <div class="policount"><!--
+      <span>Retweets via <em>Politwoops</em></span>
+      <span class="number">007</span>-->
+    </div>
+  </div>
+  
+  <div class="content" style="padding-top: 18px; float: left; width: 165px;">
+    <div class="tweet-content poli-content">
+      <h4 class="tweetTitle poliTitle">
+        <span>
+          <a href="?politician_id=<%= politician.id %>"> <%= "#{politician.first_name} #{politician.middle_name} #{politician.last_name}" %> </a>
+          <% if !politician.party.nil? %>
+            (<a href="?party=<%= politician.party.name%>" ><%= politician.party.name.upcase %></a>)
+          <% end %>        
+        </span>
+        <br />
+        <span> <a class="accountHandle linkUnderline" href="/user/<%= politician.user_name %>">@<%= politician.user_name %></a></span>
+	    </h4>
+	    <% if politician.status ==  4 %>
+        <div class="inactiveMess">This account is no longer active.</div> 
+      <% end %>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>

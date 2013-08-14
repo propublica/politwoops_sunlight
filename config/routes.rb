@@ -6,6 +6,7 @@ Politwoops::Application.routes.draw do
   match "tweet/:id" => "tweets#show", :as => :tweet
   match "user/:user_name" => "politicians#show", :as => :politician
   match "users/" => "politicians#all", :as => :all_politicians
+  match "users/list" => "politicians#index", :as => :all_politicians
   match "users/suggest" => "politicians#suggest", :as => :suggest
   match "users/send_suggestion" => "politicians#send_suggestion", :as => :send_suggestion
   match "users/get-twitter-id/:screen_name" => "politicians#get_twitter_id", :as => "get_twitter_id"

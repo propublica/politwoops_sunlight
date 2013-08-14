@@ -120,7 +120,7 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 .clearfix { zoom: 1; }
 .clear { clear: both;}
 
-
+.box-alignment{display: inline-block; width:33%}
 
 
 
@@ -406,6 +406,7 @@ h4, #filter label {
 /* tweets */
 
 .tweet { background: #fff; border: 1px solid #ddd; border-bottom: 3px solid #ddd; margin-bottom: 10px; padding: 20px; border-radius: 4px;}
+.tweet.small { padding: 10px 20px ; }
 /* padding-bottom: 23px; margin-bottom: 23px;*/
 
 .tweetTitle { font-weight: bold; font-size: 128%; margin-bottom: 5px;}

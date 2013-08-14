@@ -23,7 +23,11 @@ class PoliticiansController < ApplicationController
       end
     end
   end
-
+  
+  def index
+    @politicians = Politician.active
+  end
+  
   before_filter :enable_filter_form
   def all 
     
