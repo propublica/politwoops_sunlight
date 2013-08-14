@@ -1,7 +1,11 @@
 :admin:
-:admin:
   :username: admin
   :password: admin
+
+:mailer:
+  :username: modsaid@gmail.com
+  :password: somepassword
+  :domain: politwoops.com
 
 # used for obfuscating the RSS URL
 :rss_secret: 26a7e19a8a331a0c6a1e0484edfb4d6d384d3542

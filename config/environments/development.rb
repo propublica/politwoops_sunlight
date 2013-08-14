@@ -35,14 +35,17 @@ Politwoops::Application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   # set delivery method to :smtp, :sendmail or :test
+
+  configuration ||= YAML.load_file "#{Rails.root}/config/config.yml"
+
   #config.action_mailer.delivery_method = :smtp
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => '2ad.kelmetak.com',
-    :user_name            => '2ad.kelmetak@gmail.com',
-    :password             => 'a@D.K3lM3t@K',
+    :domain               => configuration[:mailer][:domain],
+    :user_name            => configuration[:mailer][:username],
+    :password             => configuration[:mailer][:password],
     :authentication       => 'plain',
     :enable_starttls_auto => true  
   }
