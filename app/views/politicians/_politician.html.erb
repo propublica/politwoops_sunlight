@@ -13,9 +13,9 @@
     <div class="tweet-content poli-content">
       <h4 class="tweetTitle poliTitle">
         <span>
-          <a href="?politician_id=<%= politician.id %>"> <%= "#{politician.first_name} #{politician.middle_name} #{politician.last_name}" %> </a>
+          <a href="/user/<%= politician.user_name %>"> <%= "#{politician.first_name} #{politician.middle_name} #{politician.last_name}" %> </a>
           <% if !politician.party.nil? %>
-            (<a href="?party=<%= politician.party.name%>" ><%= politician.party.name.upcase %></a>)
+            (<a href="/?party=<%= politician.party.name%>" ><%= politician.party.name.upcase %></a>)
           <% end %>        
         </span>
         <br />
