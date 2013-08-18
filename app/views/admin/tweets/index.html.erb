@@ -115,7 +115,12 @@ $(function() {
           $rejected += $(this).val() + ',';
         }
     });
-    window.location = '/admin/reject?page=<%= params[:page] || 1 %>&ids=' + $rejected
+    politician_id_str = "";
+    politician_id = "<%= params[:politician_id]%>";
+    if(politician_id){
+      politician_id_str = "&politician_id=" + politician_id
+    } 
+    window.location = '/admin/reject?page=<%= params[:page] || 1 %>' + politician_id_str + '&ids=' + $rejected
   }
   function approve_all_selected(){
     $approved = ''
@@ -124,7 +129,12 @@ $(function() {
           $approved += $(this).val() + ',';
         }
     });
-    window.location = '/admin/approve?page=<%= params[:page] || 1 %>&ids=' + $approved
+    politician_id_str = "";
+    politician_id = "<%= params[:politician_id]%>";
+    if(politician_id){
+      politician_id_str = "&politician_id=" + politician_id
+    } 
+    window.location = '/admin/approve?page=<%= params[:page] || 1 %>' + politician_id_str + '&ids=' + $approved
   }
   
 </script>

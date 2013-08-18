@@ -201,6 +201,7 @@ ar:
             unapprove: "ﺭﻓﺾ"
             remove_user_with_all_his_tweets: "ﺣﺬﻑ اﻟﺤﺴﺎﺏ ﺑﻜﻞ ﺗﻐﺮﻳﺪاﺗﻪ"
             next_tweets: التغريدات اللاحقة
+            edit_politician: تعديل بيانات السياسي
             last_tweet_seen: "ﺃﺧﺮ ﺗﻐﺮﻳﺪﺓ ﻛﺎﻧﺖ ﻣﻨﺬ"
             ago: "ﻣﻀﺖ"
             note_is_missing: "ﻻﺑﺪ ﻣﻦ اﺿﺎﻓﺔ ﺳﺒﺐ ﻓﻲ ﺣﺎﻟﺔ اﻟﻤﻮاﻓﻘﺔ ﻋﻠﻰ اﺿﺎﻓﺔ اﻟﺘﻐﺮﻳﺪﺓ"

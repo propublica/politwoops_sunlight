@@ -86,6 +86,7 @@
         end
       %>
       
+      <a href="/admin/user/<%= tweet.politician.id %>" target="_blank"><%= t(:edit_politician, :scope => [:politwoops,:admin]) %></a><br/>
       <a href="#" class="next_tweets"><%= t(:next_tweets, :scope => [:politwoops,:admin]) %></a>
       <div class="next_tweets_list" style="display: none">
         <a href="#" class="next_tweets_title" ><h4><%= t(:next_tweets, :scope => [:politwoops,:admin]) %></h4></a>

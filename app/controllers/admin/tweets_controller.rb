@@ -39,6 +39,7 @@ class Admin::TweetsController < Admin::AdminController
 
   def reject
     page = params[:page] || 1
+    politician_id = params[:politician_id] || nil
     ids = params[:ids]
     ids_list = ids.split(',')
     
@@ -57,11 +58,12 @@ class Admin::TweetsController < Admin::AdminController
       end
     end
 
-    redirect_to "/admin/review?page=#{page}"
+    redirect_to "/admin/review?page=#{page}#{politician_id ? '&politician_id='+ params[:politician_id].to_s : '' }"
   end
 
   def approve
     page = params[:page] || 1
+    politician_id = params[:politician_id] || nil
     ids = params[:ids]
     ids_list = ids.split(',')
     
@@ -80,7 +82,7 @@ class Admin::TweetsController < Admin::AdminController
       end
     end
 
-    redirect_to '/admin/review?page=' + page
+    redirect_to "/admin/review?page=#{page}#{politician_id ? '&politician_id='+ params[:politician_id].to_s : '' }"
   end
   
   # approve or unapprove a tweet, mark it as reviewed either way
