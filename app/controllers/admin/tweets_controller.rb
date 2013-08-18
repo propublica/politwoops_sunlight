@@ -124,7 +124,7 @@ class Admin::TweetsController < Admin::AdminController
   end
   
   def next_tweets
-    @next_tweets = Tweet.where(["id > ? and politician_id = ? ", @tweet.id, @tweet.politician_id]).order(:id).limit(2)
+    @next_tweets = Tweet.where(["id > ? and politician_id = ? ", @tweet.id, @tweet.politician_id]).order("id asc").limit(2)
     
     respond_to do |format|
       format.js
