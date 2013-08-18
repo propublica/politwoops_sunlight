@@ -19,7 +19,7 @@ end
     </span>
     <% if @not_reviewed_tweets_count[pol.id] %>
     <span style="float: left;">
-    <%= link_to @not_reviewed_tweets_count[pol.id] , "/admin?politician_id=#{pol.id}", :title => "تغريدات فى انتظار المراجعة", :target => "_blank" %>
+    <%= link_to @not_reviewed_tweets_count[pol.id] , "/admin?politician_id=#{pol.id}&per_page=200", :title => "تغريدات فى انتظار المراجعة", :target => "_blank" %>
     </span>
     <% end %>
     <br/>
