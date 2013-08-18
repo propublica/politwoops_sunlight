@@ -26,7 +26,7 @@
     <br/>
     <%= link_to "Update Image", "#", :id => "update_image_link" %>
     <br/>
-    <span id="name"><%= @politician.user_name %> &nbsp;<em> <!--<a href="#"><%= t :edit, :scope => [:politwoops,:form] %></a>--></em></span>
+    <a href="http://twitter.com/<%= @politician.user_name %>" target="_blank"><span id="name"><%= @politician.user_name %> &nbsp;<em> <!--<a href="#"><%= t :edit, :scope => [:politwoops,:form] %></a>--></em></span></a>
   </li>
   
   <li>
