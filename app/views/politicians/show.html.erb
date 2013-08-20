@@ -33,6 +33,11 @@
 
     <div class="clear"></div>
 </div>
+<% if @tweets.total_entries > 0 %>
+<h3 class="tweets_count">
+  <%= t(:number_of_deleted_tweets, :scope => [:politwoops,:tweets]) %> <span><%= @tweets.total_entries %></span>
+</h3>
+<% end %>
 <div id="all-container" class="tweet-content-container">
     <% @tweets.each do |at| %>
         <%= render :partial => "tweets/tweet", :locals => {:tweet => at} %>
