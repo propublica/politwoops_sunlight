@@ -45,17 +45,8 @@
   </li>
   <li> <%= t :status, :scope => [:politwoops,:admin] %>: <span>
     <select name="status">
-    <% 
-      status = { 1 => 'Active, showing tweets',
-           2 => 'Collecting tweets, not showing',
-           3 => 'Not collecting or showing tweets',
-           4 => 'not collecting, but showing historical tweets',
-         }
-    %>
-    <% status.each do |stat,desc| %>
-        <option value="<%=stat%>" <% if stat == @politician.party_id %> SELECTED <% end %> >
-            <%= desc %>
-        </option>
+    <% Politician::STATUS_LIST.each do |stat,desc| %>
+      <option value="<%=stat%>" <% if stat == @politician.party_id %> SELECTED <% end %> ><%= desc %></option>
     <% end %>
     </select>
     </span>

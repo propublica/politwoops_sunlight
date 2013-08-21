@@ -1,32 +1,75 @@
+<%= stylesheet_link_tag "tablesorter_style" %>
+
 <div id="admin-list">
-<h3><%= t :list_of_twoopsters, :scope => [:politwoops,:admin] %> &nbsp;<span style="font-size:.8em;"><em>(<a href="/admin/users/new"><%= t :add_new, :scope => [:politwoops,:form] %></a>)</em></span></h3>
-<div>
-رتب بـ : <%= link_to "الأسم", "?sort_by=name", :style => params[:sort_by] != "waiting_review" ? "font-weight: bold; text-decoration: underline;" : "" %>  - <%= link_to "تغريدات فى انتظار المراجعة", "?sort_by=waiting_review",  :style => params[:sort_by] == "waiting_review" ? "font-weight: bold; text-decoration: underline;" : "" %>
+  <h3><%= t :list_of_twoopsters, :scope => [:politwoops,:admin] %> &nbsp;<span style="font-size:.8em;"><em>(<a href="/admin/users/new"><%= t :add_new, :scope => [:politwoops,:form] %></a>)</em></span></h3>
+  <div>
+    <form id="admin-politician" action="/admin/users/" method="get">
+    <ul>
+      <li style="background: none;">
+        <%= t :party, :scope => [:politwoops,:admin] %>:  
+        <span>
+          <select name="party_id">
+            <option value="">عرض الكل</option>
+            <% Party.all.each do |party| %>
+              <option value="<%= party.id %>" <% if party.id.to_s == params[:party_id] %> SELECTED <% end %> ><%=party.name.upcase %></option>
+            <% end %>
+          </select>
+        </span>
+      </li>
+      <li style="background: none;">
+        <%= t :status, :scope => [:politwoops,:admin] %>: 
+        <span>
+          <select name="status">
+            <option value="">عرض الكل</option>
+            <% Politician::STATUS_LIST.each do |stat,desc| %>
+              <option value="<%=stat%>" <% if stat.to_s == params[:status] %> SELECTED <% end %> ><%= desc %></option>
+            <% end %>
+          </select>
+        </span>
+      </li>
+      <li style="background: none;">
+        <button type="submit" value="search"><%= t :search, :scope => [:politwoops,:form] %></button>
+      </li>
+    </ul>
+    </form>
+  </div>
+  <%
+  if params[:sort_by] == "waiting_review"
+  @politicians = @politicians.sort{|a, b| @not_reviewed_tweets_count[b.id].to_i <=> @not_reviewed_tweets_count[a.id].to_i}
+  end 
+  %>
+  
+  <table id="politicians_table"  class="tablesorter" style="text-align: center; margin: 20px; width: 98%">
+    <thead>
+      <tr style="font-weight: bold; <%= cycle("background: #f7f7f7;", "") %>">
+        <th style="padding: 10px;">Full Name</th>
+        <th style="padding: 10px;">User Name</th>
+        <th style="padding: 10px;">Party Name</th>
+        <th style="padding: 10px;">Status</th>
+        <th style="padding: 10px; width: 8%;">#</th>
+      </tr>
+    </thead> 
+    <tbody>
+      <% @politicians.each do |pol| %>
+      <tr style="<%= cycle("background: #f7f7f7;", "") %>">
+        <td><a href="/admin/user/<%=pol.id%>"> <%=pol.first_name %> <%=pol.middle_name %> <%=pol.last_name %> </a></td>
+        <td><%=pol.user_name %></td>
+        <td><%= pol.party.nil? ? "" : pol.party.name %></td>
+        <td><span title="<%= Politician::STATUS_LIST[pol.status] %>"><%= t("status_lis.status_#{pol.status}") %></span></td>
+        <td>
+          <% if @not_reviewed_tweets_count[pol.id] %>
+          <%= link_to @not_reviewed_tweets_count[pol.id] , "/admin?politician_id=#{pol.id}&per_page=200", :title => "تغريدات فى انتظار المراجعة", :target => "_blank" %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody> 
+  </table>
 </div>
 
-<ul style="margin: 20px;">
-
-<%
-if params[:sort_by] == "waiting_review"
-@politicians = @politicians.sort{|a, b| @not_reviewed_tweets_count[b.id].to_i <=> @not_reviewed_tweets_count[a.id].to_i}
-end 
-%>
-
-<% @politicians.each do |pol| %>
-  <li>
-    <span>
-      <a href="/admin/user/<%=pol.id%>"> <%=pol.first_name %> <%=pol.middle_name %> <%=pol.last_name %> </a>
-    </span>
-    <% if @not_reviewed_tweets_count[pol.id] %>
-    <span style="float: left;">
-    <%= link_to @not_reviewed_tweets_count[pol.id] , "/admin?politician_id=#{pol.id}&per_page=200", :title => "تغريدات فى انتظار المراجعة", :target => "_blank" %>
-    </span>
-    <% end %>
-    <br/>
-    
-    <span> <%=pol.user_name %> </span> <br/>
-    <span><%= pol.party.name unless pol.party.nil? %></span>
-  </li>
-<% end %>
-</ul>
-</div>
+<%= javascript_include_tag "jquery.tablesorter.min" %>
+<script>
+  $(document).ready(function(){
+    $("#politicians_table").tablesorter(); 
+  });
+</script>

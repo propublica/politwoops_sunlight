@@ -1,7 +1,10 @@
 class Admin::PoliticiansController < Admin::AdminController 
   
   def admin_list
-    @politicians = Politician.all
+    @politicians = Politician.scoped
+    @politicians = @politicians.where(:party_id => params[:party_id]) unless params[:party_id].blank?
+    @politicians = @politicians.where(:status => params[:status]) unless params[:status].blank?
+    
     @not_reviewed_tweets_count = DeletedTweet.where(:reviewed=>false).count(:group=>:politician_id)
     
     respond_to do |format|

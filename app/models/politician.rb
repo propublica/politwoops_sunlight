@@ -1,4 +1,10 @@
 class Politician < ActiveRecord::Base
+  STATUS_LIST = { 1 => 'Active, showing tweets',
+                  2 => 'Collecting tweets, not showing',
+                  3 => 'Not collecting or showing tweets',
+                  4 => 'not collecting, but showing historical tweets',
+                 }
+  
   include ActiveModel::Validations
 
   belongs_to :party
