@@ -51,37 +51,92 @@
   
   <h3 style="margin-right: 25px;">عدد الشخصيات السياسية &nbsp;<span style="font-size:.8em;"><em>(<%= @politicians.size %>)</em></span></h3>
   
-  <table id="politicians_table"  class="tablesorter" style="text-align: center; margin: 20px; width: 98%">
-    <thead>
-      <tr style="font-weight: bold; <%= cycle("background: #f7f7f7;", "") %>">
-        <th style="padding: 10px;">Full Name</th>
-        <th style="padding: 10px;">User Name</th>
-        <th style="padding: 10px;">Party Name</th>
-        <th style="padding: 10px;">Status</th>
-        <th style="padding: 10px; width: 8%;">#</th>
-      </tr>
-    </thead> 
-    <tbody>
-      <% @politicians.each do |pol| %>
-      <tr style="<%= cycle("background: #f7f7f7;", "") %>">
-        <td><a href="/admin/user/<%=pol.id%>"> <%=pol.first_name %> <%=pol.middle_name %> <%=pol.last_name %> </a></td>
-        <td><%=pol.user_name %></td>
-        <td><%= pol.party.nil? ? "" : pol.party.name %></td>
-        <td><span title="<%= Politician::STATUS_LIST[pol.status] %>"><%= t("status_lis.status_#{pol.status}") %></span></td>
-        <td>
-          <% if @not_reviewed_tweets_count[pol.id] %>
-          <%= link_to @not_reviewed_tweets_count[pol.id] , "/admin?politician_id=#{pol.id}&per_page=200", :title => "تغريدات فى انتظار المراجعة", :target => "_blank" %>
-          <% end %>
-        </td>
-      </tr>
-      <% end %>
-    </tbody> 
-  </table>
+  <form id="admin-politician" action="/admin/users/update" method="post">
+    <div style="margin-right: 25px;">
+      <a href="#" id="batch_update">تغيير مجموعة من الشخصيات السياسية</a>
+      <div id="batch_update_div" style="display: none;">
+        <ul>
+          <li style="background: none;">
+            <%= t :party, :scope => [:politwoops,:admin] %>:  
+            <span>
+              <select name="party_id">
+                <option value="">بدون تغيير</option>
+                <% Party.all.each do |party| %>
+                  <option value="<%= party.id %>"><%=party.name.upcase %></option>
+                <% end %>
+              </select>
+            </span>
+          </li>
+          <li style="background: none;">
+            <%= t :status, :scope => [:politwoops,:admin] %>: 
+            <span>
+              <select name="status">
+                <option value="">بدون تغيير</option>
+                <% Politician::STATUS_LIST.each do |stat,desc| %>
+                  <option value="<%=stat%>"><%= desc %></option>
+                <% end %>
+              </select>
+            </span>
+          </li>
+          <li style="background: none;">
+            <%= t :auto_publish, :scope => [:politwoops,:admin] %>:  
+            <span>
+              <select name="auto_publish">
+                <option value="">بدون تغيير</option>
+                <option value="1">True</option>
+                <option value="0">False</option>
+              </select>
+            </span>
+          </li>
+          <li style="background: none;">
+            <button type="submit" value="save"><%= t :save, :scope => [:politwoops,:form] %></button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <table id="politicians_table"  class="tablesorter" style="text-align: center; margin: 20px; width: 98%">
+      <thead>
+        <tr style="font-weight: bold; <%= cycle("background: #f7f7f7;", "") %>">
+          <th style=""></th>
+          <th style="padding: 10px;">Full Name</th>
+          <th style="padding: 10px;">User Name</th>
+          <th style="padding: 10px;">Party Name</th>
+          <th style="padding: 10px;">Status</th>
+          <th style="padding: 10px;">Auto</th>
+          <th style="padding: 10px; width: 8%;">#</th>
+        </tr>
+      </thead> 
+      <tbody>
+        <% @politicians.each do |pol| %>
+        <tr style="<%= cycle("background: #f7f7f7;", "") %>">
+          <td>
+            <input type="checkbox" id="" name="politician_ids[]" class="selected_politicians" value="<%= pol.id %>" style="margin: 5px 0 3px 0;">
+          </td>
+          <td style="text-align: right;"><a href="/admin/user/<%=pol.id%>"> <%=pol.first_name %> <%=pol.middle_name %> <%=pol.last_name %> </a></td>
+          <td><%=pol.user_name %></td>
+          <td><%= pol.party.nil? ? "" : pol.party.name %></td>
+          <td><span title="<%= Politician::STATUS_LIST[pol.status] %>"><%= t("status_lis.status_#{pol.status}") %></span></td>
+          <td><%= pol.auto_publish.to_s.titleize %></td>
+          <td>
+            <% if @not_reviewed_tweets_count[pol.id] %>
+            <%= link_to @not_reviewed_tweets_count[pol.id] , "/admin?politician_id=#{pol.id}&per_page=200", :title => "تغريدات فى انتظار المراجعة", :target => "_blank" %>
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody> 
+    </table>
+  </form>
 </div>
 
 <%= javascript_include_tag "jquery.tablesorter.min" %>
 <script>
   $(document).ready(function(){
-    $("#politicians_table").tablesorter(); 
+    $("#politicians_table").tablesorter();
+    $("#batch_update").live("click", function(){
+      $("#batch_update_div").toggle("slow");
+      return false;
+    }) 
   });
 </script>

@@ -152,5 +152,17 @@ class Admin::PoliticiansController < Admin::AdminController
 
     #redirect_to :back
   end
-
+  
+  def update
+    if params[:politician_ids]
+      where_cond = {}
+      where_cond[:party_id] = params[:party_id] unless params[:party_id].blank?
+      where_cond[:status] = params[:status] unless params[:status].blank?
+      where_cond[:auto_publish] = params[:auto_publish] unless params[:auto_publish].blank?  
+      
+      Politician.update_all(where_cond, 
+                              "id in (#{params[:politician_ids].join(', ')})") if where_cond.any?
+    end
+    redirect_to "/admin/users/"
+  end
 end
