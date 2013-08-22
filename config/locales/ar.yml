@@ -226,6 +226,7 @@ ar:
             account_type: "ﻧﻮﻉ اﻟﺤﺴﺎﺏ"
             office_held: "اﻟﻤﻜﺘﺐ اﻟﺴﻴﺎﺳﻲ"
             related_accounts: "اﻟﺤﺴﺎﺑﺎﺕ اﻟﻤﺸﺎﺑﻬﺔ"
+            auto_publish: "النشر تلقائيا"
             list_of_parties: "ﻗﺎﺋﻤﺔ اﻹﻧﺘﻤﺎﺋﺎﺕ اﻟﺴﻴﺎﺳﻴﺔ"
             list_of_offices: "ﻗﺎﺋﻤﺔ اﻟﻤﻜﺎﺗﺐ اﻟﺴﻴﺎﺳﻴﺔ"
             party_name: "اﺳﻢ اﻹﻧﺘﻤﺎء اﻟﺴﻴﺎﺳﻲ"

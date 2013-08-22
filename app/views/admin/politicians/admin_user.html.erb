@@ -97,7 +97,11 @@
   <%= t :related_accounts, :scope => [:politwoops,:admin] %>:<span>
   <input class="related" type="text" name="related" value="<% @related.each do |r| %><%=r.user_name%>,
   <% end %> " /></span>
-  <li>
+  </li>
+  <li style="height: 30px;">
+  <label for="auto_publish" style="width: 60px;float: right;"><%= t :auto_publish, :scope => [:politwoops,:admin] %>:</label>
+  <input id="auto_publish" class="related" type="checkbox" name="auto_publish" value="1" <% if @politician.auto_publish == true %>checked<% end %> style="box-shadow: none; float: right;width: 30px; margin: 5px 0 20px 0;"/>
+  </li>
   <li>
     <button type="submit" value="Save">Save</button>
   </li>

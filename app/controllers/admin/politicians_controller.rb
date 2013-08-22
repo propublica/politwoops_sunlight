@@ -105,6 +105,12 @@ class Admin::PoliticiansController < Admin::AdminController
       @politician.office = Office.find(params[:office_id])
     end
     
+    if params[:auto_publish] then
+      @politician.auto_publish = true
+    else
+      @politician.auto_publish = false
+    end
+    
     #if params[:first_name] != '' and params[:first_name].strip != ' ' then
       @politician.first_name = params[:first_name]
     #end
