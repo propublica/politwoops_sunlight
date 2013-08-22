@@ -1,0 +1,21 @@
+<%= form_for(@admin_sys_setting) do |f| %>
+  <% if @admin_sys_setting.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @admin_sys_setting.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <ul>
+    <li>
+      <%= @admin_sys_setting.attr_key.titleize %>: <%= f.text_field :attr_val %>
+    </li>
+    
+    <li>
+       <button type="submit" value="Save"><%= t :save, :scope => [:administrators,:form] %></button>
+    </li>
+  </ul>
+<% end %>

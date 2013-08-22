@@ -2,10 +2,17 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ar:
+    status_lis:
+        status_1: 'Active'
+        status_2: 'Collecting'
+        status_3: 'Not collecting'
+        status_4: 'Showing historical'
+        
     activerecord:
         models:
             politician: "حساب اﻟﺴﻴﺎﺳﻲ اﻟﻤﻮﺟﻮﺩ ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
             administrator: "مسئول"
+            sys_setting: "اعدادات النظام"
         attributes:
             politician:
                 user_name: "حساب اﻟﺴﻴﺎﺳﻲ ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
@@ -18,7 +25,10 @@ ar:
                 username: "اسم الدخول"
                 password: "كلمة المرور"
                 password_confirmation: "تأكيد كلمة المرور"
-            
+            admin/sys_setting:
+                attr_key: "اسم الاعدادات"
+                attr_val: "القيمة"
+                
         errors:
             messages:
               record_invalid: غير صحيح
@@ -193,6 +203,7 @@ ar:
             list_parties: "ﻗﺎﺋﻤﺔ اﻹﻧﺘﻤﺎﺋﺎﺕ اﻟﺴﻴﺎﺳﻴﺔ"
             list_offices: "ﻗﺎﺋﻤﺔ اﻟﻤﻜﺎﺗﺐ اﻟﺴﻴﺎﺳﻴﺔ"
             system_status: "ﺣﺎﻟﺔ اﻟﻨﻈﺎﻡ"
+            system_settings: "اعدادات النظام"
             for_review: "ﻟﻠﻤﺮاﺟﻌﺔ"
             approved: "اﻟﺘﻐﺮﻳﺪاﺕ تم اﻟﻤﻮاﻓﻘﺔ ﻋﻠﻴﻬﺎ بنجاح"
             rejected: "التغريدات تم رفضها بنجاح"
@@ -220,6 +231,7 @@ ar:
             account_type: "ﻧﻮﻉ اﻟﺤﺴﺎﺏ"
             office_held: "اﻟﻤﻜﺘﺐ اﻟﺴﻴﺎﺳﻲ"
             related_accounts: "اﻟﺤﺴﺎﺑﺎﺕ اﻟﻤﺸﺎﺑﻬﺔ"
+            auto_publish: "النشر تلقائيا"
             list_of_parties: "ﻗﺎﺋﻤﺔ اﻹﻧﺘﻤﺎﺋﺎﺕ اﻟﺴﻴﺎﺳﻴﺔ"
             list_of_offices: "ﻗﺎﺋﻤﺔ اﻟﻤﻜﺎﺗﺐ اﻟﺴﻴﺎﺳﻴﺔ"
             party_name: "اﺳﻢ اﻹﻧﺘﻤﺎء اﻟﺴﻴﺎﺳﻲ"

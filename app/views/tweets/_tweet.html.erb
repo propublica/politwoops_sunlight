@@ -59,7 +59,7 @@
   
   <% if !(defined?(admin) and admin) %>
     <div class="actions">
-      <input type='hidden' id='long_url_<%= tweet.id %>' value='http://2ad.kelmetak.com/tweet/<%= tweet.id %>'>
+      <input type='hidden' id='long_url_<%= tweet.id %>' value='<%= tweet_url(tweet.id) %>'>
       <a id='replay_<%= tweet.id %>' href="" class="reply textReplace" target="_blank"><%=t :reply, :scope => [:politwoops, :tweets] %></a>
       <a id='retweet_<%= tweet.id %>' href="" class="retweet textReplace" target="_blank"><%=t :retweet, :scope => [:politwoops, :tweets] %></a>
       <a id='fb_share_<%= tweet.id %>' href="#" class="fb_share textReplace"
@@ -145,35 +145,10 @@
   <% end %>
 
 </div>
-<% if tweet.short_url %>
+
 <script type="text/javascript" charset="utf-8">
-replay_url = "http://twitter.com/share?text=<%= CGI.escape('@' + tweet.user_name + ' ') %>&url=<%= tweet.short_url %>&via=2adkelmetak";
+replay_url = "http://twitter.com/share?text=<%= CGI.escape('@' + tweet.user_name + ' ') %>&url=<%= tweet_url(tweet.id) %>&via=2adkelmetak";
 jQuery('#replay_<%= tweet.id %>').attr("href", replay_url);
-retweet_url = "http://twitter.com/share?text=<%= CGI.escape('RT @' + tweet.user_name + ' ' + truncate(tweet.content, :length => 75)) %>&url=<%= tweet.short_url %>&via=2adkelmetak";
+retweet_url = "http://twitter.com/share?text=<%= CGI.escape('RT @' + tweet.user_name + ' ' + truncate(tweet.content, :length => 75)) %>&url=<%= tweet_url(tweet.id) %>&via=2adkelmetak";
 jQuery('#retweet_<%= tweet.id %>').attr("href", retweet_url);
 </script>
-<% else %>
-<script type="text/javascript" charset="utf-8">
-    jQuery(document).ready(function(){
-        var long_url = jQuery('#long_url_<%= tweet.id %>').val();
-        jQuery.ajax({
-            url: '/tweets/shorten_url?id=<%= tweet.id %>&url='+ long_url, 
-            dataType: 'json',
-            success: function(data){
-                      //console.log(data);
-                      replay_url = "http://twitter.com/share?text=<%= CGI.escape('@' + tweet.user_name + ' ') %>&url=" + data['url'] + "&via=2adkelmetak";
-                      jQuery('#replay_<%= tweet.id %>').attr("href", replay_url);
-                      //console.log(data['url']);
-                      //console.log(jQuery('#replay_<%= tweet.id %>').attr("href"));
-                      retweet_url = "http://twitter.com/share?text=<%= CGI.escape('RT @' + tweet.user_name + ' ' + truncate(tweet.content, :length => 75)) %>&url=" + data['url'] + "&via=2adkelmetak";
-                      jQuery('#retweet_<%= tweet.id %>').attr("href", retweet_url);
-                      //console.log(jQuery('#retweet_<%= tweet.id %>').attr("href"));
-                      },
-            error: function(jq, textStatus, errorThrown){
-                      console.log(errorThrown); 
-                      console.log(textStatus);
-                     },
-            });
-    });
-</script>
-<% end %>

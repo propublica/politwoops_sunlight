@@ -14,3 +14,10 @@ admins.each do |username, val|
   admin.email = val[:mail]
   admin.save!
 end
+
+sys_settings =  {:auto_publish_delay_minutes => 3}
+sys_settings.each do |attr_key, attr_val|
+  sys_set = Admin::SysSetting.find_or_initialize_by_attr_key(attr_key)
+  sys_set.attr_val = attr_val
+  sys_set.save!
+end

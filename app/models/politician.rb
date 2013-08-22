@@ -1,4 +1,10 @@
 class Politician < ActiveRecord::Base
+  STATUS_LIST = { 1 => 'Active, showing tweets',
+                  2 => 'Collecting tweets, not showing',
+                  3 => 'Not collecting or showing tweets',
+                  4 => 'not collecting, but showing historical tweets',
+                 }
+  
   include ActiveModel::Validations
 
   belongs_to :party
@@ -16,6 +22,7 @@ class Politician < ActiveRecord::Base
   default_scope :order => 'user_name'
 
   scope :active, :conditions => ["status = 1 OR status = 4"]
+  scope :with_auto_publish, :conditions => ["auto_publish = 1"]
   
   validates_uniqueness_of :user_name, :case_sensitive => false
   validates_presence_of :user_name

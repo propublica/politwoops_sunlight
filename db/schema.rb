@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130729145412) do
+ActiveRecord::Schema.define(:version => 20130822084047) do
 
   create_table "account_links", :force => true do |t|
     t.integer  "politician_id"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(:version => 20130729145412) do
     t.string   "password_salt"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "admin_sys_settings", :force => true do |t|
+    t.string   "attr_key"
+    t.string   "attr_val"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "deleted_tweets", :force => true do |t|
@@ -71,8 +78,8 @@ ActiveRecord::Schema.define(:version => 20130729145412) do
   end
 
   create_table "politicians", :force => true do |t|
-    t.string  "user_name",         :limit => 64,                :null => false
-    t.integer "twitter_id",                                     :null => false
+    t.string  "user_name",         :limit => 64,                    :null => false
+    t.integer "twitter_id",                                         :null => false
     t.integer "party_id"
     t.integer "status",                          :default => 1
     t.string  "profile_image_url"
@@ -83,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20130729145412) do
     t.string  "middle_name"
     t.string  "last_name"
     t.string  "suffix"
+    t.boolean "auto_publish",                    :default => false
   end
 
   add_index "politicians", ["status"], :name => "index_politicians_on_status"

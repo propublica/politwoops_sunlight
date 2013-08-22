@@ -14,8 +14,8 @@ Politwoops::Application.routes.draw do
   match "tweets/shorten_url" => "tweets#shorten_url"
 
   namespace :admin do
-    resources :administrators
     root :to => "tweets#index", :reviewed => false, :approved => false, :as => "review"
+    resources :administrators, :sys_settings
     match "status" => "system#status"
     match "restart" => "system#restart"
     match "start" => "system#start"
@@ -34,7 +34,8 @@ Politwoops::Application.routes.draw do
     match "users/new" => "politicians#new_user", :as => "new_user"
     match "users/get-twitter-id/:screen_name" => "politicians#get_twitter_id", :as => "get_twitter_id"
     match "user/:id/disable" => "politicians#disable", :as => "disable"
-
+    match "users/update" => "politicians#update", :as => "politicians_update", :via => [:post]
+    
     match "parties" => "parties#list", :as => "list_parties"   
     match "parties/add" => "parties#add", :as => "add_party"
     match "parties/save" => "parties#save", :as => "save_party"

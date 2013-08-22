@@ -1,7 +1,11 @@
 class Admin::PoliticiansController < Admin::AdminController 
   
   def admin_list
-    @politicians = Politician.all
+    @politicians = Politician.scoped
+    @politicians = @politicians.where(:party_id => params[:party_id]) unless params[:party_id].blank?
+    @politicians = @politicians.where(:status => params[:status]) unless params[:status].blank?
+    @politicians = @politicians.where(:auto_publish => params[:auto_publish]) unless params[:auto_publish].blank?
+    
     @not_reviewed_tweets_count = DeletedTweet.where(:reviewed=>false).count(:group=>:politician_id)
     
     respond_to do |format|
@@ -102,18 +106,24 @@ class Admin::PoliticiansController < Admin::AdminController
       @politician.office = Office.find(params[:office_id])
     end
     
-    if params[:first_name] != '' and params[:first_name].strip != ' ' then
+    if params[:auto_publish] then
+      @politician.auto_publish = true
+    else
+      @politician.auto_publish = false
+    end
+    
+    #if params[:first_name] != '' and params[:first_name].strip != ' ' then
       @politician.first_name = params[:first_name]
-    end
-    if params[:middle_name] != '' and params[:middle_name].strip != ' ' then
+    #end
+    #if params[:middle_name] != '' and params[:middle_name].strip != ' ' then
       @politician.middle_name = params[:middle_name]
-    end
-    if params[:last_name] != '' and params[:last_name].strip != ' ' then
+    #end
+    #if params[:last_name] != '' and params[:last_name].strip != ' ' then
       @politician.last_name = params[:last_name]
-    end
-    if params[:suffix] != '' and params[:suffix].strip != ' ' then
+    #end
+    #if params[:suffix] != '' and params[:suffix].strip != ' ' then
       @politician.suffix = params[:suffix]
-    end
+    #end
     
     if params[:profile_image] != nil and params[:profile_image] != '' and params[:profile_image].strip != ' ' then
       @politician.profile_image_url = params[:profile_image]
@@ -142,5 +152,17 @@ class Admin::PoliticiansController < Admin::AdminController
 
     #redirect_to :back
   end
-
+  
+  def update
+    if params[:politician_ids]
+      where_cond = {}
+      where_cond[:party_id] = params[:party_id] unless params[:party_id].blank?
+      where_cond[:status] = params[:status] unless params[:status].blank?
+      where_cond[:auto_publish] = params[:auto_publish] unless params[:auto_publish].blank?  
+      
+      Politician.update_all(where_cond, 
+                              "id in (#{params[:politician_ids].join(', ')})") if where_cond.any?
+    end
+    redirect_to "/admin/users/"
+  end
 end

@@ -70,7 +70,7 @@ Politwoops::Application.configure do
     :port                 => 587,
     :domain               => configuration[:mailer][:domain],
     :user_name            => configuration[:mailer][:username],
-    :password             => configuration[:mailer][:domain],
+    :password             => configuration[:mailer][:password],
     :authentication       => 'plain',
     :enable_starttls_auto => true  
   }
