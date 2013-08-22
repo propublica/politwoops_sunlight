@@ -1,3 +1,7 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
 <div id="admin-list">
   <h3><%= t :list_of_administrators, :scope => [:administrators,:admin] %> &nbsp;<span style="font-size:.8em;"><em>(<a href="<%= new_admin_administrator_path %>"><%= t :add_new, :scope => [:politwoops,:form] %></a>)</em></span></h3>
   <ul style="margin: 20px;">

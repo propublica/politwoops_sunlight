@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130821110508) do
+ActiveRecord::Schema.define(:version => 20130822084047) do
 
   create_table "account_links", :force => true do |t|
     t.integer  "politician_id"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(:version => 20130821110508) do
     t.string   "password_salt"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "admin_sys_settings", :force => true do |t|
+    t.string   "attr_key"
+    t.string   "attr_val"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "deleted_tweets", :force => true do |t|

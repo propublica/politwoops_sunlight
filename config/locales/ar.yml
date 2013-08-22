@@ -12,6 +12,7 @@ ar:
         models:
             politician: "حساب اﻟﺴﻴﺎﺳﻲ اﻟﻤﻮﺟﻮﺩ ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
             administrator: "مسئول"
+            sys_setting: "اعدادات النظام"
         attributes:
             politician:
                 user_name: "حساب اﻟﺴﻴﺎﺳﻲ ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
@@ -24,7 +25,10 @@ ar:
                 username: "اسم الدخول"
                 password: "كلمة المرور"
                 password_confirmation: "تأكيد كلمة المرور"
-            
+            admin/sys_setting:
+                attr_key: "اسم الاعدادات"
+                attr_val: "القيمة"
+                
         errors:
             messages:
               record_invalid: غير صحيح
@@ -199,6 +203,7 @@ ar:
             list_parties: "ﻗﺎﺋﻤﺔ اﻹﻧﺘﻤﺎﺋﺎﺕ اﻟﺴﻴﺎﺳﻴﺔ"
             list_offices: "ﻗﺎﺋﻤﺔ اﻟﻤﻜﺎﺗﺐ اﻟﺴﻴﺎﺳﻴﺔ"
             system_status: "ﺣﺎﻟﺔ اﻟﻨﻈﺎﻡ"
+            system_settings: "اعدادات النظام"
             for_review: "ﻟﻠﻤﺮاﺟﻌﺔ"
             approved: "اﻟﺘﻐﺮﻳﺪاﺕ تم اﻟﻤﻮاﻓﻘﺔ ﻋﻠﻴﻬﺎ بنجاح"
             rejected: "التغريدات تم رفضها بنجاح"

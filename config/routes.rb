@@ -14,8 +14,8 @@ Politwoops::Application.routes.draw do
   match "tweets/shorten_url" => "tweets#shorten_url"
 
   namespace :admin do
-    resources :administrators
     root :to => "tweets#index", :reviewed => false, :approved => false, :as => "review"
+    resources :administrators, :sys_settings
     match "status" => "system#status"
     match "restart" => "system#restart"
     match "start" => "system#start"

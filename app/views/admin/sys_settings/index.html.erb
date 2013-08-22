@@ -1,0 +1,20 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<div id="admin-list">
+  <h3><%= t :system_settings, :scope => [:politwoops,:admin] %></h3>
+  <ul style="margin: 20px; direction: ltr;">
+    <% @admin_sys_settings.each do |admin_sys_setting| %>
+      <li>
+        <span><%= admin_sys_setting.attr_key.titleize %> : </span>
+        <span><%= admin_sys_setting.attr_val %></span><br/>
+        <span><%= link_to 'Edit', edit_admin_sys_setting_path(admin_sys_setting) %></span><br/>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'rails' %>
+<% end %>
