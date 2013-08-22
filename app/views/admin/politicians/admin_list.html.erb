@@ -98,7 +98,7 @@
     <table id="politicians_table"  class="tablesorter" style="text-align: center; margin: 20px; width: 98%">
       <thead>
         <tr style="font-weight: bold; <%= cycle("background: #f7f7f7;", "") %>">
-          <th style=""></th>
+          <th style=""><input type="checkbox" id="select_all_politicians" name="" value="" style="margin: 5px 0 3px 0;"></th>
           <th style="padding: 10px;">Full Name</th>
           <th style="padding: 10px;">User Name</th>
           <th style="padding: 10px;">Party Name</th>
@@ -133,10 +133,24 @@
 <%= javascript_include_tag "jquery.tablesorter.min" %>
 <script>
   $(document).ready(function(){
-    $("#politicians_table").tablesorter();
+    $("#politicians_table").tablesorter({
+      headers: {
+        0: {  
+          sorter: false 
+        }
+      } 
+    });
     $("#batch_update").live("click", function(){
       $("#batch_update_div").toggle("slow");
       return false;
     }) 
+    
+    $("#select_all_politicians").live("change", function(){
+      if($(this).attr("checked") == "checked"){
+        $(".selected_politicians").attr("checked", true);
+      }else{
+        $(".selected_politicians").attr("checked", false)
+      }
+    })
   });
 </script>
