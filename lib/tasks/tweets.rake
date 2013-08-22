@@ -2,7 +2,7 @@ namespace :tweets do
   desc 'Auto publish tweets for specific politicians'
   task :auto_publish => :environment do
     puts "Start ... "
-    Politician.with_auto_publish.each do |politician|
+    Politician.with_auto_publish.active.each do |politician|
       approved_tweets = politician.deleted_tweets.waiting_review.where().select(:id).collect(&:id)
       
       if approved_tweets.any?
