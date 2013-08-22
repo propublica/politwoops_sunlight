@@ -3,10 +3,11 @@ namespace :tweets do
   task :auto_publish => :environment do
     puts "Start ... "
     Politician.with_auto_publish.each do |politician|
-      approved_tweets = politician.deleted_tweets.waiting_review.where("(modified - created) / 1000 > #{Admin::SysSetting.auto_publish_delay_seconds}").select(:id).collect(&:id)
+      approved_tweets = politician.deleted_tweets.waiting_review.where().select(:id).collect(&:id)
       
       if approved_tweets.any?
-        DeletedTweet.update_all("reviewed = 1, approved = 1, reviewed_at = '#{Time.now}', reviewed_by_id = 0", "id in (#{approved_tweets.join(',')})")
+        DeletedTweet.update_all("reviewed = 1, approved = 1, reviewed_at = '#{Time.now}', reviewed_by_id = 0", 
+                                "(modified - created) / 1000 > #{Admin::SysSetting.auto_publish_delay_seconds}")
       end
       
       print '#'
