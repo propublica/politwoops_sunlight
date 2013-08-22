@@ -4,6 +4,7 @@ class Admin::PoliticiansController < Admin::AdminController
     @politicians = Politician.scoped
     @politicians = @politicians.where(:party_id => params[:party_id]) unless params[:party_id].blank?
     @politicians = @politicians.where(:status => params[:status]) unless params[:status].blank?
+    @politicians = @politicians.where(:auto_publish => params[:auto_publish]) unless params[:auto_publish].blank?
     
     @not_reviewed_tweets_count = DeletedTweet.where(:reviewed=>false).count(:group=>:politician_id)
     
