@@ -31,7 +31,7 @@
           <% end %>
         </span>
   	    
-        <span> <a class="accountHandle linkUnderline" href="/user/<%= tweet.politician.user_name %>">@<%= tweet.politician.user_name %></a></span>
+        <span><a class="accountHandle linkUnderline" href="http://twitter.com/<%= tweet.politician.user_name %>" target="_blank">@<%= tweet.politician.user_name %></a></span>
 	    </h4>
 	    <% if tweet.politician.status ==  4 %>
         <div class="inactiveMess">This account is no longer active.</div> 
