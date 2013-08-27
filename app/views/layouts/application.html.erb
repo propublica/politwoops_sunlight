@@ -115,6 +115,12 @@
                     <li><%= link_to t('politwoops.groups.list_politicians_label'), "/users/list", :class => current_page?(:controller => 'politicians', :action => 'index') ? "selected" : "" %></li>
                     <li><%= link_to t('politwoops.groups.suggest_politicians_label'), "/users/suggest", :class => current_page?(:controller => 'politicians', :action => 'suggest') ? "selected" : "" %></li>
                 </ul>
+
+                <div class="links">
+                    <a href="#"><img src="../images/facebook.png" /></a>
+                    <a href="#"><img src="../images/twitter.png" /></a>
+                </div>
+
                 <div class="search">
                     <form action="/" method="get" id="search">
                         <input type="search" placeholder="  <%= t('politwoops.form.search') %>" name="q" value="<%= h params[:q] %>"/>
