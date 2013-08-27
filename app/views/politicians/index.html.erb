@@ -1,7 +1,7 @@
 <h2><%= t :list_politicians, :scope => [:politwoops,:admin] %> (<%= @politicians.size %>)</h2>
+<p>يقوم محرك أد كلمتك بمتابعة حسابات هذه الشخصيات السياسية والنخبة على تويتر، يمكنك إقتراح شخصية جديدة لمتابعة تغريداتها المحذوفة عن طريق الضغط على <a href="/users/suggest"><%= t('politwoops.groups.suggest_politicians_label')%></a></p>
 <ul>
 <% @politicians.each do |politician| %>
-  
   <li class="box-alignment"><%= render :partial => "politician", :locals => {:politician => politician} %></li>
 <%end%>
 </ul>
