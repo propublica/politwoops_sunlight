@@ -27,7 +27,7 @@
 	
   <div class="aboutAccount" id="<%= @politician[:user_name] %>">
 		<p> 
-			<% if @tweets[0] %> <%= @tweets[0].details['user']['description'] %> <% end %><a href="http://twitter.com/<%=@politician[:user_name]%>"><%= t :twitter_page, :scope => [:politwoops] %></a>  
+			<% if @tweets[0] %> <%= @tweets[0].details['user']['description'] %> <% end %><a href="http://twitter.com/<%=@politician[:user_name]%>" target="_blank"><%= t :twitter_page, :scope => [:politwoops] %></a>  
 		</p>
 	</div>
 
