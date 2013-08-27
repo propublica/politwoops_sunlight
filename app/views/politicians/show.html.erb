@@ -37,6 +37,10 @@
 <h3 class="tweets_count">
   <%= t(:number_of_deleted_tweets, :scope => [:politwoops,:tweets]) %> <span><%= @tweets.total_entries %></span>
 </h3>
+<% else %>
+<h3 class="tweets_count">
+  <%= t(:no_deleted_tweets, :scope => [:politwoops,:tweets]) %>
+</h3>
 <% end %>
 <div id="all-container" class="tweet-content-container">
     <% @tweets.each do |at| %>

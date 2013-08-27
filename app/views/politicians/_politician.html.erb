@@ -19,10 +19,10 @@
           <% end %>        
         </span>
         <br />
-        <span> <a class="accountHandle linkUnderline" href="/user/<%= politician.user_name %>">@<%= politician.user_name %></a></span>
+        <span> <a class="accountHandle linkUnderline" href="http://twitter.com/<%= politician.user_name %>" target="_blank" >@<%= politician.user_name %></a></span>
 	    </h4>
 	    <% if politician.status ==  4 %>
-        <div class="inactiveMess">This account is no longer active.</div> 
+        <!-- <div class="inactiveMess">This account is no longer active.</div>  -->
       <% end %>
     </div>
   </div>

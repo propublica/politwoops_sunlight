@@ -114,7 +114,7 @@
             <input type="checkbox" id="" name="politician_ids[]" class="selected_politicians" value="<%= pol.id %>" style="margin: 5px 0 3px 0;">
           </td>
           <td style="text-align: right;"><a href="/admin/user/<%=pol.id%>"> <%=pol.first_name %> <%=pol.middle_name %> <%=pol.last_name %> </a></td>
-          <td><%=pol.user_name %></td>
+          <td><a href="http://twitter.com/<%= pol.user_name %>" target="_blank" ><%=pol.user_name %></a></td>
           <td><%= pol.party.nil? ? "" : pol.party.name %></td>
           <td><span title="<%= Politician::STATUS_LIST[pol.status] %>"><%= t("status_lis.status_#{pol.status}") %></span></td>
           <td><%= pol.auto_publish.to_s.titleize %></td>

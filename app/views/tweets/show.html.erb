@@ -1,5 +1,5 @@
 <% content_for :title do %>
-التغريدة اﻟﻤﺤﺬﻭﻓﺔ ﻣﻦ  <%= @tweet.details['user']['name'] %>
+التغريدة اﻟﻤﺤﺬﻭﻓﺔ ﻣﻦ  <%= "#{@tweet.politician.first_name} #{@tweet.politician.middle_name} #{@tweet.politician.last_name}" %>
 <% end %>
 <% content_for :description do %>
 <%= @tweet.content %>
