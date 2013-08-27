@@ -131,7 +131,7 @@ html{
 }
 body {
 	margin: 0 auto;
-	background:#f2f2f2 url(../images/body_bg.png) center -10px  repeat-x; 
+	background:#f2f2f2 url(../images/body_bg.png) center 0  repeat-x; 
 	color: #000;
 }
 .sf-header {
@@ -263,19 +263,27 @@ button:hover{
 /* header */
 
 header { 
-	height: 90px;
+	height: 120px;
 	margin: 0 auto;
 	position: relative;
 	width:940px;
 }
 
-h1 { 
-	height: 78px; 
-	width: 370px; 
+header h1 { 
 	float: right;
 	margin-top: 0;
 }
-h1 a { background: url(/images/logo.png) top right no-repeat; height: 70px; width: 500px; margin-top: 10px; }
+header h1 a { background: url(/images/logo.png) top right no-repeat; height: 75px; width: 450px; margin-top:10px;  }
+
+
+/*main-nav*/
+.main-nav{ float:right;}
+.main-nav li{ display:inline-block;}
+.main-nav li a{ display:block; color:#fff;  padding:0 20px; font-family: "GESS Medium"; font-size:14px; height:34px; line-height:34px;  }
+.main-nav li a:hover, .main-nav li a.selected{ text-decoration:none; background:#26668b; }
+
+
+
 nav {
 	position: relative;
 }
@@ -308,8 +316,8 @@ nav ul li:last-child{
 .gig-bar-container{
 
 }
-
-#search { margin-top:10px;
+/*
+#search { 
 	height: 42px;
 	padding-bottom:5px;
 	background:url(../images/search-bg.png) no-repeat;
@@ -340,11 +348,20 @@ nav ul li:last-child{
     box-shadow:  none;
 
 }
-#searchBtn:hover{
-	/*background: url(/images/search.png) center bottom no-repeat;*/
+*/
+.search{ float:left;}
+.search input[type="search"]{ border: medium; border-radius: 4px; height: 24px;  margin-top: 4px;  padding: 1px 6px;  width: 200px;}
+#searchBtn{
+	background: url(/images/search.png) top center no-repeat;
+	width: 32px;
+	height: 32px;
+	float: left;
+	display: block;
+	margin-right: 5px;
+	-webkit-box-shadow:  none;
+    box-shadow:  none;
 
 }
-
 
 
 
@@ -708,7 +725,7 @@ iframe.twitter-share-button {display: inline; margin-left: 10px;}
 	padding: 3px;
 	z-index: -1;
 	width: 100%;
-	margin-top: 56px;
+	margin-top: 18px;
 	margin-bottom: 23px;
 }
 .aboutAccount p{
@@ -1043,11 +1060,12 @@ table.politicians a{
 .service{ float:left; width:260px; } 
 .filters-wrapper{ padding: 20px; background: #ddd; border-radius:10px; border:1px solid #ccc; margin-bottom:30px;}
 .filters{width:940px; margin:0 auto; }
-.main-content{ width:940px; margin:20px auto; min-height: 600px;}
+.main-content{ width:940px; margin:25px auto; min-height: 600px;}
 
 .form-style{ padding: 20px; background: #fff; border: 1px solid #ddd; border-radius: 4px;}
 
-.social{ /*direction: ltr;*/ text-align: left;}
+.social{float:left; margin:15px 0 0 10px;}
+.twitter-share, .fb-like{ float:left;}
 
 .no-result{padding:20px; border:1px solid #ddd; background: #fff; border-bottom: 3px solid #ddd; border-radius: 4px; font-size: 17px;}
 .loading_img_center{position: fixed; left: 50%; top: 35%; width: 48px; z-index: 99;}
