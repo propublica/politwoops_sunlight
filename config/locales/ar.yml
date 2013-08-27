@@ -10,12 +10,12 @@ ar:
         
     activerecord:
         models:
-            politician: "حساب اﻟﺴﻴﺎﺳﻲ اﻟﻤﻮﺟﻮﺩ ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
+            politician: "حساب الشخصية اﻟﻤﻮﺟﻮﺩ ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
             administrator: "مسئول"
             sys_setting: "اعدادات النظام"
         attributes:
             politician:
-                user_name: "حساب اﻟﺴﻴﺎﺳﻲ ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
+                user_name: "حساب الشخصية ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
             party:
                 name: "اﺳﻢ اﻹﻧﺘﻤﺎء اﻟﺴﻴﺎﺳﻲ"
             office:
@@ -259,7 +259,7 @@ ar:
             more_information: "عن أد كلمتك"
             contact_us: "اﺗﺼﻞ ﺑﻨﺎ"
 
-        slogan: "اﻟﺘﻐﺮﻳﺪاﺕ اﻟﻤﺤﺬﻭﻓﺔ ﻣﻦ اﻟﺸﺨﺼﻴﺎﺕ العامة" 
+        slogan: "اﻟﺘﻐﺮﻳﺪاﺕ اﻟﻤﺤﺬﻭﻓﺔ للشخصيات العامة" 
         login: "ﺗﺴﺠﻴﻞ اﻟﺪﺧﻮﻝ"
         logout: "ﺗﺠﻴﻞ اﻟﺨﺮﻭﺝ"
         menu: "اﻟﻘﺎﺋﻤﺔ"
@@ -276,7 +276,7 @@ ar:
         yes_label: "ﻧﻌﻢ"
         no_label: "ﻻ"
         #call_for_contributers: "This is an incomplete list. If you think we're missing someone, please email us with their Name, State, Political Party, Office they hold or are seeking and, of course, Twitter handle. Thanks!"
-        call_for_contributers: "ﻫﺬﻩ ﻗﺎﺋﻤﺔ ﺟﺰﺋﻴﺔ. ﻟﻮ ﻟﺪﻳﻚ ﺷﺨﺼﻴﺎﺕ ﺳﻴﺎﺳﻴﺔ ﻏﻴﺮ ﻣﻮﺟﻮﺩﺓ ﻓﻲ ﻫﺬﻩ اﻟﻘﺎﺋﻤﺔ ﻣﻦ ﻓﻀﻠﻚ اﺭﺳﻠﻬﺎ ﻟﻨﺎ ﻋﻠﻲ <a href=\"mailto:info@kelmetak.com\">ﺑﺮﻳﺪﻧﺎ اﻷﻟﻜﺘﺮﻭﻧﻲ</a>, ﻣﻦ ﻓﻀﻠﻚ ﻗﻢ ﺑﺈﺭﺳﺎﻝ اﻷﺳﻢ ﻛﺎﻣﻼ ﻭاﻹﻧﺘﻤﺎء اﻟﺴﻴﺎﺳﻲ (ﺣﺰﺏ، ﺣﺮﻛﺔ، ﺟﻤﺎﻋﺔ) ﻭﻣﻨﺼﺒﻪ ﻓﻲ ﻓﻲ ﻫﺬا اﻹﻧﺘﻤﺎء ﻭﺑﺎﻟﻄﺒﻊ ﺣﺴﺎﺑﻪ ﻋﻠﻲ ﺷﺒﻜﺔ اﻟﺘﻮاﺻﻞ اﻷﺟﺘﻤﺎﻋﻲ ﺗﻮﻳﺘﺮ!"
+        call_for_contributers: "ﻫﺬﻩ ﻗﺎﺋﻤﺔ ﺟﺰﺋﻴﺔ. ﻟﻮ ﻟﺪﻳﻚ ﺷﺨﺼﻴﺎﺕ عامة ﻏﻴﺮ ﻣﻮﺟﻮﺩﺓ ﻓﻲ ﻫﺬﻩ اﻟﻘﺎﺋﻤﺔ ﻣﻦ ﻓﻀﻠﻚ اﺭﺳﻠﻬﺎ ﻟﻨﺎ ﻋﻠﻲ <a href=\"mailto:info@kelmetak.com\">ﺑﺮﻳﺪﻧﺎ اﻷﻟﻜﺘﺮﻭﻧﻲ</a>, ﻣﻦ ﻓﻀﻠﻚ ﻗﻢ ﺑﺈﺭﺳﺎﻝ اﻷﺳﻢ ﻛﺎﻣﻼ ﻭاﻹﻧﺘﻤﺎء اﻟﺴﻴﺎﺳﻲ (ﺣﺰﺏ، ﺣﺮﻛﺔ، ﺟﻤﺎﻋﺔ) ﻭﻣﻨﺼﺒﻪ ﻓﻲ ﻓﻲ ﻫﺬا اﻹﻧﺘﻤﺎء ﻭﺑﺎﻟﻄﺒﻊ ﺣﺴﺎﺑﻪ ﻋﻠﻲ ﺷﺒﻜﺔ اﻟﺘﻮاﺻﻞ اﻷﺟﺘﻤﺎﻋﻲ ﺗﻮﻳﺘﺮ!"
 
         groups:
             errors_explanation:
@@ -309,7 +309,7 @@ ar:
         groups_politicians:
             search_label: "ﺑﺤﺚ ﻋﻦ ﻣﺴﺘﺨﺪﻡ ﻋﻠﻲ ﺗﻮﻳﺘﺮ"
             
-        success_update: "ﻟﻘﺪ ﺗﻢ ﺇﺿﺎﻓﺔ اﻟﺴﻴﺎﺳﻲ ﻟﻠﻤﺠﻤﻮﻋﺔ ﺑﻨﺠﺎﺡ"
+        success_update: "ﻟﻘﺪ ﺗﻢ ﺇﺿﺎﻓﺔ الشخصية ﻟﻠﻤﺠﻤﻮﻋﺔ ﺑﻨﺠﺎﺡ"
         no_users_found: "ﻋﻔﻮا ﻟﻮ ﻧﺠﺪ ﻣﺴﺘﺨﺪﻡ ﺑﻬﺬا اﻷﺳﻢ، ﺣﺎﻭﻝ ﻣﺮﺓ اﺧﺮﻱ"
                   
         pages:
@@ -346,7 +346,7 @@ ar:
                 one: "ﺣﺪﺙ ﺧﻄﺄ ﻓﻲ ﺗﺴﺠﻴﻞ اﻟﺸﺨﺼﻴﺔ:"
                 other: "%{count} اﺧﻄﺎء ﺣﺪﺛﺖ اﺛﻨﺎء ﺗﺴﺠﻴﻞ اﻟﺸﺨﺼﻴﺔ:"
             name_label: "اﺳﻢ ﻣﺴﺘﺨﺪﻡ ﺗﻮﻳﺘﺮ"
-            name_select_label: "اﺳﻢ اﻟﺴﻴﺎﺳﻲ"
+            name_select_label: "اﺳﻢ الشخصية"
             name_explanation: "ﻫﺬﻩ اﻟﺸﺨﺼﻴﺔ ﻣﻮﺟﻮﺩﺓ ﻣﺴﺒﻘﺎ."
             status_label: "ﻧﺸﻂ"
             add_heading: "اﺿﺎﻓﺔ ﺷﺨﺼﻴﺔ"
