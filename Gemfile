@@ -12,6 +12,7 @@ gem "oauth"
 
 gem "json" # parsing raw Twitter JSON response
 gem 'twitter-text' # parsing hashtags and usernames
+gem "comma", "~> 3.0"
 
 gem "will_paginate", "~> 3.0.pre2" # pagination
 gem "rails_autolink" # auto_link function

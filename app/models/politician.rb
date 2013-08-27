@@ -17,6 +17,19 @@ class Politician < ActiveRecord::Base
   
   validates_uniqueness_of :user_name
 
+  comma do
+    user_name              'user_name'
+    twitter_id             'twitter_id'
+    party :display_name => 'party_name'
+    state                  'state'
+    office :title       => 'office_title'
+    account_type :name  => 'account_type'
+    first_name             'first_name'
+    middle_name            'middle_name'
+    last_name              'last_name'
+    suffix                 'suffix'
+  end
+
   def add_related_politician(related)
     if related != nil then
       unless AccountLink.where(:politician_id => related, :link_id => self).length > 0
