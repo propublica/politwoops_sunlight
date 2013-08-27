@@ -369,6 +369,7 @@ ar:
             immediately: "ﻋﻠﻲ اﻟﻔﻮﺭ"
             screenshots_of_links_in_this_tweet: "ﺻﻮﺓ ﻣﻦ اﻟﺼﻔﺤﺔ اﻟﻤﺸﺎﺭ ﺇﻟﻴﻬﺎ ﻓﻲ اﻟﺘﻐﺮﻳﺪﺓ"
             number_of_deleted_tweets: "ﻋﺪﺩ اﻟﺘﻐﺮﻳﺪاﺕ اﻟﻤﺤﺬﻭﻓﺔ"
+            no_deleted_tweets: "لا يوجد تغريدات محذوفة لهذا الحساب"
             after: "ﺑﻌﺪ"
             from_publishing_it: "ﻣﻦ ﻧﺸﺮﻫﺎ"
             second: "ﺛﺎﻧﻴﺔ"
