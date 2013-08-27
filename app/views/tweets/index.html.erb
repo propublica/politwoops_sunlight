@@ -33,7 +33,24 @@
   <h2 class="tweets_count">
     <%= t(:number_of_deleted_tweets, :scope => [:politwoops,:tweets]) %> <span><%= @tweets.total_entries %></span>
   </h2>
-
+  
+  <div style="text-align:center;">
+    <form action="/" method="get">
+      <select name = "politician_id" id="pol_select">
+        <option></option>
+        <% for @politican in @all_politicians %>
+          <option value="<%= @politican.id %>" <% if @politican.id.to_s == params[:politician_id] %> SELECTED <%end%> > 
+          <%= "#{@politican.first_name} #{@politican.middle_name} #{@politican.last_name} - @#{@politican.user_name}" %>
+          <% if !@politican.party.nil? %>
+          <%=" -- #{@politican.party.name}"%>
+          <% end %>
+          </option>
+        <% end %>
+      </select>
+    <button style="display: inline-block;" type="submit"><%=t(:search, :scope => [:politwoops,:form])%></button>
+    </form>
+  </div>
+    
   <% @tweets.each do |tweet| %>
     <%= render :partial => "tweets/tweet", :locals => {:tweet => tweet} %>
   <% end %>
