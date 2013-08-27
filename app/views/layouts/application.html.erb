@@ -111,9 +111,9 @@
            
            <div class="clearfix">
                 <ul class="main-nav">
-                    <li><a href="" class="selected">الرئيسية</a></li>
-                    <li><a href="">قائمة الشخصيات العامة</a></li>
-                    <li><a href="">اقترح شخصية عامة</a></li>
+                    <li><%= link_to "الرئيسية", "/", :class => current_page?(:controller => 'tweets', :action => 'index') ? "selected" : "" %></li>
+                    <li><%= link_to t('politwoops.groups.list_politicians_label'), "/users/list", :class => current_page?(:controller => 'politicians', :action => 'index') ? "selected" : "" %></li>
+                    <li><%= link_to t('politwoops.groups.suggest_politicians_label'), "/users/suggest", :class => current_page?(:controller => 'politicians', :action => 'suggest') ? "selected" : "" %></li>
                 </ul>
                 <div class="search">
                     <form action="/" method="get" id="search">
@@ -141,6 +141,9 @@
             <div class="container">
                 <nav>
                     <ul>
+                        <li>
+                            <a href="/">الرئيسية</a>
+                        </li>
                         <li>
                             <a href="/users/list"><%= t('politwoops.groups.list_politicians_label')%></a>
                         </li>
