@@ -263,7 +263,7 @@ button:hover{
 /* header */
 
 header { 
-	height: 120px;
+	height: 130px;
 	margin: 0 auto;
 	position: relative;
 	width:940px;
@@ -273,15 +273,15 @@ header h1 {
 	float: right;
 	margin-top: 0;
 }
-header h1 a { background: url(/images/logo.png) top right no-repeat; height: 75px; width: 450px; margin-top:10px;  }
+header h1 a { background: url(/images/logo.png) top right no-repeat; height: 83px; width: 470px; margin-top:10px;  }
 
 
 /*main-nav*/
 .main-nav{ float:right;}
 .main-nav li{ display:inline-block;}
-.main-nav li a{ display:block; color:#fff;  padding:0 20px; font-family: "GESS Medium"; font-size:14px; height:34px; line-height:34px;  }
-.main-nav li a:hover, .main-nav li a.selected{ text-decoration:none; background:#26668b; }
-
+.main-nav li a{ display:block; color:#eee;  padding:0 20px; font-family: "GESS Medium"; font-size:14px; height:1; line-height:32px; border-radius:5px; }
+.main-nav li a.selected{ color:#fff;  text-decoration:none; background:#307da9; border-top: 1px solid #235f82;  border-bottom: 1px solid #58a5d1; }
+.main-nav li a:hover{ color:#fff; text-decoration:none;}
 
 
 nav {
@@ -350,7 +350,7 @@ nav ul li:last-child{
 }
 */
 .search{ float:left;}
-.search input[type="search"]{ border: medium; border-radius: 4px; height: 24px;  margin-top: 4px;  padding: 1px 5px;  width: 200px;}
+.search input[type="search"]{ color:#fff; font-family:Tahoma, Geneva, sans-serif; font-weight:bold; background:#75accb; border: medium; border-radius: 4px; height: 26px;  margin-top: 2px;  padding: 1px 5px;  width: 200px; border-top: 1px solid #235f82; }
 #search{ width:242px;}
 #searchBtn{
 	background: url(/images/search.png) top center no-repeat;
@@ -423,7 +423,7 @@ h4, #filter label {
 /* tweets */
 
 .tweet { background: #fff; border: 1px solid #ddd; border-bottom: 3px solid #ddd; margin-bottom: 10px; padding: 20px; border-radius: 4px;}
-.tweet.small { padding: 10px 20px ; }
+.tweet.small { padding: 10px 20px ; min-height:100px; }
 /* padding-bottom: 23px; margin-bottom: 23px;*/
 
 .tweetTitle { font-weight: bold; font-size: 128%; margin-bottom: 5px;}
@@ -1064,7 +1064,7 @@ table.politicians a{
 
 .form-style{ padding: 20px; background: #fff; border: 1px solid #ddd; border-radius: 4px;}
 
-.social{float:left; margin:45px 0 0 10px;}
+.social{ position:absolute; top:155px; left:0;}
 .twitter-share, .fb-like{ float:left;}
 
 .no-result{padding:20px; border:1px solid #ddd; background: #fff; border-bottom: 3px solid #ddd; border-radius: 4px; font-size: 17px;}
