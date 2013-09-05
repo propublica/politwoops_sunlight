@@ -1073,3 +1073,21 @@ table.politicians a{
 .filter{ margin-bottom:20px;}
 .links{ display: inline-block;  margin-right: 155px;   margin-top: 3px;}
 .links a{display:inline-block; padding:4px; margin-left:5px;}
+
+
+.copyrights{
+  width: 190px;
+  margin: 0 auto;
+  padding-top:20px;
+}
+.copyrights p{
+  float: right;
+  padding-top: 3px;
+}
+.espaceLogo{
+  background:url(/images/espace-logo.png) no-repeat left -47px ;
+  float: left;
+  height: 22px;
+  width: 85px;
+  opacity: .7;
+}
