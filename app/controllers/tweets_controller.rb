@@ -20,7 +20,7 @@ class TweetsController < ApplicationController
     end
 
     if params[:politician_id] and !params[:politician_id].blank?
-      @politicians = Politician.find(params[:politician_id])
+      @politicians = Politician.active.find(params[:politician_id])
     end
     
     @all_politicians = Politician.active.all
