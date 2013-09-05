@@ -2,16 +2,32 @@
 <html>
 <head>
   <meta name="author" content="eSpace">
-  <% if content_for?(:title) %>
-	<title><%= yield(:title) %> - <%= t :site_name, :scope => [:politwoops] %></title>
-	<% else %>
-	<title><%= t :site_name, :scope => [:politwoops] %> - <%= t :slogan, :scope => [:politwoops] %></title>
-	<% end %>
-	<meta name="description" content="<%= content_for?(:description) ? yield(:description) + " - " + t(:site_name, :scope => [:politwoops]) : t('politwoops.site_name') %> - <%= t :slogan, :scope => [:politwoops] %>" />
-	
-  <% if content_for?(:meta_image) %>
-  <meta property="og:image" content="<%= yield(:meta_image) %>" />
-  <% end %>
+  <% site_title = content_for?(:title)  ? 
+          "#{yield(:title)} - #{t(:site_name, :scope => [:politwoops])}"  : 
+          "#{t(:site_name, :scope => [:politwoops])} - #{t(:slogan, :scope => [:politwoops])}"
+  %>
+  <title><%= site_title %></title> 
+  <meta property='og:title' content='<%= site_title %>'/>
+  
+  <%
+    site_description = content_for?(:description) ? 
+                        "#{yield(:description)} - #{t(:site_name, :scope => [:politwoops])}" : 
+                        "#{t('politwoops.site_name')} - #{t(:slogan, :scope => [:politwoops])}"
+
+  %>
+  <meta name="description" content="<%= site_description  %>" />
+  <meta property='og:description' content="<%= site_description  %>"/>
+  
+  <%
+    site_image = content_for?(:meta_image) ?
+                  yield(:meta_image) : 
+                  "http://2ad.kelmetak.com/images/standalone-logo.png"
+  %>
+  <meta property="og:image" content="<%= site_image %>" />
+
+  <meta property='og:type' content='website'/>
+  <meta property='og:site_name' content='<%=t(:site_name, :scope => [:politwoops])%>'/>
+  <meta property='fb:admins' content='723440133'/>
   
   
 	<script type="text/javascript" src="//use.typekit.net/utl6xyx.js"></script>
