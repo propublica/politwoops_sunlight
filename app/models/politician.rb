@@ -15,7 +15,7 @@ class Politician < ActiveRecord::Base
 
   scope :active, :conditions => ["status = 1 OR status = 4"]
   
-  validates_uniqueness_of :user_name
+  validates_uniqueness_of :user_name, :case_sensitive => false
 
   comma do
     user_name              'user_name'
