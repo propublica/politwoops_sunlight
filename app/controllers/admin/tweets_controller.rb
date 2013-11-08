@@ -42,7 +42,7 @@ class Admin::TweetsController < Admin::AdminController
       approved = (params[:commit] == "Approve")
 
       if !@tweet.reviewed? and approved and review_message.blank?
-        flash[:review_message] = "You need to add a note about why you're approving this tweet."
+        flash[@tweet.id] = "You need to add a note about why you're approving this tweet."
         redirect_to params[:return_to]
         return false
       end
