@@ -28,5 +28,7 @@ gem "fastercsv"
 # allows the app to be run with "bundle exec unicorn" in development
 group :development do
   gem 'awesome_print'
+  gem 'pry'
+  gem 'pry_debug'
   gem 'unicorn'
 end
