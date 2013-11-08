@@ -188,7 +188,7 @@ html.revealbanner.collapsed {
   -o-transition: all .3s ease-in-out; /** Opera **/
   transition: all .3s ease-in-out; /** Opera **/
 }
-.btn {
+#donor_banner .btn {
   border: 3px solid #dad8d1;
   border: 3px solid rgba(218, 216, 209, 0.8);
   background: #cb610b;
