@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120914202322) do
+ActiveRecord::Schema.define(:version => 20131107190109) do
 
   create_table "account_links", :force => true do |t|
     t.integer  "politician_id"
@@ -24,23 +24,27 @@ ActiveRecord::Schema.define(:version => 20120914202322) do
   end
 
   create_table "deleted_tweets", :force => true do |t|
-    t.string   "user_name",      :limit => 64
+    t.string   "user_name",           :limit => 64
     t.string   "content"
-    t.boolean  "deleted",                      :default => false, :null => false
-    t.datetime "created",                                         :null => false
-    t.datetime "modified",                                        :null => false
+    t.boolean  "deleted",                           :default => false, :null => false
+    t.datetime "created",                                              :null => false
+    t.datetime "modified",                                             :null => false
     t.text     "tweet"
     t.integer  "politician_id"
     t.boolean  "approved"
     t.boolean  "reviewed"
     t.datetime "reviewed_at"
     t.text     "review_message"
+    t.integer  "retweeted_id",        :limit => 8
+    t.string   "retweeted_content"
+    t.string   "retweeted_user_name"
   end
 
   add_index "deleted_tweets", ["approved"], :name => "index_deleted_tweets_on_approved"
   add_index "deleted_tweets", ["content"], :name => "index_tweets_on_content"
   add_index "deleted_tweets", ["created"], :name => "created"
   add_index "deleted_tweets", ["deleted"], :name => "deleted"
+  add_index "deleted_tweets", ["modified"], :name => "index_deleted_tweets_on_modified"
   add_index "deleted_tweets", ["modified"], :name => "modified"
   add_index "deleted_tweets", ["politician_id"], :name => "index_tweets_on_politician_id"
   add_index "deleted_tweets", ["reviewed"], :name => "index_deleted_tweets_on_reviewed"
@@ -50,6 +54,17 @@ ActiveRecord::Schema.define(:version => 20120914202322) do
     t.string "title",        :null => false
     t.string "abbreviation", :null => false
   end
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "language"
+  end
+
+  add_index "pages", ["language"], :name => "index_pages_on_language"
 
   create_table "parties", :force => true do |t|
     t.string   "name"
@@ -74,7 +89,16 @@ ActiveRecord::Schema.define(:version => 20120914202322) do
   end
 
   add_index "politicians", ["status"], :name => "index_politicians_on_status"
+  add_index "politicians", ["user_name", "first_name", "middle_name", "last_name"], :name => "user_name_2"
   add_index "politicians", ["user_name"], :name => "user_name"
+
+  create_table "statistics", :force => true do |t|
+    t.string   "what"
+    t.date     "when"
+    t.integer  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tweet_images", :force => true do |t|
     t.string   "url"
@@ -83,27 +107,55 @@ ActiveRecord::Schema.define(:version => 20120914202322) do
     t.datetime "updated_at"
   end
 
+  add_index "tweet_images", ["tweet_id"], :name => "index_tweet_images_on_tweet_id"
+  add_index "tweet_images", ["tweet_id"], :name => "tweet_id_tmpidx"
+
   create_table "tweets", :force => true do |t|
-    t.string   "user_name",      :limit => 64
+    t.string   "user_name",           :limit => 64
     t.string   "content"
-    t.boolean  "deleted",                      :default => false, :null => false
-    t.datetime "created",                                         :null => false
-    t.datetime "modified",                                        :null => false
+    t.boolean  "deleted",                           :default => false, :null => false
+    t.datetime "created",                                              :null => false
+    t.datetime "modified",                                             :null => false
     t.text     "tweet"
     t.integer  "politician_id"
-    t.boolean  "approved",                     :default => false
-    t.boolean  "reviewed",                     :default => false
+    t.boolean  "approved",                          :default => false
+    t.boolean  "reviewed",                          :default => false
     t.datetime "reviewed_at"
     t.text     "review_message"
+    t.integer  "retweeted_id",        :limit => 8
+    t.string   "retweeted_content"
+    t.string   "retweeted_user_name"
   end
 
   add_index "tweets", ["approved"], :name => "index_tweets_on_approved"
   add_index "tweets", ["content"], :name => "index_tweets_on_content"
   add_index "tweets", ["created"], :name => "created"
   add_index "tweets", ["deleted"], :name => "deleted"
+  add_index "tweets", ["modified"], :name => "index_tweets_on_modified"
   add_index "tweets", ["modified"], :name => "modified"
   add_index "tweets", ["politician_id"], :name => "index_tweets_on_politician_id"
   add_index "tweets", ["reviewed"], :name => "index_tweets_on_reviewed"
   add_index "tweets", ["user_name"], :name => "user_name"
+
+  create_table "users", :force => true do |t|
+    t.string   "login",                              :null => false
+    t.string   "email",                              :null => false
+    t.string   "crypted_password",                   :null => false
+    t.string   "password_salt",                      :null => false
+    t.string   "persistence_token",                  :null => false
+    t.string   "single_access_token",                :null => false
+    t.string   "perishable_token",                   :null => false
+    t.integer  "login_count",         :default => 0, :null => false
+    t.integer  "failed_login_count",  :default => 0, :null => false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "group_id"
+    t.integer  "is_admin"
+  end
 
 end
