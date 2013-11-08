@@ -25,9 +25,7 @@
     <div class="clear"></div>
 </div>
 <div id="all-container" class="tweet-content-container">
-    <% @all_tweets.each do |at| %>
-        <%= render :partial => "tweets/tweet", :locals => {:tweet => at} %>
-    <% end %>
+    <%= render :partial => "tweets/tweet", :collection => @all_tweets, :object => :tweet %>
 </div>
 
 <% @accounts.each do |acc| %>
