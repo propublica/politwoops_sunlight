@@ -30,8 +30,16 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     awesome_print (1.1.0)
+    aws-sdk (1.25.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4, < 1.6.0)
+      uuidtools (~> 2.1)
     beanstalk-client (1.1.1)
     builder (3.0.4)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.3)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.0.9)
     comma (3.1.1)
       activesupport (>= 3.0.0)
@@ -57,7 +65,13 @@ GEM
     multi_xml (0.5.2)
     multipart-post (1.2.0)
     mysql2 (0.3.11)
+    nokogiri (1.5.10)
     oauth (0.4.7)
+    paperclip (2.7.0)
+      activerecord (>= 2.3.0)
+      activesupport (>= 2.3.2)
+      cocaine (>= 0.0.2)
+      mime-types
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -120,6 +134,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    uuidtools (2.1.4)
     will_paginate (3.0.3)
 
 PLATFORMS
@@ -127,6 +142,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  aws-sdk
   beanstalk-client
   comma (~> 3.0)
   fastercsv
@@ -134,6 +150,7 @@ DEPENDENCIES
   json
   mysql2 (= 0.3.11)
   oauth
+  paperclip (= 2.7.0)
   pry
   pry_debug
   rails (= 3.2.11)

@@ -1,5 +1,6 @@
 public/sitemap.xml
 public/sitemap.xml.gz
+public/images/avatars/*
 /.bundle
 /db/*.sqlite3
 /log/*.log

@@ -21,6 +21,8 @@ gem "system_timer", "~> 1.2.4"
 gem "beanstalk-client"
 
 gem "rmagick", "~> 2.0"
+gem "paperclip", "2.7.0"
+gem "aws-sdk"
 
 # remove this and switch to built-in CSV class when the app is upgraded to Ruby 1.9
 gem "fastercsv"

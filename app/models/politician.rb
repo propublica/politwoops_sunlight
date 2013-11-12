@@ -1,4 +1,8 @@
+require "open-uri"
+
 class Politician < ActiveRecord::Base
+  has_attached_file :avatar, :path => ':rails_root/public/images/avatars/:filename', :url => 'images/avatars/:filename'
+
   belongs_to :party
 
   belongs_to :office
@@ -56,8 +60,21 @@ class Politician < ActiveRecord::Base
   def reset_avatar
     begin
       twitter_user = Twitter.user(user_name)
-      self.profile_image_url = twitter_user.profile_image_url(:bigger)
-      self.save!
+      image_url = twitter_user.profile_image_url(:bigger)
+
+      if profile_image_url.nil? || (image_url != profile_image_url)
+        uri = URI::parse(image_url)
+        extension = File.extname(uri.path)
+
+        uri.open do |remote_file|
+          Tempfile.open(["#{self.twitter_id}_", extension]) do |tmpfile|
+            tmpfile.puts remote_file.read()
+            self.avatar = tmpfile
+            self.profile_image_url = image_url
+            self.save!
+          end
+        end
+      end
       return [true, nil]
     rescue Twitter::Error::Forbidden => e
       return [false, e.to_s]
