@@ -23,10 +23,6 @@ module TweetsHelper
     content = auto_link(content, :html => { :target => '_blank' })
   end
 
-  def avatar_url(politician)
-    politician.profile_image_url
-  end
-
   def twitter_url (tweet_user_name, tweet_id)
     "http://www.twitter.com/#{tweet_user_name}/status/#{tweet_id}"
   end
