@@ -1,3 +1,4 @@
+# encoding: utf-8
 module TweetsHelper
   def format_user_name(tweet_content)
     tweet_content.gsub(/(@(\w+))/, %Q{<a href="http://twitter.com/\\2" target="_blank">\\1</a>})

@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Party < ActiveRecord::Base
   has_many :politicians
 

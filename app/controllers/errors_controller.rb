@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ErrorsController < ApplicationController
   include ApplicationHelper
   
