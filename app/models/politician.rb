@@ -1,7 +1,7 @@
 require "open-uri"
 
 class Politician < ActiveRecord::Base
-  has_attached_file :avatar, :path => ':rails_root/public/images/avatars/:filename', :url => 'images/avatars/:filename'
+  has_attached_file :avatar, { :path => ':base_path/avatars/:filename', :url => "/images/avatars/:filename" }
 
   belongs_to :party
 
@@ -57,17 +57,19 @@ class Politician < ActiveRecord::Base
     return pol_list
   end
 
-  def reset_avatar
+  def reset_avatar (options = {})
     begin
       twitter_user = Twitter.user(user_name)
       image_url = twitter_user.profile_image_url(:bigger)
 
-      if profile_image_url.nil? || (image_url != profile_image_url)
+      force_reset = options.fetch(:force, false)
+
+      if profile_image_url.nil? || (image_url != profile_image_url) || force_reset
         uri = URI::parse(image_url)
         extension = File.extname(uri.path)
 
         uri.open do |remote_file|
-          Tempfile.open(["#{self.twitter_id}_", extension]) do |tmpfile|
+          Tempfile.open(["#{self.twitter_id}_", extension], :encoding => 'ascii-8bit') do |tmpfile|
             tmpfile.puts remote_file.read()
             self.avatar = tmpfile
             self.profile_image_url = image_url

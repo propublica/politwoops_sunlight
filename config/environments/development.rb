@@ -23,7 +23,11 @@ Politwoops::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   config.paperclip_defaults = {
-    :storage => :file
+    :storage => :filesystem,
+    :path => "/:attachment/:filename",
+    :interpolations => {
+      :base_path => "#{Rails.root}/public/images"
+    }
   }
 end
 
