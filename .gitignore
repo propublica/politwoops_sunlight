@@ -11,4 +11,5 @@ public/images/avatars/*
 /unicorn.rb
 /config/admin.yml
 /config/config.yml
+/config/database.yml
 .*.swp
