@@ -59,6 +59,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memcache (1.5.0)
+    memcache-client (1.8.5)
     method_source (0.8.2)
     mime-types (1.19)
     multi_json (1.7.6)
@@ -148,6 +150,8 @@ DEPENDENCIES
   fastercsv
   httparty (~> 0.10.0)
   json
+  memcache
+  memcache-client
   mysql2 (= 0.3.11)
   oauth
   paperclip (= 2.7.0)
