@@ -1,6 +1,11 @@
 require "open-uri"
 
 class Politician < ActiveRecord::Base
+  CollectingAndShowing = 1
+  CollectingNotShowing = 2
+  NotCollectingOrShowing = 3
+  NotCollectingButShowing = 4
+
   has_attached_file :avatar, { :path => ':base_path/avatars/:filename',
                                :url => "/images/avatars/:filename",
                                :default_url => 'images/avatar_missing_404.png' }
@@ -20,6 +25,8 @@ class Politician < ActiveRecord::Base
   #default_scope :order => 'user_name'
 
   scope :active, :conditions => ["status = 1 OR status = 4"]
+  scope :collecting, :conditions => { :status => [CollectingAndShowing, CollectingNotShowing] }
+  scope :showing, :conditions => { :status => [NotCollectingOrShowing, NotCollectingButShowing] }
   
   validates_uniqueness_of :user_name, :case_sensitive => false
 
@@ -34,6 +41,10 @@ class Politician < ActiveRecord::Base
     middle_name            'middle_name'
     last_name              'last_name'
     suffix                 'suffix'
+  end
+
+  def full_name
+    return [office && office.abbreviation, first_name, last_name, suffix].join(' ').strip
   end
 
   def add_related_politician(related)

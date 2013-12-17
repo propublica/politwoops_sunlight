@@ -3,12 +3,16 @@ class Tweet < ActiveRecord::Base
 
   has_many :tweet_images, :foreign_key => "tweet_id"
 
-  default_scope :order => 'modified DESC'
+  #default_scope :order => 'modified DESC'
   
   # scope :latest, :order => 'created DESC'
   scope :deleted, :conditions => "deleted = 1 AND content IS NOT NULL"
   scope :with_content, :conditions => "content IS NOT NULL"
   scope :retweets, :conditions => "retweeted_id IS NOT NULL"
+  scope :in_year, proc { |year|
+    where(['created >= ? and created <= ?',
+           Date.new(year, 1, 1), Date.new(year, 12, 31)])
+  }
 
   before_save :extract_retweet_fields
   

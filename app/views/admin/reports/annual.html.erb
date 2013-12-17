@@ -1,0 +1,83 @@
+
+
+<div id="annual-report">
+
+
+  <div id="aggregates">
+    <p>
+    In <%= @year %> we saw <%= number_with_delimiter @tweet_tally %> tweets
+    and <%= number_with_delimiter @delete_tally %>
+    deletions from <%= number_with_delimiter @observed_account_tally %>
+    different accounts (some deletions could be of tweets from prior years). Of
+    those deletions,  <%= number_with_delimiter @approval_tally %>
+    (<%= @approval_pct %>%) were approved by Politwoops moderators.
+    </p>
+
+    <p>
+    Of the <%= number_with_delimiter @following_tally %> accounts we are
+    following, <%= number_with_delimiter @deleting_account_tally %>
+    (<%= @deleting_account_pct %>%) have deleted at least one tweet in
+    <%= @year %>.
+    </p>
+  </div>
+
+  <div id="top-tweeters">
+    <p>
+    Not all twittering politicians tweet with the same tenacity. These are the policitians with the most tweets:
+    </p>
+
+    <% if @top_tweeters %>
+      <ol>
+        <% @top_tweeters.each do |pol, cnt|  %>
+          <li>
+          <span class="ranking-figure"><%= cnt %></span>
+          <span class="twitter-username"><%= link_to("@#{pol.user_name}", politician_path(pol.user_name)) %></span>
+          <span class="pol-name"><%= pol.full_name %></span>
+          </li>
+        <% end %>
+      </ol>
+    <% else %>
+      <p>No tweeters! What is this world coming to?</p>
+    <% end %>
+  </div>
+
+  <div id="top-deleters">
+    <p>
+    Some politicians delete more tweets than others:
+    </p>
+    <% if @top_deleters %>
+      <ol>
+        <% @top_deleters.each do |pol, cnt|  %>
+          <li>
+          <span class="ranking-figure"><%= cnt %></span>
+          <span class="twitter-username"><%= link_to("@#{pol.user_name}", politician_path(pol.user_name)) %></span>
+          <span class="pol-name"><%= pol.full_name %></span>
+          </li>
+        <% end %>
+      </ol>
+    <% else %>
+      <p>No tweet deleters! Are we even on earth?</p>
+    <% end %>
+  </div>
+
+  <div id="top-twoopsters">
+    <p>
+    These are the politicians who delete the highest proportion of their tweets:
+    </p>
+
+    <% if @top_twoopsters %>
+      <ol>
+        <% @top_twoopsters.each do |pol, pct| %>
+          <li>
+          <span class="ranking-figure"><%= pct %>%</span>
+          <span class="twitter-username"><%= link_to("@#{pol.user_name}", politician_path(pol.user_name)) %></span>
+          <span class="pol-name"><%= pol.full_name %></span>
+          </li>
+        <% end %>
+      </ol>
+    <% end %>
+  </div>
+
+</div>
+
+
