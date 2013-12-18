@@ -198,10 +198,15 @@ namespace :politicians do
       politicians = politicians.where :user_name => ENV['username']
     end
 
+    force = false
+    if ENV['force'].present?
+      force = true
+    end
+
     delay = 2.to_f
     politicians.all.each do |politician|
       begin
-        updated, error = politician.reset_avatar
+        updated, error = politician.reset_avatar :force => force
         if updated == true
           puts "[#{politician.user_name}] #{politician.profile_image_url}"
         else

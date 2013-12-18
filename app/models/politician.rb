@@ -86,7 +86,8 @@ class Politician < ActiveRecord::Base
         extension = File.extname(uri.path)
 
         uri.open do |remote_file|
-          Tempfile.open(["#{self.twitter_id}_", extension], :encoding => 'ascii-8bit') do |tmpfile|
+          Tempfile.open(["#{self.twitter_id}_", extension]) do |tmpfile|
+
             tmpfile.puts remote_file.read()
             self.avatar = tmpfile
             self.profile_image_url = image_url
