@@ -190,6 +190,8 @@ namespace :politicians do
   task :reset_avatars => :environment do
     politicians = Politician
 
+    force = ENV.fetch('force', false)
+
     if ENV['where_blank'].present?
       politicians = politicians.where :profile_image_url => nil
     end
