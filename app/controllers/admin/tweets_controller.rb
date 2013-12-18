@@ -5,7 +5,7 @@ class Admin::TweetsController < Admin::AdminController
   def index
     @politicians = Politician.active.all
 
-    @tweets = DeletedTweet.where(:politician_id => @politicians)
+    @tweets = DeletedTweet.in_order.where(:politician_id => @politicians)
 
     # filter to relevant subset of deleted tweets
     @tweets = @tweets.where :reviewed => params[:reviewed], :approved => params[:approved]

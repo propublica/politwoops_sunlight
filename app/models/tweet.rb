@@ -3,8 +3,8 @@ class Tweet < ActiveRecord::Base
 
   has_many :tweet_images, :foreign_key => "tweet_id"
 
-  #default_scope :order => 'modified DESC'
-  
+  scope :in_order, order('modified DESC')
+
   # scope :latest, :order => 'created DESC'
   scope :deleted, :conditions => "deleted = 1 AND content IS NOT NULL"
   scope :with_content, :conditions => "content IS NOT NULL"
