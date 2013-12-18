@@ -98,3 +98,26 @@ table#queue-list { margin-top: 30px; }
 table#queue-list tr td:first-child { padding-right: 1em; }
 td.numeric { text-align: right; }
 
+div#annual-report h3 {
+    margin: 3em 1em 1em 0;
+}
+div#annual-report ul {
+    margin: 3em 0 0 0;
+}
+div#annual-report ol {
+    margin: 0 0 0 3em;
+}
+div#party-tweeting table {
+    border-collapse: collapse;
+}
+div#party-tweeting table th {
+    padding: 0.3em;
+}
+div#party-tweeting table td {
+    border: 1px solid gray;
+    text-align: right;
+    padding: 0.3em;
+}
+div#party-tweeting table td:first-child {
+    text-align: left;
+}

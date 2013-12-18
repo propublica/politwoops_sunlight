@@ -5,32 +5,31 @@
 
   <div id="aggregates">
     <p>
-    In <%= @year %> we saw <%= number_with_delimiter @tweet_tally %> tweets
-    and <%= number_with_delimiter @delete_tally %>
-    deletions from <%= number_with_delimiter @observed_account_tally %>
-    different accounts (some deletions could be of tweets from prior years). Of
-    those deletions,  <%= number_with_delimiter @approval_tally %>
-    (<%= @approval_pct %>%) were approved by Politwoops moderators.
+
+    In <%= @year %> we observed <%= number_with_delimiter @tweet_tally %> tweets from
+    <%= number_with_delimiter @observed_account_tally %> accounts.
+
+    Of those accounts, <%= number_with_delimiter @deleting_account_tally %> accounts
+    deleted <%= number_with_delimiter @delete_tally %> tweets. Politwoops moderators
+    approved <%= number_with_delimiter @approval_tally %>
+    (<%= number_with_delimiter @approval_pct %>%) twoops from
+    <%= number_with_delimiter @twooping_account_tally %> accounts.
+
+    (some deletions could be of tweets from prior years)
     </p>
 
-    <p>
-    Of the <%= number_with_delimiter @following_tally %> accounts we are
-    following, <%= number_with_delimiter @deleting_account_tally %>
-    (<%= @deleting_account_pct %>%) have deleted at least one tweet in
-    <%= @year %>.
-    </p>
   </div>
 
   <div id="top-tweeters">
-    <p>
-    Not all twittering politicians tweet with the same tenacity. These are the policitians with the most tweets:
-    </p>
+    <h3>
+    Not all accounts tweet with the same tenacity. These are the accounts with the most tweets:
+    </h3>
 
     <% if @top_tweeters %>
       <ol>
         <% @top_tweeters.each do |pol, cnt|  %>
           <li>
-          <span class="ranking-figure"><%= cnt %></span>
+          <span class="ranking-figure"><%= number_with_delimiter cnt %></span>
           <span class="twitter-username"><%= link_to("@#{pol.user_name}", politician_path(pol.user_name)) %></span>
           <span class="pol-name"><%= pol.full_name %></span>
           </li>
@@ -42,14 +41,14 @@
   </div>
 
   <div id="top-deleters">
-    <p>
-    Some politicians delete more tweets than others:
-    </p>
+    <h3>
+    Some accounts delete more tweets than others:
+    </h3>
     <% if @top_deleters %>
       <ol>
         <% @top_deleters.each do |pol, cnt|  %>
           <li>
-          <span class="ranking-figure"><%= cnt %></span>
+          <span class="ranking-figure"><%= number_with_delimiter cnt %></span>
           <span class="twitter-username"><%= link_to("@#{pol.user_name}", politician_path(pol.user_name)) %></span>
           <span class="pol-name"><%= pol.full_name %></span>
           </li>
@@ -60,16 +59,36 @@
     <% end %>
   </div>
 
+
+  <div id="top-twoopers">
+    <h3>
+      Some accounts have more of their deletions <i>approved</i> than others:
+    </h3>
+    <% if @top_twoopers %>
+      <ol>
+        <% @top_twoopers.each do |pol, cnt|  %>
+          <li>
+          <span class="ranking-figure"><%= number_with_delimiter cnt %></span>
+          <span class="twitter-username"><%= link_to("@#{pol.user_name}", politician_path(pol.user_name)) %></span>
+          <span class="pol-name"><%= pol.full_name %></span>
+          </li>
+        <% end %>
+      </ol>
+    <% else %>
+      <p>No approved deletes! Momma? Is that you?</p>
+    <% end %>
+  </div>
+
   <div id="top-twoopsters">
-    <p>
-    These are the politicians who delete the highest proportion of their tweets:
-    </p>
+    <h3>
+    These are the accounts whose tweets are most likely to become twoops (with a minimum of 5 twoops):
+    </h3>
 
     <% if @top_twoopsters %>
       <ol>
         <% @top_twoopsters.each do |pol, pct| %>
           <li>
-          <span class="ranking-figure"><%= pct %>%</span>
+          <span class="ranking-figure"><%= pct %>% (of <%= number_with_delimiter pol.tweets.in_year(@year).count %>)</span>
           <span class="twitter-username"><%= link_to("@#{pol.user_name}", politician_path(pol.user_name)) %></span>
           <span class="pol-name"><%= pol.full_name %></span>
           </li>
@@ -78,6 +97,38 @@
     <% end %>
   </div>
 
+  <div id="party-tweeting">
+    <h3>
+      How much does each party tweet?
+    </h3>
+    <% if @tweets_per_party %>
+      <table>
+        <thead>
+          <tr><th>Party</th><th>Accounts</th><th>Tweets</th><th>Deletes</th><th>Twoops</th><th>Mean Twoops</th></tr>
+        </thead>
+        <tbody>
+        <% @parties.each do |party| %>
+          <% if @tweets_per_party[party.id] %>
+            <tr>
+              <td><%= party.display_name %></td>
+              <td><%= (number_with_delimiter @tweeting_accounts_per_party[party.id]) || 0 %></td>
+              <td><%= (number_with_delimiter @tweets_per_party[party.id]) || 0 %></td>
+              <td><%= (number_with_delimiter @deletes_per_party[party.id]) || 0 %></td>
+              <td><%= (number_with_delimiter @twoops_per_party[party.id]) || 0 %></td>
+              <td><%= number_with_precision (@twoops_per_party[party.id] || 0).to_f / @tweeting_accounts_per_party[party.id].to_f, :precision => 1 %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+      </table>
+    <% else %>
+      <p>No party data make your twoopserver cry :(</p>
+    <% end %>
+  </div>
+
+  <ul class="footnotes">
+    <li>* Twoops are tweets that are deleted and then approved by moderators.</li>
+  </ul>
 </div>
 
 

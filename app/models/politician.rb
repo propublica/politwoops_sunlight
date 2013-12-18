@@ -70,6 +70,10 @@ class Politician < ActiveRecord::Base
     return pol_list
   end
 
+  def twoops
+    deleted_tweets.where(:approved => true)
+  end
+
   def reset_avatar (options = {})
     begin
       twitter_user = Twitter.user(user_name)
