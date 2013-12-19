@@ -28,12 +28,12 @@ class Admin::AdminController < ApplicationController
 
   helper_method :latest_tweet
   def latest_tweet
-    @latest_tweet ||= Tweet.first
+    @latest_tweet ||= Tweet.in_order.first
   end
 
   helper_method :latest_deleted_tweet
   def latest_deleted_tweet
-    @latest_deleted_tweet ||= DeletedTweet.first
+    @latest_deleted_tweet ||= DeletedTweet.in_order.first
   end
 
   def configuration
