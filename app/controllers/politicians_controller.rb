@@ -16,22 +16,20 @@ class PoliticiansController < ApplicationController
     
     # need to get the latest tweet to get correct bio. could do with optimization :)
     @latest_tweet = Tweet.in_order.where(:politician_id => @politician.id).first
-    
-    @tweets = DeletedTweet.in_order.includes(:politician => [:party]).where(:approved => true, :politician_id => @politician.id).paginate(:page => params[:page], :per_page => @per_page)
-
-    @politicians = Politician.active
 
     @related = @politician.get_related_politicians() #get ids of related accounts
-    @accounts = Politician.where(:id => @related.push(@politician.id))
+    @accounts = (@related.empty? && [@politician]) || Politician.where(:id => @related.push(@politician.id))
 
-    @all_tweets = DeletedTweet.in_order.where(:politician_id => @related.push(@politician.id), :approved =>true).paginate(:page => params[:page], :per_page => @per_page)  
-
-    @tweet_map = {} 
+    @tweet_map = {}
     @accounts.each do |ac|
-        @tweet_map[ac.user_name] = DeletedTweet.in_order.where(:politician_id => ac, :approved => true).paginate(:page => params[:page], :per_page => @per_page)
+      @tweet_map[ac.user_name] = ac.twoops.in_order.includes(:tweet_images).paginate(:page => @page, :per_page => @per_page)
     end
 
-    @tweet_map['all'] = @all_tweets
+    if @tweet_map.size == 1
+      @tweet_map['all'] = @tweets = @tweet_map.values.first
+    else
+      @tweet_map['all'] = @tweets = DeletedTweet.in_order.includes(:tweet_images).where(:politician_id => @accounts.map(&:id), :approved => true).paginate(:page => @page, :per_page => @per_page)
+    end
 
     respond_to do |format|
       format.html { render } # politicians/show
