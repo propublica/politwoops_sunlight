@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131217182115) do
+ActiveRecord::Schema.define(:version => 20131219173338) do
 
   create_table "account_links", :force => true do |t|
     t.integer  "politician_id"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20131217182115) do
   add_index "deleted_tweets", ["modified"], :name => "index_deleted_tweets_on_modified"
   add_index "deleted_tweets", ["modified"], :name => "modified"
   add_index "deleted_tweets", ["politician_id", "created"], :name => "index_deleted_tweets_on_politician_id_and_created"
+  add_index "deleted_tweets", ["politician_id", "modified"], :name => "index_deleted_tweets_on_politician_id_and_modified"
   add_index "deleted_tweets", ["politician_id"], :name => "index_tweets_on_politician_id"
   add_index "deleted_tweets", ["reviewed"], :name => "index_deleted_tweets_on_reviewed"
   add_index "deleted_tweets", ["user_name"], :name => "user_name"
@@ -93,6 +94,8 @@ ActiveRecord::Schema.define(:version => 20131217182115) do
     t.datetime "avatar_updated_at"
   end
 
+  add_index "politicians", ["id", "party_id"], :name => "id"
+  add_index "politicians", ["party_id"], :name => "party_id"
   add_index "politicians", ["status"], :name => "index_politicians_on_status"
   add_index "politicians", ["user_name", "first_name", "middle_name", "last_name"], :name => "user_name_2"
   add_index "politicians", ["user_name"], :name => "user_name"
@@ -139,6 +142,7 @@ ActiveRecord::Schema.define(:version => 20131217182115) do
   add_index "tweets", ["modified"], :name => "index_tweets_on_modified"
   add_index "tweets", ["modified"], :name => "modified"
   add_index "tweets", ["politician_id", "created"], :name => "index_tweets_on_politician_id_and_created"
+  add_index "tweets", ["politician_id", "modified"], :name => "index_tweets_on_politician_id_and_modified"
   add_index "tweets", ["politician_id"], :name => "index_tweets_on_politician_id"
   add_index "tweets", ["reviewed"], :name => "index_tweets_on_reviewed"
   add_index "tweets", ["user_name"], :name => "user_name"
