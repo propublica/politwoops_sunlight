@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Deleted tweets for <%= @politician.office.title %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)
+  Deleted tweets for <%= @politician.office.title %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)<% if @page > 1 %> (Page <%= @page %>)<% end %>
 <% end %>
 
 <div id="info">
