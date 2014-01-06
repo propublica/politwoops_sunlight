@@ -12,7 +12,6 @@ gem 'sitemap_generator', '~> 4.0'
 gem "twitter"
 gem "oauth"
 
-gem "json" # parsing raw Twitter JSON response
 gem 'twitter-text' # parsing hashtags and usernames
 gem "comma", "~> 3.0"
 

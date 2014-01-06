@@ -146,7 +146,6 @@ DEPENDENCIES
   beanstalk-client
   comma (~> 3.0)
   httparty (~> 0.10.0)
-  json
   memcache
   memcache-client
   mysql2 (= 0.3.11)
