@@ -3,6 +3,7 @@ class Admin::TweetsController < Admin::AdminController
 
   # list either unreviewed
   def index
+    @page = [params[:page].to_i, 1].max
     @politicians = Politician.active.all
 
     @tweets = DeletedTweet.in_order.where(:politician_id => @politicians)
@@ -19,7 +20,7 @@ class Admin::TweetsController < Admin::AdminController
     per_page ||= Tweet.per_page
     per_page = 200 if per_page > 200
 
-    @tweets = @tweets.includes(:politician => [:party]).paginate(:page => params[:page], :per_page => per_page)
+    @tweets = @tweets.includes(:politician => [:party]).paginate(:page => @page, :per_page => per_page)
     @admin = true
 
     respond_to do |format|
@@ -52,7 +53,7 @@ class Admin::TweetsController < Admin::AdminController
       @tweet.reviewed_at = Time.now
     end
 
-    if review_message.any?
+    if not review_message.blank?
       @tweet.review_message = review_message
     end
 

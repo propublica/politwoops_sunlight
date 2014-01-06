@@ -148,7 +148,7 @@ DEPENDENCIES
   httparty (~> 0.10.0)
   memcache
   memcache-client
-  mysql2 (= 0.3.11)
+  mysql2
   oauth
   paperclip (= 2.7.0)
   pry
