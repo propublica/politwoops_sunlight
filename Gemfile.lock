@@ -46,7 +46,6 @@ GEM
     erubis (2.7.0)
     faraday (0.8.7)
       multipart-post (~> 1.1)
-    fastercsv (1.5.5)
     hike (1.2.1)
     httparty (0.10.0)
       multi_json (~> 1.0)
@@ -146,7 +145,6 @@ DEPENDENCIES
   aws-sdk
   beanstalk-client
   comma (~> 3.0)
-  fastercsv
   httparty (~> 0.10.0)
   json
   memcache
