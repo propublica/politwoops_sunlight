@@ -15,13 +15,13 @@ class Admin::AdminController < ApplicationController
 
     ips = (request.env['HTTP_X_FORWARDED_FOR'] or request.remote_ip).split(',')
     ips = Set::new ips
-    monitoring_ips = Set::new configuration[:monitoring_hosts]
+    monitoring_ips = Set::new Settings[:monitoring_hosts]
     from_monitoring_host = (ips.intersection(monitoring_ips).size > 0)
     monitoring_request = (status_json and from_monitoring_host)
 
     unless (params[:format] == "rss" or monitoring_request)
       authenticate_or_request_with_http_basic do |username, password|
-        username == configuration[:admin][:username] and password == configuration[:admin][:password]
+        username == Settings[:admin][:username] and password == Settings[:admin][:password]
       end
     end
   end
@@ -36,12 +36,8 @@ class Admin::AdminController < ApplicationController
     @latest_deleted_tweet ||= DeletedTweet.in_order.first
   end
 
-  def configuration
-    @configuration ||= YAML.load_file "#{Rails.root}/config/config.yml"
-  end
-
   helper_method :current_admin_rss
   def current_admin_rss
-    "#{request.url}/#{configuration[:rss_secret]}.rss"
+    "#{request.url}/#{Settings[:rss_secret]}.rss"
   end
 end
