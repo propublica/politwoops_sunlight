@@ -26,7 +26,7 @@ class Admin::SystemController < Admin::AdminController
 
         mtime = File.mtime(path)
         ago = (Time.now - mtime).floor
-        if ago < 0:
+        if ago < 0
           status = 'restarting'
         elsif ago <= (configuration[:heartbeat_interval] * 1.10) # Allow 10% error
           status = 'running'
