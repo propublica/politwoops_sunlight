@@ -82,7 +82,7 @@ class Politician < ActiveRecord::Base
 
       force_reset = options.fetch(:force, false)
 
-      if profile_image_url.nil? || (image_url != profile_image_url) || force_reset
+      if profile_image_url.nil? || (image_url != profile_image_url) || (profile_image_url != avatar.url) || force_reset
         uri = URI::parse(image_url)
         extension = File.extname(uri.path)
 

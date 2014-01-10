@@ -12,7 +12,7 @@
 		<% @politicians.each do |pol|%>
 		<tr>
 			<td class="img">
-				<img src="<%= pol.profile_image_url %>" />    
+        <img src="<%= pol.avatar.url %>" class="politician-avatar" alt="<%= pol.user_name %>" width"73" height="73" />
 			</td>
 			<td class="name">
 				<span>
