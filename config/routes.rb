@@ -36,7 +36,8 @@ Politwoops::Application.routes.draw do
     match "reports/annual/:year" => "reports#annual", :as => "annual_report"
     match "reports/annual" => "reports#annual", :as => "annual_report"
   end
-  
+ 
+  match "5xx", :to => "errors#down"
   match "404", :to => "errors#not_found"    
   match "*anything", :to => "errors#not_found"    
 
