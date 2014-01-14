@@ -4,7 +4,7 @@
   <% if content_for?(:title) %>
     <title><%= yield(:title) %> - Politwoops</title>
   <% else %>
-    <title>Politwoops - <%= t :slogan, :scope => [:politwoops] %><% if @page > 1 %> (Page <%= @page %>)<% end %></title>
+    <title>Politwoops - <%= t :slogan, :scope => [:politwoops] %><% if not @page.nil? and @page > 1 %> (Page <%= @page %>)<% end %></title>
   <% end %>
 
     <meta name="google-site-verification" content="CQWBNRNvRMb4Gd5s2HE03-2g5Dkk3VvvGwZbeNmd5H8" />

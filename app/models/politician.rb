@@ -7,6 +7,9 @@ class Politician < ActiveRecord::Base
   NotCollectingOrShowing = 3
   NotCollectingButShowing = 4
 
+  attr_accessible :twitter_id, :user_name, :party_id, :status, :state, :account_type_id,
+                  :office_id, :first_name, :middle_name, :last_name, :suffix
+
   has_attached_file :avatar, { :path => ':base_path/avatars/:filename',
                                :url => "/images/avatars/:filename",
                                :default_url => 'images/avatar_missing_404.png' }
@@ -48,27 +51,34 @@ class Politician < ActiveRecord::Base
     return [office && office.abbreviation, first_name, last_name, suffix].join(' ').strip
   end
 
-  def add_related_politician(related)
-    if related != nil then
-      unless AccountLink.where(:politician_id => related, :link_id => self).length > 0
-        al = AccountLink.where(:politician_id => self, :link_id => related).first_or_create()
-        al.save()
+  def add_related_politicians (other_names)
+    other_names.each do |other_name|
+      if not other_name.empty? && other_name != self.user_name
+        other_pol = Politician.find_by_user_name(other_name)
+        self.links << other_pol
+        self.save!
       end
     end
-
   end
-  
-  def get_related_politicians()
-    pol_list = []
-    pols = AccountLink.where("politician_id = ? or link_id = ?", self.id, self.id )
-    pols.each do |p|
-      if p.link_id != self.id and  not pol_list.include?(p.link_id) then
-        pol_list.push(p.link_id)
-      elsif p.politician_id != self.id and not pol_list.include?(p.politician_id) then
-        pol_list.push(p.politician_id)
+
+  def remove_related_politicians (other_names)
+    other_names.each do |other_name|
+      if not other_name.empty? && other_name != self.user_name
+        other_pol = Politician.find_by_user_name(other_name)
+        AccountLink.where(:politician_id => self.id,
+                          :link_id => other_pol.id).destroy_all
+        AccountLink.where(:link_id => self.id,
+                          :politician_id => other_pol.id).destroy_all
       end
     end
-    return pol_list
+  end
+
+  def get_related_politicians()
+    links = AccountLink.where("politician_id = ? or link_id = ?", self.id, self.id)
+
+    politician_ids = links.flat_map{ |l| [l.politician_id, l.link_id] }
+                          .reject{ |pol_id| pol_id == self.id }
+    Politician.where(:id => politician_ids)
   end
 
   def twoops

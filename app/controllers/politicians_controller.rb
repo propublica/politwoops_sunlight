@@ -18,8 +18,8 @@ class PoliticiansController < ApplicationController
     # need to get the latest tweet to get correct bio. could do with optimization :)
     @latest_tweet = Tweet.in_order.where(:politician_id => @politician.id).first
 
-    @related = @politician.get_related_politicians() #get ids of related accounts
-    @accounts = (@related.empty? && [@politician]) || Politician.where(:id => @related.push(@politician.id))
+    @related = @politician.get_related_politicians().to_a.sort_by(&:user_name)
+    @accounts = [@politician] + @related
 
     @tweet_map = {}
     @accounts.each do |ac|

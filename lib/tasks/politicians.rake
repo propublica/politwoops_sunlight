@@ -181,8 +181,7 @@ namespace :politicians do
     #after all new users are entered, link them
     links.each do |l|
         p1 = Politician.where(:user_name => l[0]).first
-        p2 = Politician.where(:user_name => l[1]).first
-        p1.add_related_politician(p2)    
+        p1.add_related_politicians([l[1]])
     end
   end
 

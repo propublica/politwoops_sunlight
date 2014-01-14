@@ -11,7 +11,7 @@ class Admin::PoliticiansController < Admin::AdminController
     @parties = Party.all
     @offices = Office.all
     @account_types = AccountType.all
-    @related = Politician.where(:id=> @politician.get_related_politicians())
+    @related = @politician.get_related_politicians().sort_by(&:user_name)
     
     @unmoderated = DeletedTweet.where(:reviewed=>false, :politician_id => @politician).length
  
@@ -41,9 +41,11 @@ class Admin::PoliticiansController < Admin::AdminController
 
   def save_user
     if params[:id] == '0' then
-      #it's a new add
-      if Politician.where(:user_name => params[:user_name]).count == 0
-        pol = Politician.new(:twitter_id => params[:twitter_id], :user_name => params[:user_name])
+      existing = Politician.where(:user_name => params[:user_name])
+      if existing.count == 0
+        #it's a new add
+        pol = Politician.create(:twitter_id => params[:twitter_id],
+                                :user_name => params[:user_name])
       else
         flash[:error] = "We already track @#{params[:user_name]}"
         pol = nil
@@ -66,21 +68,8 @@ class Admin::PoliticiansController < Admin::AdminController
       else
         pol.office = Office.find(params[:office_id])
       end
-      if params[:first_name] != '' and params[:first_name].strip != ' ' then
-        pol.first_name = params[:first_name]
-      end
-      if params[:middle_name] != '' and params[:middle_name].strip != ' ' then
-        pol.middle_name = params[:middle_name]
-      end
-      if params[:last_name] != '' and params[:last_name].strip != ' ' then
-        pol.last_name = params[:last_name]
-      end
-      if params[:suffix] != '' and params[:suffix].strip != ' ' then
-        pol.suffix = params[:suffix]
-      end
-      if params[:state] != '' and params[:state].strip != ' ' then
-        pol.state = params[:state]
-      end
+
+      pol.update_attributes(params)
       
       pol.save!
       pol.reset_avatar
@@ -99,19 +88,12 @@ class Admin::PoliticiansController < Admin::AdminController
     end
 
     if params[:related] then
-      names = params[:related].split(',')
-      names.each do |uname|
-      if uname.length > 0 and uname != ' ' and uname.strip != '' then
-          begin
-            namepol = Politician.where(:user_name => uname.strip).first
-            if namepol then
-              pol.add_related_politician(namepol)
-            end
-          rescue
-            next
-          end
-        end
-      end
+      requested_names = Set.new(params[:related].split(',')
+                                                .map(&:strip)
+                                                .reject{ |name| name == '' })
+      existing_names = Set.new(pol.get_related_politicians.map(&:user_name))
+      pol.remove_related_politicians (existing_names - requested_names)
+      pol.add_related_politicians (requested_names - existing_names)
     end
 
     redirect_to :back
