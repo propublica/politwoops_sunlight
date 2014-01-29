@@ -46,7 +46,7 @@
     <% @queue_stats.each do |stats| %>
         <tr>
             <td><%= stats[0] %></td>
-            <td class="numeric"><%= stats[1].nil? ? 0 : stats[1]['current-waiting'] %></td>
+            <td class="numeric"><%= stats[1].nil? ? 0 : stats[1]['current-jobs-ready'] %></td>
         </tr>
     <% end %>
     </tbody>
