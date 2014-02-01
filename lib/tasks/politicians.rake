@@ -2,7 +2,7 @@ namespace :politicians do
   desc 'Import A CSV file'
   task :import => :environment do
     require 'csv'
-    
+
     # make separator configurable
     separator = ENV['CSV_SEP'].present? ? ENV['CSV_SEP'] : ','
 
@@ -26,7 +26,7 @@ namespace :politicians do
      end
      #p politicians
      #p parties
-     
+
      party_ids = {}
      num = 0
      parties.keys.each do |party_name|
@@ -41,7 +41,7 @@ namespace :politicians do
        end
      end
      puts "%d parties were added." % num
-     
+
      # lookup twitter user names to ids
      new_twitter_users = []
      twitter_user_local_ids = {}
@@ -55,7 +55,7 @@ namespace :politicians do
      end
      # p twitter_user_local_ids
      p new_twitter_users
-     
+
      twitter_user_ids = {}
      new_twitter_users.each_slice(75) do |twitter_users|
        # FIXME: lo/hicase of usernmes
@@ -70,7 +70,7 @@ namespace :politicians do
        if twitter_user_ids.has_key?(twitter_user)
          begin
            # FIXME: use Twitter::users in bulk?
-           twitter_user_id = twitter_user_ids[twitter_user]          
+           twitter_user_id = twitter_user_ids[twitter_user]
            #puts twitter_user
            p = Politician.new({
              :user_name => twitter_user,
@@ -86,24 +86,24 @@ namespace :politicians do
      end
      puts "%d politicians to be added." % num
   end
-  
+
   desc 'Import A CSV file with twitter user plus party indications.'
   task :import_csv => :environment do
 
     require 'csv'
     require 'twitter'
- 
+
     #expected format is Name (not used, placeholder ), Office, State, Twitter Username, Party, Account Type, Linked Twitter Accounts
     separator = ENV['CSV_SEPARATOR'] || ','
     links = []
     usernames = {}
 
     CSV.open(ENV['CSV'], 'r', separator) do |row|
-    
+
       #skip header row if it exists
       if row[0] == 'First Name' then
         next
-      end 
+      end
 
       twitter_user = row[6].downcase.strip
       if row[4] then
@@ -113,7 +113,7 @@ namespace :politicians do
       if row[0] then
         first = row[0].strip
       end
-    
+
       if row[1] then
         middle = row[1].strip
       end
@@ -121,30 +121,30 @@ namespace :politicians do
       if row[2] then
         last = row[2].strip
       end
-    
+
       if row[3] then
         suffix = row[3].strip
       end
 
-      if row[5] then 
+      if row[5] then
         state = row[5].upcase.strip
       end
-      
-      if row[7] then 
+
+      if row[7] then
         party = Party.where(:name => row[7].strip).first
       end
 
-      if row[8] then 
+      if row[8] then
         account = AccountType.where(:name => row[8].downcase.strip).first
       end
-     
-      if row[9] then  
+
+      if row[9] then
         for l in row[9].split('|')
           links.push([ twitter_user, l.downcase.strip ])
         end
       end
 
-      pol = { 'user_name' => twitter_user} 
+      pol = { 'user_name' => twitter_user}
       pol['first_name'] = first || nil
       pol['middle_name'] = middle || nil
       pol['last_name'] = last || nil
@@ -154,17 +154,17 @@ namespace :politicians do
       pol['account'] = account || nil
       pol['party'] = party || nil
       usernames[twitter_user] = pol
-    end   
+    end
 
     twitter_users = Twitter::users(usernames.keys)
     puts "twitter user length %s" % twitter_users.length
-    twitter_users.each do |tu| 
-#    usernames.keys.each do |name|       
+    twitter_users.each do |tu|
+#    usernames.keys.each do |name|
 #        pol = usernames[name]
         pol = usernames[tu.screen_name.downcase]
         pol['twitter_id'] = tu.id
-      
-#        newpol = Politician.where(:user_name => name).first 
+
+#        newpol = Politician.where(:user_name => name).first
         newpol = Politician.where(:twitter_id => pol['twitter_id'], :user_name => pol['user_name']).first_or_create()
         newpol.first_name = pol['first_name']
         newpol.middle_name = pol['middle_name']
@@ -174,15 +174,15 @@ namespace :politicians do
         newpol.state = pol['state']
         newpol.account_type = pol['account']
         newpol.party = pol['party']
-        newpol.save()   
-        
+        newpol.save()
+
     end
 
     #after all new users are entered, link them
     links.each do |l|
         p1 = Politician.where(:user_name => l[0]).first
         p2 = Politician.where(:user_name => l[1]).first
-        p1.add_related_politician(p2)    
+        p1.add_related_politician(p2)
     end
   end
 

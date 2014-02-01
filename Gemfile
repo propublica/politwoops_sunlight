@@ -24,8 +24,10 @@ gem "rmagick", "~> 2.0"
 # remove this and switch to built-in CSV class when the app is upgraded to Ruby 1.9
 gem "fastercsv"
 
+
 # allows the app to be run with "bundle exec unicorn" in development
 group :development do
   gem 'awesome_print'
   gem 'unicorn'
+  gem "ruby-debug", "~> 0.10.4"
 end

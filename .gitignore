@@ -5,9 +5,10 @@ public/sitemap.xml.gz
 /log/*.log
 /tmp/**/*
 /vendor/gems
-/*.csv
 */.DS_Store
 /unicorn.rb
 /config/admin.yml
 /config/config.yml
+/config/database.yml
 .*.swp
+*.gem

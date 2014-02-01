@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120914202322) do
+ActiveRecord::Schema.define(:version => 20121108214001) do
 
   create_table "account_links", :force => true do |t|
     t.integer  "politician_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20120914202322) do
   add_index "deleted_tweets", ["content"], :name => "index_tweets_on_content"
   add_index "deleted_tweets", ["created"], :name => "created"
   add_index "deleted_tweets", ["deleted"], :name => "deleted"
+  add_index "deleted_tweets", ["modified"], :name => "index_deleted_tweets_on_modified"
   add_index "deleted_tweets", ["modified"], :name => "modified"
   add_index "deleted_tweets", ["politician_id"], :name => "index_tweets_on_politician_id"
   add_index "deleted_tweets", ["reviewed"], :name => "index_deleted_tweets_on_reviewed"
@@ -83,6 +84,8 @@ ActiveRecord::Schema.define(:version => 20120914202322) do
     t.datetime "updated_at"
   end
 
+  add_index "tweet_images", ["tweet_id"], :name => "index_tweet_images_on_tweet_id"
+
   create_table "tweets", :force => true do |t|
     t.string   "user_name",      :limit => 64
     t.string   "content"
@@ -101,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20120914202322) do
   add_index "tweets", ["content"], :name => "index_tweets_on_content"
   add_index "tweets", ["created"], :name => "created"
   add_index "tweets", ["deleted"], :name => "deleted"
+  add_index "tweets", ["modified"], :name => "index_tweets_on_modified"
   add_index "tweets", ["modified"], :name => "modified"
   add_index "tweets", ["politician_id"], :name => "index_tweets_on_politician_id"
   add_index "tweets", ["reviewed"], :name => "index_tweets_on_reviewed"
