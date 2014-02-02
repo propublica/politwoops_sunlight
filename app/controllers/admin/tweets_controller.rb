@@ -161,7 +161,6 @@ class Admin::TweetsController < Admin::AdminController
     lcs_size = lcs(str1, str2).size
     min_size = [str1.size,str2.size].min
     max_lcs_ratio = configuration[:max_lcs_ratio].to_f
-    p lcs_size.to_f/min_size.to_f , "HYEEEEEEEEEEEEEEEEEEEEE"
     if (hamming_distance <= max_hamming || lcs_size.to_f/min_size.to_f >= max_lcs_ratio )
       return true
     else
@@ -171,7 +170,8 @@ class Admin::TweetsController < Admin::AdminController
   
   def auto_reject deleted_tweets
     deleted_tweets.each do |deleted_tweet|
-      tweets = Tweet.where(:politician_id => deleted_tweet.politician_id , :deleted => 0).where("created >" deleted_tweet.created)
+      p deleted_tweet.created, "hhhhhhhhhhhhhhhhhhhhhhhhhh"
+      tweets = Tweet.where(:politician_id => deleted_tweet.politician_id , :deleted => 0, :created => deleted_tweet.created..DateTime.now)
       tweets.each do |tweet|
         if is_similar(tweet.content,deleted_tweet.content) 
            deleted_tweet.reviewed = true
