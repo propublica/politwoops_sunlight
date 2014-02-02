@@ -171,7 +171,7 @@ class Admin::TweetsController < Admin::AdminController
   
   def auto_reject deleted_tweets
     deleted_tweets.each do |deleted_tweet|
-      tweets = Tweet.where(:politician_id => deleted_tweet.politician_id , :deleted => 0).where("created >" deleted_twee.created)
+      tweets = Tweet.where(:politician_id => deleted_tweet.politician_id , :deleted => 0).where("created >" deleted_tweet.created)
       tweets.each do |tweet|
         if is_similar(tweet.content,deleted_tweet.content) 
            deleted_tweet.reviewed = true
