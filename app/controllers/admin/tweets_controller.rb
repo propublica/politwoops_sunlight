@@ -12,8 +12,8 @@ class Admin::TweetsController < Admin::AdminController
     @all_politicians = Politician.active.all
 
     @tweets = DeletedTweet.where(:politician_id => @politicians)
-    @existing_tweets = Tweet.where(:politician_id => @politicians, :deleted => 0)
-    auto_reject @tweets, @existing_tweets
+
+    auto_reject @tweets
     # filter to relevant subset of deleted tweets
     @tweets = @tweets.where :reviewed => params[:reviewed], :approved => params[:approved]
 
@@ -169,8 +169,9 @@ class Admin::TweetsController < Admin::AdminController
     end
   end
   
-  def auto_reject deleted_tweets, tweets
+  def auto_reject deleted_tweets
     deleted_tweets.each do |deleted_tweet|
+      tweets = Tweet.where(:politician_id => deleted_tweet.politician_id , :deleted => 0).where("created >" deleted_twee.created)
       tweets.each do |tweet|
         if is_similar(tweet.content,deleted_tweet.content) 
            deleted_tweet.reviewed = true
