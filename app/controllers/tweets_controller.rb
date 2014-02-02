@@ -1,3 +1,4 @@
+# encoding: utf-8
 class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.xml
@@ -17,9 +18,9 @@ class TweetsController < ApplicationController
     @filter_action = "/"
 
     if params.has_key?(:see) && params[:see] == :all
-      @tweets = Tweet
+      @tweets = Tweet.in_order
     else
-      @tweets = DeletedTweet
+      @tweets = DeletedTweet.in_order
     end
 
     @tweets = @tweets.where(:politician_id => @politicians)

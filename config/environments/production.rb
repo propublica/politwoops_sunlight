@@ -25,7 +25,7 @@ Politwoops::Application.configure do
   # config.logger = SyslogLogger.new
 
   # Use a different cache store in production
-  # config.cache_store = :mem_cache_store
+  config.cache_store = :mem_cache_store, { :namespace => 'politwoops' }
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
@@ -46,4 +46,20 @@ Politwoops::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_permissions => :public_read,
+    :path => "/:attachment/:filename",
+    :url => ":s3_path_url",
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :s3_credentials => {
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    },
+    :interpolations => {
+      :base_path => "/images"
+    }
+  }
+
 end

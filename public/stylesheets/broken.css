@@ -1,0 +1,90 @@
+h1 { display: none;}
+
+.clear { clear: both;}
+.daisies {
+    background: url(/images/twoopsiedaisies.png) 20px top no-repeat;
+    padding-left: 155px;
+    margin-top: 60px;
+}
+.daisies h3{
+	width: 100%;
+	border-bottom: 1px dotted #d6dcdc;
+	line-height: 2.5em;
+}
+.daisies h2{
+	width: 100%;
+	border-top: 1px dotted #ffffff;
+	line-height: 2.5em;
+	margin-bottom: 0;
+}
+.daisies p{
+	font-size: 128%;
+	line-height: 1.6em;
+	font-family: "museo-slab", georgia, serif;
+	font-weight: 300;
+	color: #403D39;
+	margin-top: -15px;
+}
+
+#rtColumn{
+	position: relative;
+}
+.crackBox{
+	position: absolute;
+	left: -33px;
+	top: -309px;
+}
+.crackBox a.cowButton{
+    display: block;
+    float: right;
+    height: 54px;
+    position: relative;
+    right: 144px;
+    top: 165px;
+    width: 332px;
+}
+
+
+
+@-moz-keyframes bubble {
+        0% { background-position: 0px 0px; }
+        100% {background-position: -9960px 0px;}
+}
+
+@-ms-keyframes bubble {
+        0% { background-position: 0px 0px; }
+        100% {background-position: -9960px 0px;}
+}
+
+@-webkit-keyframes bubble {
+        0% { background-position: 0px 0px; }
+        100% {background-position: -9960px 0px;}
+}
+
+
+a.cowButton #bubble {
+    background-image: url(/images/404_logo.png);
+    display: block;
+    margin-left: -65px;
+    margin-top: -48px;
+    height: 100px;
+    width: 332px;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-origin: padding-box;
+    background-position: -9960px 0px;
+    background-repeat: no-repeat;
+    background-size: auto auto;
+
+   
+    -webkit-animation-fill-mode: forwards;
+       -moz-animation-fill-mode: forwards;
+        -ms-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation: bubble 1s steps(30, end) 1;
+       -moz-animation: bubble 1s steps(30, end) 1;
+        -ms-animation: bubble 1s steps(30, end) 1;
+
+}
+

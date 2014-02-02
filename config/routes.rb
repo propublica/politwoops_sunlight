@@ -32,8 +32,12 @@ Politwoops::Application.routes.draw do
     match "review/:rss_secret.rss" => "tweets#index", :reviewed => false, :approved => false, :as => "review_rss", :format => "rss"
 
     match "review/:id" => "tweets#review", :via => [:post], :as => "review_tweet"
+
+    match "reports/annual/:year" => "reports#annual", :as => "annual_report"
+    match "reports/annual" => "reports#annual", :as => "annual_report"
   end
-  
+ 
+  match "5xx", :to => "errors#down"
   match "404", :to => "errors#not_found"    
   match "*anything", :to => "errors#not_found"    
 

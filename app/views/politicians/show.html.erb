@@ -1,5 +1,5 @@
 <% content_for :title do %>
-<%= @politician.office.title %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)
+  Deleted tweets for <%= @politician.office.title %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)<% if @page > 1 %> (Page <%= @page %>)<% end %>
 <% end %>
 
 <div id="info">
@@ -25,9 +25,7 @@
     <div class="clear"></div>
 </div>
 <div id="all-container" class="tweet-content-container">
-    <% @all_tweets.each do |at| %>
-        <%= render :partial => "tweets/tweet", :locals => {:tweet => at} %>
-    <% end %>
+    <%= render :partial => "tweets/tweet", :collection => @tweet_map['all'], :object => :tweet %>
 </div>
 
 <% @accounts.each do |acc| %>

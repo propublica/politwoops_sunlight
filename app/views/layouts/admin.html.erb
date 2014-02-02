@@ -60,6 +60,7 @@
                 <li><a href="/admin/users/">User Admin</a></li>
                 <li><a href="/admin/offices/">Office Admin</a></li>
                 <li><a href="/admin/status/">System Status</a></li>
+                <li><a href="<%= url_for(:controller => :reports, :action => :annual) %>">Annual Report</a></li>
                 </ul>
             </div>
         </div>
@@ -89,5 +90,6 @@
             </div>
         </footer>
 
+        <%= javascript_include_tag "politwoops" %>
 </body>
 </html>

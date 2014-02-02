@@ -3,9 +3,10 @@ class Admin::TweetsController < Admin::AdminController
 
   # list either unreviewed
   def index
+    @page = [params[:page].to_i, 1].max
     @politicians = Politician.active.all
 
-    @tweets = DeletedTweet.where(:politician_id => @politicians)
+    @tweets = DeletedTweet.in_order.where(:politician_id => @politicians)
 
     # filter to relevant subset of deleted tweets
     @tweets = @tweets.where :reviewed => params[:reviewed], :approved => params[:approved]
@@ -19,7 +20,7 @@ class Admin::TweetsController < Admin::AdminController
     per_page ||= Tweet.per_page
     per_page = 200 if per_page > 200
 
-    @tweets = @tweets.includes(:politician => [:party]).paginate(:page => params[:page], :per_page => per_page)
+    @tweets = @tweets.includes(:politician => [:party]).paginate(:page => @page, :per_page => per_page)
     @admin = true
 
     respond_to do |format|
@@ -42,7 +43,7 @@ class Admin::TweetsController < Admin::AdminController
       approved = (params[:commit] == "Approve")
 
       if !@tweet.reviewed? and approved and review_message.blank?
-        flash[:review_message] = "You need to add a note about why you're approving this tweet."
+        flash[@tweet.id] = "You need to add a note about why you're approving this tweet."
         redirect_to params[:return_to]
         return false
       end
@@ -52,7 +53,7 @@ class Admin::TweetsController < Admin::AdminController
       @tweet.reviewed_at = Time.now
     end
 
-    if review_message.any?
+    if not review_message.blank?
       @tweet.review_message = review_message
     end
 

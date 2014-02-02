@@ -22,9 +22,7 @@
 <% if @tweets.empty? %>
   No results for the filter options you selected.
 <% else %>
-  <% @tweets.each do |tweet| %>
-    <%= render :partial => "tweets/tweet", :locals => {:tweet => tweet} %>
-  <% end %>
+  <%= render :partial => "tweets/tweet", :collection => @tweets, :object => :tweet %>
 
   <%= render :template => "shared/pager" %>
 

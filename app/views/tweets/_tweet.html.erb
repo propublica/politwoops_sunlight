@@ -1,7 +1,15 @@
 <div id="tweet-<%= tweet.id %>" class="tweet">
+  <a name="<%= tweet.id %>"></a>
+
+  <% if flash[tweet.id] %>
+    <div class="admin_error error">
+      <%= flash[tweet.id] %>
+    </div>
+  <% end %>
+
 	<div class="contentLeft">	
 		<a href="/user/<%= tweet.politician.user_name %>">
-			<img src="<%= avatar_url tweet.politician %>" alt="<%= tweet.politician.user_name %>" width"73" height="73" />
+			<img src="<%= tweet.politician.avatar.url %>" class="politician-avatar" alt="<%= tweet.politician.user_name %>" width"73" height="73" />
 		</a>
 		<div class="policount"><!--
 			<span>Retweets via <em>Politwoops</em></span>
@@ -56,7 +64,7 @@
   <% if defined?(admin) and admin %>
     <div class="admin review" data-id="<%= tweet.id %>">
       <%= form_tag admin_review_tweet_path(tweet) do %>
-        <%= hidden_field_tag "return_to", request.path %>
+        <%= hidden_field_tag "return_to", "#{request.url}##{tweet.id}" %>
 
         <% if tweet.reviewed? %>
           <div class="review_controls">

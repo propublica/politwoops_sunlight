@@ -1,4 +1,11 @@
+<% flash.each do |cls, msg| %>
+  <div class="flash <%= cls %>">
+    <%= msg %>
+  </div>
+<% end %>
+
 <h3>Add a New Politician</h3>
+
 <form id="admin-politician" action="/admin/user/0/save" method="POST">
 <input type="hidden" name="twitter_id" id="twitter_id" value="" />
 <ul>

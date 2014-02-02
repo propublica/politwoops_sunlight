@@ -1,27 +1,26 @@
-configuration = YAML.load_file "#{Rails.root}/config/config.yml"
-SitemapGenerator::Sitemap.create(:default_host => configuration[:sitemap_default_url],
+SitemapGenerator::Sitemap.create(:default_host => Settings[:sitemap_default_url],
                                  :include_root => false) do
   most_recent_twoop = DeletedTweet.order(:modified).first
   if most_recent_twoop
     add '/',
-        :host => configuration[:sitemap_default_url],
+        :host => Settings[:sitemap_default_url],
         :changefreq => 'hourly',
         :priority => 1
   else
     add '/',
-        :host => configuration[:sitemap_default_url],
+        :host => Settings[:sitemap_default_url],
         :changefreq => 'hourly',
         :lastmod => most_recent_twoop.modified,
         :priority => 1
   end
 
   add '/users',
-      :host => configuration[:sitemap_default_url],
+      :host => Settings[:sitemap_default_url],
       :changefreq => 'weekly',
       :priority => 1
 
   Politician.all.each do |pol|
-    add url_for(:host => configuration[:sitemap_default_url],
+    add url_for(:host => Settings[:sitemap_default_url],
                 :controller => 'politicians',
                 :action => 'show',
                 :user_name => pol.user_name),
@@ -29,7 +28,7 @@ SitemapGenerator::Sitemap.create(:default_host => configuration[:sitemap_default
   end
 
   Party.all.each do |party|
-    add url_for(:host => configuration[:sitemap_default_url],
+    add url_for(:host => Settings[:sitemap_default_url],
                 :controller => 'parties',
                 :action => 'show',
                 :name => party.name),
@@ -38,7 +37,7 @@ SitemapGenerator::Sitemap.create(:default_host => configuration[:sitemap_default
   end
 
   DeletedTweet.find_each do |twoop|
-    add url_for(:host => configuration[:sitemap_default_url],
+    add url_for(:host => Settings[:sitemap_default_url],
                 :controller => 'tweets',
                 :action => 'show',
                 :id => twoop.id),

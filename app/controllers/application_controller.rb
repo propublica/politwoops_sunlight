@@ -1,9 +1,16 @@
+# encoding: utf-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
   # let tweet helper methods be available in the controller
   helper TweetsHelper
-  
+
+  before_filter :donor_banner
+
+  def donor_banner
+    @donor_banner_enabled = Settings.fetch(:enable_donor_banner, false)
+  end
+
   # needs to become more dynamic somehow
   def set_locale
     # not sure what this does

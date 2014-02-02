@@ -1,3 +1,4 @@
+# encoding: utf-8
 class TweetImage < ActiveRecord::Base
   def filename
     File.basename(URI.parse(url).path)

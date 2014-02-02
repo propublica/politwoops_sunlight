@@ -1,0 +1,20 @@
+<% content_for :title do %>
+  Temporarily Down
+<% end %>
+
+<% content_for :body_class do %> class="error404" <% end %>
+
+<% content_for :head do %>
+	<%= stylesheet_link_tag "broken" %>
+<% end %>
+
+<div class="crackBox">
+        <a class="cowButton" href="/">
+        	<h1 id="bubble" class="twoopsAlternateLogo textReplace">Politwoops</h1>
+        </a>
+</div>
+
+<h2>You Broke Politwoops!</h2>
+
+<p>We sure can't delete this error page, but we're working on fixing the problem right now. Check back soon!</p>
+

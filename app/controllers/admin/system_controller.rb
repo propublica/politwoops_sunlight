@@ -9,9 +9,9 @@ class Admin::SystemController < Admin::AdminController
     # file exists but the timestamp is old (the process exited abnormally)
     # then the process will have to be restarted by the admin.
 
-    expected_heartbeats = configuration[:heartbeats_expected]
+    expected_heartbeats = Settings[:heartbeats_expected]
     @worker_statuses = expected_heartbeats.map do |w|
-      path = File.join(configuration[:heartbeats_directory], w)
+      path = File.join(Settings[:heartbeats_directory], w)
       exists = File.exists? path
       traceback = nil
       started = nil
@@ -26,9 +26,9 @@ class Admin::SystemController < Admin::AdminController
 
         mtime = File.mtime(path)
         ago = (Time.now - mtime).floor
-        if ago < 0:
+        if ago < 0
           status = 'restarting'
-        elsif ago <= (configuration[:heartbeat_interval] * 1.10) # Allow 10% error
+        elsif ago <= (Settings[:heartbeat_interval] * 1.10) # Allow 10% error
           status = 'running'
         else
           status = 'dead'
@@ -49,7 +49,7 @@ class Admin::SystemController < Admin::AdminController
     @last_tweet = Tweet.with_content.order("modified DESC").first
 
     @queue_stats = []
-    queues = configuration.fetch(:beanstalk_queues, nil)
+    queues = Settings.fetch(:beanstalk_queues, nil)
     if queues
       beanstalk = Beanstalk::Pool.new(['localhost:11300'])
       tubes = beanstalk.list_tubes.map {|k,v| v} .flatten
@@ -68,15 +68,15 @@ class Admin::SystemController < Admin::AdminController
       return redirect_to :action => "status"
     end
 
-    expected_heartbeats = configuration[:heartbeats_expected]
+    expected_heartbeats = Settings[:heartbeats_expected]
     if not expected_heartbeats.include? params[:worker]
       flash[:error] = "No such worker!"
       return redirect_to :action => "status"
     end
 
-    path = File.join(configuration[:heartbeats_directory], params[:worker])
+    path = File.join(Settings[:heartbeats_directory], params[:worker])
     if File.exists? path
-      future = Time.now + configuration[:heartbeat_interval] * 2
+      future = Time.now + Settings[:heartbeat_interval] * 2
       File.utime future, future, path
       flash[:error] = "Worker restarting"
       return redirect_to :action => "status", :alert => "Worker restarting."

@@ -7,7 +7,7 @@
 <input id="suffix_input" type="hidden" name="suffix" value="<%= @politician.suffix %>" />
 <ul>
   <li> 
-    <img src="<%= @politician.profile_image_url %>" alt="<%= @politician.user_name %>" />
+    <img src="<%= @politician.avatar.url %>" class="politician-avatar" alt="<%= @politician.user_name %>" width"73" height="73" />
     <span id="name"><%= @politician.user_name %> &nbsp;<em> <a href="#">edit</a></em></span>
   </li>
   <li>

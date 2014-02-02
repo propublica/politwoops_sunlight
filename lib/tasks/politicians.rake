@@ -9,10 +9,13 @@ namespace :politicians do
     # parse CSV file into structure
     parties = {}
     politicians = {}
-    CSV.open(ENV['CSV'], 'r', ENV['CSV_SEP']) do |row|
+    # Nombre,Twitter_ID,Genero,,Partido,Ciudad
+    CSV.readlines(ENV['CSV'], {:col_sep => ENV['CSV_SEP'], :return_headers => false}) do |row|
+       name = row[0]
        twitter_user = row[1].downcase
        twitter_user = twitter_user.gsub(/^(http\:\/\/)?(www\.)?twitter\.com\/?(\/|\@)?/, '')
        twitter_user = twitter_user.gsub(/\/*$/, '')
+       gender = row[2]
        party = row[4] ? row[4].downcase : ''
        party = party.gsub(/(\/|\s)/, '-')
        place = row[5].downcase
@@ -24,7 +27,7 @@ namespace :politicians do
          :party => party
        }
      end
-     #p politicians
+     p politicians
      #p parties
 
      party_ids = {}
@@ -188,8 +191,9 @@ namespace :politicians do
 
   desc "Updates profile images for politicians."
   task :reset_avatars => :environment do
-    no_responses = []
     politicians = Politician
+
+    force = ENV.fetch('force', false)
 
     if ENV['where_blank'].present?
       politicians = politicians.where :profile_image_url => nil
@@ -199,18 +203,27 @@ namespace :politicians do
       politicians = politicians.where :user_name => ENV['username']
     end
 
-    politicians.all.each do |politician|
-      updated, error = politician.reset_avatar
-      if updated == true
-        puts "[#{politician.user_name}] #{politician.profile_image_url}"
-      else
-        puts "[#{politician.user_name}] #{error}"
-      end
-      sleep 1
+    force = false
+    if ENV['force'].present?
+      force = true
     end
 
-    no_responses.each do |name|
-      puts "Possible bad username: #{name}"
+    delay = 2.to_f
+    politicians.all.each do |politician|
+      begin
+        updated, error = politician.reset_avatar :force => force
+        if updated == true
+          puts "[#{politician.user_name}] #{politician.profile_image_url}"
+        else
+          puts "[#{politician.user_name}] #{error}"
+          delay = [15, delay * 1.5].min
+          puts "Delay increased to #{delay} seconds."
+        end
+      rescue Twitter::Error::TooManyRequests => error
+        sleep error.rate_limit.reset_in + 1
+        retry
+      end
+      sleep delay
     end
   end
 end

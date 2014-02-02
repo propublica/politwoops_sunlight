@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ErrorsController < ApplicationController
   include ApplicationHelper
   
@@ -5,4 +6,7 @@ class ErrorsController < ApplicationController
     render "errors/not_found"
   end
 
+  def down
+    render "errors/status_5xx"
+  end
 end
