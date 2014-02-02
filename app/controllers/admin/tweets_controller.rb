@@ -1,6 +1,6 @@
 class Admin::TweetsController < Admin::AdminController
   before_filter :load_tweet, :only => [:review, :message, :next_tweets]
-
+  helper TweetsHelper
   # list either unreviewed
   def index
     if params[:politician_id] and !params[:politician_id].blank?
@@ -12,7 +12,8 @@ class Admin::TweetsController < Admin::AdminController
     @all_politicians = Politician.active.all
 
     @tweets = DeletedTweet.where(:politician_id => @politicians)
-
+    @existing_tweets = Tweet.where(:politician_id => @politicians, :deleted => 0)
+    auto_reject @tweets, @existing_tweets
     # filter to relevant subset of deleted tweets
     @tweets = @tweets.where :reviewed => params[:reviewed], :approved => params[:approved]
 
@@ -36,7 +37,7 @@ class Admin::TweetsController < Admin::AdminController
       end
     end
   end
-
+ 
   def reject
     page = params[:page] || 1
     politician_id = params[:politician_id] || nil
@@ -135,6 +136,50 @@ class Admin::TweetsController < Admin::AdminController
     unless params[:id] and (@tweet = DeletedTweet.find(params[:id]))
       render :nothing => true, :status => :not_found
       return false
+    end
+  end
+
+  private
+  
+  def hamming_distance(str1, str2)
+    str1.split(//).zip(str2.split(//)).inject(0) { |h, e| e[0]==e[1] ? h+0 : h+1 }
+  end
+  def lcs(xstr, ystr)
+    return "" if xstr.empty? || ystr.empty?
+ 
+    x, xs, y, ys = xstr[0..0], xstr[1..-1], ystr[0..0], ystr[1..-1]
+    if x == y
+        x + lcs(xs, ys)
+    else
+        [lcs(xstr, ys), lcs(xs, ystr)].max_by {|x| x.size}
+    end
+  end
+  
+  def is_similar(str1, str2)
+    hamming_distance = hamming_distance(str1,str2)
+    max_hamming = configuration[:max_auto_reject_hamming].to_i
+    lcs_size = lcs(str1, str2).size
+    min_size = [str1.size,str2.size].min
+    max_lcs_ratio = configuration[:max_lcs_ratio].to_f
+    p lcs_size.to_f/min_size.to_f , "HYEEEEEEEEEEEEEEEEEEEEE"
+    if (hamming_distance <= max_hamming || lcs_size.to_f/min_size.to_f >= max_lcs_ratio )
+      return true
+    else
+      return false
+    end
+  end
+  
+  def auto_reject deleted_tweets, tweets
+    deleted_tweets.each do |deleted_tweet|
+      tweets.each do |tweet|
+        if is_similar(tweet.content,deleted_tweet.content) 
+           deleted_tweet.reviewed = true
+           deleted_tweet.approved = false
+           deleted_tweet.reviewed_at =  Time.now
+           deleted_tweet.reviewed_by = nil
+           deleted_tweet.save
+        end
+      end
     end
   end
 
