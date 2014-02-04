@@ -181,12 +181,12 @@ class Admin::TweetsController < Admin::AdminController
   end
   
   def auto_reject deleted_tweets
-    deleted_tweets.where("reviewed_at is not null").where(:reviewed=>false).each do |deleted_tweet|
-      deleted_tweet.reviewed_at =  Time.now
+    deleted_tweets.where(:reviewed=>false).each do |deleted_tweet|
       tweets = Tweet.where(:politician_id => deleted_tweet.politician_id , :deleted => 0,
       :created => deleted_tweet.created..DateTime.now)
       tweets.each do |tweet|
         if is_similar(tweet.content,deleted_tweet.content) 
+           deleted_tweet.reviewed_at =  Time.now
            deleted_tweet.reviewed = true
            deleted_tweet.approved = false
            deleted_tweet.reviewed_by = nil
