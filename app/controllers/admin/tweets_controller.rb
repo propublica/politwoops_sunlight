@@ -181,7 +181,7 @@ class Admin::TweetsController < Admin::AdminController
   end
   
   def auto_reject deleted_tweets
-    deleted_tweets.where("reviewed_at IS  NULL").where(:reviewed=>false).limit(50).each do |deleted_tweet|
+    deleted_tweets.where("reviewed_at IS  NULL").where(:reviewed=>false).limit(params[:per_page]).each do |deleted_tweet|
       tweets = Tweet.where(:politician_id => deleted_tweet.politician_id , :deleted => 0,
       :created => deleted_tweet.created..DateTime.now).order("created ASC").limit(1)
       tweets.each do |tweet|
