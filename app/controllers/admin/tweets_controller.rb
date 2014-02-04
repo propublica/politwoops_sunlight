@@ -13,7 +13,7 @@ class Admin::TweetsController < Admin::AdminController
 
     @tweets = DeletedTweet.where(:politician_id => @politicians)
 
-    auto_reject @tweets if params[:approved].empty?
+    auto_reject @tweets if !(params[:approved] || params[:reviewed])
     # filter to relevant subset of deleted tweets
     @tweets = @tweets.where :reviewed => params[:reviewed], :approved => params[:approved]
 
@@ -181,18 +181,19 @@ class Admin::TweetsController < Admin::AdminController
   end
   
   def auto_reject deleted_tweets
-    deleted_tweets.where(:reviewed=>false).each do |deleted_tweet|
+    deleted_tweets.where("reviewed_at IS NOT NULL").where(:reviewed=>false).limit(10).each do |deleted_tweet|
       tweets = Tweet.where(:politician_id => deleted_tweet.politician_id , :deleted => 0,
-      :created => deleted_tweet.created..DateTime.now)
+      :created => deleted_tweet.created..DateTime.now).order("created ASC").limit(1)
       tweets.each do |tweet|
+        deleted_tweet.reviewed_at =  Time.now
         if is_similar(tweet.content,deleted_tweet.content) 
-           deleted_tweet.reviewed_at =  Time.now
            deleted_tweet.reviewed = true
            deleted_tweet.approved = false
            deleted_tweet.reviewed_by = nil
         end
+        deleted_tweet.save
       end
-      deleted_tweet.save
+
     end
   end
 
