@@ -13,7 +13,7 @@ class Admin::TweetsController < Admin::AdminController
 
     @tweets = DeletedTweet.where(:politician_id => @politicians)
 
-    auto_reject @tweets
+    auto_reject @tweets if params[:approved].empty?
     # filter to relevant subset of deleted tweets
     @tweets = @tweets.where :reviewed => params[:reviewed], :approved => params[:approved]
 
