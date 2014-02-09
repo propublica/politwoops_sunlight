@@ -168,12 +168,13 @@ class Admin::TweetsController < Admin::AdminController
   end
 
   def is_similar(str1, str2)
+    
     hamming_distance = hamming_distance(str1,str2)
     max_hamming = configuration[:max_auto_reject_hamming].to_i
     lcs_size = lcs(str1, str2).size
-    min_size = [str1.size,str2.size].min
+    max_size = [str1.size,str2.size].max
     max_lcs_ratio = configuration[:max_lcs_ratio].to_f
-    if (hamming_distance <= max_hamming || lcs_size.to_f/min_size.to_f >= max_lcs_ratio )
+    if (hamming_distance <= max_hamming || lcs_size.to_f/max_size.to_f >= max_lcs_ratio )
       return true
     else
       return false
@@ -186,7 +187,7 @@ class Admin::TweetsController < Admin::AdminController
       :created => deleted_tweet.created..DateTime.now).order("created ASC").limit(1)
       tweets.each do |tweet|
         deleted_tweet.reviewed_at =  Time.now
-        if is_similar(tweet.content,deleted_tweet.content) 
+        if is_similar(tweet.content.upcase,deleted_tweet.content.upcase) 
            deleted_tweet.reviewed = true
            deleted_tweet.approved = false
            deleted_tweet.reviewed_by = nil
