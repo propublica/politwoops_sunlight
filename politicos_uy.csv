@@ -104,17 +104,17 @@ Bancada en Diputados del Grupo Todos,BancadaTODOSDip,NA,,Nacional,Uruguay
 MPP,MppUruguay,NA,,Frente Amplio,Uruguay
 Agrupación de Jóvenes del Frente Amplio,JovenesFAMaldo,NA,,Frente Amplio,Maldonado
 Agrupación de Jóvenes del MPP-Elsa Balero,ElsaBaleroMPP,NA,,Frente Amplio,Uruguay
-Javier da Haedo,JavierdeHaedo,M,,Nacional,Uruguay
-Carlos Varela,carvar2121,M,,Frente Amplio,Montevideo
-Daniel Daners,danieldaners,M,,Frente Amplio,Uruguay
-Álvaro García,32alvarogarcia,M,,Frente Amplio,Uruguay
+Javier da Haedo,JavierdeHaedo,H,,Nacional,Uruguay
+Carlos Varela,carvar2121,H,,Frente Amplio,Montevideo
+Daniel Daners,danieldaners,H,,Frente Amplio,Uruguay
+Álvaro García,32alvarogarcia,H,,Frente Amplio,Uruguay
 Frente Amplio Lavalleja,FA_Lavalleja,NA,,Frente Amplio,Lavalleja
 Alianza Progersista Espacio738,Espacio738,NA,,Frente Amplio,Uruguay
 Propuesta Uruguay 20130,PUruguay2030,NA,,Frente Amplio,Uruguay
 MVOTMA,Mvotma_Uruguay,NA,,Gobierno,Uruguay
 NAP Nueva Agenda,APProgresista,NA,Frente Amplio,Uruguay
 PVP Maldonado,PVPMaldonado,NA,,PVP,Maldonado
-Gustavo Bernini,gusbernini,M,,Frente Amplio,Montevideo
+Gustavo Bernini,gusbernini,H,,Frente Amplio,Montevideo
 MIDES,midesuy,NA,,Gobierno,Uruguay
 MPP Maldonado,MPPmaldonado,NA,,Frente Amplio,Maldonado
 Alianza Progresista Florida,NA,,Frente Amplio,Florida
@@ -122,18 +122,146 @@ Frente Liber Seregni,FLSuy,NA,,Frente Amplio,Uruguay
 Frente Amplio 5005,5005FrenteAmpli,NA,,Frente Amplio,Uruguay
 Redes Frente Amplistas,Redesfa,NA,,Frente Amplio,Uruguay
 Agrupación de Jóvenes del Nuevo Espacio,JNEuy,NA,,Frente Amplio,Uruguay
-Lolo Visconti,lolovisconti,M,,Frente Amplio,Uruguay
+Lolo Visconti,lolovisconti,H,,Frente Amplio,Uruguay
 Constanza Presidenta,ConstanzaEquipo,NA,,Frente Amplio,Uruguay
-Gonzalo Civila López,gonzacivila,M,,Frente Amplio,Montevideo
+Gonzalo Civila López,gonzacivila,H,,Frente Amplio,Montevideo
 Socialistas en Montevideo,NA,,Frente Amplio,Montevideo
 Uruguay Natural,Uruguay_Natural,NA,,Gobierno,Uruguay
 Juventud Socialista,jsu_90,NA,,Frente Amplio,Uruguay
 Frente Estudiantil MPP,FEstudiantilMPP,NA,,Frente Amplio,Uruguay
 Juventud Alianza 738,jovenes738,NA,,Frente Amplio,Uruguay
 Intendencia de Montevideo,montevideoim,NA,,Gobierno,Uruguay
-Conrado Ramos,amoslarraburu,M,,Independiente,Uruguay
-M. Fernandez Galeano,mafgaleano,M,,Frente Amplio,Uruguay
+Conrado Ramos,amoslarraburu,H,,Independiente,Uruguay
+M. Fernandez Galeano,mafgaleano,H,,Frente Amplio,Uruguay
 Juventud Socialista Cerro Largo,NA,,Frente Amplio,Cerro Largo
 Juventud Socialista,jsu90ps,NA,,Frente Amplio,Uruguay
-Alejando Antonelli,aleantonelli1,M,,Frente Amplio,Uruguay
+Alejando Antonelli,aleantonelli1,H,,Frente Amplio,Uruguay
 MPP,MPP609,NA,,Frente Amplio,Uruguay
+Asamblea Uruguay,AsambleaUruguay,NA,,Frente Amplio,Uruguay
+MIA 642 Frente Amplio,mia642fa,NA,,Frente Amplio,Uruguay
+Ir,ir_uruguay,NA,,Frente Amplio,Uruguay
+Antonio Carámbula,CultoCarambulaS,H,,Frente Amplio,Uruguay
+Juan Andrés Roballo,JuanARoballo,H,,Frente Amplio,Uruguay
+Luis Porto,Luis_A_Porto,H,,Frente Amplio,Uruguay
+Secretaría de Comunicación de Presidencia,SCpresidenciauy,NA,,Gobierno,Uruguay
+Ivonne Passada,ipassada,M,,Frente Amplio,Montevideo
+Oscar Groba,GrobaOscar,M,,Frente Amplio,Montevideo
+Fabian F. Peralta,FabianFPeralta,H,,Frente Amplio,Montevideo
+Liliám Kechichián,likechichian,M,,Frente Amplio,Uruguay
+Carmelo Vidalín,CarmeloVidalin,H,,Nacional,Durazno
+Edgardo Rodríguez,EdgardoR609,H,,Frente Amplio,Tacuarembó
+Constanza Moreira,Constanza_FA,M,,Frente Amplio,Uruguay
+Carlos Rodriguez,CarlosCarapa,H,,Frente Amplio,Florida
+Juan Raul Ferreira,JuanRaFerreira,H,,Frente Amplio,Uruguay
+Felipe Paullier,felipepaullier,H,,Nacional,Montevideo
+Ana Olivera,montevideana_fa,M,,Frente Amplio,Montevideo
+Manuel Flores Silva,ManoloFloresS,H,,Colorado,Uruguay
+Diego Echeverría,echeverriadiego,H,,Nacional,Maldonado
+Aldo Rous,tacuabull,H,,Nacional,Tacuarembó
+Lara Islas,Lara_islas,M,,Colorado,Montevideo
+Javier Suárez,Javier_Suarez1,H,,Frente Amplio,Montevideo
+Liliana Berna,bernaliliana,M,,Frente Amplio,Maldonado
+Jose Amy,diputadoamy140,H,,Colorado,Soriano
+Fernando Amado,fernando_amado,H,,Colorado,Montevideo
+Federico Ricagni,fede_ricagni,H,,Nacional,Cerro Largo
+Gerardo Alcarez,GerardoAlvarezP,H,,Frente Amplio,Montevideo
+Roberto Ribeiro,ribeiro_uy,H,,Frente Amplio,Artigas
+Diego Cánepa,diegoicanepa,H,,Frente Amplio,Uruguay
+Martín Elgue,martinelgue,H,,Nacional,Montevideo
+Sergio Chiesa,schiesa,H,,Nacional,Uruguay
+Gustavo Cersósimo,GusCersosimo,H,,Colorado,San José
+Mauricio Guarinoni,Mauricio180977,H,,Frente Amplio,Montevideo
+Walter Verri,WalterVerri,H,,Colorado,Paysandú
+Nicolas Nuñez,nico_socialista,H,,Frente Amplio,Montevideo
+Ricardo Berois,rberois,H,,Nacional,Flores
+Agrupación Acción y Propuesta,Lista1030,NA,,Colorado,Uruguay
+Andres Lima,ANDRESLIMASALTO,H,,Frente Amplio,Salto
+Julio García,Jucegar12001,H,,Frente Amplio,Montevideo
+Vamos 10 520,vamos10520,NA,,Colorado,Uruguay
+Germasn Coutinho,germancoutinho,H,,Colorado,Salto
+Frente Amplio Paysandú,fapaysandu,NA,,Frente Amplio,Uruguay
+Vamos 1020,Vamos_1020,NA,,Colorado,Uruguay
+Claudio Aguilar Pais,CLAUDIOAGUILARP,H,,Colorado,Flores
+Rodolfo Caram,H,,Nacional,Artigas
+Compromiso Lista 711,Lista711,NA,,Frente Amplio,Uruguay
+Lorena Tejeira,loretejeira,M,,Nacional,Montevideo
+Frente Amplio Salto,FrenteSalto,NA,,Frente Amplio,Salto
+Jorge Luis Machado,jmachadito57,H,,Nacional,Montevideo
+Hernán Bonilla,Hernan_Bonilla,H,,Nacional Montevideo
+Gustavo Silveira,gusilveira2015,H,,Colorado,Uruguay
+Álvaro Delgado,adelgado404,H,,Nacional,Montevideo
+Julio Cesar Silveira,H,,Nacional,Artigas
+Pablo Ferrari,pabloferreri,H,,Frente Amplio,Uruguay
+Richard Saul Sander,SanderRichard,H,,Colorado,Rivera
+Bertha Sanseverino,bsanseverino,M,,Frente Amplio,Montevideo
+Lista 50,Lista50,NA,,Nacional,Uruguay
+Juan Curbelo,EdilJCurbelo,H,,Nacional,Montevideo
+Mario García,DipGarciaMario,H,,Nacional,Lavalleja
+Gustavo Espinosa,dipgespinosa,H,,Colorado,Canelones
+Mario Silvera Araujo,Dipmariosilvera,H,,Nacional,Treinta y Tres
+Gerardo Amarilla,GerardoAmarilla,H,,Nacional,Rivera
+Álvaro Fernández,Fernandez_Alvar,H,,Colorado,Montevideo
+Pablo Díaz Anguilla,pdiaz430,H,,Nacional,Soriano
+Diego Vergara,vergara_diego,H,,Nacional,Cerro Largo
+Alianza Nacional,alianzauy,NA,,Nacional,Uruguay
+Daniel Mañana,DipDanielManana,H,,Nacional,Río Negro
+Juan Manuel Garino,DiputadoGarino,H,,Colorado,Montevideo
+Julio Bango,JulioBangoA,H,,Frente Amplio,Montevideo
+Jorge Buriani,JorgeBuriani,H,,Frente Amplio,Montevideo
+Juan Angel Vazquez,jangelvazquez,H,,Colorado,Montevideo
+Lista 250,lista250,NA,,Nacional,Uruguay
+Roque Ramos spíndola,roqueramos10,H,,Frente Amplio,Montevideo
+José Andrés Arocena,JoseArocena,H,,Nacional,Florida
+Partido Socialista,Socialistas90,NA,,Frente Amplio,Uruguay
+Nelson Rodríguez,DiputadoNelson,H,,Nacional,Maldonado
+Rosana Paredes,RosanaParedes2,M,,Frente Amplio,Montevideo
+Nuevo Espacio,NuevoEspacio,NA,,Frente Amplio,Uruguay
+Eber da Rosa,EberdaRosa,H,,Nacional,Uruguay
+Amin Niffouri,ANiffouri400,H,,Nacional,Canelones
+Fitzgerald Cantero,FitzgeraldCP78,H,,Colorado,Montevideo
+Juan Carlos Raffo,JuanCarlosRaffo,H,,Nacional,Uruguay
+Fernando Pazos Rosado,ferpazosrosado,H,,Nacional,Montevideo
+Daniel Peña,danielpenia505,H,,Nacional,Canelones
+Pablo Iturralde Viñas,IturraldeVPablo,H,,Nacional,Montevideo
+Marita Fernandez Chavez,M,,Frente Amplio,Maldonado
+Enrique Rubio,EnriqueRubio_FA,H,,Frente Amplio,Uruguay
+Alfredo Asti,AlfredoAsti,H,,Frente Amplio,Montevideo
+Daniel Martínez,dacamartinez,H,,Frente Amplio,Uruguay
+Alberto Breccia,BrecciaAlberto,H,,Frente Amplio,Uruguay
+Victor Semproni,VictorSemproniR,H,,Frente Amplio,Canelones
+Carlos Enciso,CEnciso62,H,,Nacional,Florida
+Sebastián Sabini,tatisabini,H,,Frente Amplio,Canelones
+José Carlos Mahia,JoseCarlosMahia,H,,Frente Amplio,Canelones
+Mónica Xavier,EsMonicaFA,M,,Frente Amplio,Uruguay
+Ernesto Agazzi,flacoagazzi,H,,Frente Amplio,Uruguay
+Alianza Joven,JuventudAlianza,NA,,Nacional,Uruguay
+Interacción Olesker,interolesker,NA,,Frente Amplio,Uruguay
+Lista 404 Montevideo,lista404,NA,,Nacional,Montevideo
+Alberto Casas,CasasAlberto4,H,,Nacional,San José
+Carlos Silva Rattin,50carlossilva,H,,Nacional,Salto
+Tabaré Viera,Tabareviera,H,,Colorado,Uruguay
+Edison Casulo,ecasulo,H,,Nacional,Montevideo
+María Elena Laurnaga,marialaurnaga,M,,Frente Amplio,Montevideo
+Daisy Tourné,DipDaisy,M,,Frente Amplio,Montevideo
+Concordia Naciona,Concordia_Nac,NA,,Nacional,Uruguay
+Christian Nuñez,EdilNunez71,H,,Nacional,Montevideo
+Lista 2014_66,Lista2014_66_PN,NA,,Nacional,Uruguay
+Ni me callo ni me voy,nimcallonimvoy,NA,,Nacional,Montevideo
+Juventud Ni me callo ni me voy,Juventudnmcnmv,NA,,Nacional,Uruguay
+Lista 111,LaCiento_Once,NA,,Nacional,Montevideo
+Juventud de la 40,Juventud40,NA,,Nacional,Uruguay
+Ney Castillo,NeyCastillo9,H,,Colorado,Montevideo
+Stephanie Braga,stephybraga,M,,Nacional,Maldonado
+Tabaré Vázquez 2014,Tabare2014,,NA,,Frente Amplio,Uruguay
+Adriana Balcarcel,adrianaedila,M,,Nacional,Montevideo
+Elena Lancaster,elancaster400,M,,Nacional,Canelones
+Ana Carolina Murphy,AnaCaro71,M,,Nacional,Montevideo
+Alejandro Repetto,alerepetto400,H,,Nacional,Canelones
+Miguel Di Ruocco,Diruocco71,H,,Nacional,Montevideo
+Nueva generación4004,nueva_78,NA,,Nacional,Montevideo
+Propuesta Batllista,ProBatllista,NA,,Colorado,Uruguay
+La Veintidos,lalista22,NA,,Colorado,Florida
+Sergio Acuña,seracu17,H,,Colorado,Salto
+Mujeres Batllistas,mujeresbat,NA,,Colorado,Uruguay
+Vamos Ahora,lista1011,NA,,Colorado,Uruguay
+Juan Augusto Corujo,juanaugustocoru,H,,Colorado,Florida
