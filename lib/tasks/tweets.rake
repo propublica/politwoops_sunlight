@@ -1,3 +1,6 @@
+MAX_HAMMING = 5
+MAX_LCS = 0.5
+
 namespace :tweets do
   desc 'Auto publish tweets for specific politicians'
   task :auto_publish => :environment do
@@ -71,9 +74,9 @@ namespace :tweets do
     max_size = [str1.size,str2.size].max
     min_size = [str1.size,str2.size].min
     hamming_distance = hamming_distance(str1,str2) + max_size -  min_size
-    max_hamming = configuration[:max_auto_reject_hamming].to_i
+    max_hamming = MAX_HAMMING
     lcs_size = lcs(str1, str2).size
-    max_lcs_ratio = configuration[:max_lcs_ratio].to_f
+    max_lcs_ratio = MAX_LCS
     if (hamming_distance <= max_hamming || lcs_size.to_f/max_size.to_f >= max_lcs_ratio )
       return true
     else
