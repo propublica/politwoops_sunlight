@@ -19,6 +19,7 @@ namespace :tweets do
   desc 'Auto reject tweets if the tweep has posted a similar tweet'
   task :auto_reject => :environment do
     puts "Start ... "
+    count = 0
     deleted_tweets = DeletedTweet.where(:politician_id => Politician.active.all)
     deleted_tweets.where("reviewed_at IS  NULL").where(:reviewed=>false).each do |deleted_tweet|
       tweets = Tweet.where(:politician_id => deleted_tweet.politician_id , :deleted => 0,
@@ -29,6 +30,8 @@ namespace :tweets do
            deleted_tweet.reviewed = true
            deleted_tweet.approved = false
            deleted_tweet.reviewed_by = nil
+           count+=1
+           puts "#{count} tweets auto rejected. "
         end
         deleted_tweet.save
       end
