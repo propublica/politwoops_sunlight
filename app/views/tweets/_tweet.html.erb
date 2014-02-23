@@ -32,16 +32,16 @@
             (<a href="?party=<%= tweet.politician.party.name%>" ><%= tweet.politician.party.name.upcase %></a>)
           <% end %>
         </span>
-  	    
+  	    <script type="text/javascript" charset="utf-8">  
+      ga('send', 'tweet_view', {
+      'dimension1': "<%=tweet.id>"
+      });  </script>
         <span><a class="accountHandle linkUnderline" href="http://twitter.com/<%= tweet.politician.user_name %>" target="_blank">@<%= tweet.politician.user_name %></a></span>
 	    </h4>
 	    <% if tweet.politician.status ==  4 %>
         <div class="inactiveMess">This account is no longer active.</div> 
         <% end %>
-      <script>  
-      ga('send', 'tweet_view', {
-      'dimension1': "<%=tweet.id>"
-      });  </script>
+      
       <%= format_tweet(tweet).to_s.html_safe %>
     </div>
 
