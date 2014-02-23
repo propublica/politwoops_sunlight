@@ -38,7 +38,10 @@
 	    <% if tweet.politician.status ==  4 %>
         <div class="inactiveMess">This account is no longer active.</div> 
         <% end %>
-
+      <script>  
+      ga('send', 'tweet_view', {
+      'dimension1': "<%=tweet.id>"
+      });  </script>
       <%= format_tweet(tweet).to_s.html_safe %>
     </div>
 
