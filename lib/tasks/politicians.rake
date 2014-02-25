@@ -3,103 +3,96 @@ namespace :politicians do
   task :import => :environment do
     require 'csv'
 
+    parties = {}
+    politicians = {}
+    party_ids = {}
+    twitter_user_ids = {}
+
     # make separator configurable
     separator = ENV['CSV_SEP'].present? ? ENV['CSV_SEP'] : ','
 
     # parse CSV file into structure
-    parties = {}
-    politicians = {}
     # Nombre,Twitter_ID,Genero,,Partido,Ciudad
     CSV.foreach(ENV['CSV'], headers: true, col_sep: separator) do |row|
-       name = row['Nombre']
+      name = row['Nombre']
 
-       twitter_user = row['Twitter_ID'].downcase
-       twitter_user = twitter_user.gsub(/^(http\:\/\/)?(www\.)?twitter\.com\/?(\/|\@)?/, '')
-       twitter_user = twitter_user.gsub(/\/*$/, '')
-       gender = row['Genero']
-       party = row['Partido'] ? row['Partido'].downcase : ''
-       party = party.gsub(/(\/|\s)/, '-')
-       place = row['Ciudad'] ? row['Ciudad'].downcase : ''
-       #puts "%s - %s - %s" % [twitter_user, party, place]
-       parties[party] = 0 if !parties.has_key?(party)
-       parties[party] += 1
-       politicians[twitter_user] = {
-         :user_name => twitter_user,
-         :party => party
-       }
-     end
-     p politicians
-     #p parties
+      twitter_user = row['Twitter_ID'].downcase.gsub(/^(http\:\/\/)?(www\.)?twitter\.com\/?(\/|\@)?/, '').gsub(/\/*$/, '')
+      gender = row['Genero']
+      party = row['Partido'] ? row['Partido'].downcase.gsub(/(\/|\s)/, '-') : ''
+      place = row['Ciudad'] ? row['Ciudad'].downcase : ''
 
-     party_ids = {}
-     num = 0
-     parties.keys.each do |party_name|
-       found_parties = Party.where(:name => party_name)
-       if found_parties.length == 0
-         num += 1
-         new_party = Party.new({:name => party_name})
-         new_party.save
-         party_ids[party_name] = new_party.id
-       else
-         party_ids[party_name] = found_parties[0].id
-       end
-     end
-     puts "%d parties were added." % num
+      parties[party] = 0 if !parties.has_key?(party)
+      parties[party] += 1
+      politicians[twitter_user] = {
+        :user_name => twitter_user,
+        :party => party
+      }
+    end
 
-     # lookup twitter user names to ids
-     new_twitter_users = []
-     twitter_user_local_ids = {}
-     politicians.keys.each do |twitter_user|
-       found_politicians = Politician.where(:user_name => twitter_user)
-       if found_politicians.length == 0
-         new_twitter_users << twitter_user
-       else
-         twitter_user_local_ids[twitter_user] = found_politicians[0].id
-       end
-     end
-     # p twitter_user_local_ids
-     p new_twitter_users
+    parties.keys.each do |party_name|
+      found_parties = Party.where(:name => party_name)
+      if found_parties.length == 0
+        party_ids[party_name] = Party.create({:name => party_name}).id
+      else
+        party_ids[party_name] = found_parties[0].id
+      end
+    end
+    puts "%d parties were added." % party_ids.size
 
-     twitter_user_ids = {}
-     new_twitter_users.each_slice(75) do |twitter_users|
-       # FIXME: lo/hicase of usernmes
-       twitter_client.users(twitter_users).each { |user| twitter_user_ids[user.screen_name.downcase] = user.id }
-       puts "."
-       sleep 1
-     end
+    # lookup twitter user names to ids
+    inexistent_twitter_users_from(politicians).each_slice(75) do |twitter_users|
+      twitter_client.users(twitter_users).each { |user| twitter_user_ids[user.screen_name.downcase] = user.id }
+      puts "."
+      sleep 1
+    end
 
-     num = 0
-     politicians.keys.each do |twitter_user|
-       politician_info = politicians[twitter_user]
-       if twitter_user_ids.has_key?(twitter_user)
-         begin
-           # FIXME: use Twitter::users in bulk?
-           twitter_user_id = twitter_user_ids[twitter_user]
-           #puts twitter_user
-           p = Politician.new({
-             :user_name => twitter_user,
-             :twitter_id => twitter_user_id,
-             :party_id => party_ids[politician_info[:party]]
-           })
-           p.save
-           num += 1
-         rescue Twitter::NotFound => e
-           puts "Twitter user %s not found !" % twitter_user
-         end
-       end
-     end
-     puts "%d politicians to be added." % num
+    create_politicians(politicians, twitter_user_ids, party_ids)
+    puts "%d politicians to be added." % politicians.size
+  end
+
+  def create_politicians (politicians, twitter_user_ids, party_ids)
+    politicians.keys.each do |twitter_user|
+      politician_info = politicians[twitter_user]
+      if twitter_user_ids.has_key?(twitter_user)
+        begin
+          # FIXME: use Twitter::users in bulk?
+          twitter_user_id = twitter_user_ids[twitter_user]
+          Politician.create({
+            :user_name => twitter_user,
+            :twitter_id => twitter_user_id,
+            :party_id => party_ids[politician_info[:party]]
+          })
+        rescue Twitter::NotFound => e
+          puts "Twitter user %s not found !" % twitter_user
+        end
+      end
+    end
   end
 
   def twitter_client
     cfg = YAML.load_file "#{Rails.root}/config/config.yml"
-    twitter_client = Twitter::REST::Client.new do |config|
+    Twitter::REST::Client.new do |config|
       config.consumer_key = cfg[:twitter][:consumer_key]
       config.consumer_secret = cfg[:twitter][:consumer_secret]
       config.oauth_token = cfg[:twitter][:oauth_token]
       config.oauth_token_secret = cfg[:twitter][:oauth_token_secret]
     end
   end
+
+
+  def inexistent_twitter_users_from (politicians)
+    new_twitter_users = []
+
+    politicians.keys.each do |twitter_user|
+      found_politicians = Politician.where(:user_name => twitter_user)
+      if found_politicians.length == 0
+        new_twitter_users << twitter_user
+      end
+    end
+
+    new_twitter_users
+  end
+
 
   desc 'Import A CSV file with twitter user plus party indications.'
   task :import_csv => :environment do
@@ -173,30 +166,30 @@ namespace :politicians do
     twitter_users = Twitter::users(usernames.keys)
     puts "twitter user length %s" % twitter_users.length
     twitter_users.each do |tu|
-#    usernames.keys.each do |name|
-#        pol = usernames[name]
-        pol = usernames[tu.screen_name.downcase]
-        pol['twitter_id'] = tu.id
+      #    usernames.keys.each do |name|
+      #        pol = usernames[name]
+      pol = usernames[tu.screen_name.downcase]
+      pol['twitter_id'] = tu.id
 
-#        newpol = Politician.where(:user_name => name).first
-        newpol = Politician.where(:twitter_id => pol['twitter_id'], :user_name => pol['user_name']).first_or_create()
-        newpol.first_name = pol['first_name']
-        newpol.middle_name = pol['middle_name']
-        newpol.last_name = pol['last_name']
-        newpol.suffix = pol['suffix']
-        newpol.office = pol['office']
-        newpol.state = pol['state']
-        newpol.account_type = pol['account']
-        newpol.party = pol['party']
-        newpol.save()
+      #        newpol = Politician.where(:user_name => name).first
+      newpol = Politician.where(:twitter_id => pol['twitter_id'], :user_name => pol['user_name']).first_or_create()
+      newpol.first_name = pol['first_name']
+      newpol.middle_name = pol['middle_name']
+      newpol.last_name = pol['last_name']
+      newpol.suffix = pol['suffix']
+      newpol.office = pol['office']
+      newpol.state = pol['state']
+      newpol.account_type = pol['account']
+      newpol.party = pol['party']
+      newpol.save()
 
     end
 
     #after all new users are entered, link them
     links.each do |l|
-        p1 = Politician.where(:user_name => l[0]).first
-        p2 = Politician.where(:user_name => l[1]).first
-        p1.add_related_politician(p2)
+      p1 = Politician.where(:user_name => l[0]).first
+      p2 = Politician.where(:user_name => l[1]).first
+      p1.add_related_politician(p2)
     end
   end
 
