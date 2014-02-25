@@ -2,8 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.11'
 gem 'mysql2'
-# gem 'memcache'
-gem 'memcache-client'
 
 gem 'httparty', '~> 0.10.0' # used for syncing Twitter avatars
 gem 'sitemap_generator', '~> 4.0'
@@ -33,4 +31,9 @@ group :development do
   gem 'pry_debug'
   gem 'unicorn'
   gem 'debugger'
+end
+
+group :production do
+  # gem 'memcache'
+  gem 'memcache-client'
 end
