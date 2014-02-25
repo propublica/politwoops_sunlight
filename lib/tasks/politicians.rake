@@ -108,12 +108,6 @@ namespace :politicians do
     import_politicians.import_from_csv(separator)
   end
 
-  ### REFACTOR: MOVE TO A CLASS TO AVOID CODE CONFUSION
- 
-
-  ### END REFACTOR
-
-
   desc 'Import A CSV file with twitter user plus party indications.'
   task :import_csv => :environment do
 
