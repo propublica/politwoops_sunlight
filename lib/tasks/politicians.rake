@@ -10,15 +10,16 @@ namespace :politicians do
     parties = {}
     politicians = {}
     # Nombre,Twitter_ID,Genero,,Partido,Ciudad
-    CSV.readlines(ENV['CSV'], {:col_sep => ENV['CSV_SEP'], :return_headers => false}) do |row|
-       name = row[0]
-       twitter_user = row[1].downcase
+    CSV.foreach(ENV['CSV'], headers: true, col_sep: separator) do |row|
+       name = row['Nombre']
+
+       twitter_user = row['Twitter_ID'].downcase
        twitter_user = twitter_user.gsub(/^(http\:\/\/)?(www\.)?twitter\.com\/?(\/|\@)?/, '')
        twitter_user = twitter_user.gsub(/\/*$/, '')
-       gender = row[2]
-       party = row[4] ? row[4].downcase : ''
+       gender = row['Genero']
+       party = row['Partido'] ? row['Partido'].downcase : ''
        party = party.gsub(/(\/|\s)/, '-')
-       place = row[5].downcase
+       place = row['Ciudad'] ? row['Ciudad'].downcase : ''
        #puts "%s - %s - %s" % [twitter_user, party, place]
        parties[party] = 0 if !parties.has_key?(party)
        parties[party] += 1
@@ -62,7 +63,7 @@ namespace :politicians do
      twitter_user_ids = {}
      new_twitter_users.each_slice(75) do |twitter_users|
        # FIXME: lo/hicase of usernmes
-       Twitter::users(twitter_users).each { |user| twitter_user_ids[user.screen_name.downcase] = user.id }
+       twitter_client.users(twitter_users).each { |user| twitter_user_ids[user.screen_name.downcase] = user.id }
        puts "."
        sleep 1
      end
@@ -88,6 +89,16 @@ namespace :politicians do
        end
      end
      puts "%d politicians to be added." % num
+  end
+
+  def twitter_client
+    cfg = YAML.load_file "#{Rails.root}/config/config.yml"
+    twitter_client = Twitter::REST::Client.new do |config|
+      config.consumer_key = cfg[:twitter][:consumer_key]
+      config.consumer_secret = cfg[:twitter][:consumer_secret]
+      config.oauth_token = cfg[:twitter][:oauth_token]
+      config.oauth_token_secret = cfg[:twitter][:oauth_token_secret]
+    end
   end
 
   desc 'Import A CSV file with twitter user plus party indications.'
