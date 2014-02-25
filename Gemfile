@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.11'
 gem 'mysql2'
-gem 'memcache'
+# gem 'memcache'
 gem 'memcache-client'
 
 gem 'httparty', '~> 0.10.0' # used for syncing Twitter avatars
