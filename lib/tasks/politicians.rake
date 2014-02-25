@@ -1,18 +1,12 @@
-namespace :politicians do
-  desc 'Import A CSV file'
-  task :import => :environment do
-    require 'csv'
+class ImportPoliticians
+  def initialize
+    @parties = {}
+    @politicians = {}
+    @party_ids = {}
+    @twitter_user_ids = {}
+  end
 
-    parties = {}
-    politicians = {}
-    party_ids = {}
-    twitter_user_ids = {}
-
-    # make separator configurable
-    separator = ENV['CSV_SEP'].present? ? ENV['CSV_SEP'] : ','
-
-    # parse CSV file into structure
-    # Nombre,Twitter_ID,Genero,,Partido,Ciudad
+  def import_from_csv(separator)
     CSV.foreach(ENV['CSV'], headers: true, col_sep: separator) do |row|
       name = row['Nombre']
 
@@ -21,46 +15,56 @@ namespace :politicians do
       party = row['Partido'] ? row['Partido'].downcase.gsub(/(\/|\s)/, '-') : ''
       place = row['Ciudad'] ? row['Ciudad'].downcase : ''
 
-      parties[party] = 0 if !parties.has_key?(party)
-      parties[party] += 1
-      politicians[twitter_user] = {
+      @parties[party] = 0 if !@parties.has_key?(party)
+      @parties[party] += 1
+      @politicians[twitter_user] = {
         :user_name => twitter_user,
         :party => party
       }
     end
 
-    parties.keys.each do |party_name|
-      found_parties = Party.where(:name => party_name)
-      if found_parties.length == 0
-        party_ids[party_name] = Party.create({:name => party_name}).id
-      else
-        party_ids[party_name] = found_parties[0].id
-      end
-    end
-    puts "%d parties were added." % party_ids.size
+    get_parties
+    puts "%d parties were added." % @party_ids.size
 
+    get_twitter_users
+
+    create_politicians
+    puts "%d politicians to be added." % @politicians.size
+  end
+
+  private
+
+  def get_twitter_users
     # lookup twitter user names to ids
-    inexistent_twitter_users_from(politicians).each_slice(75) do |twitter_users|
-      twitter_client.users(twitter_users).each { |user| twitter_user_ids[user.screen_name.downcase] = user.id }
+    inexistent_twitter_users.each_slice(75) do |twitter_users|
+      twitter_client.users(twitter_users).each { |user| @twitter_user_ids[user.screen_name.downcase] = user.id }
       puts "."
       sleep 1
     end
-
-    create_politicians(politicians, twitter_user_ids, party_ids)
-    puts "%d politicians to be added." % politicians.size
   end
 
-  def create_politicians (politicians, twitter_user_ids, party_ids)
-    politicians.keys.each do |twitter_user|
-      politician_info = politicians[twitter_user]
-      if twitter_user_ids.has_key?(twitter_user)
+  def get_parties
+    @parties.keys.each do |party_name|
+      found_parties = Party.where(:name => party_name)
+      if found_parties.length == 0
+        @party_ids[party_name] = Party.create({:name => party_name}).id
+      else
+        @party_ids[party_name] = found_parties[0].id
+      end
+    end
+  end
+
+  def create_politicians
+    @politicians.keys.each do |twitter_user|
+      politician_info = @politicians[twitter_user]
+      if @twitter_user_ids.has_key?(twitter_user)
         begin
           # FIXME: use Twitter::users in bulk?
-          twitter_user_id = twitter_user_ids[twitter_user]
+          twitter_user_id = @twitter_user_ids[twitter_user]
           Politician.create({
             :user_name => twitter_user,
             :twitter_id => twitter_user_id,
-            :party_id => party_ids[politician_info[:party]]
+            :party_id => @party_ids[politician_info[:party]]
           })
         rescue Twitter::NotFound => e
           puts "Twitter user %s not found !" % twitter_user
@@ -80,18 +84,34 @@ namespace :politicians do
   end
 
 
-  def inexistent_twitter_users_from (politicians)
+  def inexistent_twitter_users
     new_twitter_users = []
 
-    politicians.keys.each do |twitter_user|
-      found_politicians = Politician.where(:user_name => twitter_user)
-      if found_politicians.length == 0
-        new_twitter_users << twitter_user
-      end
+    @politicians.keys.each do |twitter_user|
+      new_twitter_users << twitter_user if Politician.where(:user_name => twitter_user).length == 0
     end
 
     new_twitter_users
   end
+end
+
+namespace :politicians do
+  desc 'Import A CSV file'
+  task :import => :environment do
+    require 'csv'
+
+
+    import_politicians = ImportPoliticians.new
+    # make separator configurable
+    separator = ENV['CSV_SEP'].present? ? ENV['CSV_SEP'] : ','
+
+    import_politicians.import_from_csv(separator)
+  end
+
+  ### REFACTOR: MOVE TO A CLASS TO AVOID CODE CONFUSION
+ 
+
+  ### END REFACTOR
 
 
   desc 'Import A CSV file with twitter user plus party indications.'
