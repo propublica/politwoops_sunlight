@@ -12,6 +12,7 @@
   ```
 * Run ```bundle install``` to install all dependencies.
 * Run ```rake db:setup```
+* Run ```rake db:rollback```
 * Run ```rake db:migrate```
 * Run ```rake db:seed``` to load in a default group.
 
