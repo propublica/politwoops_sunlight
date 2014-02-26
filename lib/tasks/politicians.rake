@@ -8,18 +8,33 @@ class ImportPoliticians
 
   def import_from_csv(separator)
     CSV.foreach(ENV['CSV'], headers: true, col_sep: separator) do |row|
-      name = row['Nombre']
+      name = row['Nombre'].split.reverse
+      first_name = name.pop
+
+      case name.size
+      when 1
+        last_name = name.pop
+      when 2
+        second_name = name.pop
+        last_name = name.pop
+      else
+        second_name = name.pop
+        last_name = name.reverse.join(' ')
+      end
 
       twitter_user = row['Twitter_ID'].downcase.gsub(/^(http\:\/\/)?(www\.)?twitter\.com\/?(\/|\@)?/, '').gsub(/\/*$/, '')
       gender = row['Genero']
       party = row['Partido'] ? row['Partido'].downcase.gsub(/(\/|\s)/, '-') : ''
       place = row['Ciudad'] ? row['Ciudad'].downcase : ''
-
+      
       @parties[party] = 0 if !@parties.has_key?(party)
       @parties[party] += 1
       @politicians[twitter_user] = {
-        :user_name => twitter_user,
-        :party => party
+        user_name: twitter_user,
+        first_name: first_name,
+        middle_name: second_name,
+        last_name: last_name,
+        party: party
       }
     end
 
@@ -62,9 +77,12 @@ class ImportPoliticians
           # FIXME: use Twitter::users in bulk?
           twitter_user_id = @twitter_user_ids[twitter_user]
           Politician.create({
-            :user_name => twitter_user,
-            :twitter_id => twitter_user_id,
-            :party_id => @party_ids[politician_info[:party]]
+            user_name: twitter_user,
+            first_name: politician_info[:first_name],
+            middle_name: politician_info[:middle_name],
+            last_name: politician_info[:last_name],
+            twitter_id: twitter_user_id,
+            party_id: @party_ids[politician_info[:party]]
           })
         rescue Twitter::Error => e
           puts "Twitter user %s not found !" % twitter_user
