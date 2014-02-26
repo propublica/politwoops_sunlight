@@ -4,7 +4,11 @@
 * Copy config/*.yml.sample and fill with the necessary values
   ```
   cp config/admin.yml.sample config/admin.yml
+  ```
+  ```
   cp config/database.yml.sample config/database.yml
+  ```
+  ```
   cp config/config.yml.sample config/config.yml
   ```
 * Run ```bundle install``` to install all dependencies.
