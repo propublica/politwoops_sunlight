@@ -2,7 +2,7 @@ h1 { display: none;}
 
 .clear { clear: both;}
 .daisies {
-    background: url(/images/twoopsiedaisies.png) 20px top no-repeat;
+    background: url(/assets/twoopsiedaisies.png) 20px top no-repeat;
     padding-left: 155px;
     margin-top: 60px;
 }
@@ -63,7 +63,7 @@ h1 { display: none;}
 
 
 a.cowButton #bubble {
-    background-image: url(/images/404_logo.png);
+    background-image: url(/assets/404_logo.png);
     display: block;
     margin-left: -65px;
     margin-top: -48px;

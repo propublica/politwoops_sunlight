@@ -26,8 +26,7 @@ Politwoops::Application.configure do
     :storage => :filesystem,
     :path => "/:attachment/:filename",
     :interpolations => {
-      :base_path => "#{Rails.root}/public/images"
+      :base_path => "#{Rails.root}/assets/images"
     }
   }
 end
-

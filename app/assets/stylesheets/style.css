@@ -17,7 +17,7 @@ menu, nav, section, summary, time, mark, audio, video {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
 ul { list-style: none; }
 blockquote, q { 
-	background:url('../images/quotes.png') 12px top no-repeat ;
+	background:url('/assets/quotes.png') 12px top no-repeat ;
 	quotes: '»' '«' ;
 	margin-left:30px;
     padding-left:35px;
@@ -27,7 +27,7 @@ blockquote, q {
 	}
 	
 .pull_left, .pull_right { 
-	background:url('../images/quotes_lg.png') 12px 12px no-repeat ;
+	background:url('/assets/quotes_lg.png') 12px 12px no-repeat ;
 	margin: 25px 65px 25px 30px;
 	padding: 15px 0 15px 35px;
 	color: #494442;
@@ -115,16 +115,16 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 
 body {
 	margin: 0 auto;
-	background: url(/images/sfapp_bg.jpg) center 48px repeat-x;
+	background: url(/assets/sfapp_bg.jpg) center 48px repeat-x;
 	font-family: "helvetica neue", helvetica, arial, sans-serif;
 	color: #625953;
 }
 .sf-header {
-	background: url(/images/sfapp_bg_header.jpg) center bottom repeat-x;
+	background: url(/assets/sfapp_bg_header.jpg) center bottom repeat-x;
 	height: 51px;
 }
 .sf-header a.sf-logo {
-	background: url(/images/sfapp_logo.png) top right no-repeat;
+	background: url(/assets/sfapp_logo.png) top right no-repeat;
 	display: block;
 	float: right;
 	height: 40px;
@@ -149,7 +149,7 @@ body {
 	width: 216px; 
 	float: left; 
 	padding-right: 26px; 
-	background: url(/images/bg_sidebar.png) top right repeat-y; 
+	background: url(/assets/bg_sidebar.png) top right repeat-y; 
 	padding-bottom: 80px;
 	position: relative;
 }
@@ -183,7 +183,7 @@ form#filter{
 	margin-bottom: 26px;
 }
 .title{
-	background: url(/images/bg_filter.png) center bottom repeat-x;
+	background: url(/assets/bg_filter.png) center bottom repeat-x;
 	padding-bottom: 1px;
 	margin-bottom: 23px;
 }
@@ -249,7 +249,7 @@ button:hover{
 
 /* header */
 header { 
-	background: url(/images/bg_header.png) 30px bottom no-repeat;
+	background: url(/assets/bg_header.png) 30px bottom no-repeat;
 	height: 209px;
 	margin-bottom: 54px;
 	position: relative;
@@ -261,7 +261,7 @@ h1 {
 	float: left;
 	margin-top: 70px;
 }
-h1 a { background: url(/images/logo.png) top left no-repeat; height: 78px; width: 370px; }
+h1 a { background: url(/assets/logo.png) top left no-repeat; height: 78px; width: 370px; }
 nav {
 	position: relative;
 }
@@ -294,7 +294,7 @@ nav ul li:last-child{
 }
 #search { 
 	float: right;
-	background: url(/images/bg_search.png) left top no-repeat;
+	background: url(/assets/bg_search.png) left top no-repeat;
 	padding-top: 8px;
 	padding-left: 8px;
 	margin-top: 90px;
@@ -324,7 +324,7 @@ nav ul li:last-child{
 }
 
 #searchBtn{
-	background: url(/images/search.png) left -1px no-repeat;
+	background: url(/assets/search.png) left -1px no-repeat;
 	width: 43px;
 	height: 43px;
 	float: left;
@@ -335,7 +335,7 @@ nav ul li:last-child{
     box-shadow:  none;
 }
 #searchBtn:hover{
-	background: url(/images/search.png) left bottom no-repeat;
+	background: url(/assets/search.png) left bottom no-repeat;
 
 }
 
@@ -347,7 +347,7 @@ nav ul li:last-child{
 	line-height: 1.6em;
 	font-family: "museo-slab", georgia, serif; 
 	font-weight: 300;
-	background: url(/images/border_sidebar_x.png) bottom left no-repeat;
+	background: url(/assets/border_sidebar_x.png) bottom left no-repeat;
 	padding-bottom: 32px;
 	margin-bottom: 32px;
 	color: #403d39;
@@ -486,15 +486,15 @@ h4.tweetTitle{
   height: 16px;
   margin: 4px 8px 0 0;
   text-indent: -999999em;
-  background: url(/images/bird_16_gray.png);
+  background: url(/assets/bird_16_gray.png);
 }
 
 .tweet .actions { float: right; }
 .reply, .retweet { height: 47px; width: 59px;}
-.reply { background: url(/images/btn_reply.png) center top no-repeat ; border-bottom: 1px dashed #DEC758;}
-.reply:hover { background: url(/images/btn_reply.png) center bottom no-repeat ; }
-.retweet { background: url(/images/btn_retweet.png) center top no-repeat;}
-.retweet:hover { background: url(/images/btn_retweet.png) center bottom no-repeat; }
+.reply { background: url(/assets/btn_reply.png) center top no-repeat ; border-bottom: 1px dashed #DEC758;}
+.reply:hover { background: url(/assets/btn_reply.png) center bottom no-repeat ; }
+.retweet { background: url(/assets/btn_retweet.png) center top no-repeat;}
+.retweet:hover { background: url(/assets/btn_retweet.png) center bottom no-repeat; }
 
 .titleParty { text-transform: uppercase;}
 
@@ -630,7 +630,7 @@ iframe.twitter-share-button {display: inline; vertical-align: text-bottom;}
 }
 
 #hdo a {
-  background: url(/images/hackdeoverheid.png);
+  background: url(/assets/hackdeoverheid.png);
   display: block;
   height: 35px;
   text-indent: -999999em;
@@ -642,7 +642,7 @@ iframe.twitter-share-button {display: inline; vertical-align: text-bottom;}
 }
 
 #netdem a {
-  background: url(/images/netdem.gif);
+  background: url(/assets/netdem.gif);
   display: block;
   height: 108px;
   text-indent: -999999em;
@@ -965,7 +965,7 @@ table.politicians a{
 	text-align: center;
 }
 .white_content .close{
-    background: url('/images/close.png') right top no-repeat;
+    background: url('/assets/close.png') right top no-repeat;
     text-indent: -9999em;
     width: 22px;
     height: 22px;
@@ -974,7 +974,7 @@ table.politicians a{
     right: 15px;
 }
 .white_content .close:hover{
-    background: url('/images/close.png') right bottom no-repeat;
+    background: url('/assets/close.png') right bottom no-repeat;
 }
 .white_content img{
 	width: auto;

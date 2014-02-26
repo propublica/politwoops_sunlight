@@ -23,6 +23,10 @@ gem "rmagick", "~> 2.0", require: false
 gem "paperclip", "2.7.0"
 gem "aws-sdk"
 
+group :assets do
+  gem 'sass-rails'
+  gem 'uglifier'
+end
 
 # allows the app to be run with "bundle exec unicorn" in development
 group :development do

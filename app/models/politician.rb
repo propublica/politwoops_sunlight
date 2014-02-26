@@ -11,8 +11,8 @@ class Politician < ActiveRecord::Base
                   :office_id, :first_name, :middle_name, :last_name, :suffix
 
   has_attached_file :avatar, { :path => ':base_path/avatars/:filename',
-                               :url => "/images/avatars/:filename",
-                               :default_url => 'images/avatar_missing_404.png' }
+                               :url => "/assets/avatars/:filename",
+                               :default_url => '/assets/avatar_missing_male.png' }
 
   belongs_to :party
 

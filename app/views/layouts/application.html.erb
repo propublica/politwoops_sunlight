@@ -11,8 +11,8 @@
     <meta property="og:url" content="<%= url_for(:only_path => false) %>">
     <meta property="og:title" content="Politwoops US">
     <meta property="og:description" content="Politwoops is the only comprehensive collection of deleted tweets by U.S. politicians that offers a window into what they hoped you didn't see.">
-    <meta property="og:image" content="<%= root_url %>images/og_politwoops.jpg">
-    <meta property="og:image:url" content="<%= root_url %>images/og_politwoops.jpg">
+    <meta property="og:image" content="<%= root_url %>assets/og_politwoops.jpg">
+    <meta property="og:image:url" content="<%= root_url %>assets/og_politwoops.jpg">
     <meta property="og:image:width" content="200">
     <meta property="og:image:height" content="200">
     <meta name="description" content="Politwoops is the only comprehensive collection of deleted tweets by U.S. politicians that offers a window into what they hoped you didn't see.">
@@ -32,7 +32,7 @@
 	<%= javascript_include_tag "jquery.colorbox-min" %>
 
 	<%= csrf_meta_tag %>
-	<link rel="icon" href="/images/favicon.png" type="image/png">
+	<link rel="icon" href="/assets/favicon.png" type="image/png">
 
 	<%= content_for :feeds %>
 </head>
@@ -91,7 +91,7 @@
 
 		</header>
 		<div id="ltColumn">
-			<img class="twoopsters" src="/images/twoopsters.png">
+			<img class="twoopsters" src="/assets/twoopsters.png">
 			<div class="module">
 				<p id="intro">
 					<strong>Sure</strong>, we all tweet things we don't <span class="strikethrough">men</span> mean to share, but now politicians have no way to hide them. <strong>Discover tweets that your politicians shared and then deleted.</strong>
