@@ -1,6 +1,5 @@
 # Setting up the app
 
-* Create the databases in MySQL that you will need.
 * Copy config/*.yml.sample and fill with the necessary values
   ```
   cp config/admin.yml.sample config/admin.yml

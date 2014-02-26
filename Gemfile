@@ -19,7 +19,7 @@ gem "rails_autolink" # auto_link function
 #gem "system_timer", "~> 1.2.4"
 gem "beanstalk-client"
 
-gem "rmagick", "~> 2.0"
+gem "rmagick", "~> 2.0", require: false
 gem "paperclip", "2.7.0"
 gem "aws-sdk"
 
