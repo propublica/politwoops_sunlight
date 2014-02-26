@@ -1,0 +1,7 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: politwoops
+  username: politwoops
+  password: politwoops
+  host: localhost
