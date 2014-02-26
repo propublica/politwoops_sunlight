@@ -66,7 +66,7 @@ class ImportPoliticians
             :twitter_id => twitter_user_id,
             :party_id => @party_ids[politician_info[:party]]
           })
-        rescue Twitter::NotFound => e
+        rescue Twitter::Error => e
           puts "Twitter user %s not found !" % twitter_user
         end
       end
