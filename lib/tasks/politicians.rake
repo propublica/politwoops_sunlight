@@ -1,4 +1,5 @@
 class ImportPoliticians
+
   def initialize
     @parties = {}
     @politicians = {}
@@ -22,11 +23,11 @@ class ImportPoliticians
         last_name = name.reverse.join(' ')
       end
 
-      twitter_user = row['Twitter_ID'].downcase.gsub(/^(http\:\/\/)?(www\.)?twitter\.com\/?(\/|\@)?/, '').gsub(/\/*$/, '')
+      twitter_user = row['Twitter_ID'].downcase.gsub(/^(http\:\/\/)?(www\.)?twitter\.com\/?(\/|\@)?/, '').gsub(/\/*$/, '').strip
       gender = row['Genero']
       party = row['Partido'] ? row['Partido'].downcase.gsub(/(\/|\s)/, '-') : ''
       place = row['Ciudad'] ? row['Ciudad'].downcase : ''
-      
+
       @parties[party] = 0 if !@parties.has_key?(party)
       @parties[party] += 1
       @politicians[twitter_user] = {
@@ -90,17 +91,6 @@ class ImportPoliticians
       end
     end
   end
-
-  def twitter_client
-    cfg = YAML.load_file "#{Rails.root}/config/config.yml"
-    Twitter::REST::Client.new do |config|
-      config.consumer_key = cfg[:twitter][:consumer_key]
-      config.consumer_secret = cfg[:twitter][:consumer_secret]
-      config.oauth_token = cfg[:twitter][:oauth_token]
-      config.oauth_token_secret = cfg[:twitter][:oauth_token_secret]
-    end
-  end
-
 
   def inexistent_twitter_users
     new_twitter_users = []
@@ -195,7 +185,7 @@ namespace :politicians do
       usernames[twitter_user] = pol
     end
 
-    twitter_users = Twitter::users(usernames.keys)
+    twitter_users = FactoryTwitterClient.new_client.users(usernames.keys)
     puts "twitter user length %s" % twitter_users.length
     twitter_users.each do |tu|
       #    usernames.keys.each do |name|

@@ -31,12 +31,8 @@ class Admin::PoliticiansController < Admin::AdminController
   end
 
   def get_twitter_id
-    require 'twitter'
-    t = Twitter.user(params[:screen_name])
-    @twitter_id = t.id
-    respond_to do |format|
-        format.json { render }
-    end
+    @twitter_id = FactoryTwitterClient.new_client.user(params[:screen_name])
+    render json: {twitter_id: @twitter_id}
   end 
 
   def save_user

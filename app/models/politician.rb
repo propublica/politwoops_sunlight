@@ -87,7 +87,7 @@ class Politician < ActiveRecord::Base
 
   def reset_avatar (options = {})
     begin
-      twitter_user = Twitter.user(user_name)
+      twitter_user = FactoryTwitterClient.new_client.user(user_name)
       image_url = twitter_user.profile_image_url(:bigger)
 
       force_reset = options.fetch(:force, false)
