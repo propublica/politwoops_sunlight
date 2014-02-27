@@ -1,3 +1,4 @@
+app/assets/images/avatars
 public/sitemap.xml
 public/sitemap.xml.gz
 public/images/avatars/*
@@ -13,3 +14,4 @@ public/images/avatars/*
 /config/database.yml
 .*.swp
 *.gem
+tags
