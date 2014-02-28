@@ -1,17 +1,25 @@
+@import "media_queries";
 @import "colors";
 
 body {
   font-family: 'Open Sans', sans-serif;
   background: $ultra-light-gray;
   color: $regular-gray;
+  height: 100%;
 }
 
 .clear {
   clear: both;
 }
 
+.main-layout {
+  min-height: 100%;
+  position: relative;
+}
+
 .main.container-fluid {
   max-width: 85%;
+  padding-bottom: 200px;
 
   .splitter {
     border-top: dashed 1px $light-gray;
@@ -56,20 +64,6 @@ body {
           }
 
           .menu {
-
-            @media (max-width: 767px) {
-              .navbar-form {
-                text-align: right;
-
-                .form-group {
-                  float: right;
-                  .form-control {
-                    display: inline-block;
-                    width: auto;
-                  }
-                }
-              }
-            }
 
             .navbar-form {
               .form-group {
@@ -155,7 +149,8 @@ body {
   color: $lighter-gray;
   font-weight: 300;
   font-size: 12px;
-  height: 200px;
+  height: auto;
+  padding-bottom: 45px;
 
   .container-fluid {
     width: 85%;

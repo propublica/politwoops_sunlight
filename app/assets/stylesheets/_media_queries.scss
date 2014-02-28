@@ -1,0 +1,27 @@
+@media (max-width: 767px) {
+  .menu{
+    .navbar-form {
+      text-align: right;
+
+      .form-group {
+        float: right;
+        .form-control {
+          display: inline-block;
+          width: auto;
+        }
+      }
+    }
+  }
+  }
+}
+
+@media (max-width: 990px) {
+  .footer {
+    text-align: center;
+
+    .center {
+      margin: 25px 0;
+    }
+  }
+}
+
