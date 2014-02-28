@@ -1,3 +1,15 @@
+@media (max-width: 1884px) {
+  .main.container-fluid {
+    padding-bottom: 200px;
+  }
+}
+
+@media (min-width: 1885px) {
+  .main.container-fluid {
+    padding-bottom: 250px;
+  }
+}
+
 @media (max-width: 767px) {
   .menu{
     .navbar-form {
@@ -12,7 +24,6 @@
       }
     }
   }
-  }
 }
 
 @media (max-width: 990px) {
@@ -24,4 +35,3 @@
     }
   }
 }
-
