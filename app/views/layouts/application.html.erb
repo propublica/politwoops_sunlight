@@ -1,170 +1,171 @@
 <!doctype html>
 <html>
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,600' rel='stylesheet' type='text/css'>
   <% if content_for?(:title) %>
-    <title><%= yield(:title) %> - Politwoops</title>
+    <title><%= yield(:title) %> - Retiro lo Dicho</title>
   <% else %>
-    <title>Politwoops - <%= t :slogan, :scope => [:politwoops] %><% if not @page.nil? and @page > 1 %> (Page <%= @page %>)<% end %></title>
+    <title>Retiro lo Dicho - <%= t :slogan, :scope => [:politwoops] %><% if not @page.nil? and @page > 1 %> (Page <%= @page %>)<% end %></title>
   <% end %>
 
-    <meta name="google-site-verification" content="CQWBNRNvRMb4Gd5s2HE03-2g5Dkk3VvvGwZbeNmd5H8" />
-    <meta property="og:url" content="<%= url_for(:only_path => false) %>">
-    <meta property="og:title" content="Politwoops US">
-    <meta property="og:description" content="Politwoops is the only comprehensive collection of deleted tweets by U.S. politicians that offers a window into what they hoped you didn't see.">
-    <meta property="og:image" content="<%= root_url %>assets/og_politwoops.jpg">
-    <meta property="og:image:url" content="<%= root_url %>assets/og_politwoops.jpg">
-    <meta property="og:image:width" content="200">
-    <meta property="og:image:height" content="200">
-    <meta name="description" content="Politwoops is the only comprehensive collection of deleted tweets by U.S. politicians that offers a window into what they hoped you didn't see.">
+  <!-- <meta name="google&#45;site&#45;verification" content="CQWBNRNvRMb4Gd5s2HE03&#45;2g5Dkk3VvvGwZbeNmd5H8" /> -->
+  <meta property="og:url" content="<%= url_for(:only_path => false) %>">
+  <meta property="og:title" content="Retiro lo Dicho US">
+  <meta property="og:description" content="Retiro tiene la collección de tweets eliminados de Uruguay.">
+  <meta property="og:image" content="<%= root_url %>assets/og_politwoops.jpg">
+  <meta property="og:image:url" content="<%= root_url %>assets/og_politwoops.jpg">
+  <meta property="og:image:width" content="200">
+  <meta property="og:image:height" content="200">
+  <meta name="description" content="Retiro tiene la collección de tweets eliminados de Uruguay.">
 
-	<%= stylesheet_link_tag "colorbox" %>
-	<%= stylesheet_link_tag "style" %>
-	<%= stylesheet_link_tag "donorbanner" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<script type="text/javascript" src="//use.typekit.net/utl6xyx.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+  <%= stylesheet_link_tag "bootstrap.min" %>
+  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "colorbox" %>
+  <%= stylesheet_link_tag "donorbanner" %>
 
-	<%= content_for :head %>
+  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
 
-	<%= javascript_include_tag "jquery-1.7.1.min" %>
-	<%= javascript_include_tag "jquery.placehold-0.3.min" %>
-	<%= javascript_include_tag "jquery.colorbox-min" %>
+  <%= content_for :head %>
 
-	<%= csrf_meta_tag %>
-	<link rel="icon" href="/assets/favicon.png" type="image/png">
+  <%= javascript_include_tag "jquery-1.7.1.min" %>
+  <%= javascript_include_tag "jquery.placehold-0.3.min" %>
+  <%= javascript_include_tag "jquery.colorbox-min" %>
+  <%= javascript_include_tag "bootstrap.min" %>
 
-	<%= content_for :feeds %>
-</head>
-<body<%if content_for?(:body_class) %> <%= yield(:body_class) %> <% end %>>
-  <div class="sf-header">
-      <div class="container">
-          
-          <a class="sf-logo" href="http://www.sunlightfoundation.com">Sunlight Foundation</a>
-          
-      </div>
-  </div>
+  <%= csrf_meta_tag %>
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+
+  <%= content_for :feeds %>
+
   <script>
-    $(document).ready(function() {
-        $("a.screenshot").each(function(idx, a){
-            $(a).colorbox({
-                rel: 'screenshot' + idx,
-                opacity: 0.7,
-                maxWidth: '90%',
-                close: 'Close'
-            });
+  $(document).ready(function() {
+    $("a.screenshot").each(function(idx, a){
+      $(a).colorbox({
+        rel: 'screenshot' + idx,
+        opacity: 0.7,
+        maxWidth: '90%',
+        close: 'Close'
+      });
+    });
+
+    $(document).bind('cbox_complete', function(event){
+      $("img.cboxPhoto").click(function(event){
+        window.open($(this).attr('src'));
         });
-        $(document).bind('cbox_complete', function(event){
-            $("img.cboxPhoto").click(function(event){
-                window.open($(this).attr('src'));
-            });
-        });
+      });
     });
   </script>
+</head>
 
-	<div class="container">
-		<header>
-			<nav>
-				<ul>
-					<li>
-						<a href="/users">Politicians</a>
-					</li>
-					<li>
-						<a href="http://sunlightfoundation.com/blog/tag/politwoops/">More information</a>
-					</li>
-					<li>
-						<a href="mailto:twoops@sunlightfoundation.com">Contact us</a>
-					</li> 
-				</ul>
-                <div id="socialMedia" style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; visibility: visible;">
-                    <div class="share-buttons" data-socialite="auto" data-services="twitter-tweet, facebook-like" data-options="linkback="<%= escape_javascript request.url %>" data-facebook-like-options="width=100&amp;colorscheme=light&amp;show-faces=false&amp;layout=button_count" data-twitter-tweet-options="text=Track the deleted tweets of U.S. politicians using Politwoops (from @SunFoundation):&amp;url=<%= escape_javascript request.url %>">
-                    </div> 
-
-				</div>
-			</nav>
-			<h1><a class="textReplace clear" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
-			<form action="/" method="get" id="search">
-				<input type="search" placeholder="Search" name="q" value="<%= h params[:q] %>"/>
-				<button class="textReplace" id="searchBtn">search</button>
-			</form>
-			<div class="clear"></div>
-
-		</header>
-		<div id="ltColumn">
-			<img class="twoopsters" src="/assets/twoopsters.png">
-			<div class="module">
-				<p id="intro">
-					<strong>Sure</strong>, we all tweet things we don't <span class="strikethrough">men</span> mean to share, but now politicians have no way to hide them. <strong>Discover tweets that your politicians shared and then deleted.</strong>
-				</p>
-				<p id="terms">
-				To meet the <a href="https://dev.twitter.com/terms/api-terms">Twitter API Terms of Service</a>, all deleted tweets shown here since June 22, 2012 have been reviewed and approved by the Sunlight Foundation.
-				</p>
-			</div>
-			<div class="module">
-				<h4>Original Dutch version:</h4>
-				<a href="http://politwoops.nl">Politwoops.nl</a>
-			</div>
-		</div>
-
-		<div id="rtColumn">
-			<%= yield %>
-		</div>
-
-		<div class="clear"></div>
-	</div>
-
-	<footer>
-            <div class="container">
-                <div class="signup">
-                    <h4>Like this Project and Want to Discover Others Like It?</h4>
-                    <span class="tip">Join the Sunlight Foundation's open government community to learn more</span>
-                    <form action="/subscribe/" method="post" id="sfapp-subscribe-form" class="form-inline">
-                        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="y42oYsUK2EGBAkFj265Bv8Q4BqDCNS8S"></div>
-                        <input type="text" name="email" placeholder="your email address">
-                        <input type="text" name="zipcode" placeholder="your zip code">
-                        <button type="submit" class="btn btn-sunlight">Sign Up</button>
-                    </form>
-                </div>
-                <div class="span6 terms">
-                    <p>Our <a href="http://sunlightfoundation.com/legal/privacy/">privacy policy</a> details how personally identifiable information that is collected on our web sites is handled. Read our <a href="http://sunlightfoundation.com/legal/terms/">terms of service</a>.</p>
-                    <p>This work by <a href="http://sunlightfoundation.com">Sunlight Foundation</a>, unless <a href="http://sunlightfoundation.com/colophon/">otherwise noted</a>, is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 United States License</a>.</p>
-                </div>
-            </div>
-        </footer>
-
-        <%= javascript_include_tag "politwoops" %>
-
-        <% if @donor_banner_enabled %>
-          <!-- BEGIN SMALL DONOR BANNER -->
-          <div id="donor_banner" class="minimize-donorbanner">
-              <div class="donorcontainer">
-                  <div class="bubble">
-                      <button value="play" href="" class="notnow toggleButton" style="box-shadow: none;">Not now</button>
-                  </div>
-                  <a class="sf_logo" href="http://sunlightfoundation.com">Sunlight Foundation</a>
-                  <p class="because quote">
-                  &ldquo;I came to Sunlight because I believe technology is incredibly powerful and government is incredibly important. I don't think there's any better place for working to bring the two together.&rdquo;
-                  <span class="attribution">&mdash; <em>Tom Lee</em></span>
-              </p>
-                  <div class="donationplea">
-                      <h2>
-                          <span class="line1">We depend </span>
-                          <span class="line2">on the generosity</span>
-                          <span class="line3">of our supporters</span>
-                      </h2>
-                      <p>
-                          <em>You can help bring sunlight to government.</em>
-                          </br>Donate to the Sunlight Foundation today.
-                      </p>
-                      <a class="btn" href="https://services.myngp.com/ngponlineservices/contribution.aspx?X=jREQTaIjIPjtDGrJNgrC8niHyt4CzzKpsdUxVVG%2bhIw9mRGPyitpsQ%3d%3d">Donate</a>
-                  </div>
-              </div>
+<body<%if content_for?(:body_class) %> <%= yield(:body_class) %> <% end %>>
+  <div class="main container-fluid">
+    <header class="header">
+      <nav class="navbar" role="navigation">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#retirolodicho-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand logo" href="#"></a>
           </div>
-          <%= javascript_include_tag "donorbanner.js" %>
-          <!-- END SMALL DONOR BANNER -->
-        <% end %>
 
-        <script type="text/javascript" src="https://s3.amazonaws.com/assets.sunlightfoundation.com/social/scripts/simple-socialite-pack.min.js"></script>
-	<%= render :partial => "layouts/analytics" %>
-	</body>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="retirolodicho-navbar-collapse">
+            <div class="share-buttons" data-socialite="auto" data-services="twitter-tweet, facebook-like" data-options="linkback="<%= escape_javascript request.url %>" data-facebook-like-options="width=100&amp;colorscheme=light&amp;show-faces=false&amp;layout=button_count" data-twitter-tweet-options="text=Track the deleted tweets of U.S. politicians using Politwoops (from @SunFoundation):&amp;url=<%= escape_javascript request.url %>"></div>
+            <div class="menu clear">
+              <a href="http://sunlightfoundation.com/blog/tag/politwoops/">Estadísticas</a>
+              <a href="/users">A quiénes seguimos</a>
+              <a href="http://www.datauy.org">Datos Abiertos</a>
+              <a href="mailto:chino@datauy.org">Contacto</a>
+              <form class="navbar-form navbar-left" role="search" action="/" method="get">
+                <div class="form-group">
+                  <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                  <input class="form-control" type="text" placeholder="Buscar..." name="q" value="<%= h params[:q] %>"/>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="splitter"></div>
+    </header>
+
+    <div class="row content">
+      <div class="col-md-3 left-sidebar">
+        <img class="twoopsters" src="/assets/twoopsters.png">
+        <h2>¿Qué es esto?</h2>
+        <p>
+          Escribís algo, no te convence, lo borrás. Escribís de nuevo, descubrís
+          un error y lo borrás. Pero en estos tiempos nada desaparece, ni
+          siquiera los tweets borrados.
+        </p>
+        <p>
+          Fijate qué se arrepintieron de publicar las personas y organizaciones
+          que hacen a la política en Uruguay.
+        </p>
+
+        <div class="logos owner">
+          <p>Un proyecto de:</p>
+          <a class="datauy logo" href="http://www.datauy.org" alt="datauy"><img src="/assets/datauy_inverse_logo.png"></a>
+        </div>
+
+        <div class="logos sponsors">
+          <p>Posible graciasa a:</p>
+          <a class="neo logo" href="http://www.sunlightfoundation.com" alt="neo"><img src="/assets/neo_logo.png"></a>
+          <br/>
+          <a class="sf logo" href="http://www.sunlightfoundation.com" alt="Sunlight Foundation"><img src="/assets/sfapp_logo.png"></a>
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <div class="container">
+            <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+            <p>
+              Somos una organización de la sociedad civil que trabaja
+              creando herramientas sociales por la transparencia,
+              datos abiertos y accesso a la información.
+            </p>
+            <p>
+              Si querés conocer más proyectos como este, podés visitar
+              nuestro sitio web. ¡Hay un montón de cosas interesantes!
+            </p>
+        </div>
+        <div class="col-md-4 center">
+          <img src="/assets/datauy_logo.png">
+          <img src="/assets/datos_abiertos_logo.png">
+        </div>
+        <div class="col-md-4 right">
+          <p>
+            Si querés enterarte de las novedades de éste y otros
+            proyectos, seguinos en redes sociales:
+          </p>
+          <p>
+            <span class="logo facebook"><img src="/assets/facebook_logo.png"></span>
+            <span class="logo twitter"><img src="/assets/twitter_logo.png"></span>
+            <span class="logo youtube"><img src="/assets/youtube_logo.png"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://s3.amazonaws.com/assets.sunlightfoundation.com/social/scripts/simple-socialite-pack.min.js"></script>
+  <%# <%= render :partial => "layouts/analytics" %>
+</body>
 </html>

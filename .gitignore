@@ -15,3 +15,4 @@ public/images/avatars/*
 .*.swp
 *.gem
 tags
+.sass-cache
