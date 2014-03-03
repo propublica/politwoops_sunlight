@@ -1,5 +1,6 @@
 # encoding: utf-8
 require "open-uri"
+require 'sexmachine'
 
 class Politician < ActiveRecord::Base
   CollectingAndShowing = 1
@@ -8,7 +9,7 @@ class Politician < ActiveRecord::Base
   NotCollectingButShowing = 4
 
   attr_accessible :twitter_id, :user_name, :party_id, :status, :state, :account_type_id,
-                  :office_id, :first_name, :middle_name, :last_name, :suffix
+                  :office_id, :first_name, :middle_name, :last_name, :suffix, :gender
 
   has_attached_file :avatar, { :path => ':base_path/avatars/:filename',
                                :url => "/images/avatars/:filename",
@@ -45,6 +46,39 @@ class Politician < ActiveRecord::Base
     middle_name            'middle_name'
     last_name              'last_name'
     suffix                 'suffix'
+  end
+
+  def self.guess_gender (name)
+    # Each SexMachine::Detector instance loads it's own copy of the data file.
+    # Let's avoid going memory crazy.
+    @_sexmachine__detector ||= SexMachine::Detector.new
+    @_sexmachine__detector.get_gender(name)
+  end
+
+  def guess_gender!
+    gender_value = Politician.guess_gender(first_name)
+    gender_map = { :male => 'M', :female => 'F' }
+    gender_value = gender_map[gender_value]
+    if gender_value
+      self.gender = gender_value
+      save!
+    end
+  end
+
+  def male?
+    gender == 'M'
+  end
+
+  def female?
+    gender == 'F'
+  end
+
+  def ungendered?
+    !(male? || female?)
+  end
+
+  def self.ungendered
+    where(:gender => 'U')
   end
 
   def full_name

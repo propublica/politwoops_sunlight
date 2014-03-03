@@ -69,6 +69,16 @@
     </select>
     </span>
   </li>
+  <li> Gender:
+    <span>
+      <%= radio_button_tag(:gender, 'M') %>
+      <%= label_tag(:gender_M, 'Male') %>
+      <%= radio_button_tag(:gender, 'F') %>
+      <%= label_tag(:gender_F, 'Feale') %>
+      <%= radio_button_tag(:gender, 'U') %>
+      <%= label_tag(:gender_U, 'Unspecified') %>
+    </span>
+  </li>
   <li>
     <button type="submit" value="Save">Save</button>
   </li>

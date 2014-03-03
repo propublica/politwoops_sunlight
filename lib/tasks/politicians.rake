@@ -222,4 +222,14 @@ namespace :politicians do
       sleep delay
     end
   end
+
+  desc "Tries to guess the gender of each politician currently unknown."
+  task :guess_gender => :environment do
+    Politician.ungendered.each do |p|
+      p.guess_gender!
+    end
+    Politician.ungendered.each do |p|
+      puts "#{p.full_name} (#{p.user_name})  remains ungendered."
+    end
+  end
 end

@@ -9,7 +9,12 @@
 
 	<div class="contentLeft">	
 		<a href="/user/<%= tweet.politician.user_name %>">
-			<img src="<%= tweet.politician.avatar.url %>" class="politician-avatar" alt="<%= tweet.politician.user_name %>" width"73" height="73" />
+      <img src="<%= default_avatar_url(tweet.politician) %>"
+           class="politician-avatar"
+           data-lateimg-src="<%= tweet.politician.avatar.url %>"
+           alt="<%= tweet.politician.user_name %>"
+           width="73"
+           height="73">
 		</a>
 		<div class="policount"><!--
 			<span>Retweets via <em>Politwoops</em></span>

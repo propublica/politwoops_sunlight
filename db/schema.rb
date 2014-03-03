@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131219173338) do
+ActiveRecord::Schema.define(:version => 20140303200539) do
 
   create_table "account_links", :force => true do |t|
     t.integer  "politician_id"
@@ -76,8 +77,8 @@ ActiveRecord::Schema.define(:version => 20131219173338) do
   end
 
   create_table "politicians", :force => true do |t|
-    t.string   "user_name",           :limit => 64,                :null => false
-    t.integer  "twitter_id",                                       :null => false
+    t.string   "user_name",           :limit => 64,                  :null => false
+    t.integer  "twitter_id",                                         :null => false
     t.integer  "party_id"
     t.integer  "status",                            :default => 1
     t.string   "profile_image_url"
@@ -92,10 +93,9 @@ ActiveRecord::Schema.define(:version => 20131219173338) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "gender",                            :default => "U"
   end
 
-  add_index "politicians", ["id", "party_id"], :name => "id"
-  add_index "politicians", ["party_id"], :name => "party_id"
   add_index "politicians", ["status"], :name => "index_politicians_on_status"
   add_index "politicians", ["user_name", "first_name", "middle_name", "last_name"], :name => "user_name_2"
   add_index "politicians", ["user_name"], :name => "user_name"

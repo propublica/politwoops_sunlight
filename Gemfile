@@ -14,6 +14,7 @@ gem "oauth"
 
 gem 'twitter-text' # parsing hashtags and usernames
 gem "comma", "~> 3.0"
+gem "sexmachine"
 
 gem "will_paginate", "~> 3.0.pre2" # pagination
 gem "rails_autolink" # auto_link function

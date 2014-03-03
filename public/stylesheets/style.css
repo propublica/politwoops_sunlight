@@ -192,6 +192,9 @@ label{
     width: 100%;
     margin-bottom: 4px;
 }
+input[type=radio] + label {
+    display: inline;
+}
 .styled-select select {
    background: transparent !important;
    width: 170px;
