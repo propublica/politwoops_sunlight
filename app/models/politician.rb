@@ -13,7 +13,7 @@ class Politician < ActiveRecord::Base
 
   has_attached_file :avatar, { :path => ':base_path/avatars/:filename',
                                :url => "/images/avatars/:filename",
-                               :default_url => 'images/avatar_missing_404.png' }
+                               :default_url => '' }
 
   belongs_to :party
 
