@@ -13,6 +13,12 @@
           &:first-child {
             margin-left: 0;
           }
+
+          ul.dropdown-menu {
+            li {
+              cursor: pointer;
+            }
+          }
         }
       }
     }
@@ -26,8 +32,9 @@
       }
     }
 
-    .row.tweet {
+    .row.section {
       margin: 15px 0;
+      padding-bottom: 15px;
       border-bottom: dashed 1px $light-gray;
 
       h4 {
@@ -52,7 +59,7 @@
           img.politician-party {
             text-align: right;
             position: relative;
-            left: 35px;
+            left: 55px;
             bottom: 8px;
           }
         }

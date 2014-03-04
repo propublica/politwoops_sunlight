@@ -2,13 +2,20 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 es:
+  will_paginate:
+    page_gap: "&hellip;"
 
   datetime:
     distance_in_words:
       x_days: "%{count} días"
+      x_hours: "%{count} horas"
+      about_x_hours: "cerca de %{count} horas"
       less_than_x_minutes:
         one: "al minuto"
         other: "a los %{count} minutos"
+      less_than_x_hours:
+        one: "a la hora"
+        other: "a las %{count} horas"
 
   politwoops:
     slogan: "Tweets borrados por los politicos" 

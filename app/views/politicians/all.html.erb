@@ -1,58 +1,34 @@
-	<h2>
-		Politicians We Follow
-	</h2>
+<%= render :template => "shared/filterform" %>
 
-    <%= render :template => "shared/filterform" %>
-
-<div class="caveat"><p>This is an incomplete list. If you think we're missing someone, please <a href="mailto:twoops@sunlightfoundation.com">email us</a> with their Name, State, Political Party, Office they hold or are seeking and, of course, Twitter handle. Thanks!</p>
-</div>
-
-	<table class="politicians">
-		<tbody>
-		<% @politicians.each do |pol|%>
-		<tr>
-			<td class="img">
+<% @politicians.each do |pol|%>
+<div class="row section">
+  <div class="col-md-2">
+    <div class="avatar">	
+      <a href="/user/<%= pol.user_name %>">
         <img src="<%= pol.avatar.url %>" class="politician-avatar" alt="<%= pol.user_name %>" width"73" height="73" />
-			</td>
-			<td class="name">
-				<span>
-				<a href="/user/<%= pol.user_name %>/">
-					<%= pol.first_name %>
-					<%= pol.middle_name %>
-					<%= pol.last_name %>
-					<%= pol.suffix %>
-				</a>
-				</span>
-			</td>
-			<td class="state">
-				<span>
-				<% if pol.state %> <%= pol.state.upcase %> <% end %>
-				</span>
-			</td>
-			<td class="office">
-				<span>
-				<% if pol.office %><%= pol.office.title %> <% end %>
-				</span>
-			</td>
+      </a>
+    </div>
+  </div>
 
-			<!-- 
-			<td>
-				<%= pol.user_name %>
-			</td>
-			-->
+  <div class="col-md-5">
+    <div class="content">
+      <a href="/user/<%= pol.user_name %>/">
+        <%= pol.first_name %>
+        <%= pol.middle_name %>
+        <%= pol.last_name %>
+        <%= pol.suffix %>
+      </a>
+    </div>
+  </div>
 
-			<td class="party">
-				<span>
-				<% if pol.party %> <%= pol.party.display_name %> <% end %>
-				<% if pol.status ==  4 %><em>inactive</em> <% end %>
-				</span>
-			</td>
-		</tr>
-		<% end %>
-		<tbody>
-	</table>
+  <div class="col-md-3">
+    <img src="<%= pol.party_logo_url %>" class="politician-party" alt="<%= pol.party.name %>" />
+  </div>
 
+  <div class="col-md-2">
+    <% if pol.state %> <%= pol.state.upcase %> <% end %>
+  </div>
+</div>
+<% end %>
 
-        <%= render :template => "shared/pager" %>
-
-
+<%= render :template => "shared/pager" %>
