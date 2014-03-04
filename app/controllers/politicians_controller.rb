@@ -8,7 +8,7 @@ class PoliticiansController < ApplicationController
     :if => proc { (params.keys - ['format', 'action', 'controller']).empty? }
 
   def show
-    @per_page_options = [20, 50]
+    @per_page_options = [10, 20, 50]
     @per_page = closest_value((params.fetch :per_page, 0).to_i, @per_page_options)
     @page = [params[:page].to_i, 1].max
 
@@ -44,7 +44,7 @@ class PoliticiansController < ApplicationController
   before_filter :enable_filter_form
   def all 
     
-    @per_page_options = [20, 50]
+    @per_page_options = [10, 20, 50]
     @per_page = closest_value((params.fetch :per_page, 0).to_i, @per_page_options)
     @page = [params[:page].to_i, 1].max
     

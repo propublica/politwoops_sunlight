@@ -1,28 +1,19 @@
 <% content_for :title do %>
-  Deleted tweets for <%= @politician.office.title %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)<% if @page > 1 %> (Page <%= @page %>)<% end %>
+  Tweets borrados por <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)<% if @page > 1 %> (Page <%= @page %>)<% end %>
 <% end %>
 
 <div id="info">
-	<h2><%= @politician.office.abbreviation %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)</h2>
+	<h2> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)</h2>
 	<ul class="accountList">
-		<li id="all-label" class="active">
-			<a class="accountHandle" href="#"><span>All Tweets</span></a>
-		</li>
-        <% @accounts.each do |acc| %>
-		<li id="<%= acc.user_name %>-label">
-			<a class="accountHandle" href="#"><span>@<%= acc.user_name %></span></a>
-		</li>
-        <% end %>
-	</ul>
-    <div class="aboutAccount" id="all"><p></p></div>
     <% @accounts.each do |acc| %>
-	<div class="aboutAccount" id="<%= acc.user_name %>" style="display:none;">
-		<p> 
-			<% if @tweet_map[acc.user_name][0] %> <%= @tweet_map[acc.user_name][0].details['user']['description'] %> <% end %><a href="http://twitter.com/<%=acc.user_name%>">twitter page</a>  
-		</p>
-	</div>
+      <li id="<%= acc.user_name %>-label">
+        <p> 
+          <a class="accountHandle" href="http://twitter.com/<%=acc.user_name%>"><span>@<%= acc.user_name %></span></a>
+          <% if @tweet_map[acc.user_name][0] %> <%= @tweet_map[acc.user_name][0].details['user']['description'] %> <% end %>
+        </p>
+      </li>
     <% end %>
-    <div class="clear"></div>
+	</ul>
 </div>
 <div id="all-container" class="tweet-content-container">
     <%= render :partial => "tweets/tweet", :collection => @tweet_map['all'], :object => :tweet %>
@@ -35,22 +26,6 @@
         <% end %>
     </div>
 <% end %>
-
-<script type="text/javascript">
-    jQuery('a.accountHandle span').click(function(){
-       jQuery('ul.accountList li').removeClass('active');
-       jQuery(this).parents('li').addClass('active');
-
-       jQuery('.aboutAccount').hide();
-       jQuery('div#info div#' + jQuery(this).parents('li').attr('id').replace('-label', '')).show();
-
-       jQuery('.tweet-content-container').hide();
-       jQuery('#' + jQuery(this).parents('li').attr('id').replace('-label', '-container')).show();
-       return false;
-    
-    });
-
-</script>
 
 <%= render :template => "shared/pager" %>
 

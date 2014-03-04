@@ -17,6 +17,15 @@
       }
     }
 
+    #info {
+      margin-bottom: 45px;
+      border-bottom: dashed 1px $light-gray;
+
+      ul {
+        list-style: none;
+      }
+    }
+
     .row.tweet {
       margin: 15px 0;
       border-bottom: dashed 1px $light-gray;
