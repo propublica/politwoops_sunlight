@@ -112,4 +112,8 @@ class Politician < ActiveRecord::Base
       return [false, "No such user name: #{user_name}"]
     end
   end
+
+  def party_logo_url
+    "/assets/party_flags/#{self.party.name}.png"
+  end
 end

@@ -15,10 +15,9 @@ class TweetsController < ApplicationController
   before_filter :enable_filter_form
 
   def index
-    @politicians = Politician.all
     @filter_action = "/"
 
-    if params.has_key?(:see) && params[:see] == :all
+    if params[:see] == 'all'
       @tweets = Tweet.in_order
     else
       @tweets = DeletedTweet.in_order

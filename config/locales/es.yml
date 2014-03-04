@@ -1,7 +1,15 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
+es:
+
+  datetime:
+    distance_in_words:
+      x_days: "%{count} días"
+      less_than_x_minutes:
+        one: "al minuto"
+        other: "a los %{count} minutos"
+
   politwoops:
     slogan: "Tweets borrados por los politicos" 
     login: "Registro"
@@ -102,10 +110,10 @@ en:
       index_heading: "Estadisticas"
 
     tweets:
-      byline: "Borrado %{delay} %{when}, originalmente posteado por %{what}"
+      byline: "Borrado hace %{when}, %{delay} de publicarlo mediante %{what}"
       byline_text: "Borrado %{delay} %{when}"
-      reply: "respuesta"
-      retweet: "retweet"
+      reply: "responder"
+      retweet: "retwitear"
 
     user_sessions:
       login_label: "registro"

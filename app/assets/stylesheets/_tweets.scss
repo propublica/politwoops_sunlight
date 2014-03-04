@@ -1,0 +1,86 @@
+.main-content {
+  .container-fluid {
+
+    form {
+      float: left;
+      margin-bottom: 30px;
+
+      .filter {
+        .dropdown {
+          float: left;
+          margin: 0 10px;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    .row.tweet {
+      margin: 15px 0;
+      border-bottom: dashed 1px $light-gray;
+
+      h4 {
+        a.fullname, a.fullname:visited, a.fullname:hover {
+          color: $regular-gray;
+          font-size: 18px;
+          text-decoration: none;
+        }
+
+        a.username, a.username:visited, a.username:hover {
+          color: $light-gray;
+          text-decoration: none;
+        }
+
+        a.username:hover {
+          color: $regular-gray;
+        }
+      }
+
+      .avatar {
+        a {
+          img.politician-party {
+            text-align: right;
+            position: relative;
+            left: 35px;
+            bottom: 8px;
+          }
+        }
+      }
+
+      .gray-box {
+        width: 115px;
+        padding: 10px 10px;
+
+        a {
+          color: $white;
+
+          &:visited {
+            color: $white;
+          }
+
+          &:hover {
+            color: $white;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .byline {
+        margin-top: 10px;
+        font-size: 11px;
+        color: $light-gray;
+
+        a, a:visited, a:hover {
+          color: $light-gray;
+          text-decoration: none;
+        }
+
+        a:hover {
+          color: $regular-gray;
+        }
+      }
+    }
+  }
+}

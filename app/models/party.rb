@@ -13,4 +13,8 @@ class Party < ActiveRecord::Base
   def twoops
     DeletedTweet.joins(:politician).where(:approved => true, :politicians => { :party_id => self.id })
   end
+
+  def party_name
+    self.display_name || self.name
+  end
 end

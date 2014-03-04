@@ -1,30 +1,25 @@
-<div class="title">
-	<h2>
-		Recent Politwoops
-	</h2>
+<h2>
+  Últimos mensajes borrados
+</h2>
 
-  <%= render :template => "shared/filterform" %>
+<%= render :template => "shared/filterform" %>
 
-</div>
-<div class="caveat"><p>This is an incomplete list. If you think we're missing someone, please <a href="mailto:twoops@sunlightfoundation.com">email us</a> with their Name, State, Political Party, Office they hold or are seeking and, of course, Twitter handle. Thanks!</p>
-</div>
-
-<% content_for :feeds do %>
-  <% if @politician %>
-    <%= auto_discovery_link_tag :rss, politician_url(@politician.user_name, :format => :rss) %>
-  <% elsif @query %>
-    <%= auto_discovery_link_tag :rss, index_url(:format => :rss, :q => @query) %>
-  <% else %>
-    <%= auto_discovery_link_tag :rss, index_url(:format => :rss) %>
-  <% end %>
-<% end %>
+<%# <% content_for :feeds do %>
+<%#   <% if @politician %>
+<%#     <%= auto_discovery_link_tag :rss, politician_url(@politician.user_name, :format => :rss) %>
+<%#   <% elsif @query %>
+<%#     <%= auto_discovery_link_tag :rss, index_url(:format => :rss, :q => @query) %>
+<%#   <% else %>
+<%#     <%= auto_discovery_link_tag :rss, index_url(:format => :rss) %>
+<%#   <% end %>
+<%# <% end %>
 
 <% if @tweets.empty? %>
   No results for the filter options you selected.
 <% else %>
-  <%= render :partial => "tweets/tweet", :collection => @tweets, :object => :tweet %>
+<%= render :partial => "tweets/tweet", :collection => @tweets, :object => :tweet %>
 
-  <%= render :template => "shared/pager" %>
+<%= render :template => "shared/pager" %>
 
-  <%= render :template => "shared/screenshotbox" %>
+<%= render :template => "shared/screenshotbox" %>
 <% end %>

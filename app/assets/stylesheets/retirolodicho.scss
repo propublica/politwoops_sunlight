@@ -1,5 +1,6 @@
 @import "media_queries";
 @import "colors";
+@import "tweets";
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -8,8 +9,16 @@ body {
   height: 100%;
 }
 
+h2 {
+  color: $blue;
+}
+
 .clear {
   clear: both;
+}
+
+.gray-box {
+  background-color: $regular-gray;
 }
 
 .main-layout {

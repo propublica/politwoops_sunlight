@@ -33,30 +33,12 @@
   <%= javascript_include_tag "jquery.placehold-0.3.min" %>
   <%= javascript_include_tag "jquery.colorbox-min" %>
   <%= javascript_include_tag "bootstrap.min" %>
+  <%= javascript_include_tag "application" %>
 
   <%= csrf_meta_tag %>
   <link rel="icon" href="/assets/favicon.png" type="image/png">
 
   <%= content_for :feeds %>
-
-  <script>
-  $(document).ready(function() {
-    $("a.screenshot").each(function(idx, a){
-      $(a).colorbox({
-        rel: 'screenshot' + idx,
-        opacity: 0.7,
-        maxWidth: '90%',
-        close: 'Close'
-      });
-    });
-
-    $(document).bind('cbox_complete', function(event){
-      $("img.cboxPhoto").click(function(event){
-        window.open($(this).attr('src'));
-        });
-      });
-    });
-  </script>
 </head>
 
 <body<%if content_for?(:body_class) %> <%= yield(:body_class) %> <% end %>>
@@ -80,7 +62,7 @@
           <div class="collapse navbar-collapse" id="retirolodicho-navbar-collapse">
             <div class="share-buttons" data-socialite="auto" data-services="twitter-tweet, facebook-like" data-options="linkback="<%= escape_javascript request.url %>" data-facebook-like-options="width=100&amp;colorscheme=light&amp;show-faces=false&amp;layout=button_count" data-twitter-tweet-options="text=Track the deleted tweets of U.S. politicians using Politwoops (from @SunFoundation):&amp;url=<%= escape_javascript request.url %>"></div>
             <div class="menu clear">
-              <a href="http://sunlightfoundation.com/blog/tag/politwoops/">Estadísticas</a>
+              <a href="/estadísticas">Estadísticas</a>
               <a href="/users">A quiénes seguimos</a>
               <a href="http://www.datauy.org">Datos Abiertos</a>
               <a href="mailto:chino@datauy.org">Contacto</a>
@@ -119,14 +101,14 @@
 
         <div class="logos sponsors">
           <p>Posible graciasa a:</p>
-          <a class="neo logo" href="http://www.sunlightfoundation.com" alt="neo"><img src="/assets/neo_logo.png"></a>
+          <a class="neo logo" href="http://www.neo.com" alt="neo"><img src="/assets/neo_logo.png"></a>
           <br/>
           <a class="sf logo" href="http://www.sunlightfoundation.com" alt="Sunlight Foundation"><img src="/assets/sfapp_logo.png"></a>
         </div>
       </div>
 
       <div class="col-md-9 col-sm-8 main-content">
-        <div class="container">
+        <div class="container-fluid">
             <%= yield %>
         </div>
       </div>
