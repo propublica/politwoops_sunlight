@@ -53,7 +53,7 @@ class ImportPoliticians
   def get_twitter_users
     # lookup twitter user names to ids
     inexistent_twitter_users.each_slice(75) do |twitter_users|
-      twitter_client.users(twitter_users).each { |user| @twitter_user_ids[user.screen_name.downcase] = user.id }
+      FactoryTwitterClient.new_client.users(twitter_users).each { |user| @twitter_user_ids[user.screen_name.downcase] = user.id }
       puts "."
       sleep 1
     end
