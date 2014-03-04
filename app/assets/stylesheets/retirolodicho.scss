@@ -149,6 +149,49 @@ h2 {
         }
       }
     }
+
+    .pagination-pager {
+      .results-per-page {
+        span {
+          margin-right: 10px;
+        }
+
+        a, a:visited {
+          color: $light-gray;
+          text-decoration: none;
+
+          &:hover {
+            color: $regular-gray;
+          }
+        }
+      }
+
+      #pager {
+        .pagination {
+          margin: 0 0;
+          .previous_page {
+            margin-right: 8px;
+          }
+
+          .next_page {
+            margin-left: 8px;
+          }
+
+          a, a:visited, a:hover {
+            color: $regular-gray;
+            text-decoration: none;
+          }
+
+          a, span, em {
+            margin: 0 2px;
+          }
+
+          span, em {
+            color: $light-gray;
+          }
+        }
+      }
+    }
   }
 }
 

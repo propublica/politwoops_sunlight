@@ -1,4 +1,16 @@
-<div id="pager">
-  <%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :prev_label => t(:previous, :scope => [:politwoops]) %>
-</div>
+<div class="row pagination-pager">
+  <div class="col-md-6">
+    <div id="pager">
+      <%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :previous_label => t(:previous, :scope => [:politwoops]) %>
+    </div>
+  </div>
 
+  <div class="col-md-6 text-right results-per-page">
+    <p>
+    <span>Resultos por página:</span>
+      <% @per_page_options.each do |opt| %>
+        <a <% if @per_page == opt %>class="per_page_selected" <% end %>href="<%= url_with_params :URI, { "per_page" => opt, "page" => (@per_page * (@page - 1) / opt).floor + 1 } %>"><%= opt %></a>
+      <% end %>
+    </p>
+  </div>
+</div>
