@@ -98,7 +98,7 @@ namespace :politicians do
     links = []
     usernames = {}
 
-    CSV.open(ENV['CSV'], 'r', separator) do |row|
+    CSV.foreach(ENV['CSV'], :col_sep => separator) do |row|
     
       #skip header row if it exists
       if row[0] == 'First Name' then
@@ -159,12 +159,9 @@ namespace :politicians do
     twitter_users = Twitter::users(usernames.keys)
     puts "twitter user length %s" % twitter_users.length
     twitter_users.each do |tu| 
-#    usernames.keys.each do |name|       
-#        pol = usernames[name]
         pol = usernames[tu.screen_name.downcase]
         pol['twitter_id'] = tu.id
       
-#        newpol = Politician.where(:user_name => name).first 
         newpol = Politician.where(:twitter_id => pol['twitter_id'], :user_name => pol['user_name']).first_or_create()
         newpol.first_name = pol['first_name']
         newpol.middle_name = pol['middle_name']
