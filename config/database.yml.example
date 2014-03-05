@@ -1,0 +1,17 @@
+ development:
+   adapter: mysql
+   database: rails_dev
+   username: dev
+   password: devpwd
+
+ test:
+   adapter: mysql
+   database: rails_test
+   username: test
+   password: testpwd
+
+ production:
+   adapter: mysql
+   database: rails_prod
+   username: prod
+   password: prodpwd
