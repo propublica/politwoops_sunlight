@@ -8,6 +8,18 @@ module TweetsHelper
     end
   end
 
+  def office_title_for (pol)
+    pol.office.nil? ? '' : pol.office.title
+  end
+
+  def office_abbr_for (pol)
+    pol.office.nil? ? '' : pol.office.abbreviation
+  end
+
+  def party_name_for (pol)
+    pol.party.nil? ? '' : pol.party.name.upcase
+  end
+
   def format_user_name(tweet_content)
     tweet_content.gsub(/(@(\w+))/, %Q{<a href="http://twitter.com/\\2" target="_blank">\\1</a>})
   end

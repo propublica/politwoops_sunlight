@@ -1,9 +1,9 @@
 <% content_for :title do %>
-  Deleted tweets for <%= @politician.office.title %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)<% if @page > 1 %> (Page <%= @page %>)<% end %>
+  Deleted tweets for <%= office_title_for(@politician) %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= party_name_for(@politician) %>)<% if @page > 1 %> (Page <%= @page %>)<% end %>
 <% end %>
 
 <div id="info">
-	<h2><%= @politician.office.abbreviation %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)</h2>
+	<h2><%= office_abbr_for(@politician) %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= party_name_for(@politician) %>)</h2>
 	<ul class="accountList">
 		<li id="all-label" class="active">
 			<a class="accountHandle" href="#"><span>All Tweets</span></a>
