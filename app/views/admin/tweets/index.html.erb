@@ -10,9 +10,18 @@
 
 <div class="admin_header">
   <div class="details">
-    Last tweet found <%= latest_tweet.modified.strftime "%B %d, %Y at %I:%M %p" %>
+    <% if latest_tweet %>
+      Last tweet found <%= latest_tweet.modified.strftime "%B %d, %Y at %I:%M %p" %>
+    <% else %>
+      No tweets yet!
+    <% end %>
     <br/>
-    Last deleted tweet found <%= latest_deleted_tweet.modified.strftime "%B %d, %Y at %I:%M %p" %>
+
+    <% if latest_deleted_tweet %>
+      Last deleted tweet found <%= latest_deleted_tweet.modified.strftime "%B %d, %Y at %I:%M %p" %>
+    <% else %>
+      No deleted tweets yet!
+    <% end %>
     <br/>
     <a href="http://wiki.sunlightfoundation.com/index.php/Politwoops_Moderation_Tutorial">Moderation guidelines</a>
   </div>
