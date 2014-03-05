@@ -71,32 +71,32 @@
   
   <% if defined?(admin) and admin %>
     <div class="admin review" data-id="<%= tweet.id %>">
-      <%= form_tag admin_review_tweet_path(tweet) do %>
+      <%= form_tag admin_review_tweet_path(tweet), :class => "float-left"  do %>
         <%= hidden_field_tag "return_to", "#{request.url}##{tweet.id}" %>
 
         <% if tweet.reviewed? %>
           <div class="review_controls">
-            <% if tweet.approved? %>
-              <%= submit_tag "Unapprove" %>
-            <% else %>
-              <%= submit_tag "Approve" %>
-            <% end %>
+          <% if tweet.approved? %>
+            <%= submit_tag "Unapprove" %>
+        <% else %>
+            <%= submit_tag "Approve" %>
+        <% end %>
+         
+          <% if tweet.reviewed_at %>
+            <span class="reviewed_at">
+            Reviewed on <%= tweet.reviewed_at.strftime "%B %d, %Y at %I:%M %p" %>:
+          </span>
+        <% end %>
 
-            <% if tweet.reviewed_at %>
-              <span class="reviewed_at">
-                Reviewed on <%= tweet.reviewed_at.strftime "%B %d, %Y at %I:%M %p" %>:
-              </span>
-            <% end %>
-
-            <div class="review_message">
-              <% if tweet.review_message.present? %>
-                <%= light_format tweet.review_message %>
-              <% else %>
-                (No message entered.)
-              <% end %>
-            </div>
-            <a class="edit" href="#">Edit message</a>
+          <div class="review_message">
+            <% if tweet.review_message.present? %>
+              <%= light_format tweet.review_message %>
+          <% else %>
+              (No message entered.)
+          <% end %>
           </div>
+          <a class="edit" href="#">Edit message</a>
+        </div>
 
           <div class="edit_controls" style="display: none">
             <textarea name="review_message" class="review_message edit"><%= tweet.review_message %></textarea>
@@ -114,7 +114,13 @@
           <textarea name="review_message" class="review_message"></textarea>
         <% end %>
       <% end %>
+
+      <%= form_tag admin_update_is_hit_path(tweet), :id => "is_hit_form", :class => "float-left" do%>
+        <%= check_box_tag "check_box_is_hit", tweet.is_hit, tweet.is_hit, :class => "hit-checkbox"%>Es un hit? 
+      <%end%>
     </div>
+
+ 
   <% end %>
 
 </div>

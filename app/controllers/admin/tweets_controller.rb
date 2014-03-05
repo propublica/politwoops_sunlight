@@ -1,5 +1,5 @@
 class Admin::TweetsController < Admin::AdminController
-  before_filter :load_tweet, :only => [:review, :message]
+  before_filter :load_tweet, :only => [:review, :message, :is_hit, :id_tweet]
 
   # list either unreviewed
   def index
@@ -36,7 +36,6 @@ class Admin::TweetsController < Admin::AdminController
 
   # approve or unapprove a tweet, mark it as reviewed either way
   def review
-    
     review_message = (params[:review_message] || "").strip
 
     if ["Approve", "Unapprove"].include?(params[:commit])
@@ -63,6 +62,14 @@ class Admin::TweetsController < Admin::AdminController
     redirect_to params[:return_to]
   end
 
+  def is_hit
+    @tweet.is_hit = params[:is_hit]
+    if @tweet.save
+      render json: {result: 'tweet save'}
+    else
+      render json: {result: @tweet.errors}
+    end
+  end
 
   # filters
 

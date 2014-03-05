@@ -30,7 +30,7 @@
   </ul>
 </div>
 
-<%= render :partial => "tweets/tweet", :collection => @tweets, :as => :tweet, :locals => {:admin => true} %>
+<%= render :partial => "tweets/tweet", :collection => @tweets, :object => :tweet, :locals => {:admin => true} %>
 
 <div id="pager">
   <%= will_paginate @tweets, :next_label => t(:next, :scope => [:politwoops]), :prev_label => t(:previous, :scope => [:politwoops]) %>

@@ -121,3 +121,25 @@ div#party-tweeting table td {
 div#party-tweeting table td:first-child {
     text-align: left;
 }
+
+.float-left{
+  float:left;
+}
+
+.hit-label{
+  float: left;
+  margin-right: 8px;
+  margin-top: 15px;
+}
+
+.hit-checkbox{
+  float: right;
+  margin-top: 6px;
+  margin-left: 10px;
+}
+
+#is_hit_form{
+  padding: 14px 0;
+}
+
+

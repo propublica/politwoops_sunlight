@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140226132142) do
+ActiveRecord::Schema.define(:version => 20140305143159) do
 
   create_table "account_links", :force => true do |t|
     t.integer  "politician_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20140226132142) do
     t.integer  "retweeted_id",        :limit => 8
     t.string   "retweeted_content"
     t.string   "retweeted_user_name"
+    t.boolean  "is_hit",                            :default => false
   end
 
   add_index "deleted_tweets", ["approved"], :name => "index_deleted_tweets_on_approved"
