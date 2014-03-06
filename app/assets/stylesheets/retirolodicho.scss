@@ -69,6 +69,10 @@ h2 {
           .share-buttons {
             float: right;
             margin-bottom: 20px;
+
+            .stButton .st-twitter-counter, .stButton .st-facebook-counter, .stButton .stButton_gradient {
+              height: 22px;
+            }
           }
 
           .menu {

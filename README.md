@@ -19,3 +19,4 @@
 # Loading in data
 * The project includes "politicos_uy.csv" which contains all the initial info to get twitter users
 * Run ```rake politicians:import CSV="politicos_uy.csv"```
+* Run ```rake politicians:reset_avatars```

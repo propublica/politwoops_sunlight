@@ -38,6 +38,9 @@
   <%= csrf_meta_tag %>
   <link rel="icon" href="/assets/favicon.png" type="image/png">
 
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher: "ace9d691-2ab7-4358-b96a-c72a643624f3", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
   <%= content_for :feeds %>
 </head>
 
@@ -60,7 +63,11 @@
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="retirolodicho-navbar-collapse">
-            <div class="share-buttons" data-socialite="auto" data-services="twitter-tweet, facebook-like" data-options="linkback="<%= escape_javascript request.url %>" data-facebook-like-options="width=100&amp;colorscheme=light&amp;show-faces=false&amp;layout=button_count" data-twitter-tweet-options="text=Track the deleted tweets of U.S. politicians using Politwoops (from @SunFoundation):&amp;url=<%= escape_javascript request.url %>"></div>
+            <div class="share-buttons">
+              <span class='st_facebook_hcount' displayText='Facebook'></span>
+              <span class='st_twitter_hcount' displayText='Tweet'></span>
+              <span class='st_googleplus_hcount' displayText='Google +'></span>
+            </div>
             <div class="menu clear">
               <a href="/estadísticas">Estadísticas</a>
               <a href="/users">A quiénes seguimos</a>
@@ -149,7 +156,6 @@
   </div>
   </div>
 
-  <script type="text/javascript" src="https://s3.amazonaws.com/assets.sunlightfoundation.com/social/scripts/simple-socialite-pack.min.js"></script>
   <%# <%= render :partial => "layouts/analytics" %>
 </body>
 </html>
