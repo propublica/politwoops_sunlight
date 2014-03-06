@@ -1,4 +1,13 @@
 <h2>
+  Los más populares
+</h2>
+
+<% if @tweets_hits.empty? %>
+  No results for the filter options you selected.
+<% else %>
+<%= render :partial => "tweets/tweet", :collection => @tweets_hits, :object => :tweet %>
+<% end %>
+<h2>
   Últimos mensajes borrados
 </h2>
 
@@ -18,8 +27,8 @@
   No results for the filter options you selected.
 <% else %>
 <%= render :partial => "tweets/tweet", :collection => @tweets, :object => :tweet %>
-
+<% end %>
 <%= render :template => "shared/pager" %>
 
 <%= render :template => "shared/screenshotbox" %>
-<% end %>
+
