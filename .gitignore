@@ -16,3 +16,4 @@ public/images/avatars/*
 *.gem
 tags
 .sass-cache
+public/assets
