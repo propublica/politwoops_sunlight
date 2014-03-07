@@ -1,0 +1,104 @@
+.admin {
+
+  a {
+    color: $light-gray;
+
+    &:visited {
+      color: $light-gray;
+    }
+
+    &:hover {
+      color: $regular-gray;
+      text-decoration: none;
+    }
+  }
+
+  .row.content {
+    .left-sidebar {
+      ul {
+        list-style: none;
+
+        li {
+          margin: 20px 0;
+          padding: 5px 0;
+          border-bottom: dashed 1px $light-gray;
+        }
+      }
+    }
+
+    .container-fluid {
+
+      .admin_header {
+        .details {
+          color: $light-gray;
+          font-size: 11px;
+          text-align: right;
+        }
+
+        .row {
+          margin: 30px 0;
+          font-size: 20px;
+          padding-bottom: 10px;
+          border-bottom: dotted 1px $light-gray;
+        }
+      }
+
+      .row.section {
+        .col-md-10 {
+          .row {
+            border-top: dotted 1px $light-gray;
+            padding-top: 15px;
+
+            .is-hit {
+              .hit-checkbox {
+                margin-right: 10px;
+              }
+            }
+            
+            .approve-form {
+              form {
+                label.review_message {
+                  color: $blue;
+                  font-size: 11px;
+                }
+
+                .review_message {
+                  margin: 0 5px 5px;
+                }
+
+                .btn-default {
+                  margin: 0 5px;
+                }
+              }
+            } 
+          }
+        }
+      }
+
+      .politician-info {
+        #display-name {
+          font-size: 18px;
+        }
+
+        form {
+          width: 100%;
+
+          .form-group {
+            .username {
+              padding: 20px 0;
+            }
+
+            .input-controls {
+              display: none;
+            }
+
+            .edit-input {
+              font-size: 14px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}

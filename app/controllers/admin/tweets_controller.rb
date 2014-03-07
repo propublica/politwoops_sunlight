@@ -38,11 +38,11 @@ class Admin::TweetsController < Admin::AdminController
   def review
     review_message = (params[:review_message] || "").strip
 
-    if ["Approve", "Unapprove"].include?(params[:commit])
-      approved = (params[:commit] == "Approve")
+    if ["Aprobar", "Desaprobar"].include?(params[:commit])
+      approved = (params[:commit] == "Aprobar")
 
       if !@tweet.reviewed? and approved and review_message.blank?
-        flash[@tweet.id] = "You need to add a note about why you're approving this tweet."
+        flash[@tweet.id] = "No olvides incluir una nota con el porque apruebas el tweet."
         redirect_to params[:return_to]
         return false
       end

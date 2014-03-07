@@ -17,17 +17,17 @@
     <a href="http://wiki.sunlightfoundation.com/index.php/Politwoops_Moderation_Tutorial">Moderation guidelines</a>
   </div>
 
-  <ul class="nav">
-    <li>
+  <div class="row">
+    <div class="col-md-4">
       <%= link_to_unless_current "For Review", admin_review_path %>
-    </li>
-    <li>
+    </div>
+    <div class="col-md-4">
       <%= link_to_unless_current "Approved", admin_approved_path %>
-    </li>
-    <li>
+    </div>
+    <div class="col-md-4">
       <%= link_to_unless_current "Unapproved", admin_unapproved_path %>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>
 
 <%= render :partial => "tweets/tweet", :collection => @tweets, :object => :tweet, :locals => {:admin => true} %>

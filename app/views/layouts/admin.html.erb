@@ -3,11 +3,13 @@
 <head>
   <title>Politwoops - <%= t :slogan, :scope => [:politwoops] %></title>
  
-  <%= stylesheet_link_tag "style" %>
-  <%= stylesheet_link_tag "admin" %>
+  <%= stylesheet_link_tag "bootstrap.min" %>
+  <%= stylesheet_link_tag "application" %>
 
   <%= javascript_include_tag "jquery-1.7.1.min" %>
   <%= javascript_include_tag "jquery.placehold-0.3.min" %>
+  <%= javascript_include_tag "bootstrap.min" %>
+  <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "admin" %>
 
 
@@ -17,80 +19,99 @@
   <%= content_for :feeds %>
 </head>
 <body>
-  <div class="sf-header">
-      <div class="container">
-          
-          <a class="sf-logo" href="http://www.sunlightfoundation.com">Sunlight Foundation</a>
-          
-      </div>
-  </div>
-  <div class="container">
-		<header>
-			<nav>
-				<ul>
-					<li>
-                    <a href="<%= url_for :all_politicians %>">Politicians</a>
-					</li>
-					<li>
-						<a href="http://sunlightfoundation.com/blog/2012/05/30/announcing-politwoops/">More information</a>
-					</li>
-					<li>
-						<a href="mailto:twoops@sunlightfoundation.com">Contact us</a>
-					</li>
-					<li class="clear" id="socialMedia">
-						<script type="text/javascript" src="http://cdn.gigya.com/js/gigyaGAIntegration.js" ></script>
-						<script src="http://cdn.gigya.com/js/socialize.js?apiKey=3_BLRB_2LlQJZDUW1wb9_ZOps-sOnnzA_e6xxNSwJBBGoB-SavmPAKHkaVVZPE5Kx8"></script>
-					</li>
-				</ul>
-			</nav>
-			<h1><a class="textReplace clear" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
-			<form action="/" method="get" id="search">
-				<input type="search" placeholder="Search" name="q" value="<%= h params[:q] %>"/>
-				<button class="textReplace" id="searchBtn">search</button>
-			</form>
-			<div class="clear"></div>
-
-		</header>
-		<div id="ltColumn">
-			<img class="twoopsters" src="/assets/twoopsters.png">
-			<div class="module">
- 
-                <h2>Politwoops Admin</h2>
-                <ul>
-                <li> <a href="/">Front page</a></li>
-                <li><a href="/admin/review/">Review Twoops</a></li>
-                <li><a href="/admin/users/">User Admin</a></li>
-                <li><a href="/admin/offices/">Office Admin</a></li>
-                <li><a href="/admin/status/">System Status</a></li>
-                <li><a href="<%= url_for(:controller => :reports, :action => :annual) %>">Annual Report</a></li>
-                </ul>
+  <div class="main-layout admin">
+    <div class="main container-fluid">
+      <header class="header">
+        <nav class="navbar" role="navigation">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#retirolodicho-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand logo" href="/"></a>
             </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="retirolodicho-navbar-collapse">
+              <div class="share-buttons">
+                <span class='st_facebook_hcount' displayText='Facebook'></span>
+                <span class='st_twitter_hcount' displayText='Tweet'></span>
+                <span class='st_googleplus_hcount' displayText='Google +'></span>
+              </div>
+              <div class="menu clear">
+                <a href="/estadísticas">Estadísticas</a>
+                <a href="/users">A quiénes seguimos</a>
+                <a href="http://www.datauy.org">Datos Abiertos</a>
+                <a href="mailto:chino@datauy.org">Contacto</a>
+                <form class="navbar-form navbar-left" role="search" action="/" method="get">
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                    <input class="form-control" type="text" placeholder="Buscar..." name="q" value="<%= h params[:q] %>"/>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="splitter"></div>
+      </header>
+
+      <div class="row content">
+        <div class="col-md-3 col-sm-4 left-sidebar">
+          <img class="twoopsters" src="/assets/twoopsters.png">
+
+          <h2>Politwoops Admin</h2>
+          <ul>
+            <li><a href="/admin/review/">Review Tweets</a></li>
+            <li><a href="/admin/users/">Users</a></li>
+          </ul>
         </div>
 
-  <div id="rtColumn">
-    <%= yield %>
+        <div class="col-md-9 col-sm-8 main-content">
+          <div class="container-fluid">
+              <%= yield %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+              <p>
+                Somos una organización de la sociedad civil que trabaja
+                creando herramientas sociales por la transparencia,
+                datos abiertos y accesso a la información.
+              </p>
+              <p>
+                Si querés conocer más proyectos como este, podés visitar
+                nuestro sitio web. ¡Hay un montón de cosas interesantes!
+              </p>
+          </div>
+          <div class="col-md-4 center">
+            <img src="/assets/datauy_logo.png">
+            <img src="/assets/datos_abiertos_logo.png">
+          </div>
+          <div class="col-md-4 right">
+            <p>
+              Si querés enterarte de las novedades de éste y otros
+              proyectos, seguinos en redes sociales:
+            </p>
+            <p>
+              <span class="logo facebook"><img src="/assets/facebook_logo.png"></span>
+              <span class="logo twitter"><img src="/assets/twitter_logo.png"></span>
+              <span class="logo youtube"><img src="/assets/youtube_logo.png"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="clear"></div>
-</div>
-	<footer>
-            <div class="container">
-                <div class="signup">
-                    <h4>Like this Project and Want to Discover Others Like It?</h4>
-                    <span class="tip">Join the Sunlight Foundation's open government community to learn more</span>
-                    <form action="/subscribe/" method="post" id="sfapp-subscribe-form" class="form-inline">
-                        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="y42oYsUK2EGBAkFj265Bv8Q4BqDCNS8S"></div>
-                        <input type="text" name="email" placeholder="your email address">
-                        <input type="text" name="zipcode" placeholder="your zip code">
-                        <button type="submit" class="btn btn-sunlight">Sign Up</button>
-                    </form>
-                </div>
-                <div class="span6 terms">
-                    <p>Our <a href="http://sunlightfoundation.com/legal/privacy/">privacy policy</a> details how personally identifiable information that is collected on our web sites is handled. Read our <a href="http://sunlightfoundation.com/legal/terms/">terms of service</a>.</p>
-                    <p>This work by <a href="http://sunlightfoundation.com">Sunlight Foundation</a>, unless <a href="http://sunlightfoundation.com/colophon/">otherwise noted</a>, is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 United States License</a>.</p>
-                </div>
-            </div>
-        </footer>
-
 </body>
 </html>

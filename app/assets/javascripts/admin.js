@@ -12,17 +12,22 @@ $(document).ready(function() {
       form_data = form_data+"&is_hit=false" 
     }
 
-  $.ajax({
-    type:"PUT",
-    url: form_url,
-    data: form_data,
-  })
-  .done(function(data) {
-    console.log(data);
-  })
-  .fail(function(jqXHR, textStatus) {
-    console.log(textStatus);
-  });
+    $.ajax({
+      type:"PUT",
+      url: form_url,
+      data: form_data,
+    })
+    .done(function(data) {
+      console.log(data);
+    })
+    .fail(function(jqXHR, textStatus) {
+      console.log(textStatus);
+    });
   });
 
+  $('.edit-input').on('click', function() {
+    var formGroup = $(this).parentsUntil('.form-group').parent();
+    formGroup.find('.display-label').toggle()
+    formGroup.find('.input-controls').toggle()
+  });
 });

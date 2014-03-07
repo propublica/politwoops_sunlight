@@ -43,7 +43,7 @@ class TweetsController < ApplicationController
     @page = [params[:page].to_i, 1].max
 
     @tweets = @tweets.includes(:tweet_images, :politician => [:party]).paginate(:page => params[:page], :per_page => @per_page)
-    @tweets_hits = DeletedTweet.where(is_hit: true)
+    @tweets_hits = DeletedTweet.where(is_hit: true).where(approved: true)
     
     respond_to do |format|
       format.html # index.html.erb

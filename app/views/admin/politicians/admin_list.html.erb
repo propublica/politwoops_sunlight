@@ -1,11 +1,32 @@
-<div id="admin-list">
-<h3>List of Twoopsters &nbsp;<span style="font-size:.8em;"><em>(<a href="/admin/users/new">add new</a>)</em></span></h3>
-<ul style="margin: 20px;">
-<% @politicians.each do |pol| %>
-  <li>
-    <a href="/admin/user/<%=pol.id%>"><%=pol.user_name %></a>
-  </li>
-<% end %>
-</ul>
-</div>
+<% @politicians.each do |pol|%>
+<div class="row section">
+  <div class="col-md-2">
+    <div class="avatar">	
+      <a href="/admin/user/<%=pol.id%>">
+        <img src="<%= pol.avatar.url %>" class="politician-avatar" alt="<%= pol.user_name %>" width"73" height="73" />
+      </a>
+    </div>
+  </div>
 
+  <div class="col-md-5">
+    <div class="content">
+      <a href="/admin/user/<%= pol.id %>/">
+        <%=pol.user_name %>
+        <%= pol.first_name %>
+        <%= pol.middle_name %>
+        <%= pol.last_name %>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <img src="<%= pol.party_logo_url %>" class="politician-party" alt="<%= pol.party.name %>" />
+  </div>
+
+  <div class="col-md-2">
+    <% if pol.state %> <%= pol.state.upcase %> <% end %>
+  </div>
+</div>
+<% end %>
+
+<%= render :template => "shared/pager" %>
