@@ -50,15 +50,16 @@ Politwoops::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  cfg = YAML.load_file "#{Rails.root}/config/config.yml"
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_permissions => :public_read,
     :path => "/:attachment/:filename",
     :url => ":s3_path_url",
-    :bucket => ENV['S3_BUCKET_NAME'],
+    :bucket => cfg[:aws][:bucket]
     :s3_credentials => {
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      :access_key_id => cfg[:aws][:access_key]
+      :secret_access_key => cfg[:aws][:secret_key]
     },
     :interpolations => {
       :base_path => "/images"
