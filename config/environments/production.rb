@@ -56,9 +56,9 @@ Politwoops::Application.configure do
     :s3_permissions => :public_read,
     :path => "/:attachment/:filename",
     :url => ":s3_path_url",
-    :bucket => cfg[:aws][:bucket]
+    :bucket => cfg[:aws][:bucket],
     :s3_credentials => {
-      :access_key_id => cfg[:aws][:access_key]
+      :access_key_id => cfg[:aws][:access_key],
       :secret_access_key => cfg[:aws][:secret_key]
     },
     :interpolations => {
