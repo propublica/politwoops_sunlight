@@ -3,7 +3,7 @@
 </h2>
 
 <% if @tweets_hits.empty? %>
-  No results for the filter options you selected.
+ No hay resultados para tu búsqueda.
 <% else %>
 <%= render :partial => "tweets/tweet", :collection => @tweets_hits, :object => :tweet %>
 <% end %>
@@ -24,7 +24,7 @@
 <%# <% end %>
 
 <% if @tweets.empty? %>
-  No results for the filter options you selected.
+  No hay resultados para tu búsqueda.
 <% else %>
 <%= render :partial => "tweets/tweet", :collection => @tweets, :object => :tweet %>
 <% end %>
