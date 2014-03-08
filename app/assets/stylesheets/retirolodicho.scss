@@ -1,6 +1,7 @@
 @import "media_queries";
 @import "colors";
 @import "tweets";
+@import "admin";
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -69,6 +70,10 @@ h2 {
           .share-buttons {
             float: right;
             margin-bottom: 20px;
+
+            .stButton .st-twitter-counter, .stButton .st-facebook-counter, .stButton .stButton_gradient {
+              height: 22px;
+            }
           }
 
           .menu {

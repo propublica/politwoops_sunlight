@@ -16,7 +16,7 @@
         <% @parties.each do |par| %>
           <li>
             <a alt="<%=par.name%>">
-              <%=par.party_name%>
+              <%=humanize_filter par.party_name%>
               <% if @filters['party'] == par.name %><span class="glyphicon glyphicon-ok"></span><% end %>
             </a>
           </li>
@@ -37,7 +37,7 @@
           <% @states.each do |st| %>
             <li>
             <a alt="<%st%>">
-                <%=st%>
+                <%=humanize_filter st%>
                 <% if @filters['state'] == st %><span class="glyphicon glyphicon-ok"></span><% end %>
               </a>
             </li>

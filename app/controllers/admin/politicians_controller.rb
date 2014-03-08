@@ -1,8 +1,17 @@
 class Admin::PoliticiansController < Admin::AdminController 
+  include ApplicationHelper
+
   def admin_list
+    @per_page_options = [10, 20, 50]
+    @per_page = closest_value((params.fetch :per_page, 0).to_i, @per_page_options)
+    @page = [params[:page].to_i, 1].max
+
     @politicians = Politician.all
     respond_to do |format|
-      format.html { render } 
+      format.html {
+        @politicians = Politician.paginate(:page => params[:page], :per_page => @per_page)
+        render
+      } 
     end
   end
 

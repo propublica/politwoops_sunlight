@@ -28,3 +28,8 @@
 # without authentication.
 :monitoring_hosts:
   - localhost
+
+:aws:
+  :bucket:
+  :access_key:
+  :secret_key:

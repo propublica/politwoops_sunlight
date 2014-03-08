@@ -15,7 +15,7 @@ $(document).ready(function() {
   });
 
   $('form > .filter .dropdown ul li a').on('click', function() {
-    valueSelected = $(this).text().trim();
+    valueSelected = $(this).attr('alt').trim();
     inputToUse = $(this).parent('li').parent('ul').attr('aria-labelledby')
     $('input[name=' + inputToUse + ']').attr('value', valueSelected)
     form = $(this).parentsUntil('form').parent();
