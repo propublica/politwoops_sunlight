@@ -40,6 +40,14 @@ class Admin::PoliticiansController < Admin::AdminController
   end 
 
   def save_user
+    if params[:user_name].to_s == ''
+      flash[:error] = "You must specify a twitter username."
+      return redirect_to :back
+    elsif params[:twitter_id].to_s == ''
+      flash[:error] = "Could not find the numeric twitter ID for twitter user #{params[:user_name]}"
+      return redirect_to :back
+    end
+
     if params[:id] == '0' then
       existing = Politician.where(:user_name => params[:user_name])
       if existing.count == 0
@@ -56,17 +64,17 @@ class Admin::PoliticiansController < Admin::AdminController
     end
 
     if not pol.nil?
-      pol.party = Party.find(params[:party_id])
+      pol.party = Party.where(:id => params[:party_id]).first
       pol.status = params[:status]
       if params[:account_type_id] == '0' then
         pol.account_type = nil
       else
-        pol.account_type = AccountType.find(params[:account_type_id])
+        pol.account_type = AccountType.where(:id => params[:account_type_id]).first
       end
       if params[:office_id] == '0' then
         pol.office = nil
       else
-        pol.office = Office.find(params[:office_id])
+        pol.office = Office.where(:id => params[:office_id])
       end
 
       pol.update_attributes(params)
