@@ -58,7 +58,10 @@ class Admin::SystemController < Admin::AdminController
 
     respond_to do |format|
       format.html { render :template => "admin/system/status" }
-      format.json { render :json => { :workers => @worker_statuses, :last_tweet => @last_tweet.format, :queue_stats => @queue_stats } }
+      format.json {
+        last_tweet_fmt = @last_tweet ? @last_tweet.format : nil
+        render :json => { :workers => @worker_statuses, :last_tweet => last_tweet_fmt, :queue_stats => @queue_stats }
+      }
     end
   end
 

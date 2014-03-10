@@ -7,7 +7,11 @@
 <% link_to("Refresh", :action => 'status', :controller => 'admin/system') %>
 
 <div class="clear">
+  <% if @last_tweet %>
     Last tweet seen <%= time_ago_in_words( @last_tweet.created ) %> ago.
+  <% else %>
+    No tweets seen yet.
+  <% end %>
 </div>
 
 <ul id="worker-list" class="clear">
