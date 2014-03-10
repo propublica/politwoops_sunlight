@@ -15,7 +15,6 @@ class Admin::TweetsController < Admin::AdminController
     per_page = params[:per_page] ? params[:per_page].to_i : nil
     per_page ||= Tweet.per_page
     per_page = 200 if per_page > 200
-    auto_reject @tweets, per_page if !(params[:approved] || params[:reviewed])
     # filter to relevant subset of deleted tweets
     @tweets = @tweets.where :reviewed => params[:reviewed], :approved => params[:approved]
 
@@ -139,21 +138,6 @@ class Admin::TweetsController < Admin::AdminController
 
  
   
-  def auto_reject deleted_tweets, per_page
-    deleted_tweets.where("reviewed_at IS  NULL").where(:reviewed=>false).limit(per_page).each do |deleted_tweet|
-      tweets = Tweet.where(:politician_id => deleted_tweet.politician_id , :deleted => 0,
-      :created => deleted_tweet.created..DateTime.now).order("created ASC").limit(1)
-      tweets.each do |tweet|
-        deleted_tweet.reviewed_at =  Time.now
-        if is_similar(tweet.content.upcase,deleted_tweet.content.upcase) 
-           deleted_tweet.reviewed = true
-           deleted_tweet.approved = false
-           deleted_tweet.reviewed_by = nil
-        end
-        deleted_tweet.save
-      end
-
-    end
-  end
+ 
 
 end
