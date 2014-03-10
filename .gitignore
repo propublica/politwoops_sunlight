@@ -17,3 +17,4 @@ public/images/avatars/*
 tags
 .sass-cache
 public/assets
+spec/assets

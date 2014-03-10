@@ -1,5 +1,6 @@
 Politwoops::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  config.i18n.default_locale = :en
 
   # The test environment is used exclusively to run your application's
   # test suite.  You never need to work with it otherwise.  Remember that
@@ -32,4 +33,12 @@ Politwoops::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  config.paperclip_defaults = {
+    :storage => :filesystem,
+    :path => "/:attachment/:filename",
+    :interpolations => {
+      :base_path => "#{Rails.root}/spec/assets/images"
+    }
+  }
 end
