@@ -42,7 +42,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'vcr'
-  gem 'webmock'
+  gem 'webmock', '1.15.2'
 end
 
 group :production do

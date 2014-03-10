@@ -198,7 +198,7 @@ GEM
       raindrops (~> 0.7)
     uuidtools (2.1.4)
     vcr (2.8.0)
-    webmock (1.17.4)
+    webmock (1.15.2)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
     will_paginate (3.0.5)
@@ -232,5 +232,5 @@ DEPENDENCIES
   uglifier
   unicorn
   vcr
-  webmock
+  webmock (= 1.15.2)
   will_paginate (~> 3.0.pre2)

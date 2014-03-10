@@ -15,7 +15,6 @@ class Politician < ActiveRecord::Base
                                :default_url => '/assets/avatar_missing_male.png' }
 
   belongs_to :party
-
   belongs_to :office
     
   belongs_to :account_type
@@ -32,7 +31,9 @@ class Politician < ActiveRecord::Base
   scope :collecting, :conditions => { :status => [CollectingAndShowing, CollectingNotShowing] }
   scope :showing, :conditions => { :status => [NotCollectingOrShowing, NotCollectingButShowing] }
   
-  validates_uniqueness_of :user_name, :case_sensitive => false
+  validates :user_name, uniqueness: { case_sensitive: false }
+  validates :user_name, presence: true
+  validates :party_id, presence: true
 
   comma do
     user_name              'user_name'
@@ -87,25 +88,12 @@ class Politician < ActiveRecord::Base
 
   def reset_avatar (options = {})
     begin
-      twitter_user = FactoryTwitterClient.new_client.user(user_name)
-      image_url = twitter_user.profile_image_url(:bigger)
-
+      image_url = twitter_image_url
       force_reset = options.fetch(:force, false)
 
-      if should_reset_avatar(image_url, force_reset)
-        uri = URI::parse(image_url)
-        extension = File.extname(uri.path)
-
-        uri.open do |remote_file|
-          Tempfile.open(["#{self.twitter_id}_", extension]) do |tmpfile|
-            tmpfile.puts remote_file.read().force_encoding('UTF-8')
-            self.avatar = tmpfile
-            self.profile_image_url = image_url
-            self.save!
-          end
-        end
-      end
+      save_avatar(image_url) if should_reset_avatar(image_url, force_reset)
       return [true, nil]
+
     rescue Twitter::Error::Forbidden => e
       return [false, e.to_s]
     rescue Twitter::Error::NotFound
@@ -119,7 +107,25 @@ class Politician < ActiveRecord::Base
 
   private
 
+  def twitter_image_url
+    twitter_user = FactoryTwitterClient.new_client.user(user_name).profile_image_url(:bigger)
+  end
+
   def should_reset_avatar(image_url, force_reset)
     profile_image_url.nil? || (image_url != profile_image_url) || (profile_image_url != avatar.url) || force_reset
+  end
+
+  def save_avatar(image_url)
+    uri = URI::parse(image_url)
+    extension = File.extname(uri.path)
+
+    uri.open do |remote_file|
+      Tempfile.open(["#{self.twitter_id}_", extension]) do |tmpfile|
+        tmpfile.puts remote_file.read().force_encoding('UTF-8')
+        self.avatar = tmpfile
+        self.profile_image_url = image_url
+        self.save!
+      end
+    end
   end
 end

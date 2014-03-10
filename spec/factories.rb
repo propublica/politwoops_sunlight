@@ -9,5 +9,11 @@ FactoryGirl.define do
     middle_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
     suffix 'Mr.'
+    party
+  end
+
+  factory :party do
+    name { Faker::Company.name }
+    display_name { Faker::Company.name }
   end
 end

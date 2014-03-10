@@ -16,7 +16,7 @@
         <% @parties.each do |par| %>
           <li>
             <a alt="<%=par.name%>">
-              <%=humanize_filter par.party_name%>
+              <%=par.party_name%>
               <% if @filters['party'] == par.name %><span class="glyphicon glyphicon-ok"></span><% end %>
             </a>
           </li>

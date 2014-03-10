@@ -2,14 +2,24 @@ require 'spec_helper'
 
 describe 'Politician' do
 
-  let(:politician) do
-    Politician.last
-  end
+  let(:politician) { Politician.last }
 
   describe 'validations' do
 
     it 'should allow unique usernames' do
-      new_politician = Politician.new(user_name: Politician.first.user_name)
+      FactoryGirl.create(:politician)
+
+      new_politician = Politician.new(user_name: politician.user_name)
+      new_politician.valid?.should eq false
+    end
+
+    it 'should not allow if username is empty' do
+      new_politician = Politician.new(party_id: 'foo_party')
+      new_politician.valid?.should eq false
+    end
+
+    it 'should not allow if politician has empty party' do
+      new_politician = Politician.new(user_name: 'foobar', party: nil)
       new_politician.valid?.should eq false
     end
   end
@@ -48,6 +58,15 @@ describe 'Politician' do
         politician.reset_avatar
         politician.avatar.url.should_not eq '/assets/avatar_missing_male.png'
       end
+    end
+  end
+
+  describe 'Party Relationship' do
+
+    before(:each) { FactoryGirl.create :politician }
+
+    it 'should belong to a party' do
+      politician.party.name.should eq Party.last.name
     end
   end
 end
