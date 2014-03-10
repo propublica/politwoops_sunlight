@@ -48,7 +48,7 @@ class Politician < ActiveRecord::Base
   end
 
   def full_name
-    return [office && office.abbreviation, first_name, last_name, suffix].join(' ').strip
+    [suffix, first_name, middle_name, last_name].join(' ').strip.gsub(/\s{2}/,' ')
   end
 
   def add_related_politicians (other_names)
@@ -92,7 +92,7 @@ class Politician < ActiveRecord::Base
 
       force_reset = options.fetch(:force, false)
 
-      if profile_image_url.nil? || (image_url != profile_image_url) || (profile_image_url != avatar.url) || force_reset
+      if should_reset_avatar(image_url, force_reset)
         uri = URI::parse(image_url)
         extension = File.extname(uri.path)
 
@@ -115,5 +115,11 @@ class Politician < ActiveRecord::Base
 
   def party_logo_url
     "/assets/party_flags/#{self.party.name}.png"
+  end
+
+  private
+
+  def should_reset_avatar(image_url, force_reset)
+    profile_image_url.nil? || (image_url != profile_image_url) || (profile_image_url != avatar.url) || force_reset
   end
 end
