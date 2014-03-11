@@ -240,6 +240,20 @@ button:hover{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0ba3c5', endColorstr='#047c9a',GradientType=0 ); /* IE6-9 */
 
 }
+button:disabled {
+    color: #dddddd;
+
+    background: #c0c0c0; /* Old browsers */
+    background: -moz-linear-gradient(top,  #c0c0c0 0%, #979797 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c0c0c0), color-stop(100%,#979797)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #c0c0c0 0%,#979797 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #c0c0c0 0%,#979797 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #c0c0c0 0%,#979797 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #c0c0c0 0%,#979797 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0c0c0', endColorstr='#979797',GradientType=0 ); /* IE6-9 */
+
+	cursor: auto;
+}
 
 #filter button{
 	display: inline;

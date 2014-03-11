@@ -80,7 +80,7 @@
     </span>
   </li>
   <li>
-    <button type="submit" value="Save">Save</button>
+    <button type="submit" id="save_button" value="Save">Save</button>
   </li>
 </ul>
 
@@ -91,10 +91,12 @@
 <script type="text/javascript" charset="utf-8">
     jQuery("#user_name_input").change(function(){
         var screen_name = jQuery(this).val();
+        jQuery("#save_button").prop('disabled', true);
         jQuery.ajax({
             url: '/admin/users/get-twitter-id/'+ screen_name + '.json', 
             dataType: 'json',
             success: function(data){
+                      jQuery("#save_button").prop('disabled', false);
                       jQuery('span.error').remove();
                       console.log(data['twitter_id']);
                       jQuery("#twitter_id").val(data['twitter_id']);
