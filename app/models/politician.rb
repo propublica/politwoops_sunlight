@@ -10,9 +10,9 @@ class Politician < ActiveRecord::Base
   attr_accessible :twitter_id, :user_name, :party_id, :status, :state, :account_type_id,
                   :office_id, :first_name, :middle_name, :last_name, :suffix
 
-  has_attached_file :avatar, { :path => ':base_path/avatars/:filename',
-                               :url => "/assets/avatars/:filename",
-                               :default_url => '/assets/avatar_missing_male.png' }
+  has_attached_file :avatar, { path: ':base_path/avatars/:filename',
+                               url: "/assets/avatars/:filename",
+                               default_url: '/assets/avatar_missing_male.png' }
 
   belongs_to :party
   belongs_to :office
@@ -23,13 +23,11 @@ class Politician < ActiveRecord::Base
   has_many :deleted_tweets
  
   has_many :account_links
-  has_many :links, :through => :account_links 
+  has_many :links, through: :account_links 
    
-  #default_scope :order => 'user_name'
-
-  scope :active, :conditions => ["status = 1 OR status = 4"]
-  scope :collecting, :conditions => { :status => [CollectingAndShowing, CollectingNotShowing] }
-  scope :showing, :conditions => { :status => [NotCollectingOrShowing, NotCollectingButShowing] }
+  scope :active, conditions: ["status = 1 OR status = 4"]
+  scope :collecting, conditions: { status: [CollectingAndShowing, CollectingNotShowing] }
+  scope :showing, conditions: { status: [NotCollectingOrShowing, NotCollectingButShowing] }
   
   validates :user_name, uniqueness: { case_sensitive: false }
   validates :user_name, presence: true
@@ -38,10 +36,10 @@ class Politician < ActiveRecord::Base
   comma do
     user_name              'user_name'
     twitter_id             'twitter_id'
-    party :display_name => 'party_name'
+    party    display_name: 'party_name'
     state                  'state'
-    office :title       => 'office_title'
-    account_type :name  => 'account_type'
+    office          title: 'office_title'
+    account_type    name:  'account_type'
     first_name             'first_name'
     middle_name            'middle_name'
     last_name              'last_name'
@@ -66,10 +64,10 @@ class Politician < ActiveRecord::Base
     other_names.each do |other_name|
       if not other_name.empty? && other_name != self.user_name
         other_pol = Politician.find_by_user_name(other_name)
-        AccountLink.where(:politician_id => self.id,
-                          :link_id => other_pol.id).destroy_all
-        AccountLink.where(:link_id => self.id,
-                          :politician_id => other_pol.id).destroy_all
+        AccountLink.where(politician_id: self.id,
+                          link_id: other_pol.id).destroy_all
+        AccountLink.where(link_id: self.id,
+                          politician_id: other_pol.id).destroy_all
       end
     end
   end
@@ -79,11 +77,11 @@ class Politician < ActiveRecord::Base
 
     politician_ids = links.flat_map{ |l| [l.politician_id, l.link_id] }
                           .reject{ |pol_id| pol_id == self.id }
-    Politician.where(:id => politician_ids)
+    Politician.where(id: politician_ids)
   end
 
   def twoops
-    deleted_tweets.where(:approved => true)
+    deleted_tweets.where(approved: true)
   end
 
   def reset_avatar (options = {})

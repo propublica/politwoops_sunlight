@@ -5,15 +5,15 @@ class Party < ActiveRecord::Base
   validates :name, presence: true
 
   def tweets
-    Tweet.joins(:politician).where(:politicians => { :party_id => self.id })
+    Tweet.for_party(self.id)
   end
 
   def deleted_tweets
-    DeletedTweet.joins(:politician).where(:politicians => { :party_id => self.id })
+    DeletedTweet.for_party(self.id)
   end
 
   def twoops
-    DeletedTweet.joins(:politician).where(:approved => true, :politicians => { :party_id => self.id })
+    DeletedTweet.twoops.for_party(self.id)
   end
 
   def party_name
