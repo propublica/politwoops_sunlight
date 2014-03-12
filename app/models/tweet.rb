@@ -17,11 +17,6 @@ class Tweet < ActiveRecord::Base
     joins(:politician).where(politicians: { party_id: party_id })
   }
 
-  ### TODO: REMOVE THIS
-  cattr_reader :per_page
-  @@per_page = 10
-  ###
-  
   def self.random
     reorder("RAND()").find(:first, limit: 1)
   end

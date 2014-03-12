@@ -1,11 +1,13 @@
-<h2>
-  Los más populares
-</h2>
+<% unless @tweets_hits.nil? %>
+  <h2>
+    Los más populares
+  </h2>
 
-<% if @tweets_hits.empty? %>
- No hay resultados para tu búsqueda.
-<% else %>
-<%= render :partial => "tweets/tweet", :collection => @tweets_hits, :object => :tweet %>
+  <% if @tweets_hits.empty? %>
+    No hay resultados para tu búsqueda.
+  <% else %>
+    <%= render :partial => "tweets/tweet", :collection => @tweets_hits, :object => :tweet %>
+  <% end %>
 <% end %>
 <h2>
   Últimos mensajes borrados

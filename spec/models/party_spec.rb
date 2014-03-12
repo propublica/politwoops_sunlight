@@ -12,6 +12,47 @@ describe 'Party' do
     end
   end
 
+  describe 'search scopes' do
+
+    before :each do
+      FactoryGirl.create :party
+
+      3.times { FactoryGirl.create :politician, party: party }
+    end
+
+    it 'should search by name' do
+      Party.by_name(party.name).should_not be nil
+    end
+
+    it 'should contain politicians' do
+      Party.active_politicians_of(party.name).count.should eq 3
+    end
+  end
+
+  describe 'save name and display_name' do
+
+    it 'should save name with dash' do
+      FactoryGirl.create :party, name: 'Foo Bar', display_name: nil
+
+      party.name.should eq party.party_name.parameterize
+      party.party_name.should eq party.display_name
+    end
+
+    it 'should persist special writting for display_name' do
+      FactoryGirl.create :party, name: "O'neil & Cia.", display_name: nil
+
+      party.name.should eq party.party_name.parameterize
+      party.party_name.should eq party.display_name
+    end
+
+    it 'should preserve display_name if is not null' do
+      FactoryGirl.create :party, name: "O'neil & Cia.", display_name: 'foo bar'
+
+      party.name.should eq "O'neil & Cia.".parameterize
+      party.party_name.should eq 'foo bar'.titleize
+    end
+  end
+
   describe 'properties' do
 
     it 'should display name as party_name' do

@@ -7,19 +7,20 @@ class ApplicationController < ActionController::Base
 
   before_filter :donor_banner
 
+  private
+
   def donor_banner
     @donor_banner_enabled = Settings.fetch(:enable_donor_banner, false)
   end
 
-  # needs to become more dynamic somehow
-  def set_locale
-    # not sure what this does
-    I18n::Backend::Simple.send(:include, I18n::Backend::Flatten)
-    I18n.locale = "en"
-  end
-  
   def not_found
     raise ActionController::RoutingError.new('Not Found')
+  end
+
+  def enable_pager
+    @per_page_options = [10, 20, 50]
+    @per_page = closest_value((params.fetch :per_page, 0).to_i, @per_page_options)
+    @page = [params[:page].to_i, 1].max
   end
 
   def enable_filter_form
