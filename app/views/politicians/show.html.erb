@@ -1,9 +1,9 @@
 <% content_for :title do %>
-  Tweets borrados por <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)<% if @page > 1 %> (Page <%= @page %>)<% end %>
+  Tweets borrados por <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.party_name.upcase %>)<% if @page > 1 %> (Page <%= @page %>)<% end %>
 <% end %>
 
 <div id="info">
-	<h2> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.name.upcase %>)</h2>
+	<h2> <%= @politician.first_name %> <%=@politician.last_name %> (<%= @politician.party.party_name.upcase %>)</h2>
 	<ul class="accountList">
     <% @accounts.each do |acc| %>
       <li id="<%= acc.user_name %>-label">

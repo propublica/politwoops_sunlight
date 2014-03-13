@@ -1,4 +1,4 @@
-<form action="<%= @filter_action %>" method="GET" id="filter" class="form-inline">
+<form action="<%= @filter_action %>" method="GET" class="form-inline">
   <input type="hidden" name="party" value="<%=params[:party]%>" />
   <input type="hidden" name="state" value="<%=params[:state]%>" />
 
@@ -27,7 +27,7 @@
       <div class="dropdown">
         <button id="state" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
           <% unless @filters['state'].nil? %>
-            <%= @filters['state']%>
+            <%= humanize_filter @filters['state']%>
           <% else %>
             Departamento
           <% end %>
@@ -36,7 +36,7 @@
         <ul class="dropdown-menu" role="menu" aria-labelledby="state">
           <% @states.each do |st| %>
             <li>
-            <a alt="<%st%>">
+              <a alt="<%=st%>">
                 <%=humanize_filter st%>
                 <% if @filters['state'] == st %><span class="glyphicon glyphicon-ok"></span><% end %>
               </a>

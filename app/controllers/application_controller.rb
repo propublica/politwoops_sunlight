@@ -24,31 +24,25 @@ class ApplicationController < ActionController::Base
   end
 
   def enable_filter_form
-    @states = Politician.where("state IS NOT NULL").all(:select => "DISTINCT(state)").map do |row|
-      row.state
-    end
-    @states = @states.sort
-
+    @states = State.all
     @parties = Party.all
-    @offices = Office.all
-
     @politicians = Politician.active
+    @filters = {'state' => nil, 'party' => nil }
 
-    #check for filters
-    @filters = {'state' => nil, 'party' => nil, 'office' => nil  }
-    unless params.fetch('state', '').empty?
-        @politicians = @politicians.where(:state => params[:state])
-        @filters['state'] = params[:state]
-    end
-    unless params.fetch('party', '').empty?
-        party = Party.where(:name => params[:party])[0]
-        @politicians = @politicians.where(:party_id => party)
-        @filters['party'] = party.name
-    end
-    unless params.fetch('office', '').empty?
-        @politicians = @politicians.where(:office_id => params[:office])
-        @filters['office'] = params[:office]
+    filters = {
+      state: { key_to_use: :state, value_to_use: params[:state], name: params[:state] },
+      party: { key_to_use: :party_id, value_to_use: Party.by_name(params[:party]), name: params[:party] }
+    }
+    
+    filters.each do |key, value|
+      if !params.fetch(key, '').empty?
+        apply_filter(key, value) 
+      end
     end
   end
 
+  def apply_filter(key, options)
+    @politicians = @politicians.where(options[:key_to_use] => options[:value_to_use])
+    @filters[key.to_s] = options[:name]
+  end
 end

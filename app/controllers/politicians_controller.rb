@@ -1,18 +1,17 @@
 # encoding: utf-8
 class PoliticiansController < ApplicationController
-
   include ApplicationHelper
+
+  before_filter :enable_pager
+  before_filter :enable_filter_form, only: :index
 
   caches_action :show,
     :expires_in => 5.minutes,
     :if => proc { (params.keys - ['format', 'action', 'controller']).empty? }
 
   def show
-    @per_page_options = [10, 20, 50]
-    @per_page = closest_value((params.fetch :per_page, 0).to_i, @per_page_options)
-    @page = [params[:page].to_i, 1].max
-
     @politician = Politician.active.where(:user_name => params[:user_name]).first
+
     not_found unless @politician
     
     # need to get the latest tweet to get correct bio. could do with optimization :)
@@ -41,16 +40,8 @@ class PoliticiansController < ApplicationController
     end
   end
 
-  before_filter :enable_filter_form
-  def all 
-    
-    @per_page_options = [10, 20, 50]
-    @per_page = closest_value((params.fetch :per_page, 0).to_i, @per_page_options)
-    @page = [params[:page].to_i, 1].max
-    
+  def index
     @filter_action = "/users"
-
-    #get all politicians that we're showing
     @politicians = @politicians.order('last_name').where(:status => [1, 4])
 
     respond_to do |format|
@@ -58,10 +49,10 @@ class PoliticiansController < ApplicationController
         @politicians = @politicians.paginate(:page => params[:page], :per_page => @per_page)
         render
       }
+
       format.csv {
         render :csv => @politicians
       }
     end
   end
-
 end 

@@ -100,7 +100,7 @@ class Politician < ActiveRecord::Base
   end
 
   def party_logo_url
-    "/assets/party_flags/#{self.party.name}.png"
+    "/assets/party_flags/#{self.party.name}.png" unless Politwoops::Application.assets.find_asset("party_flags/#{self.party.name}.png").nil?
   end
 
   private

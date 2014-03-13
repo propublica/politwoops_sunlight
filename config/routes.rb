@@ -6,7 +6,7 @@ Politwoops::Application.routes.draw do
   match "tweet/:id" => "tweets#show", :as => :tweet
   match "tweet/:tweet_id/thumb/:basename.:format" => "tweets#thumbnail"
   match "user/:user_name" => "politicians#show", :as => :politician
-  match "users/" => "politicians#all", :as => :all_politicians
+  match "users/" => "politicians#index", :as => :all_politicians
   match "party/:name" => "parties#show", :as => :party
 
   namespace :admin do

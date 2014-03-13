@@ -16,11 +16,10 @@ class Admin::TweetsController < Admin::AdminController
       @tweets = @tweets.reorder "modified ASC"
     end
 
-    per_page = params[:per_page] ? params[:per_page].to_i : nil
-    per_page ||= Tweet.per_page
-    per_page = 200 if per_page > 200
+    @per_page_options = [20, 50]
+    @per_page = closest_value((params.fetch :per_page, 0).to_i, @per_page_options)
 
-    @tweets = @tweets.includes(:politician => [:party]).paginate(:page => @page, :per_page => per_page)
+    @tweets = @tweets.includes(:politician => [:party]).paginate(:page => @page, :per_page => @per_page)
     @admin = true
 
     respond_to do |format|
