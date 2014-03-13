@@ -4,12 +4,16 @@ FactoryGirl.define do
   factory :politician do
     user_name { Faker::Internet.user_name }
     twitter_id { Faker::Number.number(10) }
-    state 'Montevideo'
+    state { Faker::Address.state }
     first_name { Faker::Name.first_name }
     middle_name { Faker::Name.first_name }
     last_name { Faker::Name.last_name }
     suffix 'Mr.'
     party
+
+    trait :montevideo do
+      state 'montevideo'
+    end
   end
 
   factory :party do

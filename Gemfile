@@ -44,6 +44,9 @@ group :test do
   gem 'vcr'
   gem 'webmock', '1.15.2'
   gem 'capybara'
+  gem 'poltergeist'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
 end
 
 group :production do
