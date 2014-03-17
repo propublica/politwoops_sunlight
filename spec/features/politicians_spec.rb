@@ -23,7 +23,7 @@ describe 'Politicians' do
     end
   end
 
-  describe 'all' do
+  describe 'index' do
     before(:each) { visit '/users' }
 
     it 'should display party dropdown options', js: true do
@@ -32,16 +32,16 @@ describe 'Politicians' do
       find('.filter #party').click
       Party.all.map(&:party_name).include?(
         find(:xpath, "//form/div[@class='filter']/div[@class='dropdown open']/ul[@class='dropdown-menu']/li[1]/a").text
-      ).should be true
+      ).should eq true
     end
 
     it 'should display state dropdown options', js: true do
       expect(page).to have_content 'Departamento'
 
       find('.filter #state').click
-      State.all.include?(
-        find(:xpath, "//form/div[@class='filter']/div[@class='dropdown open']/ul[@class='dropdown-menu']/li[1]/a").text
-      ).should be true
+      state = find(:xpath, "//form/div[@class='filter']/div[@class='dropdown open']/ul[@class='dropdown-menu']/li[1]/a").text
+      
+      State.all.include?(state.humanize.gsub('-', ' ')).should eq true
     end
 
     it 'should display list of politicians' do
@@ -60,17 +60,16 @@ describe 'Politicians' do
   describe 'filter' do
     before(:each) { visit '/users' }
 
-    it 'should filter by party', js: true do
+    it 'should filter by state', js: true do
       find('.filter #state').click
       all(:xpath, "//form/div[@class='filter']/div[@class='dropdown open']/ul[@class='dropdown-menu']/li/a[@alt='montevideo']").first.click
 
       find('.section').text.should have_content('MONTEVIDEO')
-      true.should eq true
     end
   end
 
   describe 'show' do
-    before(:each) { visit "/user/#{politician1.user_name}" }
+    before(:each) { visit "/user/#{politician1.id}" }
     
     it 'should display user data' do
       find('#info').text.should have_content "(#{politician1.party.party_name.upcase})"

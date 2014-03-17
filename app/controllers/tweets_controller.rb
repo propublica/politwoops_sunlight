@@ -1,8 +1,5 @@
 # encoding: utf-8
 class TweetsController < ApplicationController
-  # GET /tweets
-  # GET /tweets.xml
-
   require 'RMagick'
   include ApplicationHelper
 
@@ -12,19 +9,12 @@ class TweetsController < ApplicationController
 
   caches_action :thumbnail
 
+  before_filter :see_all, only: :index
+  before_filter :enable_pager
   before_filter :enable_filter_form
 
   def index
     @filter_action = "/"
-
-    if params[:see] == 'all'
-      @tweets = Tweet.in_order
-    else
-      @tweets = DeletedTweet.in_order
-    end
-
-    @tweets = @tweets.where(:politician_id => @politicians)
-    tweet_count = 0 #@tweets.count
 
     if params.has_key?(:q) and params[:q].present?
       # Rails prevents injection attacks by escaping things passed in with ?
@@ -32,26 +22,18 @@ class TweetsController < ApplicationController
       query = "%#{@query}%"
       @search_pols = Politician.where("MATCH(user_name, first_name, middle_name, last_name) AGAINST (?)", query)
       @tweets = @tweets.where("content like ? or deleted_tweets.user_name like ? or politician_id in (?)", query, query, @search_pols)
-       
     end
 
-    # only approved tweets
-    @tweets = @tweets.where(:approved => true)
+    @tweets = TweetDecorator.new(@tweets.twoops).paginate_deleted_tweets_for(params[:page], @per_page, {politician_id: @politicians}, [:tweet_images])
+    @tweets_hits = DeletedTweet.hits
 
-    @per_page_options = [10, 20, 50]
-    @per_page = closest_value((params.fetch :per_page, 0).to_i, @per_page_options)
-    @page = [params[:page].to_i, 1].max
-
-    @tweets = @tweets.includes(:tweet_images, :politician => [:party]).paginate(:page => params[:page], :per_page => @per_page)
-    @tweets_hits = DeletedTweet.where(is_hit: true).where(approved: true)
-    
     respond_to do |format|
       format.html # index.html.erb
       format.rss  do
         response.headers["Content-Type"] = "application/rss+xml; charset=utf-8"
         render
       end
-      format.json { render :json => {:meta => {:count => tweet_count}, :tweets => @tweets.map{|tweet| tweet.format } } }
+      format.json { render :json => {:meta => {:count => @tweets.count}, :tweets => @tweets.map{|tweet| tweet.format } } }
     end
   end
 
@@ -109,4 +91,13 @@ class TweetsController < ApplicationController
               :filename => filename)
   end
 
+  private
+
+  def see_all
+    if params[:see] == 'all'
+      @tweets = Tweet.in_order
+    else
+      @tweets = DeletedTweet.in_order
+    end
+  end
 end

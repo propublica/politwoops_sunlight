@@ -8,7 +8,7 @@
 
   <div class="col-md-2">
     <div class="avatar">	
-      <a href="/user/<%= tweet.politician.user_name %>">
+      <a href="/user/<%= tweet.politician.id %>">
         <img src="<%= tweet.politician.avatar.url %>" class="politician-avatar" alt="<%= tweet.politician.user_name %>" width"73" height="73" />
         <img src="<%= tweet.politician.party_logo_url %>" class="politician-party" alt="<%= tweet.politician.party.name %>" />
       </a>
@@ -20,8 +20,8 @@
     <div class="content">
       <div class="tweet-content">
         <h4 class="tweetTitle">
-          <a class="fullname" href="/user/<%= tweet.politician.user_name %>"><%= tweet.details['user']['name'] %> (<%= tweet.politician.party.name.upcase %>)</a> 
-          <a class="username" class="accountHandle linkUnderline" href="/user/<%= tweet.politician.user_name %>">@<%= tweet.politician.user_name %></a>
+          <a class="fullname" href="/user/<%= tweet.politician.id %>"><%= tweet.details['user']['name'] %> (<%= tweet.politician.party.name.upcase %>)</a> 
+          <a class="username" class="accountHandle linkUnderline" href="/user/<%= tweet.politician.id %>">@<%= tweet.politician.user_name %></a>
         </h4>
         <% if tweet.politician.status ==  4 %>
           <div class="inactiveMess">Politwoops no longer follows this account.</div> 

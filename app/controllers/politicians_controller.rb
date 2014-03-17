@@ -10,7 +10,7 @@ class PoliticiansController < ApplicationController
     :if => proc { (params.keys - ['format', 'action', 'controller']).empty? }
 
   def show
-    @politician = Politician.active.where(:user_name => params[:user_name]).first
+    @politician = Politician.active.where(:id => params[:id]).first
 
     not_found unless @politician
     
@@ -42,7 +42,7 @@ class PoliticiansController < ApplicationController
 
   def index
     @filter_action = "/users"
-    @politicians = @politicians.order('last_name').where(:status => [1, 4])
+    @politicians = @politicians.order('last_name').where(:status => [Politician::CollectingAndShowing, Politician::NotCollectingButShowing])
 
     respond_to do |format|
       format.html {

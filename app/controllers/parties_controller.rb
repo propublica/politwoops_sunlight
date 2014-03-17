@@ -7,7 +7,7 @@ class PartiesController < ApplicationController
 
   def show    
     politicians = Party.active_politicians_of(params[:name]).map(&:id)
-    @tweets = TweetDecorator.paginate_deleted_tweets_for(params[:page], @per_page, {politician_id: politicians})
+    @tweets = TweetDecorator.new.paginate_deleted_tweets_for(params[:page], @per_page, {politician_id: politicians})
 
     render "tweets/index"
   end
