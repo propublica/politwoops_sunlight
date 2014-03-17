@@ -80,5 +80,9 @@ describe 'Politicians' do
     it 'should show pager options' do
       find('.results-per-page').should have_content('Resultados por página: 10 20 50')
     end
+
+    it 'should display user tweets' do
+      first('.section .content').should have_content DeletedTweet.where(politician_id: politician1.id).last.details['user']['name']
+    end
   end
 end
