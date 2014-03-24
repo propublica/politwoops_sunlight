@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="bb_wrapper">
 <head>
   <% if content_for?(:title) %>
     <title><%= yield(:title) %> - Politwoops</title>
@@ -20,7 +20,8 @@
 	<%= stylesheet_link_tag "colorbox" %>
 	<%= stylesheet_link_tag "style" %>
 	<%= stylesheet_link_tag "donorbanner" %>
-
+  <link rel="stylesheet" href="https://sunlight-cdn.s3.amazonaws.com/brandingbar/0.2.0/css/brandingbar.css">
+  <link rel="stylesheet" href="http://sf-icons.s3.amazonaws.com/css/sf-icons.css">
 	<script type="text/javascript" src="//use.typekit.net/utl6xyx.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
@@ -37,11 +38,24 @@
 	<%= content_for :feeds %>
 </head>
 <body<%if content_for?(:body_class) %> <%= yield(:body_class) %> <% end %>>
-  <div class="sf-header">
+  <div class="sf-header" data-bb-brandingbar="true" data-bb-property-id="sunlightlabs-awesome">
       <div class="container">
-          
-          <a class="sf-logo" href="http://www.sunlightfoundation.com">Sunlight Foundation</a>
-          
+          <div class="branding-bar_links">
+
+              <!-- Social Media Icons -->
+              <a class="social" href="https://www.facebook.com/sunlightfoundation"><span class="icon icon-facebook"></span></a>
+              <a class="social" href="https://twitter.com/sunfoundation"><span class="icon icon-twitter"></span></a>
+              <a class="social" href="https://plus.google.com/+sunlightfoundation"><span class="icon icon-google-plus"></span></a>
+
+              <!-- Branding Bar Toggle -->
+              <a class="branding-bar_trigger" data-bb-toggle=".bb_wrapper" href="http://sunlightfoundation.com/about/">About Sunlight Foundation</a>
+          </div>
+
+          <div class="branding-bar_logo">
+              <span class="branding-bar_productof">a product of </span>
+              <a class="branding-bar_sunlight-logo" href="http://www.sunlightfoundation.com">Sunlight Foundation</a>
+          </div>
+
       </div>
   </div>
   <script>
@@ -74,11 +88,14 @@
 					</li>
 					<li>
 						<a href="mailto:twoops@sunlightfoundation.com">Contact us</a>
-					</li> 
+					</li>
+          <li>
+            <a href="http://sunlightfoundation.com/join">Get Involved</a>
+          </li>
 				</ul>
                 <div id="socialMedia" style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; visibility: visible;">
                     <div class="share-buttons" data-socialite="auto" data-services="twitter-tweet, facebook-like" data-options="linkback=<%= escape_javascript request.url %>" data-facebook-like-options="width=100&amp;colorscheme=light&amp;show-faces=false&amp;layout=button_count" data-twitter-tweet-options="text=Track the deleted tweets of U.S. politicians using Politwoops (from @SunFoundation):&amp;url=<%= escape_javascript request.url %>">
-                    </div> 
+                    </div>
 
 				</div>
 			</nav>
@@ -165,6 +182,10 @@
         <% end %>
 
         <script type="text/javascript" src="https://s3.amazonaws.com/assets.sunlightfoundation.com/social/scripts/simple-socialite-pack.min.js"></script>
+        <script src="https://sunlight-cdn.s3.amazonaws.com/brandingbar/0.2.0/js/brandingbar.min.js.gz"></script>
+        <!--[if IE 8]>
+          <script src="http://sf-icons.s3.amazonaws.com/js/sf-icons.js"></script>
+        <![endif]-->
 	<%= render :partial => "layouts/analytics" %>
 	</body>
 </html>
