@@ -65,7 +65,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    memcache (1.5.0)
+    memcache (1.3.0)
     memcache-client (1.8.5)
     method_source (0.8.2)
     mime-types (1.19)
@@ -157,7 +157,7 @@ DEPENDENCIES
   comma (~> 3.0)
   debugger
   httparty (~> 0.10.0)
-  memcache
+  memcache (= 1.3.0)
   memcache-client
   mysql2
   oauth
