@@ -74,7 +74,7 @@ class Admin::PoliticiansController < Admin::AdminController
       if params[:office_id] == '0' then
         pol.office = nil
       else
-        pol.office = Office.where(:id => params[:office_id])
+        pol.office = Office.where(:id => params[:office_id]).first
       end
 
       pol.update_attributes(params)
