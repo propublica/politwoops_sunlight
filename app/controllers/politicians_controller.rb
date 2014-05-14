@@ -50,15 +50,15 @@ class PoliticiansController < ApplicationController
     
     @filter_action = "/users"
 
-    #get all politicians that we're showing
-    @politicians = @politicians.order('last_name').where(:status => [1, 4])
-
     respond_to do |format|
       format.html {
+        #get all politicians that we're showing
+        @politicians = @politicians.order('last_name').where(:status => [1, 4])
         @politicians = @politicians.paginate(:page => params[:page], :per_page => @per_page)
         render
       }
       format.csv {
+        @politicians = @politicians.order('last_name')
         render :csv => @politicians
       }
     end
