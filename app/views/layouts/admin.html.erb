@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="bb_wrapper">
 <head>
   <title>Politwoops - <%= t :slogan, :scope => [:politwoops] %></title>
  
@@ -11,15 +11,30 @@
 
   <%= csrf_meta_tag %>
   <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://sunlight-cdn.s3.amazonaws.com/brandingbar/0.3/css/brandingbar.css">
+  <link rel="stylesheet" href="http://sf-icons.s3.amazonaws.com/css/sf-icons.css">
 
   <%= content_for :feeds %>
 </head>
-<body>
-  <div class="sf-header">
+<body<%if content_for?(:body_class) %> <%= yield(:body_class) %> <% end %>>
+  <div class="sf-header" data-bb-brandingbar="true">
       <div class="container">
-          
-          <a class="sf-logo" href="http://www.sunlightfoundation.com">Sunlight Foundation</a>
-          
+          <div class="branding-bar_links">
+
+              <!-- Social Media Icons -->
+              <a class="social" href="https://www.facebook.com/sunlightfoundation"><span class="icon icon-facebook"></span></a>
+              <a class="social" href="https://twitter.com/sunfoundation"><span class="icon icon-twitter"></span></a>
+              <a class="social" href="https://plus.google.com/+sunlightfoundation"><span class="icon icon-google-plus"></span></a>
+
+              <!-- Branding Bar Toggle -->
+              <a class="branding-bar_trigger" data-bb-toggle=".bb_wrapper" href="http://sunlightfoundation.com/about/">About Sunlight Foundation</a>
+          </div>
+
+          <div class="branding-bar_logo">
+              <span class="branding-bar_productof">a product of </span>
+              <a class="branding-bar_sunlight-logo" href="http://www.sunlightfoundation.com">Sunlight Foundation</a>
+          </div>
+
       </div>
   </div>
   <div class="container">
@@ -89,5 +104,6 @@
         </footer>
 
         <%= javascript_include_tag "politwoops" %>
+        <script src="https://sunlight-cdn.s3.amazonaws.com/brandingbar/0.3/js/brandingbar.min.js.gz"></script>
 </body>
 </html>
