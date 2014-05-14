@@ -31,7 +31,7 @@ class Politician < ActiveRecord::Base
 
   scope :active, :conditions => ["status = 1 OR status = 4"]
   scope :collecting, :conditions => { :status => [CollectingAndShowing, CollectingNotShowing] }
-  scope :showing, :conditions => { :status => [NotCollectingOrShowing, NotCollectingButShowing] }
+  scope :showing, :conditions => { :status => [CollectingAndShowing, NotCollectingButShowing] }
   
   validates_uniqueness_of :user_name, :case_sensitive => false
 
@@ -46,6 +46,17 @@ class Politician < ActiveRecord::Base
     middle_name            'middle_name'
     last_name              'last_name'
     suffix                 'suffix'
+    status                 'status'
+    collecting?            'collecting'
+    showing?               'showing'
+  end
+
+  def collecting?
+    [CollectingAndShowing, CollectingNotShowing].include?(status)
+  end
+
+  def showing?
+    [CollectingAndShowing, NotCollectingButShowing].include?(status)
   end
 
   def self.guess_gender (name)
