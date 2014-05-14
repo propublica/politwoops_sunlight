@@ -7,7 +7,15 @@ class Admin::PoliticiansController < Admin::AdminController
   end
 
   def admin_user
-    @politician = Politician.find(params[:id]) || raise("not found")
+    begin
+      @politician = Politician.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      @politician = Politician.where(:user_name => params[:id]).first
+      if @politician.nil?
+        raise('not found')
+      end
+    end
+
     @parties = Party.all
     @offices = Office.all
     @account_types = AccountType.all
