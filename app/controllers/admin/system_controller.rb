@@ -49,7 +49,7 @@ class Admin::SystemController < Admin::AdminController
     @last_tweet = Tweet.with_content.order("modified DESC").first
 
     @queue_stats = []
-    queues = Settings.fetch(:beanstalk_queues, nil)
+    queues = Settings.fetch(:beanstalk_queues, nil).values
     if queues
       beanstalk = Beanstalk::Pool.new(['localhost:11300'])
       tubes = beanstalk.list_tubes.map {|k,v| v} .flatten
