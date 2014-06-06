@@ -4,11 +4,19 @@ class RequeueTweet < ServiceBase
   attribute :queue_name, String
 
   def call
-    JSON.load(tweet.tweet) # Ensure that it can be decoded.
+    decoded = JSON.load(tweet.tweet) # Ensure that it can be decoded.
+    if tweet.is_a? DeletedTweet
+      decoded = { 'delete' => { 'status' => {
+        'id' => decoded['id'],
+        'id_str' => decoded['id_str'],
+        'user_id' => decoded['user']['id'],
+        'user_id_str' => decoded['user']['id_str']
+      } } }
+    end
     beanstalk = Beanstalk::Pool.new(['localhost:11300'])
     beanstalk.use(queue_name)
-    beanstalk.put(tweet.tweet)
-    success "Requeued tweet #{tweet.id}"
+    beanstalk.put(JSON.dump(decoded))
+    success "Requeued #{tweet.class.table_name.singularize.gsub('_', ' ')} #{tweet.id}"
   end
 end
 

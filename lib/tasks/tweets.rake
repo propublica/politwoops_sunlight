@@ -13,6 +13,10 @@ namespace :tweets do
 
     tweet = Tweet.find(tweet_id)
     result = RequeueTweet.call(:tweet => tweet, :queue_name => queue_name)
+    if result.success? && !!ENV['deleted']
+      deleted_tweet = DeletedTweet.find(tweet_id)
+      result = RequeueTweet.call(:tweet => deleted_tweet, :queue_name => queue_name)
+    end
     puts result.to_s
   end
 
