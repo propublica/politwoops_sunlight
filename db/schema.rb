@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140303200539) do
+ActiveRecord::Schema.define(:version => 20140612143804) do
 
   create_table "account_links", :force => true do |t|
     t.integer  "politician_id"
@@ -76,6 +76,9 @@ ActiveRecord::Schema.define(:version => 20140303200539) do
     t.string   "display_name"
   end
 
+  add_index "parties", ["display_name"], :name => "index_parties_on_display_name", :unique => true
+  add_index "parties", ["name"], :name => "index_parties_on_name", :unique => true
+
   create_table "politicians", :force => true do |t|
     t.string   "user_name",           :limit => 64,                  :null => false
     t.integer  "twitter_id",                                         :null => false
@@ -94,6 +97,8 @@ ActiveRecord::Schema.define(:version => 20140303200539) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "gender",                            :default => "U"
+    t.string   "bioguide_id",         :limit => 7
+    t.text     "opencivicdata_id"
   end
 
   add_index "politicians", ["status"], :name => "index_politicians_on_status"
