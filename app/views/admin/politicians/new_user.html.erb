@@ -22,7 +22,7 @@
     </span>
   </li>
   <li>
-    Party:  <span>
+    Party:  <span class="formfield">
     <select name="party_id">
     <% @parties.each do |party| %>
         <option value="<%=party.id%>"> 
@@ -32,7 +32,7 @@
     </select>
     </span>
   </li>
-  <li> Status: <span>
+  <li> Status: <span class="formfield">
     <select name="status">
     <% [1, 2, 3, 4].each do |stat| %>
         <option value="<%=stat%>" >
@@ -47,7 +47,7 @@
     State: <input type="text" id="state" name="state" style="float:right;">
   </li>
  
-  <li> Account Type: <span>
+  <li> Account Type: <span class="formfield">
     <select name="account_type_id">
     <option value="0"></option>
     <% @account_types.each do |at| %>
@@ -58,7 +58,7 @@
     </select>
     </span>
   </li>
-  <li> Office Held: <span>
+  <li> Office Held: <span class="formfield">
     <select name="office_id">
         <option value="0"></option>
     <% @offices.each do |office| %>
@@ -70,7 +70,7 @@
     </span>
   </li>
   <li> Gender:
-    <span>
+    <span class="formfield">
       <%= radio_button_tag(:gender, 'M') %>
       <%= label_tag(:gender_M, 'Male') %>
       <%= radio_button_tag(:gender, 'F') %>
@@ -80,18 +80,28 @@
     </span>
   </li>
 
-  <li>
+  <li class="bioguide_id">
     Bioguide ID:
-    <span>
+    <span class="formfield">
       <input class="bioguide_id" name="bioguide_id" />
+      <button class="expander bioguide_id" type="button">&#x25bc;</button>
     </span>
+    <div class="expandable" style="display: none;">
+      <ul class="suggestions">
+      </ul>
+    </div>
   </li>
 
-  <li>
+  <li class="opencivicdata_id">
     OpenCivicData ID:
-    <span>
+    <span class="formfield">
       <input class="opencivicdata_id" name="opencivicdata_id" />
+      <button class="expander opencivicdata_id" type="button">&#x25bc;</button>
     </span>
+    <div class="expandable" style="display: none;">
+      <ul class="suggestions">
+      </ul>
+    </div>
   </li>
 
   <li>
@@ -101,6 +111,8 @@
 
 </form>
 <span><em> Status Key: <ul><li> 1 = Active, showing tweets</li><li> 2 = Collecting tweets, not showing</li><li> 3 = Not collecting or showing tweets</li><li> 4 = not collecting, but showing historical tweets</li></ul></em></span>
+
+<%= render 'identifier_suggestion_templates' %>
 
 <script src="http://crypto-js.googlecode.com/svn/tags/3.0.2/build/rollups/hmac-sha1.js"></script>
 <script type="text/javascript" charset="utf-8">

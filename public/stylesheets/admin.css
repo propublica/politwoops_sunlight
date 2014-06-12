@@ -69,7 +69,59 @@ div.admin_error {
 
 #admin-politician img { margin-top: -20px; }
 
-#admin-politician ul li span{float: right; }
+#admin-politician ul li span.formfield { float: right; }
+
+#admin-politician ul li span.formfield button.expander {
+    position: relative;
+    left: 20px;
+    width: 20px;
+    height: 25px;
+    margin-left: -22px;
+    padding: 0;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#admin-politician ul li div.expandable {
+    padding: 3px;
+    margin: 0;
+    border-width: 0;
+}
+
+#admin-politician ul.suggestions li.suggestion {
+    padding: 0;
+    margin: 3px 0 5px 0;
+    height: 80px;
+    width: 100%;
+    border-width: 0;
+    background: transparent;
+}
+
+#admin-politician ul.suggestions li.suggestion span.name {
+    vertical-align: top;
+    font-size: 16px;
+    text-align: right;
+}
+
+#admin-politician ul.suggestions li.suggestion a.identifier {
+    vertical-align: bottom;
+    font-size: 16px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+#admin-politician ul.suggestions li.suggestion img.photo {
+    height: 80px;
+    width: 66px;
+    margin: 0 6px 0 0;
+    padding: 0;
+    border-width: 0;
+}
+#admin-politician ul.suggestions li.suggestion div.right {
+    float: right;
+    width: 340px;
+}
 
 #admin-politician span#name {font-size: 1.2em; font-weight: bold;}
 
@@ -121,3 +173,5 @@ div#party-tweeting table td {
 div#party-tweeting table td:first-child {
     text-align: left;
 }
+
+

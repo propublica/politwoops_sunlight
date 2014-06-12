@@ -2,6 +2,8 @@
 <html class="bb_wrapper">
 <head>
   <title>Politwoops - <%= t :slogan, :scope => [:politwoops] %></title>
+
+  <%= JavascriptExports %>
  
   <%= stylesheet_link_tag "style" %>
   <%= stylesheet_link_tag "admin" %>
@@ -103,6 +105,9 @@
             </div>
         </footer>
 
+        <%= javascript_include_tag "jquery.tmpl.min.js" %>
+        <%= javascript_include_tag "congressapi" %>
+        <%= javascript_include_tag "opencivicdataapi" %>
         <%= javascript_include_tag "politwoops" %>
         <script src="https://sunlight-cdn.s3.amazonaws.com/brandingbar/0.3/js/brandingbar.min.js.gz"></script>
 </body>

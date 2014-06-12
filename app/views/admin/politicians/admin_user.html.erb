@@ -14,14 +14,14 @@
 <ul>
   <li> 
     <img src="<%= @politician.avatar.url %>" class="politician-avatar" alt="<%= @politician.user_name %>" width"73" height="73" />
-    <span id="name"><%= @politician.user_name %> &nbsp;<em> <a href="#">edit</a></em></span>
+    <span id="name" class="formfield"><%= @politician.user_name %> &nbsp;<em> <a href="#">edit</a></em></span>
   </li>
   <li>
-    Display Name:<span id="display_name"> 
+    Display Name:<span id="display_name" class="formfield"> 
     <span id="first_name"><%= @politician.first_name %></span><span id="middle_name"><%= @politician.middle_name %></span><span id="last_name"><%=@politician.last_name%></span><span id="suffix"><%=@politician.suffix%></span> <em><a href="#" id="edit_names">edit</a></em></span>
   </li>
   <li>
-    Party:  <span>
+    Party:  <span class="formfield">
     <select name="party_id">
     <% @parties.each do |party| %>
         <option value="<%=party.id%>" 
@@ -32,7 +32,7 @@
     </select>
     </span>
   </li>
-  <li> Status: <span>
+  <li> Status: <span class="formfield">
     <select name="status">
     <% [1, 2, 3, 4].each do |stat| %>
         <option value="<%=stat%>" <% if stat == @politician.status %> selected <% end %> >
@@ -44,10 +44,10 @@
   </li>
 
   <li>
-    State: <span><input class="state" type="text" name="state" value="<%=@politician.state %>" /></span>
+    State: <span class="formfield"><input class="state" type="text" name="state" value="<%=@politician.state %>" /></span>
   </li>
  
-  <li> Account Type: <span>
+  <li> Account Type: <span class="formfield">
     <select name="account_type_id">
     <option value="0"></option>
     <% @account_types.each do |at| %>
@@ -58,7 +58,7 @@
     </select>
     </span>
   </li>
-  <li> Office Held: <span>
+  <li> Office Held: <span class="formfield">
     <select name="office_id">
         <option value="0"></option>
     <% @offices.each do |office| %>
@@ -70,7 +70,7 @@
     </span>
   </li>
   <li> Gender:
-    <span>
+    <span class="formfield">
       <%= radio_button_tag(:gender, 'M', @politician.gender == 'M') %>
       <%= label_tag(:gender_M, 'Male') %>
       <%= radio_button_tag(:gender, 'F', @politician.gender == 'F') %>
@@ -80,21 +80,31 @@
     </span>
   </li>
 
-  <li>
+  <li class="bioguide_id">
     Bioguide ID:
-    <span>
+    <span class="formfield">
       <input class="bioguide_id" name="bioguide_id" value="<%= @politician.bioguide_id %>" />
+      <button class="expander bioguide_id" type="button">&#x25bc;</button>
     </span>
+    <div class="expandable" style="display: none;">
+      <ul class="suggestions">
+      </ul>
+    </div>
   </li>
 
-  <li>
+  <li class="opencivicdata_id">
     OpenCivicData ID:
-    <span>
+    <span class="formfield">
       <input class="opencivicdata_id" name="opencivicdata_id" value="<%= @politician.opencivicdata_id %>" />
+      <button class="expander opencivicdata_id" type="button">&#x25bc;</button>
     </span>
+    <div class="expandable" style="display: none;">
+      <ul class="suggestions">
+      </ul>
+    </div>
   </li>
 
-  Related accounts:<span>
+  Related accounts:<span class="formfield">
   <input class="related" type="text" name="related" value="<% @related.each do |r| %><%=r.user_name%>,<% end %> " /></span>
   </li>
   <li>This user has <strong><em><%= @unmoderated %> </em></strong> unmoderated tweets. (Unapprove? <input name="unapprove_all" type="checkbox" style="vertical-align:middle;" />)</li>
@@ -105,6 +115,9 @@
 
 </form>
 <span><em> Status Key: <ul><li> 1 = Active, showing tweets</li><li> 2 = Collecting tweets, not showing</li><li> 3 = Not collecting or showing tweets</li><li> 4 = not collecting, but showing historical tweets</li></ul></em></span>
+
+<%= render 'identifier_suggestion_templates' %>
+
 <script type="text/javascript" charset="utf-8">
 jQuery(document).ready(function(){
     //edit user name in place
