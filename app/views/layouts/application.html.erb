@@ -7,6 +7,7 @@
   <% else %>
     <title>Politwoops - <%= t :slogan, :scope => [:politwoops] %><% if not @page.nil? and @page > 1 %> (Page <%= @page %>)<% end %></title>
   <% end %>
+  <%= JavascriptExports %>
 
     <meta name="google-site-verification" content="CQWBNRNvRMb4Gd5s2HE03-2g5Dkk3VvvGwZbeNmd5H8" />
     <meta property="og:url" content="<%= url_for(:only_path => false) %>">
