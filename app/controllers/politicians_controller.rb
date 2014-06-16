@@ -59,7 +59,7 @@ class PoliticiansController < ApplicationController
       }
       format.csv {
         @politicians = @politicians.order('last_name')
-        render :csv => @politicians
+        render :csv => @politicians, :filename => 'users'
       }
     end
   end
