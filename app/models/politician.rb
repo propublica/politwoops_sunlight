@@ -50,6 +50,8 @@ class Politician < ActiveRecord::Base
     status                 'status'
     collecting?            'collecting'
     showing?               'showing'
+    bioguide_id            'bioguide_id'
+    opencivicdata_id       'opencivicdata_id'
   end
 
   def collecting?
