@@ -3,6 +3,7 @@ Setting up the app
 
 These instructions assume that you are using RVM, rbenv, or something else that is compatible with .ruby-version.
 
+* `gem install bundler`
 * `bundle install`
 * Create `config/database.yml` (see `config/database.yml.example`)
 * Create `config/config.yml` (see `config/config.yml.example`)
