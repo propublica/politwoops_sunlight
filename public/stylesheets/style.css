@@ -318,6 +318,7 @@ header {
 	height: 209px;
 	margin-bottom: 54px;
 	position: relative;
+  clear: both;
 }
 
 h1 {
