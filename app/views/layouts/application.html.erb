@@ -171,5 +171,21 @@
           <script src="http://sf-icons.s3.amazonaws.com/js/sf-icons.js"></script>
         <![endif]-->
 	<%= render :partial => "layouts/analytics" %>
-	</body>
+  <div class="retired" id="retired">
+    <div class="retired-overlay">
+    </div>
+    <div class="retired-doormat">
+      <a id="closeOverlay" class="retired-close" onclick="this.parentNode.parentNode.style.display = 'none'">close</a>
+      <p>
+      On June 3, 2015, the Sunlight Foundation received word from Twitter that it was pulling the plug on Politwoops, reversing an agreement made in 2012 that allowed us to run the project using its API. The last deletions we have archived are from May 15, 2015. Please read our <a href="http://sunlightfoundation.com/blog/2015/06/04/eulogy-for-politwoops/">'Eulogy for Politwoops'</a> for more detail.
+      </p>
+      <p>
+      While we may no longer be able to publish deleted tweets, we're still working hard to advocate for more and better open data and to create tools that promote transparency and hold our government accountable.
+      </p>
+      <p>
+      <a href="http://bulk.sunlightfoundation.com.s3.amazonaws.com/politwoops/deleted_tweets.csv">Get the archive data file.</a>
+      </p>
+    </div>
+  </div>
+  </body>
 </html>
