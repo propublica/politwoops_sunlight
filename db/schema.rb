@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(:version => 20140612143804) do
     t.datetime "modified",                                             :null => false
     t.text     "tweet"
     t.integer  "politician_id"
-    t.boolean  "approved"
-    t.boolean  "reviewed"
+    t.boolean  "approved",                          :default => true
+    t.boolean  "reviewed",                          :default => true
     t.datetime "reviewed_at"
     t.text     "review_message"
     t.integer  "retweeted_id",        :limit => 8
