@@ -1,15 +1,15 @@
 class ChangeApprovalDefaults < ActiveRecord::Migration
-	def up
-		change_table :deleted_tweets do |t|
-			t.column :approved, :default => true
-			t.column :reviewed, :default => true
-		end
-	end
+    def self.up
+        change_column_default :tweets, :approved, true
+        change_column_default :deleted_tweets, :approved, true
+        change_column_default :tweets, :reviewed, true
+        change_column_default :deleted_tweets, :reviewed, true
+    end
 
-	def down
-		change_table :deleted_tweets do |t|
-			t.column :approved, :default => nil
-			t.column :reviewed, :default => nil
-		end
-	end
+    def self.down
+        change_column_default :tweets, :approved, false
+        change_column_default :deleted_tweets, :approved, false
+        change_column_default :tweets, :reviewed, false
+        change_column_default :deleted_tweets, :reviewed, false
+    end
 end
