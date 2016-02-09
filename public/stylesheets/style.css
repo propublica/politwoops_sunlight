@@ -366,7 +366,16 @@ nav ul li:last-child{
 
 }
 
-
+.intro {
+	font-size: 128%;
+	line-height: 1.6em;
+	font-family: "museo-slab", georgia, serif;
+	font-weight: 300;
+	background: url(/images/border_sidebar_x.png) bottom left no-repeat;
+	padding-bottom: 32px;
+	margin-bottom: 32px;
+	color: #403d39;	
+}
 
 
 #intro {
