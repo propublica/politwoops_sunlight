@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140612143804) do
+ActiveRecord::Schema.define(:version => 20160125211055) do
 
   create_table "account_links", :force => true do |t|
     t.integer  "politician_id"
