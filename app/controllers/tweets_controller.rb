@@ -59,7 +59,7 @@ class TweetsController < ApplicationController
   def show
     @tweet = DeletedTweet.includes(:politician).find(params[:id])
 
-    if @tweet.politician.status != 1 and @tweet.politician.status != 4 and not @tweet.approved 
+    if (@tweet.politician.status != 1 and @tweet.politician.status != 4) or not @tweet.approved 
       not_found
     end	
 
