@@ -4,29 +4,29 @@ class Tweet < ActiveRecord::Base
 
   has_many :tweet_images, :foreign_key => "tweet_id"
 
-  scope :in_order, order('modified DESC')
+  scope :in_order, -> { order('modified DESC')}
 
   # scope :latest, :order => 'created DESC'
-  scope :deleted, :conditions => "deleted = 1 AND content IS NOT NULL"
-  scope :with_content, :conditions => "content IS NOT NULL"
-  scope :retweets, :conditions => "retweeted_id IS NOT NULL"
-  scope :in_year, proc { |year|
-    where(['created >= ? and created <= ?',
-           Date.new(year, 1, 1), Date.new(year, 12, 31)])
-  }
+  scope :deleted, -> { where deleted: 1, where.not content: nil }
+  scope :with_content, -> { where.not content: nil}
+  scope :retweets, -> { where.not retweeted_id: nil}
 
   before_save :extract_retweet_fields
-  
+
   cattr_reader :per_page
   @@per_page = 10
-  
+
+  def self.in_year(year)
+    where("created >= #{Date.new(year, 1, 1)}").where("created <= #{Date.new(year, 12, 31)}")
+  end
+
   def self.random
     reorder("RAND()").find(:first, :limit => 1)
   end
-    
+
   def details
     JSON.parse(tweet)
-  end  
+  end
 
   def extract_retweeted_status
     return nil if tweet.nil?
@@ -50,7 +50,7 @@ class Tweet < ActiveRecord::Base
   end
 
   def twitter_url
-    "http://www.twitter.com/#{user_name}/status/#{id}"
+    "https://www.twitter.com/#{user_name}/status/#{id}"
   end
 
   def format
