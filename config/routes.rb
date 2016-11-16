@@ -1,45 +1,45 @@
 Politwoops::Application.routes.draw do
 
   root :to => "tweets#index"
-  
-  match "index(.:format)" => "tweets#index", :as => :index
-  match "tweet/:id" => "tweets#show", :as => :tweet
-  match "tweet/:tweet_id/thumb/:basename.:format" => "tweets#thumbnail"
-  match "user/:user_name" => "politicians#show", :as => :politician
-  match "users/" => "politicians#all", :as => :all_politicians
-  match "party/:name" => "parties#show", :as => :party
+
+  get "index(.:format)" => "tweets#index", :as => :index
+  get "tweet/:id" => "tweets#show", :as => :tweet
+  get "tweet/:tweet_id/thumb/:basename.:format" => "tweets#thumbnail"
+  get "user/:user_name" => "politicians#show", :as => :politician
+  get "users/" => "politicians#all", :as => :all_politicians
+  get "party/:name" => "parties#show", :as => :party
 
   namespace :admin do
-    match "status" => "system#status"
-    match "restart" => "system#restart"
-    match "report" => "system#report"
+    get "status" => "system#status"
+    get "restart" => "system#restart"
+    get "report" => "system#report"
 
-    match "review" => "tweets#index", :reviewed => false, :approved => false, :as => "review"
-    match "unapproved" => "tweets#index", :reviewed => true, :approved => false, :as => "unapproved"
-    match "approved" => "tweets#index", :reviewed => true, :approved => true, :as => "approved"
+    get "review" => "tweets#index", :reviewed => false, :approved => false, :as => "review"
+    get "unapproved" => "tweets#index", :reviewed => true, :approved => false, :as => "unapproved"
+    get "approved" => "tweets#index", :reviewed => true, :approved => true, :as => "approved"
 
-    match "users" => "politicians#admin_list", :as => "admin_list"
-    match "user/:id" => "politicians#admin_user", :as => "admin_user"
-    match "user/:id/save" => "politicians#save_user", :as => "save_user"
-    match "users/new" => "politicians#new_user", :as => "new_user"
-    match "users/get-twitter-id/:screen_name" => "politicians#get_twitter_id", :as => "get_twitter_id"
+    get "users" => "politicians#admin_list", :as => "admin_list"
+    get "user/:id" => "politicians#admin_user", :as => "admin_user"
+    post "user/:id/save" => "politicians#save_user", :as => "save_user"
+    get "users/new" => "politicians#new_user", :as => "new_user"
+    get "users/get-twitter-id/:screen_name" => "politicians#get_twitter_id", :as => "get_twitter_id"
 
-    match "offices" => "offices#list", :as => "list_offices"   
-    match "offices/add" => "offices#add", :as => "add_office"
-    match "offices/save" => "offices#save", :as => "save_office"
+    get "offices" => "offices#list", :as => "list_offices"
+    get "offices/add" => "offices#add", :as => "add_office"
+    post "offices/save" => "offices#save", :as => "save_office"
 
-    match "offices/:id" => "offices#edit", :as => "edit_office"
-    match "review/:rss_secret.rss" => "tweets#index", :reviewed => false, :approved => false, :as => "review_rss", :format => "rss"
+    get "offices/:id" => "offices#edit", :as => "edit_office"
+    get "review/:rss_secret.rss" => "tweets#index", :reviewed => false, :approved => false, :as => "review_rss", :format => "rss"
 
-    match "review/:id" => "tweets#review", :via => [:post], :as => "review_tweet"
+    post "review/:id" => "tweets#review", :via => [:post], :as => "review_tweet"
 
-    match "reports/annual/:year" => "reports#annual", :as => "annual_report"
-    match "reports/annual" => "reports#annual", :as => "annual_report"
+    get "reports/annual/:year" => "reports#annual", :as => "annual_report_year"
+    get "reports/annual" => "reports#annual", :as => "annual_report"
     root :to => "tweets#index"
   end
- 
-  match "5xx", :to => "errors#down"
-  match "404", :to => "errors#not_found"    
-  match "*anything", :to => "errors#not_found"    
+
+  get "5xx", :to => "errors#down"
+  get "404", :to => "errors#not_found"
+  get "*anything", :to => "errors#not_found"
 
 end
