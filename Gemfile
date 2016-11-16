@@ -33,5 +33,5 @@ group :development do
   gem 'pry'
   gem 'pry_debug'
   gem 'unicorn'
-  gem 'debugger'
+#  gem 'debugger'
 end
