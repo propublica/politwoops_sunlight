@@ -17,15 +17,13 @@ class ApplicationController < ActionController::Base
     I18n::Backend::Simple.send(:include, I18n::Backend::Flatten)
     I18n.locale = "en"
   end
-  
+
   def not_found
     raise ActionController::RoutingError.new('Not Found')
   end
 
   def enable_filter_form
-    @states = Politician.where("state IS NOT NULL").all(:select => "DISTINCT(state)").map do |row|
-      row.state
-    end
+    @states = Politician.where("state IS NOT NULL").pluck(:state)
     @states = @states.sort
 
     @parties = Party.all
