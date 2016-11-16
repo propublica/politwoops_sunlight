@@ -7,7 +7,6 @@ class Tweet < ActiveRecord::Base
   scope :in_order, -> { order('modified DESC')}
 
   # scope :latest, :order => 'created DESC'
-  scope :deleted, -> { where deleted: 1, where.not content: nil }
   scope :with_content, -> { where.not content: nil}
   scope :retweets, -> { where.not retweeted_id: nil}
 
@@ -15,6 +14,10 @@ class Tweet < ActiveRecord::Base
 
   cattr_reader :per_page
   @@per_page = 10
+
+  def self.deleted
+    where(deleted: 1).where.not(content: nil)
+  end
 
   def self.in_year(year)
     where("created >= #{Date.new(year, 1, 1)}").where("created <= #{Date.new(year, 12, 31)}")

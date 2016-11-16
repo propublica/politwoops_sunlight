@@ -8,10 +8,6 @@ class Politician < ActiveRecord::Base
   NotCollectingOrShowing = 3
   NotCollectingButShowing = 4
 
-  attr_accessible :twitter_id, :user_name, :party_id, :status, :state, :account_type_id,
-                  :office_id, :first_name, :middle_name, :last_name, :suffix, :gender,
-                  :bioguide_id, :opencivicdata_id
-
   has_attached_file :avatar, { :path => ':base_path/avatars/:filename',
                                :url => "/images/avatars/:filename",
                                :default_url => '' }
