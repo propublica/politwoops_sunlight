@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.7'
+gem "actionpack-action_caching"
 gem 'mysql2', '~> 0.3.18'
 gem 'memcache', '1.3.0'
 gem 'memcache-client'
