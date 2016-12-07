@@ -1,6 +1,6 @@
 # encoding: utf-8
 require "open-uri"
-require 'sexmachine'
+require 'gender_detector'
 
 class Politician < ActiveRecord::Base
   CollectingAndShowing = 1
@@ -61,7 +61,7 @@ class Politician < ActiveRecord::Base
   def self.guess_gender(name)
     # Each SexMachine::Detector instance loads it's own copy of the data file.
     # Let's avoid going memory crazy.
-    @_sexmachine__detector ||= SexMachine::Detector.new
+    @_sexmachine__detector ||= GenderDetector.new
     @_sexmachine__detector.get_gender(name)
   end
 
