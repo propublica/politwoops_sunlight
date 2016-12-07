@@ -1,8 +1,8 @@
 :sitemap_default_url: 'http://host.com'
 
 :admin:
-  :username: 
-  :password: 
+  :username:
+  :password:
 
 # used for obfuscating the RSS URL
 :rss_secret:
