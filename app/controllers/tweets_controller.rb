@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
   require 'RMagick'
   include ApplicationHelper
 
-  caches_action :index, 
+  caches_action :index,
     :expires_in => 30.minutes,
     :if => proc { (params.keys - ['format', 'action', 'controller']).empty? }
 
@@ -32,7 +32,7 @@ class TweetsController < ApplicationController
       query = "%#{@query}%"
       @search_pols = Politician.where("MATCH(user_name, first_name, middle_name, last_name) AGAINST (?)", query)
       @tweets = @tweets.where("content like ? or deleted_tweets.user_name like ? or politician_id in (?)", query, query, @search_pols)
-       
+
     end
 
     # only approved tweets
@@ -59,9 +59,9 @@ class TweetsController < ApplicationController
   def show
     @tweet = DeletedTweet.includes(:politician).find(params[:id])
 
-    if (@tweet.politician.status != 1 and @tweet.politician.status != 4) or not @tweet.approved 
+    if (@tweet.politician.status != 1 and @tweet.politician.status != 4) or not @tweet.approved
       not_found
-    end	
+    end
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,176 +1,157 @@
-<!doctype html>
-<html class="bb_wrapper">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-  <% if content_for?(:title) %>
-    <title><%= yield(:title) %> - Politwoops</title>
-  <% else %>
-    <title>Politwoops - <%= t :slogan, :scope => [:politwoops] %><% if not @page.nil? and @page > 1 %> (Page <%= @page %>)<% end %></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Language" content="en">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta NAME="ROBOTS" CONTENT="NOFOLLOW">
+
+  <title><%= yield :title %></title>
+
+  <!-- switchy -->
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+  <!-- /switchy -->
+
+  <meta name="author" content="Derek Willis" />
+  <meta name="scope" content="" />
+  <meta name="keywords" content="" />
+  <meta name="project" content="Politwoops" />
+  <meta name="type" content="project" />
+  <meta name="description" content="<%#= @guff['main']['Social-Long-Description'] %>" />
+  <% if (controller.controller_name == "search") || (!params[:search].nil? && !params[:search].empty?) %>
+    <link rel="canonical" href="https://projects.propublica.org<%= request.fullpath %>" />
+  <% else %><%# for non-search, normalize trailing slash & querystring args so google is happy %>
+    <link rel="canonical" href="<%= url_for(only_path: false) %>" />
   <% end %>
-  <%= JavascriptExports %>
 
-    <meta name="google-site-verification" content="CQWBNRNvRMb4Gd5s2HE03-2g5Dkk3VvvGwZbeNmd5H8" />
-    <meta property="og:url" content="<%= url_for(:only_path => false) %>">
-    <meta property="og:title" content="Politwoops US">
-    <meta property="og:description" content="Politwoops is the only comprehensive collection of deleted tweets by U.S. politicians that offers a window into what they hoped you didn't see.">
-    <meta property="og:image" content="<%= root_url %>images/og_politwoops.jpg">
-    <meta property="og:image:url" content="<%= root_url %>images/og_politwoops.jpg">
-    <meta property="og:image:width" content="200">
-    <meta property="og:image:height" content="200">
-    <meta name="description" content="Politwoops is the only comprehensive collection of deleted tweets by U.S. politicians that offers a window into what they hoped you didn't see.">
+  <!-- add these meta tags for facebook -->
+  <meta property="og:title" content="Politwoops">
+  <meta property="og:url" content="https://projects.propublica.org/politwoops/">
+  <meta property="og:site_name" content="ProPublica">
+  <meta property="og:article:published_time" content="December 12, 2016">
+  <meta property="og:type" content="article"/>
+  <meta property="og:image" content="<%#= @guff['main']['Social-Image'] %>"/>
+  <meta property="og:site_name" content="ProPublica"/>
+  <meta property="fb:admins" content="383965056549"/>
+  <meta property="fb:app_id" content="229862657130557">
+  <meta property="og:description" content="<%#= @guff['main']['Social-Long-Description'] %>"/>
+  <meta property="og:article:published_time" content="2016-12-12">
 
-	<%= stylesheet_link_tag "colorbox" %>
-	<%= stylesheet_link_tag "style" %>
-  <link rel="stylesheet" href="https://sunlight-cdn.s3.amazonaws.com/brandingbar/0.4/css/brandingbar.min.css">
-  <link rel="stylesheet" href="https://sunlight-cdn.s3.amazonaws.com/sf-icons/0.2/css/sf-icons.css">
-	<script type="text/javascript" src="//use.typekit.net/utl6xyx.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <!-- add these meta tags for twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ProPublica">
+  <meta name="twitter:creator" content="@ProPublica">
+  <meta name="twitter:title" content="Politwoops">
+  <meta name="twitter:description" content="<%#= @guff['main']['Social-Short-Description'] %>">
+  <meta name="twitter:image:src" content="<%#= @guff['main']['Social-Image'] %>">
+  <meta property="twitter:url" content="https://projects.propublica.org/politwoops/">
 
-	<%= content_for :head %>
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/795188/727228/css/fonts.css" />
+  <% if false %>
+  <link rel="stylesheet" href="https://d1t8xfi7n2gbr1.cloudfront.net/deploy/css/reset.css?1337900771" type="text/css" media="all" charset="utf-8">
+  <link rel="stylesheet" href="https://d1t8xfi7n2gbr1.cloudfront.net/deploy/css/propublica-text.css?1337900771" type="text/css" media="all" charset="utf-8">
+  <link rel="stylesheet" href="https://d1t8xfi7n2gbr1.cloudfront.net/deploy/css/master.css?1337900771" type="text/css" media="screen" charset="utf-8">
+  <link rel="stylesheet" href="https://d1t8xfi7n2gbr1.cloudfront.net/deploy/css/print.css?1337900771" type="text/css" media="print" charset="utf-8">
+  <link rel="stylesheet" type="text/css" media="screen and (max-width: 480px)" href="https://d1t8xfi7n2gbr1.cloudfront.net/deploy/css/woland.css?1337784446" charset="utf-8" />
+  <% end %>
+  <%= stylesheet_link_tag "propublica_base/base", :media => "all" %>
+  <%= stylesheet_link_tag "propublica_base/master", :media => "screen" %>
+  <%= stylesheet_link_tag "propublica_base/print", :media => "print" %>
+  <%= stylesheet_link_tag "propublica_base/woland", :media => "screen and (max-width: 480px)" %>
 
-	<%= javascript_include_tag "jquery-1.7.1.min" %>
-	<%= javascript_include_tag "jquery.placehold-0.3.min" %>
-	<%= javascript_include_tag "jquery.colorbox-min" %>
-
-	<%= csrf_meta_tag %>
-	<link rel="icon" href="/images/favicon.png" type="image/png">
-
-	<%= content_for :feeds %>
-</head>
-<body<%if content_for?(:body_class) %> <%= yield(:body_class) %> <% end %>>
-  <div class="branding-bar" data-bb-brandingbar="true"></div>
   <script>
-    $(document).ready(function() {
-        $("a.screenshot").each(function(idx, a){
-            $(a).colorbox({
-                rel: 'screenshot' + idx,
-                opacity: 0.7,
-                maxWidth: '90%',
-                close: 'Close'
-            });
-        });
-        $(document).bind('cbox_complete', function(event){
-            $("img.cboxPhoto").click(function(event){
-                window.open($(this).attr('src'));
-            });
-        });
+    RAILS_ENV = "<%= Rails.env %>";
+    RAILS_ROOT = "<%= root_path %>";
+    PP_SHARING_URL = "https://projects.propublica.org<%= root_path %>"
+  </script>
+
+  <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+  <script type="text/javascript">
+    window.dataLayer = [{
+      'contentType': 'App',
+      'publicationDate': 'December 12, 2016 11:00:00',
+      'articleTitle': 'Politwoops',
+      'authorName': 'Derek Willis'
+    }];
+ </script>
+
+  <script charset="utf-8">
+     var _sf_async_config = (window._sf_async_config || {});
+      _sf_async_config.sections = "news apps";
+      _sf_async_config.authors = "derek willis";
+      _sf_async_config.domain = "propublica.org";
+      _sf_async_config.useCanonical = true;
+  </script>
+
+  <script type="text/javascript" src="https://www.propublica.org/js/public/assets/all.js"></script>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+
+  <script type="text/javascript" src="https://www.propublica.org/js/public/assets/google_ads_boot.js"></script>
+  <script type="text/javascript">
+     (function(){
+       var o = function(it) { return it.replace(/\s+/g, "_") };
+       googletag.pubads().setTargeting('project', o('Politwoops'));
+       googletag.pubads().setTargeting('type',    o('newsapp'));
+     })();
+  </script>
+  <script type="text/javascript" src="https://www.propublica.org/js/public/assets/google_ads.js?2012101501" charset="utf-8"></script>
+
+</head>
+<!-- user-testing -->
+<body class="app <%= controller.controller_name %>">
+  <script type="text/javascript" src="https://www.propublica.org/js/public/assets/beacons.js"></script>
+  <script src="https://connect.facebook.net/en_US/all.js"></script>
+  <div id="fb-root"></div>
+  <script>
+    FB.init({
+      appId      : '229862657130557', // App ID
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
     });
   </script>
 
-	<div class="container">
-		<header>
-			<nav>
-				<ul>
-					<li>
-						<a href="/users">Politicians</a>
-					</li>
-					<li>
-						<a href="http://sunlightfoundation.com/blog/tag/politwoops/">More information</a>
-					</li>
-					<li>
-						<a href="mailto:twoops@sunlightfoundation.com">Contact us</a>
-					</li>
-          <li>
-            <a href="http://sunlightfoundation.com/join">Get Involved</a>
-          </li>
-				</ul>
-                <div id="socialMedia" style="margin-top: 0px; margin-bottom: 0px; padding-top: 0px; padding-bottom: 0px; visibility: visible;">
-                    <div class="share-buttons" data-socialite="auto" data-services="twitter-tweet, facebook-like" data-options="linkback=<%= escape_javascript request.url %>" data-facebook-like-options="width=100&amp;colorscheme=light&amp;show-faces=false&amp;layout=button_count" data-twitter-tweet-options="text=Track the deleted tweets of U.S. politicians using Politwoops (from @SunFoundation):&amp;url=<%= escape_javascript request.url %>">
-                    </div>
+  <div id="header">
+    <div class="background-color"></div>
+    <div class="wrapper cf">
+      <h5><a href="https://www.propublica.org/"></a></h5>
+      <h4><a href="<%= url_for root_path %>">Politwoops</a></h4>
+      <div class="donate">
+        <h2><a href="https://www.propublica.org/site/donate3/">Donate</a></h2>
+      </div>
+      <ul id="banner-share">
+        <li class="facebook social-widget ss-fb" data-title="Politwoops" data-img="<%#= @guff['main']['Social-Image'] %>" data-url="https://projects.propublica.org/politwoops/" data-hashtag=""><a href="#">Share on Facebook</a></li>
+        <li class="twitter social-widget ss-tw" data-txt="<%#= @guff['main']['Social-Default-Tweet'] %>" data-url="https://projects.propublica.org/politwoops/" data-hashtag=""><a href="#">Share on Twitter</a></li>
+      </ul>
+    </div>
+  </div>
 
-				</div>
-			</nav>
-			<h1><a class="textReplace clear" href="/">Politwoops <small>Deleted Tweets from Politicians</small></a></h1>
-			<form action="/" method="get" id="search">
-				<input type="search" placeholder="Search" name="q" value="<%= h params[:q] %>"/>
-				<button class="textReplace" id="searchBtn">search</button>
-			</form>
-			<div class="clear"></div>
+  <div id="content" class="<%= params[:controller] %>-<%= params[:action] %>">
+    <div class="wrapper">
+      <div id="politwoops-app" class="politwoops-app">
+        <div class="wrap">
+          <%= yield %>
+        </div>
+      </div>
+      <footer>
+        <p>Original Dutch version: <a href="http://politwoops.nl/">Politwoops.nl</a></p>
+      </footer>
+    </div>
+  </div>
 
-		</header>
-		<div id="ltColumn">
-			<img class="twoopsters" src="/images/twoopsters.png">
-			<div class="module">
-				<p id="intro">
-        An archive of the public statements deleted by U.S. politicians. <strong>Explore the tweets they would prefer you couldn't see.</strong>
-				</p>
-				<p id="terms">
-				If you aren't an elected official or running for office and feel
-        your account is being tracked by mistake then please <a href="mailto:twoops@sunlightfoundation.com">contact us</a>.
-				</p>
-			</div>
-			<div class="module">
-				<h4>Original Dutch version:</h4>
-				<a href="http://politwoops.nl">Politwoops.nl</a>
-			</div>
-		</div>
 
-		<div id="rtColumn">
-			<%= yield %>
-		</div>
+  <div id="fb-root"></div>
+  <div id="footer">
+    <div class="wrapper">
+      <div id="footer-logo">
+        <p id="footer-logo-image">ProPublica</p>
+        <p>&copy; Copyright <%= Date.today.year %><br />
+        Pro Publica Inc.</p>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
 
-		<div class="clear"></div>
-	</div>
-
-	<footer>
-            <div class="container">
-                <div class="signup">
-                    <h4>Like this Project and Want to Discover Others Like It?</h4>
-                    <span class="tip">Join the Sunlight Foundation's open government community to learn more</span>
-                    <form action="/subscribe/" method="post" id="sfapp-subscribe-form" class="form-inline">
-                        <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="y42oYsUK2EGBAkFj265Bv8Q4BqDCNS8S"></div>
-                        <input type="text" name="email" placeholder="your email address">
-                        <input type="text" name="zipcode" placeholder="your zip code">
-                        <button type="submit" class="btn btn-sunlight">Sign Up</button>
-                    </form>
-                </div>
-                <div class="span6 terms">
-                    <p>Our <a href="http://sunlightfoundation.com/legal/privacy/">privacy policy</a> details how personally identifiable information that is collected on our web sites is handled. Read our <a href="http://sunlightfoundation.com/legal/terms/">terms of service</a>.</p>
-                    <p>This work by <a href="http://sunlightfoundation.com">Sunlight Foundation</a>, unless <a href="http://sunlightfoundation.com/colophon/">otherwise noted</a>, is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/us/">Creative Commons Attribution 3.0 United States License</a>.</p>
-                </div>
-            </div>
-        </footer>
-
-        <%= javascript_include_tag "jquery.tmpl.min.js" %>
-        <%= javascript_include_tag "congressapi" %>
-        <%= javascript_include_tag "opencivicdataapi" %>
-        <%= javascript_include_tag "politwoops" %>
-
-        <% if @donor_banner_enabled %>
-          <!-- BEGIN SMALL DONOR BANNER -->
-          <div id="donor_banner" class="minimize-donorbanner">
-              <div class="donorcontainer">
-                  <div class="bubble">
-                      <button value="play" href="" class="notnow toggleButton" style="box-shadow: none;">Not now</button>
-                  </div>
-                  <a class="sf_logo" href="http://sunlightfoundation.com">Sunlight Foundation</a>
-                  <p class="because quote">
-                  &ldquo;I came to Sunlight because I believe technology is incredibly powerful and government is incredibly important. I don't think there's any better place for working to bring the two together.&rdquo;
-                  <span class="attribution">&mdash; <em>Tom Lee</em></span>
-              </p>
-                  <div class="donationplea">
-                      <h2>
-                          <span class="line1">We depend </span>
-                          <span class="line2">on the generosity</span>
-                          <span class="line3">of our supporters</span>
-                      </h2>
-                      <p>
-                          <em>You can help bring sunlight to government.</em>
-                          </br>Donate to the Sunlight Foundation today.
-                      </p>
-                      <a class="btn" href="https://sunlightfoundation.com/donate/opencongress/">Donate</a>
-                  </div>
-              </div>
-          </div>
-          <%= javascript_include_tag "donorbanner.js" %>
-          <!-- END SMALL DONOR BANNER -->
-        <% end %>
-
-        <script type="text/javascript" src="https://s3.amazonaws.com/assets.sunlightfoundation.com/social/scripts/simple-socialite-pack.min.js"></script>
-        <script src="https://sunlight-cdn.s3.amazonaws.com/brandingbar/0.4/js/brandingbar.min.js.gz"></script>
-        <!--[if IE 8]>
-          <script src="http://sf-icons.s3.amazonaws.com/js/sf-icons.js"></script>
-        <![endif]-->
-	<%= render :partial => "layouts/analytics" %>
-  </body>
+</body>
 </html>

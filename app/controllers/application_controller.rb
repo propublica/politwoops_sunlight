@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def enable_filter_form
-    @states = Politician.where("state IS NOT NULL").pluck(:state)
+    @states = Politician.where("state IS NOT NULL").pluck(:state).uniq
     @states = @states.sort
 
     @parties = Party.all

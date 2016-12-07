@@ -1,3 +1,5 @@
+<div class="search-box">
+  <h3>Recent Politwoops</h3>
   <form action="<%= @filter_action %>" method="GET" id="filter" class="form-inline">
 	    <ul>
 	    	<li class="styled-select">
@@ -26,7 +28,7 @@
 					<option value="">---------</option>
                     <% @offices.each do |off| %>
     					<option value="<%= off.id %>" <%if @filters['office'].to_f == off.id %> selected <% end %>>
-                            <%=off.title %> 
+                            <%=off.title %>
                         </option>
                     <% end %>
 				</select>
@@ -34,4 +36,4 @@
 	    <button type="submit" class="btn">Filter</button>
 		</ul>
 	</form>
-
+</div>

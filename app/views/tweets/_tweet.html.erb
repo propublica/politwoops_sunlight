@@ -7,7 +7,7 @@
     </div>
   <% end %>
 
-	<div class="contentLeft">	
+	<div class="contentLeft">
 		<a href="/user/<%= tweet.politician.user_name %>">
       <img src="<%= default_avatar_url(tweet.politician) %>"
            class="politician-avatar"
@@ -25,11 +25,11 @@
   <div class="content">
     <div class="tweet-content">
       <h4 class="tweetTitle">
-        <a href="/user/<%= tweet.politician.user_name %>"><%= tweet.details['user']['name'] %> (<%= tweet.politician.party.name.upcase %>)</a> 
+        <a href="/user/<%= tweet.politician.user_name %>"><%= tweet.details['user']['name'] %> (<%= tweet.politician.party.name.upcase %>)</a>
   	    <span><a class="accountHandle linkUnderline" href="/user/<%= tweet.politician.user_name %>">@<%= tweet.politician.user_name %></a></span>
 	    </h4>
 	    <% if tweet.politician.status ==  4 %>
-            <div class="inactiveMess">Politwoops no longer follows this account.</div> 
+            <div class="inactiveMess">Politwoops no longer follows this account.</div>
         <% end %>
 
       <%= format_tweet(tweet).to_s.html_safe %>
@@ -38,7 +38,7 @@
     <div class="byline">
       <%= byline tweet %>
     </div>
-    
+
     <div class="images">
       <% if tweet.tweet_images.any? %>
         <h3>Screenshots of links in this tweet</h3>
@@ -56,14 +56,14 @@
 
 
   </div>
-  
+
   <% if !(defined?(admin) and admin) %>
     <div class="actions">
       <a href="http://twitter.com/share?text=<%= CGI.escape('@' + tweet.user_name + ' ') %>&url=http://politwoops.sunlightfoundation.com/tweet/<%= tweet.id %>&via=SunFoundation" class="reply textReplace" target="_blank"><%=t :reply, :scope => [:politwoops, :tweets] %></a>
       <a href="http://twitter.com/share?text=<%= CGI.escape('DT @' + tweet.user_name + ' ' + CGI.unescapeHTML(tweet.content)) %>&url=http://politwoops.sunlightfoundation.com/tweet/<%= tweet.id %>" class="retweet textReplace" target="_blank"><%=t :retweet, :scope => [:politwoops, :tweets] %></a>
     </div>
   <% end %>
-  
+
   <div class="clear"></div>
 
   <% if defined?(admin) and admin %>
