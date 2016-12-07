@@ -13,3 +13,4 @@ public/images/avatars/*
 /config/config.yml
 /config/database.yml
 .*.swp
+.DS_Store
