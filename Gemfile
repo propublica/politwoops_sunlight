@@ -16,7 +16,7 @@ gem "oauth"
 
 gem 'twitter-text' # parsing hashtags and usernames
 gem "comma", "~> 3.0"
-gem "sexmachine"
+gem "gender_detector"
 
 gem "will_paginate", "~> 3.0.pre2" # pagination
 gem "rails_autolink" # auto_link function
@@ -27,6 +27,7 @@ gem "beanstalk-client"
 gem "rmagick", "~> 2.0"
 gem "paperclip", "2.7.0"
 gem "aws-sdk"
+gem 'sass-rails'
 
 # allows the app to be run with "bundle exec unicorn" in development
 group :development do
