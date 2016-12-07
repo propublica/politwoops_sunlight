@@ -48,6 +48,12 @@ Politwoops::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  config.logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
+  config.propub_url_root = "/politwoops"
+  config.assets.compress = true
+  config.assets.compile = true
+  config.assets.digest = true
+
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_permissions => :public_read,
