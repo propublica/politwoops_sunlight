@@ -227,3 +227,118 @@ h4.tweetTitle{
 	text-indent: -9999em;
 	display: block;
 }
+
+.accountList {
+	display: block;
+}
+.accountList li{
+	display: block;
+	float: left;
+	width: auto;
+}
+.accountList .accountHandle{
+	padding: 4px 15px 3px 15px;
+	height: 36px;
+	display: table-cell;
+	vertical-align: middle;
+
+}
+.accountList .active .accountHandle {
+	background: rgb(248,242,214); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(248,242,214,1) 1%, rgba(254,253,248,1) 50%, rgba(253,252,238,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(248,242,214,1)), color-stop(50%,rgba(254,253,248,1)), color-stop(100%,rgba(253,252,238,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(248,242,214,1) 1%,rgba(254,253,248,1) 50%,rgba(253,252,238,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(248,242,214,1) 1%,rgba(254,253,248,1) 50%,rgba(253,252,238,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(248,242,214,1) 1%,rgba(254,253,248,1) 50%,rgba(253,252,238,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(248,242,214,1) 1%,rgba(254,253,248,1) 50%,rgba(253,252,238,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f2d6', endColorstr='#fdfcee',GradientType=0 ); /* IE6-9 */
+	border-top: 2px solid #dcd8b3;
+	border-right: 1px solid #dcd8b3;
+	border-left: 1px solid #dcd8b3;
+	display: table-cell;
+	padding: 3px 3px 0 3px;
+	height: 35px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	font-family: "museo-slab", georgia, serif;
+	font-size: 100%;
+	font-weight: 700;
+	color: #c9a706;
+
+}
+.accountList .active .accountHandle span{
+	border-top: 1px dotted #dec758;
+	border-right: 1px dotted #dec758;
+	border-left: 1px dotted #dec758;
+	line-height: 1.5em;
+	padding-left: 10px;
+	padding-right: 10px;
+	display: table-cell;
+	vertical-align: middle;
+	height: 32px;
+}
+
+.aboutAccount{
+	background: #fdfcee;
+	border-bottom: 1px solid #dcd8b3;
+	border-top: 2px solid #dcd8b3;
+	padding: 3px;
+	z-index: -1;
+	width: 100%;
+	margin-top: 56px;
+	margin-bottom: 23px;
+}
+.aboutAccount p{
+	margin: 0;
+	padding: 15px;
+	border-top: 1px dotted #dec758;
+	border-bottom: 1px dotted #dec758;
+	color: #8a8079;
+}
+
+#pager {
+  font-size: 95%;
+  margin: 20px 0 50px 0;
+  text-align: center;
+}
+
+#pager a { margin-left: 5px;}
+.previous_page { margin-right: 10px;}
+.per_page_selected { }
+
+
+
+.tweet .actions .button {
+  text-indent: 0;
+  height: 48px;
+  width: 104px;
+  background: #0097EB;
+  color: white;
+  text-decoration: none;
+  line-height: 48px;
+  text-align: center;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+.tweet .actions .button-small {
+  text-indent: 0;
+  height: 48px;
+  width: 48px;
+  margin: 0 0 0 4px;
+  background: #0097EB;
+  color: white;
+  text-decoration: none;
+  line-height: 48px;
+  text-align: center;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+.numResults {
+	margin-top: 20px;
+}
+
+.numResults li{
+	display: inline;
+}
