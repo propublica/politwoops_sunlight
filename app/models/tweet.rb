@@ -4,9 +4,6 @@ class Tweet < ActiveRecord::Base
 
   has_many :tweet_images, :foreign_key => "tweet_id"
 
-  scope :in_order, -> { order('modified DESC')}
-
-  # scope :latest, :order => 'created DESC'
   scope :with_content, -> { where.not content: nil}
   scope :retweets, -> { where.not retweeted_id: nil}
 
@@ -14,6 +11,14 @@ class Tweet < ActiveRecord::Base
 
   cattr_reader :per_page
   @@per_page = 10
+
+  def self.in_order
+    includes(:politician).order('modified DESC')
+  end
+
+  def self.latest
+    order('created DESC')
+  end
 
   def self.deleted
     where(deleted: 1).where.not(content: nil)
@@ -24,7 +29,7 @@ class Tweet < ActiveRecord::Base
   end
 
   def self.random
-    reorder("RAND()").find(:first, :limit => 1)
+    Tweet.find(Tweet.pluck(:id).shuffle.first)
   end
 
   def details
