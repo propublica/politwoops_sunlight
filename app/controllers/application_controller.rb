@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
 
   before_filter :donor_banner
 
+  rescue_from ActiveRecord::RecordNotFound, :with => :file_not_found
+
+  def file_not_found
+    respond_to do |format|
+      format.html { render :file => "public/404.html", :status => 404}
+    end
+  end
+
   def donor_banner
     @donor_banner_enabled = Settings.fetch(:enable_donor_banner, false)
   end
@@ -16,10 +24,6 @@ class ApplicationController < ActionController::Base
     # not sure what this does
     I18n::Backend::Simple.send(:include, I18n::Backend::Flatten)
     I18n.locale = "en"
-  end
-
-  def not_found
-    raise ActionController::RoutingError.new('Not Found')
   end
 
   def enable_filter_form

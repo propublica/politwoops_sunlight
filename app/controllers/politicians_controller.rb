@@ -11,7 +11,7 @@ class PoliticiansController < ApplicationController
     @page = [params[:page].to_i, 1].max
 
     @politician = Politician.active.where(user_name: params[:user_name]).first
-    not_found unless @politician
+    raise ActiveRecord::RecordNotFound unless @politician
 
     # need to get the latest tweet to get correct bio. could do with optimization :)
     @latest_tweet = Tweet.in_order.where(politician_id: @politician.id).first
