@@ -56,14 +56,6 @@ p.byline {
   line-height: 1.4em;
 }
 
-#content .position_ies{
-	padding-top: 40px;
-}
-
-#content .position_ie_links{
-	padding-top: 20px;
-}
-
 #header h4 {
 	font-family: "Sentinel A", "Sentinel B", Georgia, serif;
 	font-weight: normal;
@@ -84,108 +76,6 @@ p.byline {
 	}
 }
 
-#content .top_committees{
-	width: 100%;
-  text-align: left;
-  margin: 0 auto;
-  border: 0px solid white;;
-	ul{
-		li{
-			font-family: "Sentinel A", "Sentinel B", Georgia, serif;
-			font-size: 150%;
-		}
-	}
-}
-
-#map_container{
-	position: relative;
-	display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.my-legend {
-	padding-bottom: 40px;
-}
-
-.my-legend .legend-title {
-    text-align: left;
-    margin-bottom: 8px;
-    font-weight: bold;
-    font-size: 90%;
-    }
-  .my-legend .legend-scale ul {
-    margin: 0;
-    padding: 0;
-    float: left;
-    list-style: none;
-    }
-  .my-legend .legend-scale ul li {
-    display: block;
-    float: left;
-    width: 20px;
-    margin-bottom: 6px;
-    text-align: center;
-    font-size: 80%;
-    list-style: none;
-    }
-  .my-legend ul.legend-labels li span {
-    display: block;
-    float: left;
-    height: 15px;
-    width: 20px;
-    }
-/* your colors */
-.fillkey_0 { background-color: #e5f5e0; }
-.fillkey_1 { background-color: #c7e9c0; }
-.fillkey_2 { background-color: #a1d99b; }
-.fillkey_3 { background-color: #74c476; }
-.fillkey_4 { background-color: #41ab5d; }
-.fillkey_5 { background-color: #238b45; }
-.fillkey_6 { background-color: #006d2c; }
-.fillkey_7 { background-color: #00441b; }
-
-#content .committee-info{
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-	margin-top: 20px;
-	margin-bottom: -20px;
-  border: 0px solid white;;
-  .totals{
-    font-family: 'Atlas Grotesk Web', 'Helvetica Neue', Arial, sans-serif;;
-    height: 100px;
-    margin: 0 14px;
-    display: inline-block;
-    text-align: center;
-    border: 0px solid white;
-    vertical-align: top;
-    width: 25%;
-    .stats{
-      font-size: 300%;
-			font-family: "Sentinel A", "Sentinel B", Georgia, serif;
-			font-weight: bold;
-      span{
-        font-size: 50%;
-      }
-    }
-    .sub{
-      padding: 5px 0;
-      width: 65%;
-      margin: 0 auto;
-      padding: 0.3em 1em;
-    }
-		.dates{
-			font-family: "Sentinel A", "Sentinel B", Georgia, serif;
-			font-size: 250%;
-      padding: 5px 0;
-      width: 65%;
-      margin: 0 auto;
-      padding: 0.3em 1em;
-    }
-  }
-}
-
 #content .crumbs {
   padding: 10px 0 10px;
   font-weight: 400;
@@ -204,96 +94,6 @@ p.byline {
   display: inline-block;
 }
 
-.badge-icon {
-  font-family: 'Atlas Grotesk Web', Helvetica, sans-serif;
-  padding: 1px 5px;
-  text-transform: uppercase;
-  color: #fff;
-  border-radius: 4px;
-  margin: 0px 5px 5px 0px !important;
-  background-color: #444;
-  font-size: 11px;
-  letter-spacing: .03em;
-  height: 100%;
-  display: inline-block;
-  line-height: 1.4em;
-  background-color:#444;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-    -webkit-transition: all 0.10s ease-in-out;
-  -moz-transition: all 0.10s ease-in-out;
-  -o-transition: all 0.10s ease-in-out;
-}
-
-.badge-icon:hover {
-  -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,.2);
--moz-box-shadow: 0px 0px 4px rgba(0,0,0,.2);
-box-shadow: 0px 0px 4px rgba(0,0,0,.2);
-opacity: 1
-}
-
-.b-leadership {
-  background-color: rgb(255,128,0);
-  color: #fff;
-  opacity: 1;
-}
-
-.b-super-pac {
-  background-color: rgb(50,205,50);
-  color: #fff;
-  opacity: 1;
-}
-
-.b-candidate {
-  background-color: rgb(192,192,192);
-  color: #fff;
-  opacity: 1;
-}
-
-.b-late {
-  background-color: #fca605;
-  color: #fff;
-  opacity: 1;
-}
-
-.b-early {
-  background-color: rgb(50,205,50);
-  color: #fff;
-  opacity: 1;
-}
-
-.b-on-time {
-  background-color: #74afd6;
-  color: #fff;
-  opacity: 1;
-}
-
-.b-does-not-file-regular-reports {
-  background-color: #c4baba;
-  color: #fff;
-  opacity: 1;
-}
-
-.btn-input {
-	float: left;
-	background: #963030;
-	padding: 9px 12px 8px 12px;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	max-height: 39px;
-	margin: 0px;
-	// height: 40px;
-
-	img { width: 20px; }
-
-}
 
 @media screen and (max-width: 935px) {
 	#content .committee-info{
@@ -422,3 +222,8 @@ h4.tweetTitle{
 .retweet:hover { background: url(/images/btn_retweet.png) center bottom no-repeat; }
 
 .titleParty { text-transform: uppercase;}
+
+.textReplace {
+	text-indent: -9999em;
+	display: block;
+}
