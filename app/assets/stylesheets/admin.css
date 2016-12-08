@@ -1,0 +1,177 @@
+/** Additional admin styles */
+
+.admin_header {
+	position: relative;
+	height: 70px;
+	margin-top: -20px;
+}
+
+.admin_header ul.nav {
+	margin-bottom: 30px;
+	position: absolute; left: 0;
+}
+
+.admin_header ul.nav li {
+  display: inline-block; 
+  margin-right: 20px;
+  font-size: 125%;
+}
+.admin_header ul.nav li a {text-decoration: underline;}
+
+.admin_header div.details {
+	margin-bottom: 10px;
+	position: absolute; right: 0;
+	font-size: 90%;
+}
+
+div.admin.review {
+  margin: 10px 0 10px 0;
+}
+
+div.admin.review input {
+  padding: 5px 10px;
+  margin-right: 10px;
+  font-size: 110%;
+}
+
+div.admin.review span.reviewed_at {
+
+}
+
+div.admin.review a.edit {
+  font-size: 80%;
+}
+
+div.admin.review div.review_message {
+	margin-top: 15px; margin-bottom: 0;
+}
+
+div.admin.review div.review_message p {margin-bottom: 5px;}
+
+div.admin.review label.review_message {
+	display: block;
+	margin-top: 10px;
+}
+
+div.admin.review textarea.review_message {
+	display: block;
+	margin: 10px 0;
+	height: 100px; width: 80%;
+}
+
+div.admin_error {
+	margin-bottom: 40px;
+	padding: 5px 10px;
+	margin-top: -20px;
+}
+
+#admin-politician ul li {margin: 10px; padding: 5px; width: 420px; }
+
+#admin-politician img { margin-top: -20px; }
+
+#admin-politician ul li span.formfield { float: right; }
+
+#admin-politician ul li span.formfield button.expander {
+    position: relative;
+    left: 20px;
+    width: 20px;
+    height: 25px;
+    margin-left: -22px;
+    padding: 0;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#admin-politician ul li div.expandable {
+    padding: 3px;
+    margin: 0;
+    border-width: 0;
+}
+
+#admin-politician ul.suggestions li.suggestion {
+    padding: 0;
+    margin: 3px 0 5px 0;
+    height: 80px;
+    width: 100%;
+    border-width: 0;
+    background: transparent;
+}
+
+#admin-politician ul.suggestions li.suggestion span.name {
+    vertical-align: top;
+    font-size: 16px;
+    text-align: right;
+}
+
+#admin-politician ul.suggestions li.suggestion a.identifier {
+    vertical-align: bottom;
+    font-size: 16px;
+    text-align: right;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+#admin-politician ul.suggestions li.suggestion img.photo {
+    height: 80px;
+    width: 66px;
+    margin: 0 6px 0 0;
+    padding: 0;
+    border-width: 0;
+}
+#admin-politician ul.suggestions li.suggestion div.right {
+    float: right;
+    width: 340px;
+}
+
+#admin-politician span#name {font-size: 1.2em; font-weight: bold;}
+
+#admin-politician ul li button { text-indent: 0; border: 1px solid; padding: 5px;  }
+
+#s_input, #suffix_input { width:20px; }
+#state { width: 20px ;}
+#mn_input, #middle_name_input { width: 30px; }
+
+#admin-politician #first_name, #admin-politician #middle_name, #admin-politician #last_name, #admin-politician #suffix { float: left; margin-left: 3px;margin-right: 3px}
+
+#admin-politician #first_name_input, #admin-politician #middle_name_input, #admin-politician #last_name_input, #admin-politician #suffix_input { float: left; margin-left: 3px;margin-right: 3px}
+
+#admin-list { font-size: 1.2em;}
+
+#admin-list h1 {width: auto; display: block ; float:none; }
+
+input { margin: 15px 0; }
+
+span.error { display: block;  }
+#admin-politician input { margin: 0}
+input.related { width: 250px; }
+input.state { width: 30px;} 
+
+table#queue-list { margin-top: 30px; }
+table#queue-list tr td:first-child { padding-right: 1em; }
+td.numeric { text-align: right; }
+
+div#annual-report h3 {
+    margin: 3em 1em 1em 0;
+}
+div#annual-report ul {
+    margin: 3em 0 0 0;
+}
+div#annual-report ol {
+    margin: 0 0 0 3em;
+}
+div#party-tweeting table {
+    border-collapse: collapse;
+}
+div#party-tweeting table th {
+    padding: 0.3em;
+}
+div#party-tweeting table td {
+    border: 1px solid gray;
+    text-align: right;
+    padding: 0.3em;
+}
+div#party-tweeting table td:first-child {
+    text-align: left;
+}
+
+
