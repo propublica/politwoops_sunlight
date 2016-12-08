@@ -2,8 +2,14 @@
   Deleted tweets for <%= office_title_for(@politician) %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= party_name_for(@politician) %>)<% if @page > 1 %> (Page <%= @page %>)<% end %>
 <% end %>
 
+<h1 class="app-name">Politwoops</h1>
+<h2 class="app-dek">Deleted Tweets from Politicians</h2>
+<p class="byline">Originally published by <a href="http://sunlightfoundation.com/">The Sunlight Foundation</a>. Updated regularly.</p>
+
+<p class="guff">Politwoops tracks deleted tweets by current politicians, including those in office and candidates. Explore the collection of tweets that they didn't want you to see. If you think we're missing someone, please <a href="mailto:twoops@sunlightfoundation.com">email us</a> with their Name, State, Political Party, Office they hold or are seeking and, of course, Twitter handle.</p>
+
 <div id="info">
-	<h3><%= office_abbr_for(@politician) %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= party_name_for(@politician) %>)</h3>
+	<h3>Deleted Tweets from <%= office_abbr_for(@politician) %> <%= @politician.first_name %> <%=@politician.last_name %> (<%= party_name_for(@politician) %>)</h3>
 	<ul class="accountList">
 		<li id="all-label" class="active">
 			<a class="accountHandle" href="#"><span>All Tweets</span></a>

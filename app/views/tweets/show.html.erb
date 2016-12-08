@@ -2,4 +2,8 @@
     Deleted tweet from <%= @tweet.details['user']['name'] %>
 <% end %>
 
+<h1 class="app-name">Politwoops</h1>
+<h2 class="app-dek">Deleted Tweets from Politicians</h2>
+<p class="byline">Originally published by <a href="http://sunlightfoundation.com/">The Sunlight Foundation</a>. Updated regularly.</p>
+
 <%= render :partial => "tweets/tweet", :locals => {:tweet => @tweet} %>

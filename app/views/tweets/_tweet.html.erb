@@ -59,8 +59,8 @@
 
   <% if !(defined?(admin) and admin) %>
     <div class="actions">
-      <a href="http://twitter.com/share?text=<%= CGI.escape('@' + tweet.user_name + ' ') %>&url=http://politwoops.sunlightfoundation.com/tweet/<%= tweet.id %>&via=SunFoundation" class="reply textReplace" target="_blank"><%=t :reply, :scope => [:politwoops, :tweets] %></a>
-      <a href="http://twitter.com/share?text=<%= CGI.escape('DT @' + tweet.user_name + ' ' + CGI.unescapeHTML(tweet.content)) %>&url=http://politwoops.sunlightfoundation.com/tweet/<%= tweet.id %>" class="retweet textReplace" target="_blank"><%=t :retweet, :scope => [:politwoops, :tweets] %></a>
+      <a href="http://twitter.com/share?text=<%= CGI.escape('@' + tweet.user_name + ' ') %>&url=https://projects.propublica.org/politwoops/tweet/<%= tweet.id %>&via=SunFoundation" class="reply textReplace" target="_blank"><%=t :reply, :scope => [:politwoops, :tweets] %></a>
+      <a href="http://twitter.com/share?text=<%= CGI.escape('DT @' + tweet.user_name + ' ' + CGI.unescapeHTML(tweet.content)) %>&url=https://projects.propublica.org/politwoops/tweet/<%= tweet.id %>" class="retweet textReplace" target="_blank"><%=t :retweet, :scope => [:politwoops, :tweets] %></a>
     </div>
   <% end %>
 
