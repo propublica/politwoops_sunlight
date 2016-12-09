@@ -28,6 +28,7 @@ gem "rmagick", "~> 2.0"
 gem "paperclip", "2.7.0"
 gem "aws-sdk"
 gem 'sass-rails'
+gem 'unicorn'
 
 # allows the app to be run with "bundle exec unicorn" in development
 group :development do
