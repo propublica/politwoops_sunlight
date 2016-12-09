@@ -1,0 +1,3 @@
+nohup run-tweets-client -v -i > tweets-client.out &
+nohup run-politwoops-worker -v -i > politwoops-worker.out &
+nohup run-screenshot-worker -v -i > screenshot-worker.out &

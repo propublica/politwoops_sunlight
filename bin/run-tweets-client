@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd $HOME/politwoops-tweet-collector
+export PYTHONPATH=$PYTHONPATH:`pwd`/lib
+$HOME/virt/bin/python ./bin/tweets-client.py --loglevel=notice --output=../log/tweets-client.log --restart

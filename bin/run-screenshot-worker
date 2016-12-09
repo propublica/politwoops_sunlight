@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd $HOME/politwoops-tweet-collector
+export PYTHONPATH=$PYTHONPATH:`pwd`/lib
+export PATH="$HOME/phantomjs-1.9.7-linux-x86_64/bin":"$PATH"
+$HOME/virt/bin/python ./bin/screenshot-worker.py --loglevel=notice --output=../log/screenshot-worker.log --restart
