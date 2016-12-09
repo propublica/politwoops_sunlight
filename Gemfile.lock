@@ -67,6 +67,7 @@ GEM
     comma (3.2.4)
       activesupport (>= 3.0.0)
     concurrent-ruby (1.0.2)
+    dalli (2.7.6)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     domain_name (0.5.20161021)
@@ -219,6 +220,7 @@ DEPENDENCIES
   aws-sdk
   beanstalk-client
   comma (~> 3.0)
+  dalli
   gender_detector
   httparty (~> 0.10.0)
   memcache (= 1.3.0)

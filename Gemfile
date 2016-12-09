@@ -29,6 +29,7 @@ gem "paperclip", "2.7.0"
 gem "aws-sdk"
 gem 'sass-rails'
 gem 'unicorn'
+gem 'dalli'
 
 # allows the app to be run with "bundle exec unicorn" in development
 group :development do
