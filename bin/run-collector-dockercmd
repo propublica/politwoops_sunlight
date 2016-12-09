@@ -1,5 +1,6 @@
 #!/bin/bash
-run-tweets-client -v -i &
-run-politwoops-worker -v -i &
-run-screenshot-worker -v -i &
+/usr/bin/beanstalkd -f 60000 -b /data &
+./run-tweets-client -v -i &
+./run-politwoops-worker -v -i &
+./run-screenshot-worker -v -i &
 wait
