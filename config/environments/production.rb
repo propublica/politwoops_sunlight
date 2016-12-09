@@ -28,7 +28,10 @@ Politwoops::Application.configure do
   # config.logger = SyslogLogger.new
 
   # Use a different cache store in production
-  config.cache_store = :mem_cache_store, { :namespace => 'politwoops' }
+  config.cache_store = :mem_cache_store,
+    "newsapps-vpc.o2zdh0.0001.use1.cache.amazonaws.com",
+    { :namespace => 'politwoops', compress: true }
+    #{ :namespace => 'politwoops', expires_in: 1.day, compress: true }
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
