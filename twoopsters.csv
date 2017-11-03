@@ -1,753 +1,2059 @@
-Alan,,Nunnelee,,House Representative,MS,RepAlanNunnelee,R,Official,,N,
-Allen,,West,,House Representative,FL,AllenWest,R,Official,ElectAllenWest,Y,
-Allen,,West,,House Representative,FL,ElectAllenWest,R,Campaign,AllenWest,N,
-Ander,,Crenshaw,,House Representative,FL,AnderCrenshaw,R,Official,,Y,
-George,,Miller,,House Representative,CA,askgeorge,D,Official,,Y,
-Austin,,Scott,,House Representative,GA,AustinScottGA08,R,Official,,Y,
-Spencer,,Bachus,,House Representative,AL,BachusAL06,R,Official,,Y,
-Barack,,Obama,,President,DC,BarackObama,D,Official,,Y,
-Bennie,,Thompson,,House Representative,MI,BennieGThompson,D,Official,,Y,
-Ben,,Quayle,,House Representative,AZ,benquayle,R,Official,,Y,
-Brian,,Bilbray,,House Representative,CA,BilbrayCA50,R,Official,,Y,
-Bill,,Owens,,House Representative,NY,BillOwensNY,D,Official,,Y,
-Billy,,Long,,House Representative,MO,auctnr1,R,Campaign,,N,"the ""billylongmo7"" account previously listed here doesn't exist. i've replaced it with this one (auctnr1), which is listed on his campaign site"
-Earl,,Blumenauer,,House Representative,OR,BlumenauerMedia,D,Official,,Y,
-Bob,,Gibbs,,House Representative,OH,Bob_Gibbs,R,Campaign,repbobgibbs,Y,
-Bob,,Gibbs,,House Representative,OH,repbobgibbs,R,Official,Bob_Gibbs,N,
-Bob,G.,Latta,,House Representative,OH,boblatta,R,Official,,Y,
-Brad,,Sherman,,House Representative,CA,BradSherman,D,Official,,Y,
-Bruce,,Bailey,,House Representative,IA,BruceBraley,D,Official,,Y,
-Buck,,McKeon,,House Representative,CA,BuckMcKeon,R,Official,,Y,
-Buddy,,Roemer,,Presidential Challenger,CA,BuddyRoemer,R,Campaign,,Y,
-Herman,,Cain,,Presidential Challenger,GA,cainpress,R,Campaign,THEHermanCain,N,
-Dutch,,Ruppersberger,,House Representative,MD,Call_Me_Dutch,D,Official,,Y,
-Candice,,Miller,,House Representative,MI,CandiceMiller,R,Official,,Y,
-Maria,,Cantwell,,Senator,WA,CantwellPress,D,Official,,Y,
-Carolyn,B.,Maloney,,House Representative,NY,CarolynBMaloney,D,Official,,Y,
-Cathy,,McMorris,,House Representative,WA,cathymcmorris,R,Official,,Y,
-Charles,,Rangel,,House Representative,NY,cbrangel,D,Official,rangel4congress,Y,
-Charles,,Rangel,,House Representative,NY,rangel4congress,D,Campaign,cbrangel,N,
-Chaka,,Fattah,,House Representative,PA,chakafattah,D,Official,fattah4congress,Y,
-Chaka,,Fattah,,House Representative,PA,fattah4congress,D,Campaign,chakafattah,N,
-Chellie,,Pingree,,House Representative,ME,chelliepingree,D,Official,,Y,
-Chris,,van Hollen,,House Representative,LA,ChrisVanHollen,D,Official,,Y,
-Chuck,,Grassley,,Senator,IA,ChuckGrassley,R,Official,,Y,
-Chuck,,Schumer,,Senator,NY,ChuckSchumer,D,Official,,Y,
-Claire,,McCaskill,,Senator,MO,clairecmc,D,Official,mccaskill2012,Y,
-Claire,,McCaskill,,Senator,MO,mccaskill2012,D,Campaign,clairecmc,N,
-James,E.,Clyburn,,House Representative,SC,Clyburn,D,Official,,Y,
-Colleen,,Hanabusa,,House Representative,HI,ColleenHanabusa,D,Campaign,rephanabusa,Y,
-Colleen,,Hanabusa,,House Representative,HI,rephanabusa,D,Official,ColleenHanabusa,N,
-Mike,,Conaway,,House Representative,TX,ConawayTX11,R,Official,,Y,
-Bill,,Posey,,House Representative,FL,congbillposey,R,Official,,Y,
-Bob,,Filner,,House Representative,CA,CongBobFilner,D,Official,bobfilner,Y,
-Bob,,Filner,,House Representative,CA,bobfilner,D,Campaign,CongBobFilner,N,
-John,,Culberson,,House Representative,TX,CongCulberson,R,Official,,Y,
-Tim,,Huelskamp,,House Representative,KS,CongHuelskamp,R,Official,,Y,
-Jeff,,Miller,,House Representative,FL,CongJeffMiller,R,Official,,N,@CongJeffMiller is not a current twitter handle. He does not appear to have any active twitter presence at this time.
-Joe,,Wilson,,House Representative,SC,CongJoeWilson,R,Campaign,USRepJoeWilson,Y,
-Joe,,Wilson,,House Representative,SC,USRepJoeWilson,R,Official,CongJoeWilson,N,
-Mike,,Simpson,,House Representative,ID,CongMikeSimpson,R,Official,mikesimpson4id,Y,
-Mike,,Simpson,,House Representative,ID,mikesimpson4id,R,Campaign,CongMikeSimpson,N,
-Dan,,Benishek,,House Representative,MI,CongressmanDan,R,Official,Benishek,Y,
-Dan,,Benishek,,House Representative,MI,Benishek,R,Campaign,CongressmanDan,N,
-Glenn,"""GT""",Thompson,,House Representative,PA,CongressmanGT,R,Official,,Y,
-Cynthia,,Lummis,,House Representative,WY,CynthiaLummis,R,Official,,Y,
-Dana,,Rohrabacher,,House Representative,CA,DanaRohrabacher,R,Campaign,,Y,
-Daniel,,Inouye,,Senator,HI,Daniel_Inouye,D,Official,teamdaninouye,Y,
-Daniel,,Inouye,,Senator,HI,teamdaninouye,D,Campaign,Daniel_Inouye,N,
-Darrel,, Issa,,House Representative,CA,DarrellIssa,R,Official,congressmanissa,Y,
-Darrel,, Issa,,House Representative,CA,congressmanissa,R,Campaign,DarrellIssa,N,
-Dave,,Reichert,,House Representative,WA,davereichert,R,Official,TeamReichert,Y,
-Dave,,Reichert,,House Representative,WA,TeamReichert,R,Campaign,davereichert,N,
-David,,Vitter,,Senator,LA,DavidVitter,R,Campaign,,Y,
-Dean,,Heller,,Senator,NV,DeanHeller,R,Campaign,SenDeanHeller,Y,
-Dean,,Heller,,Senator,NV,SenDeanHeller,R,Official,DeanHeller,N,
-Donna,,Christensen,,House Representative,VI,DelegateDonna,D,Official,,Y,
-Dennis,,Kucinich,,House Representative,OH,Dennis_Kucinich,D,Campaign,,Y,
-Denny,,Rehberg,,House Representative,MT,DennyRehberg,R,Official,Rehberg2012,Y,
-Denny,,Rehberg,,House Representative,MT,Rehberg2012,R,Campaign,DennyRehberg,N,
-Devin,,Nunes,,House Representative,CA,DevinNunes,R,Official,,Y,
-Don,,Manzullo,,House Representative,IL,donmanzullo,R,Official,manzullohq,Y,
-Don,,Manzullo,,House Representative,IL,manzullohq,R,Campaign,donmanzullo,N,
-Doris,,Matsui,,House Representative,CA,DorisMatsui,D,Official,,Y,
-Phil,,Roe,,House Representative,TN,DrPhilRoe,R,Official,,Y,
-Ed,,Towns,,House Representative,NY,EdTowns,D,Official,,Y,
-Eleanor,,Holmes-Norton,,House Representative,DC,EleanorNorton,D,Official,,Y,
-Elton,,Gallegly,,House Representative,CA,eltongallegly24,R,Official,,Y,
-Erik,,Paulsen,,House Representative,MN,Erik_Paulsen,R,Campaign,RepErikPaulsen,Y,
-Erik,,Paulsen,,House Representative,MN,RepErikPaulsen,R,Official,Erik_Paulsen,N,
-Blake,,Farenthold,,House Representative,TX,farenthold,R,Official,elect_blake,Y,
-Blake,,Farenthold,,House Representative,TX,elect_blake,R,Campaign,farenthold,N,
-Frank,,Guinta,,House Representative,NH,frankguinta,R,Campaign,repfrankguinta,Y,
-Frank,,Guinta,,House Representative,NH,repfrankguinta,R,Official,frankguinta,N,
-Frank,,Lautenberg,,Senator,NJ,FrankLautenberg,D,Official,,Y,
-Frank,,Pallone,,House Representative,NJ,FrankPallone,D,Official,TeamPallone,Y,
-Frank,,Pallone,,House Representative,NJ,TeamPallone,D,Campaign,FrankPallone,N,
-Fred,,Karger,,Presidential Challenger,,fredkarger,R,Campaign,,Y,** Not sure if this guy is in / running for Congress. You should double check him. 
-Gabrielle,"""Gabby""",Giffords,,House Representative,AZ,GabbyGiffords,D,Campaign,,Y,** Resigned from Congress. 
-Gerry,,Connolly,,House Representative,VA,GerryConnolly,D,Official,ElectConnolly,Y,
-Gerry,,Connolly,,House Representative,VA,ElectConnolly,D,Campaign,GerryConnolly,N,
-Eric,,Cantor,,House Representative,VA,GOPLeader,R,Official,,Y,
-Kevin,,McCarthy,,House Representative,CA,GOPWhip,R,Official,kevinomccarthy,Y,
-Kevin,,McCarthy,,House Representative,CA,kevinomccarthy,R,Campaign,GOPWhip,N,
-Gary,,Johnson,,Presidential Challenger,,GovGaryJohnson,R,Campaign,,Y,
-Grace,,Napolitano,,House Representative,CA,gracenapolitano,D,Official,grace4congress,Y,
-Grace,,Napolitano,,House Representative,CA,grace4congress,D,Campaign,gracenapolitano,N,
-Lindsey,,Graham,,Senator,SC,GrahamBlog,R,Official,lindseygrahamsc,Y,
-Lindsey,,Graham,,Senator,SC,lindseygrahamsc,R,Campaign,GrahamBlog,N,
-Gregg,,Harper,,House Representative,MS,GreggHarper,R,Official,HarperCampaign,Y,
-Gregg,,Harper,,House Representative,MS,HarperCampaign,R,Campaign,GreggHarper,N,
-Gregory,,Meeks,,House Representative,NY,GregoryMeeks,D,Official,,Y,
-Joe,,Heck,,House Representative,NV,Heck4Nevada,R,Campaign,RepJoeHeck,Y,
-Joe,,Heck,,House Representative,NV,RepJoeHeck,R,Official,Heck4Nevada,N,
-Jaime,,Herrera Beutler,,House Representative,WA,HerreraBeutler,R,Official,JaimeLHerrera,Y,
-Jaime,,Herrera Beutler,,House Representative,WA,JaimeLHerrera,R,Campaign,HerreraBeutler,N,
-Howard,,Coble,,House Representative,NC,HowardCoble,R,Official,,Y,
-Jack,,Kingston,,House Representative,GA,JackKingston,R,Official,,Y,
-Sheila,,Jackson Lee,,House Representative,TX,JacksonLeeTX18,D,Official,jacksonlee18,Y,
-Sheila,,Jackson Lee,,House Representative,TX,jacksonlee18,D,Campaign,JacksonLeeTX18,N,
-Jim,,Himes,,House Representative,CT,jahimes,D,Official,,Y,
-Jan,,Schakowsky,,House Representative,IL,janschakowsky,D,Official,repschakowsky,Y,
-Jan,,Schakowsky,,House Representative,IL,repschakowsky,D,Campaign,janschakowsky,N,
-Jared,,Polis,,House Representative,CO,jaredpolis,D,Campaign,reppolispress,Y,
-Jared,,Polis,,House Representative,CO,reppolispress,D,Official,jaredpolis,N,
-Jason,,Chaffetz,,House Representative,UT,jasoninthehouse,R,Official,,Y,
-Jeanne,,Shaheen,,Senator,NH,jeanneshaheen,D,Campaign,SenatorShaheen,Y,
-Jeanne,,Shaheen,,Senator,NH,SenatorShaheen,D,Official,jeanneshaheen,N,
-Jeff,,Flake,,House Representative,AZ,JeffFlake,R,Official,flakeforsenate,Y,
-Jeff,,Flake,,House Representative,AZ,flakeforsenate,R,Campaign,JeffFlake,N,House rep running for Senate
-Jeff,,Fortenberry,,House Representative,NE,JeffFortenberry,R,Official,,Y,
-Jerry,,Costello,,House Representative,IL,JerryCostello,D,Official,,Y,
-Jerry,,McNerney,,House Representative,CA,jerrymcnerney,D,Campaign,RepMcNerney,Y,
-Jerry,,McNerney,,House Representative,CA,RepMcNerney,D,Official,jerrymcnerney,N,
-Jerry,,Moran,,Senator,KS,JerryMoran,R,Official,moranforkansas,Y,
-Jerry,,Moran,,Senator,KS,moranforkansas,R,Campaign,JerryMoran,N,
-Jim,,Jordan,,House Representative,OH,Jim_Jordan,R,Official,,Y,
-Jim,,Moran,,House Representative,VA,Jim_Moran,D,Official,,Y,
-Jim,,DeMint,,Senator,SC,JimDeMint,R,Campaign,,Y,
-Jim,,Gerlach,,House Representative,PA,JimGerlach,R,Official,,Y,
-Jim,,Inhofe,,Senator,OK,jiminhofe,R,Campaign,inhofepress,Y,
-Jim,,Inhofe,,Senator,OK,inhofepress,R,Official,jiminhofe,N,
-Jim,,Langevin,,House Representative,RI,jimlangevin,D,Official,,Y,
-Joe,,Lieberman,,Senator,CT,JoeLieberman,I,Official,,Y,
-John,,Dingell,,House Representative,MI,john_dingell,D,Official,teamdingell,Y,
-John,,Dingell,,House Representative,MI,teamdingell,D,Campaign,john_dingell,N,
-John,,Boozeman,,Senator,AR,JohnBoozman,R,Official,boozman4AR,Y,
-John,,Boozeman,,Senator,AR,boozman4AR,R,Campaign,JohnBoozman,N,
-John,,Carney,,House Representative,DE,JohnCarneyDE,D,Official,John_Carney,Y,
-John,,Carney,,House Representative,DE,John_Carney,D,Campaign,JohnCarneyDE,N,
-John,,Cornyn,,Senator,TX,JohnCornyn,R,Campaign,,Y,
-John,,Kerry,,Senator,MA,JohnKerry,D,Official,,Y,
-Jon,,Huntsman,,Governor,UT,JonHuntsman,R,Official,jon2012hq,Y,
-Jon,,Huntsman,,Governor,UT,jon2012hq,R,Campaign,JonHuntsman,N,
-John,,Carter,,House Representative,TX,JudgeCarter,R,Official,RepJohnCarter,Y,
-John,,Carter,,House Representative,TX,RepJohnCarter,R,Campaign,JudgeCarter,N,
-Ted,,Poe,,House Representative,TX,JudgeTedPoe,R,Official,,Y,
-Judy,,Biggert,,House Representative,IL,JudyBiggert,R,Official,Biggert2012,Y,
-Judy,,Biggert,,House Representative,IL,Biggert2012,R,Campaign,JudyBiggert,N,
-Kay,,Bailey Hutchison,,Senator,TX,kaybaileyhutch,R,Official,,Y,
-Keith,,Ellison,,House Representative,MN,keithellison,D,Official,EllisonCampaign,Y,
-Keith,,Ellison,,House Representative,MN,EllisonCampaign,D,Campaign,keithellison,N,
-Kelly,,Ayotte,,Senator,NH,KellyAyotte,R,Official,,Y,
-Ken,,Calvert,,House Representative,CA,KenCalvert,R,Official,TeamCalvert,Y,
-Ken,,Calvert,,House Representative,CA,TeamCalvert,R,Campaign,KenCalvert,N,
-Kevin,,Yoder,,House Representative,KS,KevinYoder,R,Campaign,RepKevinYoder,Y,
-Kevin,,Yoder,,House Representative,KS,RepKevinYoder,R,Official,KevinYoder,N,
-Lamar,,Smith,,House Representative,TX,LamarSmithTX21,R,Official,,Y,
-Rick,,Larsen,,House Representative,WA,larsenrick,D,Campaign,RepRickLarsen,Y,
-Rick,,Larsen,,House Representative,WA,RepRickLarsen,D,Official,larsenrick,N,
-Lee,,Terry,,House Representative,NE,LEETERRYNE,R,Official,leeterry2012,Y,
-Lee,,Terry,,House Representative,NE,leeterry2012,R,Campaign,LEETERRYNE,N,
-Leonard,,Boswell,,House Representative,IA,LeonardBoswell,D,Official,,Y,
-Lisa,,Murkowski,,Senator,AK,lisamurkowski,R,Official,Lisa4Senate,Y,
-Lisa,,Murkowski,,Senator,AK,Lisa4Senate,R,Campaign,lisamurkowski,N,
-Loretta,,Sanchez,,House Representative,CA,LorettaSanchez,D,Official,,Y,
-Louise,,Slaughter,,House Representative,NY,louiseslaughter,D,Official,VoteLouise2012,Y,
-Louise,,Slaughter,,House Representative,NY,VoteLouise2012,D,Campaign,louiseslaughter,N,
-Mac,,Thornberry ,,House Representative,TX,MacTXPress,R,Official,,Y,
-Marcia,,Fudge,,House Representative,OH,RepMarciaFudge,D,Official,mlfudge,N,
-Marcia,,Fudge,,House Representative,OH,mlfudge,D,Campaign,RepMarciaFudge,N,
-Mario,,Diaz-Balart,,House Representative,FL,MarioDB,R,Official,mariodiazbalart,Y,
-Mario,,Diaz-Balart,,House Representative,FL,mariodiazbalart,R,Campaign,MarioDB,N,
-Ed,,Markey,,House Representative,MA,MarkeyMemo,D,Official,,Y,
-Mark,,Udall,,Senator,CO,MarkUdall,D,Official,,Y,
-Mark,,Warner,,Senator,VA,MarkWarner,D,Official,,Y,
-Marlin,,Stutzman,,House Representative,IN,MarlinStutzman,R,Campaign,RepStutzman,Y,
-Marlin,,Stutzman,,House Representative,IN,RepStutzman,R,Official,MarlinStutzman,N,
-Marsha,,Blackburn,,House Representative,TN,MarshaBlackburn,R,Official,votemarsha,Y,
-Marsha,,Blackburn,,House Representative,TN,votemarsha,R,Campaign,MarshaBlackburn,N,
-,,,,,,martharoby,,,,Y,Delete this account
-Martha,,Roby,,House Representative,AL,RepMarthaRoby,R,Official,,N,
-Mary,Bono,Mack,,House Representative,CA,MaryBonoMack,R,Campaign,Rep_BonoMack,Y,
-Mary,Bono,Mack,,House Representative,CA,Rep_BonoMack,R,Official,MaryBonoMack,N,
-Maurice,,Hinchey,,House Representative,NY,mauricehinchey,D,Official,,Y,
-Maxine,,Waters,,House Representative,CA,MaxineWaters,D,Official,WatersCampaign,Y,
-Maxine,,Waters,,House Representative,CA,WatersCampaign,D,Campaign,MaxineWaters,N,"account hasn't tweeted anything, but it's live"
-Mazie,,Hirono,,House Representative,HI,maziehirono,D,Official,mazieforhawaii,Y,
-Mazie,,Hirono,,House Representative,HI,mazieforhawaii,D,Campaign,maziehirono,N,House rep running for Senate
-Michael,,McCaul,,House Representative,TX,McCaulPressShop,R,Official,,Y,
-Mitch,,McConnell,,Senator,KY,McConnellPress,R,Official,team_mitch,Y,
-Mitch,,McConnell,,Senator,KY,team_mitch,R,Campaign,McConnellPress,N,
-Mel,,Watt,,House Representative,NC,MelWattNC12,D,Official,,Y,
-Michael,C.,Burgess,M.D.,House Representative,TX,michaelcburgess,R,Official,,Y,
-Michele,,Bachmann,,House Representative,MN,MicheleBachmann,R,Official,teambachmann,Y,
-Michele,,Bachmann,,House Representative,MN,teambachmann,R,Campaign,MicheleBachmann,N,
-Mick,,Mulvaney,,House Representative,SC,MickMulvaney,R,Campaign,RepMickMulvaney,Y,
-Mick,,Mulvaney,,House Representative,SC,RepMickMulvaney,R,Official,MickMulvaney,N,
-Mike,,Johanns,,Senator,NE,Mike_Johanns,R,Official,,Y,
-Mike,,Pompeo,,House Representative,KS,mikepompeo,R,Campaign,repmikepompeo,Y,
-Mike,,Pompeo,,House Representative,KS,repmikepompeo,R,Official,mikepompeo,N,
-Mitt,,Romney,,Presidential Challenger,MA,MittRomney,R,Campaign,,Y,
-Nancy,,Pelosi,,House Representative,CA,NancyPelosi,D,Official,,Y,
-Newt,,Gingrich,,Presidential Challenger,GA,Newt2012HQ,R,Campaign,newtgingrich,Y,
-Newt,,Gingrich,,Presidential Challenger,GA,newtgingrich,R,Campaign,Newt2012HQ,Y,
-Nita,,Lowey,,House Representative,NY,NitaLowey,D,Official,Lowey4Congress,Y,
-Nita,,Lowey,,House Representative,NY,Lowey4Congress,D,Campaign,NitaLowey,N,
-Niki,,Tsongas,,House Representative,MA,ntsongas,D,Campaign,nikiinthehouse,Y,
-Niki,,Tsongas,,House Representative,MA,nikiinthehouse,D,Official,ntsongas,N,
-Pete,,Olson,,House Representative,TX,OlsonPressShop,R,Official,peteolson,Y,
-Pete,,Olson,,House Representative,TX,peteolson,R,Campaign,OlsonPressShop,N,
-Orrin,,Hatch,,Senator,UT,OrrinHatch,R,Campaign,SenOrrinHatch,Y,
-Orrin,,Hatch,,Senator,UT,SenOrrinHatch,R,Official,OrrinHatch,N,
-Pat,,Meehan,,House Representative,PA,PatMeehanPA,R,Campaign,repmeehan,Y,
-Pat,,Meehan,,House Representative,PA,repmeehan,R,Official,PatMeehanPA,N,
-Patrick,,McHenry,,House Representative,NC,PatrickMcHenry,R,Official,McHenryCampaign,Y,
-Patrick,,McHenry,,House Representative,NC,McHenryCampaign,R,Campaign,PatrickMcHenry,N,
-Patty,,Murray,,Senator,WA,PattyMurray,D,Official,murraycampaign,Y,
-Patty,,Murray,,Senator,WA,murraycampaign,D,Campaign,PattyMurray,N,
-Paul,,Tonko,,House Representative,NY,paultonko,D,Official,RepPaulTonko,Y,
-Paul,,Tonko,,House Representative,NY,RepPaulTonko,D,Campaign,paultonko,N,
-Pedro,,Pierluisi,,House Representative,PR,pedropierluisi,D,Official,,Y,
-Peter,,Roskam,,House Representative,IL,PeterRoskam,R,Official,,Y,
-Pete,,Sessions,,House Representative,TX,PeteSessions,R,Official,,Y,
-Pete,,Stark,,House Representative,CA,petestark,D,Official,,Y,
-Randy,,Forbes,,House Representative,VA,Randy_Forbes,R,Official,RepRandyForbes,Y,
-Randy,,Forbes,,House Representative,VA,RepRandyForbes,R,Campaign,Randy_Forbes,N,
-Randy,,Hultgren,,House Representative,IL,RandyHultgren,R,Campaign,rephultgren,Y,
-Randy,,Hultgren,,House Representative,IL,rephultgren,R,Official,RandyHultgren,N,
-Randy,,Neugebauer,,House Representative,TX,RandyNeugebauer,R,Official,,Y,
-Raúl,R.,Labrador,,House Representative,ID,Raul_Labrador,R,Official,Labrador4Idaho,Y,
-Raúl,R.,Labrador,,House Representative,ID,Labrador4Idaho,R,Campaign,Raul_Labrador,N,
-Adam,,Smith,,House Representative,WA,Rep_Adam_Smith,D,Official,electadamsmith,Y,
-Adam,,Smith,,House Representative,WA,electadamsmith,D,Campaign,Rep_Adam_Smith,N,
-Albio,,Sires,,House Representative,NJ,Rep_Albio_Sires,D,Official,AlbioSiresNJ,Y,
-Albio,,Sires,,House Representative,NJ,AlbioSiresNJ,D,Campaign,Rep_Albio_Sires,N,
-Janice,,Hahn,,House Representative,CA,Rep_JaniceHahn,D,Official,janicehahn,Y,
-Janice,,Hahn,,House Representative,CA,janicehahn,D,Campaign,Rep_JaniceHahn,N,
-Steve,,Southerland,,House Representative,FL,Rep_Southerland,R,Official,,Y,
-Steve,,Womack,,House Representative,AR,rep_stevewomack,R,Official,womack4congress,Y,
-Steve,,Womack,,House Representative,AR,womack4congress,R,Campaign,rep_stevewomack,N,
-Aaron ,,Schock,,House Representative,IL,repaaronschock,R,Official,AaronSchock,Y,
-Aaron ,,Schock,,House Representative,IL,AaronSchock,R,Campaign,repaaronschock,N,
-Adam,,Schiff,,House Representative,CA,RepAdamSchiff,D,Official,28thDistrict,Y,
-Adam,,Schiff,,House Representative,CA,28thDistrict,D,Campaign,RepAdamSchiff,N,
-Al,,Green,,House Representative,TX,RepAlGreen,D,Official,RepAlGreenTX,Y,
-Al,,Green,,House Representative,TX,RepAlGreenTX,D,Campaign,RepAlGreen,N,
-Anna,G.,Eshoo,,House Representative,CA,RepAnnaEshoo,D,Official,,Y,
-Barbara,,Lee,,House Representative,CA,RepBarbaraLee,D,Official,bleeforcongress,Y,
-Barbara,,Lee,,House Representative,CA,bleeforcongress,D,Campaign,RepBarbaraLee,N,
-Xavier,,Becerra,,House Representative,CA,RepBecerra,D,Official,,Y,
-Ben,Ray,Lujan,,House Representative,NM,repbenraylujan,D,Official,,Y,
-Shelley,,Berkley,,House Representative,NV,RepBerkley,D,Official,Berkley4Senate,Y,
-Shelley,,Berkley,,House Representative,NV,Berkley4Senate,D,Campaign,RepBerkley,N,House rep running for Senate
-Bill,,Flores,,House Representative,TX,RepBillFlores,R,Official,flores4congress,Y,
-Bill,,Flores,,House Representative,TX,flores4congress,R,Campaign,RepBillFlores,N,
-Bill,,Johnson,,House Representative,OH,RepBillJohnson,R,Official,JohnsonLeads,Y,
-Bill,,Johnson,,House Representative,OH,JohnsonLeads,R,Campaign,RepBillJohnson,N,
-Bill,,Shuster,,House Representative,PA,RepBillShuster,R,Official,,Y,
-Bobby,L.,Rush,,House Representative,IL,RepBobbyRush,D,Official,BobbyLRushMC,Y,
-Bobby,L.,Rush,,House Representative,IL,BobbyLRushMC,D,Campaign,RepBobbyRush,N,
-Bobby,,Scott,,House Representative,VA,repbobbyscott,D,Official,BobbyScott47,Y,
-Bobby,,Scott,,House Representative,VA,BobbyScott47,D,Campaign,repbobbyscott,N,
-Charles,,Boustany,,House Representative,LA,repboustany,R,Official,reelectboustany,Y,
-Charles,,Boustany,,House Representative,LA,reelectboustany,R,Campaign,repboustany,N,
-Bob,,Brady,,House Representative,PA,RepBrady,D,Official,bradybunchpa,Y,
-Bob,,Brady,,House Representative,PA,bradybunchpa,D,Campaign,RepBrady,N,
-Brian,,Higgins,,House Representative,NY,RepBrianHiggins,D,Official,higgins4wny,Y,
-Brian,,Higgins,,House Representative,NY,higgins4wny,D,Campaign,RepBrianHiggins,N,
-Anne,Marie,Buerkle,,House Representative,NY,RepBuerkle,R,Official,,Y,
-Francisco,,Canseco,,House Representative,TX,RepCanseco,R,Official,cansecotx23,Y,
-Francisco,,Canseco,,House Representative,TX,cansecotx23,R,Campaign,RepCanseco,N,
-Dennis,,Cardoza,,House Representative,CA,RepCardoza,D,Official,,Y,has apparently resigned
-Russ ,,Carnahan,,House Representative,MO,RepCarnahan,D,Official,,Y,
-Chip,,Cravaack,,House Representative,MN,RepChipCravaack,R,Official,ChipCravaack,Y,
-Chip,,Cravaack,,House Representative,MN,ChipCravaack,R,Campaign,RepChipCravaack,N,
-Chris,,Gibson,,House Representative,NY,repchrisgibson,R,Official,ChrisGibsonNY,Y,
-Chris,,Gibson,,House Representative,NY,ChrisGibsonNY,R,Campaign,repchrisgibson,N,
-Chuck,,Fleischmann,,House Representative,TN,RepChuck,R,Official,chuck4congress,Y,
-Chuck,,Fleischmann,,House Representative,TN,chuck4congress,R,Campaign,RepChuck,N,
-Emanuel,,Cleaver,,House Representative,MO,repcleaver,D,Official,,Y,
-Cliff,,Stearns,,House Representative,FL,RepCliffStearns,R,Official,CongStearns,Y,
-Cliff,,Stearns,,House Representative,FL,CongStearns,R,Campaign,RepCliffStearns,N,
-Steve,,Cohen,,House Representative,TN,RepCohen,D,Official,reelectcohen,Y,
-Steve,,Cohen,,House Representative,TN,reelectcohen,D,Campaign,RepCohen,N,
-Connie,,Mack,,House Representative,FL,RepConnieMack,R,Official,conniemackiv,Y,
-Connie,,Mack,,House Representative,FL,conniemackiv,R,Campaign,RepConnieMack,N,
-Corrine,,Brown,,House Representative,FL,RepCorrineBrown,D,Official,,Y,
-,,,,,,repcory,R,,,Y,DELETE
-Cory,,Gardner,,House Representative,CO,RepCoryGardner,R,Official,,,
-Henry,,Cuellar,,House Representative,TX,RepCuellar,D,Official,,Y,
-Dan,,Burton,,House Representative,IN,RepDanBurton,R,Official,,Y,
-Dave,,Camp,,House Representative,MI,RepDaveCamp,R,Official,CampForCongress,Y,
-Dave,,Camp,,House Representative,MI,CampForCongress,R,Campaign,RepDaveCamp,N,
-David,,Schweikert,,House Representative,AZ,RepDavid,R,Official,DavidSchweikert,Y,
-David,,Schweikert,,House Representative,AZ,DavidSchweikert,R,Campaign,RepDavid,N,
-David,,Scott,,House Representative,GA,repdavidscott,D,Official,electdavidscott,Y,
-David,,Scott,,House Representative,GA,electdavidscott,D,Campaign,repdavidscott,N,
-Dennis,,Ross,,House Representative,FL,RepDennisRoss,R,Official,ElectDennisRoss,Y,
-Dennis,,Ross,,House Representative,FL,ElectDennisRoss,R,Campaign,RepDennisRoss,N,
-Diana,,DeGette,,House Representative,CO,RepDianaDeGette,D,Official,,Y,
-Diane,,Black,,House Representative,TN,RepDianeBlack,R,Official,DianeBlack4Rep,Y,
-Diane,,Black,,House Representative,TN,DianeBlack4Rep,R,Campaign,RepDianeBlack,N,
-Robert,J.,Dold,,House Representative,IL,RepDold,R,Official,RobertDold,Y,
-Robert,J.,Dold,,House Representative,IL,RobertDold,R,Campaign,RepDold,N,
-Donna,F.,Edwards,,House Representative,MD,repdonnaedwards,D,Official,,Y,
-Joe,,Donnelly,,House Representative,IN,RepDonnelly,D,Official,JoeforIndiana,Y,
-Joe,,Donnelly,,House Representative,IN,JoeforIndiana,D,Campaign,RepDonnelly,N,House rep running for Senate
-Don,,Young,,House Representative,AK,repdonyoung,R,Official,,Y,
-E.B.,,Johnson,,House Representative,TX,RepEBJ,D,Official,,Y,
-Ed,,Royce,,House Representative,CA,RepEdRoyce,R,Official,edrroyce,Y,
-Ed,,Royce,,House Representative,CA,edrroyce,R,Campaign,RepEdRoyce,N,
-Ed,,Whitfield,,House Representative,KY,RepEdWhitfield,R,Official,,Y,
-Stephen,,Fincher,,House Representative,TN,RepFincherTN08,R,Official,stephenfincher,Y,
-Stephen,,Fincher,,House Representative,TN,stephenfincher,R,Campaign,RepFincherTN08,N,
-Mike,,Fitzpatrick,,House Representative,PA,RepFitzpatrick,R,Official,fitzpatrickpa8,Y,
-Mike,,Fitzpatrick,,House Representative,PA,fitzpatrickpa8,R,Campaign,RepFitzpatrick,N,
-John,,Fleming,,House Representative,LA,RepFleming,R,Official,flemingforla,Y,
-John,,Fleming,,House Representative,LA,flemingforla,R,Campaign,RepFleming,N,
-Fred,,Upton,,House Representative,MI,RepFredUpton,R,Official,uptonforallofus,Y,
-Fred,,Upton,,House Representative,MI,uptonforallofus,R,Campaign,RepFredUpton,N,
-Gary,,Ackerman,,House Representative,NY,RepGaryAckerman,D,Campaign,,Y,
-Gary,,Miller,,House Representative,CA,RepGaryMiller,R,Official,GaryMillerCA,Y,
-Gary,,Miller,,House Representative,CA,GaryMillerCA,R,Campaign,RepGaryMiller,N,
-Gary,,Peters,,House Representative,MI,RepGaryPeters,D,Official,peters4congress,Y,
-Gary,,Peters,,House Representative,MI,peters4congress,D,Campaign,RepGaryPeters,N,
-Gene,,Green,,House Representative,TX,RepGeneGreen,D,Official,,Y,
-Geoff,,Davis,,House Representative,KY,RepGeoffDavis,R,Official,,Y,
-Rob,,Goodlatte,,House Representative,VA,RepGoodlatte,R,Official,,Y,
-Paul,,Gosar,,House Representative,AZ,RepGosar,R,Official,Gosar4Congress,Y,
-Paul,,Gosar,,House Representative,AZ,Gosar4Congress,R,Campaign,RepGosar,N,
-Greg,,Walden,,House Representative,OR,repgregwalden,R,Official,VoteGregWalden,Y,
-Greg,,Walden,,House Representative,OR,VoteGregWalden,R,Campaign,repgregwalden,N,
-Gus,,Bilirakis,,House Representative,FL,RepGusBilirakis,R,Official,Bilirakis,Y,
-Gus,,Bilirakis,,House Representative,FL,Bilirakis,R,Campaign,RepGusBilirakis,N,
-,,,,,,repgutierrez,D,,,Y,*** Account name has changed
-Luis,V.,Gutierrez,,House Representative,IL,luisgutierrez,D,Official,,N,
-Gwen ,,Moore,,House Representative,WI,RepGwenMoore,D,Official,Gwen4Congress,Y,
-Gwen ,,Moore,,House Representative,WI,Gwen4Congress,D,Campaign,RepGwenMoore,N,
-Hank,,Johnson,,House Representative,GA,RepHankJohnson,D,Official,ReElectHank,Y,
-Hank,,Johnson,,House Representative,GA,ReElectHank,D,Campaign,RepHankJohnson,N,
-Hansen,,Clarke,,House Representative,MI,RepHansenClarke,D,Official,Clarke4Congress,Y,
-Hansen,,Clarke,,House Representative,MI,Clarke4Congress,D,Campaign,RepHansenClarke,N,
-Vicky,,Hartzler,,House Representative,MO,RepHartzler,R,Official,vickyhartzler,Y,
-Vicky,,Hartzler,,House Representative,MO,vickyhartzler,R,Campaign,RepHartzler,N,
-Jeb,,Hensarling,,House Representative,TX,RepHensarling,R,Official,,Y,
-Howard,,Berman,,House Representative,CA,RepHowardBerman,D,Official,howardberman,Y,
-Howard,,Berman,,House Representative,CA,howardberman,D,Campaign,RepHowardBerman,N,
-Bill,,Huizenga,,House Representative,MI,RepHuizenga,R,Official,billhuizenga,Y,
-Bill,,Huizenga,,House Representative,MI,billhuizenga,R,Campaign,RepHuizenga,N,
-Jason,,Altmire,,House Representative,PA,RepJasonAltmire,D,Official,,Y,
-Jeff,,Denham,,House Representative,CA,RepJeffDenham,R,Official,JeffDenham,Y,
-Jeff,,Denham,,House Representative,CA,JeffDenham,R,Campaign,RepJeffDenham,N,
-Jeff,,Landry,,House Representative,LA,repjefflandry,R,Official,LandryForLA,Y,
-Jeff,,Landry,,House Representative,LA,LandryForLA,R,Campaign,repjefflandry,N,
-Jerry,,Lewis,,House Representative,CA,RepJerryLewis,R,Official,,Y,
-Jim,,Cooper,,House Representative,TN,repjimcooper,D,Official,coopforcongress,Y,
-Jim,,Cooper,,House Representative,TN,coopforcongress,D,Campaign,repjimcooper,N,
-Jim,,Matheson,,House Representative,UT,RepJimMatheson,D,Official,mathesonforutah,Y,
-Jim,,Matheson,,House Representative,UT,mathesonforutah,D,Campaign,RepJimMatheson,N,
-Jim,,McDermott,,House Representative,WA,RepJimMcDermott,D,Official,McDermott4Rep,Y,
-Jim,,McDermott,,House Representative,WA,McDermott4Rep,D,Campaign,RepJimMcDermott,N,
-Jim,,Renacci,,House Representative,OH,RepJimRenacci,R,Official,Renacci2012,Y,
-Jim,,Renacci,,House Representative,OH,Renacci2012,R,Campaign,RepJimRenacci,N,
-Jo,,Bonner,,House Representative,AL,RepJoBonner,R,Official,,Y,
-Joe,,Barton,,House Representative,TX,RepJoeBarton,R,Official,barton4congress,Y,
-Joe,,Barton,,House Representative,TX,barton4congress,R,Campaign,RepJoeBarton,N,
-Joe,,Courtney,,House Representative,CT,RepJoeCourtney,D,Official,JoeCourtneyCT,Y,
-Joe,,Courtney,,House Representative,CT,JoeCourtneyCT,D,Campaign,RepJoeCourtney,N,
-Joe,,Crowley,,House Representative,NY,repjoecrowley,D,Official,,Y,
-Joe,,Pitts,,House Representative,PA,RepJoePitts,R,Official,JoePitts4PA,Y,
-Joe,,Pitts,,House Representative,PA,JoePitts4PA,R,Campaign,RepJoePitts,N,
-Joe,,Walsh,,House Representative,IL,RepJoeWalsh,R,Official,Rep_JoeWalsh,Y,
-Joe,,Walsh,,House Representative,IL,Rep_JoeWalsh,R,Campaign,RepJoeWalsh,N,
-John,,Barrow,,House Representative,GA,repjohnbarrow,D,Official,Barrow4GA,Y,
-John,,Barrow,,House Representative,GA,Barrow4GA,D,Campaign,repjohnbarrow,N,
-John,,Campbell,,House Representative,CA,RepJohnCampbell,R,Official,,Y,
-John,,Conyers,,House Representative,CA,repjohnconyers,D,Official,johnconyersjr,Y,
-John,,Conyers,,House Representative,CA,johnconyersjr,D,Campaign,repjohnconyers,N,
-John,,Kline,,House Representative,MN,repjohnkline,R,Official,kline4congress,Y,
-John,,Kline,,House Representative,MN,kline4congress,R,Campaign,repjohnkline,N,
-John,,Larson,,House Representative,CT,RepJohnLarson,D,Official,JohnLarsonCT,Y,
-John,,Larson,,House Representative,CT,JohnLarsonCT,D,Campaign,RepJohnLarson,N,
-John,,Lewis,,House Representative,GA,repjohnlewis,D,Official,electJohnLewis,Y,
-John,,Lewis,,House Representative,GA,electJohnLewis,D,Campaign,repjohnlewis,N,
-John,,Yarmuth,,House Representative,KY,RepJohnYarmuth,D,Official,,Y,
-John,,Runyan,,House Representative,NJ,RepJonRunyan,R,Official,runyan2012,Y,
-John,,Runyan,,House Representative,NJ,runyan2012,R,Campaign,RepJonRunyan,N,
-Jose,,Serrano,,House Representative,NY,RepJoseSerrano,D,Official,,Y,
-Judy,,Chu,,House Representative,CA,RepJudyChu,D,Official,judychucampaign,Y,
-Judy,,Chu,,House Representative,CA,judychucampaign,D,Campaign,RepJudyChu,N,
-Justin,,Amash,,House Representative,MI,repjustinamash,R,Official,justinamash,Y,
-Justin,,Amash,,House Representative,MI,justinamash,R,Campaign,repjustinamash,N,
-Karen,,Bass,,House Representative,CA,RepKarenBass,D,Official,KarenBassTweets,Y,
-Karen,,Bass,,House Representative,CA,KarenBassTweets,D,Campaign,RepKarenBass,N,
-Kathy,,Hochul,,House Representative,NY,RepKathyHochul,D,Official,,Y,
-Kay,,Granger,,House Representative,TX,RepKayGranger,R,Official,,Y,same official / campaign accounts
-Kenny,,Marchant,,House Representative,TX,RepKenMarchant,R,Official,MarchantforTX24,Y,
-Kenny,,Marchant,,House Representative,TX,MarchantforTX24,R,Campaign,RepKenMarchant,N,
-Kevin,,Brady,,House Representative,TX,RepKevinBrady,R,Official,bradyfortexas,Y,
-Kevin,,Brady,,House Representative,TX,bradyfortexas,R,Campaign,RepKevinBrady,N,
-Adam,,Kinzinger,,House Representative,IL,RepKinzinger,R,Official,electadam,Y,
-Adam,,Kinzinger,,House Representative,IL,electadam,R,Campaign,RepKinzinger,N,
-Kristi,,Noem,,House Representative,SD,RepKristiNoem,R,Official,KristiNoem,Y,
-Kristi,,Noem,,House Representative,SD,KristiNoem,R,Campaign,RepKristiNoem,N,
-James,,Lankford,,House Representative,OK,RepLankford,R,Official,jameslankford,Y,
-James,,Lankford,,House Representative,OK,jameslankford,R,Campaign,RepLankford,N,
-Larry,,Bucshon,,House Representative,IN,RepLarryBucshon,R,Official,larry_bucshon,Y,
-Larry,,Bucshon,,House Representative,IN,larry_bucshon,R,Campaign,RepLarryBucshon,N,
-Larry,,Kissell,,House Representative,NC,RepLarryKissell,D,Official,,Y,
-Lloyd,,Doggett,,House Representative,TX,RepLloydDoggett,D,Official,lloyddoggetttx,Y,
-Lloyd,,Doggett,,House Representative,TX,lloyddoggetttx,D,Campaign,RepLloydDoggett,N,
-Frank,,LoBiondo,,House Representative,NJ,RepLoBiondo,R,Official,LoBiondo2012,Y,
-Frank,,LoBiondo,,House Representative,NJ,LoBiondo2012,R,Campaign,RepLoBiondo,N,
-Lou,,Barletta,,House Representative,PA,RepLouBarletta,R,Official,loubarletta,Y,
-Lou,,Barletta,,House Representative,PA,loubarletta,R,Campaign,RepLouBarletta,N,
-Louie,,Gohmert,,House Representative,TX,replouiegohmert,R,Official,,Y,
-Laura,,Richardson,,House Representative,CA,RepLRichardson,D,Official,,Y,same official / campaign accounts
-Lynn,,Jenkins,,House Representative,KS,RepLynnJenkins,R,Official,lynnforcongress,Y,
-Lynn,,Jenkins,,House Representative,KS,lynnforcongress,R,Campaign,RepLynnJenkins,N,
-Lynn,,Woolsey,,House Representative,CA,RepLynnWoolsey,D,Official,,Y,
-Mark,,Critz,,House Representative,PA,RepMarkCritz,D,Official,critz4congress,Y,
-Mark,,Critz,,House Representative,PA,critz4congress,D,Campaign,RepMarkCritz,N,
-Carolyn,,McCarthy,,House Representative,NY,repmccarthyny,D,Official,carolynmccarthy,Y,
-Carolyn,,McCarthy,,House Representative,NY,carolynmccarthy,D,Campaign,repmccarthyny,N,
-Tom,,McClintock,,House Representative,CA,RepMcClintock,R,Official,tommcclintock,Y,
-Tom,,McClintock,,House Representative,CA,tommcclintock,R,Campaign,RepMcClintock,N,
-Jim,,McGovern,,House Representative,MA,RepMcGovern,D,Official,mcgovernma,Y,
-Jim,,McGovern,,House Representative,MA,mcgovernma,D,Campaign,RepMcGovern,N,
-David,B.,McKinley,,House Representative,WV,RepMcKinley,R,Official,mckinley4cong,Y,
-David,B.,McKinley,,House Representative,WV,mckinley4cong,R,Campaign,RepMcKinley,N,
-Morgan,,Griffith,,House Representative,VA,RepMGriffith,R,Official,MorganGriffith,Y,
-Morgan,,Griffith,,House Representative,VA,MorganGriffith,R,Campaign,RepMGriffith,N,
-Mike,,Coffman,,House Representative,CO,RepMikeCoffman,R,Official,coffmanforco,Y,
-Mike,,Coffman,,House Representative,CO,coffmanforco,R,Campaign,RepMikeCoffman,N,
-Mike,,Honda,,House Representative,CA,RepMikeHonda,D,Official,mikehonda17,Y,
-Mike,,Honda,,House Representative,CA,mikehonda17,D,Campaign,RepMikeHonda,N,
-Mike,,McIntyre,,House Representative,NC,RepMikeMcIntyre,D,Official,MikeMcIntyreNC,Y,
-Mike,,McIntyre,,House Representative,NC,MikeMcIntyreNC,D,Campaign,RepMikeMcIntyre,N,
-Mike,,Michaud,,House Representative,ME,RepMikeMichaud,D,Official,,Y,
-Mike,,Pence,,House Representative,IN,RepMikePence,R,Official,PenceCampaign,Y,
-Mike,,Pence,,House Representative,IN,PenceCampaign,R,Campaign,RepMikePence,N,
-Mike,,Quigley,,House Representative,IL,RepMikeQuigley,D,Official,QuigleyCampaign,Y,
-Mike,,Quigley,,House Representative,IL,QuigleyCampaign,D,Campaign,RepMikeQuigley,N,
-Mike,,Rogers,,House Representative,AL,RepMikeRogersAL,R,Official,mikerogerscamp,Y,
-Mike,,Rogers,,House Representative,AL,mikerogerscamp,R,Campaign,RepMikeRogersAL,N,
-Mike,,Ross,,House Representative,AR,RepMikeRoss,D,Official,MikeRossUpdates,Y,
-Mike,,Ross,,House Representative,AR,MikeRossUpdates,D,Campaign,RepMikeRoss,N,
-Mike,,Turner,,House Representative,OH,RepMikeTurner,R,Official,MikeTurnerOH,Y,
-Mike,,Turner,,House Representative,OH,MikeTurnerOH,R,Campaign,RepMikeTurner,N,
-Mo,,Brooks,,House Representative,AL,RepMoBrooks,R,Official,,Y,
-Nan,,Hayworth,,House Representative,NY,RepNanHayworth,R,Official,NanHayworth,Y,
-Nan,,Hayworth,,House Representative,NY,NanHayworth,R,Campaign,RepNanHayworth,N,
-Norm,,Dicks,,House Representative,WA,RepNormDicks,D,Official,norm4congress,Y,
-Norm,,Dicks,,House Representative,WA,norm4congress,D,Campaign,RepNormDicks,N,
-Paul,,Broun,,House Representative,GA,RepPaulBrounMD,R,Official,PaulBrounforGA,Y,
-Paul,,Broun,,House Representative,GA,PaulBrounforGA,R,Campaign,RepPaulBrounMD,N,
-Paul,,Ryan,,House Representative,WI,RepPaulRyan,R,Official,PaulRyanVP,Y,
-Paul,,Ryan,,House Representative,WI,PaulRyanVP,R,Campaign,RepPaulRyan,Y,
-Ed,,Perlmutter,,House Representative,CO,RepPerlmutter,D,Official,Ed4Colorado,Y,
-Ed,,Perlmutter,,House Representative,CO,Ed4Colorado,D,Campaign,RepPerlmutter,N,
-Pete,,King,,House Representative,NY,RepPeteKing,R,Official,,Y,
-Peter,,DeFazio,,House Representative,OR,RepPeterDeFazio,D,Official,,Y,
-Phil,,Gingrey,,House Representative,GA,RepPhilGingrey,R,Official,,Y,
-Raúl,,Grijalva,,House Representative,AZ,RepRaulGrijalva,D,Official,standwithraul,Y,
-Raúl,,Grijalva,,House Representative,AZ,standwithraul,D,Campaign,RepRaulGrijalva,N,
-Renee,,Ellmers,,House Representative,NC,RepReneeEllmers,R,Official,Renee4Congress,Y,
-Renee,,Ellmers,,House Representative,NC,Renee4Congress,R,Campaign,RepReneeEllmers,N,
-Reid,,Ribble,,House Representative,WI,RepRibble,R,Official,reidribble,Y,
-Reid,,Ribble,,House Representative,WI,reidribble,R,Campaign,RepRibble,N,
-Richard,,Hanna,,House Representative,NY,RepRichardHanna,R,Official,hanna4congress,Y,
-Richard,,Hanna,,House Representative,NY,hanna4congress,R,Campaign,RepRichardHanna,N,
-Cedric,,Richmond,,House Representative,LA,RepRichmond,D,Official,cedricrichmond,Y,
-Cedric,,Richmond,,House Representative,LA,cedricrichmond,D,Campaign,RepRichmond,N,
-Rich,,Nugent,,House Representative,FL,reprichnugent,R,Official,Nugent4Congress,Y,
-Rich,,Nugent,,House Representative,FL,Nugent4Congress,R,Campaign,reprichnugent,N,
-Rick,,Berg,,House Representative,ND,RepRickBerg,R,Official,RickBergND,Y,
-Rick,,Berg,,House Representative,ND,RickBergND,R,Campaign,RepRickBerg,N,house rep running for senate
-Rick,,Crawford,,House Representative,AR,RepRickCrawford,R,Official,crawford4cong,Y,
-Rick,,Crawford,,House Representative,AR,crawford4cong,R,Campaign,RepRickCrawford,N,
-David,,Rivera,,House Representative,FL,RepRivera,R,Official,DavidRiveraFL,Y,
-David,,Rivera,,House Representative,FL,DavidRiveraFL,R,Campaign,RepRivera,N,
-Robert,,Hurt,,House Representative,VA,RepRobertHurt,R,Official,roberthurt,Y,
-Robert,,Hurt,,House Representative,VA,roberthurt,R,Campaign,RepRobertHurt,N,
-Ron,,Kind,,House Representative,WI,RepRonKind,D,Official,kindforcongress,Y,
-Ron,,Kind,,House Representative,WI,kindforcongress,D,Campaign,RepRonKind,N,
-Sam,,Farr,,House Representative,CA,RepSamFarr,D,Official,friendsoffarr,Y,
-Sam,,Farr,,House Representative,CA,friendsoffarr,D,Campaign,RepSamFarr,N,
-Sandy,,Adams,,House Representative,FL,RepSandyAdams,R,Official,SandyAdams4FL07,Y,
-Sandy,,Adams,,House Representative,FL,SandyAdams4FL07,R,Campaign,RepSandyAdams,N,
-Sander,"""Sandy""",Levin,,House Representative,MI,repsandylevin,D,Official,,Y,
-Bobby,,Schilling,,House Representative,IL,RepSchilling,R,Official,reelectbobby,Y,
-Bobby,,Schilling,,House Representative,IL,reelectbobby,R,Campaign,RepSchilling,N,
-Kurt,,Schrader,,House Representative,OR,RepSchrader,D,Official,,Y,
-Scott,,Rigell,,House Representative,VA,RepScottRigell,R,Official,scottrigell,Y,
-Scott,,Rigell,,House Representative,VA,scottrigell,R,Campaign,RepScottRigell,N,
-Sean,,Duffy,,House Representative,WI,RepSeanDuffy,R,Official,duffy4congress,Y,
-Sean,,Duffy,,House Representative,WI,duffy4congress,R,Campaign,RepSeanDuffy,N,
-Shelley,,Capito,,House Representative,WV,RepShelley,R,Official,Capito4Congress,Y,
-Shelley,,Capito,,House Representative,WV,Capito4Congress,R,Campaign,RepShelley,N,
-John,,Shimkus,,House Representative,IL,RepShimkus,R,Official,,Y,
-Jackie,,Speier,,House Representative,CA,RepSpeier,D,Official,JackieSpeier,Y,
-Jackie,,Speier,,House Representative,CA,JackieSpeier,D,Campaign,RepSpeier,N,
-Steve,,Chabot,,House Representative,OH,RepSteveChabot,R,Official,SteveChabot,Y,
-Steve,,Chabot,,House Representative,OH,SteveChabot,R,Campaign,RepSteveChabot,N,
-Steve,,Israel,,House Representative,NY,RepSteveIsrael,D,Official,israel4congress,Y,
-Steve,,Israel,,House Representative,NY,israel4congress,D,Campaign,RepSteveIsrael,N,
-Steve,,Pearce,,House Representative,NM,RepStevePearce,R,Official,Pearce4NM,Y,
-Steve,,Pearce,,House Representative,NM,Pearce4NM,R,Campaign,RepStevePearce,N,
-Steve,,Stivers,,House Representative,OH,RepSteveStivers,R,Official,stevestivers,Y,
-Steve,,Stivers,,House Representative,OH,stevestivers,R,Campaign,RepSteveStivers,N,
-Ted,,Deutch,,House Representative,FL,RepTedDeutch,D,Official,TedforCongress,Y,
-Ted,,Deutch,,House Representative,FL,TedforCongress,D,Campaign,RepTedDeutch,N,
-Terri,A.,Sewell,,House Representative,AL,RepTerriSewell,D,Official,sewell4congress,Y,
-Terri,A.,Sewell,,House Representative,AL,sewell4congress,D,Campaign,RepTerriSewell,N,
-Tim,,Griffin,,House Representative,AR,RepTimGriffin,R,Official,TimGriffinAR2,Y,
-Tim,,Griffin,,House Representative,AR,TimGriffinAR2,R,Personal,RepTimGriffin,N,
-Tim,,Holden,,House Representative,PA,RepTimHolden,D,Official,TimHoldenPA17,Y,
-Tim,,Holden,,House Representative,PA,TimHoldenPA17,D,Campaign,RepTimHolden,N,
-Tim,,Johnson,,House Representative,IL,RepTimJohnson,R,Official,,Y,
-Tim,,Murphy,,House Representative,PA,RepTimMurphy,R,Official,timmurphypa,Y,
-Tim,,Murphy,,House Representative,PA,timmurphypa,R,Campaign,RepTimMurphy,N,
-Tim,,Ryan,,House Representative,OH,RepTimRyan,D,Official,timryan,Y,
-Tim,,Ryan,,House Representative,OH,timryan,D,Campaign,RepTimRyan,N,
-Tim,,Scott,,House Representative,SC,RepTimScott,R,Official,votetimscott,Y,
-Tim,,Scott,,House Representative,SC,votetimscott,R,Campaign,RepTimScott,N,
-Scott,,Tipton,,House Representative,CO,RepTipton,R,Official,scottrtipton,Y,
-Scott,,Tipton,,House Representative,CO,scottrtipton,R,Campaign,RepTipton,N,
-Todd,,Young,,House Representative,IN,RepToddYoung,R,Official,ty4c,Y,
-Todd,,Young,,House Representative,IN,ty4c,R,Campaign,RepToddYoung,N,
-Tom,,Graves,,House Representative,GA,RepTomGraves,R,Official,TomGravesGA14,Y,
-Tom,,Graves,,House Representative,GA,TomGravesGA14,R,Campaign,RepTomGraves,N,
-Tom,,Marino,,House Representative,PA,RepTomMarino,R,Official,Marino4Congress,Y,
-Tom,,Marino,,House Representative,PA,Marino4Congress,R,Campaign,RepTomMarino,N,
-Tom,,Price,M.D.,House Representative,GA,RepTomPrice,R,Official,tompricemd,Y,
-Tom,,Price,M.D.,House Representative,GA,tompricemd,R,Campaign,RepTomPrice,N,
-Trent,,Franks,,House Representative,AZ,RepTrentFranks,R,Official,,Y,Both campaign and official sites link
-Pete,,Visclosky,,House Representative,IN,RepVisclosky,D,Official,,Y,
-Tim,,Walberg,,House Representative,MI,RepWalberg,R,Official,Tim_Walberg,Y,
-Tim,,Walberg,,House Representative,MI,Tim_Walberg,R,Campaign,RepWalberg,N,
-Walter,,Jones,,House Representative,NC,RepWalterJones,R,Official,,Y,
-Daniel,,Webster,,House Representative,FL,RepWebster,R,Official,WebsterCongress,Y,
-Daniel,,Webster,,House Representative,FL,WebsterCongress,R,Campaign,RepWebster,N,
-Lynn,,Westmoreland,,House Representative,GA,RepWestmoreland,R,Official,WestmorelandGA3,Y,
-Lynn,,Westmoreland,,House Representative,GA,WestmorelandGA3,R,Campaign,RepWestmoreland,N,
-Frederica,,Wilson,,House Representative,FL,RepWilson,D,Official,,Y,
-Rick,,Santorum,,Presidential Challenger,PA,RickSantorum,R,Campaign,,Y,
-Robert,,Aderholt,,House Representative,AL,Robert_Aderholt,R,Official,,Y,
-Rob,,Portman,,Senator,OH,robportman,R,Campaign,,Y,Both campaign and official sites link
-Rob,,Wittman,,House Representative,VA,RobWittman,R,Official,reelectWittman,Y,
-Rob,,Wittman,,House Representative,VA,reelectWittman,R,Campaign,RobWittman,,
-Rodney,,Frelinghuysen,,House Representative,NJ,rodneyfornj,R,Campaign,,Y,
-Roger,,Wicker,,Senator,MS,SenatorWicker,R,Official,RogerWicker,N,
-Roger,,Wicker,,Senator,MS,RogerWicker,R,Campaign,SenatorWicker,Y,
-Ron,,Paul,,House Representative,TX,RepRonPaul,R,Official,RonPaul,Y,
-Ron,,Paul,,House Representative,TX,RonPaul,R,Campaign,RepRonPaul,Y,Presidential campaign account...
-Rosa,,DeLauro,,House Representative,CT,rosadelauro,D,Official,,Y,
-Ileana,,Ros-Lehtinen,,House Representative,FL,RosLehtinen,R,Official,RosLehtinenCamp,Y,
-Ileana,,Ros-Lehtinen,,House Representative,FL,RosLehtinenCamp,R,Campaign,RosLehtinen,N,
-Roy,,Blunt,,Senator,MO,RoyBlunt,R,Official,,Y,
-Rush,,Holt,,House Representative,NJ,RushHolt,D,Campaign,,Y,
-Sam,,Johnson,,House Representative,TX,SamsPressShop,R,Official,,Y,
-Sanford,D.,Bishop,Jr.,House Representative,GA,SanfordBishop,D,Official,Bishop4Congress,Y,
-Sanford,D.,Bishop,Jr.,House Representative,GA,Bishop4Congress,D,Campaign,SanfordBishop,N,
-Joseph,"""Joe""",Manchin,III,Senator,WV,Sen_JoeManchin,D,Official,joemanchinwv,Y,
-Joseph,"""Joe""",Manchin,III,Senator,WV,joemanchinwv,D,Campaign,Sen_JoeManchin,N,
-Lamar,,Alexander,,Senator,TN,SenAlexander,R,Official,,Y,
-Barbara,,Mikulski,,Senator,MD,SenatorBarb,D,Official,,Y,
-Mark,,Begich,,Senator,AK,SenatorBegich,D,Official,,Y,
-Barbara,,Boxer,,Senator,CA,SenatorBoxer,D,Official,BarbaraBoxer,Y,
-Barbara,,Boxer,,Senator,CA,BarbaraBoxer,D,Campaign,SenatorBoxer,N,
-Richard,,Burr,,Senator,NC,SenatorBurr,R,Official,burrforsenate,Y,
-Richard,,Burr,,Senator,NC,burrforsenate,R,Campaign,SenatorBurr,N,
-Ben,,Cardin,,Senator,MD,SenatorCardin,D,Official,BenCardinforMD,Y,
-Ben,,Cardin,,Senator,MD,BenCardinforMD,D,Campaign,SenatorCardin,N,
-Tom,,Carper,,Senator,DE,SenatorCarper,D,Official,TomCarperforDE,Y,
-Tom,,Carper,,Senator,DE,TomCarperforDE,D,Campaign,SenatorCarper,N,
-Susan,,Collins,,Senator,ME,SenatorCollins,R,Official,,Y,
-Dick,,Durbin,,Senator,IL,SenatorDurbin,D,Official,,Y,
-Kay,,Hagan,,Senator,NC,SenatorHagan,D,Official,,Y,
-Tom,,Harkin,,Senator,IA,SenatorHarkin,D,Official,,Y,
-Mark,,Kirk,,Senator,IL,SenatorKirk,R,Official,MarkKirk,Y,
-Mark,,Kirk,,Senator,IL,MarkKirk,R,Campaign,SenatorKirk,N,
-Patrick,,Leahy,,Senator,VT,SenatorLeahy,D,Official,,Y,
-Richard,"""Dick""",Lugar,,Senator,IN,senatorlugar,R,Official,dicklugar,Y,
-Richard,"""Dick""",Lugar,,Senator,IN,dicklugar,R,Campaign,senatorlugar,N,
-Robert,"""Bob""",Menendez,,Senator,NJ,SenatorMenendez,D,Official,Menendez4NJ,Y,
-Robert,"""Bob""",Menendez,,Senator,NJ,Menendez4NJ,D,Campaign,SenatorMenendez,N,
-Harry,,Reid,,Senator,NV,SenatorReid,D,Official,HarryReid,Y,
-Harry,,Reid,,Senator,NV,HarryReid,D,Campaign,SenatorReid,N,
-Jeff,,Sessions,,Senator,AL,SenatorSessions,R,Official,,Y,
-Olympia,J.,Snowe,,Senator,ME,SenatorSnowe,R,Official,OlympiasList,Y,
-Olympia,J.,Snowe,,Senator,ME,OlympiasList,R,Campaign,SenatorSnowe,N,Her campaign site is down...
-Tom,,Udall,,Senator,NM,SenatorTomUdall,D,Official,,Y,
-Ben,,Nelson,,Senator,NE,SenBenNelson,D,Official,bennelson2012,Y,
-Ben,,Nelson,,Senator,NE,bennelson2012,D,Campaign,SenBenNelson,N,
-Michael,,Bennet,,Senator,CO,SenBennetCO,D,Official,BennetForCO,Y,
-Michael,,Bennet,,Senator,CO,BennetForCO,D,Campaign,SenBennetCO,N,
-Bill,,Nelson,,Senator,FL,SenBillNelson,D,Official,,Y,
-Richard,"""Dick""",Blumenthal,,Senator,CT,SenBlumenthal,D,Official,dickblumenthal,Y,
-Richard,"""Dick""",Blumenthal,,Senator,CT,dickblumenthal,D,Campaign,SenBlumenthal,N,
-Robert,"""Bob""",Casey,Jr.,Senator,PA,SenBobCasey,D,Official,Bob_Casey,Y,
-Robert,"""Bob""",Casey,Jr.,Senator,PA,Bob_Casey,D,Campaign,SenBobCasey,N,
-Bob,,Corker,,Senator,TN,SenBobCorker,R,Official,corkerfortn,Y,
-Bob,,Corker,,Senator,TN,corkerfortn,R,Campaign,SenBobCorker,N,
-Carl,,Levin,,Senator,MI,SenCarlLevin,D,Official,,Y,
-Dan,,Coats,,Senator,IN,SenDanCoats,R,Official,dancoats,Y,
-Dan,,Coats,,Senator,IN,dancoats,R,Campaign,SenDanCoats,N,
-Kirsten,,Gillibrand,,Senator,NY,SenGillibrand,D,Campaign,,Y,
-Jeff,,Merkley,,Senator,OR,SenJeffMerkley,D,Official,JeffMerkley,Y,
-Jeff,,Merkley,,Senator,OR,JeffMerkley,D,Campaign,SenJeffMerkley,N,
-John,,Barrasso,,Senator,WY,SenJohnBarrasso,R,Official,barrassoforwyo,Y,
-John,,Barrasso,,Senator,WY,barrassoforwyo,R,Campaign,SenJohnBarrasso,N,
-John,,McCain,,Senator,AZ,SenJohnMcCain,R,Official,,Y,
-Tim,,Johnson,,Senator,SD,SenJohnsonSD,D,Official,,Y,
-John,,Thune,,Senator,SD,SenJohnThune,R,Official,johnthune,Y,
-John,,Thune,,Senator,SD,johnthune,R,Campaign,SenJohnThune,N,
-Jon,,Kyl,,Senator,AZ,senjonkyl,R,Official,,Y,
-Mike,,Lee,,Senator,UT,SenMikeLee,R,Official,,Y,Campaign site links to official twitter
-Pat,,Roberts,,Senator,KS,SenPatRoberts,R,Official,,Y,
-Rand,,Paul,,Senator,KY,SenRandPaul,R,Official,DrRandPaul,Y,
-Rand,,Paul,,Senator,KY,DrRandPaul,R,Campaign,SenRandPaul,N,
-Ron,,Johnson,,Senator,WI,SenRonJohnson,R,Official,ron4senate,Y,
-Ron,,Johnson,,Senator,WI,ron4senate,R,Campaign,SenRonJohnson,N,
-Bernard,"""Bernie""",Sanders,,Senator,VT,SenSanders,I,Official,FriendsOfBernie,Y,
-Bernard,"""Bernie""",Sanders,,Senator,VT,FriendsOfBernie,I,Campaign,SenSanders,N,
-Richard,,Shelby,,Senator,AL,SenShelbyPress,R,Official,,Y,
-Sherrod,,Brown,,Senator,OH,SenSherrodBrown,D,Official,sherrodbrown,Y,
-Sherrod,,Brown,,Senator,OH,sherrodbrown,D,Campaign,SenSherrodBrown,N,
-Pat,,Toomey,,Senator,PA,SenToomey,R,Official,ToomeyForSenate,Y,
-Pat,,Toomey,,Senator,PA,ToomeyForSenate,R,Campaign,SenToomey,N,
-Silvestre,,Reyes,,House Representative,TX,SilvestreReyes,D,Official,reyesworks,Y,
-Silvestre,,Reyes,,House Representative,TX,reyesworks,D,Campaign,SilvestreReyes,N,
-John,,Boehner,,House Representative,OH,SpeakerBoehner,R,Official,johnboehner,Y,
-John,,Boehner,,House Representative,OH,johnboehner,R,Campaign,SpeakerBoehner,N,
-Debbie,,Stabenow,,Senator,MI,StabenowPress,D,Official,teamstabenow|stabenow,Y,
-Debbie,,Stabenow,,Senator,MI,teamstabenow,D,Campaign,StabenowPress|stabenow,N,
-Debbie,,Stabenow,,Senator,MI,stabenow,D,Personal,teamstabenow|StabenowPress,N,
-Steve,,Austria,,House Representative,OH,SteveAustria,R,Official,,Y,
-Steve,,King,,House Representative,IA,SteveKingIA,R,Official,,Y,
-Steven,,LaTourette,,House Representative,OH,SteveLaTourette,R,Official,,Y,
-Steven,,Palazzo,,House Representative,MS,StevenPalazzo,R,Campaign,congpalazzo,Y,
-Steven,,Palazzo,,House Representative,MS,congpalazzo,R,Official,StevenPalazzo,N,
-Sue,,Myrick,,House Representative,NC,SueMyrick,R,Official,,Y,
-Sunlight,,Foundation,,,,sunlightwoops,,,,Y,
-Trey,,Gowdy,,House Representative,SC,TGowdySC,R,Official,tgowdy,Y,
-Trey,,Gowdy,,House Representative,SC,tgowdy,R,Campaign,TGowdySC,N,
-,,,,,,ThadMcCotter,R,,,Y,Resigned in July 2012
-Herman,,Cain,,Presidential Challenger,,THEHermanCain,R,Personal,cainpress,Y,Presidential Challenger
-Tim,,Pawlenty,,Presidential Challenger,,timpawlenty,R,Campaign,,Y,Presidential Challenger
-Scott,,DesJarlais,,House Representative,TN,DesJarlaisTN04,R,Official,tndesjarlais,N,
-Scott,,DesJarlais,,House Representative,TN,tndesjarlais,R,Campaign,DesJarlaisTN04,Y,
-Todd,,Akin,,House Representative,MO,reptoddakin,R,Official,ToddAkin,N,
-Todd,,Akin,,House Representative,MO,ToddAkin,R,Campaign,reptoddakin,Y,Running for Senate
-Todd,,Rokita,,House Representative,IN,ToddRokita,R,Official,rokitacongress,Y,
-Todd,,Rokita,,House Representative,IN,rokitacongress,R,Campaign,ToddRokita,N,
-Tom,,Coburn,,Senator,OK,TomCoburn,R,Official,,Y,
-Tom,,Latham,,House Representative,IA,TomLatham,R,Official,Latham4Congress,Y,
-Tom,,Latham,,House Representative,IA,Latham4Congress,R,Campaign,TomLatham,N,
-Tom,,Reed,,House Representative,NY,RepTomReed,R,Official,TomReedCongress,N,
-Tom,,Reed,,House Representative,NY,TomReedCongress,R,Campaign,RepTomReed,Y,
-Tom,,Rooney,,House Representative,FL,TomRooney,R,Official,Rooney4Congress,Y,
-Tom,,Rooney,,House Representative,FL,Rooney4Congress,R,Campaign,TomRooney,N,
-Charlie,,Gonzalez,,House Representative,TX,TX20CharlieG,D,Official,,Y,
-,,,,,,USRep_Keating,D,,,Y,Wrong account - please delete
-William,"""Bill""",Keating,,House Representative,MA,USRepKeating,D,Official,WilliamKeating,N,
-William,"""Bill""",Keating,,House Representative,MA,WilliamKeating,D,Campaign,USRepKeating,N,
-Rodney,,Alexander,,House Representative,LA,USRepAlexander,R,Official,,Y,
-Bob,,Turner,,House Representative,NY,USRepBobTurner,R,Official,BobTurnerNY,Y,
-Bob,,Turner,,House Representative,NY,BobTurnerNY,R,Campaign,USRepBobTurner,N,
-Mike,,Doyle,,House Representative,PA,USRepMikeDoyle,D,Official,,Y,
-Ruben,,Hinojosa,,House Representative,TX,USRepRHinojosa,D,Official,Ruben_Hinojosa,Y,
-Ruben,,Hinojosa,,House Representative,TX,Ruben_Hinojosa,D,Campaign,USRepRHinojosa,N,
-John,,Sullivan,,House Representative,OK,USRepSullivan,R,Official,TEAMSullivan,Y,
-John,,Sullivan,,House Representative,OK,TEAMSullivan,R,Campaign,USRepSullivan,N,
-Scott,,Brown,,Senator,MA,USSenScottBrown,R,Official,ScottBrownMA,Y,
-Scott,,Brown,,Senator,MA,ScottBrownMA,R,Campaign,USSenScottBrown,N,
-Vern,,Buchanan,,House Representative,FL,VernBuchanan,R,Official,vern2012,Y,
-Vern,,Buchanan,,House Representative,FL,vern2012,R,Campaign,VernBuchanan,N,
-,,,,,,vernwuensche,R,,,Y,DELETE
-Virginia,,Foxx,,House Representative,NC,virginiafoxx,R,Official,foxxforcongress,Y,
-Virginia,,Foxx,,House Representative,NC,foxxforcongress,R,Campaign,virginiafoxx,N,
-Steny,,Hoyer,,House Representative,MD,WhipHoyer,D,Official,StenyHoyer,Y,
-Steny,,Hoyer,,House Representative,MD,StenyHoyer,D,Campaign,WhipHoyer,N,
-White,,House Representative,,,DC,whitehouse,D,Official,,Y,
-Yvette,D.,Clarke,,House Representative,NY,YvetteClarke,D,Official,VoteYvette,Y,
-Yvette,D.,Clarke,,House Representative,NY,VoteYvette,D,Campaign,YvetteClarke,N,
-Robert,,Bentley,,Governor,AL,GovernorBentley,R,Official,,Y,
-Sean,,Parnell,,Governor,AK,AKgovParnell,R,Official,,Y,
-Jan,,Brewer,,Governor,AZ,govbrewer,R,Official,teambrewer,Y,
-Jan,,Brewer,,Governor,AZ,teambrewer,R,Campaign,govbrewer,N,
-Mike,,Beebe,,Governor,AR,GovBeebeMedia,D,Official,,Y,
-Edmund,"""Jerry""",Brown,,Governor,CA,jerrybrowngov,D,Campaign,,Y,
-John,,Hickenlooper,,Governor,CO,hickforco,D,Official,,Y,
-Dan,,Malloy,,Governor,CT,GovMalloyOffice,D,Official,,Y,
-Jack,,Markell,,Governor,DE,governormarkell,D,Official,WeBackJack,Y,
-Jack,,Markell,,Governor,DE,WeBackJack,D,Campaign,governormarkell,N,
-Rick ,,Scott,,Governor,FL,FLGovScott,R,Official,ScottforFlorida,Y,
-Rick ,,Scott,,Governor,FL,ScottforFlorida,R,Campaign,FLGovScott,N,
-Nathan,,Deal,,Governor,GA,governordeal,R,Official,,Y,
-Eddie,Baza,Calvo,,Governor,GU,eddiebazacalvo,R,Official,,Y,Error in politwoops
-Neil,,Abercrombie,,Governor,HI,neilabercrombie,D,Official,,Y,
-C. L.,"""Butch""",Otter,,Governor,ID,butchotter,R,Official,,Y,
-Pat,,Quinn,,Governor,IL,governorquinn,D,Official,QuinnForIL,Y,
-Pat,,Quinn,,Governor,IL,QuinnForIL,D,Campaign,governorquinn,N,
-Mitch,,Daniels,,Governor,IN,mymanmitch,R,Official,,Y,
-Terry,E.,Branstad,,Governor,IA,terrybranstad,R,Official,,Y,
-Sam,,Brownback,,Governor,KS,govsambrownback,R,Official,,Y,
-Steven,L.,Beshear,,Governor,KY,govstevebeshear,D,Official,,Y,
-Bobby,,Jindal,,Governor,LA,BOBBYJINDAL,R,Campaign,,Y,
-Martin,,O'Malley,,Governor,MD,governoromalley,D,Official,,Y,
-Deval,,Patrick,,Governor,MA,massgovernor,D,Official,devalpatrick,Y,
-Deval,,Patrick,,Governor,MA,devalpatrick,D,Campaign,massgovernor,N,
-Rick,,Snyder,,Governor,MI,onetoughnerd,R,Official,RickForMI,Y,
-Rick,,Snyder,,Governor,MI,RickForMI,R,Campaign,onetoughnerd,N,
-Mark,,Dayton,,Governor,MN,GovMarkDayton,D,Official,Mark_Dayton,Y,
-Mark,,Dayton,,Governor,MN,Mark_Dayton,D,Campaign,GovMarkDayton,N,
-Phil,,Bryant,,Governor,MS,PhilBryantMS,R,Official,,Y,
-Brian,,Schweitzer,,Governor,MT,brianschweitzer,D,Official,,Y,
-Dave,,Heineman,,Governor,NE,Gov_Heineman,R,Official,,Y,
-Brian,,Sandoval,,Governor,NV,GovSandoval,R,Official,BrianSandoval,N,
-Brian,,Sandoval,,Governor,NV,BrianSandoval,R,Campaign,GovSandoval,Y,
-John,,Lynch,,Governor,NH,GovJohnLynch,D,Official,,Y,
-Christopher,,Christie,,Governor,NJ,GovChristie,R,Official,,Y,
-Susana,,Martinez,,Governor,NM,gov_martinez,R,Campaign,,N,
-Andrew,,Cuomo,,Governor,NY,nygovcuomo,D,Official,,Y,
-Bev,,Perdue,,Governor,NC,ncgovoffice,D,Official,,Y,
-Jack,,Dalrymple,,Governor,ND,DalrympleforGov,R,Official,,Y,
-John,,Kasich,,Governor,OH,JohnKasich,R,Personal,OHPressSec,Y,
-John,,Kasich,,Governor,OH,OHPressSec,R,Official,JohnKasich,N,
-Mary,,Fallin,,Governor,OK,govmaryfallin,R,Official,,Y,
-John,A.,Kitzhaber,M.D.,Governor,OR,govkitz,D,Official,,Y,
-Tom,,Corbett,,Governor,PA,governorcorbett,R,Official,,Y,
-Luis,G.,Fortuño,,Governor,PR,luisfortuno51,R,Campaign,,Y,
-Lincoln,,Chafee,,Governor,RI,lincolnchafee,I,Official,,Y,
-Nikki,R.,Haley,,Governor,SC,SCGOVOFFICE,R,Official,nikkihaley,Y,
-Nikki,R.,Haley,,Governor,SC,nikkihaley,R,Campaign,SCGOVOFFICE,N,
-Dennis,,Daugaard,,Governor,SD,sdgovdaugaard,R,Official,dennisdaugaard,Y,
-Dennis,,Daugaard,,Governor,SD,dennisdaugaard,R,Campaign,sdgovdaugaard,N,
-Bill,,Haslam,,Governor,TN,billhaslam,R,Official,,Y,
-Rick,,Perry,,Governor,TX,TexGov,R,Official,GovernorPerry|TeamRickPerry|PerryTruthTeam,Y,
-Rick,,Perry,,Governor,TX,GovernorPerry,R,Personal,TexGov|TeamRickPerry|PerryTruthTeam,Y,
-Rick,,Perry,,Governor,TX,TeamRickPerry,R,Campaign,TexGov|GovernorPerry|PerryTruthTeam,Y,
-Rick,,Perry,,Governor,TX,PerryTruthTeam,R,Campaign,TexGov|GovernorPerry|TeamRickPerry,N,
-Gary,Richard,Herbert,,Governor,UT,governorherbert,R,Official,herbertforutah,Y,
-Gary,Richard,Herbert,,Governor,UT,herbertforutah,R,Campaign,governorherbert,N,
-Peter,,Shumlin,,Governor,VT,govpetershumlin,D,Official,petershumlin,Y,
-Peter,,Shumlin,,Governor,VT,petershumlin,D,Campaign,govpetershumlin,Y,
-John,,deJongh,Jr.,Governor,VI,governordejongh,D,Official,,N,
-Robert,"""Bob""",McDonnell,,Governor,VA,governorva,R,Official,BobMcDonnell,Y,
-Robert,"""Bob""",McDonnell,,Governor,VA,BobMcDonnell,R,Campaign,governorva,N,
-Chris,,Gregoire,,Governor,WA,govgregoire,D,Official,,Y,
-Earl,Ray,Tomblin,,Governor,WV,ertwv,D,Campaign,,Y,
-Scott,,Walker,,Governor,WI,govwalker,R,Official,,Y,
+user_name,account_type,state,party,office,first_name,last_name,middle_name,suffix
+SenStabenow,official,MI,d,Senator,Debbie,Stabenow,"",""
+RepChuck,official,TN,r,House Representative,Chuck,Fleischmann,,
+RepCanseco,official,TX,r,House Representative,Francisco,Canseco,,
+RepCharlesBass,official,NH,r,House Representative,Charlie,Bass,"",""
+BruceBraley,official,IA,d,House Representative,Bruce,Bailey,"",""
+RepRickCrawford,official,AR,r,House Representative,Rick,Crawford,"",""
+RepSteveIsrael,official,NY,d,House Representative,Steve,Israel,"",""
+SenBlumenthal,official,CT,d,Senator,Richard,Blumenthal,"""Dick""",""
+LamarSmithTX21,official,TX,r,House Representative,Lamar,Smith,"",""
+RepRaulGrijalva,official,AZ,d,House Representative,Raúl,Grijalva,"",""
+RoyBlunt,official,MO,r,Senator,Roy,Blunt,"",""
+RepRonPaul,official,TX,r,House Representative,Ron,Paul,,
+RepRonKind,official,WI,d,House Representative,Ron,Kind,,
+SenToomey,official,PA,r,Senator,Pat,Toomey,"",""
+RepDennisRoss,official,FL,r,House Representative,Dennis,Ross,,
+SenPatRoberts,official,KS,r,Senator,Pat,Roberts,"",""
+LEETERRYNE,official,NE,r,House Representative,Lee,Terry,"",""
+RepTomPrice,official,GA,r,House Representative,Tom,Price,,M.D.
+CongMikeSimpson,official,ID,r,House Representative,Mike,Simpson,,
+RepEdWhitfield,official,KY,r,House Representative,Ed,Whitfield,"",""
+JohnCornyn,official,TX,r,Senator,John,Cornyn,"",""
+maziehirono,official,HI,d,Senator,Mazie,Hirono,"",""
+RepGusBilirakis,official,FL,r,House Representative,Gus,Bilirakis,,
+SenatorSnowe,official,ME,r,Senator,Olympia,Snowe,J.,
+RepGregoryMeeks,official,NY,d,House Representative,Gregory,Meeks,,
+HerreraBeutler,official,WA,r,House Representative,Jaime,Herrera Beutler,"",""
+RepMoBrooks,official,AL,r,House Representative,Mo,Brooks,"",""
+RepJimMcDermott,official,WA,d,House Representative,Jim,McDermott,"",""
+RepTrentFranks,official,AZ,r,House Representative,Trent,Franks,"",""
+RepDianaDeGette,official,CO,d,House Representative,Diana,DeGette,,
+RepScottRigell,official,VA,r,House Representative,Scott,Rigell,"",""
+MarshaBlackburn,official,TN,r,House Representative,Marsha,Blackburn,"",""
+SenToddYoung,official,IN,r,Senator,Todd,Young,,
+SenatorBarb,official,MD,d,Senator,Barbara,Mikulski,,
+MarkUdall,official,CO,d,Senator,Mark,Udall,"",""
+SenAlexander,official,TN,r,Senator,Lamar,Alexander,"",""
+RepAlGreen,official,TX,d,House Representative,Al,Green,,
+MicheleBachmann,official,MN,r,House Representative,Michele,Bachmann,"",""
+JohnBoozman,official,AR,r,Senator,John,Boozeman,,
+MickMulvaney,campaign,SC,r,House Representative,Mick,Mulvaney,"",""
+chelliepingree,official,ME,d,House Representative,Chellie,Pingree,"",""
+RepPeteKing,official,NY,r,House Representative,Pete,King,,
+AGBecerra,official,CA,d,House Representative,Xavier,Becerra,"",""
+KevinYoder,campaign,KS,r,House Representative,Kevin,Yoder,"",""
+RepWebster,official,FL,r,House Representative,Daniel,Webster,,
+RushHolt,campaign,NJ,d,House Representative,Rush,Holt,"",""
+RepMikeCoffman,official,CO,r,House Representative,Mike,Coffman,,
+RepRickBerg,official,ND,r,House Representative,Rick,Berg,,
+RepMcGovern,official,MA,d,House Representative,Jim,McGovern,"",""
+SenJohnMcCain,official,AZ,r,Senator,John,McCain,,
+RepKristiNoem,official,SD,r,House Representative,Kristi,Noem,,
+RepBillShuster,official,PA,r,House Representative,Bill,Shuster,"",""
+SenatorLankford,official,OK,r,Senator,James,Lankford,"",""
+SenatorDurbin,official,IL,d,Senator,Dick,Durbin,"",""
+DarrellIssa,official,CA,r,House Representative,Darrel,Issa,"",""
+RepKayGranger,official,TX,r,House Representative,Kay,Granger,,
+DevinNunes,campaign,CA,r,House Representative,Devin,Nunes,"",""
+RepNormDicks,official,WA,d,House Representative,Norm,Dicks,"",""
+GerryConnolly,official,VA,d,House Representative,Gerry,Connolly,"",""
+RepGosar,official,AZ,r,House Representative,Paul,Gosar,"",""
+SenBennetCO,official,CO,d,Senator,Michael,Bennet,"",""
+FrankLautenberg,official,NJ,d,Senator,Frank,Lautenberg,,
+repsandylevin,official,MI,d,House Representative,Sander,Levin,"""Sandy""",""
+repjoecrowley,official,NY,d,House Representative,Joe,Crowley,"",""
+cathymcmorris,official,WA,r,House Representative,Cathy,McMorris Rodgers,"",""
+ThadMcCotter,,"",r,,"","","",""
+SenatorReid,official,NV,d,Senator,Harry,Reid,,
+Call_Me_Dutch,official,MD,d,House Representative,Dutch,Ruppersberger,"",""
+SenDanCoats,official,IN,r,Senator,Dan,Coats,,
+RepKinzinger,official,IL,r,House Representative,Adam,Kinzinger,"",""
+repjohnbarrow,official,GA,d,House Representative,John,Barrow,"",""
+RepSandyAdams,official,FL,r,House Representative,Sandy,Adams,"",""
+NitaLowey,official,NY,d,House Representative,Nita,Lowey,,
+RepJohnLarson,official,CT,d,House Representative,John,Larson,,
+RepSteveStivers,official,OH,r,House Representative,Steve,Stivers,,
+CongJoeWilson,campaign,SC,r,House Representative,Joe,Wilson,"",""
+PeteSessions,official,TX,r,House Representative,Pete,Sessions,"",""
+JeffFlake,official,AZ,r,Senator,Jeff,Flake,,
+JimLangevin,official,RI,d,House Representative,Jim,Langevin,"",""
+RepLouBarletta,official,PA,r,House Representative,Lou,Barletta,"",""
+SueMyrick,official,NC,r,House Representative,Sue,Myrick,,
+kaybaileyhutch,official,TX,r,Senator,Kay,Bailey Hutchison,,
+SenBobCorker,official,TN,r,Senator,Bob,Corker,,
+SenGaryPeters,official,MI,d,Senator,Gary,Peters,"",""
+RepTedDeutch,official,FL,d,House Representative,Ted,Deutch,,
+MikeHMichaud,official,ME,d,House Representative,Mike,Michaud,"",""
+repdonnaedwards,official,MD,d,House Representative,Donna,Edwards,F.,""
+repbenraylujan,official,NM,d,House Representative,Ben,Lujan,Ray,""
+RepJonRunyan,official,NJ,r,House Representative,Jon,Runyan,"",""
+RepBrady,official,PA,d,House Representative,Bob,Brady,,
+JimGerlach,official,PA,r,House Representative,Jim,Gerlach,"",""
+BilbrayCA50,official,CA,r,House Representative,Brian,Bilbray,,
+StevenPalazzo,campaign,MS,r,House Representative,Steven,Palazzo,"",""
+RepMcClintock,official,CA,r,House Representative,Tom,McClintock,,
+RepWilson,official,FL,d,House Representative,Frederica,Wilson,,
+USRep_Keating,,"",d,,"","","",""
+SenatorBegich,official,AK,d,Senator,Mark,Begich,"",""
+RepRibble,official,WI,r,House Representative,Reid,Ribble,,
+Bob_Gibbs,campaign,OH,r,House Representative,Bob,Gibbs,"",""
+Rep_Southerland,official,FL,r,House Representative,Steve,Southerland,"",""
+JohnCarneyDE,official,DE,d,Governor,John,Carney,"",""
+senjonkyl,official,AZ,r,Senator,Jon,Kyl,,
+SupJaniceHahn,official,CA,d,House Representative,Janice,Hahn,"",""
+RepWalterJones,official,NC,r,House Representative,Walter,Jones,"",""
+tndesjarlais,campaign,TN,r,House Representative,Scott,DesJarlais,"",""
+USRepBobTurner,official,NY,r,House Representative,Bob,Turner,,
+RepKarenBass,official,CA,d,House Representative,Karen,Bass,"",""
+RepWalberg,official,MI,r,House Representative,Tim,Walberg,,
+DanaRohrabacher,campaign,CA,r,House Representative,Dana,Rohrabacher,"",""
+JacksonLeeTX18,official,TX,d,House Representative,Sheila,Jackson Lee,,
+SenatorCarper,official,DE,d,Senator,Tom,Carper,,
+RepCarnahan,official,MO,d,House Representative,Russ,Carnahan,,
+SenBobCasey,official,PA,d,Senator,Robert,Casey,"""Bob""",Jr.
+RepRichNugent,official,FL,r,House Representative,Rich,Nugent,"",""
+TeamRoby,campaign,AL,r,House Representative,Martha,Roby,"",""
+ChuckGrassley,official,IA,r,Senator,Chuck,Grassley,,
+repgregwalden,official,OR,r,House Representative,Greg,Walden,"",""
+RealBenCarson,campaign,MD,r,Administration Official,Ben,Carson,"",""
+JudgeTedPoe,official,TX,r,House Representative,Ted,Poe,,
+RepBillJohnson,official,OH,r,House Representative,Bill,Johnson,,
+jaredpolis,campaign,CO,d,House Representative,Jared,Polis,"",""
+PeterRoskam,official,IL,r,House Representative,Peter,Roskam,,
+DrPhilRoe,official,TN,r,House Representative,Phil,Roe,,
+SamsPressShop,official,TX,r,House Representative,Sam,Johnson,"",""
+SenBillNelson,official,FL,d,Senator,Bill,Nelson,,
+lisamurkowski,official,AK,r,Senator,Lisa,Murkowski,"",""
+rosadelauro,official,CT,d,House Representative,Rosa,DeLauro,"",""
+repcleaver,official,MO,d,House Representative,Emanuel,Cleaver,"",""
+LtGovTimGriffin,official,AR,r,House Representative,Tim,Griffin,"",""
+Sen_JoeManchin,official,WV,d,Senator,Joseph,Manchin,"""Joe""",III
+SenatorTomUdall,official,NM,d,Senator,Tom,Udall,"",""
+PatMeehanPA,campaign,PA,r,House Candidate,Pat,Comstock,,
+PattyMurray,official,WA,d,Senator,Patty,Murray,,
+EdTowns,official,NY,d,House Representative,Ed,Towns,"",""
+RepChipCravaack,official,MN,r,House Representative,Chip,Cravaack,,
+BillOwensNY,official,NY,d,House Representative,Bill,Owens,"",""
+SteveAustria,official,OH,r,House Representative,Steve,Austria,,
+RepNanHayworth,official,NY,r,House Representative,Nan,Hayworth,"",""
+MelWattNC12,official,NC,d,House Representative,Mel,Watt,"",""
+JackKingston,official,GA,r,House Representative,Jack,Kingston,"",""
+chakafattah,official,PA,d,House Representative,Chaka,Fattah,"",""
+RepBrianHiggins,official,NY,d,House Representative,Brian,Higgins,,
+RepJoePitts,official,PA,r,House Representative,Joe,Pitts,,
+SenBenNelson,official,NE,d,Senator,Ben,Nelson,,
+JimDeMint,campaign,SC,r,Senator,Jim,DeMint,,
+SenatorTimScott,official,SC,r,Senator,Tim,Scott,"",""
+GrahamBlog,official,SC,r,Senator,Lindsey,Graham,"",""
+RepFincherTN08,official,TN,r,House Representative,Stephen,Fincher,"",""
+RobWittman,official,VA,r,House Representative,Rob,Wittman,,
+SenatorLeahy,official,VT,d,Senator,Patrick,Leahy,,
+NancyPelosi,official,CA,d,House Representative,Nancy,Pelosi,"",""
+RepGwenMoore,official,WI,d,House Representative,Gwen,Moore,"",""
+DeanHeller,campaign,NV,r,Senator,Dean,Heller,"",""
+RepLynnJenkins,official,KS,r,House Representative,Lynn,Jenkins,"",""
+FrankPallone,official,NJ,d,House Representative,Frank,Pallone,,
+TGowdySC,official,SC,r,House Representative,Trey,Gowdy,,
+JeffFortenberry,official,NE,r,House Representative,Jeff,Fortenberry,,
+SenMikeLee,official,UT,r,Senator,Mike,Lee,,
+rep_stevewomack,official,AR,r,House Representative,Steve,Womack,"",""
+RepLarryKissell,official,NC,d,House Representative,Larry,Kissell,,
+SenatorBurr,official,NC,r,Senator,Richard,Burr,"",""
+RepGoodlatte,official,VA,r,House Representative,Rob,Goodlatte,"",""
+RepLRichardson,official,CA,d,House Representative,Laura,Richardson,"",""
+RepEdRoyce,official,CA,r,House Representative,Ed,Royce,,
+GabbyGiffords,campaign,AZ,d,House Representative,Gabrielle,Giffords,"""Gabby""",""
+DelegateDonna,official,VI,d,House Representative,Donna,Christensen,"",""
+repcory,,"",r,,"","","",""
+ntsongas,campaign,MA,d,House Representative,Niki,Tsongas,"",""
+RepMarciaFudge,official,OH,d,House Representative,Marcia,Fudge,,
+RepBerkley,official,NV,d,House Representative,Shelley,Berkley,"",""
+RepGeoffDavis,official,KY,r,House Representative,Geoff,Davis,,
+RepLoBiondo,official,NJ,r,House Representative,Frank,LoBiondo,"",""
+SenGillibrand,campaign,NY,d,Senator,Kirsten,Gillibrand,"",""
+RepJimMatheson,official,UT,d,House Representative,Jim,Matheson,"",""
+louiseslaughter,official,NY,d,House Representative,Louise,Slaughter,"",""
+RepHowardBerman,official,CA,d,House Representative,Howard,Berman,,
+RepHankJohnson,official,GA,d,House Representative,Hank,Johnson,,
+RepPerlmutter,official,CO,d,House Representative,Ed,Perlmutter,,
+JerryMoran,official,KS,r,Senator,Jerry,Moran,"",""
+JeffLandry,official,LA,r,House Representative,Jeff,Landry,"",""
+SenJohnThune,official,SD,r,Senator,John,Thune,,
+SenatorCardin,official,MD,d,Senator,Ben,Cardin,"",""
+RepRivera,official,FL,r,House Representative,David,Rivera,,
+KenCalvert,official,CA,r,House Representative,Ken,Calvert,,
+PatrickMcHenry,official,NC,r,House Representative,Patrick,McHenry,,
+RepCorrineBrown,official,FL,d,House Representative,Corrine,Brown,,
+RepDanBurton,official,IN,r,House Representative,Dan,Burton,,
+jasonaltmire,official,PA,d,House Representative,Jason,Altmire,"",""
+BradSherman,official,CA,d,House Representative,Brad,Sherman,,
+BuckMcKeon,official,CA,r,House Representative,Buck,McKeon,"",""
+JeanneShaheen,campaign,NH,d,Senator,Jeanne,Shaheen,"",""
+Raul_Labrador,official,ID,r,House Representative,Raúl,Labrador,R.,
+RepSires,official,NJ,d,House Representative,Albio,Sires,"",""
+repjohnlewis,official,GA,d,House Representative,John,Lewis,"",""
+USRepMikeDoyle,official,PA,d,House Representative,Mike,Doyle,,
+RepKevinBrady,official,TX,r,House Representative,Kevin,Brady,"",""
+Heck4Nevada,campaign,NV,r,House Representative,Joe,Heck,"",""
+JudgeCarter,official,TX,r,House Representative,John,Carter,,
+SenatorBoxer,official,CA,d,Senator,Barbara,Boxer,,
+RepMikeRoss,official,AR,d,House Representative,Mike,Ross,"",""
+ToddRokita,official,IN,r,House Representative,Todd,Rokita,,
+mauricehinchey,official,NY,d,House Representative,Maurice,Hinchey,,
+senrobportman,campaign,OH,r,Senator,Rob,Portman,"",""
+janschakowsky,official,IL,d,House Representative,Jan,Schakowsky,"",""
+TX20CharlieG,official,TX,d,House Representative,Charlie,Gonzalez,"",""
+jasoninthehouse,official,UT,r,House Representative,Jason,Chaffetz,"",""
+jahimes,official,CT,d,House Representative,Jim,Himes,"",""
+SenMarkey,official,MA,d,Senator,Ed,Markey,,
+RepDold,official,IL,r,House Representative,Robert,Dold,J.,""
+congbillposey,official,FL,r,House Representative,Bill,Posey,"",""
+RepJoeBarton,official,TX,r,House Representative,Joe,Barton,"",""
+RepPeteOlson,official,TX,r,House Representative,Pete,Olson,,
+boblatta,official,OH,r,House Representative,Bob,Latta,G.,""
+ConawayTX11,official,TX,r,House Representative,Mike,Conaway,,
+SenatorCollins,official,ME,r,Senator,Susan,Collins,"",""
+RepLynnWoolsey,official,CA,d,House Representative,Lynn,Woolsey,"",""
+frankguinta,campaign,NH,r,House Representative,Frank,Guinta,"",""
+RepCuellar,official,TX,d,House Representative,Henry,Cuellar,"",""
+RepRichardHanna,official,NY,r,House Representative,Richard,Hanna,,
+RandyNeugebauer,official,TX,r,House Representative,Randy,Neugebauer,"",""
+BobbyScott,official,VA,d,House Representative,Bobby,Scott,"",""
+USRepAlexander,official,LA,r,House Representative,Rodney,Alexander,,
+RandyHultgren,campaign,IL,r,House Representative,Randy,Hultgren,"",""
+JudyBiggert,official,IL,r,House Representative,Judy,Biggert,,
+SenSherrodBrown,official,OH,d,Senator,Sherrod,Brown,"",""
+LuisGutierrez,campaign,IL,d,House Representative,Luis,Gutierrez,"",""
+RepGaryMiller,official,CA,r,House Representative,Gary,Miller,"",""
+RosLehtinen,official,FL,r,House Representative,Ileana,Ros-Lehtinen,"",""
+JimInhofe,campaign,OK,r,Senator,Jim,Inhofe,"",""
+RepMaxineWaters,official,CA,d,House Representative,Maxine,Waters,,
+SenSanders,official,VT,i,Senator,Bernard,Sanders,"""Bernie""",
+rodneyfornj,campaign,NJ,r,House Representative,Rodney,Frelinghuysen,"",""
+jerrymcnerney,campaign,CA,d,House Representative,Jerry,McNerney,"",""
+RepYvetteClarke,official,NY,d,House Representative,Yvette,Clarke,D.,
+TheLugarCenter,official,IN,r,Senator,Richard,Lugar,"""Dick""",""
+RepTimHolden,official,PA,d,House Representative,Tim,Holden,,
+Jim_Moran,official,VA,d,House Representative,Jim,Moran,"",""
+SenatorCantwell,official,WA,d,Senator,Maria,Cantwell,"",""
+RepSamFarr,official,CA,d,House Representative,Sam,Farr,"",""
+RepPeterDeFazio,official,OR,d,House Representative,Peter,DeFazio,,
+RepSchrader,official,OR,d,House Representative,Kurt,Schrader,,
+DorisMatsui,official,CA,d,House Representative,Doris,Matsui,"",""
+RepMikeTurner,official,OH,r,House Representative,Mike,Turner,,
+RepShimkus,official,IL,r,House Representative,John,Shimkus,"",""
+RepBoustany,official,LA,r,House Representative,Charles,Boustany,,
+KellyAyotte,campaign,NH,r,Senator,Kelly,Ayotte,"",""
+Erik_Paulsen,campaign,MN,r,House Representative,Erik,Paulsen,"",""
+MaryBonoUSA,campaign,CA,r,House Representative,Mary,Mack,Bono,""
+RepTimMurphy,official,PA,r,House Representative,Tim,Murphy,,
+SenatorSessions,official,AL,r,Senator,Jeff,Sessions,"",""
+RepMikeRogersAL,official,AL,r,House Representative,Mike,Rogers,"",""
+repmccarthyny,official,NY,d,House Representative,Carolyn,McCarthy,"",""
+JohnDingell,official,MI,d,House Representative,John,Dingell,"",""
+AustinScottGA08,official,GA,r,House Representative,Austin,Scott,"",""
+pedropierluisi,official,PR,d,House Representative,Pedro,Pierluisi,"",""
+RepMcCaul,official,TX,r,House Representative,Michael,McCaul,"",""
+SenatorKirk,official,IL,r,Senator,Mark,Kirk,,
+RepHuizenga,official,MI,r,House Representative,Bill,Huizenga,"",""
+RogerWicker,campaign,MS,r,Senator,Roger,Wicker,"",""
+SenShelby,official,AL,r,Senator,Richard,Shelby,,
+Nunnelee2012,campaign,MS,r,House Representative,Alan,Nunnelee,"",""
+RepJudyChu,official,CA,d,House Representative,Judy,Chu,,
+RestoreAccount,official,OK,r,Senator,Tom,Coburn,"",""
+repjimcooper,official,TN,d,House Representative,Jim,Cooper,"",""
+RepAnnaEshoo,official,CA,d,House Representative,Anna,Eshoo,G.,""
+RepAdamSmith,official,WA,d,House Representative,Adam,Smith,"",""
+RepDavid,official,AZ,r,House Representative,David,Schweikert,"",""
+RepJoseSerrano,official,NY,d,House Representative,Jose,Serrano,"",""
+billylongmo7,,"",r,,"","","",""
+RepBarbaraLee,official,CA,d,House Representative,Barbara,Lee,,
+RepStevePearce,official,NM,r,House Representative,Steve,Pearce,,
+DavidVitter,campaign,LA,r,Senator,David,Vitter,"",""
+RepLloydDoggett,official,TX,d,House Representative,Lloyd,Doggett,,
+VernBuchanan,official,FL,r,House Representative,Vern,Buchanan,,
+JerryCostello,official,IL,d,House Representative,Jerry,Costello,"",""
+cbrangel,official,NY,d,House Representative,Charles,Rangel,"",""
+RepRichmond,official,LA,d,House Representative,Cedric,Richmond,,
+keithellison,official,MN,d,House Representative,Keith,Ellison,"",""
+RepKathyHochul,official,NY,d,House Representative,Kathy,Hochul,,
+CongHuelskamp,official,KS,r,House Representative,Tim,Huelskamp,"",""
+RepJimRenacci,official,OH,r,House Representative,Jim,Renacci,"",""
+RepSchilling,official,IL,r,House Representative,Bobby,Schilling,,
+RepAdamSchiff,official,CA,d,House Representative,Adam,Schiff,"",""
+Dennis_Kucinich,campaign,OH,d,House Representative,Dennis,Kucinich,,
+CandiceMiller,official,MI,r,House Representative,Candice,Miller,,
+CongCulberson,official,TX,r,House Representative,John,Culberson,,
+RepHartzler,official,MO,r,House Representative,Vicky,Hartzler,,
+DrPhilGingrey,official,GA,r,House Representative,Phil,Gingrey,"",""
+RepJohnCampbell,official,CA,r,House Representative,John,Campbell,"",""
+virginiafoxx,official,NC,r,House Representative,Virginia,Foxx,"",""
+CynthiaLummis,official,WY,r,House Representative,Cynthia,Lummis,"",""
+Mike_Johanns,official,NE,r,Senator,Mike,Johanns,"",""
+SpeakerBoehner,official,OH,r,House Representative,John,Boehner,,
+AnderCrenshaw,official,FL,r,House Representative,Ander,Crenshaw,,
+RepDaveCamp,official,MI,r,House Representative,Dave,Camp,"",""
+SenRonJohnson,official,WI,r,Senator,Ron,Johnson,,
+SenCarlLevin,official,MI,d,Senator,Carl,Levin,"",""
+RepTomGraves,official,GA,r,House Representative,Tom,Graves,"",""
+SenatorMenendez,official,NJ,d,Senator,Robert,Menendez,"""Bob""",
+RepHensarling,official,TX,r,House Representative,Jeb,Hensarling,,
+Jim_Jordan,official,OH,r,House Representative,Jim,Jordan,,
+TomReedCongress,campaign,NY,r,House Representative,Tom,Reed,"",""
+RepGeneGreen,official,TX,d,House Representative,Gene,Green,,
+GOPLeader,official,CA,r,House Representative,Kevin,McCarthy,"",""
+RepFitzpatrick,official,PA,r,House Representative,Mike,Fitzpatrick,"",""
+RepEBJ,official,TX,d,House Representative,E.B.,Johnson,"",""
+farenthold,official,TX,r,House Representative,Blake,Farenthold,"",""
+RepMikeQuigley,official,IL,d,House Representative,Mike,Quigley,,
+BachusAL06,official,AL,r,House Representative,Spencer,Bachus,"",""
+RepFredUpton,official,MI,r,House Representative,Fred,Upton,"",""
+RepMikeHonda,official,CA,d,House Representative,Mike,Honda,"",""
+Daniel_Inouye,official,HI,d,Senator,Daniel,Inouye,"",""
+HowardCoble,official,NC,r,House Representative,Howard,Coble,"",""
+RepJohnConyers,official,MI,d,House Representative,John,Conyers,"",""
+USRepRHinojosa,official,TX,d,House Representative,Ruben,Hinojosa,,
+SenJeffMerkley,official,OR,d,Senator,Jeff,Merkley,,
+Robert_Aderholt,official,AL,r,House Representative,Robert,Aderholt,,
+DennyRehberg,official,MT,r,House Representative,Denny,Rehberg,,
+Clyburn,official,SC,d,House Representative,James,Clyburn,E.,
+donmanzullo,official,IL,r,House Representative,Don,Manzullo,,
+RepCohen,official,TN,d,House Representative,Steve,Cohen,,
+RepLarryBucshon,official,IN,r,House Representative,Larry,Bucshon,,
+RepFleming,official,LA,r,House Representative,John,Fleming,,
+RepSteveChabot,official,OH,r,House Representative,Steve,Chabot,"",""
+ColleenHanabusa,campaign,HI,d,House Representative,Colleen,Hanabusa,"",""
+BlumenauerMedia,official,OR,d,House Representative,Earl,Blumenauer,"",""
+ToddAkin,campaign,MO,r,House Representative,Todd,Akin,,
+GreggHarper,official,MS,r,House Representative,Gregg,Harper,,
+MarkWarner,official,VA,d,Senator,Mark,Warner,"",""
+SanfordBishop,official,GA,d,House Representative,Sanford,Bishop,D.,Jr.
+repdonyoung,official,AK,r,House Representative,Don,Young,"",""
+gracenapolitano,official,CA,d,House Representative,Grace,Napolitano,"",""
+CongressmanGT,official,PA,r,House Representative,Glenn,Thompson,"""GT""",""
+EleanorNorton,official,DC,d,House Representative,Eleanor,Holmes-Norton,,
+replouiegohmert,official,TX,r,House Representative,Louie,Gohmert,"",""
+RepCliffStearns,official,FL,r,House Representative,Cliff,Stearns,,
+RepTomMarino,official,PA,r,House Representative,Tom,Marino,"",""
+davereichert,official,WA,r,House Representative,Dave,Reichert,"",""
+annmbuerkle,official,NY,r,House Representative,Anne,Buerkle,Marie,""
+Westmoreland_GA,official,GA,r,House Representative,Lynn,Westmoreland,"",""
+LeonardBoswell,official,IA,d,House Representative,Leonard,Boswell,,
+RepBobbyRush,official,IL,d,House Representative,Bobby,Rush,L.,
+RepGaryAckerman,campaign,NY,d,House Representative,Gary,Ackerman,"",""
+RepMGriffith,official,VA,r,House Representative,Morgan,Griffith,"",""
+EricCantor,official,VA,r,House Representative,Eric,Cantor,"",""
+RepTipton,official,CO,r,House Representative,Scott,Tipton,"",""
+RepBillFlores,official,TX,r,House Representative,Bill,Flores,,
+RepTerriSewell,official,AL,d,House Representative,Terri,Sewell,A.,""
+SenJohnBarrasso,official,WY,r,Senator,John,Barrasso,,
+CongBobFilner,official,CA,d,House Representative,Bob,Filner,,
+RepKenMarchant,official,TX,r,House Representative,Kenny,Marchant,,
+benquayle,official,AZ,r,House Representative,Ben,Quayle,,
+RepJerryLewis,official,CA,r,House Representative,Jerry,Lewis,,
+RepSpeier,official,CA,d,House Representative,Jackie,Speier,"",""
+SenatorHarkin,official,IA,d,Senator,Tom,Harkin,"",""
+McConnellPress,official,KY,r,Senator,Mitch,McConnell,"",""
+AllenWest,official,FL,r,House Representative,Allen,West,,
+askgeorge,official,CA,d,House Representative,George,Miller,"",""
+USSenScottBrown,official,MA,r,Senator,Scott,Brown,,
+USRepSullivan,official,OK,r,House Representative,John,Sullivan,,
+RepJeffDenham,official,CA,r,House Representative,Jeff,Denham,,
+RepChrisGibson,official,NY,r,House Representative,Chris,Gibson,"",""
+MarioDB,official,FL,r,House Representative,Mario,Diaz-Balart,,
+CarolynBMaloney,campaign,NY,d,House Representative,Carolyn,Maloney,B.,""
+repdavidscott,official,GA,d,House Representative,David,Scott,"",""
+petestark,official,CA,d,House Representative,Pete,Stark,,
+RepSeanDuffy,official,WI,r,House Representative,Sean,Duffy,,
+JohnKerry,official,MA,d,Senator,John,Kerry,"",""
+RepPaulTonko,official,NY,d,House Representative,Paul,Tonko,"",""
+CongressmanDan,official,MI,r,House Representative,Dan,Benishek,"",""
+RepReneeEllmers,official,NC,r,House Representative,Renee,Ellmers,"",""
+eltongallegly24,official,CA,r,House Representative,Elton,Gallegly,,
+BennieGThompson,official,MS,d,House Representative,Bennie,Thompson,"",""
+RepJohnYarmuth,official,KY,d,House Representative,John,Yarmuth,,
+ChrisVanHollen,official,MD,d,Senator,Chris,van Hollen,"",""
+MarlinStutzman,campaign,IN,r,House Representative,Marlin,Stutzman,"",""
+OrrinHatch,campaign,UT,r,Senator,Orrin,Hatch,"",""
+RepMikeMcIntyre,official,NC,d,House Representative,Mike,McIntyre,"",""
+RepConnieMack,official,FL,r,House Representative,Connie,Mack,"",""
+LorettaSanchez,official,CA,d,House Representative,Loretta,Sanchez,"",""
+SenSchumer,official,NY,d,Senator,Chuck,Schumer,"",""
+CongJeffMiller,official,FL,r,House Representative,Jeff,Miller,"",""
+justinamash,official,MI,r,House Representative,Justin,Amash,"",""
+GovPenceIN,official,IN,r,Governor,Mike,Pence,"",""
+Randy_Forbes,official,VA,r,House Representative,Randy,Forbes,"",""
+RepCardoza,official,CA,d,House Representative,Dennis,Cardoza,,
+TomRooney,official,FL,r,House Representative,Tom,Rooney,,
+aaronschock,campaign,IL,r,House Representative,Aaron,Schock,"",""
+RepRobertHurt,official,VA,r,House Representative,Robert,Hurt,,
+PaulBrounMD,official,GA,r,House Representative,Paul,Broun,"",""
+SilvestreReyes,official,TX,d,House Representative,Silvestre,Reyes,"",""
+SenCapito,official,WV,r,Senator,Shelley,Capito,"",""
+larsenrick,campaign,WA,d,House Representative,Rick,Larsen,"",""
+mikepompeo,campaign,KS,r,House Representative,Mike,Pompeo,"",""
+SenatorHagan,official,NC,d,Senator,Kay,Hagan,"",""
+RepJoBonner,official,AL,r,House Representative,Jo,Bonner,"",""
+JoeLieberman,official,CT,i,Senator,Joe,Lieberman,,
+RepMcKinley,official,WV,r,House Representative,David,McKinley,B.,""
+RepTimRyan,official,OH,d,House Representative,Tim,Ryan,,
+SenJohnsonSD,official,SD,d,Senator,Tim,Johnson,"",""
+clairecmc,campaign,MO,d,Senator,Claire,McCaskill,"",""
+RandPaul,official,KY,r,Senator,Rand,Paul,"",""
+RepMarkCritz,official,PA,d,House Representative,Mark,Critz,,
+SpeakerRyan,official,WI,r,House Representative,Paul,Ryan,,
+MacTXPress,official,TX,r,House Representative,Mac,Thornberry,"",""
+TomLatham,official,IA,r,House Representative,Tom,Latham,"",""
+repjohnkline,official,MN,r,House Representative,John,Kline,"",""
+RepVisclosky,official,IN,d,House Representative,Pete,Visclosky,,
+michaelcburgess,official,TX,r,House Representative,Michael,Burgess,C.,M.D.
+RepTimJohnson,official,IL,r,House Representative,Tim,Johnson,,
+sunlightwoops,,,x,,Sunlight,Foundation,,
+cainpress,campaign,GA,r,Presidential Candidate,Herman,Cain,,
+Newt2012HQ,campaign,GA,r,Presidential Candidate,Newt,Gingrich,,
+TimPawlenty,campaign,,r,Presidential Candidate,Tim,Pawlenty,,
+GovGaryJohnson,campaign,,r,Presidential Candidate,Gary,Johnson,,
+newtgingrich,campaign,GA,r,Presidential Candidate,Newt,Gingrich,,
+TeamBachmann,campaign,MN,r,House Representative,Michele,Bachmann,"",""
+vernwuensche,campaign,"",r,Presidential Candidate,Vern,Wuensche,"",""
+BuddyRoemer,campaign,CA,r,Presidential Candidate,Buddy,Roemer,,
+PerryTruthTeam,campaign,TX,r,Governor,Rick,Perry,"",""
+RonPaul,campaign,TX,r,House Representative,Ron,Paul,"",""
+MittRomney,campaign,MA,r,Presidential Candidate,Mitt,Romney,"",""
+BarackObama,official,DC,d,President,Barack,Obama,"",""
+fredkarger,campaign,,r,Presidential Candidate,Fred,Karger,,
+THEHermanCain,personal,"",r,Presidential Candidate,Herman,Cain,"",""
+RickSantorum,campaign,PA,r,Presidential Candidate,Rick,Santorum,"",""
+WhiteHouse,official,DC,d,President,The White,House,"",""
+JonHuntsman,official,UT,r,Governor,Jon,Huntsman,,
+SenDonnelly,official,IN,d,Senator,Joe,Donnelly,"",""
+RepDianeBlack,official,TN,r,House Representative,Diane,Black,"",""
+WhipHoyer,official,MD,d,House Representative,Steny,Hoyer,"",""
+SteveKingIA,official,IA,r,House Representative,Steve,King,,
+RepHansenClarke,official,MI,d,House Representative,Hansen,Clarke,"",""
+RepJoeCourtney,official,CT,d,House Representative,Joe,Courtney,,
+SteveLaTourette,official,OH,r,House Representative,Steven,LaTourette,,
+WalshFreedom,official,IL,r,House Representative,Joe,Walsh,"",""
+PRyan,campaign,WI,r,House Representative,Paul,Ryan,"",""
+TeamRickPerry,campaign,TX,r,Governor,Rick,Perry,"",""
+AKGovParnell,official,AK,r,Governor,Sean,Parnell,"",""
+GovernorCorbett,official,PA,r,Governor,Tom,Corbett,"",""
+GovPeterShumlin,official,VT,d,Governor,Peter,Shumlin,,
+GovMalloyOffice,official,CT,d,Governor,Dan,Malloy,"",""
+GovKitz,official,OR,d,Governor,John,Kitzhaber,A.,M.D.
+BillHaslam,official,TN,r,Governor,Bill,Haslam,,
+ButchOtter,official,ID,r,Governor,Butch,Otter,"""Butch""",
+GovBeebeMedia,official,AR,d,Governor,Mike,Beebe,"",""
+petershumlin,campaign,VT,d,Governor,Peter,Shumlin,,
+GovernorPerry,campaign,TX,r,Governor,Rick,Perry,"",""
+JerryBrownGov,campaign,CA,d,Governor,Edmund,Brown,"""Jerry""",
+GovernorVA,official,VA,d,Governor,Terry,McAuliffe,"",""
+Gov_Martinez,campaign,NM,r,Governor,Susana,Martinez,,
+PhilBryantMS,official,MS,r,Governor,Phil,Bryant,,
+MassGovernor,official,MA,r,Governor,Charlie,Baker,"",""
+mymanmitch,official,IN,r,Governor,Mitch,Daniels,"",""
+GovHerbert,official,UT,r,Governor,Gary,Herbert,Richard,
+GovMarkDayton,official,MN,d,Governor,Mark,Dayton,,
+ncgovoffice,official,NC,d,Governor,Bev,Perdue,"",""
+GovernordeJongh,official,VI,d,Governor,John,deJongh,"",Jr.
+GovBrewer,official,AZ,r,Governor,Jan,Brewer,"",""
+NYGovCuomo,official,NY,d,Governor,Andrew,Cuomo,"",""
+GovTomblin,official,WV,d,Governor,Earl,Tomblin,Ray,""
+GovChristie,official,NJ,r,Governor,Chris,Christie,"",""
+GovMaryFallin,official,OK,r,Governor,Mary,Fallin,"",""
+BrianSandoval,campaign,NV,r,Governor,Brian,Sandoval,"",""
+TerryBranstad,official,IA,r,Governor,Terry,Branstad,E.,""
+hickforco,official,CO,d,Governor,John,Hickenlooper,,
+GovJohnLynch,official,NH,d,Governor,John,Lynch,"",""
+MartinOMalley,official,MD,d,Presidential Candidate,Martin,O'Malley,"",""
+luisfortuno51,campaign,PR,r,Governor,Luis,Fortuño,G.,
+eddiebazacalvo,official,GU,r,Governor,Eddie,Calvo,Baza,
+onetoughnerd,official,MI,r,Governor,Rick,Snyder,,
+GovernorMarkell,official,DE,d,Governor,Jack,Markell,"",""
+DaveEHeineman,official,NE,r,Governor,Dave,Heineman,"",""
+GovWalker,official,WI,r,Governor,Scott,Walker,"",""
+govsambrownback,official,KS,r,Governor,Sam,Brownback,"",""
+GovAbbott,official,TX,r,Governor,Greg,Abbott,"",""
+SCGOVOFFICE,official,SC,r,Governor,Nikki,Haley,R.,
+Steve__Beshear,official,KY,d,Governor,Steven,Beshear,L.,""
+GovernorBentley,official,AL,r,Governor,Robert,Bentley,,
+LincolnChafee,official,RI,d,Governor,Lincoln,Chafee,"",""
+SDGovDaugaard,official,SD,r,Governor,Dennis,Daugaard,,
+FLGovScott,official,FL,r,Governor,Rick,Scott,,
+JohnKasich,campaign,OH,r,Governor,John,Kasich,"",""
+GovernorDeal,official,GA,r,Governor,Nathan,Deal,"",""
+brianschweitzer,official,MT,d,Governor,Brian,Schweitzer,,
+GovernorQuinn,official,IL,d,Governor,Pat,Quinn,"",""
+GovGregoire,official,WA,d,Governor,Chris,Gregoire,"",""
+DalrympleforGov,campaign,ND,r,Governor,Jack,Dalrymple,"",""
+neilabercrombie,official,HI,d,Governor,Neil,Abercrombie,"",""
+BobbyJindal,campaign,LA,r,Governor,Bobby,Jindal,,
+SenatorWicker,official,MS,r,Senator,Roger,Wicker,"",""
+McGovernMA,campaign,MA,d,House Representative,Jim,McGovern,"",""
+dennisdaugaard,campaign,SD,r,Governor,Dennis,Daugaard,,
+ToddYoungIN,campaign,IN,r,Senator,Todd,Young,"",""
+votegregwalden,campaign,OR,r,House Representative,Greg,Walden,"",""
+GaryMillerCA,campaign,CA,r,House Representative,Gary,Miller,"",""
+RepAlGreenTX,campaign,TX,d,House Representative,Al,Green,"",""
+senorrinhatch,official,UT,r,Senator,Orrin,Hatch,,
+Kline4Congress,campaign,MN,r,House Representative,John,Kline,"",""
+McHenryCampaign,campaign,NC,r,House Representative,Patrick,McHenry,"",""
+Mark_Dayton,campaign,MN,d,Governor,Mark,Dayton,,
+ScottRTipton,campaign,CO,r,House Representative,Scott,Tipton,"",""
+JeffDenham,campaign,CA,r,House Representative,Jeff,Denham,"",""
+rooney4congress,campaign,FL,r,House Representative,Tom,Rooney,"",""
+teambrewer,campaign,AZ,r,Governor,Jan,Brewer,"",""
+amasharchive,campaign,MI,r,House Representative,Justin,Amash,"",""
+Duffy4Wisconsin,campaign,WI,r,House Representative,Sean,Duffy,"",""
+TeamReichert,campaign,WA,r,House Representative,Dave,Reichert,"",""
+TeamIssa,campaign,CA,r,House Representative,Darrel,Issa,"",""
+RaulLabrador4ID,campaign,ID,r,House Representative,Raúl,Labrador,R.,""
+JudyChuCampaign,campaign,CA,d,House Representative,Judy,Chu,"",""
+voteterry,campaign,NE,r,House Representative,Lee,Terry,"",""
+reelectbobby,campaign,IL,r,House Representative,Bobby,Schilling,,
+DesJarlaisTN04,official,TN,r,House Representative,Scott,DesJarlais,,
+stabenow,campaign,MI,d,Senator,Debbie,Stabenow,"",""
+RepMikePompeo,official,KS,r,House Representative,Mike,Pompeo,,
+DevalPatrick,campaign,MA,d,Governor,Deval,Patrick,"",""
+Sewell4Congress,campaign,AL,d,House Representative,Terri,Sewell,A.,""
+dianeblack4rep,campaign,TN,r,House Representative,Diane,Black,,
+ScottRigell,campaign,VA,r,House Representative,Scott,Rigell,"",""
+PatToomey,campaign,PA,r,Senator,Pat,Toomey,"",""
+QuinnForIL,campaign,IL,d,Governor,Pat,Quinn,"",""
+Barrow4GA,campaign,GA,d,House Representative,John,Barrow,"",""
+bennelson2012,campaign,NE,d,Senator,Ben,Nelson,"",""
+StephenFincher,campaign,TN,r,House Representative,Stephen,Fincher,"",""
+WebsterCongress,campaign,FL,r,House Representative,Daniel,Webster,"",""
+Bishop4Congress,campaign,GA,d,House Representative,Sanford,Bishop,D.,Jr.
+EllisonCampaign,campaign,MN,d,House Representative,Keith,Ellison,"",""
+StenyHoyer,campaign,MD,d,House Representative,Steny,Hoyer,"",""
+WestmorelandGA,campaign,GA,r,House Representative,Lynn,Westmoreland,"",""
+BradyforPhilly,campaign,PA,d,House Representative,Bob,Brady,"",""
+Renacci2012,campaign,OH,r,House Representative,Jim,Renacci,"",""
+RepStutzman,official,IN,r,House Representative,Marlin,Stutzman,"",""
+Lowey4Congress,campaign,NY,d,House Representative,Nita,Lowey,"",""
+votetimscott,campaign,SC,r,Senator,Tim,Scott,"",""
+RepGutierrez,official,IL,d,House Representative,Luis,Gutierrez,V.,""
+jameslankford,campaign,OK,r,Senator,James,Lankford,"",""
+foxxforcongress,campaign,NC,r,House Representative,Virginia,Foxx,"",""
+Gosar4Congress,campaign,AZ,r,House Representative,Paul,Gosar,"",""
+WeBackJack,campaign,DE,d,Governor,Jack,Markell,,
+OlympiasList,campaign,ME,r,Senator,Olympia,Snowe,J.,""
+SteveChabot,campaign,OH,r,House Representative,Steve,Chabot,"",""
+tommcclintock,campaign,CA,r,House Representative,Tom,McClintock,"",""
+JohnsonLeads,campaign,OH,r,House Representative,Bill,Johnson,"",""
+BobCorker,campaign,TN,r,Senator,Bob,Corker,"",""
+Boozman4AR,campaign,AR,r,Senator,John,Boozeman,"",""
+johnthune,campaign,SD,r,Senator,John,Thune,"",""
+OHPressSec,official,OH,r,Governor,John,Kasich,,
+CoopForCongress,campaign,TN,d,House Representative,Jim,Cooper,"",""
+IsraelForNY,campaign,NY,d,House Representative,Steve,Israel,"",""
+MarchantforTX24,campaign,TX,r,House Representative,Kenny,Marchant,"",""
+VoteMarsha,campaign,TN,r,Senate Candidate,Marsha,Blackburn,"",""
+McDermott4Rep,campaign,WA,d,House Representative,Jim,McDermott,"",""
+timholdenpa17,campaign,PA,d,House Representative,Tim,Holden,"",""
+RPA_PAC,campaign,MI,r,Governor,Rick,Snyder,"",""
+HarperCampaign,campaign,MS,r,House Representative,Gregg,Harper,"",""
+Berkley4Senate,campaign,NV,d,House Representative,Shelley,Berkley,"",""
+jon2012hq,campaign,UT,r,Governor,Jon,Huntsman,,
+Nugent4Congress,campaign,FL,r,House Representative,Rich,Nugent,"",""
+BernieSanders,campaign,VT,i,Senator,Bernard,Sanders,"""Bernie""",""
+PeteOlson,campaign,TX,r,House Representative,Pete,Olson,"",""
+Team_Mitch,campaign,KY,r,Senator,Mitch,McConnell,"",""
+ReElectHank,campaign,GA,d,House Representative,Hank,Johnson,"",""
+RepBobGibbs,official,OH,r,House Representative,Bob,Gibbs,,
+Gwen4Congress,campaign,WI,d,House Representative,Gwen,Moore,"",""
+kevinomccarthy,campaign,CA,r,House Representative,Kevin,McCarthy,"",""
+CedricRichmond,campaign,LA,d,House Representative,Cedric,Richmond,"",""
+BurrForSenate,campaign,NC,r,Senator,Richard,Burr,"",""
+BobTurnerNY,campaign,NY,r,House Representative,Bob,Turner,"",""
+JoeCourtneyCT,campaign,CT,d,House Representative,Joe,Courtney,"",""
+LandryForLA,campaign,LA,r,House Representative,Jeff,Landry,"",""
+ToddRokitaIN,campaign,IN,r,Senate Candidate,Todd,Rokita,"",""
+VoteYvette,campaign,NY,d,House Representative,Yvette,Clarke,D.,""
+RepErikPaulsen,official,MN,r,House Representative,Erik,Paulsen,,
+MarkKirk,campaign,IL,r,Senator,Mark,Kirk,"",""
+FlemingforLA,campaign,LA,r,House Representative,John,Fleming,"",""
+UptonForAllOfUs,campaign,MI,r,House Representative,Fred,Upton,"",""
+VoteLouiseNY,campaign,NY,d,House Representative,Louise,Slaughter,"",""
+Pearce4NM,campaign,NM,r,House Representative,Steve,Pearce,"",""
+barrassoforwyo,campaign,WY,r,Senator,John,Barrasso,"",""
+ReElectWittman,campaign,VA,r,House Representative,Rob,Wittman,"",""
+Ruben_Hinojosa,campaign,TX,d,House Representative,Ruben,Hinojosa,"",""
+ReElectCohen,campaign,TN,d,House Representative,Steve,Cohen,"",""
+RepJohnCarter,campaign,TX,r,House Representative,John,Carter,"",""
+waterscampaign,campaign,CA,d,House Representative,Maxine,Waters,"",""
+Fitzpatrickpa8,campaign,PA,r,House Representative,Mike,Fitzpatrick,"",""
+LisaForSenate,campaign,AK,r,Senator,Lisa,Murkowski,"",""
+AlbioSiresNJ,campaign,NJ,d,House Representative,Albio,Sires,"",""
+Bob_Casey,campaign,PA,d,Senator,Robert,Casey,"""Bob""",Jr.
+Hanna4Congress,campaign,NY,r,House Representative,Richard,Hanna,"",""
+SherrodBrown,campaign,OH,d,Senator,Sherrod,Brown,"",""
+InhofePress,official,OK,r,Senator,Jim,Inhofe,,
+grace4congress,campaign,CA,d,House Representative,Grace,Napolitano,"",""
+ROBERTDOLD,campaign,IL,r,House Representative,Robert,Dold,J.,""
+carolynmccarthy,campaign,NY,d,House Representative,Carolyn,McCarthy,"",""
+LoBiondo2016,campaign,NJ,r,House Representative,Frank,LoBiondo,"",""
+MarioDBCamp,campaign,FL,r,House Representative,Mario,Diaz-Balart,"",""
+reyesworks,campaign,TX,d,House Representative,Silvestre,Reyes,"",""
+johnboehner,campaign,OH,r,House Representative,John,Boehner,"",""
+TomGravesGA14,campaign,GA,r,House Representative,Tom,Graves,"",""
+BLeeForCongress,campaign,CA,d,House Representative,Barbara,Lee,"",""
+DavidRiveraFL,campaign,FL,r,House Representative,David,Rivera,"",""
+LloydDoggettTX,campaign,TX,d,House Representative,Lloyd,Doggett,"",""
+PaulTonko,campaign,NY,d,House Representative,Paul,Tonko,"",""
+MurrayCampaign,campaign,WA,d,Senator,Patty,Murray,"",""
+NanHayworth,campaign,NY,r,House Candidate,Nan,Hayworth,"",""
+Elect_Blake,campaign,TX,r,House Representative,Blake,Farenthold,"",""
+TEAMSullivan,campaign,OK,r,House Representative,John,Sullivan,"",""
+Electdavidscott,campaign,GA,d,House Representative,David,Scott,"",""
+JeffMerkley,campaign,OR,d,Senator,Jeff,Merkley,"",""
+Runyan2014,campaign,NJ,r,House Representative,Jon,Runyan,"",""
+BarbaraBoxer,campaign,CA,d,Senator,Barbara,Boxer,"",""
+standwithraul,campaign,AZ,d,House Representative,Raúl,Grijalva,"",""
+LindseyGrahamSC,campaign,SC,r,Senator,Lindsey,Graham,"",""
+John_Carney,campaign,DE,d,House Representative,John,Carney,"",""
+MikeSimpson4ID,campaign,ID,r,House Representative,Mike,Simpson,"",""
+BenCardinforMD,campaign,MD,d,Senator,Ben,Cardin,"",""
+DickBlumenthal,campaign,CT,d,Senator,Richard,Blumenthal,"""Dick""",""
+Barton4Congress,campaign,TX,r,House Representative,Joe,Barton,"",""
+Marino4Congress,campaign,PA,r,House Representative,Tom,Marino,"",""
+jacksonlee18,campaign,TX,d,House Representative,Sheila,Jackson Lee,"",""
+MikeTurnerOH,campaign,OH,r,House Representative,Mike,Turner,"",""
+MathesonForUtah,campaign,UT,d,House Representative,Jim,Matheson,"",""
+Higgins4WNY,campaign,NY,d,House Representative,Brian,Higgins,"",""
+nikkihaley,campaign,SC,r,Governor,Nikki,Haley,R.,""
+JaniceHahn,campaign,CA,d,House Representative,Janice,Hahn,"",""
+TG4Arkansas,campaign,AR,r,House Representative,Tim,Griffin,"",""
+Crawford4Cong,campaign,AR,r,House Representative,Rick,Crawford,"",""
+chuck4congress,campaign,TN,r,House Representative,Chuck,Fleischmann,"",""
+DanCoats,campaign,IN,r,Senator,Dan,Coats,"",""
+BobMcDonnell,campaign,VA,r,Governor,Robert,McDonnell,"""Bob""",
+RepAaronSchock,campaign,IL,r,House Representative,Aaron,Schock,,
+TeamStabenow,campaign,MI,d,Senator,Debbie,Stabenow,"",""
+McCaskill2012,campaign,MO,d,Senator,Claire,McCaskill,"",""
+28thDistrict,campaign,CA,d,House Representative,Adam,Schiff,"",""
+bradyfortexas,campaign,TX,r,House Representative,Kevin,Brady,"",""
+Biggert2012,campaign,IL,r,House Representative,Judy,Biggert,"",""
+KristiNoem,campaign,SD,r,House Representative,Kristi,Noem,"",""
+ChrisGibsonNY,campaign,NY,r,House Representative,Chris,Gibson,"",""
+HerbertForUtah,campaign,UT,r,Governor,Gary,Herbert,Richard,
+SenScottBrown,campaign,NH,r,Senate Candidate,Scott,Brown,"",""
+friendsoffarr,campaign,CA,d,House Representative,Sam,Farr,"",""
+RepMarthaRoby,official,AL,r,House Representative,Martha,Roby,,
+GOPCAMPAC,campaign,MI,r,House Representative,Dave,Camp,"",""
+HarryReid,campaign,NV,d,Senator,Harry,Reid,"",""
+bobfilner,campaign,CA,d,House Representative,Bob,Filner,"",""
+JaimeLHerrera,campaign,WA,r,House Representative,Jaime,Herrera Beutler,"",""
+KarenBassTweets,campaign,CA,d,House Representative,Karen,Bass,"",""
+mazieforhawaii,campaign,HI,d,Senator,Mazie,Hirono,"",""
+MikeRogersCamp,campaign,AL,r,House Representative,Mike,Rogers,"",""
+RepJoeWilson,official,SC,r,House Representative,Joe,Wilson,"",""
+TedforCongress,campaign,FL,d,House Representative,Ted,Deutch,"",""
+RickBergND,campaign,ND,r,House Representative,Rick,Berg,"",""
+RepJaredPolis,official,CO,d,House Representative,Jared,Polis,"",""
+Vern2014,campaign,FL,r,House Representative,Vern,Buchanan,"",""
+RepMeehan,official,PA,r,House Representative,Pat,Meehan,"",""
+AdamKinzinger,campaign,IL,r,House Representative,Adam,Kinzinger,"",""
+RepHanabusa,official,HI,d,House Representative,Colleen,Hanabusa,"",""
+Ed4Colorado,campaign,CO,d,House Representative,Ed,Perlmutter,"",""
+electdennisross,campaign,FL,r,House Representative,Dennis,Ross,"",""
+JoePitts4PA,campaign,PA,r,House Representative,Joe,Pitts,"",""
+Fattah4Congress,campaign,PA,d,House Representative,Chaka,Fattah,"",""
+JoeforIndiana,campaign,IN,d,Senator,Joe,Donnelly,"",""
+manzullohq,campaign,IL,r,House Representative,Don,Manzullo,"",""
+Renee4Congress,campaign,NC,r,House Representative,Renee,Ellmers,"",""
+TeamPallone,campaign,NJ,d,House Representative,Frank,Pallone,"",""
+DrLarryBucshon,campaign,IN,r,House Representative,Larry,Bucshon,"",""
+RonJohnsonWI,campaign,WI,r,Senator,Ron,Johnson,"",""
+HowardBerman,campaign,CA,d,House Representative,Howard,Berman,"",""
+HansenClarke,campaign,MI,d,House Representative,Hansen,Clarke,"",""
+womack4congress,campaign,AR,r,House Representative,Steve,Womack,"",""
+MikeRossUpdates,campaign,AR,d,Gubernatorial Candidate,Mike,Ross,"",""
+JoeManchinWV,campaign,WV,d,Senator,Joseph,Manchin,"""Joe""",III
+CongPalazzo,official,MS,r,House Representative,Steven,Palazzo,"",""
+auctnr1,campaign,MO,r,House Representative,Billy,Long,"",""
+SandyAdams4FL07,campaign,FL,r,House Representative,Sandy,Adams,"",""
+BobbyLRushMC,campaign,IL,d,House Representative,Bobby,Rush,L.,""
+norm4congress,campaign,WA,d,House Representative,Norm,Dicks,"",""
+reidribble,campaign,WI,r,House Representative,Reid,Ribble,"",""
+billhuizenga,campaign,MI,r,House Representative,Bill,Huizenga,"",""
+VickyHartzler,campaign,MO,r,House Representative,Vicky,Hartzler,"",""
+BennetForCO,campaign,CO,d,Senator,Michael,Bennet,"",""
+RepHultgren,official,IL,r,House Representative,Randy,Hultgren,"",""
+TimWalberg,campaign,MI,r,House Representative,Tim,Walberg,"",""
+mikehonda17,campaign,CA,d,House Representative,Mike,Honda,"",""
+RepRandyForbes,campaign,VA,r,House Candidate,Randy,Forbes,,
+Peters4Michigan,campaign,MI,d,Senator,Gary,Peters,"",""
+GovSandoval,official,NV,r,Governor,Brian,Sandoval,,
+Rehberg2012,campaign,MT,r,House Representative,Denny,Rehberg,"",""
+ElectAllenWest,campaign,FL,r,House Representative,Allen,West,"",""
+IowansforLatham,campaign,IA,r,House Representative,Tom,Latham,"",""
+CBoustanyJr,campaign,LA,r,House Representative,Charles,Boustany,"",""
+FlakeforSenate,campaign,AZ,r,Senator,Jeff,Flake,"",""
+RepMcNerney,official,CA,d,House Representative,Jerry,McNerney,"",""
+ConnieMackIV,campaign,FL,r,House Representative,Connie,Mack,"",""
+RepMickMulvaney,official,SC,r,House Representative,Mick,Mulvaney,"",""
+chipcravaack,campaign,MN,r,House Representative,Chip,Cravaack,"",""
+lynnjenkins,campaign,KS,r,House Representative,Lynn,Jenkins,"",""
+TimMurphyPA,campaign,PA,r,House Representative,Tim,Murphy,"",""
+PaulBrounforGA,campaign,GA,r,Senate Candidate,Paul,Broun,"",""
+ScottforFlorida,campaign,FL,r,Governor,Rick,Scott,"",""
+bilirakis,campaign,FL,r,House Representative,Gus,Bilirakis,"",""
+mike_pence,campaign,IN,r,Vice President,Mike,Pence,"",""
+USRepKeating,official,MA,d,House Representative,William,Keating,"""Bill""",
+electadamsmith,campaign,WA,d,House Representative,Adam,Smith,"",""
+Rep_BonoMack,official,CA,r,House Representative,Mary,Mack,Bono,""
+JohnLarsonCT,campaign,CT,d,House Representative,John,Larson,"",""
+mlfudge,campaign,OH,d,House Representative,Marcia,Fudge,"",""
+RepFrankGuinta,official,NH,r,House Representative,Frank,Guinta,"",""
+TeamDingell,campaign,MI,d,House Representative,John,Dingell,"",""
+tgowdy,campaign,SC,r,House Representative,Trey,Gowdy,"",""
+TeamCalvert,campaign,CA,r,House Representative,Ken,Calvert,"",""
+congstearns,campaign,FL,r,House Representative,Cliff,Stearns,"",""
+WilliamKeating,campaign,MA,d,House Representative,William,Keating,"""Bill""",""
+RepTomReed,official,NY,r,House Representative,Tom,Reed,,
+KindforCongress,campaign,WI,d,House Representative,Ron,Kind,"",""
+MorganGriffith,campaign,VA,r,House Representative,Morgan,Griffith,"",""
+RosLehtinenCamp,campaign,FL,r,House Representative,Ileana,Ros-Lehtinen,"",""
+Rangel4Congress,campaign,NY,d,House Representative,Charles,Rangel,"",""
+SenDeanHeller,official,NV,r,Senator,Dean,Heller,,
+ElectConnolly,campaign,VA,d,House Representative,Gerry,Connolly,"",""
+TomCarperforDE,campaign,DE,d,Senator,Tom,Carper,"",""
+JackieSpeier,campaign,CA,d,House Representative,Jackie,Speier,"",""
+RobertHurt,campaign,VA,r,House Representative,Robert,Hurt,"",""
+jlewis4congress,campaign,GA,d,House Representative,John,Lewis,"",""
+QuigleyCampaign,campaign,IL,d,House Representative,Mike,Quigley,"",""
+Benishek,campaign,MI,r,House Representative,Dan,Benishek,"",""
+reptoddakin,official,MO,r,House Representative,Todd,Akin,"",""
+coffmanforco,campaign,CO,r,House Representative,Mike,Coffman,"",""
+moranforkansas,campaign,KS,r,Senator,Jerry,Moran,"",""
+SenatorShaheen,official,NH,d,Senator,Jeanne,Shaheen,"",""
+RepJoeHeck,official,NV,r,House Representative,Joe,Heck,,
+RepRickLarsen,official,WA,d,House Representative,Rick,Larsen,,
+Menendez4NJ,campaign,NJ,d,Senator,Robert,Menendez,"""Bob""",""
+CritzforLtGov,campaign,PA,d,House Representative,Mark,Critz,"",""
+stevestivers,campaign,OH,r,House Representative,Steve,Stivers,"",""
+TeamDanInouye,campaign,HI,d,Senator,Daniel,Inouye,"",""
+mckinley4cong,campaign,WV,r,House Representative,David,McKinley,B.,""
+RepKevinYoder,official,KS,r,House Representative,Kevin,Yoder,"",""
+EdRRoyce,campaign,CA,r,House Representative,Ed,Royce,"",""
+DavidSchweikert,campaign,AZ,r,House Representative,David,Schweikert,"",""
+dicklugar,campaign,IN,r,Senator,Richard,Lugar,"""Dick""",""
+RepAlanNunnelee,official,MS,r,House Representative,Alan,Nunnelee,"",""
+TomPriceMD,campaign,GA,r,House Representative,Tom,Price,"",M.D.
+DrRandPaul,campaign,KY,r,Presidential Candidate,Rand,Paul,"",""
+SenCoryGardner,official,CO,r,Senator,Cory,Gardner,"",""
+CapitoforWV,campaign,WV,r,Senator,Shelley,Capito,"",""
+nikiinthehouse,official,MA,d,House Representative,Niki,Tsongas,"",""
+MikeMcIntyreNC,campaign,NC,d,House Representative,Mike,McIntyre,"",""
+BobbyScott4VA3,campaign,VA,d,House Representative,Bobby,Scott,"",""
+cansecotx23,campaign,TX,r,House Representative,Francisco,Canseco,"",""
+RepSchakowsky,campaign,IL,d,House Representative,Jan,Schakowsky,"",""
+Rep_JoeWalsh,campaign,IL,r,House Representative,Joe,Walsh,"",""
+johnconyersjr,campaign,MI,d,House Representative,John,Conyers,"",""
+loubarletta,campaign,PA,r,House Representative,Lou,Barletta,"",""
+TimRyan,campaign,OH,d,House Representative,Tim,Ryan,"",""
+Flores4Congress,campaign,TX,r,House Representative,Bill,Flores,"",""
+RonBarberAZ,campaign,AZ,d,House Representative,Ron,Barber,"",""
+McSallyCongress,campaign,AZ,r,House Candidate,Martha,McSally,,
+Ann_Kirkpatrick,campaign,AZ,d,House Representative,Ann,Kirkpatrick,"",""
+JonathanPaton,campaign,AZ,r,House Candidate,Jonathan,Paton,,
+RepDanLungren,official,CA,r,House Representative,Dan,Lungren,,
+BeraForCongress,campaign,CA,d,House Representative,Ami,Bera,"",M.D.
+MarkTakano,campaign,CA,d,House Representative,Mark,Takano,"",""
+ScottPetersSD,campaign,CA,d,House Representative,Scott,Peters,"",""
+DavidSecor2012,campaign,CA,d,House Candidate,David,Secor,B.,
+AndrewRoraback,campaign,CT,r,House Candidate,Andrew,Roraback,,
+Elizabeth_Esty,campaign,CT,d,House Representative,Elizabeth,Esty,"",""
+JoeGarcia,campaign,FL,r,House Candidate,Joe,Garcia,,
+VoteLee,campaign,GA,r,House Candidate,Lee,Anderson,"",""
+JasonPlummer,campaign,IL,r,House Candidate,Jason,Plummer,,
+EnyartforIL12,campaign,IL,d,House Representative,Bill,Enyart,"",""
+Paula4Congress,campaign,IL,x,House Candidate,Paula,Bradshaw,,
+RickNolanMN,campaign,MN,d,House Representative,Rick,Nolan,"",""
+AnnMcLaneKuster,campaign,NH,d,House Representative,Annie,Kuster,McLane,""
+CharlieBassNH,campaign,NH,r,House Representative,Charlie,Bass,"",""
+TimBishopNY,official,NY,d,House Representative,Tim,Bishop,"",""
+TimBishop2014,campaign,NY,d,House Representative,Tim,Bishop,"",""
+randyaltschuler,campaign,NY,r,House Candidate,Randy,Altschuler,"",""
+repmichaelgrimm,official,NY,r,House Representative,Michael,Grimm,"",""
+Grimm4Congress,campaign,NY,r,House Representative,Michael,Grimm,"",""
+MarkMurphy2012,campaign,NY,d,House Candidate,Mark,Murphy,,
+voteBuerkle,campaign,NY,r,House Representative,Anne,Buerkle,Marie,""
+DanMaffeiNY,campaign,NY,d,House Representative,Dan,Maffei,"",""
+KathyHochul,campaign,NY,d,House Representative,Kathy,Hochul,"",""
+CollinsNY27,campaign,NY,r,House Representative,Chris,Collins,"",""
+RichHudson,campaign,NC,r,House Representative,Richard,Hudson,"",""
+CharlieOhio,campaign,OH,d,House Candidate,Charlie,Wilson,"",""
+BettySutton,campaign,OH,d,House Representative,Betty,Sutton,"",""
+KRPA12,campaign,PA,r,House Representative,Keith,Rothfus,"",""
+MiaBLove,campaign,UT,r,House Representative,Mia,Love,"",""
+Linda_McMahon,campaign,CT,r,Senate Candidate,Linda,McMahon,,
+ChrisMurphyCT,campaign,CT,d,Senator,Chris,Murphy,"",""
+lingle2012,campaign,HI,r,Senate Candidate,Linda,Lingle,,
+TeamHoekstra,campaign,MI,r,Senate Candidate,Pete,Hoekstra,,
+petehoekstra,campaign,MI,r,Senate Candidate,Pete,Hoekstra,"",""
+Heinrich4NM,campaign,NM,d,Senator,Martin,Heinrich,"",""
+HeatherAnWilson,campaign,NM,r,Senate Candidate,Heather,Wilson,,
+JoshMandelOhio,campaign,OH,r,Senate Candidate,Josh,Mandel,,
+TomSmithforPA,campaign,PA,r,Senate Candidate,Tom,Smith,,
+dillesquire,campaign,ME,d,Senate Candidate,Cynthia,Dill,,
+Summersformaine,campaign,ME,r,Senate Candidate,Charlie,Summers,E.,Jr.
+DodgeforSenate,campaign,ME,x,Senate Candidate,Andrew,Dodge,Ian,
+angusking2018,campaign,ME,i,Senator,Angus,King,"",""
+elizabethforma,campaign,MA,d,Senator,Elizabeth,Warren,"",""
+jontester,campaign,MT,d,Senator,Jon,Tester,"",""
+timkaine,campaign,VA,d,Senator,Tim,Kaine,"",""
+georgeallenva,campaign,VA,r,Senate Candidate,George,Allen,,
+tammybaldwin,campaign,WI,d,Senator,Tammy,Baldwin,"",""
+TommyForHealth,campaign,WI,r,Senate Candidate,Tommy,Thompson,G.,
+CarmonaForAZ,campaign,AZ,d,Senate Candidate,Richard,Carmona,H.,M.D.
+richardmourdock,campaign,IN,r,Senate Candidate,Richard,Mourdock,,
+kerreybob,campaign,NE,d,Senate Candidate,Bob,Kerrey,,
+DebFischerNE,campaign,NE,r,Senator,Deb,Fischer,"",""
+Heidi4ND,campaign,ND,d,Senator,Heidi,Heitkamp,"",""
+KimVannCongress,campaign,CA,r,House Candidate,Kim,Vann,"",""
+VernonBParker,campaign,AZ,r,House Candidate,Vernon,Parker,B.,
+Obermueller2012,campaign,MN,d,House Candidate,Mike,Obermueller,,
+VictorForSenate,campaign,AZ,x,Senate Candidate,Marc,Victor,,
+ChadLeeCongress,campaign,WI,r,House Candidate,Chad,Lee,,
+MarkPocan,campaign,WI,d,House Representative,Mark,Pocan,"",""
+Astro_Jose,campaign,CA,d,House Candidate,Jose,Hernandez,"",""
+dgvaladao,campaign,CA,r,House Representative,David,Valadao,"",""
+JSHernandez2012,campaign,CA,d,House Candidate,John,Hernandez,,
+Dr_RaulRuiz,campaign,CA,d,House Representative,Raul,Ruiz,"",M.D.
+SalPace,campaign,CO,d,House Candidate,Sal,Pace,,
+casida2012,campaign,CO,i,House Candidate,Tisha,Casida,T.,
+John_W_Ewing,campaign,NE,d,House Candidate,John,Ewing,W.,
+JoeMiklosi4CD6,campaign,CO,d,House Candidate,Joe,Miklosi,,
+SoutherlandFL02,campaign,FL,r,House Representative,Steve,Southerland,"",""
+AlLawsonJr,campaign,FL,d,House Representative,Al,Lawson,,Jr.
+ValDemings,campaign,FL,d,House Candidate,Val,Demings,"",""
+GoFitzGo,campaign,FL,d,House Candidate,Keith,Fitzgerald,,
+davidgill2012,campaign,IL,d,House Candidate,David,Gill,,M.D.
+ElectRodney,campaign,IL,r,House Representative,Rodney,Davis,"",""
+DaveCrooks1,campaign,IN,d,House Candidate,Dave,Crooks,,
+ChristieVilsack,campaign,IA,d,House Candidate,Christie,Vilsack,"",""
+VotePestka,campaign,MI,d,House Candidate,Steve,Pestka,,
+TajforCongress,campaign,MI,d,House Candidate,Syed,Taj,,
+JohnOceguera,campaign,NV,d,House Candidate,John,Oceguera,,
+TeamSheaPorter,campaign,NH,d,House Representative,Carol,Shea-Porter,"",""
+Shelley_Adler,campaign,NJ,d,House Candidate,Shelley,Adler,,
+spmaloney,campaign,NY,d,House Representative,Sean Patrick,Maloney,"",""
+Dan_Lamb,campaign,NY,d,House Candidate,Dan,Lamb,,
+NateShinagawa,campaign,NY,d,House Candidate,Nate,Shinagawa,,
+HR4Congress,campaign,NC,d,House Candidate,Hayden,Rogers,,
+VoteMeadows,campaign,NC,r,House Representative,Mark,Meadows,"",""
+GeorgeHolding,campaign,NC,r,House Representative,George,Holding,"",""
+JoyceforOhio,campaign,OH,d,House Candidate,Joyce,Healy-Abrams,,
+MananTrivedi,campaign,PA,d,House Candidate,Manan,Trivedi,"",""
+Badey4Congress,campaign,PA,d,House Candidate,George,Badey,,
+KathyBoockvar,campaign,PA,d,House Candidate,Kathy,Boockvar,,
+petegallego,campaign,TX,d,House Representative,Pete,Gallego,"",""
+PaulHirschbiel,campaign,VA,d,House Candidate,Paul,Hirschbiel,,
+PatKreitlow,campaign,WI,d,House Candidate,Pat,Kreitlow,"",""
+WallForCongress,campaign,WI,d,House Candidate,Jamie,Wall,,
+kyrstensinema,campaign,AZ,d,House Representative,Kyrsten,Sinema,"",""
+4RickyGill,campaign,CA,r,House Candidate,Ricky,Gill,,
+BrianDWhelan,campaign,CA,r,House Candidate,Brian,Whelan,Daniel,
+abelmaldonado,campaign,CA,r,House Candidate,Abel,Maldonado,,
+TonyStrickland,campaign,CA,r,House Candidate,Tony,Strickland,"",""
+JuliaBrownley,campaign,CA,d,House Representative,Julia,Brownley,"",""
+GaryDeLong,campaign,CA,r,House Candidate,Gary,DeLong,,
+alanlowenthal,campaign,CA,d,House Representative,Alan,Lowenthal,"",""
+ToddLongLaw,campaign,FL,r,House Candidate,Todd,Long,,
+LoisFrankel,campaign,FL,d,House Representative,Lois,Frankel,"",""
+AdamHasner,campaign,FL,r,House Candidate,Adam,Hasner,,
+Schneider4IL10,campaign,IL,d,House Representative,Brad,Schneider,"",""
+Foster4Congress,campaign,IL,d,House Representative,Bill,Foster,"",""
+CheriBustos,campaign,IL,d,House Representative,Cheri,Bustos,"",""
+barrforcongress,campaign,KY,r,House Representative,Andy,Barr,"",""
+Roscoe_Bartlett,campaign,MD,r,House Representative,Roscoe,Bartlett,"",""
+JohnKDelaney,campaign,MD,d,House Representative,John,Delaney,"",""
+StevenHorsford,campaign,NV,d,House Representative,Steven,Horsford,"",""
+DannyTarkanian,campaign,NV,r,Senate Candidate,Danny,Tarkanian,,
+JaniceforNM,campaign,NM,r,House Candidate,Janice,Arnold-Jones,,
+Michelle4NM,campaign,NM,d,House Representative,Michelle,Grisham,Lujan,""
+Doheny4Congress,campaign,NY,r,House Candidate,Matt,Doheny,,
+Maggie4Congress,campaign,NY,r,House Candidate,Maggie,Brooks,,
+DavidRouzer,campaign,NC,r,House Representative,David,Rouzer,"",""
+fredthompsonfor,campaign,OR,r,House Candidate,Fred,Thompson,,
+Doherty2012,campaign,RI,r,House Candidate,Brendan,Doherty,,
+Koster4Congress,campaign,WA,r,House Candidate,John,Koster,,
+SuzanDelBene,campaign,WA,d,House Representative,Suzan,DelBene,"",""
+DickMuri,campaign,WA,r,House Candidate,Dick,Muri,,
+RickSnuffer,campaign,WV,r,House Candidate,Rick,Snuffer,,
+TedYoho,campaign,FL,r,House Representative,Ted,Yoho,"",""
+KerryB4Congress,campaign,MI,r,House Representative,Kerry,Bentivolio,"",""
+johndennis2012,campaign,CA,r,House Candidate,John,Dennis,,
+OtterforIdaho,campaign,ID,r,Governor,Butch,Otter,"",""
+Guinta4Congress,campaign,NH,r,House Representative,Frank,Guinta,"",""
+SeanBielat,campaign,MA,r,House Candidate,Sean,Bielat,,
+TimHuelskamp,campaign,KS,r,House Representative,Tim,Huelskamp,"",""
+TGforArkansas,campaign,AR,r,House Representative,Tim,Griffin,"",""
+TeamRomney,campaign,MA,r,Presidential Candidate,Mitt,Romney,"",""
+SenRubioPress,official,FL,r,Senator,Marco,Rubio,,
+marcorubio,campaign,FL,r,Senator,Marco,Rubio,"",""
+JoAnnEmerson,campaign,MO,r,House Representative,Jo Ann,Emerson,"",""
+jackiewalorski,campaign,IN,r,House Representative,Jackie,Walorski,"",""
+Little4Congress,campaign,NJ,r,House Candidate,Anna,Little,,
+tedcruz,campaign,TX,r,Senator,Ted,Cruz,"",""
+ForwardTX,campaign,TX,d,Senate Candidate,Paul,Sadler,,
+RonDeSantisFL,campaign,FL,r,House Representative,Ron,DeSantis,"",""
+Karen4Congress,campaign,FL,r,House Candidate,Karen,Harrington,,
+TomCottonAR,campaign,AR,r,Senator,Tom,Cotton,"",""
+RaeseForSenate,campaign,WV,r,Senate Candidate,John,Raese,,
+HansForCongress,campaign,PA,r,House Candidate,Hans,Lessmann,,
+ElizabethEmken,campaign,CA,r,House Candidate,Elizabeth,Emken,"",""
+kevinwade2014,campaign,DE,r,Senate Candidate,Kevin,Wade,"",""
+Pires4USSenate,campaign,DE,i,Senate Candidate,Alex,Pires,,
+dbongino,campaign,MD,r,House Candidate,Dan,Bongino,"",""
+KurtBills,campaign,MN,r,Senate Candidate,Kurt,Bills,,
+joekyrillos2012,campaign,NJ,r,Senate Candidate,Joe,Kyrillos,,
+WendyLongNY,campaign,NY,r,Senate Candidate,Wendy,Long,,
+SenWhitehouse,official,RI,d,Senator,Sheldon,Whitehouse,,
+BarryHinckley,campaign,RI,r,Senate Candidate,Barry,Hinckley,,
+mclayton4senate,campaign,TN,d,Senate Candidate,Mark,Clayton,,
+DrShaunCrowell,campaign,TN,x,Senate Candidate,Shaun,Crowell,,
+JohnJayMyers,campaign,TX,x,Senate Candidate,John,Myers,Jay,
+VoteScottHowell,campaign,UT,d,Senate Candidate,Scott,Howell,,
+JohnMacGovern,campaign,VT,r,Senate Candidate,John,MacGovern,,
+VoteBaumgartner,campaign,WA,r,Senate Candidate,Michael,Baumgartner,,
+robzerban,campaign,WI,d,House Candidate,Rob,Zerban,"",""
+RaymondBoland,campaign,WI,r,House Candidate,Ray,Boland,"",""
+NoMoore2012,campaign,WI,r,House Candidate,Dan,Sebring,"",""
+kallas6th,campaign,WI,d,House Candidate,Joe,Kallas,,
+suethorn2012,campaign,WV,d,House Candidate,Sue,Thorn,,
+hswint,campaign,WV,d,House Candidate,Howard,Swint,,
+Lungren2012,campaign,CA,r,House Representative,Dan,Lungren,,
+TammyforIL,campaign,IL,d,Senator,Tammy,Duckworth,"",""
+joekennedy,campaign,MA,d,House Representative,Joe,Kennedy,"",III
+AnnLWagner,campaign,MO,r,House Representative,Ann,Wagner,"",""
+DennyHeck,campaign,WA,d,House Representative,Denny,Heck,"",""
+DainesforMT,campaign,MT,r,Senator,Steve,Daines,"",""
+DerekKilmer,campaign,WA,d,House Representative,Derek,Kilmer,"",""
+Grace4NY,campaign,NY,d,House Representative,Grace,Meng,"",""
+StandWithJackie,campaign,IN,r,House Representative,Jackie,Walorski,"",""
+TulsiGabbard,campaign,HI,d,House Representative,Tulsi,Gabbard,"",""
+Castro4Congress,campaign,TX,d,House Representative,Joaquin,Castro,"",""
+JaredHuffman,campaign,CA,d,House Representative,Jared,Huffman,"",""
+TeamJeffries,campaign,NY,d,House Representative,Hakeem,Jeffries,"",""
+SusanBrooksIN,campaign,IN,r,House Representative,Susan,Brooks,"",""
+CartwrightPA,campaign,PA,d,House Representative,Matt,Cartwright,"",""
+kevincramer,campaign,ND,r,House Representative,Kevin,Cramer,"",""
+dinatitus,campaign,NV,d,House Representative,Dina,Titus,"",""
+LukeMesserIN,campaign,IN,r,House Representative,Luke,Messer,"",""
+Vargas4Congress,campaign,CA,d,House Representative,Juan,Vargas,"",""
+ThomasMassieKY,campaign,KY,r,House Representative,Thomas,Massie,"",""
+bradwenstrup,campaign,OH,r,House Representative,Brad,Wenstrup,"",""
+tonycardenassfv,campaign,CA,d,House Representative,Tony,Cardenas,"",""
+ericswalwell,campaign,CA,d,House Representative,Eric,Swalwell,"",""
+JoyceBeatty,campaign,OH,d,House Representative,Joyce,Beatty,"",""
+Bridenstine4OK,campaign,OK,r,House Representative,Jim,Bridenstine,"",""
+dankildee,campaign,MI,d,House Representative,Dan,Kildee,"",""
+BetoForCongress,campaign,TX,d,House Representative,Beto,O'Rourke,"",""
+joinpaulcook,campaign,CA,r,House Representative,Paul,Cook,"",""
+Payne10thNJ,campaign,NJ,d,House Representative,Donald,Payne,M.,Sr.
+RepScottPerry,campaign,PA,r,House Representative,Scott,Perry,"",""
+RepMarkMeadows,official,NC,r,House Representative,Mark,Meadows,"",""
+obamainaugural,official,DC,d,President,Barack,Obama,"",""
+amyklobuchar,campaign,MN,d,Senator,Amy,Klobuchar,"",""
+alfranken,campaign,MN,d,Senator,Al,Franken,"",""
+RepRichHudson,official,NC,r,House Representative,Richard,Hudson,"",""
+brianschatz,campaign,HI,d,Senator,Brian,Schatz,"",""
+salmoncongress,campaign,AZ,r,House Representative,Matt,Salmon,"",""
+ChrisCoons,campaign,DE,d,Senator,Chris,Coons,"",""
+SenCoonsOffice,official,DE,d,Senator,Chris,Coons,"",""
+SenJohnHoeven,official,ND,r,Senator,John,Hoeven,,
+hoeven4senate,campaign,ND,r,Senator,John,Hoeven,"",""
+CardenasforCA,campaign,CA,d,House Representative,Tony,Cardenas,"",""
+Negrete_McLeod,campaign,CA,d,House Representative,Gloria,Negrete McLeod,"",""
+ScottPetersCA52,campaign,CA,d,House Representative,Scott,Peters,"",""
+MikeCrapo,official,ID,r,Senator,Mike,Crapo,"",""
+crapo4senate,campaign,ID,r,Senator,Mike,Crapo,"",""
+AlanGrayson,campaign,FL,d,House Representative,Alan,Grayson,"",""
+treyradel,campaign,FL,r,House Representative,Trey,Radel,"",""
+Douglas_Collins,campaign,GA,r,House Representative,Doug,Collins,"",""
+tammyduckworth,campaign,IL,d,Senator,Tammy,Duckworth,"",""
+RepLukeMesser,official,IN,r,House Representative,Luke,Messer,,
+RepJoeKennedy,official,MA,d,House Representative,Joe,Kennedy,,III
+RepKerryB,official,MI,r,House Representative,Kerry,Bentivolio,"",""
+RepAnnWagner,official,MO,r,House Representative,Ann,Wagner,,
+SteveDaines,official,MT,r,Senator,Steve,Daines,"",""
+RepHorsford,official,NV,d,House Representative,Steven,Horsford,"",""
+RepJerryNadler,official,NY,d,House Representative,Jerry,Nadler,,
+RepChrisCollins,official,NY,r,House Representative,Chris,Collins,"",""
+RobertPittenger,campaign,NC,r,House Representative,Robert,Pittenger,"",""
+RepHolding,official,NC,r,House Representative,George,Holding,,
+RepKevinCramer,official,ND,r,House Representative,Kevin,Cramer,,
+RepDeSantis,official,FL,r,House Representative,Ron,DeSantis,,
+MarkwayneMullin,campaign,OK,r,House Representative,Markwayne,Mullin,"",""
+RepCartwright,official,PA,d,House Representative,Matt,Cartwright,,
+TomRiceSC7,campaign,SC,r,House Representative,Tom,Rice,"",""
+WeberforTexas,campaign,TX,r,House Representative,Randy,Weber,"",""
+BetoORourke,campaign,TX,d,House Representative,Beto,O'Rourke,"",""
+RogerWilliamsTX,campaign,TX,r,House Representative,Roger,Williams,"",""
+MarcVeasey,campaign,TX,d,House Representative,Marc,Veasey,"",""
+FilemonVela,campaign,TX,d,House Representative,Filemon,Vela,"",Jr.
+StockmanSenate,campaign,TX,r,House Representative,Steve,Stockman,"",""
+RepRonBarber,official,AZ,d,House Representative,Ron,Barber,"",""
+RepEsty,official,CT,d,House Representative,Elizabeth,Esty,,
+RepSwalwell,official,CA,d,House Representative,Eric,Swalwell,"",""
+SenTedCruz,official,TX,r,Senator,Ted,Cruz,"",""
+SenAngusKing,official,ME,i,Senator,Angus,King,,
+RepCheri,official,IL,d,House Representative,Cheri,Bustos,,
+RepDerekKilmer,official,WA,d,House Representative,Derek,Kilmer,,
+RepChrisStewart,official,UT,r,House Representative,Chris,Stewart,"",""
+StewartforUtah,campaign,UT,r,House Representative,Chris,Stewart,"",""
+repdinatitus,official,NV,d,House Representative,Dina,Titus,"",""
+RepAnnieKuster,official,NH,d,House Representative,Annie,Kuster,McLane,""
+RepDanMaffei,official,NY,d,House Representative,Dan,Maffei,"",""
+RepDaveJoyce,official,OH,r,House Representative,David,Joyce,"",""
+DaveJoyceOH14,campaign,OH,r,House Representative,David,Joyce,"",""
+JoaquinCastrotx,campaign,TX,d,House Representative,Joaquin,Castro,"",""
+SaxbyChambliss,campaign,GA,r,Senator,Saxby,Chambliss,"",""
+SenatorRisch,official,ID,r,Senator,Jim,Risch,"",""
+SenatorIsakson,campaign,GA,r,Senator,Johnny,Isakson,,
+SenatorHeitkamp,official,ND,d,Senator,Heidi,Heitkamp,"",""
+SenatorFischer,official,NE,r,Senator,Deb,Fischer,"",""
+MaxBaucus,campaign,MT,d,Senator,Max,Baucus,"",""
+MartinHeinrich,official,NM,d,Senator,Martin,Heinrich,,
+SenatorEnzi,official,WY,r,Senator,Mike,Enzi,"",""
+SenJackReed,official,RI,d,Senator,Jack,Reed,,
+SenThadCochran,official,MS,r,Senator,Thad,Cochran,"",""
+SenFeinstein,official,CA,d,Senator,Dianne,Feinstein,,
+SenMarkPryor,official,AR,d,Senator,Mark,Pryor,"",""
+SenLandrieu,official,LA,d,Senator,Mary,Landrieu,"",""
+RonWyden,official,OR,d,Senator,Ron,Wyden,"",""
+SenRockefeller,official,WV,d,Senator,Jay,Rockefeller,"",""
+RepAdrianSmith,official,NE,r,House Representative,Adrian,Smith,,
+RepSinema,official,AZ,d,House Representative,Kyrsten,Sinema,"",""
+RepBonamici,official,OR,d,House Representative,Suzanne,Bonamici,"",""
+USRepRickNolan,official,MN,d,House Representative,Rick,Nolan,"",""
+TulsiPress,official,HI,d,House Representative,Tulsi,Gabbard,"",""
+Tim_Walz,campaign,MN,d,House Representative,Tim,Walz,"",""
+RodneyDavis,official,IL,r,House Representative,Rodney,Davis,,
+RepWalorski,official,IN,r,House Representative,Jackie,Walorski,"",""
+RepVeasey,official,TX,d,House Representative,Marc,Veasey,,
+mocowan,campaign,MA,d,Senator,Mo,Cowan,"",""
+PatMcCroryNC,official,NC,r,Governor,Pat,McCrory,"",""
+SteveWorks4You,official,TX,r,House Representative,Steve,Stockman,"",""
+RalphHallPress,official,TX,r,House Representative,Ralph,Hall,"",""
+RepRichardNeal,official,MA,d,House Representative,Richard,Neal,,
+PatTiberi,official,OH,r,House Representative,Pat,Tiberi,"",""
+TeamTiberi,campaign,OH,r,House Representative,Pat,Tiberi,"",""
+RepLoisCapps,official,CA,d,House Representative,Lois,Capps,"",""
+RepAndrews,official,NJ,d,House Representative,Rob,Andrews,"",""
+RepTomRice,official,SC,r,House Representative,Tom,Rice,,
+RepThompson,official,CA,d,House Representative,Mike,Thompson,"",""
+RepThomasMassie,official,KY,r,House Representative,Thomas,Massie,,
+RepTedYoho,official,FL,r,House Representative,Ted,Yoho,,
+RepStephenLynch,official,MA,d,House Representative,Stephen,Lynch,"",""
+RepCharlieDent,official,PA,d,House Representative,Charlie,Dent,"",""
+RepSheaPorter,official,NH,d,House Representative,Carol,Shea-Porter,"",""
+RepSeanMaloney,official,NY,d,House Representative,Sean,Maloney,,
+RepSchneider,official,IL,d,House Representative,Brad,Schneider,"",""
+RepRoybalAllard,official,CA,d,House Representative,Lucille,Roybal-Allard,"",""
+reppittenger,official,NC,r,House Representative,Robert,Pittenger,,
+WelchForVT,campaign,VT,d,House Representative,Peter,Welch,"",""
+RepPeteGallego,official,TX,d,House Representative,Pete,Gallego,"",""
+RepMullin,official,OK,r,House Representative,Markwayne,Mullin,"",""
+RepMcLeod,official,CA,d,House Representative,Gloria,Negrete McLeod,"",""
+RepMattSalmon,official,AZ,r,House Representative,Matt,Salmon,"",""
+RepMarkTakano,official,CA,d,House Representative,Mark,Takano,,
+RepMarcyKaptur,official,OH,d,House Representative,Marcy,Kaptur,"",""
+RepGaramendi,official,CA,d,House Representative,John,Garamendi,"",""
+RepLujanGrisham,official,NM,d,House Representative,Michelle,Lujan Grisham,,
+RepLowenthal,official,CA,d,House Representative,Alan,Lowenthal,,
+RepLoisFrankel,official,FL,d,House Representative,Lois,Frankel,,
+RepJeffDuncan,official,SC,r,House Representative,Jeff,Duncan,"",""
+RepLipinski,official,IL,d,House Representative,Dan,Lipinski,,
+RepLanceNJ7,official,NJ,r,House Representative,Leonard,Lance,,
+RepZoeLofgren,official,CA,d,House Representative,Zoe,Lofgren,,
+RepKirkpatrick,official,AZ,d,House Representative,Ann,Kirkpatrick,,
+RepJohnDelaney,official,MD,d,House Representative,John,Delaney,,
+RepMikeRogers,official,MI,r,House Representative,Mike ,Rogers,"",""
+RepJimCosta,official,CA,d,House Representative,Jim,Costa,,
+RepHalRogers,official,KY,r,House Representative,Hal,Rogers,,
+brettguthrie,campaign,KY,r,House Representative,Brett,Guthrie,"",""
+RepDavidEPrice,official,NC,d,House Representative,David,Price,"",""
+RepGraceMeng,official,NY,d,House Representative,Grace,Meng,,
+RepGarrett,official,NJ,r,House Representative,Scott,Garrett,,
+RepFilemonVela,official,TX,d,House Representative,Filemon,Vela,,
+RepDougCollins,official,GA,r,House Representative,Doug,Collins,"",""
+RepDLamborn,official,CO,r,House Representative,Doug,Lamborn,"",""
+RepSarbanes,official,MD,d,House Representative,John,Sarbanes,"",""
+RepDennyHeck,official,WA,d,House Representative,Denny,Heck,"",""
+RepDelBene,official,WA,d,House Representative,Suzan,DelBene,,
+RepDanKildee,official,MI,d,House Representative,Dan,Kildee,,
+GKButterfield,official,NC,d,House Representative,G.K.,Butterfield,"",""
+BillPascrell,official,NJ,d,House Representative,Bill ,Pascrell,"",""
+RepAndreCarson,official,IN,d,House Representative,Andre,Carson,"",""
+RepWOLFPress,official,VA,r,House Representative,Frank,Wolf,"",""
+NydiaVelazquez,official,NY,d,House Representative,Nydia,Velazquez,,
+MarkAmodeiNV2,official,NV,r,House Representative,Mark,Amodei,"",""
+RepLindaSanchez,official,CA,d,House Representative,Linda,Sanchez,,
+TomColeOK04,official,OK,r,House Representative,Tom,Cole,"",""
+RepMaloney,official,NY,d,House Representative,Carolyn,Maloney,"",""
+RepCicilline,official,RI,d,House Representative,David,Cicilline,"",""
+RepBillFoster,official,IL,d,House Representative,Bill,Foster,,
+RepBera,official,CA,d,House Representative,Ami,Bera,,
+Harris4Congress,campaign,MD,r,House Representative,Andy,Harris,"",""
+RepAndyHarrisMD,official,MD,r,House Representative,Andy,Harris,,
+RepAndyBarr,official,KY,r,House Representative,Andy,Barr,,
+PatrickMurphyFL,campaign,FL,d,House Representative,Patrick,Murphy,"",""
+RepMurphyFL,official,FL,d,House Representative,Patrick,Murphy,,
+MikeKellyPA,official,PA,r,House Representative,Mike,Kelly,,
+MikeKellyforPA3,campaign,PA,r,House Representative,Mike,Kelly,"",""
+LacyClayMO1,campaign,MO,d,House Representative,Lacy,Clay,"",""
+RepJeffries,official,NY,d,House Representative,Hakeem,Jeffries,"",""
+FrankDLucas,campaign,OK,r,House Representative,Frank,Lucas,"",""
+RepCummings,campaign,MD,d,House Representative,Elijah,Cummings,E,""
+DWStweets,campaign,FL,d,House Representative,Debbie,Wasserman Schultz,"",""
+DougLaMalfa,campaign,CA,r,House Representative,Doug,LaMalfa,"",""
+RepLaMalfa,official,CA,r,House Representative,Doug,LaMalfa,,
+DocHastings,official,WA,r,House Representative,Doc,Hastings,"",""
+BettyMcCollum04,official,MN,d,House Representative,Betty,McCollum,,
+RepTierney,official,MA,d,House Representative,John,Tierney,"",""
+johntierney_MA,campaign,MA,d,House Representative,John,Tierney,"",""
+ColbertBuschSC,campaign,SC,d,House Candidate,Elizabeth Colbert,Busch,"",""
+MarkSanford,campaign,SC,r,House Representative,Mark,Sanford,"",""
+TeddyTurnerIV,campaign,SC,r,House Candidate,Teddy,Turner,,
+Robin42CD,campaign,IL,d,House Representative,Robin,Kelly,"",""
+Governor_LePage,official,ME,r,Governor,Paul,LePage,"",""
+lepage2014,campaign,ME,r,Governor,Paul,LePage,,
+CurtisBostic,campaign,SC,r,House Candidate,Curtis,Bostic,,
+jay_stamper,campaign,SC,d,Senate Candidate,Jay,Stamper,"",""
+anthonyweiner,campaign,NY,d,House Representative,Anthony,Weiner,"",""
+mayorvincegray,official,DC,d,Governor,Vincent,Gray,C.,""
+GovernorBullock,official,MT,d,Governor,Steve,Bullock,,
+BullockForMT,campaign,MT,d,Governor,Steve,Bullock,,
+RepBetoORourke,official,TX,d,House Representative,Beto,O'Rourke,"",""
+CongressmanRuiz,official,CA,d,House Representative,Raul,Ruiz,,
+daveloebsack,official,IA,d,House Representative,Dave,Loebsack,"",""
+JimPressOffice,official,WI,r,House Representative,Jim,Sensenbrenner,,
+KeithRothfus,official,PA,r,House Representative,Keith,Rothfus,,
+McCaskillOffice,official,MO,d,Senator,Claire,McCaskill,"",""
+Rep_DevinNunes,official,CA,r,House Representative,Devin,Nunes,"",""
+RepBillEnyart,official,IL,d,House Representative,Bill,Enyart,"",""
+RepBradWenstrup,official,OH,r,House Representative,Brad,Wenstrup,,
+RepCardenas,official,CA,d,House Representative,Tony,Cardenas,,
+RepDavidValadao,official,CA,r,House Representative,David,Valadao,,
+DonaldPayneJr,campaign,NJ,d,House Representative,Donald,Payne,"",Jr.
+RepDonaldPayne,official,NJ,d,House Representative,Donald,Payne,"",Jr.
+SenDuckworth,official,IL,d,Senator,Tammy,Duckworth,,
+RepEliotEngel,official,NY,d,House Representative,Eliot,Engel,,
+RepHuffman,official,CA,d,House Representative,Jared,Huffman,,
+RepJBridenstine,official,OK,r,House Representative,Jim,Bridenstine,,
+RepJuanVargas,official,CA,d,House Representative,Juan,Vargas,"",""
+repmarkpocan,official,WI,d,House Representative,Mark,Pocan,"",""
+RepPaulCook,official,CA,r,House Representative,Paul,Cook,,
+VoteBishop2012,campaign,UT,r,House Representative,Rob,Bishop,"",""
+RepRobBishop,official,UT,r,House Representative,Rob,Bishop,,
+RepRWilliams,official,TX,r,House Representative,Roger,Williams,"",""
+RepScottPeters,official,CA,d,House Representative,Scott,Peters,,
+RepTimWalz,official,MN,d,House Representative,Tim,Walz,,
+SenTomCotton,official,AR,r,Senator,Tom,Cotton,"",""
+SenBrianSchatz,official,HI,d,Senator,Brian,Schatz,,
+SenKaineOffice,official,VA,d,Senator,Tim,Kaine,,
+SenMoCowan,official,MA,d,Senator,Mo,Cowan,"",""
+SenWarren,official,MA,d,Senator,Elizabeth,Warren,,
+SteveScalise,official,LA,r,House Representative,Steve,Scalise,"",""
+SusanWBrooks,official,IN,r,House Representative,Susan,Brooks,W,
+TXRandy14,official,TX,r,House Representative,Randy,Weber,"",""
+WaxmanClimate,official,CA,d,House Representative,Henry,Waxman,"",""
+LeonardLanceNJ7,campaign,NJ,r,House Representative,Leonard,Lance,"",""
+micaforcongress,campaign,FL,r,House Candidate,John,Mica,,
+GomezForMA,campaign,MA,r,Senate Candidate,Gabriel,Gomez,,
+KenCuccinelli,campaign,VA,r,Gubernatorial Candidate,Ken,Cuccinelli,,
+TerryMcAuliffe,campaign,VA,d,Governor,Terry,McAuliffe,"",""
+RobertSarvisVA,campaign,VA,i,Gubernatorial Candidate,Robert,Sarvis,C.,
+SalahiTareq,campaign,VA,i,Gubernatorial Candidate,Tareq,Salahi,,
+ChrisChristie,campaign,NJ,r,Governor,Chris,Christie,"",""
+BarbaraBuono,campaign,NJ,d,Gubernatorial Candidate,Barbara,Buono,,
+Grossman4NJ,campaign,NJ,r,Gubernatorial Candidate,Seth,Grossman,"",""
+MikeForMN,campaign,MN,r,Senate Candidate,Mike,McFadden,"",""
+CuccinelliPress,campaign,VA,r,Gubernatorial Candidate,Ken,Cuccinelli,,
+ThomTillis,campaign,NC,r,Senator,Thom,Tillis,"",""
+JasonSmithMO,campaign,MO,r,House Representative,Jason,Smith,"",""
+Hodges4Congress,campaign,MO,d,House Candidate,Steve,Hodges,,
+CoryBooker,campaign,NJ,d,Senator,Cory,Booker,"",""
+HillaryClinton,campaign,NY,d,Presidential Candidate,Hillary,Clinton,"",""
+berwickforMA,campaign,MA,d,Gubernatorial Candidate,Don,Berwick,"",""
+PeterWelch,official,VT,d,House Representative,Peter,Welch,"",""
+RepDWStweets,official,FL,d,House Representative,Debbie,Wasserman Schultz,,
+johnculberson,campaign,TX,r,House Representative,John,Culberson,"",""
+blaineyoung,campaign,MD,r,Gubernatorial Candidate,Blaine,Young,"",""
+DavidCraig2014,campaign,MD,r,Gubernatorial Candidate,David,Craig,"",""
+RonGeorge2014,campaign,MD,r,Gubernatorial Candidate,Ron,George,"",""
+BrownforMD,campaign,MD,d,Gubernatorial Candidate,Anthony,Brown,G.,""
+mattmeadforgov,campaign,WY,r,Governor,Matt,Mead,"",""
+carldemaio,campaign,CA,r,House Candidate,Carl,DeMaio,"",""
+EdMarkey,campaign,MA,d,Senator,Ed,Markey,"",""
+Liz_Cheney,campaign,WY,r,House Representative,Liz,Cheney,,
+RoKhannaUSA,campaign,CA,d,House Representative,Ro,Khanna,,
+andrewromanoff,campaign,CO,d,House Candidate,Andrew,Romanoff,"",""
+SeanEldridge,campaign,NY,d,House Candidate,Sean,Eldridge,"",""
+GwenGraham,campaign,FL,d,House Representative,Gwen,Graham,"",""
+jimtracy,campaign,TN,r,House Candidate,Jim,Tracy,"",""
+CarrforTN,campaign,TN,r,Senate Candidate,Joe,Carr,"",""
+RecchiaCongress,campaign,NY,d,House Candidate,Domenic,Recchia,"",Jr.
+aguilarpete,campaign,CA,d,House Representative,Pete,Aguilar,"",""
+VAArk,campaign,PA,d,House Candidate,Valerie,Arkoosh,"",""
+NickCaseyforWV,campaign,WV,d,House Candidate,Nick,Casey,"",""
+daylinleach,campaign,PA,d,House Candidate,Daylin,Leach,"",""
+GregAbbott_TX,campaign,TX,r,Governor,Greg,Abbott,"",""
+Carter4Congress,campaign,GA,r,House Representative,Buddy,Carter,"",""
+Booker4Senate,campaign,NJ,d,Senator,Cory,Booker,"",""
+agarciapadilla,official,PR,d,Governor,Alejandro,Padilla,García,
+MarthaforNY,campaign,NY,d,House Candidate,Martha,Robertson,"",""
+StrouseForPA,campaign,PA,d,House Candidate,Kevin,Strouse,"",""
+Boyle4PA,campaign,PA,d,House Representative,Brendan,Boyle,"",""
+MMargoliesPA,campaign,PA,d,House Candidate,Marjorie,Margolies,"",""
+edlindsey14,campaign,GA,r,House Candidate,Edward,Lindsey,"",""
+stanleypchang,campaign,HI,d,House Candidate,Stanley,Chang,"",""
+JessEhrlich,campaign,FL,d,House Candidate,Jessica,Ehrlich,"",""
+BryanSmithID2,campaign,ID,r,House Candidate,Bryan,Smith,"",""
+TeamNestande,campaign,CA,r,House Candidate,Brian,Nestande,"",""
+rickallen,campaign,GA,r,House Representative,Rick,Allen,W.,""
+_Andrew_Walter,campaign,AZ,r,House Candidate,Andrew,Walter,"",""
+DavidSchwarz_,campaign,GA,r,House Candidate,David,Schwarz,"",""
+kirkjorgensen52,campaign,CA,r,House Candidate,Kirk,Jorgensen,"",""
+WendyRogersAZ,campaign,AZ,r,House Candidate,Wendy,Rogers,"",""
+WillHurd,campaign,TX,r,House Candidate,Will,Hurd,,
+BlumforCongress,campaign,IA,r,House Representative,Rod,Blum,"",""
+Graves4Congress,campaign,MN,d,House Candidate,Jim,Graves,"",""
+bobbarrcongress,campaign,GA,r,House Candidate,Bob,Barr,"",""
+tomemmer,campaign,MN,r,House Representative,Tom,Emmer,"",""
+Donna_Sheldon,campaign,GA,r,House Candidate,Donna,Sheldon,"",""
+Spilka4Congress,campaign,MA,d,House Candidate,Karen,Spilka,,
+carlsciortino,campaign,MA,d,House Candidate,Carl,Sciortino,,
+Eloise4Congress,campaign,CA,d,House Candidate,Eloise,Gomez Reyes,"",""
+standwithbarry,campaign,GA,r,House Representative,Barry,Loudermilk,"",""
+MarkGreenbergCT,campaign,CT,r,House Candidate,Mark,Greenberg,"",""
+DarleneSenger,campaign,IL,r,House Candidate,Darlene,Senger,"",""
+_ErikaHarold,campaign,IL,r,House Candidate,Erika,Harold,"",""
+BradleyByrne,campaign,AL,r,House Representative,Bradley,Byrne,"",""
+JensenElis,campaign,KY,d,House Candidate,Elisabeth,Jensen,"",""
+Ron4VA,campaign,VA,r,House Candidate,Ron,Meyer,"",Jr.
+CainforCongress,campaign,ME,d,House Candidate,Emily,Cain,"",""
+RudyforCongress,campaign,MI,d,House Candidate,Rudy,Hobbs,"",""
+MonicaVernon,campaign,IA,d,House Candidate,Monica,Vernon,"",""
+MooneyforWV,campaign,WV,r,House Representative,Alex,Mooney,"",""
+GaryGerrard10,campaign,GA,r,House Candidate,Gary,Gerrard,"",""
+PaulDietzel,campaign,LA,r,House Candidate,Paul,Dietzel,"",""
+RepChadFincher,campaign,AL,r,House Candidate,Chad,Fincher,,
+JasonZacharyTN,campaign,TN,r,House Candidate,Jason,Zachary,"",""
+ObermuellerMike,campaign,MN,d,House Candidate,Mike,Obermueller,"",""
+ErinforPA,campaign,PA,d,House Candidate,Erin,McClelland,"",""
+workingjoebaca,campaign,CA,d,House Candidate,Joe,Baca,"",""
+JohnLaFerla,campaign,MD,d,House Candidate,John,LaFerla,"",""
+jodyhice,campaign,GA,r,House Representative,Jody,Hice,"",""
+MikeCollinsGA,campaign,GA,r,House Candidate,Mike,Collins,"",""
+ArtHalvorson,campaign,PA,r,House Candidate,Art,Halvorson,"",""
+JoeKaufmanUSA,campaign,FL,r,House Candidate,Joe,Kaufman,"",""
+VoteShaughnessy,campaign,PA,d,House Candidate,Shaughnessy,Naughton,"",""
+Walker4NC,campaign,NC,r,House Representative,Mark,Walker,"",""
+SteveRathje,campaign,IA,r,House Candidate,Steve,Rathje,"",""
+chrisbalkema,campaign,IL,r,House Candidate,Chris,Balkema,"",""
+RoyCho5,campaign,NJ,d,House Candidate,Roy,Cho,"",""
+nancymace,campaign,SC,r,Senate Candidate,Nancy,Mace,"",""
+cash4senate,campaign,SC,r,Senate Candidate,Richard,Cash,"",""
+SarvisPress,campaign,VA,i,Gubernatorial Candidate,Robert,Sarvis,C.,
+AsaHutchinson,campaign,AR,r,Governor,Asa,Hutchinson,"",""
+curtiscoleman,campaign,AR,r,Gubernatorial Candidate,Curtis,Coleman,"",""
+DebraHobbsforAR,campaign,AR,r,Gubernatorial Candidate,Debra,Hobbs,"",""
+LoneganForNJ,campaign,NJ,r,Senate Candidate,Steve,Lonegan,,
+Lonegan,campaign,NJ,r,Senate Candidate,Steve,Lonegan,,
+Eck4Senate,campaign,NJ,r,Senate Candidate,Alieta,Eck,"",""
+BillCassidy,campaign,LA,r,Senator,Bill,Cassidy,"",""
+PhilGingreyMD,campaign,GA,r,Senate Candidate,Phil,Gingrey,"",MD
+JackKingston4GA,campaign,GA,r,Senate Candidate,Jack,Kingston,"",""
+TeamBraley,campaign,IA,d,Senate Candidate,Bruce,Braley,"",""
+karenhandel,campaign,GA,r,House Candidate,Karen,Handel,"",""
+RepSanfordSC,official,SC,r,House Representative,Mark,Sanford,,
+RepJasonSmith,official,MO,r,House Representative,Jason,Smith,"",""
+SenatorTester,official,MT,d,Senator,Jon,Tester,"",""
+RepFrankLucas,official,OK,r,House Representative,Frank,Lucas,,
+RepSusanDavis,official,CA,d,House Representative,Susan,Davis,"",""
+RepRobinKelly,official,IL,d,House Representative,Robin,Kelly,"",""
+RoundsforSenate,campaign,SD,r,Senator,Mike,Rounds,"",""
+JoeWMiller,campaign,AK,r,Senate Candidate,Joe,Miller,W.,""
+osbornforsenate,campaign,NE,r,Senate Candidate,Shane,Osborn,"",""
+MattBevin,campaign,KY,r,Governor,Matt,Bevin,"",""
+MarkDarrAR,campaign,AR,r,House Candidate,Mark,Darr,,
+WestermanAR,campaign,AR,r,House Representative,Bruce,Westerman,"",""
+leebright,campaign,SC,r,Senate Candidate,Lee,Bright,"",""
+RepBlainePress,official,MO,r,House Representative,Blaine,Luetkemeyer,"",""
+RobManess,campaign,LA,r,Senate Candidate,Rob,Maness,"",""
+NatalieTennant,campaign,WV,d,Senate Candidate,Natalie,Tennant,"",""
+RepJoeGarcia,official,FL,d,House Representative,Joe,Garcia,"",""
+brentroske,campaign,CA,i,House Candidate,Brent,Roske,"",""
+YoungForAlabama,campaign,AL,r,House Candidate,Dean,Young,,
+RepJohnDuncanJr,official,TN,r,House Representative,John,Duncan,,Jr.
+Rohrabacher,campaign,CA,r,House Representative,Dana,Rohrabacher,"",""
+TerriLLand,campaign,MI,r,Senate Candidate,Terri,Land,"",""
+ChiesaNews,official,NJ,r,Senator,Jeffrey,Chiesa,,
+wendydavis,campaign,TX,d,Gubernatorial Candidate,Wendy,Davis,"",""
+RepChrisSmith,official,NJ,r,House Representative,Chris,Smith,"",""
+SenatorBaldwin,official,WI,d,Senator,Tammy,Baldwin,,
+USRepRodney,official,NJ,r,House Representative,Rodney,Frelinghuysen,,
+Rep_Hunter,official,CA,r,House Representative,Duncan,Hunter,,
+RepJeffMiller,campaign,FL,r,House Representative,Jeff,Miller,"",""
+katherineclark,campaign,MA,d,House Representative,Katherine,Clark,"",""
+FrankAddivinola,campaign,MA,r,House Candidate,Frank,Addivinola,,
+pat_maciariello,campaign,CA,r,House Candidate,Pat,Maciariello,"",""
+DougOse,campaign,CA,r,House Candidate,Doug,Ose,"",""
+danlogue4cd3,campaign,CA,r,House Candidate,Dan,Logue,"",""
+senatormcdaniel,campaign,MS,r,Senate Candidate,Chris,McDaniel,"",""
+NeilRiser,campaign,LA,r,House Candidate,Neil,Riser,,
+VanceMcAllister,campaign,LA,r,House Representative,Vance,McAllister,"",""
+USRepKCastor,official,FL,d,House Representative,Kathy,Castor,,
+CMForUSSenate,campaign,MS,r,Senate Candidate,Chris,McDaniel,"",""
+Michaud2014,campaign,ME,d,Gubernatorial Candidate,Mike,Michaud,"",""
+votefrei,campaign,NE,r,House Candidate,Dan,Frei,"",""
+CharlieCrist,campaign,FL,d,Gubernatorial Candidate,Charlie,Crist,"",""
+trott4congress,campaign,MI,r,House Representative,Dave,Trott,"",""
+MarthaMcSally,campaign,AZ,r,House Representative,Martha,McSally,"",""
+Eleanor4Congres,campaign,DC,d,House Representative,Eleanor,Holmes Norton,"",""
+DougTruax,campaign,IL,r,Senate Candidate,Doug,Truax,"",""
+chuckschumer,campaign,NY,d,Senator,Chuck,Schumer,"",""
+Demos4Congress,campaign,NY,r,House Candidate,George,Demos,"",""
+carloslcurbelo,campaign,FL,r,House Candidate,Carlos,Curbelo,,
+Quico_Canseco,campaign,TX,r,House Candidate,Francisco,Canseco,"",""
+SenBookerOfc,official,NJ,d,Senator,Cory,Booker,"",""
+RussFulcher,campaign,ID,r,Gubernatorial Candidate,Russ,Fulcher,"",""
+Richard_Tisei,campaign,MA,r,House Candidate,Richard,Tisei,"",""
+USRepLong,official,MO,r,House Representative,Billy,Long,,
+RepGuthrie,official,KY,r,House Representative,Brett,Guthrie,"",""
+EvanJenkinsWV,campaign,WV,r,House Representative,Evan,Jenkins,"",""
+KathleenMPeters,campaign,FL,r,House Candidate,Kathleen,Peters,M.,""
+CoryGardner,campaign,CO,r,Senator,Cory,Gardner,"",""
+walkerforakgov,campaign,AK,i,Governor,Bill,Walker,"",""
+Parnell4Gov,campaign,AK,r,Governor,Sean,Parnell,"",""
+FredDuVal,campaign,AZ,d,Gubernatorial Candidate,Fred,DuVal,"",""
+BennettArizona,campaign,AZ,r,Gubernatorial Candidate,Ken,Bennett,"",""
+dougducey,campaign,AZ,r,Governor,Doug,Ducey,"",""
+cjones,campaign,AZ,r,Gubernatorial Candidate,Christine,Jones,"",""
+KeithIngramAR,campaign,AR,d,Gubernatorial Candidate,Keith,Ingram,"",""
+ScottHonour,campaign,MN,r,Gubernatorial Candidate,Scott,Honour,"",""
+Jeff4Gov,campaign,MN,r,Gubernatorial Candidate,Jeff,Johnson,"",""
+KurtZellersMN,campaign,MN,r,Gubernatorial Candidate,Kurt,Zellers,"",""
+ThompsonSenate,campaign,MN,r,Gubernatorial Candidate,Dave,Thompson,"",""
+seifertmn,campaign,MN,r,Gubernatorial Candidate,Marty,Seifert,"",""
+ianbayneisright,campaign,IL,r,House Candidate,Ian,Bayne,"",""
+scottgessler,campaign,CO,r,Gubernatorial Candidate,Scott,Gessler,"",""
+ttancredo,campaign,CO,r,Gubernatorial Candidate,Tom,Tancredo,"",""
+SteveHouse4Gov,campaign,CO,r,Gubernatorial Candidate,Steve,House,"",""
+SenatorBrophy,campaign,CO,r,Gubernatorial Candidate,Greg,Brophy,"",""
+Vote4Chuck,campaign,NE,d,Gubernatorial Candidate,Chuck,Hassebrook,"",""
+Charlie_Janssen,campaign,NE,r,Gubernatorial Candidate,Charlie,Janssen,"",""
+BeauRMcCoy,campaign,NE,r,Gubernatorial Candidate,Beau,McCoy,"",""
+MikeFoley4Gov,campaign,NE,r,Gubernatorial Candidate,Mike,Foley,"",""
+RickettsForGov,campaign,NE,r,Governor,Pete,Ricketts,"",""
+AlexSinkFlorida,campaign,FL,d,House Candidate,Alex,Sink,"",""
+DavidJollyCD13,campaign,FL,r,House Representative,David,Jolly,"",""
+MarkBircherFL,campaign,FL,r,House Candidate,Mark,Bircher,"",""
+WesNeuman,campaign,FL,d,House Candidate,Wesley,Neuman,"",""
+CorryWestbrook,campaign,FL,d,House Candidate,Corry,Westbrook,"",""
+BonillaCongress,campaign,FL,r,House Candidate,Jorge,Bonilla,"",""
+platt4congress,campaign,FL,r,House Candidate,Carol,Platt,"",""
+vivaldisenate,campaign,FL,r,House Candidate,Peter,Vivaldi,"",""
+Mike_McKenna1,campaign,FL,d,House Candidate,Michael,McKenna,"",""
+shayanmodarres,campaign,FL,d,House Candidate,Shayan,Modarres,"",""
+senatornanrich,campaign,FL,d,Gubernatorial Candidate,Nan,Rich,"",""
+RepMcAllister,official,LA,r,House Representative,Vance,McAllister,"",""
+DwayneStovall,campaign,TX,r,Gubernatorial Candidate,Dwayne,Stovall,"",""
+MichelleNunnGA,campaign,GA,d,Senate Candidate,Michelle,Nunn,"",""
+joniernst,campaign,IA,r,Senator,Joni,Ernst,"",""
+AlanMCohn,campaign,FL,d,House Candidate,Alan,Cohn,"",""
+Carl_Domino,campaign,FL,r,House Candidate,Carl,Domino,,
+Schlesinger4FL,campaign,FL,r,House Candidate,Alan,Schlesinger,"",""
+EllenAndel,campaign,FL,r,House Candidate,Ellen,Andel,"",""
+HenryColon2014,campaign,FL,r,House Candidate,Henry,Colon,"",""
+AlisonForKY,campaign,KY,d,Senate Candidate,Alison,Grimes,L.,""
+DrChadMathis,campaign,AL,r,House Candidate,Chad,Mathis,"",""
+Paul_DeMarco,campaign,AL,r,House Candidate,Paul,DeMarco,"",""
+TilghmanForMD,campaign,MD,d,House Candidate,Bill,Tilghman,"",""
+WC4Congress,campaign,MD,d,House Candidate,Warren,Christopher,"",""
+DavidVogt_MD,campaign,MD,r,House Candidate,David E.,Vogt,"",III
+RepByrne,official,AL,r,House Representative,Bradley,Byrne,"",""
+EdWGillespie,campaign,VA,r,Gubernatorial Candidate,Ed,Gillespie,"",""
+McGeehan4WV,campaign,WV,r,Senate Candidate,Pat,McGeehan,"",""
+RickWeilandTIB,campaign,SD,d,Senate Candidate,Rick,Weiland,"",""
+BenSasse,campaign,NE,r,Senator,Ben,Sasse,"",""
+JohnWalsh,campaign,MT,d,Senator,John,Walsh,"",""
+champedmunds,campaign,MT,r,Senate Candidate,Champ,Edmunds,"",""
+JulianneOrtman,campaign,MN,r,Senate Candidate,Julianne,Ortman,"",""
+Bellows4Senate,campaign,ME,d,Senate Candidate,Shenna,Bellows,"",""
+MiltonWolfMD,campaign,KS,r,Senate Candidate,Milton,Wolf,"",MD
+EdForSenate,campaign,VA,r,Senate Candidate,Ed,Gillespie,"",""
+amash2014,campaign,MI,r,House Representative,Justin,Amash,"",""
+BillConnorSC,campaign,SC,r,Senate Candidate,Bill,Connor,"",""
+DrGregBrannon,campaign,NC,r,Senate Candidate,Greg,Brannon,"",""
+HeatherGrantNC,campaign,NC,r,Senate Candidate,Heather,Grant,"",""
+MarkHarris2014,campaign,NC,r,Senate Candidate,Mark,Harris,"",""
+TimDonnellyShow,campaign,CA,r,Gubernatorial Candidate,Tim,Donnelly,"",""
+JayInslee,campaign,WA,d,Governor,Jay,Inslee,"",""
+GovInslee,official,WA,d,Governor,Jay,Inslee,"",""
+clayaiken,campaign,NC,d,House Candidate,Clay,Aiken,"",""
+ClayForNC,campaign,NC,d,House Candidate,Clay,Aiken,"",""
+ElectFrench,campaign,AR,r,House Representative,French,Hill,"",""
+Igor_Birman,campaign,CA,r,House Candidate,Igor,Birman,"",""
+KatrinaPierson,campaign,TX,r,House Candidate,Katrina,Pierson,"",""
+AngelForRI,campaign,RI,d,Gubernatorial Candidate,Angel,Taveras,"",""
+RhodenForSenate,campaign,SD,r,Senate Candidate,Larry,Rhoden,"",""
+AnnetteBosworth,campaign,SD,r,Senate Candidate,Annette,Bosworth,"",""
+RepStaceNelson,campaign,SD,r,Senate Candidate,Stace,Nelson,"",""
+rhonda4congress,campaign,MN,r,House Candidate,Rhonda,Sivarajah,"",""
+PhilKrinkie,campaign,MN,r,House Candidate,Phil,Krinkie,"",""
+JoePerske,campaign,MN,d,House Candidate,Joe,Perske,"",""
+Read4Congress,campaign,MN,d,House Candidate,Jim,Read,"",""
+EspaillatNY,campaign,NY,d,House Representative,Adriano,Espaillat,,
+owenjhill,campaign,CO,r,Senate Candidate,Owen,Hill,"",""
+ratcliffetx4,campaign,TX,r,House Representative,John,Ratcliffe,"",""
+RepDannyDavis,official,IL,d,House Representative,Danny,Davis,"",""
+MarkUdall2014,campaign,CO,d,Senator,Mark,Udall,"",""
+AbbottCampaign,campaign,TX,r,Governor,Greg,Abbott,"",""
+DrDavidAlameel,campaign,TX,d,Senate Candidate,David,Alameel,"",""
+Cargas7,campaign,TX,d,House Candidate,James,Cargas,"",""
+NealMarchbanks,campaign,TX,d,House Candidate,Neal,Marchbanks,"",""
+Minor2014,campaign,TX,d,House Candidate,Louie,Minor,"",""
+lifebymkc,campaign,TX,d,House Candidate,Michael,Cole,"",""
+Babin4Congress,campaign,TX,r,House Representative,Brian,Babin,"",""
+Vote4McKellar,campaign,TX,d,House Candidate,Shirley,McKellar,"",""
+DougGansler,campaign,MD,d,Gubernatorial Candidate,Doug,Gansler,"",""
+Gray2014,campaign,DC,d,Governor,Vincent,Gray,C.,""
+JackEvansWard2,official,DC,d,Gubernatorial Candidate,Jack,Evans,"",""
+EvansForMayor,campaign,DC,d,Gubernatorial Candidate,Jack,Evans,"",""
+CM_CharlesAllen,campaign,DC,d,Gubernatorial Candidate,Tommy,Wells,"",""
+TommyWells,official,DC,d,Gubernatorial Candidate,Tommy,Wells,"",""
+MurielBowser,campaign,DC,d,Governor,Muriel,Bowser,"",""
+Andy4DC,campaign,DC,d,Gubernatorial Candidate,Andy,Shallal,"",""
+andyshallal,campaign,DC,d,Gubernatorial Candidate,Andy,Shallal,"",""
+orange4mayor,campaign,DC,d,Gubernatorial Candidate,Vincent,Orange,"",""
+RetaJoLewis,campaign,DC,d,Gubernatorial Candidate,Reta Jo,Lewis,"",""
+BarbaraComstock,campaign,VA,r,House Representative,Barbara,Comstock,"",""
+jimforcongress,campaign,NY,r,House Candidate,Jim,Fischer,"",""
+MarkJacobsIowa,campaign,IA,r,Senate Candidate,Mark,Jacobs,"",""
+MattDoheny2014,campaign,NY,r,House Candidate,Matt,Doheny,"",""
+WoolfforNY,campaign,NY,d,House Candidate,Aaron,Woolf,"",""
+NathanDeal,campaign,GA,r,Governor,Nathan,Deal,"",""
+carter4governor,campaign,GA,d,Gubernatorial Candidate,Jason,Carter,"",""
+BargeforGA,campaign,GA,r,Gubernatorial Candidate,John,Barge,"",""
+DavidForGeorgia,campaign,GA,r,Gubernatorial Candidate,David,Pennington,"",""
+SenWalshOffice,official,MT,d,Senator,John,Walsh,"",""
+TeamCantor,campaign,VA,r,House Representative,Eric,Cantor,"",""
+DaveBratVA7th,campaign,VA,r,House Representative,Dave,Brat,"",""
+BobGoodlatte6,campaign,VA,r,House Representative,Bob,Goodlatte,"",""
+JoeBiden,official,DC,d,Vice President,Joe,Biden,"",""
+bobbeauprez,campaign,CO,r,Gubernatorial Candidate,Bob,Beauprez,"",""
+ColoradoForKopp,campaign,CO,r,Gubernatorial Candidate,Mike,Kopp,"",""
+ClawsonOutsider,campaign,FL,r,House Representative,Curt,Clawson,"",""
+LamarAlexander,campaign,TN,r,Senator,Lamar,Alexander,"",""
+detbowers,campaign,SC,r,Senate Candidate,Det,Bowers,"",""
+Westlund4WI,campaign,WI,d,House Candidate,Kelly,Westlund,"",""
+MonicaForOregon,campaign,OR,r,Senate Candidate,Monica,Wehby,"",""
+KitzForGov,campaign,OR,d,Governor,John,Kitzhaber,A.,M.D.
+WalterJones2016,campaign,NC,r,House Representative,Walter,Jones,"",""
+tgriffinnc,campaign,NC,r,House Candidate,Taylor,Griffin,"",""
+MichaelWager14,campaign,OH,d,House Candidate,Michael,Wager,"",""
+AlmaforCongress,campaign,NC,d,House Representative,Alma,Adams,"",""
+philbergerjr,campaign,NC,r,House Candidate,Phil,Berger,"",Jr.
+gsforcongress,campaign,VA,i,House Candidate,Justin,Gandino-Saadein,"",""
+thadforms,campaign,MS,r,Senator,Thad,Cochran,"",""
+PatRoberts,campaign,KS,r,Senator,Pat,Roberts,"",""
+Trish4Congress,campaign,MS,d,House Candidate,Trish,Causey,"",""
+AllenWeh,campaign,NM,r,Senate Candidate,Allen,Weh,"",""
+ArtGardner2014,campaign,GA,r,Senate Candidate,Art,Gardner,"",""
+DrRadForSenate,campaign,GA,d,Senate Candidate,Branko,Radulovacki,"",""
+camcavasso,campaign,HI,r,Senate Candidate,Cam,Cavasso,"",""
+Taylor4USSenate,campaign,KS,d,Senate Candidate,Chad,Taylor,"",""
+dahlberg4senate,campaign,MN,r,Senate Candidate,Chris,Dahlberg,"",""
+DanSullivan2014,campaign,AK,r,Senator,Dan,Sullivan,"",""
+PageforTN,campaign,TN,i,Senate Candidate,Danny,Page,"",""
+Perduesenate,campaign,GA,r,Senator,David,Perdue,"",""
+DickDurbin,campaign,IL,d,Senator,Dick,Durbin,"",""
+Grayson2k16,campaign,GA,r,Senate Candidate,Derrick,Grayson,"",""
+EugeneYuGA,campaign,GA,r,House Candidate,Eugene,Yu,"",""
+MarkWarnerVA,campaign,VA,d,Senator,Mark,Warner,"",""
+MaryLandrieu,campaign,LA,d,Senator,Mary,Landrieu,"",""
+MattForOK,campaign,OK,d,Senate Candidate,Matt,Silverstein,"",""
+CongerforOregon,campaign,OR,r,Senate Candidate,Jason,Conger,"",""
+jimabeler,campaign,MN,r,Senate Candidate,Jim,Abeler,"",""
+Oberweis2014,campaign,IL,r,Senate Candidate,Jim,Oberweis,"",""
+JimRisch,campaign,ID,r,Senator,Jim,Risch,"",""
+TeamCornyn,campaign,TX,r,Senator,John,Cornyn,"",""
+JMDickersonSC,campaign,SC,d,Senate Candidate,Joyce,Dickerson,"",""
+kayhagan,campaign,NC,d,Senator,Kay,Hagan,"",""
+KeshaRogers2014,campaign,TX,d,Senate Candidate,Kesha,Rogers,"",""
+MarkBegich,campaign,AK,d,Senator,Mark,Begich,"",""
+PryorForSenate,campaign,AR,d,Senator,Mark,Pryor,"",""
+Mead_Treadwell,campaign,AK,r,Senate Candidate,Mead,Treadwell,"",""
+NatalieforWV,campaign,WV,d,Senate Candidate,Natalie,Tennant,"",""
+Hollisforsenate,campaign,LA,r,Senate Candidate,Paul,Hollis,"",""
+collins4senator,campaign,ME,r,Senator,Susan,Collins,"",""
+TWShannon,campaign,OK,r,Senate Candidate,T.W.,Shannon,"",""
+Adams4USSenate,campaign,TN,d,Senate Candidate,Terry,Adams,"",""
+tomudall,campaign,NM,d,Senator,Tom,Udall,"",""
+childers4senate,campaign,MS,d,Senate Candidate,Travis,Childers,W.,""
+CorbettforGov,campaign,PA,r,Governor,Tom,Corbett,"",""
+RepHastingsFL,official,FL,d,House Representative,Alcee,Hastings,"",""
+mcclinecongress,campaign,FL,d,House Candidate,Jameel,McCline,"",""
+USRepDavidJolly,official,FL,r,House Representative,David,Jolly,"",""
+daninnis,campaign,NH,r,House Candidate,Daniel,Innis,"",""
+WolfForPA,campaign,PA,d,Governor,Tom,Wolf,"",""
+ShusterForPA9,campaign,PA,r,House Representative,Bill,Shuster,"",""
+DRichardsonOR,campaign,OR,r,Gubernatorial Candidate,Dennis,Richardson,"",""
+PatHenryHays,campaign,AR,d,House Candidate,Patrick Henry,Hays,"",""
+jamesleewittAR,campaign,AR,d,House Candidate,James Lee,Witt,"",""
+TeamBoughton,campaign,CT,r,Gubernatorial Candidate,Mark,Boughton,"",""
+MayorMark,campaign,CT,r,Gubernatorial Candidate,Mark,Boughton,"",""
+TomFoleyCT,campaign,CT,r,Gubernatorial Candidate,Tom,Foley,"",""
+McKinneyforGov,campaign,CT,r,Gubernatorial Candidate,John,McKinney,"",""
+DanMalloyCT,campaign,CT,d,Governor,Dan,Malloy,"",""
+TeamCMR,campaign,WA,r,House Representative,Cathy,McMorris Rodgers,"",""
+AmodeiForNevada,campaign,NV,r,House Representative,Mark,Amodei,"",""
+RepLynch,campaign,MA,d,House Representative,Stephen,Lynch,"",""
+Andy_Tobin,campaign,AZ,r,House Candidate,Andy,Tobin,"",""
+Carr4Congress,campaign,CA,r,House Candidate,Elan,Carr,"",""
+tedlieu,campaign,CA,d,House Representative,Ted,Lieu,"",""
+AdamKwasman,campaign,AZ,r,House Candidate,Adam,Kwasman,"",""
+Kiehne4Congress,campaign,AZ,r,House Candidate,Gary,Kiehne,"",""
+MitchumCA24,campaign,CA,r,House Candidate,Chris,Mitchum,"",""
+JeffGorell,campaign,CA,r,House Candidate,Jeff,Gorell,"",""
+DrPaulChabot,campaign,CA,r,House Candidate,Paul,Chabot,"",""
+BrianNestande,campaign,CA,r,House Candidate,Brian,Nestande,"",""
+bradhutto,campaign,SC,d,Senate Candidate,Brad,Hutto,"",""
+vincentsheheen,campaign,SC,d,Gubernatorial Candidate,Vincent,Sheheen,"",""
+Misiuk4Congress,campaign,ME,r,House Candidate,Isaac,Misiuk,"",""
+BrucePoliquin,campaign,ME,r,House Representative,Bruce,Poliquin,"",""
+AnnetteTeijeiro,campaign,NV,r,House Candidate,Annette,Teijeiro,"",""
+erinbilbray,campaign,NV,d,House Candidate,Erin,Bilbray,"",""
+CresentHardy,campaign,NV,r,House Representative,Cresent,Hardy,"",""
+SinnerforND,campaign,ND,d,House Candidate,George,Sinner,"",""
+gloria4congress,campaign,SC,d,House Candidate,Gloria,Bromell-Tinubu,"",""
+DonBeyerVA,campaign,VA,d,House Representative,Don,Beyer,"",""
+Suzanne_Patrick,campaign,VA,d,House Candidate,Suzanne,Patrick,"",""
+GarrisonForOhio,campaign,OH,d,House Candidate,Jennifer,Garrison,"",""
+Hughes4SJersey,campaign,NJ,d,House Candidate,Bill,Hughes,"",""
+jimmowrer,campaign,IA,d,House Candidate,Jim,Mowrer,"",""
+JanyForCongress,campaign,FL,d,House Candidate,Ed,Jany,"",""
+LeeRogersCA,campaign,CA,d,House Candidate,Lee,Rogers,"",""
+eggman4congress,campaign,CA,d,House Candidate,Michael,Eggman,"",""
+JackieMacAR,campaign,AR,d,House Candidate,Jackie,McPherson,"",""
+johnfoustva,campaign,VA,d,House Candidate,John,Foust,"",""
+DomenicRecchia,campaign,NY,d,House Candidate,Domenic,Recchia,"",""
+KathleenRice,campaign,NY,d,House Representative,Kathleen,Rice,"",""
+AimeeBelgard,campaign,NJ,d,House Candidate,Aimee,Belgard,"",""
+Lara4NewMexico,campaign,NM,d,House Candidate,Roxanne,Lara,"",""
+pambyrnes,campaign,MI,d,House Candidate,Pam,Byrnes,"",""
+Cannon4Congress,campaign,MI,d,House Candidate,Jerry,Cannon,"",""
+callis4illinois,campaign,IL,d,House Candidate,Ann,Callis,"",""
+AppelforIowa,campaign,IA,d,House Candidate,Staci,Appel,"",""
+AmandaRenteria,campaign,CA,d,House Candidate,Amanda,Renteria,"",""
+JohnMcCallumGA,campaign,GA,r,House Candidate,John,McCallum,"",""
+Thomasravenel,campaign,SC,i,Senate Candidate,Thomas,Ravenel,"",""
+SenateMajLdr,official,KY,r,Senator,Mitch,McConnell,"",""
+DonnaFEdwards,campaign,MD,d,Senate Candidate,Donna,Edwards,"",""
+RepCurbelo,official,FL,r,House Representative,Carlos,Curbelo,L.,""
+TMac4Congress,campaign,NJ,r,House Representative,Tom,MacArthur,"",""
+DonNorcross4NJ,campaign,NJ,d,House Representative,Donald,Norcross,"",""
+GordonBall4TN,campaign,TN,d,Senate Candidate,Gordon,Ball,"",""
+RepRobWoodall,official,GA,r,House Representative,Rob,Woodall,"",""
+MayorBowser,official,DC,d,Governor,Muriel,Bowser,"",""
+RobPortman,campaign,OH,r,Senator,Rob,Portman,"",""
+mtforlewis,campaign,MT,d,House Candidate,John,Lewis,"",""
+GrothmanforWI,campaign,WI,r,House Representative,Glenn,Grothman,"",""
+french4freedom,campaign,SC,i,Gubernatorial Candidate,Steve,French,"",""
+debdingell,campaign,MI,d,House Representative,Debbie,Dingell,"",""
+MariaCantwell,campaign,WA,d,Senator,Maria,Cantwell,"",""
+SamJohnsonTX03,campaign,TX,r,House Representative,Sam,Johnson,"",""
+RepHardy,official,NV,r,House Representative,Cresent,Hardy,"",""
+LarryHogan,official,MD,r,Governor,Larry,Hogan,"",""
+brownbackforgov,campaign,KS,r,Governor,Sam,Brownback,"",""
+knight4congress,campaign,CA,r,House Representative,Steve,Knight,"",""
+mapppotter,campaign,VI,i,Governor,Ken,Mapp,"",""
+DPrice4Congress,campaign,NC,d,House Representative,David,Price,"",""
+RepAbraham,official,LA,r,House Representative,Ralph,Abraham,"",""
+larrypressler,campaign,SD,i,Senate Candidate,Larry,Pressler,"",""
+Duncan4Congress,campaign,SC,r,House Representative,Jeff,Duncan,"",""
+RepMoolenaar,official,MI,r,House Representative,John,Moolenaar,"",""
+russfeingold,campaign,WI,d,Senate Candidate,Russ,Feingold,"",""
+SmithTootie,campaign,OR,r,House Candidate,Tootie,Smith,"",""
+DougLambornCD5,campaign,CO,r,House Representative,Doug,Lamborn,"",""
+walsh4colorado,campaign,CO,r,House Candidate,Martin,Walsh,"",""
+georgeleing,campaign,CO,r,House Candidate,George,Leing,"",""
+AbelJTapia,campaign,CO,d,House Candidate,Abel,Tapia,"",""
+Vic4CO4,campaign,CO,d,House Candidate,Vic,Meyers,"",""
+BuckForColorado,campaign,CO,r,House Representative,Ken,Buck,"",""
+IrvHalter,campaign,CO,d,House Candidate,Irv,Halter,"",""
+donytterberg,campaign,CO,r,House Candidate,Don,Ytterberg,"",""
+ChangeMaryland,campaign,MD,r,Governor,Larry,Hogan,"",""
+RubenGallego,campaign,AZ,d,House Representative,Ruben,Gallego,"",""
+MaryRoseWilcox,campaign,AZ,d,House Candidate,Mary,Wilcox,Rose,""
+Banach4Congress,campaign,MD,r,House Candidate,David,Banach,"",""
+NancyHoyt4MD,campaign,MD,r,House Candidate,Nancy,Hoyt,"",""
+Chaffeecongress,campaign,MD,r,House Candidate,Chris,Chaffee,"",""
+leezeldin,campaign,NY,r,House Representative,Lee,Zeldin,"",""
+Maher4Congress,campaign,NY,d,House Candidate,Patricia,Maher,"",""
+Bruce_Blakeman,campaign,NY,r,House Candidate,Bruce,Blakeman,"",""
+JLFNY7,campaign,NY,r,House Candidate,José,Fernández,Luis,""
+Nickfornewyork,campaign,NY,r,House Candidate,Nick,Di iorio,"",""
+ChrisDayNY,campaign,NY,r,House Candidate,Christopher,Day,"",""
+EliseStefanik,campaign,NY,r,House Representative,Elise,Stefanik,"",""
+John_Katko,campaign,NY,r,House Representative,John,Katko,"",""
+markassini,campaign,NY,r,House Candidate,Mark,Assini,"",""
+KWeppner,campaign,NY,r,House Candidate,Kathleen,Weppner,"",""
+jd_odonnell,campaign,NY,d,House Candidate,James,O'Donnell,"",""
+donnamcaleer,campaign,UT,d,House Candidate,Donna,McAleer,"",""
+Robles4Congress,campaign,UT,d,House Candidate,Luz,Robles,"",""
+votedougowens,campaign,UT,d,House Candidate,Doug,Owens,"",""
+JoeD4OK,campaign,OK,d,Gubernatorial Candidate,Joe,Dorman,"",""
+ColeForCongress,campaign,OK,r,House Representative,Tom,Cole,"",""
+guild4congress,campaign,OK,d,House Candidate,Tom,Guild,"",""
+SteveRussellOK,campaign,OK,r,House Representative,Steve,Russell,"",""
+PatriceForOK,campaign,OK,r,House Candidate,Patrice,Douglas,"",""
+AlMcAffrey,campaign,OK,d,House Candidate,Al,McAffrey,"",""
+RyanZinke,campaign,MT,r,House Representative,Ryan,Zinke,"",""
+portmanpress,official,OH,r,Senator,Rob,Portman,"",""
+EdwinWEdwards,campaign,LA,d,House Candidate,Edwin,Edwards,W,""
+JoniForIowa,campaign,IA,r,Senator,Joni,Ernst,"",""
+ReynoldsGregg,campaign,IA,r,Governor,Terry,Branstad,E.,""
+millermeeks,campaign,IA,r,House Candidate,Mariannette,Miller-Meeks,"",""
+YoungForIowa,campaign,IA,r,House Representative,David,Young,"",""
+StewartMillsMN,campaign,MN,r,House Candidate,Stewart,Mills,,
+trustintom,campaign,SC,i,Gubernatorial Candidate,Tom,Ervin,"",""
+Kocher4Senate,campaign,SC,i,Senate Candidate,Victor,Kocher,"",""
+adams4SC5,campaign,SC,d,House Candidate,Tom,Adams,"",""
+palmer4alabama,campaign,AL,r,House Representative,Gary,Palmer,"",""
+JoshForUSHouse,campaign,NC,d,House Candidate,Joshua,Brannon,"",""
+Brian4Georgia,campaign,GA,d,House Candidate,Brian,Reese,"",""
+RepBeatty,official,OH,d,House Representative,Joyce,Beatty,"",""
+KReed4Congress,campaign,WV,r,House Candidate,Ken,Reed,"",""
+PaulDavisKS,campaign,KS,d,Gubernatorial Candidate,Paul,Davis,"",""
+SupportSherow,campaign,KS,d,House Candidate,James,Sherow,"",""
+MargieforKS,campaign,KS,d,House Candidate,Margie,Wakefield,"",""
+KultalaForKS,campaign,KS,d,House Candidate,Kelly,Kultala,"",""
+MarkSchauer,campaign,MI,d,Gubernatorial Candidate,Mark,Schauer,"",""
+JohnMoolenaar,campaign,MI,r,House Representative,John,Moolenaar,"",""
+RealTruePatriot,campaign,MI,r,House Candidate,Allen,Hardwick,D.,""
+Clem4Congress,campaign,MI,d,House Candidate,Paul,Clements,"",""
+MikeBishopMI,campaign,MI,r,House Representative,Mike,Bishop,"",""
+EricSchertzing,campaign,MI,d,House Candidate,Eric,Schertzing,"",""
+Brikho2014,campaign,MI,r,House Candidate,George,Brikho,"",""
+Bobby_McKenzie,campaign,MI,d,House Candidate,Bobby,McKenzie,"",""
+TerryBowman4US,campaign,MI,r,House Candidate,Terry,Bowman,"",""
+BrendaLLawrence,campaign,MI,d,House Representative,Brenda,Lawrence,"",""
+Lieber4Congress,campaign,MO,d,House Candidate,Arthur,Lieber,"",""
+LuetkemeyerB,campaign,MO,r,House Representative,Blaine,Luetkemeyer,"",""
+JacobTurk,campaign,MO,r,House Candidate,Jacob,Turk,"",""
+teamdavidige,campaign,HI,d,Governor,David,Ige,"",""
+DukeAiona2014,campaign,HI,r,Gubernatorial Candidate,Duke,Aiona,"",""
+MarkTakai,campaign,HI,d,House Representative,Mark,Takai,"",""
+Djou4Hawaii,campaign,HI,r,House Candidate,Charles,Djou,"",""
+Debicella,campaign,CT,r,House Candidate,Dan,Debicella,"",""
+JimHagedornMN,campaign,MN,r,House Candidate,Jim,Hagedornmn,"",""
+SharonSundMN,campaign,MN,d,House Candidate,Sharon,Sund,"",""
+sharna4us,campaign,MN,r,House Candidate,Sharna,Wahlgren,"",""
+DaggettCongress,campaign,MN,r,House Candidate,Doug,Daggett,"",""
+TorreyWestrom,campaign,MN,r,House Candidate,Torrey,Westrom,"",""
+Burke4WI,campaign,WI,d,Gubernatorial Candidate,Mary,Burke,"",""
+KurtzCongress,campaign,WI,r,House Candidate,Tony,Kurtz,"",""
+DanSebring,campaign,WI,r,House Candidate,Dan,Sebring,"",""
+Rockwood4WI,campaign,WI,d,House Candidate,Chris,Rockwood,"",""
+harris4wi,campaign,WI,d,House Candidate,Mark,Harris,"",""
+ByronMallott,campaign,AK,d,Gubernatorial Candidate,Byron,Mallott,"",""
+runwithcharlie,campaign,WY,d,Senate Candidate,Charlie,Hardy,"",""
+gosar4gov,campaign,WY,d,Gubernatorial Candidate,Pete,Gosar,"",""
+claudiatenney,campaign,NY,r,House Representative,Claudia,Tenney,,
+LenarWhitney,campaign,LA,r,House Candidate,Lenar,Whitney,"",""
+SessionsforTX32,campaign,TX,r,House Representative,Pete,Sessions,"",""
+CarlyFiorina,campaign,VA,r,Presidential Candidate,Carly,Fiorina,"",""
+SaucedoMercer,campaign,AZ,r,House Candidate,Gabby,Saucedo Mercer,"",""
+mikelweisser,campaign,AZ,d,House Candidate,Mike,Weisser,"",""
+woods4congress,campaign,AZ,d,House Candidate,James,Woods,"",""
+WheelerCampaign,campaign,FL,d,House Candidate,Marihelen,Wheeler,"",""
+GloreathaSmith,campaign,FL,r,House Candidate,Glo,Smith,"",""
+DavidCoxFL,campaign,FL,d,House Candidate,David,Cox,"",""
+gabeisgreat,campaign,FL,d,House Candidate,Gabriel,Rothblatt,"",""
+DaveKoller2014,campaign,FL,d,House Candidate,Dave,Koller,"",""
+April4Congress,campaign,FL,d,House Candidate,April,Freeman,"",""
+JayBonner_us,campaign,FL,r,House Candidate,Jay,Bonner,"",""
+MilneForVT,campaign,VT,r,Gubernatorial Candidate,Scott,Milne,"",""
+MarkDonka,campaign,VT,r,House Candidate,Mark,Donka,"",""
+ConnieJ4OK,campaign,OK,d,Senate Candidate,Connie,Johnson,"",""
+marthacoakley,campaign,MA,d,Gubernatorial Candidate,Martha,Coakley,"",""
+SteveGrossmanMA,campaign,MA,d,Gubernatorial Candidate,Steve,Grossman,"",""
+CharlieBakerMA,campaign,MA,r,Governor,Charlie,Baker,"",""
+markfisher2014,campaign,MA,r,Gubernatorial Candidate,Mark,Fisher,"",""
+RepCurtClawson,official,FL,r,House Representative,Curt,Clawson,"",""
+Andre4Congress,campaign,IN,d,House Representative,Andre,Carson,"",""
+SuzanneBonamici,campaign,OR,d,House Representative,Suzanne,Bonamici,"",""
+davidcicilline,campaign,RI,d,House Representative,David,Cicilline,"",""
+SusanForSD,campaign,SD,d,Gubernatorial Candidate,Susan,Wismer,"",""
+CorinnaforSD,campaign,SD,d,House Candidate,Corinna,Robinson,"",""
+Matsui4Congress,campaign,CA,d,House Representative,Doris,Matsui,"",""
+teammoulton,official,MA,d,House Representative,Seth,Moulton,"",""
+donyoungak,campaign,AK,r,House Representative,Don,Young,"",""
+WydenForOregon,campaign,OR,d,Senator,Ron,Wyden,"",""
+sethmoulton,campaign,MA,d,House Representative,Seth,Moulton,"",""
+GinaRaimondo,campaign,RI,d,Governor,Gina,Raimondo,"",""
+ZephyrTeachout,campaign,NY,d,Gubernatorial Candidate,Zephyr,Teachout,"",""
+HerrForSenate,campaign,MA,r,Senate Candidate,Brian,Herr,"",""
+mikecapuano,campaign,MA,d,House Representative,Mike,Capuano,"",""
+johnchapman2014,campaign,MA,r,House Candidate,John,Chapman,"",""
+Maggie_Hassan,campaign,NH,d,Senator,Maggie,Hassan,"",""
+Walt4NH,campaign,NH,r,Gubernatorial Candidate,Walt,Havenstein,"",""
+MarilindaGarcia,campaign,NH,r,House Candidate,Marilinda,Garcia,"",""
+fungforgovernor,campaign,RI,r,Gubernatorial Candidate,Allan,Fung,"",""
+CormickLynch,campaign,RI,r,House Candidate,Cormick,Lynch,"",""
+ReisForCongress,campaign,RI,r,House Candidate,Rhue,Reis,"",""
+Griffith2014,campaign,AL,d,Gubernatorial Candidate,Parker,Griffith,"",""
+EliotCutler,campaign,ME,i,Gubernatorial Candidate,Eliot,Cutler,"",""
+MaryFallin,campaign,OK,r,Governor,Mary,Fallin,"",""
+TeamWhitfieldKY,campaign,KY,r,House Representative,Ed,Whitfield,"",""
+MacThornberry,campaign,TX,r,House Representative,Mac,Thornberry,"",""
+TexansforLamar,campaign,TX,r,House Representative,Lamar,Smith,"",""
+ManessforLA,campaign,LA,r,Senate Candidate,Rob,Maness,"",""
+JohnSarbanes,official,MD,d,House Representative,John,Sarbanes,"",""
+collinpeterson,campaign,MN,d,House Representative,Collin,Peterson,"",""
+PastorForAZ,campaign,AZ,d,House Representative,Ed,Pastor,"",""
+PascrellforNJ,campaign,NJ,d,House Representative,Bill,Pascrell,"",""
+Vance4Louisiana,campaign,LA,r,House Representative,Vance,McAllister,"",""
+McCaulforTexas,campaign,TX,r,House Representative,Michael,McCaul,"",""
+OrmanForSenate,campaign,KS,i,Senate Candidate,Greg,Orman,"",""
+bostforcongress,campaign,IL,r,House Representative,Mike,Bost,"",""
+NickTroiano,campaign,PA,i,House Candidate,Nick,Troiano,"",""
+GovJayNixon,official,MO,d,Governor,Jay,Nixon,"",""
+ElectMikeBishop,campaign,MI,r,House Representative,Mike,Bishop,"",""
+DonBacon20166,campaign,NE,r,House Candidate,Don,Bacon,"",""
+MarkDeSaulnier,campaign,CA,d,House Representative,Mark,DeSaulnier,"",""
+Norma4Congress,campaign,CA,d,House Representative,Norma,Torres,"",""
+MimiWaltersCA,campaign,CA,r,House Representative,Mimi,Walters,"",""
+BradAshford16,campaign,NE,d,House Representative,Brad,Ashford,"",""
+JebBush,campaign,FL,r,Presidential Candidate,Jeb,Bush,"",""
+AkGovBillWalker,official,AK,i,Governor,Bill,Walker,"",""
+RepWesterman,official,AR,r,House Representative,Bruce,Westerman,"",""
+bruce_westerman,campaign,AR,r,House Representative,Bruce,Westerman,"",""
+JohnGaramendi,campaign,CA,d,House Representative,John,Garamendi,"",""
+Eshoo4Congress,campaign,CA,d,House Representative,Anna,Eshoo,"",""
+geauxscalise,campaign,LA,r,House Representative,Steve,Scalise,"",""
+Capps4Congress,campaign,CA,d,House Representative,Lois,Capps,"",""
+JuliaBrownley26,official,CA,d,House Representative,Julia,Brownley,"",""
+XavierBecerra,campaign,CA,d,House Representative,Xavier,Becerra,"",""
+RepMimiWalters,official,CA,r,House Representative,Mimi,Walters,"",""
+RepGwenGraham,official,FL,d,House Representative,Gwen,Graham,"",""
+Rosa_DeLauro,campaign,CT,d,House Representative,Rosa,DeLauro,"",""
+alcee4congress,campaign,FL,d,House Representative,Alcee,Hastings,"",""
+sendavidperdue,official,GA,r,Senator,David,Perdue,"",""
+enziforwyo,campaign,WY,r,Senator,Mike,Enzi,"",""
+SenSasse,official,NE,r,Senator,Ben,Sasse,"",""
+jeffsessions,campaign,AL,r,Senator,Jeff,Sessions,"",""
+ScottForGA,campaign,GA,r,House Representative,Austin,Scott,"",""
+RepLoudermilk,official,GA,r,House Representative,Barry,Loudermilk,"",""
+ScottWalker,campaign,WI,r,Governor,Scott,Walker,"",""
+RodBlum,campaign,IA,r,House Representative,Rod,Blum,"",""
+RepBradAshford,official,NE,d,House Representative,Brad,Ashford,"",""
+RepMikeBishop,official,MI,r,House Representative,Mike,Bishop,"",""
+RepKenBuck,official,CO,r,House Representative,Ken,Buck,"",""
+repdavetrott,official,MI,r,House Representative,Dave,Trott,"",""
+RepRatcliffe,official,TX,r,House Representative,John,Ratcliffe,"",""
+RepBost,official,IL,r,House Representative,Mike,Bost,"",""
+garretgraves,campaign,LA,r,House Representative,Garret,Graves,"",""
+RepKClark,official,MA,d,House Representative,Katherine,Clark,"",""
+ReElectCummings,campaign,MD,d,House Representative,Elijah,Cummings,"",""
+RepPoliquin,official,ME,r,House Representative,Bruce,Poliquin,"",""
+RepLawrence,official,MI,d,House Representative,Brenda,Lawrence,"",""
+Levin4Congress,campaign,MI,d,House Representative,Sander,Levin,"""Sandy""",""
+RepTomEmmer,official,MN,r,House Representative,Tom,Emmer,"",""
+Vote4Cleaver,campaign,MO,d,House Representative,Emanuel,Cleaver,"",""
+RepRyanZinke,official,MT,r,House Representative,Ryan,Zinke,"",""
+RepAdams,official,NC,d,House Representative,Alma,Adams,"",""
+RepMarkWalker,official,NC,r,House Representative,Mark,Walker,"",""
+RepDavidRouzer,official,NC,r,House Representative,David,Rouzer,"",""
+RepStefanik,official,NY,r,House Representative,Elise,Stefanik,"",""
+BruceRauner,campaign,IL,r,Governor,Bruce,Rauner,"",""
+GovRauner,official,IL,r,Governor,Bruce,Rauner,"",""
+LarryHogan2014,official,MD,r,Governor,Larry,Hogan,"",""
+NDGovDalrymple,official,ND,r,Governor,Jack,Dalrymple,"",""
+GovRicketts,official,NE,r,Governor,Pete,Ricketts,"",""
+SenatorHassan,official,NH,d,Senator,Maggie,Hassan,"",""
+GovernorTomWolf,official,PA,d,Governor,Tom,Wolf,"",""
+GovRaimondo,official,RI,d,Governor,Gina,Raimondo,"",""
+GovMattMead,official,WY,r,Governor,Matt,Mead,"",""
+MeadforGovernor,campaign,WY,r,Governor,Matt,Mead,"",""
+DentforCongress,campaign,PA,r,House Representative,Charlie,Dent,"",""
+PGSittenfeld,personal,OH,d,,P.G.,Sittenfeld,"",""
+RepTomMacArthur,official,NJ,r,House Representative,Tom,MacArthur,"",""
+RepBWColeman,official,NJ,d,House Representative,Bonnie,Watson Coleman,"",""
+Bonnie4Congress,campaign,NJ,d,House Representative,Bonnie,Watson Coleman,"",""
+peopleforben,campaign,NM,d,House Representative,Ben,Lujan,Ray,""
+RepLeeZeldin,official,NY,r,House Representative,Lee,Zeldin,"",""
+RepKathleenRice,official,NY,d,House Representative,Kathleen,Rice,"",""
+RepJohnKatko,official,NY,r,House Representative,John,Katko,"",""
+latta4congress,campaign,OH,r,House Representative,Bob,Latta,"",""
+JimRenacciOH16,campaign,OH,r,House Representative,Jim,Renacci,"",""
+Marcy_Kaptur,campaign,OH,d,House Representative,Marcy,Kaptur,"",""
+RepRickAllen,official,GA,r,House Representative,Rick,Allen,"",""
+RepBuddyCarter,official,GA,r,House Representative,Buddy,Carter,"",""
+USRepRussell,official,OK,r,House Representative,Steve,Russell,"",""
+repblumenauer,campaign,OR,d,House Representative,Earl,Blumenauer,"",""
+Perry4Congress,campaign,PA,r,House Representative,Scott,Perry,"",""
+GT_TeamGT,campaign,PA,r,House Representative,Glenn,Thompson,GT,""
+RepBrendanBoyle,official,PA,d,House Representative,Brendan,Boyle,"",""
+RyanACostello,campaign,PA,r,House Representative,Ryan,Costello,"",""
+RepRyanCostello,official,PA,r,House Representative,Ryan,Costello,"",""
+RepBrianBabin,official,TX,r,House Representative,Brian,Babin,"",""
+hurdonthehill,official,TX,r,House Representative,Will,Hurd,"",""
+RepMiaLove,official,UT,r,House Representative,Mia,Love,"",""
+RepDaveBrat,official,VA,r,House Representative,Dave,Brat,"",""
+RepDonBeyer,official,VA,d,House Representative,Don,Beyer,"",""
+RepComstock,official,VA,r,House Representative,Barbara,Comstock,"",""
+staceyplaskett,official,VI,d,House Representative,Stacey,Plaskett,"",""
+RepNewhouse,official,WA,r,House Representative,Dan,Newhouse,"",""
+RepGrothman,official,WI,r,House Representative,Glenn,Grothman,"",""
+RepAlexMooney,official,WV,r,House Representative,Alex,Mooney,"",""
+RepEvanJenkins,official,WV,r,House Representative,Evan,Jenkins,"",""
+TeamMuriel,official,DC,d,Governor,Muriel,Bowser,"",""
+USRepGaryPalmer,official,AL,r,House Representative,Gary,Palmer,"",""
+RepMcSally,official,AZ,r,House Representative,Martha,McSally,"",""
+RepDavidYoung,official,IA,r,House Representative,David,Young,"",""
+RepFrenchHill,official,AR,r,House Representative,French,Hill,"",""
+RepRodBlum,official,IA,r,House Representative,Rod,Blum,"",""
+RepDebDingell,official,MI,d,House Representative,Debbie,Dingell,"",""
+abraham_ralph,campaign,LA,r,House Representative,Ralph,Abraham,"",""
+NormaJTorres,official,CA,d,House Representative,Norma,Torres,J.,""
+SenThomTillis,official,NC,r,Senator,Thom,Tillis,"",""
+SenJoniErnst,official,IA,r,Senator,Joni,Ernst,"",""
+SteveKnight25,official,CA,r,House Representative,Steve,Knight,"",""
+SenDanSullivan,official,AK,r,Senator,Dan,Sullivan,"",""
+SenatorRounds,official,SD,r,Senator,Mike,Rounds,"",""
+congressmanhice,official,GA,r,House Representative,Jody,Hice,"",""
+reppeteaguilar,official,CA,d,House Representative,Pete,Aguilar,"",""
+RepRubenGallego,official,AZ,d,House Representative,Ruben,Gallego,"",""
+RepTedLieu,official,CA,d,House Representative,Ted,Lieu,"",""
+RepGarretGraves,official,LA,r,House Representative,Garret,Graves,"",""
+RepDeSaulnier,official,CA,d,House Representative,Mark,DeSaulnier,"",""
+RepMarkTakai,official,HI,d,House Representative,Mark,Takai,"",""
+RepSamGraves,official,MO,r,House Representative,Sam,Graves,"",""
+Ted_Strickland,campaign,OH,d,Senate Candidate,Ted,Strickland,"",""
+Boyce4Congress,campaign,MS,r,House Candidate,Boyce,Adams,"",""
+samadcockms,campaign,MS,r,House Candidate,Sam,Adcock,"",""
+nancyacollins47,official,MS,r,House Candidate,Nancy Adams,Collins,"",""
+docholliday4ms1,campaign,MS,r,House Candidate,"Edward Troy ""Doc""",Holliday,"",""
+StarnerJones,campaign,MS,r,House Candidate,Starner,Jones,"",""
+KellyforMS01,campaign,MS,r,House Candidate,Trent,Kelly,"",""
+mills4ms,campaign,MS,r,House Candidate,"Michael P. ""Chip""",Mills,"",Jr.
+VoteHenryRoss,campaign,MS,r,House Candidate,Henry,Ross,"",""
+Sparks4Congress,campaign,MS,r,House Candidate,Daniel,Sparks,"",""
+MikeTagert,campaign,MS,r,House Candidate,Mike,Tagert,"",""
+Quentin_W,campaign,MS,r,House Candidate,Quentin,Whitwell,"",""
+JoeSestak,campaign,PA,d,Senate Candidate,Joe,Sestak,"",""
+JasonKander,campaign,MO,d,Senate Candidate,Jason,Kander,"",""
+GovMikeHuckabee,campaign,AR,r,Presidential Candidate,Mike,Huckabee,"",""
+DanDonovan_NY,campaign,NY,r,House Representative,Dan,Donovan,"",""
+POTUS,official,DC,r,President,Donald,Trump,J.,""
+governorpataki,campaign,NY,r,Presidential Candidate,George,Pataki,"",""
+DonNorcrossNJ1,official,NJ,d,House Representative,Donald,Norcross,"",""
+RepRohrabacher,official,CA,r,House Representative,Dana,Rohrabacher,"",""
+realDonaldTrump,personal,"",r,Presidential Candidate,Donald,Trump,J.,""
+teammarco,campaign,"",r,,Marco,Rubio,"",""
+TheBriefing2016,campaign,"",d,Presidential Candidate,Hillary,Clinton,"",""
+DonBacon2016,campaign,NE,r,House Candidate,Don,Bacon,"",""
+GaryKiehne,personal,AZ,r,House Candidate,Gary,Kiehne,"",""
+ChipMaxwellNE,personal,NE,r,House Candidate,Chip,Maxwell,"",""
+SenMarkChelgren,official,IA,r,House Candidate,Mark,Chelgren,"",""
+PaulBabeuAZ,personal,AZ,r,House Candidate,Paul,Babeu,"",""
+EScottWA,campaign,WA,r,House Candidate,Elizabeth,Scott,,
+RobersonForNV,campaign,NV,r,House Candidate,Michael,Roberson,,
+MatthewsForNV,campaign,NV,r,House Candidate,Andy,Mathews,"",""
+Cleek4Congress,campaign,CA,r,House Candidate,Eugene,Cleek,"",""
+Nance2016,campaign,CA,r,House Candidate,Kathryn,Nance,"",""
+Vote4Tacherra,campaign,CA,r,House Candidate,Johnny,Tacherra,"",""
+KatchoAchadjian,personal,CA,r,House Candidate,Katcho,Achadjian,"",""
+JustinFareed,personal,CA,r,House Candidate,Justin,Fareed ,"",""
+MattKokkonen,campaign,CA,r,House Candidate,Matt,Kokkonen,,
+Rafael4Congress,campaign,CA,r,House Candidate,Rafael,Dagnesses,"",""
+SeanFlynnCA,personal,CA,r,House Candidate,Sean ,Flynn,"",""
+kealy4congress,campaign,CA,r,House Candidate,Dwight,Kealy ,"",""
+DeniseforSD,campaign,CA,r,House Candidate,Denise,Gitsham,"",""
+voteatkinson,campaign,CA,r,House Candidate,Jacquie,Atkinson,"",""
+ChrisSununu,personal,NH,r,Gubernatorial Candidate,Chris ,Sununu,"",""
+gianforte,personal,MT,r,House Representative,Greg,Gianforte,"",""
+GregForMontana,campaign,MT,r,House Representative,Greg,Gianforte,"",""
+SueEllspermann,official,IN,r,,Sue,Ellspermann,"",""
+HolcombForIN,official,IN,r,,Eric,Holcomb,"",""
+KatieMcGintyPA,personal,PA,d,Senate Candidate,Katie,McGinty,"",""
+JohnFetterman,personal,PA,d,Senate Candidate,John,Fetterman,"",""
+BillBryantWA,personal,"",r,Gubernatorial Candidate,Bill,Bryant,"",""
+JohnGreggIN,campaign,IN,d,Gubernatorial Candidate,John,Gregg,"",""
+GovOfficeNC,official,NC,r,Governor,Pat,McCrory,"",""
+Team_McCrory,campaign,NC,d,Governor,Pat,McCrory,"",""
+JohnFasoNy,campaign,NY,r,House Representative,John,Faso,,
+heaneyny,campaign,NY,r,House Candidate,Andrew,Heaney,,
+petecongress16,campaign,IL,r,House Candidate,Pete,DiCianni,,
+ToniaKhouri,campaign,IL,r,House Candidate,Tonia,Khouri,,
+Harlan4Congress,campaign,IL,r,House Candidate,Patrick,Harlan,,
+JasonAllenMI,campaign,MI,r,House Candidate,Jason,Allen,,
+senatorjallen,official,MI,r,House Candidate,Jason,Allen,,
+Jason2CD,campaign,MN,r,House Representative,Jason,Lewis,,
+senjohnhowe,campaign,MN,r,House Candidate,John,Howe,,
+DarleneforCD2,campaign,MN,r,House Candidate,Darlene,Miller,,
+Gerson4Congress,campaign,MN,r,House Candidate,David,Gerson,,
+howeforcongress,campaign,MN,r,House Candidate,John,Howe,,
+JonathanChane,campaign,FL,r,House Candidate,Jonathan,Chane,,
+BrianMastFL,campaign,FL,r,House Representative,Brian,Mast,,
+RickKozellFL,campaign,FL,r,House Candidate,Rick,Kozell,,
+RebeccaNegronFL,campaign,FL,r,House Candidate,Rebecca,Negron,,
+markfreemanfl,campaign,FL,r,House Candidate,Marc,Freeman,,
+Scotttaylorva,campaign,VA,r,House Representative,Scott,Taylor,,
+StanCasacio,campaign,PA,r,House Candidate,Stan,Casacio,,
+BrianFitzUSA,campaign,PA,r,House Representative,Brian,Fitzpatrick,,
+DanPatrick,personal,TX,r,,Dan,Patrick,"",""
+phil_oliva,personal,NY,r,House Candidate,Phil,Oliva,"",""
+DrDavidDuke,personal,LA,r,Senate Candidate,David,Duke,"",""
+jamie_raskin,personal,MD,d,House Representative,Jamie,Raskin,"",""
+DrJillStein,personal,"",i,Presidential Candidate,Jill,Stein,"",""
+GovMattBevin,official,KY,r,Governor,Matt,Bevin,"",""
+JoshGottheimer,campaign,NJ,d,House Representative,Josh,Gottheimer,,
+Jim_Banks,campaign,IN,r,House Representative,Jim,Banks,,
+Nanette4CA,campaign,CA,d,House Representative,Nanette,Barragán,,
+PramilaJayapal,campaign,WA,d,House Representative,Pramila,Jayapal,,
+RepJoshG,official,NJ,d,House Representative,Josh,Gottheimer,,
+JodeyArrington,campaign,TX,r,House Representative,Jodey,Arrington,,
+RepArrington,official,TX,r,House Representative,Jodey,Arrington,,
+DonJBacon,campaign,NE,r,House Representative,Don,Bacon,J.,
+RepJayapal,official,WA,d,House Representative,Pramila,Jayapal,,
+JackBergman_MI1,campaign,MI,r,House Representative,Jack,Bergman,,
+andybiggs4az,campaign,AZ,r,House Representative,Andy,Biggs,,
+LisaBRochester,campaign,DE,d,House Representative,Lisa,Rochester,Blunt,
+AnthonyBrownMD4,campaign,MD,d,House Representative,Anthony,Brown,G.,
+buddforcongress,campaign,NC,r,House Representative,Ted,Budd,,
+carbajalsalud,campaign,CA,d,House Representative,Salud,Carbajal,,
+KYComer,campaign,KY,r,House Representative,James,Comer,,
+RepLouCorrea,official,CA,d,House Representative,Lou,Correa,,
+voteloucorrea,campaign,CA,d,House Representative,Lou,Correa,,
+RepValDemings,official,FL,d,House Representative,Val,Demings,,
+val_demings,campaign,FL,d,House Representative,Val,Demings,,
+DrNealDunnFL2,official,FL,r,House Representative,Neal,Dunn,,
+DunnCampaign,campaign,FL,r,House Representative,Neal,Dunn,,
+CongEspaillat,campaign,NY,,House Representative,Adriano,Espaillat,,
+RepDwightEvans,official,PA,d,House Representative,Dwight,Evans,,
+DwightEvansPA,campaign,PA,d,House Representative,Dwight,Evans,,
+RepJohnFaso,official,NY,r,House Representative,John,Faso,,
+DrewFergusonGA,campaign,GA,r,House Representative,Drew,Ferguson,,
+mattgaetz,campaign,FL,r,House Representative,Matt,Gaetz,,
+MikeforWI,campaign,WI,r,House Representative,Mike,Gallagher,,
+GarrettforVA,campaign,VA,r,House Representative,Tom,Garrett,,
+VoteVicente,campaign,TX,d,House Representative,Vicente,Gonzalez,,
+CaptClayHiggins,campaign,LA,r,House Representative,Clay,Higgins,,
+RepTrey,official,IN,r,House Representative,Trey,Hollingsworth,,III
+VoteForTrey,campaign,IN,r,House Representative,Trey,Hollingsworth,,III
+repmikejohnson,campaign,LA,r,House Representative,Mike,Johnson,,
+RepRoKhanna,official,CA,d,House Representative,Ro,Khanna,,
+RubenKihuen,campaign,NV,d,House Representative,Ruben,Kihuen,J.,
+CongressmanRaja,official,IL,d,House Representative,Raja,Krishnamoorthi,,
+RajaForCongress,campaign,IL,d,House Representative,Raja,Krishnamoorthi,,
+DavidKustoff,campaign,TN,r,House Representative,David,Kustoff,,
+RogerMarshallMD,campaign,KS,r,House Representative,Roger,Marshall,,
+RepBrianMast,official,FL,r,House Representative,Brian,Mast,,
+Donald_McEachin,campaign,VA,d,House Representative,Donald,McEachin,,
+PaulMitchell4us,campaign,MI,r,House Representative,Paul,Mitchell,,
+SMurphyCongress,campaign,FL,d,House Representative,Stephanie,Murphy,,
+RepOHalleran,official,AZ,d,House Representative,Tom,O'Halleran,,
+TomOHalleran,campaign,AZ,d,House Representative,Tom,O'Halleran,,
+JimmyPanetta,campaign,CA,d,House Representative,Jimmy,Panetta,,
+FrancisRooney,campaign,FL,r,House Representative,Francis,Rooney,,
+RosenforNevada,campaign,NV,d,Senate Candidate,Jacky,Rosen,,
+JRutherfordFL,campaign,FL,r,House Representative,John,Rutherford,,
+ElectSmucker,campaign,PA,r,House Representative,Lloyd,Smucker,,
+DarrenSoto,campaign,FL,d,House Representative,Darren,Soto,,
+Tom_Suozzi,campaign,NY,d,House Representative,Tom,Suozzi,,
+SenCortezMasto,official,NV,d,Senator,Catherine,Masto,Cortez,
+CatherineForNV,campaign,NV,d,Senator,Catherine,Masto,Cortez,
+KamalaHarris,campaign,CA,d,Senator,Kamala,Harris,,
+JohnKennedyLA,campaign,LA,r,Senator,John,Kennedy,Neely,
+VanHollenForMD,campaign,MD,d,Senator,Chris,Van Hollen,,
+TrumpInaugural,official,NY,r,President,Donald,Trump,J.,
+VP,official,DC,r,Vice President,Mike,Pence,,
+MikeDeWine,campaign,OH,r,State Official,Mike,DeWine,,
+OhioAG,official,OH,r,State Official,Mike,DeWine,,
+JonHusted,campaign,OH,r,State Official,Jon,Husted,,
+OhioSOSHusted,official,OH,r,State Official,Jon,Husted,,
+RalphNortham,campaign,VA,d,Gubernatorial Candidate,Ralph,Northam,,
+tomperriello,campaign,VA,d,Gubernatorial Candidate,Tom,Perriello,,
+Denver4Governor,campaign,VA,r,Gubernatorial Candidate,Denver,Riggleman,,
+CoreyStewartVA,campaign,VA,r,Senate Candidate,Corey,Stewart,,
+vafrankwagner,campaign,VA,r,Gubernatorial Candidate,Frank,Wagener,,
+WHI_HBCUs,official,DC,,Federal Agency,White House,HBCUs,,
+PressSec,official,DC,r,Administration Official,Sean,Spicer,,
+Spacekatgal,campaign,MA,d,House Candidate,Brianna,Wu,,
+KellyannePolls,official,DC,r,Administration Official,Kellyanne,Conway,,
+joycekrawiec,campaign,NC,r,State Legislator,Joyce,Krawiec,,
+RepCarbajal,official,CA,d,House Representative,Salud,Carbajal,,
+AndrewFGrant,personal,CA,r,House Candidate,Andrew,Grant,"",""
+JimmyGomezCA,campaign,CA,d,House Representative,Jimmy,Gomez,,
+Scaramucci,personal,DC,r,Administration Official,Anthony,Scaramucci,"",""
+adamputnam,campaign,FL,d,Gubernatorial Candidate,Adam,Putnam,,
+RepDevinNunes,official,CA,r,House Representative,Devin,Nunes,,
+DevinGNunes,campaign,CA,r,House Representative,Devin,Nunes,,
+UnofficialSK,campaign,CA,r,House Representative,Steve,Knight,,
+HandelTeam,campaign,GA,r,House Representative,Karen,Handel,,
+WoodallGA,official,GA,r,House Representative,Rob,Woodall,,
+votewoodall,campaign,GA,r,House Representative,Rob,Woodall,,
+RepJackBergman,official,MI,r,House Representative,Jack,Bergman,,
+RepJasonLewis,official,MN,r,House Representative,Jason,Lewis,,
+RepTedBudd,official,NC,r,House Representative,Ted,Budd,,
+RepDonBacon,official,NE,r,House Representative,Don,Bacon,,
+TeamLoBiondo,campaign,NJ,r,House Representative,Frank,LoBiondo,,
+RepDanDonovan,official,NY,r,House Representative,Dan,Donovan,,
+RepTenney,official,NY,r,House Representative,Claudia,Tenney,,
+RepBrianFitz,official,PA,r,House Representative,Brian,Fitzpatrick,,
+RepSmucker,official,PA,r,House Representative,Lloyd,Smucker,,
+RulesReps,official,DC,r,Congressional committee,House Rules,Committee,,
+RepScottTaylor,official,VA,r,House Representative,Scott,Taylor,,
+RepTomGarrett,official,VA,r,House Representative,Tom,Garrett,,
+EBrianRose,campaign,MS,r,House Candidate,E. Brian,Rose,,
+JustinSimmonsPA,campaign,PA,r,House Candidate,Justin,Simmons,,
+KevinMNicholson,campaign,WI,r,Senate Candidate,Kevin,Nicholson,,
+AntonioSabatoJr,campaign,CA,r,House Candidate,Antonio,Sabato,,Jr.
+SecretaryZinke,official,MT,r,Administration Official,Ryan,Zinke,,
+SGottliebFDA,official,DC,r,Administration Official,Scott,Gottlieb,,
+SteveSisolak,campaign,NV,d,Gubernatorial Candidate,Steve,Sisolak,,
+Scavino45,official,DC,r,Administration Official,Dan,Scavino,,Jr.
+DanScavino,personal,DC,r,Administration Official,Dan,Scavino,,Jr.
+RepJimmyGomez,official,CA,d,House Representative,Jimmy,Gomez,,
+RepRalphNorman,official,SC,r,House Representative,Ralph,Norman,,
+RalphNorman,campaign,SC,r,House Representative,Ralph,Norman,,
+RepRonEstes,official,KS,r,House Representative,Ron,Estes,,
+HouseAgNews,official,DC,r,Congressional committee,House Ag,Committee,,
+HouseAppropsGOP,official,DC,r,Congressional committee,House Appropriations,Committee,,
+HASCRepublicans,official,DC,r,Congressional committee,House Armed Services,Committee,,
+housebudgetGOP,official,DC,r,Congressional committee,House Budget,Committee,,
+EdWorkforce,official,DC,r,Congressional committee,House Ed & Workforce,Committee,,
+HouseCommerce,official,DC,r,Congressional committee,Energy and Commerce,Committee,,
+FinancialCmte,official,DC,r,Congressional committee,Financial Services,Committee,,
+HouseForeign,official,DC,r,Congressional committee,Foreign Affairs Cmte,Committee,,
+HouseHomeland,official,DC,r,Congressional committee,House Homeland,Committee,,
+HouseAdmnGOP,official,DC,r,Congressional committee,House Administration,Committee,,
+HouseJudiciary,official,DC,r,Congressional committee,House Judiciary,Committee,,
+NatResources,official,DC,r,Congressional committee,Natural Resources,Committee,,
+GOPoversight,official,DC,r,Congressional committee,Oversight,Committee,,
+HouseScience,official,DC,r,Congressional committee,House Science,Committee,,
+HouseSmallBiz,official,DC,r,Congressional committee,House Small Biz,Committee,,
+Transport,official,DC,r,Congressional committee,T&I,Committee,,
+HouseVetAffairs,official,DC,r,Congressional committee,House Vet Affairs,Committee,,
+WaysandMeansGOP,official,DC,r,Congressional committee,Ways and Means,Committee,,
+kelliwardaz,campaign,AZ,r,Senate Candidate,Kelli,Ward,,
+AP4Liberty,campaign,MO,r,Senate Candidate,Austin,Petersen,,
+Bobby_Mahendra,campaign,NV,d,Senate Candidate,Bobby,Mahendra,,
+HawleyMO,campaign,MO,r,Senate Candidate,Josh,Hawley,,
+MattForMontana,campaign,MT,r,Senate Candidate,Matt,Rosendale,,
+MorriseyWV,campaign,WV,r,Senate Candidate,Patrick,Morrisey,,
+LeahVukmir,campaign,WI,r,Senate Candidate,Leah,Vukmir,,
+GDouglasJones,campaign,AL,d,Senate Candidate,Doug,Jones,,
+MooreSenate,campaign,AL,r,Senate Candidate,Roy,Moore,,
+SenKamalaHarris,official,CA,d,Senator,Kamala,Harris,,
